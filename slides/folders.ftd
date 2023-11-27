@@ -1,0 +1,14 @@
+-- import: fifthtry.github.io/ui/slides/ui/folders
+-- import: fifthtry.github.io/ui/slides/ui/common
+
+
+-- slide-ds.page:
+
+-- folders.new-folders:
+new-folder-lists: $common.new-folder-lists
+
+-- folders.all-projects:
+all-projects-lists: $common.all-projects-lists
+all-template-lists: $common.all-template-lists
+
+-- end: slide-ds.page

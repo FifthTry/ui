@@ -1,0 +1,470 @@
+-- import: fifthtry.github.io/ui/slides/ui/common
+
+-- integer $current-folder: 1
+
+
+-- ds.page:
+sidebar: true
+
+-- new-folders:
+new-folder-lists: $common.new-folder-lists
+
+-- all-projects:
+all-projects-lists: $common.all-projects-lists
+all-template-lists: $common.all-template-lists
+
+-- end: ds.page
+
+
+
+
+
+
+
+
+
+
+-- component new-folders:
+common.new-folder-list list new-folder-lists:
+boolean $pop-up: false
+
+-- ftd.column:
+width: fill-container
+padding-bottom.px: 24
+padding-top.px: 12
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+padding-bottom.px: 24
+
+-- ftd.text: Folders
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+width.fixed.px: 134
+padding-horizontal.px: 12
+padding-vertical.px: 8
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 8
+spacing.fixed.px: 6
+align-content: center
+$on-click$: $ftd.set-bool($a = $new-folders.pop-up, v = true)
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.plus.svg
+width.fixed.px: 14
+
+-- ftd.text: New Folder
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { new-folders.pop-up }
+width.fixed.px: 370
+height.fixed.px: 296
+background.solid: $inherited.colors.background.base
+padding.px: 24
+spacing.fixed.px: 24
+border-width.px: 1
+border-color: $inherited.colors.border-strong
+z-index: 5
+anchor: parent
+left.px: 350
+top.px: 100
+border-radius.px: 8
+shadow: $s
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: center
+
+-- ftd.text: Create new folder
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.cross.svg
+width.fixed.px: 28
+height.fixed.px: 28
+$on-click$: $ftd.set-bool($a = $new-folders.pop-up, v = false)
+
+-- end: ftd.row
+
+-- ftd.text: Folder name
+role: $inherited.types.button-small
+color: $inherited.colors.text-strong
+
+-- ftd.text-input:
+type: text
+width: fill-container
+height.fixed.px: 56
+background.solid: transparent
+border-width.px: 2
+border-color: $inherited.colors.border
+color: $inherited.colors.text-strong
+padding-horizontal.px: 8
+border-radius.px: 4
+
+-- ftd.text: Create
+width: fill-container
+padding-horizontal.px: 18
+color: $inherited.colors.cta-primary.text
+padding-vertical.px: 16
+background.solid: $inherited.colors.cta-primary.base
+border-radius.px: 8
+text-align: center
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+padding-vertical.px: 24
+spacing.fixed.px: 24
+wrap: true
+
+-- new-folder-details: $obj.title
+$loop$: $new-folders.new-folder-lists as $obj
+icon: $obj.icon
+item: $obj.item
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: new-folders
+
+
+
+
+
+
+
+
+
+-- component new-folder-details:
+caption title:
+ftd.image-src icon:
+string item:
+boolean $menu: false
+boolean $open-menu: false
+
+-- ftd.row:
+width.fixed.px: 260
+padding-vertical.px: 8
+padding-horizontal.px: 16
+spacing.fixed.px: 16
+cursor: pointer
+background.solid if { new-folder-details.menu }: $inherited.colors.background.step-1
+$on-mouse-enter$: $ftd.set-bool($a = $new-folder-details.menu, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $new-folder-details.menu, v = false)
+border-radius.px: 6
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.folder.svg
+width.fixed.px: 48
+
+-- ftd.column:
+spacing.fixed.px: 4
+
+-- ftd.text: $new-folder-details.title
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.text: $new-folder-details.item
+role: $inherited.types.label-small
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- ftd.image:
+if: { new-folder-details.menu }
+src: $assets.files.slides.ui.assets.option.svg
+width.fixed.px: 24
+align-self: center
+$on-click$: $ftd.toggle($a = $new-folder-details.open-menu)
+
+-- ftd.column:
+if: { new-folder-details.open-menu }
+width.fixed.px: 244
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 8
+border-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 8
+spacing.fixed.px: 8
+z-index: 5
+anchor: parent
+right.px: -222
+top.px: -52
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.copy.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: Make a copy
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.add-user.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: Share
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.copy-link.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: Copy Link
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.trash.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: Move to trash
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: new-folder-details
+
+
+
+
+
+
+
+
+
+
+-- component all-projects:
+common.all-projects-list list all-projects-lists:
+common.all-template-list list all-template-lists:
+boolean $pop-up: false
+
+-- ftd.column:
+width: fill-container
+padding-bottom.px: 24
+padding-top.px: 12
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+padding-bottom.px: 24
+
+-- ftd.text: All projects
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+width.fixed.px: 134
+padding-horizontal.px: 12
+padding-vertical.px: 8
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 8
+spacing.fixed.px: 6
+align-content: center
+$on-click$: $ftd.set-bool($a = $all-projects.pop-up, v = true)
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.plus.svg
+width.fixed.px: 14
+
+-- ftd.text: New Project
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { all-projects.pop-up }
+width.fixed.px: 720
+height.fixed.px: 602
+background.solid: $inherited.colors.background.base
+padding.px: 24
+spacing.fixed.px: 24
+border-width.px: 1
+border-color: $inherited.colors.border-strong
+z-index: 5
+anchor: parent
+top.px: -204
+left.px: 150
+border-radius.px: 8
+shadow: $s
+overflow-y: scroll
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: center
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+padding-bottom.px: 16
+
+-- ftd.text: Select a template
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.image:
+src: $assets.files.slides.ui.assets.cross.svg
+width.fixed.px: 28
+height.fixed.px: 28
+$on-click$: $ftd.set-bool($a = $all-projects.pop-up, v = false)
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+wrap: true
+
+-- template-list: $obj.title
+$loop$: $all-projects.all-template-lists as $obj
+image: $obj.image
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width.fixed.px: 940
+padding-vertical.px: 24
+spacing.fixed.px: 24
+wrap: true
+
+-- all-projects-details: $obj.title
+$loop$: $all-projects.all-projects-lists as $obj
+image: $obj.image
+time: $obj.time
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: all-projects
+
+
+
+
+
+
+
+
+
+-- component all-projects-details:
+caption title:
+ftd.image-src image:
+string time:
+
+-- ftd.column:
+width.fixed.px: 243
+spacing.fixed.px: 8
+padding-bottom.px: 8
+cursor: pointer
+
+-- ftd.image:
+src: $all-projects-details.image
+width: fill-container
+
+-- ftd.text: $all-projects-details.title
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text-strong
+
+-- ftd.text: $all-projects-details.time
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+style: light
+
+-- end: ftd.column
+
+-- end: all-projects-details
+
+
+
+
+
+
+
+
+
+
+-- component template-list:
+caption title:
+ftd.image-src image:
+
+-- ftd.column:
+width.fixed.px: 200
+spacing.fixed.px: 8
+padding-bottom.px: 8
+cursor: pointer
+align-content: center
+
+-- ftd.image:
+src: $template-list.image
+width: fill-container
+
+-- ftd.text: $template-list.title
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: template-list
+
+
+
+
+
+
+
+
+
+
+-- ftd.shadow s: 
+color: #000000
+x-offset.px: 4 
+y-offset.px: 4
+blur.px: 20
+spread.px: 8
