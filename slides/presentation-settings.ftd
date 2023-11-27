@@ -1,0 +1,96 @@
+-- optional boolean $is-template:
+-- string $fastn-conf: Not fetched
+-- string $settings-conf: Not fetched
+-- optional boolean $save-status:
+-- boolean debug: false
+
+
+-- slide-ds.page:
+
+-- ftd.text: Presentation Settings
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-large
+
+-- slide-ds.button: Go back to editor
+button-icon: $assets.files.slides.ui.assets.go-back.svg
+icon-width.fixed.px: 20
+icon-height.fixed.px: 20
+$on-click$: $slide-ds.go-back()
+
+-- ftd.row:
+width: hug-content
+spacing.fixed.px: 20
+align-content: center
+
+-- ftd.text: Is this a template presentation:
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+
+-- ftd.text: Yes
+width.fixed.px: 30
+if: { is-template != NULL }
+text if { !is-template }: No
+color: red
+color if { is-template }: green
+role: $inherited.types.copy-regular
+
+-- slide-ds.button: Convert into Template Presentation
+title if { is-template }: Revert Back to Normal Presentation
+button-icon: $assets.files.slides.ui.assets.convert.svg
+;; $on-click$: $convert-template-http(url = toggle-template/, method = post, id = $id)
+icon-width.fixed.px: 20
+icon-height.fixed.px: 20
+
+-- end: ftd.row
+
+-- ftd.text: fastn.ftd
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-medium
+
+-- ftd.text-input:
+padding.px: 10
+default-value: $fastn-conf
+multiline: true
+width.fixed.px: 600
+height.fixed.px: 200
+white-space: nowrap
+
+-- ftd.text: settings.ftd
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-medium
+
+-- ftd.text-input:
+padding.px: 10
+default-value: $settings-conf
+multiline: true
+width.fixed.px: 600
+height.fixed.px: 200
+white-space: nowrap
+
+-- ftd.text: Save
+border-width.px: 2
+border-radius.px: 15
+padding-vertical.px: 5
+padding-horizontal.px: 10
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+;; $on-click$: $save-settings-http(url = save-settings/, method = post, settings = $settings-conf, fastn = $fastn-conf, id = $id)
+
+-- ftd.row:
+if: { save-status != NULL && debug }
+width.fixed.px: 200
+
+-- ftd.text: Success:
+color: $inherited.colors.text
+role: $inherited.types.copy-regular
+margin-right.px: 20
+
+-- ftd.boolean: $save-status
+color: red
+color if { save-status }: green
+role: $inherited.types.copy-regular
+
+-- end: ftd.row
+
+
+-- end: slide-ds.page
