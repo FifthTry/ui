@@ -1,0 +1,32 @@
+-- import: fifthtry.github.io/ui/slides/ui/all-templates
+
+-- all-templates.template list template-list:
+
+-- all-templates.template: Good Template
+image: $assets.files.slides.ui.assets.template-1.png
+avatar: $assets.files.slides.ui.assets.avatar.svg
+owner-name: John Doe
+
+-- all-templates.template: Good Template
+image: $assets.files.slides.ui.assets.template-2.png
+avatar: $assets.files.slides.ui.assets.avatar.svg
+owner-name: John Doe
+
+-- end: template-list
+
+
+
+
+
+
+-- slide-ds.page:
+
+-- all-templates.templates: All templates
+template-lists: $template-list
+
+-- end: slide-ds.page
+
+
+
+-- all-templates.templates-details-modal: $all-templates.current-template
+$pop-up: $all-templates.template-modal-open
