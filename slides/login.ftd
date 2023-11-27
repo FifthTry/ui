@@ -1,0 +1,10 @@
+-- import: fifthtry.github.io/ui/slides/ui/login
+
+-- slide-ds.page:
+
+-- login.login-page: Log in
+logo: $assets.files.slides.ui.assets.logo.svg
+cta-github: Continue with Github
+cta-github-link: /-/auth/login/?next=/p/1/1/
+
+-- end: slide-ds.page

@@ -1,0 +1,16 @@
+-- import: fastn
+
+-- fastn.package: fifthtry.github.io/ui
+favicon: /-/fifthtry.github.io/ui/favicon.ico
+
+-- fastn.dependency: fastn-community.github.io/doc-site
+-- fastn.dependency: fastn-community.github.io/dark-mode-switcher
+
+;; Used by slides --------------------------------------------------------------
+-- fastn.dependency: fastn-community.github.io/midnight-storm-typography
+-- fastn.dependency: fastn-community.github.io/dark-flame-cs
+
+-- fastn.auto-import: fifthtry.github.io/ui/ds
+-- fastn.auto-import: fifthtry.github.io/ui/assets
+
+-- fastn.auto-import: fifthtry.github.io/ui/slides/ui/utils as slide-ds
