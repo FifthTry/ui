@@ -6,6 +6,7 @@
 -- import: fastn-community.github.io/dark-flame-cs as cs
 
 -- integer $current-slide-number: 1
+-- boolean unimplemented: true
 
 ;; TODO: Issue with name preview-url which gets stored as "preview_url"
 -- record slide:
@@ -570,14 +571,12 @@ button-icon: $assets.files.slides.ui.assets.play.svg
 button-link: $present-link(id = $project-slide.id, order = $project-slide.order)
 
 -- button: Download
+if: { !unimplemented }
 button-link: /
 button-icon: $assets.files.slides.ui.assets.download.svg
 
--- button: Convert into Template
-button-icon: $assets.files.slides.ui.assets.pipeline.svg
-$on-click$: $convert-template-http(url = convert-template/, method = post, id = $project-slide.id)
-
 -- button: Add to pipeline
+if: { !unimplemented }
 button-link: /
 button-icon: $assets.files.slides.ui.assets.pipeline.svg
 
@@ -630,6 +629,7 @@ spacing.fixed.px: 8
 padding-right.px: 24
 
 -- ftd.image:
+if: { !unimplemented }
 src: $assets.files.slides.ui.assets.square.svg
 width.fixed.px: 38
 height.fixed.px: 38
@@ -644,6 +644,7 @@ height.fixed.px: 38
 padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
+link: $settings-link(id = $project-slide.id)
 
 -- end: ftd.column
 
@@ -1029,6 +1030,8 @@ optional caption title:
 optional string button-link:
 optional ftd.image-src button-icon:
 boolean $hover: false
+optional ftd.resizing icon-width:
+optional ftd.resizing icon-height:
 
 -- ftd.row:
 background.solid: $inherited.colors.background.step-1
@@ -1040,19 +1043,22 @@ background.solid if { button.hover }: $inherited.colors.background.step-2
 $on-mouse-enter$: $ftd.set-bool($a = $button.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $button.hover, v = false)
 spacing.fixed.px: 8
-width.fixed.px: 154
+width: hug-content
 min-width: auto
 
 -- ftd.image: $button.button-icon
 if: { button.button-icon != NULL }
 width.fixed.px: 16
+width if { button.icon-width != NULL }: $button.icon-width
 height.fixed.px: 16
+height if { button.icon-height != NULL }: $button.icon-height
 
 -- ftd.text: $button.title
 if: { button.title != NULL }
 role: $inherited.types.button-small
 color: $inherited.colors.text-strong
 link: $button.button-link
+white-space: nowrap
 
 -- end: ftd.row
 
@@ -1129,14 +1135,6 @@ js: $assets.files.slides.ui.functions.js
 
 http(url, method, null, ("id", id), ("order", order))
 
--- void convert-template-http(url,method,id):
-integer id:
-string url:
-string method:
-js: $assets.files.slides.ui.functions.js
-
-http(url, method, null, ("id", id))
-
 
 
 
@@ -1146,13 +1144,23 @@ integer order:
 
 "pre/" + id + "/" + order + "/"
 
+-- string settings-link(id):
+integer id:
+
+"s/" + id + "/"
+
 -- string construct-slide-url(id,order):
 integer id:
 integer order:
 
-"p/" + id + "/" + order
+"p/" + id + "/" + order + "/"
 
 -- integer increment-by-one(a):
 integer a:
 
 a + 1
+
+-- void go-back():
+js: $assets.files.slides.ui.functions.js
+
+goBack()
