@@ -1,0 +1,17 @@
+-- import: fifthtry.github.io/ui/slides/ui/setting
+-- import: fifthtry.github.io/ui/slides/ui/common
+
+-- slide-ds.page: Team Settings
+
+-- setting.team-name: Team Name
+name: Fastn brand decks
+cta-text: Edit
+cta-link: /
+
+-- setting.team-members: Team Members
+cta-text: Add Member
+cta-link: /
+member-list: $common.member-list
+
+
+-- end: slide-ds.page
