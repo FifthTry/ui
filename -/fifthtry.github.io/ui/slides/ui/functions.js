@@ -121,3 +121,8 @@ async function create_presentation_from_template(template) {
 
     location.href = `/p/${presentation_id}/1`;
 }
+
+function goBack() {
+  window.history.back();
+}
+
