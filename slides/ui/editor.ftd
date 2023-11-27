@@ -1,0 +1,112 @@
+-- import: slides.fifthtry.com/assets
+-- import: fastn/processors as pr
+
+-- integer order:
+$processor$: pr.request-data
+
+-- integer id:
+$processor$: pr.request-data
+
+-- boolean $is-loaded: false
+
+-- string list $thumbnails:
+
+-- string slide-url: $construct-slide-url(id = $id, order = $order)
+
+;; Todo: We can't make this optional because it makes this of mutable type
+;; instead of RecordInstance
+-- ds.slide $current-slide:
+code: *$sample-initial-code
+preview_url: https://fastn.com
+
+
+
+-- ds.page:
+
+-- loader-component:
+url: $slide-url
+
+-- ftd.text: Loading ...
+if: { !is-loaded }
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-medium
+align-self: center
+margin-top.percent: 20
+
+-- ds.project-slide: Slide Project
+if: { is-loaded }
+slide-list: $common.slide-lists
+all-comments: $common.all-comments
+$current-slide if { current-slide.preview_url != NULL }: $current-slide
+$thumbnails: $thumbnails
+id: $id
+order: $order
+
+-- end: ds.page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; --------------------- FUNCTIONS + WEB COMPONENTS ---------------------------
+-- string construct-slide-url(id,order):
+integer id:
+integer order:
+
+"slide/" + id + "/" + order + "/"
+
+
+
+
+
+-- web-component loader-component:
+string url:
+js: $assets.files.slides.ui.loader-component.js
+
+
+
+
+
+
+
+
+;; Todo: If we pass mutable to a function then the function get converted into
+;; fastn.formula and it add function as the closure to that mutable, so when
+;; this formula is called, it calls mutable.set which again call the formula and
+;; which calls the mutable.set and it goes on and on
+;;
+;; -- string value: $func($a = $s, v = hello)
+;; -- string func(a,v):
+;; string $a:
+;; string v:
+;;
+;; a = a + "world";
+;; v + "r"
+;; ;; a.set -> func -> a.set -> func
+
+;; ---------------------- SAMPLE CODE --------------------------------
+
+-- string $sample-initial-code:
+
+\-- import: fastn-slide/settings
+exposing: slide
+
+\-- slide: This is sample title
+subtitle: This is subtitle
+
+\;; ---------- << ADD your slide content here >> --------------
+
+\-- ftd.text: This is sample text
+color: white
+
+\-- end: slide
