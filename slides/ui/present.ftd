@@ -1,0 +1,145 @@
+-- import: fastn/processors as pr
+
+-- integer order:
+$processor$: pr.request-data
+
+-- integer id:
+$processor$: pr.request-data
+
+-- boolean $is-loaded: false
+
+-- integer $slides-count: 0
+
+-- optional string $current:
+-- optional string $previous:
+-- optional string $next:
+
+-- string present-url: $construct-present-url(id = $id, order = $order)
+
+
+
+
+-- loader-component:
+url: $present-url
+
+
+
+-- ftd.text: Presenting ...
+if: { !is-loaded }
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-medium
+align-self: center
+margin-top.percent: 20
+
+-- ftd.column:
+if: { is-loaded }
+width: fill-container
+height: fill-container
+spacing: space-between
+
+;; Todo: if: { loaded && index == order } (**for loops)
+-- present-slide-view: $current
+current-slide-order: $order
+
+-- present-switcher: $order
+previous: $previous
+next: $next
+
+-- end: ftd.column
+
+
+
+
+
+
+
+-- component present-slide-view:
+caption url:
+integer current-slide-order:
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+
+-- ftd.iframe:
+width: fill-container
+height: fill-container
+src: $present-slide-view.url
+
+-- end: ftd.column
+
+-- end: present-slide-view
+
+
+
+
+
+
+
+-- component present-switcher:
+caption integer current-slide-order:
+string previous:
+string next:
+boolean $is-left-hovered: false
+boolean $is-right-hovered: false
+
+-- ftd.row:
+width.fixed.percent: 20
+sticky: true
+bottom.px: 40
+left.percent: 40
+background.solid: $inherited.colors.background.base
+spacing: space-between
+align-content: center
+border-radius.px: 15
+padding-vertical.px: 10
+
+;; PREVIOUS BUTTON
+-- ftd.image: $assets.files.slides.ui.assets.left.svg
+src if { present-switcher.is-left-hovered }: $assets.files.slides.ui.assets.left-hover.svg
+padding-left.px: 15
+width.fixed.px: 40
+link: $present-switcher.previous
+$on-mouse-enter$: $ftd.set-bool($a = $present-switcher.is-left-hovered, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $present-switcher.is-left-hovered, v = false)
+
+;; CURRENT SLIDE ORDER
+-- ftd.integer: $present-switcher.current-slide-order
+background.solid: $inherited.colors.background.step-2
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+padding-horizontal.px: 10
+border-radius.px: 15
+
+;; NEXT BUTTON
+-- ftd.image: $assets.files.slides.ui.assets.right.svg
+src if { present-switcher.is-right-hovered }: $assets.files.slides.ui.assets.right-hover.svg
+padding-right.px: 15
+width.fixed.px: 40
+link: $present-switcher.next
+$on-mouse-enter$: $ftd.set-bool($a = $present-switcher.is-right-hovered, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $present-switcher.is-right-hovered, v = false)
+
+-- end: ftd.row
+
+-- end: present-switcher
+
+
+
+
+
+
+;; --------------------- FUNCTIONS + WEB COMPONENTS ---------------------------
+-- string construct-present-url(id,order):
+integer id:
+integer order:
+js: $assets.files.slides.ui.functions.js
+
+"present/" + id + "/" + order + "/"
+
+
+
+
+-- web-component loader-component:
+string url:
+js: $assets.files.slides.ui.loader-component.js

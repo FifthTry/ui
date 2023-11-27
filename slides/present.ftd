@@ -1,0 +1,23 @@
+-- import: fifthtry.github.io/ui/slides/ui/present
+
+
+-- optional string $current:
+-- optional string $previous:
+-- optional string $next:
+-- integer order: 1
+
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+spacing: space-between
+
+;; Todo: if: { loaded && index == order } (**for loops)
+-- present.present-slide-view: $current
+current-slide-order: $order
+
+-- present.present-switcher: $order
+previous: $previous
+next: $next
+
+-- end: ftd.column
