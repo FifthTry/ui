@@ -1,6 +1,13 @@
+-- record status:
+boolean is-logged-in:
+optional user-details user:
+
 -- record user-details:
 string name:
 string email:
-string username:
+string login:
+integer id:
 
--- optional user-details ud:
+
+-- status ud:
+is-logged-in: false

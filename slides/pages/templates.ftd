@@ -1,3 +1,25 @@
+-- import: ui.fifthtry.com/slides/components/full-page
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+
+
+-- component page:
+module site-data: site-data
+module user-data: user-data
+template list templates:
+
+-- full-page.page:
+site-data: $page.site-data
+user-data: $page.user-data
+
+-- show-template-list:
+templates: $page.templates
+
+-- end: full-page.page
+
+-- end: page
+
+
 
 
 
@@ -8,6 +30,7 @@ string url:
 string team:
 string owner_name:
 string thumbnail:
+string owner_avatar:
 
 
 
@@ -69,7 +92,7 @@ spacing.fixed.px: 8
 padding-top.px: 8
 
 -- ftd.image:
-src: $assets.files.slides.assets.avatar.svg
+src: $template-short.template.owner_avatar
 width.fixed.px: 32
 height.fixed.px: 32
 fit: cover
