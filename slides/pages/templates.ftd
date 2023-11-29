@@ -66,7 +66,7 @@ spacing.fixed.px: 8
 padding-top.px: 8
 
 -- ftd.image:
-src: $assets.files.assets.avatar.svg
+src: $assets.files.slides.assets.avatar.svg
 width.fixed.px: 32
 height.fixed.px: 32
 fit: cover
@@ -91,5 +91,3 @@ style: light
 -- end: ftd.column
 
 -- end: template-short
-
-

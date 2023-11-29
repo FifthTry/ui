@@ -1,0 +1,130 @@
+-- import: ui.fifthtry.com/slides/components/action-page
+-- import: ui.fifthtry.com/slides/site-data
+
+-- component page:
+module site-data: site-data
+string github-url:
+string signup-url:
+
+-- action-page.page:
+site-data: $page.site-data
+
+-- login-page:
+site-data: $page.site-data
+github-url: $page.github-url
+signup-url: $page.signup-url
+
+-- end: action-page.page
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- component login-page:
+module site-data: site-data
+string github-url:
+string signup-url:
+
+-- ftd.row:
+width: fill-container
+background.solid: $inherited.colors.background.base
+
+-- ftd.image:
+src: $assets.files.slides.assets.background.png
+width.fixed.percent: 60
+fit: cover
+
+-- ftd.column:
+align-content: center
+padding-top.px: 84
+width.fixed.percent: 40
+spacing.fixed.px: 64
+
+-- ftd.image:
+src: $login-page.site-data.logo
+width: auto
+fit: cover
+
+-- ftd.text: Log in
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+style: bold
+
+-- ftd.column:
+margin-top.px: 84
+spacing.fixed.px: 24
+align-content: center
+
+-- button: Continue with Github
+button-link: $login-page.github-url
+button-icon: $assets.files.slides.assets.github-mark-white.svg
+
+-- ftd.row:
+spacing.fixed.px: 4
+align-content: center
+
+-- ftd.text: Don’t have an account?
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ftd.text: Sign up
+role: $inherited.types.copy-regular
+color: $inherited.colors.info.text
+link: $login-page.signup-url
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: login-page
+
+
+
+
+
+
+
+
+
+
+-- component button:
+optional caption title:
+optional string button-link:
+optional ftd.image-src button-icon:
+boolean $hover: false
+
+-- ftd.row:
+background.solid: $inherited.colors.cta-primary.base
+border-radius.px: 8
+padding-horizontal.px: 16
+padding-vertical.px: 10
+align-content: center
+$on-mouse-enter$: $ftd.set-bool($a = $button.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.hover, v = false)
+spacing.fixed.px: 8
+width.fixed.px: 322
+link: $button.button-link
+
+-- ftd.image: $button.button-icon
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: $button.title
+role: $inherited.types.button-small
+color: $inherited.colors.text-strong
+style: semi-bold
+
+-- end: ftd.row
+
+-- end: button

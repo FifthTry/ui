@@ -1,0 +1,6 @@
+-- record user-details:
+string name:
+string email:
+string username:
+
+-- optional user-details ud:
