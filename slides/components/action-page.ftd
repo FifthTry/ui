@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/slides/site-data
+-- import: fastn-community.github.io/dark-mode-switcher as dms
 
 
 -- component page:
@@ -7,12 +8,16 @@ children uis:
 
 -- ftd.column:
 width: fill-container
+background.solid: $inherited.colors.background.base
+height: fill-container
 
 -- header:
 site-data: $page.site-data
 
 -- ui:
 for: $ui in $page.uis
+
+-- dms.dark-mode-switcher-float:
 
 -- end: ftd.column
 

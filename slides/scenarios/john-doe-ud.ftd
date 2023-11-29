@@ -1,9 +1,21 @@
+-- record status:
+boolean is-logged-in:
+optional user-details user:
+
 -- record user-details:
 string name:
 string email:
-string username:
+string login:
+integer id:
 
--- optional user-details ud:
+
+-- status ud:
+is-logged-in: true
+user: $john
+
+
+-- user-details john:
 name: John Doe
 email: john-doe@abc.com
-username: john-doe
+login: john-doe
+id: 1

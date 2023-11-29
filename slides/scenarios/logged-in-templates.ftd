@@ -1,0 +1,33 @@
+-- import: ui.fifthtry.com/slides/pages/templates
+-- import: ui.fifthtry.com/slides/scenerios/john-doe-ud
+
+
+-- templates.page:
+user-data: john-doe-ud
+templates: $t2
+
+
+
+
+
+
+
+-- templates.template list t2:
+
+-- templates.template: Template 1
+id: 1
+url: /
+team: My team
+owner_name: John Doe
+thumbnail: $assets.files.slides.assets.template-1.png.light
+owner_avatar: $assets.files.slides.assets.avatar.svg.light
+
+-- templates.template: Template 2
+id: 2
+url: /
+team: Other team
+owner_name: John Doe's cousin
+thumbnail: $assets.files.slides.assets.template-2.png.light
+owner_avatar: $assets.files.slides.assets.avatar.svg.light
+
+-- end: t2
