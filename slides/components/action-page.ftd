@@ -1,0 +1,44 @@
+-- import: ui.fifthtry.com/slides/site-data
+
+
+-- component page:
+module site-data: site-data
+children uis:
+
+-- ftd.column:
+width: fill-container
+
+-- header:
+site-data: $page.site-data
+
+-- ui:
+for: $ui in $page.uis
+
+-- end: ftd.column
+
+-- end: page
+
+
+
+
+
+-- component header:
+module site-data: site-data
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.base
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-vertical.px: 16
+padding-horizontal.px: 24
+
+-- ftd.image:
+link: $header.site-data.homepage
+src: $header.site-data.logo
+width.fixed.px: 162
+height.fixed.px: 32
+
+-- end: ftd.column
+
+-- end: header
