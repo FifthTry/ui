@@ -1,4 +1,5 @@
 -- import: fastn-community.github.io/doc-site
+export: h1
 
 -- component page:
 optional caption title:
