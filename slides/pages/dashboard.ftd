@@ -16,8 +16,8 @@ site-data: $page.site-data
 user-data: $page.user-data
 
 -- all-presentations:
-all-presentations-lists: $page.presentations
-all-template-lists: $page.templates
+presentations: $page.presentations
+templates: $page.templates
 
 -- end: team-page.page
 
@@ -28,13 +28,15 @@ all-template-lists: $page.templates
 
 -- record presentation:
 caption title:
-ftd.image-src image:
-string time:
+string url:
+string thumbnail:
+string updated-on:
 
 
 -- record template:
 caption title:
-ftd.image-src image:
+string url:
+string thumbnail:
 
 
 
@@ -63,8 +65,8 @@ ftd.image-src image:
 
 
 -- component all-presentations:
-presentation list all-presentations-lists:
-template list all-template-lists:
+presentation list presentations:
+template list templates:
 boolean $pop-up: false
 
 -- ftd.column:
@@ -143,9 +145,8 @@ width: fill-container
 spacing.fixed.px: 24
 wrap: true
 
--- template-list: $obj.title
-$loop$: $all-presentations.all-template-lists as $obj
-image: $obj.image
+-- show-template: $obj
+for: $obj in $all-presentations.templates
 
 -- end: ftd.row
 
@@ -159,10 +160,8 @@ padding-vertical.px: 24
 spacing.fixed.px: 24
 wrap: true
 
--- all-presentations-details: $obj.title
-$loop$: $all-presentations.all-presentations-lists as $obj
-image: $obj.image
-time: $obj.time
+-- show-presentation: $obj
+for: $obj in $all-presentations.presentations
 
 -- end: ftd.row
 
@@ -178,33 +177,31 @@ time: $obj.time
 
 
 
--- component all-presentations-details:
-caption title:
-ftd.image-src image:
-string time:
+-- component show-presentation:
+caption presentation p:
 
 -- ftd.column:
 width.fixed.px: 243
 spacing.fixed.px: 8
 padding-bottom.px: 8
-cursor: pointer
+link: $show-presentation.p.url
 
 -- ftd.image:
-src: $all-presentations-details.image
+src: $show-presentation.p.thumbnail
 width: fill-container
 
--- ftd.text: $all-presentations-details.title
+-- ftd.text: $show-presentation.p.title
 role: $inherited.types.heading-tiny
 color: $inherited.colors.text-strong
 
--- ftd.text: $all-presentations-details.time
+-- ftd.text: $show-presentation.p.updated-on
 role: $inherited.types.copy-small
 color: $inherited.colors.text
 style: light
 
 -- end: ftd.column
 
--- end: all-presentations-details
+-- end: show-presentation
 
 
 
@@ -215,28 +212,27 @@ style: light
 
 
 
--- component template-list:
-caption title:
-ftd.image-src image:
+-- component show-template:
+caption template t:
 
 -- ftd.column:
 width.fixed.px: 200
 spacing.fixed.px: 8
 padding-bottom.px: 8
-cursor: pointer
+link: $show-template.t.url
 align-content: center
 
 -- ftd.image:
-src: $template-list.image
+src: $show-template.t.thumbnail
 width: fill-container
 
--- ftd.text: $template-list.title
+-- ftd.text: $show-template.t.title
 role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
--- end: template-list
+-- end: show-template
 
 
 
