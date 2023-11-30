@@ -133,7 +133,7 @@ role: $inherited.types.heading-small
 color: $inherited.colors.text-strong
 
 -- ftd.image:
-src: $assets.files.assets.cross.svg
+src: $assets.files.slides.assets.cross.svg
 width.fixed.px: 28
 height.fixed.px: 28
 $on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v = false)
