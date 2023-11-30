@@ -3,6 +3,7 @@
 -- import: fastn-community.github.io/dark-mode-switcher as dms
 
 
+
 -- component page:
 module site-data: site-data
 module user-data: user-data
@@ -51,7 +52,7 @@ height.fixed.px: 32
 -- ftd.row:
 spacing.fixed.px: 32
 align-content: center
-;; if: { header.user-data.ud.is-logged-in }
+if: { header.user-data.ud.is-logged-in }
 
 -- button: Share
 button-link: /
@@ -59,9 +60,11 @@ button-icon: $assets.files.slides.assets.share.svg
 
 -- notification:
 
-/-- avatar: $header.user-data.ud.user.name
-email: $header.user-data.ud.user.email
-if: { header.user-data.ud.user != NULL }
+/-- ftd.text: $header.user-data.ud.ww.name
+if: { header.user-data.ud.ww != NULL }
+
+-- avatar: $header.user-data.ud.name
+email: $header.user-data.ud.email
 
 -- end: ftd.row
 
@@ -159,8 +162,8 @@ align-content: center
 -- profile-circle: $avatar.title
 
 -- ftd.image:
-src: $assets.files.assets.toggle-down.svg
-src if { avatar.pop-up }: $assets.files.assets.toggle-up.svg
+src: $assets.files.slides.assets.toggle-down.svg
+src if { avatar.pop-up }: $assets.files.slides.assets.toggle-up.svg
 width.fixed.px: 24
 height.fixed.px: 24
 
@@ -205,7 +208,7 @@ padding-vertical.px: 12
 spacing.fixed.px: 8
 
 -- ftd.image:
-src: $assets.files.assets.setting.svg
+src: $assets.files.slides.assets.setting.svg
 width.fixed.px: 24
 height.fixed.px: 24
 align-self: center
@@ -221,7 +224,7 @@ width: fill-container
 spacing.fixed.px: 8
 
 -- ftd.image:
-src: $assets.files.assets.logout.svg
+src: $assets.files.slides.assets.logout.svg
 width.fixed.px: 24
 height.fixed.px: 24
 align-self: center
@@ -310,6 +313,6 @@ color: white
 
 -- string get-initials(name):
 string name:
-js: $assets.files.functions.js
+js: $assets.files.slides.functions.js
 
 get_initials(name)
