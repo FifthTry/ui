@@ -1,0 +1,67 @@
+-- import: ui.fifthtry.com/slides/pages/dashboard
+-- import: ui.fifthtry.com/slides/scenarios/john-doe-ud
+
+
+-- dashboard.page:
+templates: $templates
+presentations: $presentations
+user-data: john-doe-ud
+
+
+
+-- dashboard.presentation list presentations:
+
+-- dashboard.presentation: Documentation site
+image: $assets.files.slides.assets.template-2.png
+time: Edited 18 min ago
+
+-- dashboard.presentation: Documentation site
+image: $assets.files.slides.assets.template-2.png
+time: Edited 18 min ago
+
+-- dashboard.presentation: Documentation site
+image: $assets.files.slides.assets.template-2.png
+time: Edited 18 min ago
+
+-- dashboard.presentation: Documentation site
+image: $assets.files.slides.assets.template-2.png
+time: Edited 18 min ago
+
+-- dashboard.presentation: Documentation site
+image: $assets.files.slides.assets.template-2.png
+time: Edited 18 min ago
+
+-- dashboard.presentation: Documentation site
+image: $assets.files.slides.assets.template-2.png
+time: Edited 18 min ago
+
+-- end: presentations
+
+
+-- dashboard.template list templates:
+
+-- dashboard.template: Templates 1
+image: $assets.files.slides.assets.template-1.png
+
+-- dashboard.template: Templates 2
+image: $assets.files.slides.assets.template-1.png
+
+-- dashboard.template: Templates 3
+image: $assets.files.slides.assets.template-1.png
+
+-- dashboard.template: Templates 4
+image: $assets.files.slides.assets.template-1.png
+
+-- dashboard.template: Templates 5
+image: $assets.files.slides.assets.template-1.png
+
+-- dashboard.template: Templates 6
+image: $assets.files.slides.assets.template-1.png
+
+-- dashboard.template: Templates 7
+image: $assets.files.slides.assets.template-1.png
+
+-- dashboard.template: Templates 8
+image: $assets.files.slides.assets.template-1.png
+
+-- end: templates

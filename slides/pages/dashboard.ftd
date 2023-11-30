@@ -1,0 +1,255 @@
+-- import: ui.fifthtry.com/slides/components/full-page as team-page
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+
+
+
+
+-- component page:
+module site-data: site-data
+module user-data: user-data
+presentation list presentations:
+template list templates:
+
+-- team-page.page:
+site-data: $page.site-data
+user-data: $page.user-data
+
+-- all-presentations:
+all-presentations-lists: $page.presentations
+all-template-lists: $page.templates
+
+-- end: team-page.page
+
+-- end: page
+
+
+
+
+-- record presentation:
+caption title:
+ftd.image-src image:
+string time:
+
+
+-- record template:
+caption title:
+ftd.image-src image:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component all-presentations:
+presentation list all-presentations-lists:
+template list all-template-lists:
+boolean $pop-up: false
+
+-- ftd.column:
+width: fill-container
+padding-bottom.px: 24
+padding-top.px: 12
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+padding-bottom.px: 24
+
+-- ftd.text: All presentations
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+width.fixed.px: 134
+padding-horizontal.px: 12
+padding-vertical.px: 8
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 8
+spacing.fixed.px: 6
+align-content: center
+$on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v = true)
+
+-- ftd.image:
+src: $assets.files.slides.assets.plus.svg
+width.fixed.px: 14
+
+-- ftd.text: New presentation
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { all-presentations.pop-up }
+width.fixed.px: 720
+height.fixed.px: 602
+background.solid: $inherited.colors.background.base
+padding.px: 24
+spacing.fixed.px: 24
+border-width.px: 1
+border-color: $inherited.colors.border-strong
+z-index: 5
+anchor: parent
+top.px: -204
+left.px: 150
+border-radius.px: 8
+shadow: $s
+overflow-y: scroll
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: center
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+padding-bottom.px: 16
+
+-- ftd.text: Select a template
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.image:
+src: $assets.files.assets.cross.svg
+width.fixed.px: 28
+height.fixed.px: 28
+$on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v = false)
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+wrap: true
+
+-- template-list: $obj.title
+$loop$: $all-presentations.all-template-lists as $obj
+image: $obj.image
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width.fixed.px: 940
+padding-vertical.px: 24
+spacing.fixed.px: 24
+wrap: true
+
+-- all-presentations-details: $obj.title
+$loop$: $all-presentations.all-presentations-lists as $obj
+image: $obj.image
+time: $obj.time
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: all-presentations
+
+
+
+
+
+
+
+
+
+-- component all-presentations-details:
+caption title:
+ftd.image-src image:
+string time:
+
+-- ftd.column:
+width.fixed.px: 243
+spacing.fixed.px: 8
+padding-bottom.px: 8
+cursor: pointer
+
+-- ftd.image:
+src: $all-presentations-details.image
+width: fill-container
+
+-- ftd.text: $all-presentations-details.title
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text-strong
+
+-- ftd.text: $all-presentations-details.time
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+style: light
+
+-- end: ftd.column
+
+-- end: all-presentations-details
+
+
+
+
+
+
+
+
+
+
+-- component template-list:
+caption title:
+ftd.image-src image:
+
+-- ftd.column:
+width.fixed.px: 200
+spacing.fixed.px: 8
+padding-bottom.px: 8
+cursor: pointer
+align-content: center
+
+-- ftd.image:
+src: $template-list.image
+width: fill-container
+
+-- ftd.text: $template-list.title
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: template-list
+
+
+
+
+
+
+
+
+-- ftd.shadow s:
+color: #000000
+x-offset.px: 4
+y-offset.px: 4
+blur.px: 20
+spread.px: 8
+
+
