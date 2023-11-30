@@ -52,7 +52,7 @@ height.fixed.px: 32
 -- ftd.row:
 spacing.fixed.px: 32
 align-content: center
-if: { header.user-data.ud.is-logged-in }
+if: { header.user-data.is-logged-in }
 
 -- button: Share
 button-link: /
@@ -60,11 +60,8 @@ button-icon: $assets.files.slides.assets.share.svg
 
 -- notification:
 
-/-- ftd.text: $header.user-data.ud.ww.name
-if: { header.user-data.ud.ww != NULL }
-
--- avatar: $header.user-data.ud.name
-email: $header.user-data.ud.email
+-- avatar: $header.user-data.name
+email: $header.user-data.email
 
 -- end: ftd.row
 

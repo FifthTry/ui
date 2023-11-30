@@ -1,11 +1,4 @@
--- record user-details:
-boolean is-logged-in:
-string name:
-string email:
-string username:
-
--- user-details ud:
-is-logged-in: false
-name: $ftd.empty
-email: $ftd.empty
-username: $ftd.empty
+-- boolean is-logged-in: false
+-- string name: $ftd.empty
+-- string email: $ftd.empty
+-- string username: $ftd.empty

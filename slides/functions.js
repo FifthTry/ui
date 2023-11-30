@@ -1,6 +1,5 @@
 function get_initials(name) {
-    return name
-        .get("value")
+    return fastn_utils.getStaticValue(name)
         .split(" ")
         .map((p) => p[0])
         .join("");
