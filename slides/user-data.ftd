@@ -1,13 +1,11 @@
--- record status:
-boolean is-logged-in:
-optional user-details user:
-
 -- record user-details:
+boolean is-logged-in:
 string name:
 string email:
-string login:
-integer id:
+string username:
 
-
--- status ud:
+-- user-details ud:
 is-logged-in: false
+name: $ftd.empty
+email: $ftd.empty
+username: $ftd.empty
