@@ -1,11 +1,4 @@
--- record user-details:
-boolean is-logged-in:
-string name:
-string email:
-string username:
-
--- user-details ud:
-is-logged-in: true
-name: John Doe
-email: john-doe@abc.com
-username: john-doe
+-- boolean is-logged-in: true
+-- string name: John Doe
+-- string email: john-doe@abc.com
+-- string username: john-doe
