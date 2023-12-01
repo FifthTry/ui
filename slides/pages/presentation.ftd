@@ -97,7 +97,7 @@ integer order:
 module create-slide: create-slide
 module delete-slide: delete-slide
 module save-slide: save-slide
-slide $current-slide: $get-current-slide(d = $presentation-slide.data)
+slide $current-slide: *$presentation-slide.data.slide
 boolean $toggle: true
 boolean $responsive: false
 boolean $mobile: false
@@ -574,15 +574,6 @@ $show-comment.data.text
 
 
 
-
-
-
-
--- slide get-current-slide(d):
-presentation-data d:
-js: $assets.files.slides.functions.js
-
-presentation_data_to_slide(d)
 
 
 
