@@ -1,9 +1,10 @@
 -- optional string create-slide-error:
 
--- void submit(presentation-slug,team-slug,template-slug):
-string presentation-slug:
+-- void submit(team-slug, presentation-slug, template-slug, module):
 string team-slug:
+string presentation-slug:
 string template-slug:
+string module:
 js: $assets.files.slides.functions.js
 
 callAlert("Create Slide called")

@@ -2,11 +2,12 @@
 
 -- optional string code-error:
 
--- void submit(presentation-slug,team-slug,order,code):
+-- void submit(team-slug, presentation-slug, order, code, module):
 string presentation-slug:
 string team-slug:
 integer order:
 string code:
+string module:
 js: $assets.files.slides.functions.js
 
 callAlert("Save Slide called")
