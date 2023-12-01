@@ -17,10 +17,11 @@ current-slide-code: \-- ftd.text: Hello
 current-slide-preview: https://fastn.com/
 is-loaded: true
 is-invalid-presentation: false
-is-invalid-slide: true
+is-invalid-slide: false
 presentation-setting-url: /slides/scenarios/fastn-presentation-logged-in/
 present-url: /slides/scenarios/fastn-presentation-logged-in/
 slide-templates: $slide-templates
+thumbnails: $slide-thumbnails
 
 
 
@@ -32,3 +33,16 @@ src: $assets.files.slides.assets.template-1.png.light
 slug: temp-1
 
 -- end: slide-templates
+
+
+
+
+
+
+-- presentation.slide-thumbnail list slide-thumbnails:
+
+-- presentation.slide-thumbnail:
+thumbnail-url: $assets.files.slides.assets.template-1.png.light
+url: /slides/scenarios/fastn-presentation-logged-in/
+
+-- end: slide-thumbnails

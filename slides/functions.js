@@ -5,6 +5,10 @@ function get_initials(name) {
         .join("");
 }
 
+function callAlert(msg) {
+    alert(msg)
+}
+
 
 function presentation_data_to_slide(d) {
     let presentation_data = fastn_utils.getStaticValue(d)

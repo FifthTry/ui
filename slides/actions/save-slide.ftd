@@ -7,5 +7,6 @@ string presentation-slug:
 string team-slug:
 integer order:
 string code:
+js: $assets.files.slides.functions.js
 
-ftd.navigate("/slides/scenarios/fastn-presentation-logged-in/")
+callAlert("Save Slide called")

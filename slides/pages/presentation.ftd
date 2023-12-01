@@ -116,16 +116,16 @@ align-content: center
 spacing.fixed.px: 16
 
 -- button.button: Save
-button-icon: $assets.files.assets.save-floppy.svg
-;; $on-click$: $presentation-slide.save-slide.submit(presentation-slug=$presentation-slide.presentation-slug, team-slug=$presentation-slide.team-slug, order = $presentation-slide.order, code = $presentation-slide.current-slide.code)
+button-icon: $assets.files.slides.assets.save-floppy.svg
+$on-click$: $presentation-slide.save-slide.submit(presentation-slug=$presentation-slide.presentation-slug, team-slug=$presentation-slide.team-slug, order = $presentation-slide.order, code = $presentation-slide.current-slide.code)
 
 -- button.button: Present
-button-icon: $assets.files.assets.play.svg
+button-icon: $assets.files.slides.assets.play.svg
 button-link: $presentation-slide.data.present-url
 
 -- ftd.image:
-src: $assets.files.assets.toggle-down.svg
-src if { presentation-slide.toggle }: $assets.files.assets.toggle-up.svg
+src: $assets.files.slides.assets.toggle-down.svg
+src if { presentation-slide.toggle }: $assets.files.slides.assets.toggle-up.svg
 width.fixed.px: 38
 height.fixed.px: 38
 padding.px: 7
@@ -161,7 +161,7 @@ active-slide-order: $presentation-slide.order
 delete-slide: $presentation-slide.delete-slide
 
 -- ftd.image:
-src: $assets.files.assets.plus.png
+src: $assets.files.slides.assets.plus.png
 cursor: pointer
 fit: cover
 height.fixed.px: 64
@@ -176,7 +176,7 @@ spacing.fixed.px: 8
 padding-right.px: 24
 
 -- ftd.image:
-src: $assets.files.assets.setting.svg
+src: $assets.files.slides.assets.setting.svg
 width.fixed.px: 38
 height.fixed.px: 38
 padding.px: 7
@@ -284,7 +284,7 @@ role: $inherited.types.copy-regular
 color: $inherited.colors.text
 
 -- ftd.image:
-src: $assets.files.assets.cross.svg
+src: $assets.files.slides.assets.cross.svg
 width.fixed.px: 16
 height.fixed.px: 16
 $on-click$: $ftd.set-bool($a = $presentation-slide.new-slides-popup, v = false)
@@ -323,7 +323,7 @@ spacing.fixed.px: 24
 align-content: right
 
 -- ftd.image:
-src: $assets.files.assets.comment.svg
+src: $assets.files.slides.assets.comment.svg
 width.fixed.px: 30
 height.fixed.px: 30
 padding.px: 4
@@ -334,7 +334,7 @@ $on-click$: $ftd.set-bool($a = $presentation-slide.comment, v = true)
 if: { len(presentation-slide.data.comments) != 0 }
 
 -- ftd.image:
-src: $assets.files.assets.responsive.svg
+src: $assets.files.slides.assets.responsive.svg
 width.fixed.px: 30
 height.fixed.px: 30
 padding.px: 4
@@ -343,8 +343,8 @@ border-radius.px: 8
 $on-click$: $ftd.toggle($a = $presentation-slide.mobile)
 
 -- ftd.image:
-src: $assets.files.assets.expand.svg
-src if { presentation-slide.responsive }: $assets.files.assets.collapse.svg
+src: $assets.files.slides.assets.expand.svg
+src if { presentation-slide.responsive }: $assets.files.slides.assets.collapse.svg
 width.fixed.px: 30
 height.fixed.px: 30
 padding.px: 4
@@ -359,8 +359,6 @@ $on-click$: $ftd.toggle($a = $presentation-slide.responsive)
 -- ftd.column:
 width: fill-container
 height: fill-container
-css: $assets.files.css.slide.css
-classes: aspect-ratio-container
 
 -- ftd.iframe:
 if: { presentation-slide.current-slide != NULL && presentation-slide.current-slide.preview-url != NULL }
@@ -401,7 +399,7 @@ role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 
 -- ftd.image:
-src: $assets.files.assets.cross.svg
+src: $assets.files.slides.assets.cross.svg
 width.fixed.px: 16
 height.fixed.px: 16
 $on-click$: $ftd.set-bool($a = $presentation-slide.comment, v = false)
@@ -458,14 +456,14 @@ border-width.px if { show-slide.active-slide-order == show-slide.order }: 4
 link: $show-slide.data.url
 
 -- ftd.image:
-src: $assets.files.assets.delete.svg
+src: $assets.files.slides.assets.delete.svg
 width.fixed.px: 30
 height.fixed.px: 30
 align-self: end
 padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
-;; $on-click$: $presentation-slide.delete-slide.submit(team-slug=$presentation-slide.team-slug, presentation-slug=$presentation-slide.presentation-slug, order=$show-slide.order)
+$on-click$: $show-slide.delete-slide.submit(team-slug=$show-slide.team-slug, presentation-slug=$show-slide.presentation-slug, order=$show-slide.order)
 
 -- end: ftd.column
 
@@ -491,7 +489,7 @@ width.fixed.px: 200
 spacing.fixed.px: 8
 border-radius.px: 4
 align-content: center
-;; $on-click$: $show-slide-template.create-slide.submit(presentation-slug=$show-slide-template.presentation-slug, team-slug=$show-slide-template.team-slug, template-slug = $show-slide-template.data.slug)
+$on-click$: $show-slide-template.create-slide.submit(presentation-slug=$show-slide-template.presentation-slug, team-slug=$show-slide-template.team-slug, template-slug = $show-slide-template.data.slug)
 
 -- ftd.image:
 src: $show-slide-template.data.src
