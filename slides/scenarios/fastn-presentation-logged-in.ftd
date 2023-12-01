@@ -25,7 +25,7 @@ slide-templates: $slide-templates
 
 
 -- presentation.slide slide:
-code: \-- ftd.text: Hello
+content: \-- ftd.text: Hello
 preview-url: https://fastn.com/
 is-valid: true
 

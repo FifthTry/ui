@@ -26,7 +26,7 @@ comment list comments:
 
 
 -- record slide:
-string code:
+string content:
 string preview-url:
 boolean is-valid:
 
@@ -86,8 +86,6 @@ order: $page.order
 
 
 
-
-
 -- component presentation-slide:
 caption title:
 presentation-data data:
@@ -97,7 +95,6 @@ integer order:
 module create-slide: create-slide
 module delete-slide: delete-slide
 module save-slide: save-slide
-slide $current-slide: *$presentation-slide.data.slide
 boolean $toggle: true
 boolean $responsive: false
 boolean $mobile: false
@@ -127,7 +124,8 @@ spacing.fixed.px: 16
 
 -- button.button: Save
 button-icon: $assets.files.slides.assets.save-floppy.svg
-$on-click$: $presentation-slide.save-slide.submit(presentation-slug=$presentation-slide.presentation-slug, team-slug=$presentation-slide.team-slug, order = $presentation-slide.order, code = $presentation-slide.data.slide.code, module = $save-slide-module-name)
+;; if: { presentation-slide.save-slide.content != "asd" && presentation-slide.save-slide.content != presentation-slide.data.slide.content }
+$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $save-slide-module-name)
 
 -- button.button: Present
 button-icon: $assets.files.slides.assets.play.svg
@@ -250,14 +248,15 @@ height: fill-container
 
 -- ftd.text-input:
 placeholder: Enter ftd code here
-default-value: $presentation-slide.current-slide.code
+default-value: $presentation-slide.data.slide.content
 width: fill-container
 height: fill-container
 multiline: true
 resize: vertical
 padding-horizontal.px: 10
 padding-top.px: 10
-$on-input$: $ftd.set-string($a = $presentation-slide.current-slide.code, v = $VALUE)
+$on-input$: $ftd.set-string($a = $presentation-slide.save-slide.content, v = $VALUE)
+
 
 -- end: ftd.column
 
@@ -370,9 +369,8 @@ $on-click$: $ftd.toggle($a = $presentation-slide.responsive)
 width: fill-container
 height: fill-container
 
--- ftd.iframe:
-if: { presentation-slide.current-slide != NULL && presentation-slide.current-slide.preview-url != NULL }
-src: $presentation-slide.current-slide.preview-url
+-- ftd.image:
+src: $presentation-slide.data.slide.preview-url
 height.fixed.percent: 80
 width.fixed.percent: 80
 width.fixed.px if { presentation-slide.comment }: 600
