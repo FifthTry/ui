@@ -12,6 +12,45 @@
 -- string save-slide-module-name: ui.fifthtry.com/slides/actions/save-slide
 
 
+
+-- record presentation-data:
+string title:
+string url:
+boolean is-valid:
+string settings-url:
+string present-url:
+slide slide:
+slide-thumbnail list thumbnails:
+slide-template list slide-templates:
+comment list comments:
+
+
+-- record slide:
+string code:
+string preview-url:
+boolean is-valid:
+
+
+-- record slide-thumbnail:
+string thumbnail-url:
+string url:
+boolean is-valid:
+
+
+-- record slide-template:
+caption title:
+string src:
+string slug:
+
+
+-- record comment:
+string name:
+string timestamp:
+optional string avatar:
+body text:
+
+
+
 -- component page:
 module site-data: site-data
 module user-data: user-data
@@ -41,43 +80,10 @@ order: $page.order
 -- end: page
 
 
--- record slide-thumbnail:
-string thumbnail-url:
-string url:
-
-
--- record slide-template:
-caption title:
-string src:
-string slug:
-
-
--- record comment:
-string name:
-string timestamp:
-optional string avatar:
-body text:
-
-
-
--- record presentation-data:
-slide-thumbnail list thumbnails:
-string current-slide-code:
-string current-slide-preview:
-boolean is-loaded:
-boolean is-invalid-presentation:
-boolean is-invalid-slide:
-slide-template list slide-templates:
-comment list comments:
-string presentation-setting-url:
-string present-url:
 
 
 
 
--- record slide:
-string code:
-string preview-url:
 
 
 
@@ -115,13 +121,13 @@ color: $inherited.colors.text-strong
 role: $inherited.types.heading-tiny
 
 -- ftd.row:
-if: { presentation-slide.order >= 1 && !presentation-slide.data.is-invalid-slide && !presentation-slide.data.is-invalid-presentation }
+if: { presentation-slide.order >= 1 && presentation-slide.data.is-valid }
 align-content: center
 spacing.fixed.px: 16
 
 -- button.button: Save
 button-icon: $assets.files.slides.assets.save-floppy.svg
-$on-click$: $presentation-slide.save-slide.submit(presentation-slug=$presentation-slide.presentation-slug, team-slug=$presentation-slide.team-slug, order = $presentation-slide.order, code = $presentation-slide.current-slide.code, module = $save-slide-module-name)
+;; $on-click$: $presentation-slide.save-slide.submit(presentation-slug=$presentation-slide.presentation-slug, team-slug=$presentation-slide.team-slug, order = $presentation-slide.order, code = $presentation-slide.data.slide.code, module = $save-slide-module-name)
 
 -- button.button: Present
 button-icon: $assets.files.slides.assets.play.svg
@@ -151,7 +157,7 @@ padding-vertical.px: 16
 align-content: center
 
 -- ftd.row:
-if: { !presentation-slide.data.is-invalid-slide && !presentation-slide.data.is-invalid-presentation }
+if: { presentation-slide.data.slide.is-valid && presentation-slide.data.is-valid }
 width: fill-container
 spacing.fixed.px: 16
 padding-left.px: 24
@@ -174,7 +180,7 @@ $on-click$: $ftd.set-bool($a = $presentation-slide.new-slides-popup, v= true)
 -- end: ftd.row
 
 -- ftd.column:
-if: { presentation-slide.order >= 1 && !presentation-slide.data.is-invalid-slide && !presentation-slide.data.is-invalid-presentation }
+if: { presentation-slide.order >= 1 && presentation-slide.data.is-valid }
 align-content: right
 spacing.fixed.px: 8
 padding-right.px: 24
@@ -186,14 +192,14 @@ height.fixed.px: 38
 padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
-link: $presentation-slide.data.presentation-setting-url
+link: $presentation-slide.data.settings-url
 
 -- end: ftd.column
 
 -- end: ftd.row
 
 -- ftd.row:
-if: { presentation-slide.data.is-invalid-presentation }
+if: { !presentation-slide.data.is-valid }
 width: fill-container
 height: fill-container
 align-content: center
@@ -206,7 +212,7 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: { presentation-slide.data.is-invalid-slide }
+if: { !presentation-slide.data.slide.is-valid }
 width: fill-container
 height: fill-container
 align-content: center
@@ -219,7 +225,7 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: { presentation-slide.order == 0 && !presentation-slide.data.is-invalid-presentation }
+if: { presentation-slide.order == 0 && presentation-slide.data.is-valid }
 width: fill-container
 height: fill-container
 align-content: center
@@ -232,7 +238,7 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: { presentation-slide.order >= 1 && !presentation-slide.data.is-invalid-slide && !presentation-slide.data.is-invalid-presentation }
+if: { presentation-slide.order >= 1 && presentation-slide.data.is-valid }
 width: fill-container
 height: fill-container
 
@@ -467,7 +473,7 @@ align-self: end
 padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
-$on-click$: $show-slide.delete-slide.submit(team-slug=$show-slide.team-slug, presentation-slug=$show-slide.presentation-slug, order=$show-slide.order, module = $delete-slide-module-name)
+;; $on-click$: $show-slide.delete-slide.submit(team-slug=$show-slide.team-slug, presentation-slug=$show-slide.presentation-slug, order=$show-slide.order, module = $delete-slide-module-name)
 
 -- end: ftd.column
 
@@ -493,7 +499,7 @@ width.fixed.px: 200
 spacing.fixed.px: 8
 border-radius.px: 4
 align-content: center
-$on-click$: $show-slide-template.create-slide.submit(presentation-slug=$show-slide-template.presentation-slug, team-slug=$show-slide-template.team-slug, template-slug = $show-slide-template.data.slug, module = $create-slide-module-name)
+;; $on-click$: $show-slide-template.create-slide.submit(presentation-slug=$show-slide-template.presentation-slug, team-slug=$show-slide-template.team-slug, template-slug = $show-slide-template.data.slug, module = $create-slide-module-name)
 
 -- ftd.image:
 src: $show-slide-template.data.src

@@ -14,17 +14,20 @@ presentation-slug: fifthtry-presentation
 
 
 -- presentation.presentation-data data:
-current-slide-code: \-- ftd.text: Hello
-current-slide-preview: https://fastn.com/
-is-loaded: true
-is-invalid-presentation: false
-is-invalid-slide: false
-presentation-setting-url: /slides/scenarios/fastn-presentation-logged-in/
+title: Fastn Presentation
+url: /slides/scenarios/fastn-presentation-logged-in/
+is-valid: true
+settings-url: /slides/scenarios/fastn-presentation-logged-in/
 present-url: /slides/scenarios/fastn-presentation-logged-in/
-slide-templates: $slide-templates
+slide: $slide
 thumbnails: $slide-thumbnails
+slide-templates: $slide-templates
 
 
+-- presentation.slide slide:
+code: \-- ftd.text: Hello
+preview-url: https://fastn.com/
+is-valid: true
 
 
 -- presentation.slide-template list slide-templates:
@@ -45,5 +48,6 @@ slug: temp-1
 -- presentation.slide-thumbnail:
 thumbnail-url: $assets.files.slides.assets.template-1.png.light
 url: /slides/scenarios/fastn-presentation-logged-in/
+is-valid: true
 
 -- end: slide-thumbnails
