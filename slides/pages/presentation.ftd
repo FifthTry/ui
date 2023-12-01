@@ -127,7 +127,7 @@ spacing.fixed.px: 16
 
 -- button.button: Save
 button-icon: $assets.files.slides.assets.save-floppy.svg
-;; $on-click$: $presentation-slide.save-slide.submit(presentation-slug=$presentation-slide.presentation-slug, team-slug=$presentation-slide.team-slug, order = $presentation-slide.order, code = $presentation-slide.data.slide.code, module = $save-slide-module-name)
+$on-click$: $presentation-slide.save-slide.submit(presentation-slug=$presentation-slide.presentation-slug, team-slug=$presentation-slide.team-slug, order = $presentation-slide.order, code = $presentation-slide.data.slide.code, module = $save-slide-module-name)
 
 -- button.button: Present
 button-icon: $assets.files.slides.assets.play.svg
