@@ -1,0 +1,9 @@
+-- optional string create-slide-error:
+
+-- void submit(presentation-slug,team-slug,template-slug):
+string presentation-slug:
+string team-slug:
+string template-slug:
+
+
+ftd.navigate("/slides/scenarios/fastn-presentation-logged-in/")

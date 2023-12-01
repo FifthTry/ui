@@ -1,0 +1,6 @@
+-- void delete(presentation-slug,team-slug,order):
+string presentation-slug:
+string team-slug:
+integer order:
+
+ftd.navigate("/slides/scenarios/fastn-presentation-logged-in/")

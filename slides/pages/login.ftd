@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/slides/components/action-page
 -- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/components/button
 
 -- component page:
 module site-data: site-data
@@ -62,7 +63,7 @@ margin-top.px: 84
 spacing.fixed.px: 24
 align-content: center
 
--- button: Continue with Github
+-- button.button: Continue with Github
 button-link: $login-page.github-url
 button-icon: $assets.files.slides.assets.github-mark-white.svg
 
@@ -88,43 +89,3 @@ link: $login-page.signup-url
 -- end: ftd.row
 
 -- end: login-page
-
-
-
-
-
-
-
-
-
-
--- component button:
-optional caption title:
-optional string button-link:
-optional ftd.image-src button-icon:
-boolean $hover: false
-
--- ftd.row:
-background.solid: $inherited.colors.cta-primary.base
-border-radius.px: 8
-padding-horizontal.px: 16
-padding-vertical.px: 10
-align-content: center
-$on-mouse-enter$: $ftd.set-bool($a = $button.hover, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $button.hover, v = false)
-spacing.fixed.px: 8
-width.fixed.px: 322
-link: $button.button-link
-
--- ftd.image: $button.button-icon
-width.fixed.px: 24
-height.fixed.px: 24
-
--- ftd.text: $button.title
-role: $inherited.types.button-small
-color: $inherited.colors.text-strong
-style: semi-bold
-
--- end: ftd.row
-
--- end: button

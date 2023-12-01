@@ -1,0 +1,11 @@
+-- string code:
+
+-- optional string code-error:
+
+-- void submit(presentation-slug,team-slug,order,code):
+string presentation-slug:
+string team-slug:
+integer order:
+string code:
+
+ftd.navigate("/slides/scenarios/fastn-presentation-logged-in/")

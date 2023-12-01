@@ -4,3 +4,12 @@ function get_initials(name) {
         .map((p) => p[0])
         .join("");
 }
+
+
+function presentation_data_to_slide(d) {
+    let presentation_data = fastn_utils.getStaticValue(d)
+    return fastn.recordInstance({
+        "code": presentation_data.get("current-slide-code"),
+        "preview-url": presentation_data.get("current-slide-preview"),
+    });
+}

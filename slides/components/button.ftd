@@ -1,0 +1,38 @@
+-- component button:
+optional caption title:
+optional string button-link:
+optional ftd.image-src button-icon:
+boolean $hover: false
+optional ftd.resizing icon-width:
+optional ftd.resizing icon-height:
+
+-- ftd.row:
+background.solid: $inherited.colors.background.step-1
+border-radius.px: 8
+padding-horizontal.px: 16
+padding-vertical.px: 10
+align-content: center
+background.solid if { button.hover }: $inherited.colors.background.step-2
+$on-mouse-enter$: $ftd.set-bool($a = $button.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.hover, v = false)
+spacing.fixed.px: 8
+width: hug-content
+min-width: auto
+
+-- ftd.image: $button.button-icon
+if: { button.button-icon != NULL }
+width.fixed.px: 16
+width if { button.icon-width != NULL }: $button.icon-width
+height.fixed.px: 16
+height if { button.icon-height != NULL }: $button.icon-height
+
+-- ftd.text: $button.title
+if: { button.title != NULL }
+role: $inherited.types.button-small
+color: $inherited.colors.text-strong
+link: $button.button-link
+white-space: nowrap
+
+-- end: ftd.row
+
+-- end: button

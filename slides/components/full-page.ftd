@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/slides/components/button
 -- import: fastn-community.github.io/dark-mode-switcher as dms
 
 
@@ -54,7 +55,7 @@ spacing.fixed.px: 32
 align-content: center
 if: { header.user-data.is-logged-in }
 
--- button: Share
+-- button.button: Share
 button-link: /
 button-icon: $assets.files.slides.assets.share.svg
 
@@ -241,39 +242,6 @@ link: /-/auth/logout/
 
 
 
-
-
-
-
--- component button:
-optional caption title:
-optional string button-link:
-optional ftd.image-src button-icon:
-boolean $hover: false
-
--- ftd.row:
-border-radius.px: 8
-padding-horizontal.px: 16
-padding-vertical.px: 8
-align-content: center
-background.solid: $inherited.colors.background.step-2
-$on-mouse-enter$: $ftd.set-bool($a = $button.hover, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $button.hover, v = false)
-spacing.fixed.px: 8
-
--- ftd.image: $button.button-icon
-width.fixed.px: 16
-height.fixed.px: 16
-
--- ftd.text: $button.title
-role: $inherited.types.button-small
-color: $inherited.colors.text-strong
-link: $button.button-link
-white-space: nowrap
-
--- end: ftd.row
-
--- end: button
 
 
 

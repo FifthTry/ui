@@ -1,0 +1,34 @@
+-- import: ui.fifthtry.com/slides/pages/presentation
+-- import: ui.fifthtry.com/slides/scenarios/john-doe-ud
+
+
+
+-- presentation.page:
+user-data: john-doe-ud
+data: $data
+team-slug: fifthtry
+order: 1
+
+
+
+
+-- presentation.presentation-data data:
+current-slide-code: \-- ftd.text: Hello
+current-slide-preview: https://fastn.com/
+is-loaded: true
+is-invalid-presentation: false
+is-invalid-slide: true
+presentation-setting-url: /slides/scenarios/fastn-presentation-logged-in/
+present-url: /slides/scenarios/fastn-presentation-logged-in/
+slide-templates: $slide-templates
+
+
+
+
+-- presentation.slide-template list slide-templates:
+
+-- presentation.slide-template: Template 1
+src: $assets.files.slides.assets.template-1.png.light
+slug: temp-1
+
+-- end: slide-templates
