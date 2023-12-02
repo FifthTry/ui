@@ -1,0 +1,5 @@
+-- import: fastn-community.github.io/dark-flame-cs
+-- import: fastn-community.github.io/midnight-storm-typography
+
+-- ftd.color-scheme colors: $dark-flame-cs.main
+-- ftd.type-data types: $midnight-storm-typography.types

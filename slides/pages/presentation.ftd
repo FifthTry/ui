@@ -1,10 +1,11 @@
 -- import: ui.fifthtry.com/slides/components/full-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
--- import: ui.fifthtry.com/slides/components/button
 -- import: ui.fifthtry.com/slides/actions/create-slide
 -- import: ui.fifthtry.com/slides/actions/delete-slide
 -- import: ui.fifthtry.com/slides/actions/save-slide
+-- import: ui.fifthtry.com/design-system as ft-design-system
+-- import: fastn-community.github.io/design-system
 
 
 -- string create-slide-module-name: ui.fifthtry.com/slides/actions/create-slide
@@ -52,7 +53,6 @@ body text:
 
 
 -- component page:
-module site-data: site-data
 module user-data: user-data
 module create-slide: create-slide
 module delete-slide: delete-slide
@@ -63,10 +63,12 @@ string team-slug:
 integer order:
 
 -- full-page.page:
-site-data: $page.site-data
+site-data: site-data
+design-system: ft-design-system
 user-data: $page.user-data
 
 -- presentation-slide: Slide Project
+design-system: ft-design-system
 create-slide: $page.create-slide
 delete-slide: $page.delete-slide
 save-slide: $page.save-slide
@@ -87,6 +89,7 @@ order: $page.order
 
 
 -- component presentation-slide:
+module design-system: design-system
 caption title:
 presentation-data data:
 string presentation-slug:
@@ -444,6 +447,7 @@ for: $obj in $presentation-slide.data.comments
 
 
 -- component show-slide:
+module design-system: design-system
 caption slide-thumbnail data:
 integer order:
 string presentation-slug:
@@ -487,6 +491,7 @@ border-radius.px: 8
 
 
 -- component show-slide-template:
+module design-system: design-system
 caption slide-template data:
 string presentation-slug:
 string team-slug:
@@ -515,12 +520,17 @@ color: $inherited.colors.text
 
 
 
-
+;; creating a new type
+-- module design-system: design-system
 
 
 
 -- component show-comment:
+design-system ds: $inherited.design-system
+;; module design-system: design-system
 caption comment data:
+
+-- inherited.design-system.button:
 
 -- ftd.column:
 width: fill-container
