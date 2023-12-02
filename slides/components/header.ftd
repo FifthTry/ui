@@ -1,0 +1,44 @@
+-- import: fastn-community.github.io/dark-mode-switcher as dms
+-- import: ui.fifthtry.com/slides/components/notification
+-- import: ui.fifthtry.com/slides/components/avatar
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+
+
+
+-- component header:
+module site-data: site-data
+module user-data: user-data
+
+-- ftd.row:
+width: fill-container
+background.solid: $inherited.colors.background.base
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-vertical.px: 16
+padding-horizontal.px: 24
+spacing: space-between
+
+;; -- dms.dark-mode-switcher:
+
+-- ftd.image:
+link: $header.site-data.homepage
+src: $header.site-data.logo
+width.fixed.px: 162
+height.fixed.px: 32
+
+-- ftd.row:
+spacing.fixed.px: 32
+align-content: center
+if: { header.user-data.is-logged-in }
+
+-- notification.notification:
+
+-- avatar.avatar: $header.user-data.name
+email: $header.user-data.email
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: header
