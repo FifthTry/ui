@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/slides/components/full-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/slides/components/button
 -- import: ui.fifthtry.com/slides/actions/create-slide
 -- import: ui.fifthtry.com/slides/actions/delete-slide
 -- import: ui.fifthtry.com/slides/actions/save-slide
