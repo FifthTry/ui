@@ -12,3 +12,4 @@ favicon: /-/fifthtry.github.io/ui/favicon.ico
 -- fastn.dependency: fastn-community.github.io/dark-flame-cs
 
 -- fastn.auto-import: ui.fifthtry.com/assets
+-- fastn.auto-import: ui.fifthtry.com/design-system as ds
