@@ -51,10 +51,7 @@ src: $login-page.site-data.logo
 width: auto
 fit: cover
 
--- ftd.text: Log in
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-style: bold
+-- ds.copy-large: **Log in**
 
 -- ftd.column:
 margin-top.px: 84
@@ -65,20 +62,22 @@ align-content: center
 icon: $assets.files.slides.assets.github-mark-white.svg
 link: $login-page.github-url
 
+
 -- ftd.row:
-spacing.fixed.px: 4
+spacing.fixed.px: 6
 align-content: center
+padding.px: 10
 
--- ftd.text: Don’t have an account?
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
+-- ds.copy-small: Don’t have an account?
+display: inline
 
--- ftd.text: Sign up
-role: $inherited.types.copy-regular
-color: $inherited.colors.info.text
+-- ds.link: Sign up
+display: inline
 link: $login-page.signup-url
 
 -- end: ftd.row
+
+
 
 -- end: ftd.column
 

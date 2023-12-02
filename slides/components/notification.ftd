@@ -24,7 +24,7 @@ boolean $open:
 
 -- ftd.column:
 if: { popup.open }
-$on-global-key[escape]$: $ftd.set-boolean($a = $popup.open, v = false)
+$on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
 width.fixed.px: 366
 min-height.fixed.px: 511
 background.solid: $inherited.colors.background.base

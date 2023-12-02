@@ -1,28 +1,41 @@
 -- component avatar:
 caption title:
 string email:
-boolean $pop-up: false
+boolean $open: false
 
--- ftd.column:
-width: fill-container
 
 -- ftd.row:
 spacing.fixed.px: 4
-$on-click$: $ftd.toggle($a = $avatar.pop-up)
-$on-click-outside$: $ftd.set-boolean($a = $avatar.pop-up, v = false)
+$on-click$: $ftd.toggle($a = $avatar.open)
+$on-click-outside$: $ftd.set-boolean($a = $avatar.open, v = false)
 align-content: center
 
 -- profile-circle: $avatar.title
 
 -- ftd.image:
 src: $assets.files.slides.assets.toggle-down.svg
-src if { avatar.pop-up }: $assets.files.slides.assets.toggle-up.svg
+src if { avatar.open }: $assets.files.slides.assets.toggle-up.svg
 width.fixed.px: 24
 height.fixed.px: 24
 
+
+-- popup: $avatar.open
+
 -- end: ftd.row
 
+
+
+
+-- end: avatar
+
+
+
+-- component popup:
+caption boolean $open:
+
+
 -- ftd.column:
+$on-global-key[esc]$: $ftd.set-boolean($a = $avatar.pop-up, v = false)
 if: { avatar.pop-up }
 width.fixed.px: 260
 min-height.fixed.px: 260
@@ -43,7 +56,7 @@ align-content: center
 border-bottom-width.px: 1
 border-color: $inherited.colors.border
 
--- profile-circle: $avatar.title
+-- ds.circle-text-button: $get-initials(name=$avatar.title)
 
 -- ftd.text: $avatar.title
 role: $inherited.types.button-medium
@@ -72,6 +85,8 @@ color: $inherited.colors.text
 
 -- end: ftd.row
 
+
+
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 8
@@ -89,29 +104,15 @@ link: /-/auth/logout/
 
 -- end: ftd.row
 
--- end: ftd.column
+
+
 
 -- end: ftd.column
 
--- end: avatar
+-- end: popup
 
 
--- component profile-circle:
-caption name:
 
--- ftd.container:
-background.solid: #EF8435
-border-color: white
-border-width.px: 2
-border-radius.percent: 50
-
--- ftd.text: $get-initials(name=$profile-circle.name)
-padding.px: 8
-color: white
-
--- end: ftd.container
-
--- end: profile-circle
 
 
 
