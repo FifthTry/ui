@@ -1,20 +1,16 @@
 -- import: ui.fifthtry.com/slides/components/action-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/components/button
--- import: fastn-community.github.io/design-system
--- import: ui.fifthtry.com/design-system as ft-design-system
 
 -- component page:
 string github-url:
 string signup-url:
 
 -- action-page.page:
-design-system: design-system
 site-data: site-data
 
 -- login-page:
 site-data: site-data
-design-system: ft-design-system
 github-url: $page.github-url
 signup-url: $page.signup-url
 
@@ -32,7 +28,6 @@ signup-url: $page.signup-url
 
 
 -- component login-page:
-module design-system: design-system
 module site-data: site-data
 string github-url:
 string signup-url:

@@ -1,8 +1,6 @@
 -- import: ui.fifthtry.com/slides/components/full-page as team-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
--- import: fastn-community.github.io/design-system
--- import: ui.fifthtry.com/design-system as ft-design-system
 
 
 
@@ -13,7 +11,6 @@ presentation list presentations:
 template list templates:
 
 -- team-page.page:
-design-system: ft-design-system
 site-data: site-data
 user-data: $page.user-data
 
