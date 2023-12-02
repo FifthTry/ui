@@ -1,5 +1,8 @@
+-- import: fastn-community.github.io/design-system
+export: icon-button
+
 -- import: fastn-community.github.io/dark-flame-cs
 -- import: fastn-community.github.io/midnight-storm-typography
 
--- ftd.color-scheme colors: $dark-flame-cs.main
--- ftd.type-data types: $midnight-storm-typography.types
+-- ftd.color-scheme colors: $ftd.default-colors
+-- ftd.type-data types: $ftd.default-types

@@ -1,6 +1,5 @@
 -- import: ui.fifthtry.com/slides/components/action-page
 -- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/components/button
 
 -- component page:
 string github-url:
@@ -62,9 +61,9 @@ margin-top.px: 84
 spacing.fixed.px: 24
 align-content: center
 
--- button.button: Continue with Github
-button-link: $login-page.github-url
-button-icon: $assets.files.slides.assets.github-mark-white.svg
+-- ds.icon-button: Continue with Github
+icon: $assets.files.slides.assets.github-mark-white.svg
+link: $login-page.github-url
 
 -- ftd.row:
 spacing.fixed.px: 4

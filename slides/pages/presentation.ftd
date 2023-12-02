@@ -1,11 +1,9 @@
 -- import: ui.fifthtry.com/slides/components/full-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
--- import: ui.fifthtry.com/slides/components/button
 -- import: ui.fifthtry.com/slides/actions/create-slide
 -- import: ui.fifthtry.com/slides/actions/delete-slide
 -- import: ui.fifthtry.com/slides/actions/save-slide
-
 
 -- string create-slide-module-name: ui.fifthtry.com/slides/actions/create-slide
 -- string delete-slide-module-name: ui.fifthtry.com/slides/actions/delete-slide
@@ -121,14 +119,14 @@ if: { presentation-slide.order >= 1 && presentation-slide.data.is-valid }
 align-content: center
 spacing.fixed.px: 16
 
--- button.button: Save
-button-icon: $assets.files.slides.assets.save-floppy.svg
+-- ds.icon-button: Save
+icon: $assets.files.slides.assets.save-floppy.svg
 ;; if: { presentation-slide.save-slide.content != "asd" && presentation-slide.save-slide.content != presentation-slide.data.slide.content }
 $on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $save-slide-module-name)
 
--- button.button: Present
-button-icon: $assets.files.slides.assets.play.svg
-button-link: $presentation-slide.data.present-url
+-- ds.icon-button: Present
+icon: $assets.files.slides.assets.play.svg
+link: $presentation-slide.data.present-url
 
 -- ftd.image:
 src: $assets.files.slides.assets.toggle-down.svg

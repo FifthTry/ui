@@ -57,9 +57,9 @@ spacing.fixed.px: 32
 align-content: center
 if: { header.user-data.is-logged-in }
 
--- button.button: Share
-button-link: /
-button-icon: $assets.files.slides.assets.share.svg
+-- ds.icon-button: Share
+icon: $assets.files.slides.assets.share.svg
+link: /
 
 -- notification:
 

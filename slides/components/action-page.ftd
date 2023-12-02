@@ -7,6 +7,8 @@ module site-data: site-data
 children uis:
 
 -- ftd.column:
+colors: $ds.colors
+types: $ds.types
 width: fill-container
 background.solid: $inherited.colors.background.base
 height: fill-container
