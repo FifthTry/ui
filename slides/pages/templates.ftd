@@ -1,15 +1,15 @@
 -- import: ui.fifthtry.com/slides/components/full-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
-
+-- import: ui.fifthtry.com/design-system
 
 -- component page:
-module site-data: site-data
 module user-data: user-data
 template list templates:
 
 -- full-page.page:
-site-data: $page.site-data
+site-data: site-data
+design-system: design-system
 user-data: $page.user-data
 
 -- show-template-list:

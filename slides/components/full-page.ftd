@@ -2,18 +2,22 @@
 -- import: ui.fifthtry.com/slides/user-data
 -- import: ui.fifthtry.com/slides/components/button
 -- import: fastn-community.github.io/dark-mode-switcher as dms
+-- import: fastn-community.github.io/design-system
 
 
 
 -- component page:
 module site-data: site-data
 module user-data: user-data
+module design-system: design-system
 children uis:
 
 -- ftd.column:
 width: fill-container
 background.solid: $inherited.colors.background.base
 height: fill-container
+colors: $page.design-system.colors
+types: $page.design-system.types
 
 -- header:
 site-data: $page.site-data

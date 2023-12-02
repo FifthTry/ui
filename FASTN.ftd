@@ -5,6 +5,7 @@ favicon: /-/fifthtry.github.io/ui/favicon.ico
 
 -- fastn.dependency: fastn-community.github.io/doc-site
 -- fastn.dependency: fastn-community.github.io/dark-mode-switcher
+-- fastn.dependency: fastn-community.github.io/design-system
 
 ;; Used by slides --------------------------------------------------------------
 -- fastn.dependency: fastn-community.github.io/midnight-storm-typography
