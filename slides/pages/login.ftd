@@ -1,5 +1,10 @@
 -- import: ui.fifthtry.com/slides/components/action-page
 -- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/i18n/en
+-- import: ui.fifthtry.com/i18n/hi
+
+
+-- string lang: en
 
 -- component page:
 string github-url:
@@ -12,6 +17,8 @@ site-data: site-data
 site-data: site-data
 github-url: $page.github-url
 signup-url: $page.signup-url
+lang if { lang == "hi" }: hi
+lang: en
 
 -- end: action-page.page
 
@@ -28,6 +35,7 @@ signup-url: $page.signup-url
 
 -- component login-page:
 module site-data: site-data
+module lang: en
 string github-url:
 string signup-url:
 
@@ -51,7 +59,7 @@ src: $login-page.site-data.logo
 width: auto
 fit: cover
 
--- ds.copy-large: **Log in**
+-- ds.copy-large: $login-page.lang.login
 
 -- ftd.column:
 margin-top.px: 84
