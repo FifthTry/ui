@@ -1,0 +1,17 @@
+-- import: ui.fifthtry.com/svg/helper
+
+-- component icon:
+caption string name:
+optional ftd.color color:
+integer width: 24
+
+-- helper.icon: $svg-url(icon=$icon.name)
+width: $icon.width
+
+-- end: icon
+
+;; prefix must end with slash
+-- string svg-url(icon):
+string icon:
+
+"https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/" + icon + ".svg"

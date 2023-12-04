@@ -1,0 +1,21 @@
+-- import: ui.fifthtry.com/svg/fa
+-- import: ui.fifthtry.com/svg/phosphor-icons
+
+-- ftd.text: Font Awesome
+
+
+-- ftd.column:
+color: purple
+
+-- fa.icon: brands/apple
+
+-- phosphor-icons.bold: address-book
+-- phosphor-icons.duotone: address-book
+-- phosphor-icons.fill: address-book
+-- phosphor-icons.light: address-book
+-- phosphor-icons.thin: address-book
+-- phosphor-icons.regular: address-book
+
+-- end: ftd.column
+
+
