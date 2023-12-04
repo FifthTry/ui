@@ -76,7 +76,7 @@ align-content: center
 
 -- ftd.checkbox:
 
--- ds.copy-small: Lorem ipsum dolor sit amet. Aut quod laborum aut consequatur eaque labore et tempora
+-- ds.copy-small: $signup-page.lang.checkbox-info
 
 -- end: ftd.row
 
@@ -85,7 +85,7 @@ spacing.fixed.px: 6
 align-content: center
 padding.px: 10
 
--- ds.copy-regular: Already have an account?
+-- ds.copy-regular: $signup-page.lang.existing-account
 display: inline
 
 -- ds.link: Login

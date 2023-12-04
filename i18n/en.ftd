@@ -1,3 +1,9 @@
 -- string login: **Log in**
 
 -- string signup: **Create an account**
+
+-- string create-account: Don’t have an account?
+
+-- string existing-account: Already have an account?
+
+-- string checkbox-info: Remember me
