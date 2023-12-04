@@ -30,28 +30,42 @@
         if (url in svg_cache) {
             log("svg_cache hit for " + url);
             el.innerHTML = svg_cache[url];
-        } else {
-            log("svg_cache miss for " + url);
-            if (url in svg_waiting) {
-                log("svg_waiting hit for " + url);
-                svg_waiting[url].push(el);
+            return;
+        }
+
+        log("svg_cache miss for " + url);
+        if (url in svg_waiting) {
+            log("svg_waiting hit for " + url);
+            svg_waiting[url].push(el);
+            return;
+        }
+
+        svg_waiting[url] = [el];
+        fetch("https://" + url).then(function (response) {
+            console.log("response", response);
+            if (response.status !== 200) {
+                console.log("response.status", response.status);
                 return;
             }
-            svg_waiting[url] = [el];
-            fetch(url).then(function (response) {
-                log("fetched " + url);
-                return response.text();
-            }).then(function (text) {
-                if (text.indexOf("currentColor") === -1) {
-                    text = text.replace(/<svg /g, '<svg fill="currentColor" ');
-                }
-                svg_cache[url] = text;
-                for (let el of svg_waiting[url]) {
-                    el.outerHTML = text;
-                }
-                delete svg_waiting[url];
-            });
-        }
+            return response.text();
+        }).then(function (text) {
+            if (!text) {
+                // this happens when we get 404
+                return;
+            }
+            console.log("text " + text);
+            if (text.indexOf("currentColor") === -1) {
+                console.log("before" + text);
+                // text = text.replace(/<svg /g, '<svg fill="currentColor" ');
+                console.log("after" + text);
+            }
+            svg_cache[url] = text;
+            for (let el of svg_waiting[url]) {
+                el.outerHTML = text;
+            }
+            delete svg_waiting[url];
+        });
+
     }
 
 

@@ -7,13 +7,25 @@
 -- ftd.column:
 color: purple
 
--- fa.icon: brands/apple
+-- fa.brand: apple
+-- fa.regular: bell
+size: 64
 
--- phosphor-icons.bold: address-book
--- phosphor-icons.duotone: address-book
--- phosphor-icons.fill: address-book
--- phosphor-icons.light: address-book
--- phosphor-icons.thin: address-book
+
+-- ftd.image:
+src: https://raw.githubusercontent.com/phosphor-icons/core/main/raw/regular/address-book.svg
+width.fixed.px: 200
+
+/-- phosphor-icons.bold: address-book
+size: 200
+
+-- phosphor-icons.duotone: alarm
+-- phosphor-icons.fill: airplay
+-- phosphor-icons.light: align-left
+-- phosphor-icons.thin: app-store-logo
+size: 64
+
+;; TODO: for some reason addressbook icon is broken when using this technique
 -- phosphor-icons.regular: address-book
 
 -- end: ftd.column

@@ -3,10 +3,10 @@
 -- component bold:
 caption string name:
 optional ftd.color color:
-integer width: 24
+integer size: 24
 
 -- helper.icon: $svg-url(icon=$bold.name, prefix=bold)
-width: $bold.width
+size: $bold.size
 
 -- end: bold
 
@@ -15,10 +15,10 @@ width: $bold.width
 -- component duotone:
 caption string name:
 optional ftd.color color:
-integer width: 24
+integer size: 24
 
 -- helper.icon: $svg-url(icon=$duotone.name, prefix=duotone)
-width: $duotone.width
+size: $duotone.size
 
 -- end: duotone
 
@@ -27,10 +27,10 @@ width: $duotone.width
 -- component fill:
 caption string name:
 optional ftd.color color:
-integer width: 24
+integer size: 24
 
 -- helper.icon: $svg-url(icon=$fill.name, prefix=fill)
-width: $fill.width
+size: $fill.size
 
 -- end: fill
 
@@ -38,10 +38,10 @@ width: $fill.width
 -- component light:
 caption string name:
 optional ftd.color color:
-integer width: 24
+integer size: 24
 
 -- helper.icon: $svg-url(icon=$light.name, prefix=light)
-width: $light.width
+size: $light.size
 
 -- end: light
 
@@ -49,10 +49,10 @@ width: $light.width
 -- component thin:
 caption string name:
 optional ftd.color color:
-integer width: 24
+integer size: 24
 
 -- helper.icon: $svg-url(icon=$thin.name, prefix=thin)
-width: $thin.width
+size: $thin.size
 
 -- end: thin
 
@@ -60,10 +60,10 @@ width: $thin.width
 -- component regular:
 caption string name:
 optional ftd.color color:
-integer width: 24
+integer size: 24
 
 -- helper.icon: $regular-svg-url(icon=$regular.name)
-width: $regular.width
+size: $regular.size
 
 -- end: regular
 
@@ -72,10 +72,10 @@ width: $regular.width
 string prefix:
 string icon:
 
-"https://raw.githubusercontent.com/phosphor-icons/core/main/raw/" + prefix + "/" + icon + "-" + prefix + ".svg"
+"raw.githubusercontent.com/phosphor-icons/core/main/raw/" + prefix + "/" + icon + "-" + prefix + ".svg"
 
 
 -- string regular-svg-url(icon):
 string icon:
 
-"https://raw.githubusercontent.com/phosphor-icons/core/main/raw/regular/" + icon + ".svg"
+"raw.githubusercontent.com/phosphor-icons/core/main/raw/regular/" + icon + ".svg"
