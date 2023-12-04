@@ -3,4 +3,4 @@
 
 -- signup.page:
 github-url: /github/
-login-url: slides/scenarios/login-page/
+signin-url: slides/scenarios/signin-page/
