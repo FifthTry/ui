@@ -7,3 +7,5 @@
 -- string existing-account: Already have an account?
 
 -- string checkbox-info: Remember me
+
+-- string signin-type: Sign up

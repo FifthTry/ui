@@ -1,0 +1,73 @@
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/i18n/en
+-- import: ui.fifthtry.com/i18n/hi
+
+
+-- string lang: en
+
+
+
+
+
+-- component auth-page:
+caption title:
+module site-data: site-data
+module lang: en
+string github-url:
+optional string signup-url:
+optional string signin-url:
+optional string account-type:
+optional string login-type:
+
+-- ftd.row:
+width: fill-container
+background.solid: $inherited.colors.background.base
+
+/-- ftd.image:
+src: $assets.files.slides.assets.background.png
+width.fixed.percent: 60
+fit: cover
+
+/-- ftd.column:
+align-content: center
+padding-top.px: 84
+width.fixed.percent: 40
+spacing.fixed.px: 64
+
+-- ftd.image:
+src: $auth-page.site-data.logo
+width: auto
+fit: cover
+
+-- ds.copy-large: $auth-page.title
+
+-- ftd.column:
+margin-top.px: 84
+spacing.fixed.px: 24
+align-content: center
+
+-- ds.icon-button: Continue with Github
+icon: $assets.files.slides.assets.github-mark-white.svg
+link: $auth-page.github-url
+
+-- ftd.row:
+spacing.fixed.px: 6
+align-content: center
+padding.px: 10
+
+-- ds.copy-regular: $auth-page.account-type
+display: inline
+
+-- ds.link: $auth-page.login-type
+display: inline
+link: $auth-page.signup-url
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: auth-page
