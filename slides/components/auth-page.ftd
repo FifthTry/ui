@@ -9,7 +9,7 @@
 
 
 
--- component auth-page:
+-- component page:
 caption title:
 module site-data: site-data
 module lang: en
@@ -23,23 +23,25 @@ optional string login-type:
 width: fill-container
 background.solid: $inherited.colors.background.base
 
-/-- ftd.image:
+-- ftd.image:
 src: $assets.files.slides.assets.background.png
 width.fixed.percent: 60
 fit: cover
 
-/-- ftd.column:
+-- ftd.column:
 align-content: center
 padding-top.px: 84
 width.fixed.percent: 40
 spacing.fixed.px: 64
 
 -- ftd.image:
-src: $auth-page.site-data.logo
+src: $page.site-data.logo
 width: auto
 fit: cover
 
--- ds.copy-large: $auth-page.title
+-- ds.copy-large:
+
+$page.title
 
 -- ftd.column:
 margin-top.px: 84
@@ -48,19 +50,21 @@ align-content: center
 
 -- ds.icon-button: Continue with Github
 icon: $assets.files.slides.assets.github-mark-white.svg
-link: $auth-page.github-url
+link: $page.github-url
 
 -- ftd.row:
 spacing.fixed.px: 6
 align-content: center
 padding.px: 10
 
--- ds.copy-regular: $auth-page.account-type
+-- ds.copy-regular:
 display: inline
 
--- ds.link: $auth-page.login-type
+$page.account-type
+
+-- ds.link: $page.login-type
 display: inline
-link: $auth-page.signup-url
+link: $page.signup-url
 
 -- end: ftd.row
 
@@ -70,4 +74,4 @@ link: $auth-page.signup-url
 
 -- end: ftd.row
 
--- end: auth-page
+-- end: page
