@@ -11,3 +11,5 @@
 -- string signin-type: Sign up
 
 -- string signup-type: Login
+
+-- string lang: en

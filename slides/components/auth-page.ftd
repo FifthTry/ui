@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
 -- import: ui.fifthtry.com/i18n/en
 -- import: ui.fifthtry.com/i18n/hi
 
@@ -12,11 +13,10 @@
 caption title:
 module site-data: site-data
 module lang: en
+module user-data: user-data
 string github-url:
 optional string signup-url:
 optional string signin-url:
-optional string account-type:
-optional string login-type:
 
 -- ftd.row:
 width: fill-container
@@ -51,7 +51,7 @@ align-content: center
 icon: $assets.files.slides.assets.github-mark-white.svg
 link: $page.github-url
 
--- ftd.row:
+/-- ftd.row:
 if: { page.signin-url }
 spacing.fixed.px: 12
 align-content: center
@@ -69,12 +69,12 @@ spacing.fixed.px: 6
 align-content: center
 padding.px: 10
 
--- ds.copy-regular:
+-- ds.copy-regular: $page.lang.create-account
+text if { user-data.is-logged-in }: $page.lang.existing-account
 display: inline
 
-$page.account-type
-
--- ds.link: $page.login-type
+-- ds.link: $page.lang.signin-type
+text if { user-data.is-logged-in }: $page.lang.signup-type 
 display: inline
 link if { page.signup-url }: $page.signup-url
 link if { page.signin-url }: $page.signin-url
