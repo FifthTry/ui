@@ -25,12 +25,13 @@ background.solid: $inherited.colors.background.base
 -- ftd.image:
 src: $assets.files.slides.assets.background.png
 width.fixed.percent: 60
+height.fixed.vh: 100
 fit: cover
 
 -- ftd.column:
 align-content: center
 padding-top.px: 84
-width.fixed.percent: 40
+width.fixed.px: 496
 spacing.fixed.px: 64
 
 -- ftd.image:
