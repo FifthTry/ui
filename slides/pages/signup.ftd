@@ -13,6 +13,7 @@ string github-url:
 string signin-url:
 
 -- action-page.page:
+header: false
 site-data: site-data
 
 -- auth-page.page: $en.signup
