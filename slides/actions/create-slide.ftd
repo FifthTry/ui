@@ -1,9 +1,10 @@
 -- optional string create-slide-error:
 
--- void submit(team-slug, presentation-slug, template-slug, module):
-string team-slug:
-string presentation-slug:
-string template-slug:
+-- void submit(team-slug, presentation-slug, template-slide-slug, template-presentation-slug module):
+string team:
+string presentation:
+string template_slide:
+string template_presentation:
 string module:
 js: $assets.files.slides.functions.js
 
