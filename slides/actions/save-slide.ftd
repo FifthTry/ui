@@ -1,4 +1,4 @@
--- string $content: asd
+-- string $content: $empty-string()
 -- optional string $content-error:
 
 -- void submit(team, presentation, order, content, module):
@@ -10,3 +10,8 @@ string module:
 js: $assets.files.slides.functions.js
 
 callAlert("Save Slide called")
+
+
+-- string empty-string():
+
+""

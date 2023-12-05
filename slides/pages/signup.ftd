@@ -58,7 +58,9 @@ src: $signup-page.site-data.logo
 width: auto
 fit: cover
 
--- ds.copy-large: $signup-page.lang.signup
+-- ds.copy-large:
+
+$signup-page.lang.signup
 
 -- ftd.column:
 width.fixed.px: 322
@@ -76,7 +78,9 @@ align-content: center
 
 -- ftd.checkbox:
 
--- ds.copy-small: $signup-page.lang.checkbox-info
+-- ds.copy-small:
+
+$signup-page.lang.checkbox-info
 
 -- end: ftd.row
 
@@ -85,8 +89,10 @@ spacing.fixed.px: 6
 align-content: center
 padding.px: 10
 
--- ds.copy-regular: $signup-page.lang.existing-account
+-- ds.copy-regular:
 display: inline
+
+$signup-page.lang.existing-account
 
 -- ds.link: Login
 display: inline
