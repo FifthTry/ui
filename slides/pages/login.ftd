@@ -58,7 +58,9 @@ src: $login-page.site-data.logo
 width: auto
 fit: cover
 
--- ds.copy-large: $login-page.lang.login
+-- ds.copy-large:
+
+$login-page.lang.login
 
 -- ftd.column:
 margin-top.px: 84
@@ -75,8 +77,10 @@ spacing.fixed.px: 6
 align-content: center
 padding.px: 10
 
--- ds.copy-small: Don’t have an account?
+-- ds.copy-small:
 display: inline
+
+Don’t have an account?
 
 -- ds.link: Sign up
 display: inline
