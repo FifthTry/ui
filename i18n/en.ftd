@@ -9,3 +9,5 @@
 -- string checkbox-info: Remember me
 
 -- string signin-type: Sign up
+
+-- string signup-type: Login

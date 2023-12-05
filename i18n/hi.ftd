@@ -7,3 +7,7 @@
 -- string existing-account: पहले से एक खाता मौजूद है?
 
 -- string checkbox-info: मुझे याद रखो
+
+-- string signin-type: साइन अप करें
+
+-- string signup-type: लॉग इन करें

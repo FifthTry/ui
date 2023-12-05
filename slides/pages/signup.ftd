@@ -1,9 +1,11 @@
 -- import: ui.fifthtry.com/slides/components/action-page
+-- import: ui.fifthtry.com/slides/components/auth-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/i18n/en
 -- import: ui.fifthtry.com/i18n/hi
 
--- string lang: en
+
+
 
 
 -- component page:
@@ -13,97 +15,14 @@ string signin-url:
 -- action-page.page:
 site-data: site-data
 
--- signup-page:
+-- auth-page.page: $en.signup
 site-data: site-data
 github-url: $page.github-url
 signin-url: $page.signin-url
 lang: en
+account-type: $en.existing-account
+login-type: $en.signup-type
 
 -- end: action-page.page
 
 -- end: page
-
-
-
-
-
-
-
-
-
-
--- component signup-page:
-module site-data: site-data
-module lang: en
-string github-url:
-string signin-url:
-
--- ftd.row:
-width: fill-container
-background.solid: $inherited.colors.background.base
-
--- ftd.image:
-src: $assets.files.slides.assets.background.png
-width.fixed.percent: 60
-fit: cover
-
--- ftd.column:
-align-content: center
-padding-top.px: 84
-width.fixed.percent: 40
-spacing.fixed.px: 64
-
--- ftd.image:
-src: $signup-page.site-data.logo
-width: auto
-fit: cover
-
--- ds.copy-large:
-
-$signup-page.lang.signup
-
--- ftd.column:
-width.fixed.px: 322
-margin-top.px: 84
-spacing.fixed.px: 24
-align-content: center
-
--- ds.icon-button: Continue with Github
-icon: $assets.files.slides.assets.github-mark-white.svg
-link: $signup-page.github-url
-
--- ftd.row:
-spacing.fixed.px: 12
-align-content: center
-
--- ftd.checkbox:
-
--- ds.copy-small:
-
-$signup-page.lang.checkbox-info
-
--- end: ftd.row
-
--- ftd.row:
-spacing.fixed.px: 6
-align-content: center
-padding.px: 10
-
--- ds.copy-regular:
-display: inline
-
-$signup-page.lang.existing-account
-
--- ds.link: Login
-display: inline
-link: $signup-page.signin-url
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: signup-page

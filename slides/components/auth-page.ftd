@@ -2,7 +2,6 @@
 -- import: ui.fifthtry.com/i18n/en
 -- import: ui.fifthtry.com/i18n/hi
 
-
 -- string lang: en
 
 
@@ -64,7 +63,8 @@ $page.account-type
 
 -- ds.link: $page.login-type
 display: inline
-link: $page.signup-url
+link if { page.signup-url }: $page.signup-url
+link if { page.signin-url }: $page.signin-url
 
 -- end: ftd.row
 
