@@ -1,4 +1,4 @@
--- void submit(team-slug, presentation-slug, order, module):
+-- void submit(team, presentation, order, module):
 string presentation:
 string team:
 integer order:

@@ -4,12 +4,13 @@
 -- import: ui.fifthtry.com/slides/actions/create-slide
 -- import: ui.fifthtry.com/slides/actions/delete-slide
 -- import: ui.fifthtry.com/slides/actions/save-slide
+-- import: ui.fifthtry.com/slides/actions/move-slide
 
 -- string create-slide-module-name: ui.fifthtry.com/slides/actions/create-slide
 -- string delete-slide-module-name: ui.fifthtry.com/slides/actions/delete-slide
 -- string save-slide-module-name: ui.fifthtry.com/slides/actions/save-slide
+-- string move-slide-module-name: ui.fifthtry.com/slides/actions/move-slide
 
--- boolean $is-slide-template-selected: false
 -- optional string $selected-slide-template:
 -- optional string $selected-slide-template-presentation:
 
@@ -57,6 +58,7 @@ module user-data: user-data
 module create-slide: create-slide
 module delete-slide: delete-slide
 module save-slide: save-slide
+module move-slide: move-slide
 presentation-data data:
 string presentation-slug:
 string team-slug:
@@ -70,6 +72,7 @@ user-data: $page.user-data
 create-slide: $page.create-slide
 delete-slide: $page.delete-slide
 save-slide: $page.save-slide
+move-slide: $page.move-slide
 data: $page.data
 presentation-slug: $page.presentation-slug
 team-slug: $page.team-slug
@@ -95,6 +98,7 @@ integer order:
 module create-slide: create-slide
 module delete-slide: delete-slide
 module save-slide: save-slide
+module move-slide: move-slide
 boolean $toggle: true
 boolean $responsive: false
 boolean $mobile: false
@@ -167,6 +171,8 @@ presentation-slug: $presentation-slide.presentation-slug
 team-slug: $presentation-slide.team-slug
 active-slide-order: $presentation-slide.order
 delete-slide: $presentation-slide.delete-slide
+move-slide: $presentation-slide.move-slide
+total-slides: $thumbnails-length(a = $presentation-slide.data.thumbnails)
 
 -- ftd.image:
 src: $assets.files.slides.assets.plus.png
@@ -446,7 +452,10 @@ string presentation-slug:
 string team-slug:
 integer active-slide-order:
 module delete-slide: delete-slide
+module move-slide: move-slide
+module show-slide: show-slide
 private boolean $is-hovered: false
+integer total-slides:
 
 -- ftd.column:
 $on-mouse-enter$: $ftd.set-bool($a = $show-slide.is-hovered, v = true)
@@ -463,6 +472,22 @@ border-color if { show-slide.active-slide-order == show-slide.order }: $inherite
 border-width.px if { show-slide.active-slide-order == show-slide.order }: 4
 link: $show-slide.data.url
 
+-- ftd.row:
+width: fill-container
+align-content: center
+spacing: space-between
+
+-- ftd.image:
+if: { show-slide.is-hovered && show-slide.order != 1 }
+src: $assets.files.slides.assets.left.svg
+width.fixed.px: 30
+height.fixed.px: 30
+align-self: end
+padding.px: 7
+background.solid: $inherited.colors.background.step-1
+border-radius.px: 8
+$on-click$: $show-slide.move-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, direction=left, module = $move-slide-module-name)
+
 -- ftd.image:
 if: { show-slide.is-hovered }
 src: $assets.files.slides.assets.delete.svg
@@ -473,6 +498,20 @@ padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
 $on-click$: $show-slide.delete-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, module = $delete-slide-module-name)
+
+-- ftd.image:
+if: { show-slide.is-hovered && show-slide.order != show-slide.total-slides }
+src: $assets.files.slides.assets.right.svg
+width.fixed.px: 30
+height.fixed.px: 30
+align-self: end
+padding.px: 7
+background.solid: $inherited.colors.background.step-1
+border-radius.px: 8
+$on-click$: $show-slide.move-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, direction=right, module = $delete-slide-module-name)
+
+
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -493,17 +532,6 @@ module create-slide: create-slide
 width: fill-container
 height: fill-container
 spacing: space-between
-
-/-- ftd.text: $selected-slide-template
-if: { selected-slide-template != NULL }
-color: red
-
-/-- ftd.text: $selected-slide-template-presentation
-if: { selected-slide-template-presentation != NULL }
-color: red
-
-/-- ftd.boolean: $is-slide-template-selected
-color: blue
 
 -- ftd.row:
 width: fill-container
@@ -537,6 +565,7 @@ caption slide-template data:
 string presentation-slug:
 string team-slug:
 module create-slide: create-slide
+boolean $is-slide-template-selected: false
 
 -- ftd.column:
 width.fixed.px: 200
@@ -548,9 +577,9 @@ align-content: center
 src: $show-slide-template.data.thumbnail
 width: fill-container
 fit: cover
-border-width.px if { is-slide-template-selected }: 3
-border-color if { is-slide-template-selected }: #EF8435
-$on-click$: $ftd.set-bool($a = $is-slide-template-selected, v = true)
+border-width.px if { show-slide-template.is-slide-template-selected }: 3
+border-color if { show-slide-template.is-slide-template-selected }: #EF8435
+$on-click$: $ftd.set-bool($a = $show-slide-template.is-slide-template-selected, v = true)
 $on-click$: $ftd.set-string($a = $selected-slide-template, v = $show-slide-template.data.slug)
 $on-click$: $ftd.set-string($a = $selected-slide-template-presentation, v = $show-slide-template.data.presentation-slug)
 
@@ -637,6 +666,10 @@ integer a:
 a + 1
 
 
+-- integer thumbnails-length(a):
+slide-thumbnail list a:
+
+len(a)
 
 
 -- void create-slide-http(id,url,method):
