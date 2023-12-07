@@ -1,0 +1,112 @@
+-- import: ui.fifthtry.com/slides/components/full-page
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/slides/actions/toggle-template
+-- import: ui.fifthtry.com/slides/actions/save-presentation-settings
+
+-- record settings-data:
+string fastn-conf:
+string settings-conf:
+boolean is-template:
+
+-- string toggle-template-module-name: ui.fifthtry.com/slides/actions/toggle-template
+-- string save-presentation-settings-module-name: ui.fifthtry.com/slides/actions/save-presentation-settings
+
+-- component page:
+module user-data: user-data
+module site-data: site-data
+module toggle-template: toggle-template
+module save-presentation-settings: save-presentation-settings
+settings-data data:
+string presentation-slug:
+string team-slug:
+string $current-fastn-conf: *$page.data.fastn-conf
+string $current-settings-conf: *$page.data.settings-conf
+
+-- full-page.page:
+site-data: $page.site-data
+user-data: $page.user-data
+
+-- ftd.column:
+width: fill-container
+margin-horizontal.px: 40
+
+-- ftd.text: Presentation Settings
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-large
+
+-- kv-bool: Is Template Presentation ?
+value: $page.data.is-template
+
+-- ds.phosphor-icon-button: Convert to Template
+title if { page.data.is-template }: Revert back to Normal Presentation
+icon: swap
+$on-click$: $page.toggle-template.submit(team = $page.team-slug, presentation = $page.presentation-slug, module = $toggle-template-module-name)
+
+-- ftd.text: `FASTN.ftd` configuration
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-small
+margin-vertical.px: 10
+
+-- ftd.text-input:
+padding.px: 10
+multiline: true
+placeholder: Fetching configuration...
+default-value: $page.current-fastn-conf
+width.fixed.percent: 40
+height.fixed.px: 200
+margin-vertical.px: 10
+$on-input$: $ftd.set-string($a = $page.current-fastn-conf, v = $VALUE)
+
+-- ftd.text: `settings.ftd` configuration
+color: $inherited.colors.text-strong
+role: $inherited.types.heading-small
+margin-vertical.px: 10
+
+-- ftd.text-input:
+padding.px: 10
+multiline: true
+placeholder: Fetching configuration...
+default-value: $page.current-settings-conf
+width.fixed.percent: 40
+height.fixed.px: 200
+margin-vertical.px: 10
+$on-input$: $ftd.set-string($a = $page.current-settings-conf, v = $VALUE)
+
+-- ds.phosphor-icon-button: Save
+icon: floppy-disk
+$on-click$: $page.save-presentation-settings.submit(team = $page.team-slug, presentation = $page.presentation-slug, settings = $page.current-settings-conf, fastn = $page.current-fastn-conf, module = $toggle-template-module-name)
+
+-- end: ftd.column
+
+-- end: full-page.page
+
+-- end: page
+
+
+
+-- component kv-bool:
+caption label:
+boolean value:
+optional ftd.type label-role:
+optional ftd.type value-role:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 10
+
+-- ftd.text: $kv-bool.label
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+role if { kv-bool.label-role != NULL }: $kv-bool.label-role
+
+-- ftd.text: Yes
+text if { !kv-bool.value }: No
+color: green
+color if { !kv-bool.value }: red
+role: $inherited.types.copy-regular
+role if { kv-bool.value-role != NULL }: $kv-bool.value-role
+
+-- end: ftd.row
+
+-- end: kv-bool

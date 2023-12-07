@@ -128,7 +128,6 @@ spacing.fixed.px: 16
 
 -- ds.icon-button: Save
 icon: $assets.files.slides.assets.save-floppy.svg
-;; if: { presentation-slide.save-slide.content != "asd" && presentation-slide.save-slide.content != presentation-slide.data.slide.content }
 $on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $save-slide-module-name)
 
 -- ds.icon-button: Present
@@ -179,7 +178,7 @@ src: $assets.files.slides.assets.plus.png
 cursor: pointer
 fit: cover
 height.fixed.px: 64
-$on-click$: $ftd.set-bool($a = $presentation-slide.new-slides-popup, v= true)
+$on-click$: $ftd.set-bool($a = $presentation-slide.new-slides-popup, v = true)
 
 
 -- end: ftd.row
@@ -473,12 +472,24 @@ border-width.px if { show-slide.active-slide-order == show-slide.order }: 4
 link: $show-slide.data.url
 
 -- ftd.row:
+if: { show-slide.is-hovered }
 width: fill-container
 align-content: center
 spacing: space-between
 
 -- ftd.image:
-if: { show-slide.is-hovered && show-slide.order != 1 }
+if: { show-slide.order == 1 }
+src: $assets.files.slides.assets.left.svg
+width.fixed.px: 30
+height.fixed.px: 30
+align-self: end
+padding.px: 7
+background.solid: $inherited.colors.background.step-1
+border-radius.px: 8
+opacity: 0.3
+
+-- ftd.image:
+if: { show-slide.order != 1 }
 src: $assets.files.slides.assets.left.svg
 width.fixed.px: 30
 height.fixed.px: 30
@@ -488,8 +499,8 @@ background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
 $on-click$: $show-slide.move-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, direction=left, module = $move-slide-module-name)
 
+
 -- ftd.image:
-if: { show-slide.is-hovered }
 src: $assets.files.slides.assets.delete.svg
 width.fixed.px: 30
 height.fixed.px: 30
@@ -500,7 +511,18 @@ border-radius.px: 8
 $on-click$: $show-slide.delete-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, module = $delete-slide-module-name)
 
 -- ftd.image:
-if: { show-slide.is-hovered && show-slide.order != show-slide.total-slides }
+if: { show-slide.order == show-slide.total-slides }
+src: $assets.files.slides.assets.right.svg
+width.fixed.px: 30
+height.fixed.px: 30
+align-self: end
+padding.px: 7
+background.solid: $inherited.colors.background.step-1
+border-radius.px: 8
+opacity: 0.3
+
+-- ftd.image:
+if: { show-slide.order != show-slide.total-slides }
 src: $assets.files.slides.assets.right.svg
 width.fixed.px: 30
 height.fixed.px: 30
