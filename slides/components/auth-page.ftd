@@ -1,5 +1,4 @@
 -- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
 -- import: ui.fifthtry.com/i18n/en
 -- import: ui.fifthtry.com/i18n/hi
 
@@ -70,13 +69,15 @@ spacing.fixed.px: 6
 align-content: center
 padding.px: 10
 
--- ds.copy-regular: $page.lang.create-account
-text if { user-data.is-logged-in }: $page.lang.existing-account
+-- ds.copy-regular: 
+text: $page.lang.create-account
+text if { page.signin-url }: $page.lang.existing-account
 display: inline
 
--- ds.link: $page.lang.signin-type
-text if { user-data.is-logged-in }: $page.lang.signup-type 
-display: inline
+-- ftd.text: $page.lang.signin-type
+text if { page.signin-url }: $page.lang.signup-type
+role: $inherited.types.button-medium
+color: $inherited.colors.info.text
 link if { page.signup-url }: $page.signup-url
 link if { page.signin-url }: $page.signin-url
 

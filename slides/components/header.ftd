@@ -21,16 +21,32 @@ spacing: space-between
 
 ;; -- dms.dark-mode-switcher:
 
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.slides.assets.menu.svg
+width.fixed.px: 32
+border-radius.px: 4
+border-width.px: 1
+border-color: $inherited.colors.border
+background.solid: $inherited.colors.background.step-1
+padding.px: 4
+fit: cover
+
 -- ftd.image:
 link: $header.site-data.homepage
 src: $header.site-data.logo
 width.fixed.px: 162
 height.fixed.px: 32
 
+-- end: ftd.row
+
 -- ftd.row:
 spacing.fixed.px: 32
 align-content: center
-if: { header.user-data.is-logged-in }
+;;if: { header.user-data.is-logged-in }
 
 -- notification.notification:
 

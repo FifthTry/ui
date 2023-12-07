@@ -122,7 +122,7 @@ spacing.fixed.px: 16
 -- ds.icon-button: Save
 icon: $assets.files.slides.assets.save-floppy.svg
 ;; if: { presentation-slide.save-slide.content != "asd" && presentation-slide.save-slide.content != presentation-slide.data.slide.content }
-$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $save-slide-module-name)
+;;$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $save-slide-module-name)
 
 -- ds.icon-button: Present
 icon: $assets.files.slides.assets.play.svg

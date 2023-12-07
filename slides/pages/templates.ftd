@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/slides/components/full-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
+-- import: fastn-community.github.io/svg-icons/phosphor
 
 -- component page:
 module user-data: user-data
@@ -9,6 +10,7 @@ template list templates:
 -- full-page.page:
 site-data: site-data
 user-data: $page.user-data
+sidebar: true
 
 -- show-template-list:
 templates: $page.templates
@@ -33,18 +35,45 @@ string owner_avatar:
 
 
 -- component show-template-list:
-caption title: All templates
+caption title: Templates
 template list templates:
 
 -- ftd.column:
 width: fill-container
 padding-horizontal.px: 40
+
+-- ftd.row:
+width: fill-container
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+padding-bottom.px: 8
+margin-bottom.px: 8
+padding-top.px: 24
+spacing.fixed.px: 4
+color: $inherited.colors.text
+align-content: left
+
+-- phosphor.bold: house
+size: 24
+
+-- ftd.text: My Templates
+role: $inherited.types.label-large
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
 padding-bottom.px: 24
-padding-top.px: 12
 
 -- ftd.text: $show-template-list.title
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
+
+-- ds.icon-button: Explore templates
+icon: $assets.files.slides.assets.globe.svg
+
+-- end: ftd.row
 
 -- ftd.row:
 width: fill-container
@@ -75,19 +104,19 @@ caption template template:
 
 -- ftd.column:
 width.fixed.px: 243
-spacing.fixed.px: 8
-padding-bottom.px: 8
+spacing.fixed.px: 4
 border-radius.px: 8
 link: $template-short.template.url
 
 -- ftd.image:
 src: $template-short.template.thumbnail
 width: fill-container
+border-radius.px: 8
 
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 8
-padding-top.px: 8
+padding-vertical.px: 8
 
 -- ftd.image:
 src: $template-short.template.owner_avatar
@@ -100,7 +129,7 @@ align-self: center
 spacing.fixed.px: 4
 
 -- ftd.text: $template-short.template.title
-role: $inherited.types.heading-tiny
+role: $inherited.types.button-small
 color: $inherited.colors.text-strong
 
 -- ftd.text: $template-short.template.owner_name
