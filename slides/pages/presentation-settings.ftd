@@ -8,6 +8,7 @@
 string fastn-conf:
 string settings-conf:
 boolean is-template:
+string editor-url:
 
 -- string toggle-template-module-name: ui.fifthtry.com/slides/actions/toggle-template
 -- string save-presentation-settings-module-name: ui.fifthtry.com/slides/actions/save-presentation-settings
@@ -34,6 +35,10 @@ margin-horizontal.px: 40
 -- ftd.text: Presentation Settings
 color: $inherited.colors.text-strong
 role: $inherited.types.heading-large
+
+-- ds.phosphor-icon-button: Go Back to Presentation
+icon: arrow-fat-left
+link: $page.data.editor-url
 
 -- kv-bool: Is Template Presentation ?
 value: $page.data.is-template

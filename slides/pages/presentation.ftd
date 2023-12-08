@@ -8,6 +8,7 @@
 
 -- string create-slide-module-name: ui.fifthtry.com/slides/actions/create-slide
 -- string delete-slide-module-name: ui.fifthtry.com/slides/actions/delete-slide
+/-- string save-slide-module-name: slides.fifthtry.com/actions/save-slide
 -- string save-slide-module-name: ui.fifthtry.com/slides/actions/save-slide
 -- string move-slide-module-name: ui.fifthtry.com/slides/actions/move-slide
 
@@ -68,7 +69,7 @@ integer order:
 site-data: site-data
 user-data: $page.user-data
 
--- presentation-slide: Slide Project
+-- presentation-slide: $page.data.title
 create-slide: $page.create-slide
 delete-slide: $page.delete-slide
 save-slide: $page.save-slide
@@ -104,6 +105,7 @@ boolean $responsive: false
 boolean $mobile: false
 boolean $comment: false
 boolean $new-slides-popup: false
+boolean $show-error-window: true
 
 -- ftd.column:
 width: fill-container
@@ -128,7 +130,8 @@ spacing.fixed.px: 16
 
 -- ds.icon-button: Save
 icon: $assets.files.slides.assets.save-floppy.svg
-$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $save-slide-module-name)
+$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $presentation-slide.save-slide)
+
 
 -- ds.icon-button: Present
 icon: $assets.files.slides.assets.play.svg
@@ -263,6 +266,35 @@ padding-horizontal.px: 10
 padding-top.px: 10
 $on-input$: $ftd.set-string($a = $presentation-slide.save-slide.content, v = $VALUE)
 
+-- ftd.column:
+if: { presentation-slide.save-slide.content-error != NULL && presentation-slide.show-error-window }
+width.fixed.percent: 80
+anchor: window
+bottom.px: 20
+left.percent: 10
+background.solid: $inherited.colors.background.base
+padding.px: 20
+border-radius.px: 20
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+
+-- ftd.text: Invalid fastn code (Save failed)
+role: $inherited.types.heading-small
+color: #EF8435
+
+-- ds.icon-button: Close
+icon: $assets.files.slides.assets.cross.svg
+$on-click$: $ftd.set-bool($a = $presentation-slide.show-error-window, v = false)
+
+-- end: ftd.row
+
+-- ftd.text: $presentation-slide.save-slide.content-error
+color: $inherited.colors.error.text
+role: $inherited.types.copy-regular
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -331,6 +363,23 @@ color: $inherited.colors.text-strong
 height: fill-container
 spacing.fixed.px: 24
 align-content: right
+
+;; Weird issue doing this (x_x)
+/-- ds.icon-button:
+if: { presentation-slide.save-slide.content-error != NULL }
+icon: $assets.files.slides.assets.error.svg
+$on-click$: $ftd.set-bool($a = $presentation-slide.show-error-window, v = true)
+
+-- ftd.image:
+if: { presentation-slide.save-slide.content-error != NULL }
+src: $assets.files.slides.assets.error.svg
+width.fixed.px: 30
+height.fixed.px: 30
+padding.px: 4
+background.solid: $inherited.colors.background.step-1
+background.solid if { presentation-slide.comment }: $inherited.colors.accent.primary
+border-radius.px: 8
+$on-click$: $ftd.set-bool($a = $presentation-slide.show-error-window, v = true)
 
 -- ftd.image:
 src: $assets.files.slides.assets.comment.svg
@@ -470,6 +519,18 @@ fit: cover
 border-color if { show-slide.active-slide-order == show-slide.order }: $inherited.colors.cta-primary.base
 border-width.px if { show-slide.active-slide-order == show-slide.order }: 4
 link: $show-slide.data.url
+
+-- ftd.row:
+if: { !show-slide.is-hovered }
+width: fill-container
+align-content: center
+spacing: space-around
+
+-- ftd.integer: $show-slide.order
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-small
+
+-- end: ftd.row
 
 -- ftd.row:
 if: { show-slide.is-hovered }
