@@ -8,7 +8,9 @@ These are list of products/websites hosted by FifthTry.
 
 - [Login page](/slides/scenarios/login-page/)
 - [Logged in templates](/slides/scenarios/logged-in-templates/)
-- [team dashboard](/slides/scenarios/team-dashboard/)
-- [fastn presentation logged in](/slides/scenarios/fastn-presentation-logged-in/)
+- [Team dashboard](/slides/scenarios/team-dashboard/)
+- [fastn Presentation logged in](/slides/scenarios/fastn-presentation-logged-in/)
+- [Present view page](/slides/scenarios/present/)
+- [Presentation settings](/slides/scenarios/presentation-settings/)
 
 -- end: lib.page

@@ -72,6 +72,7 @@ boolean $pop-up: false
 width: fill-container
 padding-bottom.px: 24
 padding-top.px: 12
+padding-horizontal.px: 24
 
 -- ftd.row:
 width: fill-container
