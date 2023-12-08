@@ -55,6 +55,7 @@ integer order:
 if: { slide-present-view.order == slide-present-view.current-slide-order }
 width.fixed.vw: 100
 height.fixed.vh: 100
+fit: contain
 
 -- end: ftd.column
 
