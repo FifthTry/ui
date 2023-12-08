@@ -25,8 +25,8 @@ slide-templates: $slide-templates
 
 
 -- presentation.slide slide:
-content: \-- ftd.text: Hello
-preview-url: https://fastn.com/
+content: \-- ftd.image: $assets.files.slides.assets.template-1.png
+preview-url: $assets.files.slides.assets.template-1.png.light
 is-valid: true
 
 
