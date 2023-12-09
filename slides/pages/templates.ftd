@@ -16,10 +16,9 @@ template-data data:
 -- full-page.page:
 site-data: site-data
 user-data: $page.user-data
-sidebar: true
-team-name: Community
+sidebar: false
 
--- show-template-list:
+-- show-community-templates:
 templates: $page.data.templates
 
 -- end: full-page.page
@@ -39,7 +38,7 @@ string owner_avatar:
 
 
 
--- component show-template-list:
+-- component show-community-templates:
 caption title: Templates
 template list templates:
 
@@ -61,7 +60,7 @@ align-content: left
 -- phosphor.bold: house
 size: 24
 
--- ftd.text: My Templates
+-- ftd.text: Community Templates
 role: $inherited.types.label-large
 
 -- end: ftd.row
@@ -71,7 +70,7 @@ width: fill-container
 spacing: space-between
 padding-bottom.px: 24
 
--- ftd.text: $show-template-list.title
+-- ftd.text: $show-community-templates.title
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
@@ -89,13 +88,13 @@ align-content: top-left
 wrap: true
 
 -- template-short: $template
-for: $template in $show-template-list.templates
+for: $template in $show-community-templates.templates
 
 -- end: ftd.row
 
 -- end: ftd.column
 
--- end: show-template-list
+-- end: show-community-templates
 
 
 

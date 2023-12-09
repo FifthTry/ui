@@ -29,8 +29,6 @@ templates: $page.data.templates
 
 
 
-
-
 -- record template:
 integer id:
 caption title:

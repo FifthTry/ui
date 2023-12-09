@@ -253,7 +253,7 @@ color: $inherited.colors.text-strong
 
 -- ds.icon-button: New Presentation
 icon: $assets.files.slides.assets.plus.svg
-$on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v = true)
+link: /community-templates/
 
 -- ftd.column:
 if: { all-presentations.pop-up }

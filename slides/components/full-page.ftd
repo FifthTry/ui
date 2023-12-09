@@ -6,15 +6,18 @@
 
 -- boolean unimplemented: true
 
-
+-- record toc-item:
+caption title:
+string link:
 
 -- component page:
 module site-data: site-data
 module user-data: user-data
-pr.toc-item list list-of-toc: $stable-toc
+toc-item list list-of-toc: $stable-toc-links
 boolean sidebar: false
 string team-name:
 children uis:
+boolean hide-team: false
 
 -- ftd.column:
 colors: $ds.colors
@@ -40,6 +43,7 @@ border-right-width.px: 1
 border-color: $inherited.colors.border
 
 -- ftd.row:
+if: { !page.hide-team }
 width: fill-container
 padding-left.px: 24
 padding-right.px: 8
@@ -96,8 +100,7 @@ padding-top.px: 16
 -- render-files:
 for: $obj in $page.list-of-toc
 title: $obj.title
-link: $obj.url
-is-active: $obj.is-active
+link: $obj.link
 
 -- end: ftd.column
 
@@ -131,7 +134,6 @@ for: $ui in $page.uis
 -- component render-files:
 caption title:
 string link:
-boolean is-active:
 
 -- ftd.row:
 width: fill-container
@@ -140,7 +142,6 @@ border-radius.px: 8
 align-content: center
 padding.px: 8
 background.solid: $inherited.colors.background.step-1
-background.solid if { render-files.is-active }: red
 color: $inherited.colors.text
 link: $render-files.link
 
@@ -154,6 +155,18 @@ size: 24
 -- end: ftd.row
 
 -- end: render-files
+
+
+
+-- toc-item list stable-toc-links:
+
+-- toc-item: Dashboard
+link: /t/admin/
+
+-- toc-item: Templates
+link: /community-templates/
+
+-- end: stable-toc-links
 
 
 -- pr.toc-item list stable-toc:
