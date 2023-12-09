@@ -11,6 +11,7 @@ string team-slug:
 string team-initials:
 string owner-name:
 string owner-initials:
+string username:
 string preview:
 string thumbnail:
 string team-avatar:
@@ -24,7 +25,7 @@ string cta-text:
 boolean $pop-up: false
 private boolean $show-template-fields: false
 private string $current-template-name: *$page.data.template-name
-private string $current-target-team: *$page.data.team-name
+private string $current-target-team: *$page.data.username
 private string $current-visibility: everyone
 
 -- full-page.page:
