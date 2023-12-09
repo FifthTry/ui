@@ -275,37 +275,26 @@ padding-horizontal.px: 10
 padding-top.px: 10
 $on-input$: $ftd.set-string($a = $presentation-slide.current-slide-content, v = $VALUE)
 
--- ds.icon-button: Save
-icon: $assets.files.slides.assets.save-floppy.svg
-$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug,team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.current-slide-content, module = $presentation-slide.save-slide)
-
 -- ftd.column:
 if: { presentation-slide.save-slide.content-error != NULL && presentation-slide.show-error-window }
 width: fill-container
 height.fixed.px: 300
 background.solid: $inherited.colors.background.base
 padding.px: 20
-overflow: scroll
-
--- ftd.row:
-width: fill-container
-align-content: center
 
 -- ftd.text: Invalid fastn code (Save failed)
 role: $inherited.types.heading-small
 color: #EF8435
-
--- ds.icon-button:
-icon: $assets.files.slides.assets.cross.svg
-$on-click$: $ftd.set-bool($a = $presentation-slide.show-error-window, v = false)
-
--- end: ftd.row
 
 -- ftd.text: $presentation-slide.save-slide.content-error
 color: $inherited.colors.error.text
 role: $inherited.types.copy-regular
 
 -- end: ftd.column
+
+-- ds.icon-button: Save
+icon: $assets.files.slides.assets.save-floppy.svg
+$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug,team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.current-slide-content, module = $presentation-slide.save-slide)
 
 -- end: ftd.column
 
@@ -447,7 +436,7 @@ border-radius.px: 2
 border-color: white
 background.solid: white
 align-self: center
-margin-top.percent if { !presentation-slide.responsive }: 5
+margin-vertical.percent if { !presentation-slide.responsive }: 5
 
 -- end: ftd.column
 
