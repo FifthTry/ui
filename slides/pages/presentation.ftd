@@ -109,6 +109,7 @@ boolean $comment: false
 boolean $new-slides-popup: false
 boolean $show-error-window: true
 private boolean $is-add-slide-icon-hovered: false
+string $current-slide-content: *$presentation-slide.data.slide.content
 
 -- ftd.column:
 width: fill-container
@@ -265,18 +266,18 @@ spacing.fixed.px: 10
 
 -- ftd.text-input:
 placeholder: Enter ftd code here
-default-value: $presentation-slide.data.slide.content
+default-value: $presentation-slide.current-slide-content
 width: fill-container
-height.fixed.percent: 40
+height.fixed.px: 300
 multiline: true
 resize: vertical
 padding-horizontal.px: 10
 padding-top.px: 10
-$on-input$: $ftd.set-string($a = $presentation-slide.save-slide.content, v = $VALUE)
+$on-input$: $ftd.set-string($a = $presentation-slide.current-slide-content, v = $VALUE)
 
 -- ds.icon-button: Save
 icon: $assets.files.slides.assets.save-floppy.svg
-$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug, team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.save-slide.content, module = $presentation-slide.save-slide)
+$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug,team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.current-slide-content, module = $presentation-slide.save-slide)
 
 -- ftd.column:
 if: { presentation-slide.save-slide.content-error != NULL && presentation-slide.show-error-window }
@@ -288,7 +289,6 @@ overflow: scroll
 
 -- ftd.row:
 width: fill-container
-/spacing: space-between
 align-content: center
 
 -- ftd.text: Invalid fastn code (Save failed)

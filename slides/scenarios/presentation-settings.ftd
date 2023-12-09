@@ -13,6 +13,9 @@ fastn-conf: $fastn-conf
 settings-conf: $settings-conf
 is-template: true
 editor-url: /slides/scenarios/fastn-presentation-logged-in/
+presentation-title: FifthTry Presentation
+team-name: fifthtry
+
 
 
 

@@ -3,9 +3,29 @@
 
 
 -- dashboard.page:
+folders: $folders
+data: $data
+user-data: john-doe-ud
+
+
+-- dashboard.dashboard-data data:
 templates: $templates
 presentations: $presentations
-user-data: john-doe-ud
+team-name: FifthTry
+
+
+-- dashboard.folder list folders:
+
+-- dashboard.folder: Folder name
+item: 12 items
+
+-- dashboard.folder: Folder name
+item: 12 items
+
+-- dashboard.folder: Folder name
+item: 12 items
+
+-- end: folders
 
 
 

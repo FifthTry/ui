@@ -8,6 +8,7 @@
 
 -- record template-data:
 template list templates:
+string team-name:
 
 -- component page:
 module user-data: user-data
@@ -17,7 +18,7 @@ template-data data:
 site-data: site-data
 user-data: $page.user-data
 sidebar: true
-team-name: Community
+team-name: $page.data.team-name
 
 -- show-template-list:
 templates: $page.data.templates
@@ -25,6 +26,8 @@ templates: $page.data.templates
 -- end: full-page.page
 
 -- end: page
+
+
 
 
 

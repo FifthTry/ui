@@ -8,6 +8,7 @@ favicon: /-/fifthtry.github.io/ui/favicon.ico
 -- fastn.dependency: fastn-community.github.io/design-system
 -- fastn.dependency: fastn-community.github.io/midnight-storm-typography
 -- fastn.dependency: fastn-community.github.io/dark-flame-cs
+-- fastn.dependency: fastn-community.github.io/svg-icons
 
 -- fastn.auto-import: ui.fifthtry.com/assets
 -- fastn.auto-import: ui.fifthtry.com/ds

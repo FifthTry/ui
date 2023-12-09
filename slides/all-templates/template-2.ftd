@@ -1,0 +1,21 @@
+-- import: ui.fifthtry.com/slides/components/full-page
+-- import: ui.fifthtry.com/slides/pages/template as ft
+
+
+-- template.template-data data: Template 2
+id: 2
+owner-name: John Doe
+owner-initials: JD
+team-name: Personal
+team-initials: P
+thumbnail: $assets.files.slides.assets.template-2.png.light
+team-avatar: $assets.files.slides.assets.avatar.svg.light
+template-slug: template-2
+team-slug: personal
+preview: $assets.files.slides.assets.template-2.png.light
+slides: $assets.files.slides.assets.template-2.png.light
+
+
+-- template.page:
+data: $data
+cta-text: Use this template

@@ -1,42 +1,21 @@
--- import: ui.fifthtry.com/slides/components/action-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/i18n/en
 -- import: ui.fifthtry.com/i18n/hi
 
-
 -- string lang: en
 
+
+
+
+
 -- component page:
-string github-url:
-string signup-url:
-
--- action-page.page:
-site-data: site-data
-
--- login-page:
-site-data: site-data
-github-url: $page.github-url
-signup-url: $page.signup-url
-lang: en
-
--- end: action-page.page
-
--- end: page
-
-
-
-
-
-
-
-
-
-
--- component login-page:
+caption title:
 module site-data: site-data
 module lang: en
+module user-data: user-data
 string github-url:
-string signup-url:
+optional string signup-url:
+optional string signin-url:
 
 -- ftd.row:
 width: fill-container
@@ -45,22 +24,23 @@ background.solid: $inherited.colors.background.base
 -- ftd.image:
 src: $assets.files.slides.assets.background.png
 width.fixed.percent: 60
+height.fixed.vh: 100
 fit: cover
 
 -- ftd.column:
 align-content: center
 padding-top.px: 84
-width.fixed.percent: 40
+width.fixed.px: 496
 spacing.fixed.px: 64
 
 -- ftd.image:
-src: $login-page.site-data.logo
+src: $page.site-data.logo
 width: auto
 fit: cover
 
 -- ds.copy-large:
 
-$login-page.lang.login
+$page.title
 
 -- ftd.column:
 margin-top.px: 84
@@ -69,26 +49,39 @@ align-content: center
 
 -- ds.icon-button: Continue with Github
 icon: $assets.files.slides.assets.github-mark-white.svg
-link: $login-page.github-url
+link: $page.github-url
 
+/-- ftd.row:
+if: { page.signin-url }
+spacing.fixed.px: 12
+align-content: center
+
+-- ftd.checkbox:
+
+-- ds.copy-small:
+
+$page.lang.checkbox-info
+
+-- end: ftd.row
 
 -- ftd.row:
 spacing.fixed.px: 6
 align-content: center
 padding.px: 10
 
--- ds.copy-small:
+-- ds.copy-regular: 
+text: $page.lang.create-account
+text if { page.signin-url }: $page.lang.existing-account
 display: inline
 
-Don’t have an account?
-
--- ds.link: Sign up
-display: inline
-link: $login-page.signup-url
+-- ftd.text: $page.lang.signin-type
+text if { page.signin-url }: $page.lang.signup-type
+role: $inherited.types.button-medium
+color: $inherited.colors.info.text
+link if { page.signup-url }: $page.signup-url
+link if { page.signin-url }: $page.signin-url
 
 -- end: ftd.row
-
-
 
 -- end: ftd.column
 
@@ -96,4 +89,4 @@ link: $login-page.signup-url
 
 -- end: ftd.row
 
--- end: login-page
+-- end: page

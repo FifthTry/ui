@@ -9,6 +9,11 @@ spacing.fixed.px: 4
 $on-click$: $ftd.toggle($a = $avatar.open)
 $on-click-outside$: $ftd.set-boolean($a = $avatar.open, v = false)
 align-content: center
+border-radius.px: 8
+border-width.px: 1
+border-color: $inherited.colors.border
+background.solid: $inherited.colors.background.step-1
+padding.px: 8
 
 -- ds.circle-text-button: $get-initials(name=$avatar.title)
 
@@ -17,7 +22,6 @@ src: $assets.files.slides.assets.toggle-down.svg
 src if { avatar.open }: $assets.files.slides.assets.toggle-up.svg
 width.fixed.px: 24
 height.fixed.px: 24
-
 
 -- popup: $avatar.title
 email: $avatar.email
@@ -37,12 +41,10 @@ caption title:
 string email:
 boolean $open:
 
-
 -- ftd.column:
 $on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
 if: { popup.open }
 width.fixed.px: 260
-min-height.fixed.px: 260
 background.solid: $inherited.colors.background.base
 border-color: $inherited.colors.border
 border-radius.px: 8
@@ -75,6 +77,9 @@ color: $inherited.colors.text
 -- ftd.row:
 width: fill-container
 padding-vertical.px: 12
+padding-horizontal.px: 8
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
 spacing.fixed.px: 8
 
 -- ftd.image:
@@ -89,10 +94,10 @@ color: $inherited.colors.text
 
 -- end: ftd.row
 
-
-
 -- ftd.row:
 width: fill-container
+padding-vertical.px: 12
+padding-horizontal.px: 8
 spacing.fixed.px: 8
 
 -- ftd.image:
@@ -107,9 +112,6 @@ color: $inherited.colors.text
 link: /-/auth/logout/
 
 -- end: ftd.row
-
-
-
 
 -- end: ftd.column
 
