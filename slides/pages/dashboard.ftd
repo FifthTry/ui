@@ -84,7 +84,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.row:
-width.fixed.px: 134
+width: hug-content
 padding-horizontal.px: 12
 padding-vertical.px: 8
 background.solid: $inherited.colors.background.step-2
@@ -100,6 +100,8 @@ width.fixed.px: 14
 -- ftd.text: New presentation
 role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
+width: hug-content
+white-space: nowrap
 
 -- end: ftd.row
 

@@ -4,7 +4,7 @@
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
 
-
+-- boolean unimplemented: true
 
 -- component header:
 module site-data: site-data
@@ -33,8 +33,10 @@ align-content: center
 if: { header.user-data.is-logged-in }
 
 -- notification.notification:
+if: { !unimplemented }
 
 -- avatar.avatar: $header.user-data.name
+if: { !unimplemented }
 email: $header.user-data.email
 
 -- end: ftd.row
