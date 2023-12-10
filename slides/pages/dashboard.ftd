@@ -17,7 +17,7 @@ module user-data: user-data
 presentation list presentations:
 dashboard-data data:
 folder list folders:
-string add-presentation-url: /community-templates/
+string add-presentation-url:
 
 -- full-page.page:
 site-data: site-data
