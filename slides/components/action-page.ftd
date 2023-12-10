@@ -5,6 +5,7 @@
 -- component page:
 module site-data: site-data
 children uis:
+boolean header: false
 
 -- ftd.column:
 colors: $ds.colors
@@ -14,6 +15,7 @@ background.solid: $inherited.colors.background.base
 height: fill-container
 
 -- action-header.header:
+if: { page.header }
 site-data: $page.site-data
 
 -- ui:

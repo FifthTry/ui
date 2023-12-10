@@ -8,8 +8,14 @@ $on-click-outside$: $ftd.set-boolean($a = $notification.open, v = false)
 
 -- ftd.image:
 src: $assets.files.slides.assets.notification.svg
-width.fixed.px: 24
-height.fixed.px: 24
+width.fixed.px: 40
+height.fixed.px: 40
+border-radius.px: 8
+border-width.px: 1
+border-color: $inherited.colors.border
+background.solid: $inherited.colors.background.step-1
+padding.px: 8
+fit: cover
 
 -- popup:
 $open: $notification.open
@@ -32,8 +38,8 @@ border-color: $inherited.colors.border
 border-radius.px: 8
 border-width.px: 1
 anchor: parent
-right.px: 0
-top.px: 30
+right.px: -86
+top.px: 62
 
 -- ftd.row:
 width: fill-container
