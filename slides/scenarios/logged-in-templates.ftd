@@ -4,10 +4,14 @@
 
 -- templates.page:
 user-data: john-doe-ud
+data: $data
+
+
+
+
+-- templates.template-data data:
 templates: $t2
-
-
-
+team-name: FifthTry
 
 
 -- templates.template list t2:

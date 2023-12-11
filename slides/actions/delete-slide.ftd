@@ -1,6 +1,6 @@
--- void submit(team-slug, presentation-slug, order, module):
-string presentation-slug:
-string team-slug:
+-- void submit(team, presentation, order, module):
+string presentation:
+string team:
 integer order:
 string module:
 js: $assets.files.slides.functions.js

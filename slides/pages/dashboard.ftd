@@ -1,30 +1,40 @@
--- import: ui.fifthtry.com/slides/components/full-page as team-page
+-- import: ui.fifthtry.com/slides/components/full-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
 -- import: fastn-community.github.io/svg-icons/phosphor
 
+-- boolean show-all-folders: false
+
+-- record dashboard-data:
+presentation list presentations:
+template list templates:
+string team-name:
 
 
 
 -- component page:
 module user-data: user-data
 presentation list presentations:
-template list templates:
+dashboard-data data:
 folder list folders:
+string add-presentation-url:
 
--- team-page.page:
+-- full-page.page:
 site-data: site-data
 user-data: $page.user-data
 sidebar: true
+team-name: $page.data.team-name
 
 -- all-folders:
+if: { show-all-folders }
 folders: $page.folders
 
 -- all-presentations:
-presentations: $page.presentations
-templates: $page.templates
+presentations: $page.data.presentations
+templates: $page.data.templates
+add-presentation-url: $page.add-presentation-url
 
--- end: team-page.page
+-- end: full-page.page
 
 -- end: page
 
@@ -222,6 +232,7 @@ color: $inherited.colors.text
 presentation list presentations:
 template list templates:
 boolean $pop-up: false
+string add-presentation-url:
 
 -- ftd.column:
 width: fill-container
@@ -240,7 +251,7 @@ color: $inherited.colors.text-strong
 
 -- ds.icon-button: New Presentation
 icon: $assets.files.slides.assets.plus.svg
-$on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v = true)
+link: $all-presentations.add-presentation-url
 
 -- ftd.column:
 if: { all-presentations.pop-up }

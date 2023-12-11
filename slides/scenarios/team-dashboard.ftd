@@ -3,12 +3,15 @@
 
 -- dashboard.page:
 folders: $folders
+data: $data
+user-data: john-doe-ud
+add-presentation-url: slides/scenarios/logged-in-templates/
+
+
+-- dashboard.dashboard-data data:
 templates: $templates
 presentations: $presentations
-user-data: john-doe-ud
-
-
-
+team-name: FifthTry
 
 
 -- dashboard.folder list folders:
