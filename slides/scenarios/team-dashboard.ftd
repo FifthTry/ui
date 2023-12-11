@@ -1,7 +1,6 @@
 -- import: ui.fifthtry.com/slides/pages/dashboard
 -- import: ui.fifthtry.com/slides/scenarios/john-doe-ud
 
-
 -- dashboard.page:
 folders: $folders
 templates: $templates
@@ -24,6 +23,8 @@ item: 12 items
 item: 12 items
 
 -- end: folders
+
+
 
 
 
@@ -60,6 +61,9 @@ updated-on: Edited 18 min ago
 url: /
 
 -- end: presentations
+
+
+
 
 
 -- dashboard.template list templates:

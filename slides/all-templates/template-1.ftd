@@ -1,5 +1,5 @@
 -- import: ui.fifthtry.com/slides/components/full-page
--- import: ui.fifthtry.com/slides/all-templates as ft
+-- import: ui.fifthtry.com/slides/components/template-detail as ft
 
 -- full-page.page:
 sidebar: false

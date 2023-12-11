@@ -93,7 +93,7 @@ item: $obj.item
 -- end: ftd.row
 
 -- ftd.column:
-if: { all-folders.pop-up}
+if: { all-folders.pop-up }
 width.fixed.px: 370
 min-height.fixed.px: 264
 padding.px: 24
@@ -141,13 +141,7 @@ color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
--- ftd.text: Create
-background.solid: $inherited.colors.accent.primary
-width: fill-container
-text-align: center
-padding-vertical.px: 16
-padding-horizontal.px: 18
-border-radius.px: 8
+-- ds.primary-button: Create
 
 -- end: ftd.column
 

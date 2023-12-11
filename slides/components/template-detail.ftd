@@ -1,4 +1,3 @@
-
 -- component featured-template:
 caption title:
 ftd.image-src thumbnail:
@@ -47,14 +46,7 @@ color: $inherited.colors.text-strong
 
 -- end: ftd.row
 
--- ftd.text: $featured-template.cta-text
-background.solid: $inherited.colors.accent.primary
-width: fill-container
-text-align: center
-padding-vertical.px: 16
-padding-horizontal.px: 18
-border-radius.px: 8
-color: $inherited.colors.text-strong
+-- ds.primary-button: $featured-template.cta-text
 $on-click$: $ftd.set-bool($a = $featured-template.pop-up, v= true)
 
 -- end: ftd.column
@@ -122,13 +114,8 @@ color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
--- ftd.text: Create
-background.solid: $inherited.colors.accent.primary
-width: fill-container
-text-align: center
-padding-vertical.px: 16
-padding-horizontal.px: 18
-border-radius.px: 8
+-- ds.primary-button: Create
+$on-click$: $ftd.set-bool($a = $featured-template.pop-up, v= false)
 
 -- end: ftd.column
 
