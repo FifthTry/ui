@@ -1,0 +1,10 @@
+-- import: ui.fifthtry.com/slides/pages/template-details
+-- import: ui.fifthtry.com/slides/scenarios/john-doe-ud
+
+-- template-details.page: Template 1
+user-data: john-doe-ud
+owner-name: John Doe
+thumbnail: $assets.files.slides.assets.template-1.png.light
+owner-avatar: $assets.files.slides.assets.avatar.svg.light
+presentation-template-slug: template-1
+team-slug: team-1

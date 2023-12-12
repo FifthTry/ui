@@ -10,26 +10,26 @@ data: $data
 
 
 -- templates.template-data data:
-templates: $t2
+templates: $template-list
 team-name: FifthTry
 
 
--- templates.template list t2:
+-- templates.template list template-list:
 
 -- templates.template: Template 1
 id: 1
-url: /slides/pages/template-page/template-1/
+url: /slides/scenarios/template-details-logged-in/
 team: My team
-owner_name: John Doe
+owner-name: John Doe
 thumbnail: $assets.files.slides.assets.template-1.png.light
-owner_avatar: $assets.files.slides.assets.avatar.svg.light
+owner-avatar: $assets.files.slides.assets.avatar.svg.light
 
 -- templates.template: Template 2
 id: 2
-url: /slides/pages/template-page/template-2/
+url: /slides/scenarios/template-details-logged-in/
 team: Other team
-owner_name: John Doe's cousin
+owner-name: John Doe's cousin
 thumbnail: $assets.files.slides.assets.template-2.png.light
-owner_avatar: $assets.files.slides.assets.avatar.svg.light
+owner-avatar: $assets.files.slides.assets.avatar.svg.light
 
--- end: t2
+-- end: template-list

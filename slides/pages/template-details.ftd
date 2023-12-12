@@ -1,0 +1,31 @@
+-- import: ui.fifthtry.com/slides/components/full-page
+-- import: ui.fifthtry.com/slides/components/template-details
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/slides/actions/create-presentation
+
+-- component page:
+module user-data: user-data
+caption title:
+string owner-name:
+string thumbnail:
+string owner-avatar:
+module create-presentation: create-presentation
+string presentation-template-slug:
+string team-slug:
+
+-- full-page.page:
+site-data: site-data
+user-data: $page.user-data
+
+-- template-details.featured-template: $page.title
+owner-name: $page.owner-name
+thumbnail: $page.thumbnail
+owner-avatar: $page.owner-avatar
+cta-text: Use this template
+presentation-template-slug: $page.presentation-template-slug
+team-slug: $page.team-slug
+
+-- end: full-page.page
+
+-- end: page

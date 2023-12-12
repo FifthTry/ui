@@ -1,0 +1,10 @@
+-- optional string create-presentation-error:
+
+-- void submit(team_slug, presentation_name, presentation_template_slug, module):
+string team_slug:
+string presentation_name:
+string presentation_template_slug:
+string module:
+js: $assets.files.slides.functions.js
+
+callAlert("Create Presentation called: presentation_name: " + presentation_name)

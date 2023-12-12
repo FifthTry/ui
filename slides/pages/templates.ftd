@@ -32,9 +32,9 @@ integer id:
 caption title:
 string url:
 string team:
-string owner_name:
+string owner-name:
 string thumbnail:
-string owner_avatar:
+string owner-avatar:
 
 
 
@@ -124,7 +124,7 @@ spacing.fixed.px: 8
 padding-vertical.px: 8
 
 -- ftd.image:
-src: $template-short.template.owner_avatar
+src: $template-short.template.owner-avatar
 width.fixed.px: 32
 height.fixed.px: 32
 fit: cover
@@ -137,7 +137,7 @@ spacing.fixed.px: 4
 role: $inherited.types.button-small
 color: $inherited.colors.text-strong
 
--- ftd.text: $template-short.template.owner_name
+-- ftd.text: $template-short.template.owner-name
 role: $inherited.types.copy-small
 color: $inherited.colors.text
 style: light

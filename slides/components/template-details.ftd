@@ -1,10 +1,18 @@
+-- import: ui.fifthtry.com/slides/actions/create-presentation
+
+-- string create-presentation-module: ui.fifthtry.com/slides/actions/create-presentation
+
 -- component featured-template:
 caption title:
 ftd.image-src thumbnail:
-ftd.image-src owner_avatar:
-string owner_name:
+ftd.image-src owner-avatar:
+string owner-name:
 string cta-text:
 boolean $pop-up: false
+module create-presentation: create-presentation
+string presentation-template-slug:
+string team-slug:
+optional string $presentation-name:
 
 -- ftd.row:
 width: fill-container
@@ -37,10 +45,10 @@ align-content: center
 padding-vertical.px: 8
 
 -- ftd.image:
-src: $featured-template.owner_avatar
+src: $featured-template.owner-avatar
 width.fixed.px: 32
 
--- ftd.text: $featured-template.owner_name
+-- ftd.text: $featured-template.owner-name
 role: $inherited.types.button-small
 color: $inherited.colors.text-strong
 
@@ -118,11 +126,16 @@ border-width.px: 2
 border-color: $inherited.colors.border
 padding.px: 12
 color: $inherited.colors.text-strong
+$on-input$: $ftd.set-string($a = $featured-template.presentation-name, v = $VALUE)
 
 -- end: ftd.column
 
 -- ds.primary-button: Create
 link: index.html
+$on-click$: $featured-template.create-presentation.submit(team_slug = $featured-template.team-slug, presentation_template_slug = $featured-template.presentation-template-slug, presentation_name = $featured-template.presentation-name, module = $create-presentation-module)
+
+/-- ds.error-button: $featured-template.create-presentation.create-presentation-error
+if: { featured-template.create-presentation.create-presentation-error }
 
 -- end: ftd.column
 

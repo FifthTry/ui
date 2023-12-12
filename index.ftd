@@ -13,5 +13,7 @@ These are list of products/websites hosted by FifthTry.
 - [fastn Presentation logged in](/slides/scenarios/fastn-presentation-logged-in/)
 - [Present view page](/slides/scenarios/present/)
 - [Presentation settings](/slides/scenarios/presentation-settings/)
+- [Logged in Template details](/slides/scenarios/template-details-logged-in/)
+- [Logged out Template details](/slides/scenarios/template-details-logged-out/)
 
 -- end: lib.page
