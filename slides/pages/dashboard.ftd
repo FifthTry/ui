@@ -26,7 +26,7 @@ sidebar: true
 team-name: $page.data.team-name
 
 -- all-folders:
-if: { show-all-folders }
+;;if: { show-all-folders }
 folders: $page.folders
 
 -- all-presentations:

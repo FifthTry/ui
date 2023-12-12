@@ -82,7 +82,6 @@ padding.px: 4
 margin-left.px: 32
 color: $inherited.colors.text
 
-
 -- phosphor.light: gear
 size: 32
 
@@ -92,15 +91,74 @@ size: 32
 
 -- ftd.column:
 width: fill-container
-spacing.fixed.px: 16
+height.fixed.calc: 100vh - 140px
+spacing: space-between
+padding-bottom.px: 16
 padding-left.px: 32
 padding-right.px: 16
-padding-top.px: 16
+padding-vertical.px: 16
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 16
+padding-bottom.px: 16
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
 
 -- render-files:
 for: $obj in $page.list-of-toc
 title: $obj.title
 link: $obj.link
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 8
+border-radius.px: 8
+align-content: center
+padding.px: 8
+background.solid: $inherited.colors.background.step-1
+color: $inherited.colors.text
+
+-- phosphor.regular: globe
+size: 24
+
+-- ftd.text: Explore Templates
+role: $inherited.types.copy-regular
+width: fill-container
+
+-- phosphor.regular: caret-right
+size: 24
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 8
+border-radius.px: 8
+align-content: center
+padding.px: 8
+background.solid: $inherited.colors.background.step-1
+color: $inherited.colors.text
+
+-- phosphor.regular: trash
+size: 24
+
+-- ftd.text: Trash
+role: $inherited.types.copy-regular
+width: fill-container
+
+-- phosphor.regular: caret-right
+size: 24
+
+-- end: ftd.row
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -160,11 +218,17 @@ size: 24
 
 -- toc-item list stable-toc-links:
 
--- toc-item: Dashboard
+/-- toc-item: Dashboard
 link: /t/admin/
 
--- toc-item: Templates
+/-- toc-item: Templates
 link: /community-templates/
+
+-- toc-item: Drive
+link: /slides/scenarios/team-dashboard/
+
+-- toc-item: My Templates
+link: /slides/scenarios/logged-in-templates/
 
 -- end: stable-toc-links
 

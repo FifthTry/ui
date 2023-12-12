@@ -1,0 +1,13 @@
+-- import: ui.fifthtry.com/slides/components/template-details as ft
+-- import: ui.fifthtry.com/slides/components/full-page
+
+-- full-page.page:
+
+-- ft.featured-template: Template 2
+owner_name: John Doe
+thumbnail: $assets.files.slides.assets.template-2.png.light
+owner_avatar: $assets.files.slides.assets.avatar.svg.light
+cta-text: Use this template
+
+-- end: full-page.page
+
