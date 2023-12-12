@@ -48,9 +48,9 @@ height.fixed.px: 32
 -- ftd.row:
 spacing.fixed.px: 32
 align-content: center
-if: { header.user-data.is-logged-in }
+;;if: { header.user-data.is-logged-in }
 
--- notification.notification:
+/-- notification.notification:
 if: { !unimplemented }
 
 -- avatar.avatar: $header.user-data.name

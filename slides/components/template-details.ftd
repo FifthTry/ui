@@ -132,7 +132,7 @@ $on-input$: $ftd.set-string($a = $featured-template.presentation-name, v = $VALU
 
 -- ds.primary-button: Create
 link: index.html
-$on-click$: $featured-template.create-presentation.submit(team_slug = $featured-template.team-slug, presentation_template_slug = $featured-template.presentation-template-slug, presentation_name = $featured-template.presentation-name, module = $create-presentation-module)
+;;$on-click$: $featured-template.create-presentation.submit(team_slug = $featured-template.team-slug, presentation_template_slug = $featured-template.presentation-template-slug, presentation_name = $featured-template.presentation-name, module = $create-presentation-module)
 
 /-- ds.error-button: $featured-template.create-presentation.create-presentation-error
 if: { featured-template.create-presentation.create-presentation-error }

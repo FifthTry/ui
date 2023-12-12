@@ -150,11 +150,10 @@ $on-click$: $ftd.toggle($a = $presentation-slide.toggle)
 
 -- end: ftd.row
 
-
 -- ftd.row:
 if: { presentation-slide.toggle }
 width: fill-container
-background.solid: $inherited.colors.background.base
+background.solid: $inherited.colors.background.step-1
 spacing: space-between
 padding-vertical.px: 16
 align-content: center
@@ -258,22 +257,49 @@ height: fill-container
 
 -- ftd.column:
 if: { !presentation-slide.responsive }
-margin-left.px: 20
 width.fixed.percent: 50
 width.fixed.px if { presentation-slide.comment }: 341
 height: fill-container
-spacing.fixed.px: 10
+spacing.fixed.px: 16
+border-right-width.px: 1
+border-color: $inherited.colors.border
+
+-- ftd.row:
+width: fill-container
+padding-horizontal.px: 20
+spacing.fixed.px: 12
+border-color: $inherited.colors.border
+border-bottom-width.px: 1
+
+-- ftd.text: File.ftd
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+padding-vertical.px: 8
+
+-- ftd.column:
+height.fixed.px: 50
+border-right-width.px: 1
+border-color: $inherited.colors.border
+
+-- end: ftd.column
+
+-- end: ftd.row
 
 -- ftd.text-input:
 placeholder: Enter ftd code here
 default-value: $presentation-slide.current-slide-content
 width: fill-container
-height.fixed.px: 300
+height.fixed.px: 550
 multiline: true
+background.solid: transparent
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
 resize: vertical
-padding-horizontal.px: 10
-padding-top.px: 10
+padding-horizontal.px: 20
+padding-top.px: 16
 $on-input$: $ftd.set-string($a = $presentation-slide.current-slide-content, v = $VALUE)
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
 
 -- ftd.column:
 if: { presentation-slide.save-slide.content-error != NULL && presentation-slide.show-error-window }
@@ -292,23 +318,31 @@ role: $inherited.types.copy-regular
 
 -- end: ftd.column
 
+-- ftd.row:
+width: fill-container
+align-content: right
+padding-right.px: 12
+padding-bottom.px: 12
+spacing.fixed.px: 12
+
 -- ds.icon-button: Save
 icon: $assets.files.slides.assets.save-floppy.svg
-$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug,team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.current-slide-content, module = $presentation-slide.save-slide)
+;;$on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug,team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.current-slide-content, module = $presentation-slide.save-slide)
+
+-- ds.icon-button: Add image
+
+-- end: ftd.row
 
 -- end: ftd.column
 
 -- ftd.column:
-width.fixed.percent: 100
-width if { presentation-slide.responsive }: fill-container
-width.fixed.px if { presentation-slide.comment }: 833
+width: fill-container
+;;width if { presentation-slide.responsive }: fill-container
+;;width.fixed.px if { presentation-slide.comment }: 833
 height: fill-container
-border-left-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 10
-background.solid: $inherited.colors.background.step-2
-margin-left.px: 20
-margin-right.px: 20
+;;background.solid: $inherited.colors.background.step-2
+;;margin-left.px: 20
+;;margin-right.px: 20
 /margin-bottom.px: 20
 
 -- ftd.column:
@@ -354,7 +388,7 @@ create-slide: $presentation-slide.create-slide
 width: fill-container
 border-bottom-width.px: 1
 border-color: $inherited.colors.border-strong
-padding-vertical.px: 8
+padding-vertical.px: 10
 padding-horizontal.px: 24
 spacing: space-between
 
@@ -428,15 +462,12 @@ height: fill-container
 -- ftd.image:
 src: $presentation-slide.data.slide.preview-url
 height.fixed.percent: 80
-width.fixed.percent: 80
-width.fixed.px if { presentation-slide.comment }: 600
+width.fixed.px: 876
+width.fixed.px if { presentation-slide.comment }: 620
 width if { presentation-slide.responsive }: fill-container
 height if { presentation-slide.responsive }: fill-container
-border-radius.px: 2
-border-color: white
-background.solid: white
 align-self: center
-margin-vertical.percent if { !presentation-slide.responsive }: 5
+margin-vertical.percent if { !presentation-slide.responsive }: 2
 
 -- end: ftd.column
 
@@ -567,7 +598,7 @@ align-self: end
 padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
-$on-click$: $show-slide.move-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, direction=left, module = $move-slide-module-name)
+;;$on-click$: $show-slide.move-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, direction=left, module = $move-slide-module-name)
 $on-mouse-enter$: $ftd.set-bool($a = $show-slide.is-left-icon-hovered, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-slide.is-left-icon-hovered, v = false)
 
@@ -580,7 +611,7 @@ align-self: end
 padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
-$on-click$: $show-slide.delete-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, module = $delete-slide-module-name)
+;;$on-click$: $show-slide.delete-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, module = $delete-slide-module-name)
 $on-mouse-enter$: $ftd.set-bool($a = $show-slide.is-delete-icon-hovered, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-slide.is-delete-icon-hovered, v = false)
 
@@ -606,7 +637,7 @@ align-self: end
 padding.px: 7
 background.solid: $inherited.colors.background.step-1
 border-radius.px: 8
-$on-click$: $show-slide.move-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, direction=right, module = $delete-slide-module-name)
+;;$on-click$: $show-slide.move-slide.submit(team=$show-slide.team-slug, presentation=$show-slide.presentation-slug, order=$show-slide.order, direction=right, module = $delete-slide-module-name)
 $on-mouse-enter$: $ftd.set-bool($a = $show-slide.is-right-icon-hovered, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-slide.is-right-icon-hovered, v = false)
 
@@ -661,7 +692,7 @@ height: hug-content
 spacing.fixed.px: 8
 border-radius.px: 4
 align-content: center
-$on-click$: $show-slide-template.create-slide.submit(team=$show-slide-template.team-slug, presentation=$show-slide-template.presentation-slug, template_slide=$show-slide-template.data.slug, template_presentation=$show-slide-template.data.presentation-slug, module = $show-slide-template.create-slide)
+;;$on-click$: $show-slide-template.create-slide.submit(team=$show-slide-template.team-slug, presentation=$show-slide-template.presentation-slug, template_slide=$show-slide-template.data.slug, template_presentation=$show-slide-template.data.presentation-slug, module = $show-slide-template.create-slide)
 
 -- ftd.image:
 src: $show-slide-template.data.thumbnail

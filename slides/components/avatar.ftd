@@ -53,6 +53,7 @@ anchor: parent
 right.px: 0
 top.px: 67
 padding.px: 8
+z-index: 50
 
 -- ftd.column:
 width: fill-container
@@ -74,7 +75,7 @@ color: $inherited.colors.text
 
 -- end: ftd.column
 
--- ftd.row:
+/-- ftd.row:
 width: fill-container
 padding-vertical.px: 12
 padding-horizontal.px: 8
