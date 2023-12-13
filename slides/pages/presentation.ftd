@@ -351,7 +351,7 @@ width.fixed.px: 680
 height.fixed.px: 587
 anchor: parent
 top.px: 0
-left.px: 0
+left.px: -34
 z-index: 6
 background.solid: $inherited.colors.background.step-1
 padding.px: 24

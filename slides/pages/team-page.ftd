@@ -1,0 +1,267 @@
+-- import: ui.fifthtry.com/slides/components/full-page
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+
+-- integer $current-slide: 1
+
+-- record template-data:
+template list templates:
+
+
+
+
+
+-- component page:
+module user-data: user-data
+caption title:
+string team-avatar:
+template-data data:
+nav list nav-list:
+
+-- full-page.page:
+site-data: site-data
+user-data: $page.user-data
+
+-- team-details: $page.title
+team-avatar: $page.team-avatar
+nav-list: $nav-list
+
+-- all-templates:
+templates: $page.data.templates
+
+-- end: team-details
+
+-- end: full-page.page
+
+-- end: page
+
+
+
+
+
+-- record template:
+caption title:
+string url:
+string thumbnail:
+string updated-on:
+
+
+
+
+
+
+
+
+
+
+-- component team-details:
+caption title:
+ftd.image-src team-avatar:
+nav list nav-list:
+children wrapper:
+optional string $description:
+optional string $location:
+optional string $website-url:
+optional string $twitter-handle:
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.column:
+width.fixed.px: 300
+padding-vertical.px: 32
+padding-horizontal.px: 24
+spacing.fixed.px: 16
+align-content: top-center
+border-right-width.px: 1
+border-color: $inherited.colors.border
+height.fixed.calc: 100vh - 76px
+
+-- ftd.image:
+src: $team-details.team-avatar
+width.fixed.px: 158
+
+-- ds.heading-small: $team-details.title
+
+-- ftd.text-input:
+width: fill-container
+placeholder: Add a description
+height.fixed.px: 32
+background.solid: transparent
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+$on-input$: $ftd.set-string($a = $team-details.description, v = $VALUE)
+
+-- ftd.text-input:
+width: fill-container
+placeholder: Add a location
+height.fixed.px: 32
+background.solid: transparent
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+$on-input$: $ftd.set-string($a = $team-details.location, v = $VALUE)
+
+-- ftd.text-input:
+width: fill-container
+placeholder: Add website URL
+height.fixed.px: 32
+background.solid: transparent
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+$on-input$: $ftd.set-string($a = $team-details.website-url, v = $VALUE)
+
+-- ftd.text-input:
+width: fill-container
+placeholder: Add Twitter Handle
+height.fixed.px: 32
+background.solid: transparent
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+$on-input$: $ftd.set-string($a = $team-details.twitter-handle, v = $VALUE)
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.px: 1440
+padding-horizontal.px: 40
+
+-- ftd.row:
+width: fill-container
+padding-top.px: 16
+spacing.fixed.px: 32
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+
+-- navigation: $obj.title
+for: $obj in $team-details.nav-list
+index: $obj.index
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+children: $team-details.wrapper
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: team-details
+
+
+
+
+
+
+
+
+
+
+-- component navigation:
+caption title:
+boolean $active: false
+integer index: 1
+
+-- ftd.column:
+padding-bottom.px: 16
+border-bottom-width.px if { navigation.index == current-slide }: 2
+border-color if { navigation.index == current-slide }: $inherited.colors.border
+$on-click$: $ftd.toggle($a = $navigation.active)
+$on-click$: $ftd.set-integer($a = $current-slide, v = $navigation.index)
+$on-mouse-enter$: $ftd.set-bool( $a = $navigation.active, v = true )
+$on-mouse-leave$: $ftd.set-bool( $a = $navigation.active, v = false )
+
+-- ds.copy-large:
+text: $navigation.title
+
+-- end: ftd.column
+
+-- end: navigation
+
+
+
+
+
+
+
+
+
+
+-- component all-templates:
+template list templates:
+
+-- ftd.row:
+if: { $current-slide == 1 }
+width: fill-container
+padding-horizontal.px: 8
+padding-vertical.px: 24
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+wrap: true
+
+-- show-template: $obj
+for: $obj in $all-templates.templates
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: all-templates
+
+
+
+
+
+
+
+
+
+-- component show-template:
+caption template p:
+
+-- ftd.column:
+width.fixed.px: 243
+spacing.fixed.px: 8
+padding-bottom.px: 8
+link: $show-template.p.url
+
+-- ftd.image:
+src: $show-template.p.thumbnail
+width: fill-container
+border-radius.px: 8
+
+-- ds.heading-tiny: $show-template.p.title
+color: $inherited.colors.text-strong
+
+-- ds.copy-small: 
+text: $show-template.p.updated-on
+
+-- end: ftd.column
+
+-- end: show-template
+
+
+
+
+
+
+
+-- record nav:
+caption title:
+integer index: 1
+boolean active: false
+
+-- nav list nav-list:
+
+-- nav: All projects
+active: true
+index: 1
+
+-- nav: Members
+index: 2
+
+-- end: nav-list
