@@ -2,6 +2,9 @@
 
 -- fastn.package: ui.fifthtry.com
 favicon: /-/fifthtry.github.io/ui/favicon.ico
+default-language: hi
+translation-en: ui.fifthtry.com/i18n/en
+translation-hi: ui.fifthtry.com/i18n/hi
 
 -- fastn.dependency: fastn-community.github.io/doc-site
 -- fastn.dependency: fastn-community.github.io/dark-mode-switcher
