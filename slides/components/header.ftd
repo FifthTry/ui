@@ -1,6 +1,7 @@
 -- import: fastn-community.github.io/dark-mode-switcher as dms
 -- import: ui.fifthtry.com/slides/components/notification
 -- import: ui.fifthtry.com/slides/components/avatar
+-- import: ui.fifthtry.com/slides/components/language-switcher
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
 
@@ -44,10 +45,14 @@ height.fixed.px: 32
 
 -- end: ftd.row
 
+
+
 -- ftd.row:
 spacing.fixed.px: 32
 align-content: center
 ;;if: { header.user-data.is-logged-in }
+
+-- language-switcher.dropdown:
 
 -- notification.notification:
 if: { !unimplemented }
