@@ -11,13 +11,15 @@ $processor$: pr.current-language
 
 -- ftd.row:
 if: { current-language != NULL }
+align-content: center
+spacing.fixed.px: 10
 
 -- ds.button: English
 if: { current-language == "en" }
 
 -- ftd.text: English
-color: $inherited.colors.cta-primary.text
-role: $inherited.types.heading-tiny
+color: $inherited.colors.text-strong
+role: $inherited.types.label-medium
 if: { current-language != "en" }
 $on-click$: $set-language(language = en)
 
@@ -25,8 +27,8 @@ $on-click$: $set-language(language = en)
 if: { current-language == "hi" }
 
 -- ftd.text: Hindi
-color: $inherited.colors.cta-primary.text
-role: $inherited.types.heading-tiny
+color: $inherited.colors.text-strong
+role: $inherited.types.label-medium
 if: { current-language != "hi" }
 $on-click$: $set-language(language = hi)
 
