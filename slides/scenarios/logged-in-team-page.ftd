@@ -8,6 +8,7 @@ data: $data
 
 -- team-page.template-data data:
 templates: $templates
+members: $members
 
 
 
@@ -45,3 +46,51 @@ updated-on: Edited 18 min ago
 url: /
 
 -- end: templates
+
+
+
+
+
+
+
+
+
+
+-- team-page.member list members:
+
+-- team-page.member:
+avatar: $assets.files.slides.assets.avatar.svg
+email: yashveermehra@fastn.com
+role: Owner
+
+-- team-page.member: 
+avatar: $assets.files.slides.assets.avatar.svg
+email: yashveermehra@fastn.com
+role: Member
+action: Remove
+
+-- team-page.member: 
+avatar: $assets.files.slides.assets.avatar.svg
+email: yashveermehra@fastn.com
+role: Member
+action: Remove
+
+-- team-page.member: 
+avatar: $assets.files.slides.assets.avatar.svg
+email: yashveermehra@fastn.com
+role: Member
+action: Remove
+
+-- team-page.member: 
+avatar: $assets.files.slides.assets.avatar.svg
+email: yashveermehra@fastn.com
+role: Member
+action: Remove
+
+-- team-page.member: 
+avatar: $assets.files.slides.assets.avatar.svg
+email: yashveermehra@fastn.com
+role: Member
+action: Remove
+
+-- end: members

@@ -6,6 +6,7 @@
 
 -- record template-data:
 template list templates:
+member list members:
 
 
 
@@ -29,6 +30,10 @@ nav-list: $nav-list
 -- all-templates:
 templates: $page.data.templates
 
+-- member-detail: Team Members
+cta-text: Add Member
+members: $page.data.members
+
 -- end: team-details
 
 -- end: full-page.page
@@ -44,6 +49,16 @@ caption title:
 string url:
 string thumbnail:
 string updated-on:
+
+
+
+
+
+-- record member:
+string email:
+ftd.image-src avatar:
+string role:
+optional string action:
 
 
 
@@ -222,12 +237,23 @@ for: $obj in $all-templates.templates
 
 -- component show-template:
 caption template p:
+boolean $hover: false
 
 -- ftd.column:
 width.fixed.px: 243
 spacing.fixed.px: 8
 padding-bottom.px: 8
 link: $show-template.p.url
+$on-mouse-enter$: $ftd.set-bool($a = $show-template.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show-template.hover, v = false)
+
+-- ftd.image:
+if: { show-template.hover }
+src: $assets.files.slides.assets.dot-menu.svg
+width.fixed.px: 32
+anchor: parent
+right.px: 4
+top.px: 4
 
 -- ftd.image:
 src: $show-template.p.thumbnail
@@ -243,6 +269,141 @@ text: $show-template.p.updated-on
 -- end: ftd.column
 
 -- end: show-template
+
+
+
+
+
+
+
+
+
+
+-- component member-detail:
+caption title:
+string cta-text:
+member list members:
+
+-- ftd.column:
+if: { $current-slide == 2 }
+width: fill-container
+padding-vertical.px: 24
+spacing.fixed.px: 24
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: center
+
+-- ds.heading-tiny: $member-detail.title
+
+-- ds.icon-button: $member-detail.cta-text
+icon: $assets.files.slides.assets.plus.svg
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+padding-bottom.px: 16
+
+-- ftd.row:
+width.fixed.px: 353
+
+-- ds.copy-small: 
+text: User
+
+-- end: ftd.row
+
+-- ftd.row:
+width.fixed.px: 353
+align-content: center
+
+-- ds.copy-small: 
+text: Role
+
+-- end: ftd.row
+
+-- ftd.row:
+width.fixed.px: 353
+align-content: center
+
+-- ds.copy-small: 
+text: Actions
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- show-member:
+for: $obj in $member-detail.members
+email: $obj.email
+avatar: $obj.avatar
+role: $obj.role
+action: $obj.action
+
+-- end: ftd.column
+
+-- end: member-detail
+
+
+
+
+
+
+
+
+
+
+-- component show-member:
+string email:
+ftd.image-src avatar:
+string role:
+optional string action:
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 8
+width.fixed.px: 353
+padding-bottom.px if { !show-member.action }: 16
+
+-- ftd.image:
+src: $show-member.avatar
+width.fixed.px: 24
+height.fixed.px: 24
+align-self: center
+
+-- ds.copy-regular: 
+text: $show-member.email
+
+-- end: ftd.row
+
+-- ftd.row:
+width.fixed.px: 353
+align-content: center
+
+-- ds.copy-regular: 
+text: $show-member.role
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { show-member.action != NULL }
+width.fixed.px: 353
+align-content: center
+
+-- ds.icon-button: $show-member.action
+icon: $assets.files.slides.assets.delete.svg
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: show-member
+
 
 
 
