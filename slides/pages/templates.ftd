@@ -39,7 +39,7 @@ string owner-avatar:
 
 
 -- component show-community-templates:
-caption title: Templates
+caption title: $lang.templates
 template list templates:
 
 -- ftd.column:
@@ -60,7 +60,7 @@ align-content: left
 -- phosphor.bold: house
 size: 24
 
--- ftd.text: Community Templates
+-- ftd.text: $lang.community-templates
 role: $inherited.types.label-large
 
 -- end: ftd.row
