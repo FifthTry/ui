@@ -38,9 +38,12 @@ height: fill-container
 -- ftd.column:
 if: { page.sidebar }
 width.fixed.px: 340
-height: fill-container
+height.fixed.vh: 100
 border-right-width.px: 1
 border-color: $inherited.colors.border
+sticky: true
+left.px: 0
+top.px: 0
 
 -- ftd.row:
 if: { !page.hide-team }

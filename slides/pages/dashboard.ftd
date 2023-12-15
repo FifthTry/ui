@@ -171,14 +171,103 @@ color: $inherited.colors.text-strong
 -- component show-folder:
 caption title:
 string item:
+boolean $hover: false
+boolean $open-menu: false
 
 -- ftd.row:
-width.fixed.px: 250
+width.fixed.px: 280
 padding-vertical.px: 8
 padding-horizontal.px: 16
 spacing.fixed.px: 16
 color: $inherited.colors.text
 align-content: center
+$on-mouse-enter$: $ftd.set-bool($a = $show-folder.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show-folder.hover, v = false)
+
+-- ftd.image:
+if: { show-folder.hover }
+src: $assets.files.slides.assets.dot-menu.svg
+width.fixed.px: 32
+anchor: parent
+right.px: 0
+top.px: 4
+$on-click$: $ftd.toggle($a = $show-folder.open-menu)
+
+-- ftd.column:
+if: { show-folder.open-menu }
+width.fixed.px: 244
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 8
+border-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 8
+spacing.fixed.px: 8
+z-index: 5
+anchor: parent
+right.px: -76
+top.px: 46
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.content-copy.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Make a copy
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.share-user.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Share
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.link.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Copy Link
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.delete.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Move to trash
+
+-- end: ftd.row
+
+-- end: ftd.column
 
 -- phosphor.fill: folder
 size: 54

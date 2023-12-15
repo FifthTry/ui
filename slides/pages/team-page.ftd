@@ -293,7 +293,7 @@ padding.px: 8
 align-content: center
 
 -- ftd.image:
-src: $assets.files.slides.assets.share.svg
+src: $assets.files.slides.assets.share-user.svg
 width.fixed.px: 24
 height.fixed.px: 24
 

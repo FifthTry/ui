@@ -20,6 +20,9 @@ padding-vertical.px: 16
 padding-horizontal.px: 24
 spacing: space-between
 sticky: true
+left.px: 0
+top.px: 0
+z-index: 999
 
 ;; -- dms.dark-mode-switcher:
 
