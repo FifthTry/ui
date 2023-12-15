@@ -85,7 +85,7 @@ optional string $twitter-handle:
 width: fill-container
 
 -- ftd.column:
-width.fixed.px: 300
+width.fixed.px: 302
 padding-vertical.px: 32
 padding-horizontal.px: 24
 spacing.fixed.px: 16
