@@ -1,6 +1,8 @@
 -- import: ui.fifthtry.com/slides/components/full-page
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
+-- import: fastn-community.github.io/svg-icons/phosphor
+
 
 -- integer $current-slide: 1
 
@@ -238,12 +240,12 @@ for: $obj in $all-templates.templates
 -- component show-template:
 caption template p:
 boolean $hover: false
+boolean $open-menu: false
 
 -- ftd.column:
 width.fixed.px: 243
 spacing.fixed.px: 8
 padding-bottom.px: 8
-link: $show-template.p.url
 $on-mouse-enter$: $ftd.set-bool($a = $show-template.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-template.hover, v = false)
 
@@ -254,11 +256,89 @@ width.fixed.px: 32
 anchor: parent
 right.px: 4
 top.px: 4
+$on-click$: $ftd.toggle($a = $show-template.open-menu)
+
+-- ftd.column:
+if: { show-template.open-menu }
+width.fixed.px: 244
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 8
+border-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 8
+spacing.fixed.px: 8
+z-index: 5
+anchor: parent
+right.px: -76
+top.px: 46
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.content-copy.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Make a copy
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.share.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Share
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.link.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Copy Link
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.delete.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Move to trash
+
+-- end: ftd.row
+
+-- end: ftd.column
 
 -- ftd.image:
 src: $show-template.p.thumbnail
 width: fill-container
 border-radius.px: 8
+link: $show-template.p.url
 
 -- ds.heading-tiny: $show-template.p.title
 color: $inherited.colors.text-strong
