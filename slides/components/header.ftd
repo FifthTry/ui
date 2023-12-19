@@ -1,4 +1,3 @@
--- import: fastn-community.github.io/dark-mode-switcher as dms
 -- import: ui.fifthtry.com/slides/components/notification
 -- import: ui.fifthtry.com/slides/components/avatar
 -- import: ui.fifthtry.com/slides/components/language-switcher
@@ -19,8 +18,6 @@ border-color: $inherited.colors.border-strong
 padding-vertical.px: 16
 padding-horizontal.px: 24
 spacing: space-between
-
-;; -- dms.dark-mode-switcher:
 
 -- ftd.row:
 align-content: center

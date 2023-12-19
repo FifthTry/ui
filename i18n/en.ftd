@@ -12,8 +12,12 @@
 
 -- string signup-type: Login
 
+-- string all-presentations: All Presentations
+
 -- string lang: en
 
 -- string templates: Templates
 
 -- string community-templates: Community Templates
+
+-- string university: University

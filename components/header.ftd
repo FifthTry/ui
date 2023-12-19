@@ -1,0 +1,40 @@
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+
+-- component header:
+module site-data: site-data
+module user-data: user-data
+string product:
+
+-- ds.section-row:
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ds.row:
+width: hug-content
+spacing: $ds.spaces.horizontal-gap.zero
+align-content: center
+link: $header.site-data.homepage
+
+-- ftd.image:
+src: $assets.files.assets.fifthtry.png
+width.fixed.px: 104
+height.fixed.px: 32
+margin-top.px: 3
+
+-- ds.heading-small: $header.product
+color: $ds.colors.cta-primary.base
+;; link: /university/
+
+-- end: ds.row
+
+-- ds.row:
+width: hug-content
+
+-- ds.header-link: About
+link: /university/about/
+
+-- end: ds.row
+
+-- end: ds.section-row
+
+-- end: header

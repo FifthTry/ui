@@ -251,7 +251,7 @@ width: fill-container
 spacing: space-between
 padding-bottom.px: 24
 
--- ftd.text: All presentations
+-- ftd.text: $lang.all-presentations
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
