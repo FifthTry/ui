@@ -1,5 +1,5 @@
 -- import: fastn-community.github.io/design-system
-export: button, icon-button, circle-text-button, phosphor-icon-button, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link
+export: button, icon-button, circle-text-button, phosphor-icon-button, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, flush, gap, hv, spaces, widths
 
 -- import: fastn-community.github.io/dark-flame-cs
 -- import: fastn-community.github.io/midnight-storm-typography

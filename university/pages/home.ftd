@@ -1,0 +1,26 @@
+-- record course:
+caption title:
+;; ftd.image-src: icon
+body about:
+
+-- component page:
+course list courses:
+
+-- header:
+
+-- end: page
+
+
+-- component header:
+
+-- ds.section-row:
+-- ds.heading-link: FifthTry
+link: /
+
+-- ds.heading-link: University
+link: /university/
+
+-- end: ds.section-row
+
+-- end: header
+
