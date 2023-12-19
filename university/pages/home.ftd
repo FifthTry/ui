@@ -6,7 +6,11 @@ body about:
 -- component page:
 course list courses:
 
+-- ds.page:
+
 -- header:
+
+-- end: ds.page
 
 -- end: page
 
@@ -14,11 +18,26 @@ course list courses:
 -- component header:
 
 -- ds.section-row:
--- ds.heading-link: FifthTry
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ds.row:
+width: hug-content
+
+-- ds.header-link: FifthTry
 link: /
 
--- ds.heading-link: University
+-- ds.header-link: University
 link: /university/
+
+-- end: ds.row
+
+-- ds.row:
+width: hug-content
+
+-- ds.header-link: About
+link: /university/about/
+
+-- end: ds.row
 
 -- end: ds.section-row
 
