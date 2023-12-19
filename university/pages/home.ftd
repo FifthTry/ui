@@ -15,10 +15,61 @@ module user-data: user-data
 -- p.page:
 product: $lang.university
 
+-- ds.heading-medium: $lang.university-title
+text-align: center
+
+
+-- ftd.row:
+wrap: true
+width.fixed.percent: 80
+align-content: top-left
+margin-top.px: 20
+spacing.fixed.px: 40
+
+-- show-course: $course
+for: course in $page.courses
+
+-- end: ftd.row
+
 -- end: p.page
 
 -- end: page
 
 
 
+-- component show-course:
+caption course course:
+
+-- ds.column:
+width.fixed.calc: 50% - 20px
+border-radius.px: 10
+border-width.px: 2
+border-color: $ds.colors.cta-primary.base
+inset: $ds.spaces.inset-square.zero
+spacing: $ds.spaces.vertical-gap.zero
+
+-- ds.row:
+background.solid: $ds.colors.cta-primary.base
+inset: $ds.spaces.inset-wide.medium
+
+-- ds.heading-tiny: $show-course.course.title
+color: $ds.colors.cta-primary.text
+
+-- end: ds.row
+
+-- ds.column:
+inset: $ds.spaces.inset-square.medium
+align-content: right
+
+-- ds.copy-regular:
+
+$show-course.course.about
+
+-- ds.button: $lang.enroll-now
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: show-course
 

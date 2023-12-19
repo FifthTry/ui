@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/components/language-switcher
 
 -- component header:
 module site-data: site-data
@@ -8,18 +9,19 @@ string product:
 
 -- ds.section-row:
 spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.zero
 
 -- ds.row:
 width: hug-content
 spacing: $ds.spaces.horizontal-gap.zero
 align-content: center
 link: $header.site-data.homepage
+inset: $ds.spaces.inset-square.zero
 
 -- ftd.image:
 src: $assets.files.assets.fifthtry.png
 width.fixed.px: 104
 height.fixed.px: 32
-margin-top.px: 3
 
 -- ds.heading-small: $header.product
 color: $ds.colors.cta-primary.base
@@ -30,8 +32,10 @@ color: $ds.colors.cta-primary.base
 -- ds.row:
 width: hug-content
 
--- ds.header-link: About
+-- ds.header-link: $lang.about
 link: /university/about/
+
+-- language-switcher.dropdown:
 
 -- end: ds.row
 
