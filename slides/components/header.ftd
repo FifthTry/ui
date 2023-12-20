@@ -1,7 +1,6 @@
--- import: fastn-community.github.io/dark-mode-switcher as dms
 -- import: ui.fifthtry.com/slides/components/notification
 -- import: ui.fifthtry.com/slides/components/avatar
--- import: ui.fifthtry.com/slides/components/language-switcher
+-- import: ui.fifthtry.com/components/language-switcher
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
 
@@ -23,8 +22,6 @@ sticky: true
 left.px: 0
 top.px: 0
 z-index: 999
-
-;; -- dms.dark-mode-switcher:
 
 -- ftd.row:
 align-content: center

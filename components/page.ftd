@@ -1,0 +1,27 @@
+-- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/components/header
+
+-- component page:
+module site-data: site-data
+module user-data: user-data
+string product:
+children children:
+
+-- ds.page:
+
+-- header.header:
+site-data: $page.site-data
+user-data: $page.user-data
+product: $lang.university
+
+-- ds.section-column:
+inset: $ds.spaces.inset-square.zero
+content: $page.children
+
+-- end: ds.section-column
+
+-- end: ds.page
+
+
+-- end: page

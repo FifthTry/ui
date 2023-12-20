@@ -23,10 +23,10 @@ role: $inherited.types.label-medium
 if: { current-language != "en" }
 $on-click$: $set-language(language = en)
 
--- ds.button: Hindi
+-- ds.button: हिन्दी
 if: { current-language == "hi" }
 
--- ftd.text: Hindi
+-- ftd.text: हिन्दी
 color: $inherited.colors.text-strong
 role: $inherited.types.label-medium
 if: { current-language != "hi" }

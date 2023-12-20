@@ -1,0 +1,19 @@
+-- import: ui.fifthtry.com/university/pages/home
+
+-- home.page:
+
+-- home.page.courses:
+
+-- home.course: Build Website Using `fastn`
+url: /
+
+In this course you will learn to build a websites using `fastn`. This course
+assumes no prior knowledge of `fastn` or any other framework.
+
+-- home.course: This Is Love
+url: /
+
+In this course you will learn to build a websites using `fastn`. This course
+assumes no prior knowledge of `fastn` or any other framework.
+
+-- end: home.page.courses
