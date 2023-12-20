@@ -1,5 +1,5 @@
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/header
 
 -- component page:
