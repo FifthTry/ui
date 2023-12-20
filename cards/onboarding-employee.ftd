@@ -1,42 +1,85 @@
--- import: ui.fifthtry.com/components/cards/card
 -- import: ui.fifthtry.com/pages/card as p
--- import: fastn-community.github.io/code-block as cb
--- import: ui.fifthtry.com/components/cards/download-button as download
 
 
--- component page:
+
+-- ftd.background-image card-bg:
+src: $assets.files.assets.onboarding.card-background.svg
+size: cover
+
+-- string card-id: onboarding-card
+
+-- component card:
 caption name:
 ftd.image-src avatar:
 string title:
+string id: $card-id
 
--- p.page: Onboarding Member
+-- ftd.column:
+width.fixed.px: 500
+height: hug-content
+background.image: $card-bg
+padding.px: 20
+id: $card.id
 
 -- ftd.row:
 width: fill-container
-spacing: space-between
-align-content: top-left
+height: hug-content
 
--- card.card: $page.name
-title: $page.title
-avatar: $page.avatar
-
--- download.button:
-card-id: onboarding-card
-anchor: parent
-top.px: 0
-right.px: 20
+-- ftd.image: $assets.files.assets.fifthtry.png
+align-self: end
+height.fixed.px: 50
 
 -- end: ftd.row
 
--- cb.code: Sample card usage
-lang: ftd
+-- ftd.image: $assets.files.assets.onboarding.color-bar-broad.svg
+width.fixed.percent: 90
+anchor: parent
+top.px: 200
+z-index: 1
 
-\-- import: ui.fifthtry.com/onboarding/components/card as onboarding
+-- ftd.image: $card.avatar
+align-self: center
+border-radius.px: 20
+height.fixed.px: 250
+margin-left.px: 150
+z-index: 2
 
-\-- onboarding.card: John Doe
-title: Software Developer
-avatar: $assets.files.onboarding.assets.sample-avatar.svg
+-- ftd.column:
+padding-vertical.px: 20
+width: fill-container
+margin-horizontal.px: 20
 
--- end: p.page
+-- ftd.text: Welcome
+role: $ds.types.heading-large
+color: $ds.colors.cta-primary.base
+style: extra-bold
 
--- end: page
+-- ftd.text: $card.name
+role: $ds.types.heading-medium
+color: $ds.colors.text-strong
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 5
+role: $ds.types.copy-regular
+
+-- ftd.text: $card.title
+color: $ds.colors.text-strong
+
+-- ftd.text: @
+color: $ds.colors.cta-primary.base
+
+-- ftd.text: FifthTry
+color: $ds.colors.text-strong
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: card
+
+
+
+

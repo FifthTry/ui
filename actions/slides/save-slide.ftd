@@ -7,7 +7,7 @@ string team:
 integer order:
 string content:
 string module:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 callAlert("Save Slide called")
 

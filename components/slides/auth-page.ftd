@@ -18,7 +18,7 @@ width: fill-container
 background.solid: $inherited.colors.background.base
 
 -- ftd.image:
-src: $assets.files.slides.assets.background.png
+src: $assets.files.assets.slides.background.png
 width.fixed.percent: 60
 height.fixed.vh: 100
 fit: cover
@@ -44,7 +44,7 @@ spacing.fixed.px: 24
 align-content: center
 
 -- ds.icon-button: Continue with Github
-icon: $assets.files.slides.assets.github-mark-white.svg
+icon: $assets.files.assets.slides.github-mark-white.svg
 link: $page.github-url
 
 /-- ftd.row:

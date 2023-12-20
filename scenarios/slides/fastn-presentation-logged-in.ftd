@@ -24,20 +24,20 @@ slide-templates: $slide-templates
 
 
 -- presentation.slide slide:
-content: \-- ftd.image: $assets.files.slides.assets.template-1.png
-preview-url: $assets.files.slides.assets.template-1.png.light
+content: \-- ftd.image: $assets.files.assets.slides.template-1.png
+preview-url: $assets.files.assets.slides.template-1.png.light
 is-valid: true
 
 
 -- presentation.slide-template list slide-templates:
 
 -- presentation.slide-template: Template 1
-thumbnail: $assets.files.slides.assets.template-1.png.light
+thumbnail: $assets.files.assets.slides.template-1.png.light
 slug: temp-1
 presentation-slug: fifthtry-presentation
 
 -- presentation.slide-template: Template 2
-thumbnail: $assets.files.slides.assets.template-2.png.light
+thumbnail: $assets.files.assets.slides.template-2.png.light
 slug: temp-2
 presentation-slug: fifthtry-presentation
 
@@ -51,12 +51,12 @@ presentation-slug: fifthtry-presentation
 -- presentation.slide-thumbnail list slide-thumbnails:
 
 -- presentation.slide-thumbnail:
-thumbnail-url: $assets.files.slides.assets.template-1.png.light
+thumbnail-url: $assets.files.assets.slides.template-1.png.light
 url: /slides/scenarios/fastn-presentation-logged-in/
 is-valid: true
 
 -- presentation.slide-thumbnail:
-thumbnail-url: $assets.files.slides.assets.template-2.png.light
+thumbnail-url: $assets.files.assets.slides.template-2.png.light
 url: /slides/scenarios/fastn-presentation-logged-in/
 is-valid: true
 

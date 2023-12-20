@@ -6,6 +6,6 @@ string presentation:
 integer order:
 string direction:
 string module:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 callAlert("Move Slide called")

@@ -197,7 +197,7 @@ spacing: space-between
 -- ds.heading-small: Create new project
 
 -- ftd.image:
-src: $assets.files.slides.assets.cross.svg
+src: $assets.files.assets.slides.cross.svg
 width.fixed.px: 24
 align-self: center
 $on-click$: $ftd.set-bool($a = $page.pop-up, v= false)

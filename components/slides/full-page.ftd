@@ -65,7 +65,7 @@ text: $page.team-name
 
 -- ftd.image:
 if: { !unimplemented }
-src: $assets.files.slides.assets.toggle-down.svg
+src: $assets.files.assets.slides.toggle-down.svg
 width.fixed.px: 24
 align-self: center
 

@@ -5,6 +5,6 @@ string team:
 string presentation:
 string title:
 module module:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 callAlert("Change Presentation Title API called")

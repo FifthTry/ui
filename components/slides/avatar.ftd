@@ -18,8 +18,8 @@ padding.px: 8
 -- ds.circle-text-button: $get-initials(name=$avatar.title)
 
 -- ftd.image:
-src: $assets.files.slides.assets.toggle-down.svg
-src if { avatar.open }: $assets.files.slides.assets.toggle-up.svg
+src: $assets.files.assets.slides.toggle-down.svg
+src if { avatar.open }: $assets.files.assets.slides.toggle-up.svg
 width.fixed.px: 24
 height.fixed.px: 24
 
@@ -83,7 +83,7 @@ border-color: $inherited.colors.border
 spacing.fixed.px: 8
 
 -- ftd.image:
-src: $assets.files.slides.assets.setting.svg
+src: $assets.files.assets.slides.setting.svg
 width.fixed.px: 24
 height.fixed.px: 24
 align-self: center
@@ -101,7 +101,7 @@ padding-horizontal.px: 8
 spacing.fixed.px: 8
 
 -- ftd.image:
-src: $assets.files.slides.assets.logout.svg
+src: $assets.files.assets.slides.logout.svg
 width.fixed.px: 24
 height.fixed.px: 24
 align-self: center
@@ -126,6 +126,6 @@ link: /-/auth/logout/
 
 -- string get-initials(name):
 string name:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 get_initials(name)

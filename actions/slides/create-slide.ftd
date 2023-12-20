@@ -6,6 +6,6 @@ string presentation:
 string template_slide:
 string template_presentation:
 string module:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 callAlert("Create Slide called")

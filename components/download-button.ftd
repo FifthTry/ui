@@ -32,8 +32,8 @@ $on-mouse-leave$: $ftd.set-bool($a = $button.mouse-in, v = false)
 $on-click$: $utils.download-as-image(element_id = $button.card-id, filename = $button.filename)
 
 -- ftd.image:
-src: $assets.files.onboarding.assets.download.svg
-src if { button.mouse-in }: $assets.files.onboarding.assets.download-hover.svg
+src: $assets.files.assets.onboarding.download.svg
+src if { button.mouse-in }: $assets.files.assets.onboarding.download-hover.svg
 width.fixed.px: 16
 height.fixed.px: 16
 align-self: center

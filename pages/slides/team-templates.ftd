@@ -78,7 +78,7 @@ color: $inherited.colors.text-strong
 
 -- ds.icon-button: Explore templates
 if: { !unimplemented }
-icon: $assets.files.slides.assets.globe.svg
+icon: $assets.files.assets.slides.globe.svg
 
 -- end: ftd.row
 

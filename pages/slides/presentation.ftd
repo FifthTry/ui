@@ -133,12 +133,12 @@ align-content: center
 spacing.fixed.px: 16
 
 -- ds.icon-button: Present
-icon: $assets.files.slides.assets.play.svg
+icon: $assets.files.assets.slides.play.svg
 link: $presentation-slide.data.present-url
 
 -- ftd.image:
-src: $assets.files.slides.assets.toggle-down.svg
-src if { presentation-slide.toggle }: $assets.files.slides.assets.toggle-up.svg
+src: $assets.files.assets.slides.toggle-down.svg
+src if { presentation-slide.toggle }: $assets.files.assets.slides.toggle-up.svg
 width.fixed.px: 38
 height.fixed.px: 38
 padding.px: 7
@@ -182,7 +182,7 @@ $on-mouse-enter$: $ftd.set-bool($a = $presentation-slide.is-add-slide-icon-hover
 $on-mouse-leave$: $ftd.set-bool($a = $presentation-slide.is-add-slide-icon-hovered, v = false)
 
 -- ftd.image:
-src: $assets.files.slides.assets.plus-2.svg
+src: $assets.files.assets.slides.plus-2.svg
 opacity: 0.2
 opacity if { presentation-slide.is-add-slide-icon-hovered }: 0.6
 cursor: pointer
@@ -200,7 +200,7 @@ spacing.fixed.px: 8
 padding-right.px: 24
 
 -- ftd.image:
-src: $assets.files.slides.assets.setting.svg
+src: $assets.files.assets.slides.setting.svg
 width.fixed.px: 38
 height.fixed.px: 38
 padding.px: 7
@@ -293,7 +293,7 @@ role: $inherited.types.copy-regular
 -- end: ftd.column
 
 -- ds.icon-button: Save
-icon: $assets.files.slides.assets.save-floppy.svg
+icon: $assets.files.assets.slides.save-floppy.svg
 $on-click$: $presentation-slide.save-slide.submit(presentation=$presentation-slide.presentation-slug,team=$presentation-slide.team-slug, order = $presentation-slide.order, content = $presentation-slide.current-slide-content, module = $presentation-slide.save-slide)
 
 -- end: ftd.column
@@ -335,7 +335,7 @@ role: $inherited.types.copy-regular
 color: $inherited.colors.text
 
 -- ftd.image:
-src: $assets.files.slides.assets.cross.svg
+src: $assets.files.assets.slides.cross.svg
 width.fixed.px: 16
 height.fixed.px: 16
 $on-click$: $ftd.set-bool($a = $presentation-slide.new-slides-popup, v = false)
@@ -370,12 +370,12 @@ align-content: right
 ;; Weird issue doing this (x_x)
 /-- ds.icon-button:
 if: { presentation-slide.save-slide.content-error != NULL }
-icon: $assets.files.slides.assets.error.svg
+icon: $assets.files.assets.slides.error.svg
 $on-click$: $ftd.set-bool($a = $presentation-slide.show-error-window, v = true)
 
 -- ftd.image:
 if: { presentation-slide.save-slide.content-error != NULL }
-src: $assets.files.slides.assets.error.svg
+src: $assets.files.assets.slides.error.svg
 width.fixed.px: 30
 height.fixed.px: 30
 padding.px: 4
@@ -386,7 +386,7 @@ $on-click$: $ftd.set-bool($a = $presentation-slide.show-error-window, v = true)
 
 -- ftd.image:
 if: { !unimplemented }
-src: $assets.files.slides.assets.comment.svg
+src: $assets.files.assets.slides.comment.svg
 width.fixed.px: 30
 height.fixed.px: 30
 padding.px: 4
@@ -398,7 +398,7 @@ if: { len(presentation-slide.data.comments) != 0 }
 
 -- ftd.image:
 if: { !unimplemented }
-src: $assets.files.slides.assets.responsive.svg
+src: $assets.files.assets.slides.responsive.svg
 width.fixed.px: 30
 height.fixed.px: 30
 padding.px: 4
@@ -408,8 +408,8 @@ $on-click$: $ftd.toggle($a = $presentation-slide.mobile)
 
 -- ftd.image:
 if: { !unimplemented }
-src: $assets.files.slides.assets.expand.svg
-src if { presentation-slide.responsive }: $assets.files.slides.assets.collapse.svg
+src: $assets.files.assets.slides.expand.svg
+src if { presentation-slide.responsive }: $assets.files.assets.slides.collapse.svg
 width.fixed.px: 30
 height.fixed.px: 30
 padding.px: 4
@@ -462,7 +462,7 @@ role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 
 -- ftd.image:
-src: $assets.files.slides.assets.cross.svg
+src: $assets.files.assets.slides.cross.svg
 width.fixed.px: 16
 height.fixed.px: 16
 $on-click$: $ftd.set-bool($a = $presentation-slide.comment, v = false)
@@ -548,7 +548,7 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-slide.is-hovered, v = false)
 
 -- ftd.image:
 if: { show-slide.order == 1 }
-src: $assets.files.slides.assets.left.svg
+src: $assets.files.assets.slides.left.svg
 width.fixed.px: 30
 height.fixed.px: 30
 align-self: end
@@ -559,8 +559,8 @@ opacity: 0.3
 
 -- ftd.image:
 if: { show-slide.order != 1 }
-src: $assets.files.slides.assets.left.svg
-src if { show-slide.is-left-icon-hovered }: $assets.files.slides.assets.left-hover.svg
+src: $assets.files.assets.slides.left.svg
+src if { show-slide.is-left-icon-hovered }: $assets.files.assets.slides.left-hover.svg
 width.fixed.px: 30
 height.fixed.px: 30
 align-self: end
@@ -572,8 +572,8 @@ $on-mouse-enter$: $ftd.set-bool($a = $show-slide.is-left-icon-hovered, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-slide.is-left-icon-hovered, v = false)
 
 -- ftd.image:
-src: $assets.files.slides.assets.delete.svg
-src if { show-slide.is-delete-icon-hovered }: $assets.files.slides.assets.delete-hover.svg
+src: $assets.files.assets.slides.delete.svg
+src if { show-slide.is-delete-icon-hovered }: $assets.files.assets.slides.delete-hover.svg
 width.fixed.px: 30
 height.fixed.px: 30
 align-self: end
@@ -587,7 +587,7 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-slide.is-delete-icon-hovered, v = fal
 
 -- ftd.image:
 if: { show-slide.order == show-slide.total-slides }
-src: $assets.files.slides.assets.right.svg
+src: $assets.files.assets.slides.right.svg
 width.fixed.px: 30
 height.fixed.px: 30
 align-self: end
@@ -598,8 +598,8 @@ opacity: 0.3
 
 -- ftd.image:
 if: { show-slide.order != show-slide.total-slides }
-src: $assets.files.slides.assets.right.svg
-src if { show-slide.is-right-icon-hovered }: $assets.files.slides.assets.right-hover.svg
+src: $assets.files.assets.slides.right.svg
+src if { show-slide.is-right-icon-hovered }: $assets.files.assets.slides.right-hover.svg
 width.fixed.px: 30
 height.fixed.px: 30
 align-self: end

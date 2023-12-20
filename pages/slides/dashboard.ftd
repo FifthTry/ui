@@ -85,7 +85,7 @@ spacing: space-between
 -- ds.heading-medium: Folders
 
 -- ds.icon-button: New Folder
-icon: $assets.files.slides.assets.plus.svg
+icon: $assets.files.assets.slides.plus.svg
 $on-click$: $ftd.set-bool($a = $all-folders.pop-up, v= true)
 
 -- end: ftd.row
@@ -124,7 +124,7 @@ spacing: space-between
 -- ds.heading-small: Create new folder
 
 -- ftd.image:
-src: $assets.files.slides.assets.cross.svg
+src: $assets.files.assets.slides.cross.svg
 width.fixed.px: 24
 align-self: center
 $on-click$: $ftd.set-bool($a = $all-folders.pop-up, v= false)
@@ -256,7 +256,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ds.icon-button: New Presentation
-icon: $assets.files.slides.assets.plus.svg
+icon: $assets.files.assets.slides.plus.svg
 link: $all-presentations.add-presentation-url
 
 -- ftd.column:
@@ -288,7 +288,7 @@ role: $inherited.types.heading-small
 color: $inherited.colors.text-strong
 
 -- ftd.image:
-src: $assets.files.slides.assets.cross.svg
+src: $assets.files.assets.slides.cross.svg
 width.fixed.px: 28
 height.fixed.px: 28
 $on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v = false)

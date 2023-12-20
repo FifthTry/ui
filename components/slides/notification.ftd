@@ -7,7 +7,7 @@ $on-click$: $ftd.toggle($a = $notification.open)
 $on-click-outside$: $ftd.set-boolean($a = $notification.open, v = false)
 
 -- ftd.image:
-src: $assets.files.slides.assets.notification.svg
+src: $assets.files.assets.slides.notification.svg
 width.fixed.px: 40
 height.fixed.px: 40
 border-radius.px: 8

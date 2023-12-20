@@ -25,7 +25,7 @@ spacing.fixed.px: 8
 
 -- ftd.image:
 if: { !unimplemented }
-src: $assets.files.slides.assets.menu.svg
+src: $assets.files.assets.slides.menu.svg
 width.fixed.px: 32
 border-radius.px: 4
 border-width.px: 1

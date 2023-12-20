@@ -4,6 +4,6 @@
 string team:
 string presentation:
 string module:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 callAlert("Toggle Template called")

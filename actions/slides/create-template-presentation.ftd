@@ -10,6 +10,6 @@ string team_slug:
 string target_team:
 string visibility:
 module module:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 callAlert("Create Template Presentation called")

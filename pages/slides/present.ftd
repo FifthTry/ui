@@ -82,7 +82,7 @@ align-content: center
 border-radius.px: 15
 padding-vertical.px: 10
 classes: switcher
-css: $assets.files.slides.css.opacity.css
+css: $assets.files.assets.css.opacity.css
 
 -- ds.phosphor-icon-button:
 icon: arrow-fat-left
