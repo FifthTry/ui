@@ -1,9 +1,9 @@
--- import: ui.fifthtry.com/slides/components/full-page
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
--- import: ui.fifthtry.com/slides/actions/toggle-template
--- import: ui.fifthtry.com/slides/actions/save-presentation-settings
--- import: ui.fifthtry.com/slides/actions/change-presentation-title
+-- import: ui.fifthtry.com/components/slides/full-page
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/actions/slides/toggle-template
+-- import: ui.fifthtry.com/actions/slides/save-presentation-settings
+-- import: ui.fifthtry.com/actions/slides/change-presentation-title
 
 -- record settings-data:
 string fastn-conf:
@@ -13,8 +13,8 @@ string editor-url:
 string presentation-title:
 string team-name:
 
--- string toggle-template-module-name: ui.fifthtry.com/slides/actions/toggle-template
--- string save-presentation-settings-module-name: ui.fifthtry.com/slides/actions/save-presentation-settings
+-- string toggle-template-module-name: ui.fifthtry.com/actions/slides/toggle-template
+-- string save-presentation-settings-module-name: ui.fifthtry.com/actions/slides/save-presentation-settings
 
 -- component page:
 module user-data: user-data

@@ -1,9 +1,9 @@
--- import: ui.fifthtry.com/slides/pages/templates
--- import: ui.fifthtry.com/slides/scenarios/john-doe-ud
+-- import: ui.fifthtry.com/pages/slides/templates
+-- import: ui.fifthtry.com/scenarios/john-doe
 
 
 -- templates.page:
-user-data: john-doe-ud
+user-data: john-doe
 data: $data
 
 

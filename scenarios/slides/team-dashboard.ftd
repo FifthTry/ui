@@ -1,11 +1,11 @@
--- import: ui.fifthtry.com/slides/pages/dashboard
--- import: ui.fifthtry.com/slides/scenarios/john-doe-ud
+-- import: ui.fifthtry.com/pages/slides/dashboard
+-- import: ui.fifthtry.com/scenarios/john-doe
 
 
 -- dashboard.page:
 folders: $folders
 data: $data
-user-data: john-doe-ud
+user-data: john-doe
 add-presentation-url: slides/scenarios/logged-in-templates/
 
 

@@ -1,7 +1,7 @@
--- import: ui.fifthtry.com/onboarding/components/card
--- import: ui.fifthtry.com/onboarding/components/page as p
+-- import: ui.fifthtry.com/components/cards/card
+-- import: ui.fifthtry.com/pages/card as p
 -- import: fastn-community.github.io/code-block as cb
--- import: ui.fifthtry.com/onboarding/components/download-button as download
+-- import: ui.fifthtry.com/components/cards/download-button as download
 
 
 -- component page:

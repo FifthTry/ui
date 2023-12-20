@@ -1,16 +1,16 @@
--- import: ui.fifthtry.com/slides/components/full-page
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
--- import: ui.fifthtry.com/slides/actions/create-slide
--- import: ui.fifthtry.com/slides/actions/delete-slide
--- import: ui.fifthtry.com/slides/actions/save-slide
--- import: ui.fifthtry.com/slides/actions/move-slide
+-- import: ui.fifthtry.com/components/slides/full-page
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/actions/slides/create-slide
+-- import: ui.fifthtry.com/actions/slides/delete-slide
+-- import: ui.fifthtry.com/actions/slides/save-slide
+-- import: ui.fifthtry.com/actions/slides/move-slide
 
--- string create-slide-module-name: ui.fifthtry.com/slides/actions/create-slide
--- string delete-slide-module-name: ui.fifthtry.com/slides/actions/delete-slide
+-- string create-slide-module-name: ui.fifthtry.com/actions/slides/create-slide
+-- string delete-slide-module-name: ui.fifthtry.com/actions/slides/delete-slide
 /-- string save-slide-module-name: slides.fifthtry.com/actions/save-slide
--- string save-slide-module-name: ui.fifthtry.com/slides/actions/save-slide
--- string move-slide-module-name: ui.fifthtry.com/slides/actions/move-slide
+-- string save-slide-module-name: ui.fifthtry.com/actions/slides/save-slide
+-- string move-slide-module-name: ui.fifthtry.com/actions/slides/move-slide
 
 -- boolean unimplemented: true
 

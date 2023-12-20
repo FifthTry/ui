@@ -1,6 +1,6 @@
--- import: ui.fifthtry.com/slides/pages/signin
+-- import: ui.fifthtry.com/pages/slides/signin
 
 
 -- signin.page:
-github-url: slides/scenarios/team-dashboard/
-signup-url: slides/scenarios/signup-page/
+github-url: scenarios/slides/team-dashboard/
+signup-url: scenarios/slides/signup-page/

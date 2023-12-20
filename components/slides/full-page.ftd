@@ -1,6 +1,6 @@
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
--- import: ui.fifthtry.com/slides/components/header
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/components/slides/header
 -- import: fastn/processors as pr
 -- import: fastn-community.github.io/svg-icons/phosphor
 

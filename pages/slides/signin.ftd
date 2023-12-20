@@ -1,6 +1,6 @@
--- import: ui.fifthtry.com/slides/components/action-page
--- import: ui.fifthtry.com/slides/components/auth-page
--- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/components/slides/action-page
+-- import: ui.fifthtry.com/components/slides/auth-page
+-- import: ui.fifthtry.com/site-data
 
 
 

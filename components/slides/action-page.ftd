@@ -1,5 +1,5 @@
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/components/action-header
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/components/slides/action-header
 
 
 -- component page:

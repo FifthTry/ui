@@ -1,8 +1,8 @@
--- import: ui.fifthtry.com/slides/pages/present
--- import: ui.fifthtry.com/slides/scenarios/john-doe-ud
+-- import: ui.fifthtry.com/pages/slides/present
+-- import: ui.fifthtry.com/scenarios/john-doe
 
 -- present.page:
-user-data: john-doe-ud
+user-data: john-doe
 data: $data
 team-slug: fifthtry
 presentation-slug: fifthtry-presentation

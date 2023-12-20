@@ -1,6 +1,6 @@
--- import: ui.fifthtry.com/slides/components/full-page
--- import: ui.fifthtry.com/slides/user-data
--- import: ui.fifthtry.com/slides/actions/create-template-presentation
+-- import: ui.fifthtry.com/components/slides/full-page
+-- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/actions/slides/create-template-presentation
 
 -- record template-data:
 caption template-name:

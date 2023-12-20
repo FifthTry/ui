@@ -1,5 +1,0 @@
--- import: ui.fifthtry.com/onboarding/pages/onboarding-card-page as onboarding
-
--- onboarding.page: Ishaan Kaustav
-title: Software Developer Intern
-avatar: $assets.files.onboarding.assets.avatar.ishaan.png
