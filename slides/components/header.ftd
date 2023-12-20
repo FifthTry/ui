@@ -9,6 +9,7 @@
 -- component header:
 module site-data: site-data
 module user-data: user-data
+optional boolean $sidebar: false
 
 -- ftd.row:
 width: fill-container
@@ -37,6 +38,7 @@ border-color: $inherited.colors.border
 background.solid: $inherited.colors.background.step-1
 padding.px: 4
 fit: cover
+$on-click$: $ftd.toggle($a = $header.sidebar)
 
 -- ftd.image:
 link: $header.site-data.homepage

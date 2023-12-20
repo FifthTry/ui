@@ -13,7 +13,7 @@ border-radius.px: 8
 border-width.px: 1
 border-color: $inherited.colors.border
 background.solid: $inherited.colors.background.step-1
-padding.px: 8
+padding.px: 6
 
 -- ds.circle-text-button: $get-initials(name=$avatar.title)
 

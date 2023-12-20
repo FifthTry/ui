@@ -22,7 +22,7 @@ string add-presentation-url:
 -- full-page.page:
 site-data: site-data
 user-data: $page.user-data
-sidebar: true
+$sidebar: true
 team-name: $page.data.team-name
 
 -- all-folders:
@@ -82,7 +82,7 @@ spacing.fixed.px: 24
 width: fill-container
 spacing: space-between
 
--- ds.heading-medium: Folders
+-- ds.heading-medium: $lang.folder
 
 -- ds.icon-button: New Folder
 icon: $assets.files.slides.assets.plus.svg
@@ -92,7 +92,6 @@ $on-click$: $ftd.set-bool($a = $all-folders.pop-up, v= true)
 
 -- ftd.row:
 width: fill-container
-padding-horizontal.px: 8
 padding-top.px: 24
 spacing.fixed.px: 24
 
@@ -176,21 +175,21 @@ boolean $open-menu: false
 
 -- ftd.row:
 width.fixed.px: 280
-padding-vertical.px: 8
-padding-horizontal.px: 16
+padding.px: 8
 spacing.fixed.px: 16
+border-radius.px: 6
 color: $inherited.colors.text
-align-content: center
 $on-mouse-enter$: $ftd.set-bool($a = $show-folder.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-folder.hover, v = false)
+background.solid if { show-folder.hover }: $inherited.colors.background.step-1
 
 -- ftd.image:
 if: { show-folder.hover }
 src: $assets.files.slides.assets.dot-menu.svg
 width.fixed.px: 32
 anchor: parent
-right.px: 0
-top.px: 4
+right.px: 8
+top.px: 8
 $on-click$: $ftd.toggle($a = $show-folder.open-menu)
 
 -- ftd.column:

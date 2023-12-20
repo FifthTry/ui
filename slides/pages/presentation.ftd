@@ -200,11 +200,8 @@ padding-right.px: 24
 
 -- ftd.image:
 src: $assets.files.slides.assets.setting.svg
-width.fixed.px: 38
-height.fixed.px: 38
-padding.px: 7
-background.solid: $inherited.colors.background.step-1
-border-radius.px: 8
+width.fixed.px: 32
+height.fixed.px: 32
 link: $presentation-slide.data.settings-url
 
 -- end: ftd.column

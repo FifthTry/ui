@@ -19,14 +19,14 @@ background.solid: $inherited.colors.background.base
 
 -- ftd.image:
 src: $assets.files.slides.assets.background.png
-width.fixed.percent: 60
+width.fixed.percent: 70
 height.fixed.vh: 100
 fit: cover
 
 -- ftd.column:
 align-content: center
 padding-top.px: 84
-width.fixed.px: 496
+width.fixed.percent: 30
 spacing.fixed.px: 64
 
 -- ftd.image:
@@ -39,13 +39,15 @@ fit: cover
 $page.title
 
 -- ftd.column:
-margin-top.px: 84
+margin-top.px: 38
 spacing.fixed.px: 24
 align-content: center
 
 -- ds.icon-button: Continue with Github
 icon: $assets.files.slides.assets.github-mark-white.svg
 link: $page.github-url
+kind: warning
+variant: outline
 
 /-- ftd.row:
 if: { page.signin-url }

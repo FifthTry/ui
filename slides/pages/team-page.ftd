@@ -83,16 +83,21 @@ optional string $twitter-handle:
 
 -- ftd.row:
 width: fill-container
+height: fill-container
+padding-bottom.px: 32
 
 -- ftd.column:
 width.fixed.px: 302
 padding-vertical.px: 32
 padding-horizontal.px: 24
 spacing.fixed.px: 16
-align-content: top-center
-border-right-width.px: 1
-border-color: $inherited.colors.border
-height.fixed.calc: 100vh - 76px
+sticky: true
+top.px: 84
+left.px: 0
+min-width.fixed.percent: 20
+min-height.fixed.calc: 100vh - 138px
+overflow-y: auto
+align-content: top-left
 
 -- ftd.image:
 src: $team-details.team-avatar
@@ -141,6 +146,9 @@ $on-input$: $ftd.set-string($a = $team-details.twitter-handle, v = $VALUE)
 -- ftd.column:
 width.fixed.px: 1440
 padding-horizontal.px: 40
+border-left-width.px: 1
+min-height.fixed.px: 620
+border-color: $inherited.colors.border
 
 -- ftd.row:
 width: fill-container
@@ -476,7 +484,9 @@ width.fixed.px: 353
 align-content: center
 
 -- ds.icon-button: $show-member.action
-icon: $assets.files.slides.assets.delete.svg
+icon: $assets.files.slides.assets.delete-red.svg
+variant: outline
+kind: danger
 
 -- end: ftd.row
 

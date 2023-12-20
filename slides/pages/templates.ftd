@@ -16,7 +16,7 @@ template-data data:
 -- full-page.page:
 site-data: site-data
 user-data: $page.user-data
-sidebar: true
+$sidebar: true
 
 -- show-community-templates:
 templates: $page.data.templates
@@ -77,6 +77,7 @@ color: $inherited.colors.text-strong
 -- ds.icon-button: Explore templates
 if: { !unimplemented }
 icon: $assets.files.slides.assets.globe.svg
+kind: primary
 
 -- end: ftd.row
 
