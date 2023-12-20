@@ -5,7 +5,7 @@
 -- component header:
 module site-data: site-data
 module user-data: user-data
-string product:
+optional string product:
 
 -- ds.section-row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -24,6 +24,7 @@ width.fixed.px: 104
 height.fixed.px: 32
 
 -- ds.heading-small: $header.product
+if: { $header.product != NULL }
 color: $ds.colors.cta-primary.base
 ;; link: /university/
 
