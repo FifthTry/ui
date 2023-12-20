@@ -1,0 +1,15 @@
+-- import: fastn-community.github.io/doc-site
+
+-- component page:
+optional caption title:
+optional body body:
+children wrapper:
+
+-- doc-site.page: $page.title
+body: $page.body
+site-name: Fifthtry UI
+wrapper: $page.wrapper
+
+-- end: doc-site.page
+
+-- end: page

@@ -1,0 +1,42 @@
+-- import: ui.fifthtry.com/onboarding/components/card
+-- import: ui.fifthtry.com/onboarding/components/page as p
+-- import: fastn-community.github.io/code-block as cb
+-- import: ui.fifthtry.com/onboarding/components/download-button as download
+
+
+-- component page:
+caption name:
+ftd.image-src avatar:
+string title:
+
+-- p.page: Onboarding Member
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: top-left
+
+-- card.card: $page.name
+title: $page.title
+avatar: $page.avatar
+
+-- download.button:
+card-id: onboarding-card
+anchor: parent
+top.px: 0
+right.px: 20
+
+-- end: ftd.row
+
+-- cb.code: Sample card usage
+lang: ftd
+
+\-- import: ui.fifthtry.com/onboarding/components/card as onboarding
+
+\-- onboarding.card: John Doe
+title: Software Developer
+avatar: $assets.files.onboarding.assets.sample-avatar.svg
+
+-- end: p.page
+
+-- end: page
