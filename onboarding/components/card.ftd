@@ -44,27 +44,27 @@ width: fill-container
 margin-horizontal.px: 20
 
 -- ftd.text: Welcome
-role: $inherited.types.heading-large
-color: $inherited.colors.cta-primary.base
+role: $ds.types.heading-large
+color: $ds.colors.cta-primary.base
 style: extra-bold
 
 -- ftd.text: $card.name
-role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+role: $ds.types.heading-medium
+color: $ds.colors.text-strong
 
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 5
-role: $inherited.types.copy-regular
+role: $ds.types.copy-regular
 
 -- ftd.text: $card.title
-color: $inherited.colors.text-strong
+color: $ds.colors.text-strong
 
 -- ftd.text: @
-color: $inherited.colors.cta-primary.base
+color: $ds.colors.cta-primary.base
 
 -- ftd.text: FifthTry
-color: $inherited.colors.text-strong
+color: $ds.colors.text-strong
 
 -- end: ftd.row
 
