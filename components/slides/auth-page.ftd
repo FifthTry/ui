@@ -46,8 +46,7 @@ align-content: center
 -- ds.icon-button: Continue with Github
 icon: $assets.files.assets.slides.github-mark-white.svg
 link: $page.github-url
-kind: warning
-variant: outline
+kind: primary
 
 /-- ftd.row:
 if: { page.signin-url }
