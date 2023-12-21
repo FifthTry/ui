@@ -1,0 +1,90 @@
+-- import: ui.fifthtry.com/slides/site-data
+
+
+
+
+
+
+-- component page:
+caption title:
+module site-data: site-data
+module user-data: user-data
+string github-url:
+optional string signup-url:
+optional string signin-url:
+
+-- ftd.row:
+width: fill-container
+background.solid: $inherited.colors.background.base
+
+-- ftd.image:
+src: $assets.files.assets.slides.background.png
+width.fixed.percent: 70
+height.fixed.vh: 100
+fit: cover
+
+-- ftd.column:
+align-content: center
+padding-top.px: 84
+width.fixed.percent: 30
+spacing.fixed.px: 64
+
+-- ftd.image:
+src: $page.site-data.logo
+width: auto
+fit: cover
+
+-- ds.copy-large:
+
+$page.title
+
+-- ftd.column:
+margin-top.px: 38
+spacing.fixed.px: 24
+align-content: center
+
+-- ds.icon-button: Continue with Github
+icon: $assets.files.assets.slides.github-mark-white.svg
+link: $page.github-url
+kind: warning
+variant: outline
+
+/-- ftd.row:
+if: { page.signin-url }
+spacing.fixed.px: 12
+align-content: center
+
+-- ftd.checkbox:
+
+-- ds.copy-small:
+
+$lang.checkbox-info
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 6
+align-content: center
+padding.px: 10
+
+-- ds.copy-regular: 
+text: $lang.create-account
+text if { page.signin-url }: $lang.existing-account
+display: inline
+
+-- ftd.text: $lang.signin-type
+text if { page.signin-url }: $lang.signup-type
+role: $inherited.types.button-medium
+color: $inherited.colors.info.text
+link if { page.signup-url }: $page.signup-url
+link if { page.signin-url }: $page.signin-url
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: page

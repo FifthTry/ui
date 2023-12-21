@@ -1,0 +1,484 @@
+-- import: ui.fifthtry.com/components/slides/full-page
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+-- import: fastn-community.github.io/svg-icons/phosphor
+
+-- boolean show-all-folders: false
+
+-- record dashboard-data:
+presentation list presentations:
+template list templates:
+string team-name:
+
+
+
+-- component page:
+module user-data: user-data
+presentation list presentations:
+dashboard-data data:
+folder list folders:
+string add-presentation-url:
+
+-- full-page.page:
+site-data: site-data
+user-data: $page.user-data
+$sidebar: true
+team-name: $page.data.team-name
+
+-- all-folders:
+;;if: { show-all-folders }
+folders: $page.folders
+
+-- all-presentations:
+presentations: $page.data.presentations
+templates: $page.data.templates
+add-presentation-url: $page.add-presentation-url
+
+-- end: full-page.page
+
+-- end: page
+
+
+
+
+-- record presentation:
+caption title:
+string url:
+string thumbnail:
+string updated-on:
+
+
+-- record template:
+caption title:
+string url:
+string thumbnail:
+
+
+
+-- record folder:
+caption title:
+string item:
+
+
+
+
+
+
+
+
+
+
+-- component all-folders:
+folder list folders:
+boolean $pop-up: false
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px: 40
+padding-vertical.px: 24
+spacing.fixed.px: 24
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+
+-- ds.heading-medium: $lang.folder
+
+-- ds.icon-button: New Folder
+icon: $assets.files.assets.slides.plus.svg
+$on-click$: $ftd.set-bool($a = $all-folders.pop-up, v= true)
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+padding-top.px: 24
+spacing.fixed.px: 24
+
+-- show-folder: $obj.title
+for: $obj in $all-folders.folders
+item: $obj.item
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { all-folders.pop-up }
+width.fixed.px: 370
+min-height.fixed.px: 264
+padding.px: 24
+border-radius.px: 8
+background.solid: $inherited.colors.background.step-1
+spacing.fixed.px: 24
+z-index: 2
+anchor: parent
+align-self: center
+left.px: 300
+top.px: 140
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+
+-- ds.heading-small: Create new folder
+
+-- ftd.image:
+src: $assets.files.assets.slides.cross.svg
+width.fixed.px: 24
+align-self: center
+$on-click$: $ftd.set-bool($a = $all-folders.pop-up, v= false)
+
+-- end: ftd.row
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.text: Folder name
+role: $inherited.types.button-small
+
+-- ftd.text-input:
+width: fill-container
+placeholder: placeholder
+height.fixed.px: 48
+border-radius.px: 4
+background.solid: transparent
+border-width.px: 2
+border-color: $inherited.colors.border
+padding.px: 12
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- ds.primary-button: Create
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: all-folders
+
+
+
+
+
+
+
+
+
+
+-- component show-folder:
+caption title:
+string item:
+boolean $hover: false
+boolean $open-menu: false
+
+-- ftd.row:
+width.fixed.px: 280
+padding.px: 8
+spacing.fixed.px: 16
+border-radius.px: 6
+color: $inherited.colors.text
+$on-mouse-enter$: $ftd.set-bool($a = $show-folder.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show-folder.hover, v = false)
+background.solid if { show-folder.hover }: $inherited.colors.background.step-1
+
+-- ftd.image:
+if: { show-folder.hover }
+src: $assets.files.slides.assets.dot-menu.svg
+width.fixed.px: 32
+anchor: parent
+right.px: 8
+top.px: 8
+$on-click$: $ftd.toggle($a = $show-folder.open-menu)
+
+-- ftd.column:
+if: { show-folder.open-menu }
+width.fixed.px: 244
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 8
+border-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 8
+spacing.fixed.px: 8
+z-index: 5
+anchor: parent
+right.px: -76
+top.px: 46
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.content-copy.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Make a copy
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.share-user.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Share
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.link.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Copy Link
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+padding.px: 8
+align-content: center
+
+-- ftd.image:
+src: $assets.files.slides.assets.delete.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ds.copy-regular:
+text: Move to trash
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- phosphor.fill: folder
+size: 54
+
+-- ftd.column:
+spacing.fixed.px: 4
+
+-- ds.copy-large: 
+text: $show-folder.title
+color: $inherited.colors.text-strong
+
+-- ftd.text: $show-folder.item
+role: $inherited.types.label-small
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: show-folder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component all-presentations:
+presentation list presentations:
+template list templates:
+boolean $pop-up: false
+string add-presentation-url:
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px: 40
+padding-bottom.px: 24
+padding-top.px: 12
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+padding-bottom.px: 24
+
+-- ftd.text: $lang.all-presentations
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ds.icon-button: New Presentation
+icon: $assets.files.assets.slides.plus.svg
+link: $all-presentations.add-presentation-url
+
+-- ftd.column:
+if: { all-presentations.pop-up }
+width.fixed.px: 720
+height.fixed.px: 602
+background.solid: $inherited.colors.background.base
+padding.px: 24
+spacing.fixed.px: 24
+border-width.px: 1
+border-color: $inherited.colors.border-strong
+z-index: 5
+anchor: parent
+left.px: 300
+border-radius.px: 8
+shadow: $s
+overflow-y: scroll
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: center
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+padding-bottom.px: 16
+
+-- ftd.text: Select a template
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.image:
+src: $assets.files.assets.slides.cross.svg
+width.fixed.px: 28
+height.fixed.px: 28
+$on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v = false)
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+wrap: true
+
+-- show-template: $obj
+for: $obj in $all-presentations.templates
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+padding-vertical.px: 24
+spacing.fixed.px: 24
+wrap: true
+
+-- show-presentation: $obj
+for: $obj in $all-presentations.presentations
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: all-presentations
+
+
+
+
+
+
+
+
+
+-- component show-presentation:
+caption presentation p:
+
+-- ftd.column:
+width.fixed.px: 243
+spacing.fixed.px: 8
+padding-bottom.px: 8
+link: $show-presentation.p.url
+
+-- ftd.image:
+src: $show-presentation.p.thumbnail
+width: fill-container
+border-radius.px: 8
+
+-- ds.heading-tiny: $show-presentation.p.title
+color: $inherited.colors.text-strong
+
+-- ds.copy-small: 
+text: $show-presentation.p.updated-on
+
+-- end: ftd.column
+
+-- end: show-presentation
+
+
+
+
+
+
+
+
+
+
+-- component show-template:
+caption template t:
+
+-- ftd.column:
+width.fixed.px: 200
+spacing.fixed.px: 8
+padding-bottom.px: 8
+link: $show-template.t.url
+align-content: center
+
+-- ftd.image:
+src: $show-template.t.thumbnail
+width: fill-container
+
+-- ftd.text: $show-template.t.title
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: show-template
+
+
+
+
+
+
+
+
+-- ftd.shadow s:
+color: #000000
+x-offset.px: 4
+y-offset.px: 4
+blur.px: 20
+spread.px: 8

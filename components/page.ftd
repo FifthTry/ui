@@ -1,14 +1,16 @@
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/header
+-- import: ui.fifthtry.com/components/footer
 
 -- component page:
 module site-data: site-data
 module user-data: user-data
 string product:
 children children:
+caption title:
 
--- ds.page:
+-- ds.page: $page.title
 
 -- header.header:
 site-data: $page.site-data
@@ -20,6 +22,8 @@ inset: $ds.spaces.inset-square.zero
 content: $page.children
 
 -- end: ds.section-column
+
+-- footer.footer:
 
 -- end: ds.page
 

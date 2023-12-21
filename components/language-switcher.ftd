@@ -41,6 +41,6 @@ $on-click$: $set-language(language = hi)
 
 -- void set-language(language):
 string language:
-js: $assets.files.slides.functions.js
+js: $assets.files.assets.functions.js
 
 set_language(language)

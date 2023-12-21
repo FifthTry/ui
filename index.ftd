@@ -4,22 +4,30 @@
 
 These are list of products/websites hosted by FifthTry.
 
+-- lib.h1: Common Pages
+
+- [Home page](/scenarios/home/)
+
 -- lib.h1: Slides Scenarios
 
-- [Signin page](/slides/scenarios/signin-page/)
-- [Signup page](/slides/scenarios/signup-page/)
-- [Logged in templates](/slides/scenarios/logged-in-templates/)
-- [Team dashboard](/slides/scenarios/team-dashboard/)
-- [fastn Presentation logged in](/slides/scenarios/fastn-presentation-logged-in/)
-- [Present view page](/slides/scenarios/present/)
-- [Presentation settings](/slides/scenarios/presentation-settings/)
-- [Logged in Template details](/slides/scenarios/template-details-logged-in/)
-- [Logged out Template details](/slides/scenarios/template-details-logged-out/)
-- [Logged in Team page](/slides/scenarios/logged-in-team-page)
+- [Signin page](/scenarios/slides/signin-page/)
+- [Signup page](/scenarios/slides/signup-page/)
+- [Logged in templates](/scenarios/slides/logged-in-templates/)
+- [Team dashboard](/scenarios/slides/team-dashboard/)
+- [fastn Presentation logged in](/scenarios/slides/fastn-presentation-logged-in/)
+- [Present view page](/scenarios/slides/present/)
+- [Presentation settings](/scenarios/slides/presentation-settings/)
+- [Logged in Template details](/scenarios/slides/template-details-logged-in/)
+- [Logged out Template details](/scenarios/slides/template-details-logged-out/)
+- [Logged in Team page](/scenarios/slides/logged-in-team-page)
 
 
 -- lib.h1: University Scenarios
 
-- [University Homepage](/university/scenarios/home-page/)
+- [University Homepage](/scenarios/university/home-page/)
+
+-- lib.h1: Onboarding Scenarios
+
+- [Onboarding Ishaan](/scenarios/cards/onboarding-ishaan/)
 
 -- end: lib.page

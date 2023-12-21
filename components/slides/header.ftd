@@ -1,0 +1,71 @@
+-- import: ui.fifthtry.com/components/slides/notification
+-- import: ui.fifthtry.com/components/slides/avatar
+-- import: ui.fifthtry.com/components/language-switcher
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+
+-- boolean unimplemented: false
+
+-- component header:
+module site-data: site-data
+module user-data: user-data
+optional boolean $sidebar: false
+
+-- ftd.row:
+width: fill-container
+background.solid: $inherited.colors.background.base
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-vertical.px: 16
+padding-horizontal.px: 24
+spacing: space-between
+sticky: true
+left.px: 0
+top.px: 0
+z-index: 999
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: { !unimplemented }
+src: $assets.files.assets.slides.menu.svg
+width.fixed.px: 32
+border-radius.px: 4
+border-width.px: 1
+border-color: $inherited.colors.border
+background.solid: $inherited.colors.background.step-1
+padding.px: 4
+fit: cover
+$on-click$: $ftd.toggle($a = $header.sidebar)
+
+-- ftd.image:
+link: $header.site-data.homepage
+src: $header.site-data.logo
+width.fixed.px: 162
+height.fixed.px: 32
+
+-- end: ftd.row
+
+
+
+-- ftd.row:
+spacing.fixed.px: 32
+align-content: center
+;;if: { header.user-data.is-logged-in }
+
+-- language-switcher.dropdown:
+
+-- notification.notification:
+if: { !unimplemented }
+
+-- avatar.avatar: $header.user-data.name
+if: { !unimplemented }
+email: $header.user-data.email
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: header
