@@ -43,11 +43,11 @@ link: /university/about/
 user-data: $header.user-data
 if: { header.user-data.is-logged-in }
 
--- ds.header-link: Sign In
+-- ds.secondary-button: $lang.sign-in
 if: { !header.user-data.is-logged-in }
 link: /signin/
 
--- ds.button: Sign Up
+-- ds.primary-button: $lang.sign-up
 if: { !header.user-data.is-logged-in }
 link: /signup/
 

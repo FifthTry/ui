@@ -106,10 +106,10 @@ width.fixed.px: 24
 height.fixed.px: 24
 align-self: center
 
--- ftd.text: Log out
+-- ftd.text: $lang.sign-out
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
-link: /-/auth/logout/
+link: /admin/logout/?next=/
 
 -- end: ftd.row
 

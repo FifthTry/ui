@@ -58,11 +58,11 @@ if: { !unimplemented }
 user-data: $header.user-data
 if: { header.user-data.is-logged-in }
 
--- ds.secondary-button: Sign In
+-- ds.secondary-button: $lang.sign-in
 if: { !header.user-data.is-logged-in }
 link: /signin/
 
--- ds.primary-button: Sign Up
+-- ds.primary-button: $lang.sign-up
 if: { !header.user-data.is-logged-in }
 link: /signup/
 
