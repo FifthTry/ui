@@ -68,7 +68,7 @@ padding.px: 10
 -- ds.copy-regular: 
 text: $lang.create-account
 text if { page.signin-url }: $lang.existing-account
-display: inline
+align: inline
 
 -- ftd.text: $lang.signin-type
 text if { page.signin-url }: $lang.signup-type

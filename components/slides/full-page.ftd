@@ -54,7 +54,7 @@ spacing.fixed.px: 8
 
 -- ds.copy-regular: 
 text: Team:
-display: inline
+align: inline
 
 -- ftd.row:
 spacing.fixed.px: 4
