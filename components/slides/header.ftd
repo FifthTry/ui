@@ -56,6 +56,15 @@ if: { !unimplemented }
 
 -- avatar.avatar:
 user-data: $header.user-data
+if: { header.user-data.is-logged-in }
+
+-- ds.secondary-button: Sign In
+if: { !header.user-data.is-logged-in }
+link: /signin/
+
+-- ds.primary-button: Sign Up
+if: { !header.user-data.is-logged-in }
+link: /signup/
 
 -- end: ftd.row
 

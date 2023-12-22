@@ -41,6 +41,15 @@ link: /university/about/
 
 -- avatar.avatar:
 user-data: $header.user-data
+if: { header.user-data.is-logged-in }
+
+-- ds.header-link: Sign In
+if: { !header.user-data.is-logged-in }
+link: /signin/
+
+-- ds.button: Sign Up
+if: { !header.user-data.is-logged-in }
+link: /signup/
 
 -- end: ds.row
 
