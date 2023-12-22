@@ -1,3 +1,5 @@
 -- import: ui.fifthtry.com/pages/home
+-- import: ui.fifthtry.com/scenarios/john-doe
 
 -- home.page:
+user-data: john-doe

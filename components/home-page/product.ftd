@@ -3,6 +3,7 @@ caption title:
 string icon:
 body about:
 string link:
+string cta: Read More
 
 -- ds.column:
 background.solid: $ds.colors.background.step-2
@@ -21,7 +22,7 @@ height: fill-container
 
 $product.about
 
--- ds.phosphor-icon-button: Read More
+-- ds.phosphor-icon-button: $product.cta
 icon: arrow-right
 link: $product.link
 icon-position: at-end

@@ -1,8 +1,8 @@
--- import: ui.fifthtry.com/slides/components/full-page
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
--- import: ui.fifthtry.com/slides/actions/navigate-previous-slide
--- import: ui.fifthtry.com/slides/actions/navigate-next-slide
+-- import: ui.fifthtry.com/components/slides/full-page
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/actions/slides/navigate-previous-slide
+-- import: ui.fifthtry.com/actions/slides/navigate-next-slide
 
 -- string navigate-previous-slide-module-name: ui.fifthtry.com/slides/actions/navigate-previous-slide
 -- string navigate-next-slide-module-name: ui.fifthtry.com/slides/actions/navigate-next-slide

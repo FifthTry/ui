@@ -9,6 +9,7 @@
 presentation list presentations:
 template list templates:
 string team-name:
+string team-slug:
 
 
 

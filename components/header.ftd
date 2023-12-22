@@ -1,5 +1,6 @@
--- import: ui.fifthtry.com/slides/site-data
--- import: ui.fifthtry.com/slides/user-data
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/components/slides/avatar
 -- import: ui.fifthtry.com/components/language-switcher
 
 -- component header:
@@ -37,6 +38,9 @@ width: hug-content
 link: /university/about/
 
 -- language-switcher.dropdown:
+
+-- avatar.avatar:
+user-data: $header.user-data
 
 -- end: ds.row
 

@@ -54,9 +54,8 @@ align-content: center
 -- notification.notification:
 if: { !unimplemented }
 
--- avatar.avatar: $header.user-data.name
-if: { !unimplemented }
-email: $header.user-data.email
+-- avatar.avatar:
+user-data: $header.user-data
 
 -- end: ftd.row
 

@@ -1,6 +1,7 @@
+-- import: ui.fifthtry.com/user-data
+
 -- component avatar:
-caption title:
-string email:
+module user-data: user-data
 boolean $open: false
 
 
@@ -15,7 +16,7 @@ border-color: $inherited.colors.border
 background.solid: $inherited.colors.background.step-1
 padding.px: 8
 
--- ds.circle-text-button: $get-initials(name=$avatar.title)
+-- ds.circle-text-button: $get-initials(name=$avatar.user-data.name)
 
 -- ftd.image:
 src: $assets.files.assets.slides.toggle-down.svg
@@ -23,8 +24,8 @@ src if { avatar.open }: $assets.files.assets.slides.toggle-up.svg
 width.fixed.px: 24
 height.fixed.px: 24
 
--- popup: $avatar.title
-email: $avatar.email
+-- popup:
+user-data: $avatar.user-data
 $open: $avatar.open
 
 -- end: ftd.row
@@ -37,8 +38,7 @@ $open: $avatar.open
 
 
 -- component popup:
-caption title:
-string email:
+module user-data: user-data
 boolean $open:
 
 -- ftd.column:
@@ -62,19 +62,19 @@ align-content: center
 border-bottom-width.px: 1
 border-color: $inherited.colors.border
 
--- ds.circle-text-button: $get-initials(name=$popup.title)
+-- ds.circle-text-button: $get-initials(name=$popup.user-data.name)
 
--- ftd.text: $popup.title
+-- ftd.text: $popup.user-data.name
 role: $inherited.types.button-medium
 color: $inherited.colors.text
 
--- ftd.text: $popup.email
+-- ftd.text: $popup.user-data.email
 role: $inherited.types.label-small
 color: $inherited.colors.text
 
 -- end: ftd.column
 
--- ftd.row:
+/-- ftd.row:
 width: fill-container
 padding-vertical.px: 12
 padding-horizontal.px: 8
@@ -82,17 +82,17 @@ border-bottom-width.px: 1
 border-color: $inherited.colors.border
 spacing.fixed.px: 8
 
--- ftd.image:
+/-- ftd.image:
 src: $assets.files.assets.slides.setting.svg
 width.fixed.px: 24
 height.fixed.px: 24
 align-self: center
 
--- ftd.text: Account settings
+/-- ftd.text: Account settings
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 
--- end: ftd.row
+/-- end: ftd.row
 
 -- ftd.row:
 width: fill-container

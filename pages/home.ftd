@@ -1,6 +1,8 @@
 -- import: ui.fifthtry.com/components/page as p
 -- import: ui.fifthtry.com/components/footer
 -- import: ui.fifthtry.com/components/home-page/product
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
 
 -- ds.page-widths widths:
 regular.px: 1400
@@ -9,8 +11,12 @@ wide.px: 1600
 
 
 -- component page:
+module user-data: user-data
+module site-data: site-data
 
 -- p.page: FifthTry | Building fastn and hostn
+user-data: $page.user-data
+site-data: $page.site-data
 
 -- products:
 
@@ -31,23 +37,22 @@ outer-background.solid: $ds.colors.background.step-1
 align: top-center
 margin: $ds.spaces.vertical-gap.extra-extra-large
 
--- product.product: FTD Language for prose
+-- product.product: FifthTry Slides
 icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/ftd-logo.svg
-link: /
+link: /login/?next=/dashboard/
+cta: Get Started
 
-FTD is the innovative programming language for writing prose. Say goodbye to
-the complexities of traditional programming languages and hello to a simplified
-and intuitive experience.
+**FifthTry Slides** is a presentation tool that lets you create beautiful slides powered
+by `fastn`. **FifthTry Slides** helps your organisation create workflow to post to your
+social media channels so your entire company can be involved in the process.
 
-
--- product.product: Fastn static site generator
+-- product.product: FifthTry Sites
 icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/fastn-logo.svg
-link: /
+link: /sites/
 
-Fastn is a powerful command line tool written in Rust that offers a seamless
-experience for ftd package management and static site generation. With Fastn,
-you can easily convert your .ftd files into .html files.
-
+Unleash the power of `fastn` to create beautiful websites. FifthTry Sites is the next-gen
+platform for creating websites. `FifthTry Sites` helps you collaborate with your team,
+and publish your website to the world.
 
 -- product.product: HOSTN hosting fastn sites
 link: /

@@ -13,6 +13,7 @@ add-presentation-url: slides/scenarios/logged-in-templates/
 templates: $templates
 presentations: $presentations
 team-name: FifthTry
+team-slug: fifthtry
 
 
 -- dashboard.folder list folders:
