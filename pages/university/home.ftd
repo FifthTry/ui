@@ -16,7 +16,7 @@ module user-data: user-data
 product: $lang.university
 
 -- ds.heading-medium: $lang.university-title
-text-align: center
+align: center
 
 
 -- ftd.row:
