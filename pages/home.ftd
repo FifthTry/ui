@@ -33,7 +33,7 @@ margin: $ds.spaces.vertical-gap.extra-extra-large
 inset: $ds.spaces.inset-square.extra-large
 
 -- product.product: FifthTry Slides
-icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/ftd-logo.svg
+icon: $assets.files.assets.ftd-logo.svg
 link: /login/?next=/dashboard/
 cta: Get Started
 
@@ -42,7 +42,7 @@ by `fastn`. **FifthTry Slides** helps your organisation create workflow to post 
 social media channels so your entire company can be involved in the process.
 
 -- product.product: FifthTry Sites
-icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/ftd-logo.svg
+icon: $assets.files.assets.ftd-logo.svg
 link: /sites/
 
 Unleash the power of `fastn` to create beautiful websites. FifthTry Sites is the next-gen
@@ -51,7 +51,7 @@ and publish your website to the world.
 
 -- product.product: `fastn` Web Stack
 link: https://fastn.com
-icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/fastn-logo.svg
+icon: $assets.files.assets.fastn-logo.svg
 
 `fastn` is a programming language and a full stack web framework. `fastn` is designed for
 non programmers but programmers also love it.

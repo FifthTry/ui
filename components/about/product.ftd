@@ -1,6 +1,6 @@
 -- component product:
 caption title:
-string icon:
+ftd.image-src icon:
 body about:
 string link:
 string cta: Read More
