@@ -1,6 +1,6 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
--- import: ui.fifthtry.com/components/slides/header
+-- import: ui.fifthtry.com/components/header
 -- import: fastn/processors as pr
 -- import: fastn-community.github.io/svg-icons/phosphor
 
@@ -29,6 +29,7 @@ height: fill-container
 -- header.header:
 site-data: $page.site-data
 user-data: $page.user-data
+product: slides
 
 -- ftd.row:
 width: fill-container

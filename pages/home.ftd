@@ -1,20 +1,14 @@
 -- import: ui.fifthtry.com/components/page as p
--- import: ui.fifthtry.com/components/footer
 -- import: ui.fifthtry.com/components/home-page/product
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
-
--- ds.page-widths widths:
-regular.px: 1400
-narrow.px: 1200
-wide.px: 1600
 
 
 -- component page:
 module user-data: user-data
 module site-data: site-data
 
--- p.page: FifthTry | Building fastn and hostn
+-- p.page: FifthTry | Better way To Build Websites
 user-data: $page.user-data
 site-data: $page.site-data
 
@@ -36,6 +30,7 @@ site-data: $page.site-data
 outer-background.solid: $ds.colors.background.step-1
 align: top-center
 margin: $ds.spaces.vertical-gap.extra-extra-large
+inset: $ds.spaces.inset-square.extra-large
 
 -- product.product: FifthTry Slides
 icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/ftd-logo.svg
@@ -47,20 +42,19 @@ by `fastn`. **FifthTry Slides** helps your organisation create workflow to post 
 social media channels so your entire company can be involved in the process.
 
 -- product.product: FifthTry Sites
-icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/fastn-logo.svg
+icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/ftd-logo.svg
 link: /sites/
 
 Unleash the power of `fastn` to create beautiful websites. FifthTry Sites is the next-gen
 platform for creating websites. `FifthTry Sites` helps you collaborate with your team,
 and publish your website to the world.
 
--- product.product: HOSTN hosting fastn sites
-link: /
-icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/hostn-logo.svg
+-- product.product: `fastn` Web Stack
+link: https://fastn.com
+icon: https://www.fifthtry.com/-/fifthtry.com/assets/images/fastn-logo.svg
 
-An FASTN package contains one or more “ftd modules”, and the modules export one
-or more “symbols”, eg records, variables, components and so on. Hosting FASTN
-sites made simple by HOSTN.
+`fastn` is a programming language and a full stack web framework. `fastn` is designed for
+non programmers but programmers also love it.
 
 -- end: ds.section-row
 

@@ -9,8 +9,11 @@ module user-data: user-data
 optional string product:
 
 -- ds.section-row:
+flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.zero
+inset: $ds.spaces.inset-square.medium
+border-bottom-width: 1
+margin: $ds.spaces.vertical-gap.zero
 
 -- ds.row:
 width: hug-content
@@ -35,7 +38,8 @@ color: $ds.colors.cta-primary.base
 width: hug-content
 
 -- ds.header-link: $lang.about
-link: /university/about/
+if: { header.product == NULL }
+link: /about/
 
 -- language-switcher.dropdown:
 
@@ -43,11 +47,11 @@ link: /university/about/
 user-data: $header.user-data
 if: { header.user-data.is-logged-in }
 
--- ds.secondary-button: $lang.sign-in
+-- ds.header-link: $lang.sign-in
 if: { !header.user-data.is-logged-in }
 link: /signin/
 
--- ds.primary-button: $lang.sign-up
+-- ds.button: $lang.sign-up
 if: { !header.user-data.is-logged-in }
 link: /signup/
 
