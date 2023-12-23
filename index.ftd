@@ -9,6 +9,7 @@ These are list of products/websites hosted by FifthTry.
 - [Logged in Home page](/scenarios/logged-in-home/)
 - [Logged out Home page](/scenarios/logged-out-home/)
 - [Logged In About page](/scenarios/about/logged-in-about/)
+- [Logged In Team page](/scenarios/about/logged-in-team/)
 
 -- lib.h1: Slides Scenarios
 
