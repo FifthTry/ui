@@ -41,6 +41,10 @@ width: hug-content
 if: { header.product == NULL }
 link: /about/
 
+-- ds.header-link: $lang.team
+if: { header.product == NULL }
+link: /team/
+
 -- language-switcher.dropdown:
 
 -- avatar.avatar:
