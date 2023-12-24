@@ -11,6 +11,8 @@ module user-data: user-data
 
 -- p.page:
 product: $lang.university
+user-data: $page.user-data
+site-data: $page.site-data
 margin: $ds.spaces.vertical-gap.extra-large
 
 -- ds.heading-medium: $lang.university-title

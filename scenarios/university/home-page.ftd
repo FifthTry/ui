@@ -1,7 +1,9 @@
 -- import: ui.fifthtry.com/pages/university/home
 -- import: ui.fifthtry.com/pages/university
+-- import: ui.fifthtry.com/scenarios/john-doe
 
 -- home.page:
+user-data: john-doe
 
 -- home.page.courses:
 
