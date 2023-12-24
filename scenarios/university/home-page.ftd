@@ -8,14 +8,14 @@ user-data: john-doe
 -- home.page.courses:
 
 -- university.course-info: Build Website Using `fastn`
-url: /
+url: /scenarios/university/f4e-course/
 cta: Learn More
 
 In this course you will learn to build a websites using `fastn`. This course
 assumes no prior knowledge of `fastn` or any other framework.
 
 -- university.course-info: This Is Love
-url: /
+url: /scenarios/university/f4e-course/
 
 In this course you will learn to build a websites using `fastn`. This course
 assumes no prior knowledge of `fastn` or any other framework.
