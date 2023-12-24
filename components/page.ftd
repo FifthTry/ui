@@ -10,6 +10,7 @@ string product:
 children children:
 caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero
+ds.flush flush:
 
 -- ds.page: $page.title
 
@@ -23,6 +24,7 @@ margin: $page.margin
 inset: $ds.spaces.inset-square.zero
 content: $page.children
 margin: $ds.spaces.vertical-gap.extra-extra-large
+flush: $page.flush
 
 -- end: ds.section-column
 
