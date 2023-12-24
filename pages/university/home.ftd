@@ -42,14 +42,14 @@ caption course course:
 
 -- ds.column:
 width.fixed.calc: 50% - 20px
-;; border-radius.px: 10
-;; border-width.px: 2
-;; border-color: $ds.colors.cta-primary.base
+border-radius.px: 10
+border-width.px: 2
+border-color: $ds.colors.cta-primary.base
 inset: $ds.spaces.inset-square.zero
 spacing: $ds.spaces.vertical-gap.zero
 
 -- ds.row:
-;; background.solid: $ds.colors.cta-primary.base
+background.solid: $ds.colors.cta-primary.base
 inset: $ds.spaces.inset-wide.medium
 
 -- ds.heading-tiny: $show-course.course.title
