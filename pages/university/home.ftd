@@ -1,17 +1,11 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/page as p
-
--- record course:
-caption title:
-;; ftd.image-src: icon
-body about:
-string cta: $lang.enroll-now
-string url:
+-- import: ui.fifthtry.com/pages/university
 
 
 -- component page:
-course list courses:
+university.course-info list courses:
 module site-data: site-data
 module user-data: user-data
 
@@ -42,7 +36,7 @@ for: course in $page.courses
 
 
 -- component show-course:
-caption course course:
+caption university.course-info course:
 
 -- ds.column:
 width.fixed.calc: 50% - 20px
