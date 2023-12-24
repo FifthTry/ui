@@ -7,13 +7,14 @@
 module site-data: site-data
 module user-data: user-data
 optional string product:
+ds.gap margin: $ds.spaces.vertical-gap.zero
 
 -- ds.section-row:
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
 inset: $ds.spaces.inset-square.medium
 border-bottom-width: 1
-margin: $ds.spaces.vertical-gap.zero
+margin: $header.margin
 
 -- ds.row:
 width: hug-content

@@ -6,6 +6,9 @@
 caption title:
 ;; ftd.image-src: icon
 body about:
+string cta: $lang.enroll-now
+string url:
+
 
 -- component page:
 course list courses:
@@ -14,6 +17,7 @@ module user-data: user-data
 
 -- p.page:
 product: $lang.university
+margin: $ds.spaces.vertical-gap.extra-large
 
 -- ds.heading-medium: $lang.university-title
 align: center
@@ -65,7 +69,11 @@ align-content: right
 
 $show-course.course.about
 
--- ds.button: $lang.enroll-now
+-- ds.phosphor-icon-button: $show-course.course.cta
+icon: arrow-right
+link: $show-course.course.url
+icon-position: at-end
+
 
 -- end: ds.column
 

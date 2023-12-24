@@ -6,6 +6,7 @@
 
 -- home.course: Build Website Using `fastn`
 url: /
+cta: Learn More
 
 In this course you will learn to build a websites using `fastn`. This course
 assumes no prior knowledge of `fastn` or any other framework.
