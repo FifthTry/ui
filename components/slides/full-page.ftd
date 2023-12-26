@@ -54,8 +54,7 @@ if: { !page.hide-team }
 width: fill-container
 padding-left.px: 24
 padding-right.px: 8
-padding-top.px: 8
-padding-bottom.px: 16
+padding-vertical.px: 16
 border-bottom-width.px: 1
 border-color: $inherited.colors.border
 spacing.fixed.px: 8
