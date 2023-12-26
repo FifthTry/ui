@@ -31,7 +31,8 @@ spacing.fixed.px: 64
 
 -- ftd.image:
 src: $page.site-data.logo
-width: auto
+width.fixed.px: 170
+height.fixed.px: 38
 fit: cover
 
 -- ds.copy-large:
@@ -46,7 +47,7 @@ align-content: center
 -- ds.icon-button: Continue with Github
 icon: $assets.files.assets.slides.github-mark-white.svg
 link: $page.github-url
-kind: primary
+kind: secondary
 width: full
 
 /-- ftd.row:
@@ -70,7 +71,7 @@ padding.px: 10
 -- ds.copy-regular: 
 text: $lang.create-account
 text if { page.signin-url }: $lang.existing-account
-width.fixed.px: 184
+width.fixed.px: 200
 
 -- ds.link:
 text: $lang.signin-type
