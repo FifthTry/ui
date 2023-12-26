@@ -23,7 +23,7 @@ string add-presentation-url:
 -- full-page.page:
 site-data: site-data
 user-data: $page.user-data
-sidebar: true
+$sidebar: true
 team-name: $page.data.team-name
 
 -- all-folders:
