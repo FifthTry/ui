@@ -19,14 +19,14 @@ background.solid: $inherited.colors.background.base
 
 -- ftd.image:
 src: $assets.files.assets.slides.background.png
-width.fixed.percent: 60
+width.fixed.percent: 65
 height.fixed.vh: 100
 fit: cover
 
 -- ftd.column:
 align-content: center
 padding-top.px: 84
-width.fixed.px: 496
+width.fixed.percent: 35
 spacing.fixed.px: 64
 
 -- ftd.image:
@@ -39,13 +39,15 @@ fit: cover
 $page.title
 
 -- ftd.column:
-margin-top.px: 84
+margin-top.px: 38
 spacing.fixed.px: 24
 align-content: center
 
 -- ds.icon-button: Continue with Github
 icon: $assets.files.assets.slides.github-mark-white.svg
 link: $page.github-url
+kind: primary
+width: full
 
 /-- ftd.row:
 if: { page.signin-url }
@@ -68,12 +70,12 @@ padding.px: 10
 -- ds.copy-regular: 
 text: $lang.create-account
 text if { page.signin-url }: $lang.existing-account
-align: inline
+width.fixed.px: 184
 
--- ftd.text: $lang.signin-type
+-- ds.link:
+text: $lang.signin-type
+color: $ds.colors.info.text
 text if { page.signin-url }: $lang.signup-type
-role: $inherited.types.button-medium
-color: $inherited.colors.info.text
 link if { page.signup-url }: $page.signup-url
 link if { page.signin-url }: $page.signin-url
 
