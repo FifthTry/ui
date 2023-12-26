@@ -47,7 +47,7 @@ align-content: center
 -- ds.icon-button: Continue with Github
 icon: $assets.files.assets.slides.github-mark-white.svg
 link: $page.github-url
-kind: secondary
+kind: primary
 width: full
 
 /-- ftd.row:
