@@ -14,7 +14,7 @@ string link:
 module site-data: site-data
 module user-data: user-data
 toc-item list list-of-toc: $stable-toc-links
-boolean sidebar: false
+boolean $sidebar: false
 string team-name:
 children uis:
 boolean hide-team: false
@@ -23,32 +23,39 @@ boolean hide-team: false
 colors: $ds.colors
 types: $ds.types
 width: fill-container
-background.solid: $inherited.colors.background.base
 height: fill-container
+background.solid: $inherited.colors.background.base
 
 -- header.header:
 site-data: $page.site-data
 user-data: $page.user-data
 product: slides
+$sidebar: $page.sidebar
 
 -- ftd.row:
 width: fill-container
 background.solid: $inherited.colors.background.base
-height: fill-container
 
 -- ftd.column:
 if: { page.sidebar }
-width.fixed.px: 340
-height: fill-container
 border-right-width.px: 1
 border-color: $inherited.colors.border
+sticky: true
+top.px: 84
+left.px: 0
+min-width.fixed.percent: 20
+min-height.fixed.calc: 100vh - 138px
+overflow-y: auto
+width.fixed.percent: 20
+align-content: top-left
 
 -- ftd.row:
 if: { !page.hide-team }
 width: fill-container
 padding-left.px: 24
 padding-right.px: 8
-padding-vertical.px: 16
+padding-top.px: 8
+padding-bottom.px: 16
 border-bottom-width.px: 1
 border-color: $inherited.colors.border
 spacing.fixed.px: 8
@@ -83,7 +90,6 @@ padding.px: 4
 margin-left.px: 32
 color: $inherited.colors.text
 
-
 -- phosphor.light: gear
 size: 32
 
@@ -93,15 +99,74 @@ size: 32
 
 -- ftd.column:
 width: fill-container
-spacing.fixed.px: 16
-padding-left.px: 32
+height.fixed.calc: 100vh - 136px
+spacing: space-between
+padding-bottom.px: 16
+padding-left.px: 24
 padding-right.px: 16
-padding-top.px: 16
+padding-vertical.px: 16
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 16
+padding-bottom.px: 16
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
 
 -- render-files:
 for: $obj in $page.list-of-toc
 title: $obj.title
 link: $obj.link
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 8
+border-radius.px: 8
+align-content: center
+padding.px: 8
+background.solid: $inherited.colors.background.step-1
+color: $inherited.colors.text
+
+-- phosphor.regular: globe
+size: 24
+
+-- ftd.text: Explore Templates
+role: $inherited.types.copy-regular
+width: fill-container
+
+-- phosphor.regular: caret-right
+size: 24
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 8
+border-radius.px: 8
+align-content: center
+padding.px: 8
+background.solid: $inherited.colors.background.step-1
+color: $inherited.colors.text
+
+-- phosphor.regular: trash
+size: 24
+
+-- ftd.text: Trash
+role: $inherited.types.copy-regular
+width: fill-container
+
+-- phosphor.regular: caret-right
+size: 24
+
+-- end: ftd.row
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -161,11 +226,17 @@ size: 24
 
 -- toc-item list stable-toc-links:
 
--- toc-item: Dashboard
+/-- toc-item: Dashboard
 link: /t/admin/
 
--- toc-item: Templates
+/-- toc-item: Templates
 link: /community-templates/
+
+-- toc-item: Drive
+link: /slides/scenarios/team-dashboard/
+
+-- toc-item: My Templates
+link: /slides/scenarios/logged-in-templates/
 
 -- end: stable-toc-links
 

@@ -16,7 +16,7 @@ template-data data:
 -- full-page.page:
 site-data: site-data
 user-data: $page.user-data
-sidebar: false
+$sidebar: true
 
 -- show-community-templates:
 templates: $page.data.templates
