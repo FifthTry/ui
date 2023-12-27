@@ -22,15 +22,8 @@ site-data: $page.site-data
 user-data: $page.user-data
 product: slides
 
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 24
-padding.px: 24
-
 -- ui:
 for: $ui in $page.uis
-
--- end: ftd.column
 
 -- end: ftd.column
 
