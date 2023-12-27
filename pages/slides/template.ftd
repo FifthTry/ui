@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/slides/full-page
+-- import: ui.fifthtry.com/components/slides/page-with-sidebar
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/actions/slides/create-template-presentation
 
@@ -28,7 +28,7 @@ private string $current-template-name: *$page.data.template-name
 private string $current-target-team: *$page.data.username
 private string $current-visibility: everyone
 
--- full-page.page:
+-- page-with-sidebar.page:
 $sidebar: false
 
 -- ftd.row:
@@ -261,6 +261,6 @@ $on-click$: $page.create-template-presentation.submit(title=$page.current-templa
 
 -- end: ftd.row
 
--- end: full-page.page
+-- end: page-with-sidebar.page
 
 -- end: page
