@@ -11,8 +11,6 @@ caption title:
 string link:
 
 -- component page:
-optional caption title:
-optional body description:
 module site-data: site-data
 module user-data: user-data
 toc-item list list-of-toc: $stable-toc-links
@@ -21,13 +19,9 @@ string team-name:
 children uis:
 boolean hide-team: false
 
--- ftd.document:
-title: $page.title
-description: $page.description
+-- ftd.column:
 colors: $ds.colors
 types: $ds.types
-
--- ftd.column:
 width: fill-container
 height: fill-container
 background.solid: $inherited.colors.background.base
@@ -189,8 +183,6 @@ for: $ui in $page.uis
 -- end: ftd.row
 
 -- end: ftd.column
-
--- end: ftd.document
 
 -- end: page
 
