@@ -14,7 +14,7 @@ string link:
 module site-data: site-data
 module user-data: user-data
 toc-item list list-of-toc: $stable-toc-links
-boolean $sidebar: false
+boolean $sidebar: true
 string team-name:
 children uis:
 boolean hide-team: false
