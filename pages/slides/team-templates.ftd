@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/slides/components/full-page
+-- import: ui.fifthtry.com/slides/components/page-with-sidebar
 -- import: ui.fifthtry.com/slides/site-data
 -- import: ui.fifthtry.com/slides/user-data
 -- import: fastn-community.github.io/svg-icons/phosphor
@@ -14,16 +14,15 @@ string team-name:
 module user-data: user-data
 template-data data:
 
--- full-page.page:
+-- page-with-sidebar.page:
 site-data: site-data
 user-data: $page.user-data
-;;$sidebar: true
 team-name: $page.data.team-name
 
 -- show-template-list:
 templates: $page.data.templates
 
--- end: full-page.page
+-- end: page-with-sidebar.page
 
 -- end: page
 
