@@ -14,17 +14,19 @@ string link:
 module site-data: site-data
 module user-data: user-data
 toc-item list list-of-toc: $stable-toc-links
-boolean $sidebar: true
+boolean $sidebar: false
 string team-name:
 children uis:
 boolean hide-team: false
+ftd.color-scheme colors: $ds.colors
+ftd.type-data types: $ds.types
 
--- ftd.column:
-colors: $ds.colors
-types: $ds.types
+-- ds.column:
 width: fill-container
 height: fill-container
 background.solid: $inherited.colors.background.base
+spacing: $ds.spaces.horizontal-gap.zero
+align-content: top-left
 
 -- header.header:
 site-data: $page.site-data
@@ -32,43 +34,44 @@ user-data: $page.user-data
 product: slides
 $sidebar: $page.sidebar
 
--- ftd.row:
+-- ds.row:
 width: fill-container
 background.solid: $inherited.colors.background.base
+align-content: top-left
+spacing: $ds.spaces.horizontal-gap.zero
 
--- ftd.column:
+-- ds.column:
 if: { page.sidebar }
-border-right-width.px: 1
+border-width.px: 1
 border-color: $inherited.colors.border
-sticky: true
-top.px: 84
-left.px: 0
-min-width.fixed.percent: 20
-min-height.fixed.calc: 100vh - 138px
-overflow-y: auto
+;;sticky: true
+;;top.px: 84
+;;left.px: 0
+height.fixed.calc: 100vh - 76px
+;;overflow-y: auto
 width.fixed.percent: 20
 align-content: top-left
+spacing: $ds.spaces.horizontal-gap.zero
 
--- ftd.row:
+-- ds.row:
 if: { !page.hide-team }
 width: fill-container
-padding-left.px: 24
-padding-right.px: 8
-padding-vertical.px: 16
-border-bottom-width.px: 1
-border-color: $inherited.colors.border
-spacing.fixed.px: 8
+inset: $ds.spaces.inset-square.medium
+;;border-width.px: 1
+;;border-color: $inherited.colors.border
+spacing: $ds.spaces.horizontal-gap.small
 
 -- ds.copy-regular: 
 text: Team:
 align: inline
 
--- ftd.row:
-spacing.fixed.px: 4
-align-content: center
+-- ds.row::
+spacing: $ds.spaces.horizontal-gap.small
+align-content: right
 
 -- ds.copy-regular: 
 text: $page.team-name
+width.fixed.px: 70
 
 -- ftd.image:
 if: { !unimplemented }
@@ -76,113 +79,107 @@ src: $assets.files.assets.slides.toggle-down.svg
 width.fixed.px: 24
 align-self: center
 
--- end: ftd.row
+-- end: ds.row
 
--- ftd.column:
+-- ds.column:
 if: { !unimplemented }
-align-self: center
-background.solid: $inherited.colors.background.step-1
+align-content: center
+background.solid: $ds.colors.background.step-1
 border-radius.px: 8
 border-width.px: 1
-border-color: $inherited.colors.border
-padding.px: 4
-margin-left.px: 32
-color: $inherited.colors.text
+border-color: $ds.colors.border
+inset: $ds.spaces.inset-square.medium
+;;margin-left.px: 32
+;;color: $ds.colors.text
 
 -- phosphor.light: gear
 size: 32
 
--- end: ftd.column
+-- end: ds.column
 
--- end: ftd.row
+-- end: ds.row
 
--- ftd.column:
+-- ds.column:
 width: fill-container
 height.fixed.calc: 100vh - 136px
-spacing: space-between
-padding-bottom.px: 16
-padding-left.px: 24
-padding-right.px: 16
-padding-vertical.px: 16
+spacing: $ds.spaces.vertical-gap.space-between
+inset: $ds.spaces.inset-square.medium
 
--- ftd.column:
+-- ds.column:
 width: fill-container
-spacing.fixed.px: 16
-padding-bottom.px: 16
-border-bottom-width.px: 1
-border-color: $inherited.colors.border
+;;border-bottom-width.px: 1
+;;border-color: $inherited.colors.border
 
 -- render-files:
 for: $obj in $page.list-of-toc
 title: $obj.title
 link: $obj.link
 
--- end: ftd.column
+-- end: ds.column
 
--- ftd.column:
+-- ds.column:
 width: fill-container
-spacing.fixed.px: 8
 
--- ftd.row:
+-- ds.row:
 width: fill-container
-spacing.fixed.px: 8
-border-radius.px: 8
+spacing: $ds.spaces.vertical-gap.small
+;;border-radius.px: 8
 align-content: center
-padding.px: 8
-background.solid: $inherited.colors.background.step-1
-color: $inherited.colors.text
+inset: $ds.spaces.inset-square.small
+background.solid: $ds.colors.background.step-1
+;;color: $inherited.colors.text
 
 -- phosphor.regular: globe
 size: 24
 
--- ftd.text: Explore Templates
-role: $inherited.types.copy-regular
+-- ds.copy-regular: 
+text: Explore Templates
 width: fill-container
 
 -- phosphor.regular: caret-right
 size: 24
 
--- end: ftd.row
+-- end: ds.row
 
--- ftd.row:
+-- ds.row:
 width: fill-container
-spacing.fixed.px: 8
-border-radius.px: 8
+spacing: $ds.spaces.vertical-gap.small
+;;border-radius.px: 8
 align-content: center
-padding.px: 8
-background.solid: $inherited.colors.background.step-1
-color: $inherited.colors.text
+inset: $ds.spaces.inset-square.small
+background.solid: $ds.colors.background.step-1
+;;color: $inherited.colors.text
 
 -- phosphor.regular: trash
 size: 24
 
--- ftd.text: Trash
-role: $inherited.types.copy-regular
+-- ds.copy-regular: 
+text: Trash
 width: fill-container
 
 -- phosphor.regular: caret-right
 size: 24
 
--- end: ftd.row
+-- end: ds.row
 
--- end: ftd.column
+-- end: ds.column
 
--- end: ftd.column
+-- end: ds.column
 
--- end: ftd.column
+-- end: ds.column
 
--- ftd.column:
+-- ds.column:
 width.fixed.px if { page.sidebar }: 1140
 width: fill-container
 
 -- ui:
 for: $ui in $page.uis
 
--- end: ftd.column
+-- end: ds.column
 
--- end: ftd.row
+-- end: ds.row
 
--- end: ftd.column
+-- end: ds.column
 
 -- end: page
 
@@ -200,24 +197,24 @@ for: $ui in $page.uis
 caption title:
 string link:
 
--- ftd.row:
+-- ds.row:
 width: fill-container
-spacing.fixed.px: 8
-border-radius.px: 8
+spacing: $ds.spaces.vertical-gap.small
 align-content: center
-padding.px: 8
+inset: $ds.spaces.inset-square.small
 background.solid: $inherited.colors.background.step-1
-color: $inherited.colors.text
+;;border-radius.px: 8
+;;color: $inherited.colors.text
 link: $render-files.link
 
--- ftd.text: $render-files.title
-role: $inherited.types.copy-regular
+-- ds.copy-regular:
+text: $render-files.title
 width: fill-container
 
 -- phosphor.regular: caret-right
 size: 24
 
--- end: ftd.row
+-- end: ds.row
 
 -- end: render-files
 
