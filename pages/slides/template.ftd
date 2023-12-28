@@ -29,7 +29,7 @@ private string $current-target-team: *$page.data.username
 private string $current-visibility: everyone
 
 -- page-with-sidebar.page:
-user-data: $page.user-data
+$sidebar: true
 
 -- ftd.row:
 width: fill-container

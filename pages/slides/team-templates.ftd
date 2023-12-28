@@ -17,6 +17,7 @@ template-data data:
 -- page-with-sidebar.page:
 site-data: site-data
 user-data: $page.user-data
+$sidebar: true
 team-name: $page.data.team-name
 
 -- show-template-list:
