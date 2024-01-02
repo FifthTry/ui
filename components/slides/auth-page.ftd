@@ -17,74 +17,56 @@ optional string signin-url:
 width: fill-container
 background.solid: $inherited.colors.background.base
 
--- ftd.image:
-src: $assets.files.assets.slides.background.png
-width.fixed.percent: 65
-height.fixed.vh: 100
-fit: cover
+    -- ftd.image:
+    src: $assets.files.assets.slides.background.png
+    width.fixed.percent: 60
+    height.fixed.vh: 100
+    fit: cover
 
--- ftd.column:
-align-content: center
-padding-top.px: 84
-width.fixed.percent: 35
-spacing.fixed.px: 64
+    -- ftd.column:
+    align-content: center
+    padding-top.px: 84
+    width.fixed.px: 496
+    spacing.fixed.px: 64
 
--- ftd.image:
-src: $page.site-data.logo
-width.fixed.px: 170
-height.fixed.px: 38
-fit: cover
+        -- ftd.image:
+        src: $page.site-data.logo
+        width: auto
+        fit: cover
 
--- ds.copy-large:
+        -- ds.heading-small: $page.title
 
-$page.title
+        -- ftd.column:
+        margin-top.px: 84
+        spacing.fixed.px: 24
+        align-content: center
 
--- ftd.column:
-margin-top.px: 38
-spacing.fixed.px: 24
-align-content: center
+            -- ds.icon-button: Continue with Github
+            icon: $assets.files.assets.slides.github-mark-white.svg
+            link: $page.github-url
 
--- ds.icon-button: Continue with Github
-icon: $assets.files.assets.slides.github-mark-white.svg
-link: $page.github-url
-kind: primary
-width: full
+            -- ftd.row:
+            spacing.fixed.px: 6
+            align-content: center
+            padding.px: 10
 
-/-- ftd.row:
-if: { page.signin-url }
-spacing.fixed.px: 12
-align-content: center
+                -- ds.copy-regular:
+                text: $lang.create-account
+                text if { page.signin-url }: $lang.existing-account
+                align: inline
 
--- ftd.checkbox:
+                -- ftd.text: $lang.signin-type
+                text if { page.signin-url }: $lang.signup-type
+                role: $inherited.types.button-medium
+                color: $inherited.colors.info.text
+                link if { page.signup-url }: $page.signup-url
+                link if { page.signin-url }: $page.signin-url
 
--- ds.copy-small:
+            -- end: ftd.row
 
-$lang.checkbox-info
+        -- end: ftd.column
 
--- end: ftd.row
-
--- ftd.row:
-spacing.fixed.px: 6
-align-content: center
-padding.px: 10
-
--- ds.copy-regular: 
-text: $lang.create-account
-text if { page.signin-url }: $lang.existing-account
-width.fixed.px: 200
-
--- ds.link:
-text: $lang.signin-type
-color: $ds.colors.info.text
-text if { page.signin-url }: $lang.signup-type
-link if { page.signup-url }: $page.signup-url
-link if { page.signin-url }: $page.signin-url
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
+    -- end: ftd.column
 
 -- end: ftd.row
 
