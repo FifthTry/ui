@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/slides/full-page
+-- import: ui.fifthtry.com/components/slides/page-with-sidebar
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
 -- import: fastn-community.github.io/svg-icons/phosphor
@@ -20,10 +20,10 @@ dashboard-data data:
 folder list folders:
 string add-presentation-url:
 
--- full-page.page:
+-- page-with-sidebar.page:
 site-data: site-data
 user-data: $page.user-data
-sidebar: true
+$sidebar: true
 team-name: $page.data.team-name
 
 -- all-folders:
@@ -35,7 +35,7 @@ presentations: $page.data.presentations
 templates: $page.data.templates
 add-presentation-url: $page.add-presentation-url
 
--- end: full-page.page
+-- end: page-with-sidebar.page
 
 -- end: page
 
