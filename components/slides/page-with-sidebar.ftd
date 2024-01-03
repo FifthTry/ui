@@ -211,8 +211,9 @@ link: $render-files.link
 text: $render-files.title
 width: fill-container
 
--- phosphor.regular: caret-right
-size: 24
+-- ftd.image:
+src: $assets.files.assets.sildes.right.svg
+width.fixed.px: 24
 
 -- end: ds.row
 

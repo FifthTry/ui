@@ -24,17 +24,6 @@ align-content: center
 inset: $ds.spaces.inset-square.zero
 
 -- ftd.image:
-src: $assets.files.assets.slides.menu.svg
-width.fixed.px: 32
-border-radius.px: 4
-border-width.px: 1
-border-color: $inherited.colors.border
-background.solid: $inherited.colors.background.step-1
-padding.px: 4
-fit: cover
-$on-click$: $ftd.toggle($a = $header.sidebar)
-
--- ftd.image:
 src: $assets.files.assets.fifthtry.png
 width.fixed.px: 104
 height.fixed.px: 32
