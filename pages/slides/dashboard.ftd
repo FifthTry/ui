@@ -4,6 +4,7 @@
 -- import: fastn-community.github.io/svg-icons/phosphor
 
 -- boolean show-all-folders: false
+-- boolean show-all-presentations: true
 
 -- record dashboard-data:
 presentation list presentations:
@@ -258,7 +259,8 @@ color: $inherited.colors.text-strong
 
 -- ds.icon-button: New Presentation
 icon: $assets.files.assets.slides.plus.svg
-link: $all-presentations.add-presentation-url
+;; link: $all-presentations.add-presentation-url
+$on-click$: $ftd.set-bool($a = $all-presentations.pop-up, v= true)
 
 -- ftd.column:
 if: { all-presentations.pop-up }
