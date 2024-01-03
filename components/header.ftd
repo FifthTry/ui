@@ -8,6 +8,7 @@ module site-data: site-data
 module user-data: user-data
 optional string product:
 ds.gap margin: $ds.spaces.vertical-gap.zero
+optional boolean $sidebar: false
 
 -- ds.section-row:
 flush: full
@@ -20,13 +21,13 @@ margin: $header.margin
 width: hug-content
 spacing: $ds.spaces.horizontal-gap.zero
 align-content: center
-link: $header.site-data.homepage
 inset: $ds.spaces.inset-square.zero
 
 -- ftd.image:
 src: $assets.files.assets.fifthtry.png
 width.fixed.px: 104
 height.fixed.px: 32
+link: $header.site-data.homepage
 
 -- ds.heading-small: $header.product
 if: { $header.product != NULL }
