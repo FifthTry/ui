@@ -28,6 +28,9 @@ user-data: $page.user-data
 -- show-site-info.show-site-info: $s
 for: s in $page.data.sites
 
+-- ds.primary-button: Create New Site
+link: /scenarios/hostn/create-site/
+
 -- end: p.page
 
 -- end: page
