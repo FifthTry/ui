@@ -32,6 +32,7 @@ string $current-presentation-title: *$page.data.presentation-title
 -- full-page.page:
 site-data: $page.site-data
 user-data: $page.user-data
+team-name: $page.data.team-name
 
 -- ftd.column:
 width: fill-container

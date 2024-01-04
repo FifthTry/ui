@@ -73,12 +73,12 @@ text: $lang.create-account
 text if { page.signin-url }: $lang.existing-account
 width.fixed.px: 200
 
--- ds.link:
-text: $lang.signin-type
+-- ds.link: $lang.signin-type
 color: $ds.colors.info.text
 text if { page.signin-url }: $lang.signup-type
 link if { page.signup-url }: $page.signup-url
 link if { page.signin-url }: $page.signin-url
+link: /
 
 -- end: ftd.row
 
