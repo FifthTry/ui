@@ -56,7 +56,7 @@ if: { header.user-data.is-logged-in }
 if: { !header.user-data.is-logged-in }
 link: /signin/
 
--- ds.button: $lang.sign-up
+-- ds.primary-button: $lang.sign-up
 if: { !header.user-data.is-logged-in }
 link: /signup/
 
