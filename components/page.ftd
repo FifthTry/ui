@@ -6,11 +6,11 @@
 -- component page:
 module site-data: site-data
 module user-data: user-data
-string product:
+optional string product:
 children children:
-caption title:
+optional caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero
-ds.flush flush:
+ds.flush flush: to-header
 
 -- ds.page: $page.title
 

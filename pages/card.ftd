@@ -4,9 +4,7 @@
 
 
 -- component page:
-caption name:
-ftd.image-src avatar:
-string title:
+optional string title:
 optional body body:
 string card-id:
 children wrapper:

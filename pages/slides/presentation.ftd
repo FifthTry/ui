@@ -70,6 +70,7 @@ integer order:
 -- full-page.page:
 site-data: site-data
 user-data: $page.user-data
+team-name: $page.team-slug
 
 -- presentation-slide: $page.data.title
 create-slide: $page.create-slide
