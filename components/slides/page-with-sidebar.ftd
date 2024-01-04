@@ -65,7 +65,7 @@ spacing: $ds.spaces.horizontal-gap.small
 text: Team:
 align: inline
 
--- ds.row::
+-- ds.row:
 spacing: $ds.spaces.horizontal-gap.small
 align-content: right
 
@@ -171,9 +171,7 @@ size: 24
 -- ds.column:
 width.fixed.px if { page.sidebar }: 1140
 width: fill-container
-
--- ui:
-for: $ui in $page.uis
+content: $page.uis
 
 -- end: ds.column
 

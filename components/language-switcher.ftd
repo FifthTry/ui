@@ -14,7 +14,7 @@ if: { current-language != NULL }
 align-content: center
 spacing.fixed.px: 10
 
--- ds.button: English
+-- ds.primary-button: English
 if: { current-language == "en" }
 
 -- ftd.text: English
@@ -23,7 +23,7 @@ role: $inherited.types.label-medium
 if: { current-language != "en" }
 $on-click$: $set-language(language = en)
 
--- ds.button: हिन्दी
+-- ds.primary-button: हिन्दी
 if: { current-language == "hi" }
 
 -- ftd.text: हिन्दी
