@@ -1,0 +1,66 @@
+-- import: ui.fifthtry.com/pages/hostn/site-info
+-- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- site-info.page:
+data: $data
+user-data: john-doe
+
+
+-- site-info.site-info-data data:
+user: FifthTry
+current-site: $current-site
+site-urls: $site-urls
+header-links: []
+sub-header-links: $sub-header-links
+
+-- sr.site current-site:
+name: My Site
+url: https://my-site.fifthtry-sites.com
+
+-- sr.toc-data list site-urls:
+
+-- sr.toc-data: My Site
+link: /scenarios/hostn/site-info/
+is-active: true
+
+-- sr.toc-data: My Startup
+is-active: false
+
+-- sr.toc-data: My Blog
+is-active: false
+
+-- end: site-urls
+
+
+
+-- sr.toc-data list sub-header-links:
+
+-- sr.toc-data: Info
+link: /scenarios/hostn/site-info/
+is-active: true
+
+-- sr.toc-data: Editor
+link: /editor/
+is-active: false
+
+-- sr.toc-data: Access
+link: /
+is-active: false
+
+-- sr.toc-data: Metrics
+link: /
+is-active: false
+
+-- sr.toc-data: Activity
+link: /
+is-active: false
+
+-- sr.toc-data: Settings
+link: /
+is-active: false
+
+-- end: sub-header-links
+
+
