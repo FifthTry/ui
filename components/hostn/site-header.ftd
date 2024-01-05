@@ -15,6 +15,47 @@ for: t in $header.toc-list
 -- end: header
 
 
+-- component header-with-logo:
+sr.toc-data list toc-list:
+optional string site-name:
+optional ftd.image-src site-logo:
+
+-- ds.row:
+width: fill-container
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+background.solid: $ds.colors.background.step-1
+
+-- ds.row:
+if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
+width: hug-content
+inset: $ds.spaces.inset-square.medium
+
+-- ftd.text: $header-with-logo.site-name
+if: { header-with-logo.site-name != NULL }
+color: $ds.colors.text-strong
+role: $ds.types.copy-regular
+
+-- ftd.image: $header-with-logo.site-logo
+if: { header-with-logo.site-logo != NULL }
+width.fixed.px: 25
+
+-- end: ds.row
+
+/-- ds.row:
+width: hug-content
+inset: $ds.spaces.inset-square.medium
+
+-- toc-link: $t
+for: t in $header-with-logo.toc-list
+
+-- end: ds.row
+
+-- end: ds.row
+
+-- end: header-with-logo
+
+
 -- component toc-link:
 caption sr.toc-data toc:
 
