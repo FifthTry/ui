@@ -1,0 +1,81 @@
+-- import: ui.fifthtry.com/components/hostn/site-header as h
+-- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/components/hostn/files-sidebar as fs
+
+-- component page:
+module user-data: user-data
+sr.toc-data list header-links: $header-links
+site-editor-data data:
+
+-- ds.column:
+background.solid: $ds.colors.background.base
+height: fill-container
+align-content: top-left
+external-css: $assets.files.components.hostn.css.code-editor.css
+spacing: $ds.spaces.vertical-gap.zero
+
+-- h.header-with-logo:
+toc-list: $page.header-links
+site-name: hostn
+site-logo: $assets.files.assets.hostn-logo.svg
+
+-- ds.row:
+inset: $ds.spaces.inset-square.medium
+
+-- fs.sidebar:
+files: $page.data.files
+
+-- code-editor:
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+
+-- sr.toc-data list header-links:
+
+-- sr.toc-data: Why Hostn?
+link: https://fastn.com
+is-active: false
+
+-- sr.toc-data: Pricing
+link: /pricing/
+is-active: false
+
+-- sr.toc-data: Log In
+link: /login/
+is-active: false
+
+-- end: header-links
+
+
+
+
+
+
+
+-- record site-editor-data:
+string user:
+string current-file:
+sr.toc-data list files:
+
+
+
+
+
+
+
+-- web-component code-editor:
+js: $assets.files.components.hostn.web-components.code-editor.js
+

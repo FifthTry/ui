@@ -1,0 +1,27 @@
+-- import: ui.fifthtry.com/pages/hostn/site-editor
+-- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- site-editor.page:
+user-data: john-doe
+data: $data
+
+
+-- site-editor.site-editor-data data:
+user: FifthTry
+current-file: index.ftd
+files: $files
+
+
+-- sr.toc-data list files:
+
+-- sr.toc-data: index.ftd
+link: scenarios/hostn/site-editor/
+is-active: true
+
+-- sr.toc-data: FASTN.ftd
+link: scenarios/hostn/site-editor/
+is-active: false
+
+-- end: files

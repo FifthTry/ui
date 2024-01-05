@@ -1,7 +1,7 @@
 -- import: ui.fifthtry.com/components/hostn/site-records as sr
 
 -- component sidebar:
-sr.toc-data list sites:
+sr.toc-data list files:
 
 -- ds.column:
 width.fixed.px: 200
@@ -10,23 +10,22 @@ spacing: $ds.spaces.horizontal-gap.medium
 background.solid: $ds.colors.background.step-1
 align-content: top-left
 inset: $ds.spaces.inset-square.medium
-border-radius.px: 15
 
--- site-link: $site
-for: site in $sidebar.sites
+-- file-view: $file
+for: file in $sidebar.files
 
 -- end: ds.column
 
 -- end: sidebar
 
 
--- component site-link:
-caption sr.toc-data site:
+-- component file-view:
+caption sr.toc-data file:
 
--- ftd.text: $site-link.site.name
-link: $site-link.site.link
+-- ftd.text: $file-view.file.name
+link: $file-view.file.link
 role: $ds.types.copy-small
 color: $ds.colors.text-strong
-style if { site-link.site.is-active }: underline, bold
+style if { file-view.file.is-active }: underline, bold
 
--- end: site-link
+-- end: file-view

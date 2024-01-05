@@ -57,6 +57,9 @@ value: Not yet
 -- ds.primary-button: Visit Site
 link: $page.data.current-site.url
 
+-- ds.primary-button: Edit Site
+link: /scenarios/hostn/site-editor/
+
 -- end: ds.column
 
 ;; Site info
