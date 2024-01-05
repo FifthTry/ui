@@ -22,6 +22,7 @@ dashboard-data data:
 -- p.page:
 site-data: site-data
 user-data: $page.user-data
+hide-footer: true
 
 -- ds.heading-large: Sites Dashboard
 
