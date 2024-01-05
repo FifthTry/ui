@@ -18,6 +18,7 @@ string detail-url:
 -- component page:
 module user-data: user-data
 dashboard-data data:
+children children:
 
 -- p.page:
 site-data: site-data
@@ -28,8 +29,15 @@ user-data: $page.user-data
 -- show-site-info.show-site-info: $s
 for: s in $page.data.sites
 
--- ds.primary-button: Create New Site
-link: /scenarios/hostn/create-site/
+
+
+-- ds.section-column:
+inset: $ds.spaces.inset-square.zero
+content: $page.children
+margin: $ds.spaces.vertical-gap.extra-extra-large
+
+-- end: ds.section-column
+
 
 -- end: p.page
 

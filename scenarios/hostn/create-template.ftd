@@ -1,0 +1,30 @@
+-- import: ui.fifthtry.com/pages/hostn/dashboard
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: fastn/processors as pr
+-- import: ui.fifthtry.com/components/hostn/editor
+
+-- dashboard.page:
+data: $data
+user-data: john-doe
+
+-- editor.exercise:
+list-of-files: $editor.toc
+
+-- end: dashboard.page
+
+
+
+
+
+-- dashboard.dashboard-data data:
+sites: $sites
+
+
+-- dashboard.site list sites:
+
+-- end: sites
+
+
+
+
+

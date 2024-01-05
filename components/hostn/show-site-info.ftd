@@ -24,10 +24,10 @@ icon: arrow-right
 link: $show-site-info.site.url
 icon-position: at-end
 
--- ds.phosphor-icon-button: View Detail
-icon: arrow-right
-link: $show-site-info.site.detail-url
-icon-position: at-end
+;; -- ds.phosphor-icon-button: View Detail
+;; icon: arrow-right
+;; link: $show-site-info.site.detail-url
+;; icon-position: at-end
 
 
 -- end: ds.row

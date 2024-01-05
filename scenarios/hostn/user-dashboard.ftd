@@ -6,6 +6,9 @@
 data: $data
 user-data: john-doe
 
+-- ds.primary-button: Create New Site
+link: /scenarios/hostn/create-site/
+
 -- end: dashboard.page
 
 
