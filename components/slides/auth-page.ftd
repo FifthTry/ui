@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/slides/site-data
+-- import: ui.fifthtry.com/actions/slides/create-user
 
 
 
@@ -9,9 +10,14 @@
 caption title:
 module site-data: site-data
 module user-data: user-data
+module signup-action: create-user
 string github-url:
 optional string signup-url:
 optional string signin-url:
+private string $current-name: empty
+private string $current-email: empty
+private string $current-username: empty
+private string $current-password: empty
 
 -- ftd.row:
 width: fill-container
@@ -38,6 +44,68 @@ fit: cover
 -- ds.copy-large:
 
 $page.title
+
+-- ftd.column:
+
+-- ftd.text-input:
+width: fill-container
+height.fixed.px: 48
+border-radius.px: 4
+placeholder: name
+background.solid: transparent
+border-width.px: 2
+border-color: $inherited.colors.border
+padding.px: 12
+color: $inherited.colors.text-strong
+type: text
+$on-input$: $ftd.set-string($a = $page.current-name, v = $VALUE)
+
+-- ftd.text-input:
+placeholder: email
+type: email
+$on-input$: $ftd.set-string($a = $page.current-email, v = $VALUE)
+width: fill-container
+height.fixed.px: 48
+border-radius.px: 4
+background.solid: transparent
+border-width.px: 2
+border-color: $inherited.colors.border
+padding.px: 12
+color: $inherited.colors.text-strong
+
+-- ftd.text-input:
+placeholder: username
+type: text
+$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
+width: fill-container
+height.fixed.px: 48
+border-radius.px: 4
+background.solid: transparent
+border-width.px: 2
+border-color: $inherited.colors.border
+padding.px: 12
+color: $inherited.colors.text-strong
+
+
+-- ftd.text-input:
+placeholder: password
+type: password
+$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
+width: fill-container
+height.fixed.px: 48
+border-radius.px: 4
+background.solid: transparent
+border-width.px: 2
+border-color: $inherited.colors.border
+padding.px: 12
+color: $inherited.colors.text-strong
+
+
+-- ds.primary-button: Sign up
+$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password)
+
+-- end: ftd.column
+
 
 -- ftd.column:
 margin-top.px: 38
@@ -89,3 +157,4 @@ link: /
 -- end: ftd.row
 
 -- end: page
+

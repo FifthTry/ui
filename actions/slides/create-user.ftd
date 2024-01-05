@@ -1,0 +1,14 @@
+-- optional string $username-error:
+-- optional string $email-error:
+
+
+-- void submit-values(name, email, username, password):
+string name:
+string email:
+string username:
+string password:
+js: $assets.files.assets.functions.js
+
+callAlert("signup attempt")
+;; call submit with http options
+
