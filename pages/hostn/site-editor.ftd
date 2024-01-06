@@ -1,9 +1,7 @@
 -- import: ui.fifthtry.com/components/hostn/page as p
 
--- import: ui.fifthtry.com/components/hostn/editor-page as ep
+-- import: ui.fifthtry.com/components/hostn/editor as e
 export: page, site-editor-data
 
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
--- import: ui.fifthtry.com/components/header 
-export: header
