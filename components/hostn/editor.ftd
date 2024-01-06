@@ -28,7 +28,14 @@ align-content: top-left
 -- fs.sidebar:
 files: $page.data.files
 
+-- ds.column:
+height: fill-container
+
+-- file-header: index.ftd
+
 -- code-editor:
+
+-- end: ds.column
 
 -- end: ds.row
 
@@ -40,7 +47,49 @@ files: $page.data.files
 
 
 
+-- component file-header:
+caption file-name:
 
+-- ds.row:
+width: fill-container
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+background.solid: $ds.colors.background.base
+
+
+-- ds.row:
+if: { file-header.file-name != NULL }
+width: hug-content
+
+-- ftd.text: $file-header.file-name
+color: $ds.colors.text-strong
+role: $ds.types.copy-regular
+
+-- end: ds.row
+
+-- ds.row:
+width: hug-content
+
+-- ds.primary-button: RUN
+link: /run/
+
+-- ds.secondary-button: PREVIEW
+link: /preview/
+
+-- ds.secondary-button: CONSOLE
+link: /console/
+
+-- end: ds.row
+
+-- end: ds.row
+
+
+
+
+
+
+
+-- end: file-header
 
 
 
