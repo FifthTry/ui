@@ -18,6 +18,7 @@ spacing: $ds.spaces.vertical-gap.zero
 toc-list: $page.header-links
 site-name: hostn
 site-logo: $assets.files.assets.hostn-logo.svg
+header-text: Welcome to hostn
 
 -- ds.row:
 inset: $ds.spaces.inset-square.medium

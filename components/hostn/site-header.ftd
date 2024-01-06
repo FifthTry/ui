@@ -31,6 +31,7 @@ for: t in $header.toc-list
 sr.toc-data list toc-list:
 optional string site-name:
 optional ftd.image-src site-logo:
+optional string header-text:
 
 -- ds.row:
 width: fill-container
@@ -52,9 +53,16 @@ role: $ds.types.copy-large
 if: { header-with-logo.site-logo != NULL }
 width.fixed.px: 30
 
+-- ftd.text: $header-with-logo.header-text
+if: { header-with-logo.header-text != NULL }
+color: $ds.colors.text-strong
+role: $ds.types.copy-large
+
+
+
 -- end: ds.row
 
-/-- ds.row:
+-- ds.row:
 width: hug-content
 inset: $ds.spaces.inset-square.medium
 

@@ -5,3 +5,5 @@ export: page, site-editor-data
 
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/components/header 
+export: header
