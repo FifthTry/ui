@@ -10,3 +10,4 @@ string url:
 caption name:
 optional string link:
 boolean is-active:
+optional ftd.image-src icon:
