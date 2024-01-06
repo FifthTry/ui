@@ -56,7 +56,7 @@ class CodeEditor extends HTMLElement {
         lineNumbers: true,
         autofocus: true,
         showCursorWhenSelecting: true,
-      });
+      }).setSize("100%", "100%");
     };
   }
 }
