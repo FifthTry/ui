@@ -21,6 +21,8 @@ site-logo: $assets.files.assets.hostn-logo.svg
 
 -- ds.row:
 inset: $ds.spaces.inset-square.medium
+height: fill-container
+align-content: top-left
 
 -- fs.sidebar:
 files: $page.data.files

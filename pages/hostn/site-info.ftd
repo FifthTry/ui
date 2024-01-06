@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/components/hostn/page as p
 -- import: ui.fifthtry.com/components/hostn/show-site-info
 -- import: ui.fifthtry.com/components/hostn/site-records as sr
 -- import: ui.fifthtry.com/components/hostn/site-sidebar as ss
@@ -23,10 +23,11 @@ site-info-data data:
 -- p.page:
 site-data: site-data
 user-data: $page.user-data
-hide-footer: true
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.medium
+height: fill-container
+inset: $ds.spaces.inset-square.large
 
 ;; Sites left sidebar <-
 -- ss.sidebar:
@@ -41,6 +42,7 @@ sites: $page.data.site-urls
 
 -- ds.column:
 align-content: top-left
+height: fill-container
 
 -- h.header:
 toc-list: $page.data.sub-header-links

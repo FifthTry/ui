@@ -1,9 +1,16 @@
 -- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+
+
+
+
 
 -- component header:
 sr.toc-data list toc-list:
 
 -- ds.row:
+background.solid: $ds.colors.background.step-1
 align-content: top-left
 spacing: $ds.spaces.horizontal-gap.large
 
@@ -15,6 +22,11 @@ for: t in $header.toc-list
 -- end: header
 
 
+
+
+
+
+
 -- component header-with-logo:
 sr.toc-data list toc-list:
 optional string site-name:
@@ -24,7 +36,7 @@ optional ftd.image-src site-logo:
 width: fill-container
 align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
-background.solid: $ds.colors.background.step-1
+background.solid: $ds.colors.background.base
 
 -- ds.row:
 if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
@@ -34,11 +46,11 @@ inset: $ds.spaces.inset-square.medium
 -- ftd.text: $header-with-logo.site-name
 if: { header-with-logo.site-name != NULL }
 color: $ds.colors.text-strong
-role: $ds.types.copy-regular
+role: $ds.types.copy-large
 
 -- ftd.image: $header-with-logo.site-logo
 if: { header-with-logo.site-logo != NULL }
-width.fixed.px: 25
+width.fixed.px: 30
 
 -- end: ds.row
 
@@ -56,6 +68,11 @@ for: t in $header-with-logo.toc-list
 -- end: header-with-logo
 
 
+
+
+
+
+
 -- component toc-link:
 caption sr.toc-data toc:
 
@@ -64,6 +81,6 @@ color: $ds.colors.text-strong
 role: $ds.types.copy-regular
 link: $toc-link.toc.link
 style if { toc-link.toc.is-active }: underline
-padding-vertical.px: 10
+padding.px: 10
 
 -- end: toc-link
