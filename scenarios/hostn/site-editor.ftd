@@ -19,9 +19,11 @@ files: $files
 -- sr.toc-data: index.ftd
 link: scenarios/hostn/site-editor/
 is-active: true
+icon: $assets.files.assets.ftd-logo-2.svg
 
 -- sr.toc-data: FASTN.ftd
 link: scenarios/hostn/site-editor/
 is-active: false
+icon: $assets.files.assets.ftd-logo-2.svg
 
 -- end: files
