@@ -8,7 +8,7 @@ string cta: Read More
 -- ds.column:
 background.solid: $ds.colors.background.step-2
 inset: $ds.spaces.inset-tall.large
-height: fill-container
+width.fixed.percent: 48
 
 -- ds.row:
 

@@ -31,6 +31,7 @@ outer-background.solid: $ds.colors.background.step-1
 align-content: top-center
 margin: $ds.spaces.vertical-gap.extra-extra-large
 inset: $ds.spaces.inset-square.extra-large
+wrap: true
 
 -- product.product: FifthTry Slides
 icon: $assets.files.assets.ftd-logo.svg
@@ -55,6 +56,13 @@ icon: $assets.files.assets.fastn-logo.svg
 
 `fastn` is a programming language and a full stack web framework. `fastn` is designed for
 non programmers but programmers also love it.
+
+-- product.product: FifthTry University
+link: /university/
+icon: $assets.files.assets.fastn-logo.svg
+
+Learn how to use `fastn` to build websites. FifthTry University is a collection of tutorials
+for people who want to learn how to build websites.
 
 -- end: ds.section-row
 
