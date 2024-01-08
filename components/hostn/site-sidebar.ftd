@@ -25,7 +25,7 @@ caption sr.toc-data site:
 
 -- ftd.text: $site-link.site.name
 link: $site-link.site.link
-role: $ds.types.copy-regular
+role: $ds.types.copy-small
 color: $ds.colors.text-strong
 style if { site-link.site.is-active }: underline, bold
 
