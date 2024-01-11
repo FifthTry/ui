@@ -14,18 +14,18 @@ ftd.align align-content: top-left
 
 -- ds.page: $page.title
 
--- h.header-with-logo:
-toc-list: []
-site-name: hostn
-site-logo: $assets.files.assets.hostn-logo.svg
-
--- ds.column:
-inset: $ds.spaces.inset-square.zero
-content: $page.children
-align-content: $page.align-content
-height: fill-container
-
--- end: ds.column
+	-- h.header-with-logo:
+	toc-list: []
+	site-name: hostn
+	site-logo: $assets.files.assets.hostn-logo.svg
+	
+	-- ds.column:
+	inset: $ds.spaces.inset-square.zero
+	content: $page.children
+	align-content: $page.align-content
+	height: fill-container
+	
+	-- end: ds.column
 
 -- end: ds.page
 

@@ -16,18 +16,18 @@ border-color: $inherited.colors.border
 background.solid: $inherited.colors.background.step-1
 padding.px: 8
 
--- ds.circle-text-button: $get-initials(name=$avatar.user-data.name)
-
--- ftd.image:
-src: $assets.files.assets.slides.toggle-down.svg
-src if { avatar.open }: $assets.files.assets.slides.toggle-up.svg
-width.fixed.px: 24
-height.fixed.px: 24
-
--- popup:
-user-data: $avatar.user-data
-$open: $avatar.open
-
+	-- ds.circle-text-button: $get-initials(name=$avatar.user-data.name)
+	
+	-- ftd.image:
+	src: $assets.files.assets.slides.toggle-down.svg
+	src if { avatar.open }: $assets.files.assets.slides.toggle-up.svg
+	width.fixed.px: 24
+	height.fixed.px: 24
+	
+	-- popup:
+	user-data: $avatar.user-data
+	$open: $avatar.open
+	
 -- end: ftd.row
 
 
@@ -54,64 +54,64 @@ right.px: 0
 top.px: 67
 padding.px: 8
 
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 8
-padding-vertical.px: 24
-align-content: center
-border-bottom-width.px: 1
-border-color: $inherited.colors.border
+	-- ftd.column:
+	width: fill-container
+	spacing.fixed.px: 8
+	padding-vertical.px: 24
+	align-content: center
+	border-bottom-width.px: 1
+	border-color: $inherited.colors.border
+	
+		-- ds.circle-text-button: $get-initials(name=$popup.user-data.name)
+		
+		-- ftd.text: $popup.user-data.name
+		role: $inherited.types.button-medium
+		color: $inherited.colors.text
+		
+		-- ftd.text: $popup.user-data.email
+		role: $inherited.types.label-small
+		color: $inherited.colors.text
+		
+	-- end: ftd.column
 
--- ds.circle-text-button: $get-initials(name=$popup.user-data.name)
-
--- ftd.text: $popup.user-data.name
-role: $inherited.types.button-medium
-color: $inherited.colors.text
-
--- ftd.text: $popup.user-data.email
-role: $inherited.types.label-small
-color: $inherited.colors.text
-
--- end: ftd.column
-
-/-- ftd.row:
-width: fill-container
-padding-vertical.px: 12
-padding-horizontal.px: 8
-border-bottom-width.px: 1
-border-color: $inherited.colors.border
-spacing.fixed.px: 8
-
-/-- ftd.image:
-src: $assets.files.assets.slides.setting.svg
-width.fixed.px: 24
-height.fixed.px: 24
-align-self: center
-
-/-- ftd.text: Account settings
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
-
-/-- end: ftd.row
-
--- ftd.row:
-width: fill-container
-padding-vertical.px: 12
-padding-horizontal.px: 8
-spacing.fixed.px: 8
-
--- ftd.image:
-src: $assets.files.assets.slides.logout.svg
-width.fixed.px: 24
-height.fixed.px: 24
-align-self: center
-
--- ftd.text: $lang.sign-out
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
-link: /admin/logout/?next=/
-
--- end: ftd.row
+	/-- ftd.row:
+	width: fill-container
+	padding-vertical.px: 12
+	padding-horizontal.px: 8
+	border-bottom-width.px: 1
+	border-color: $inherited.colors.border
+	spacing.fixed.px: 8
+	
+	/-- ftd.image:
+	src: $assets.files.assets.slides.setting.svg
+	width.fixed.px: 24
+	height.fixed.px: 24
+	align-self: center
+	
+	/-- ftd.text: Account settings
+	role: $inherited.types.copy-regular
+	color: $inherited.colors.text
+	
+	/-- end: ftd.row
+	
+	-- ftd.row:
+	width: fill-container
+	padding-vertical.px: 12
+	padding-horizontal.px: 8
+	spacing.fixed.px: 8
+	
+		-- ftd.image:
+		src: $assets.files.assets.slides.logout.svg
+		width.fixed.px: 24
+		height.fixed.px: 24
+		align-self: center
+		
+		-- ftd.text: $lang.sign-out
+		role: $inherited.types.copy-regular
+		color: $inherited.colors.text
+		link: /admin/logout/?next=/
+		
+	-- end: ftd.row
 
 -- end: ftd.column
 

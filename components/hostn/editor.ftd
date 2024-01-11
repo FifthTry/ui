@@ -14,30 +14,30 @@ align-content: top-left
 css: $assets.files.components.hostn.css.code-editor.css
 spacing: $ds.spaces.vertical-gap.zero
 
--- h.header-with-logo:
-toc-list: $page.header-links
-site-name: hostn
-site-logo: $assets.files.assets.hostn-logo.svg
-header-text: Welcome to hostn
+	-- h.header-with-logo:
+	toc-list: $page.header-links
+	site-name: hostn
+	site-logo: $assets.files.assets.hostn-logo.svg
+	header-text: Welcome to hostn
+	
+	-- ds.row:
+	inset: $ds.spaces.inset-square.medium
+	height: fill-container
+	align-content: top-left
+	
+		-- fs.sidebar:
+		files: $page.data.files
+		
+		-- ds.column:
+		height: fill-container
+		
+			-- file-header: index.ftd
+			
+			-- code-editor:
+			
+		-- end: ds.column
 
--- ds.row:
-inset: $ds.spaces.inset-square.medium
-height: fill-container
-align-content: top-left
-
--- fs.sidebar:
-files: $page.data.files
-
--- ds.column:
-height: fill-container
-
--- file-header: index.ftd
-
--- code-editor:
-
--- end: ds.column
-
--- end: ds.row
+	-- end: ds.row
 
 -- end: ds.column
 
@@ -57,29 +57,29 @@ spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
 
--- ds.row:
-if: { file-header.file-name != NULL }
-width: hug-content
+	-- ds.row:
+	if: { file-header.file-name != NULL }
+	width: hug-content
+	
+		-- ftd.text: $file-header.file-name
+		color: $ds.colors.text-strong
+		role: $ds.types.copy-regular
+		
+	-- end: ds.row
 
--- ftd.text: $file-header.file-name
-color: $ds.colors.text-strong
-role: $ds.types.copy-regular
-
--- end: ds.row
-
--- ds.row:
-width: hug-content
-
--- ds.primary-button: RUN
-link: /run/
-
--- ds.secondary-button: PREVIEW
-link: /preview/
-
--- ds.secondary-button: CONSOLE
-link: /console/
-
--- end: ds.row
+	-- ds.row:
+	width: hug-content
+	
+		-- ds.primary-button: RUN
+		link: /run/
+		
+		-- ds.secondary-button: PREVIEW
+		link: /preview/
+		
+		-- ds.secondary-button: CONSOLE
+		link: /console/
+		
+	-- end: ds.row
 
 -- end: ds.row
 
@@ -130,4 +130,3 @@ sr.toc-data list files:
 
 -- web-component code-editor:
 js: $assets.files.components.hostn.web-components.code-editor.js
-

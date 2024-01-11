@@ -24,55 +24,54 @@ site-info-data data:
 site-data: site-data
 user-data: $page.user-data
 
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.medium
-height: fill-container
-inset: $ds.spaces.inset-square.large
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.medium
+	height: fill-container
+	inset: $ds.spaces.inset-square.large
+	
+		;; Sites left sidebar <-
+		-- ss.sidebar:
+		sites: $page.data.site-urls
+		
+		
+		
+		
+		
+		;;
+		;; Sub Headers ->
+		-- ds.column:
+		align-content: top-left
+		height: fill-container
+		
+			-- h.header:
+			toc-list: $page.data.sub-header-links
+			
+			-- l.label: Site name:
+			value: $page.data.current-site.name
+			
+			-- l.label: Domain:
+			value: $page.data.current-site.url
+			
+			-- l.label: Last updated:
+			value: Not yet
+			
+			-- ds.primary-button: Visit Site
+			link: $page.data.current-site.url
+			
+			-- ds.primary-button: Edit Site
+			link: /scenarios/hostn/site-editor/
+			
+		-- end: ds.column
 
-;; Sites left sidebar <-
--- ss.sidebar:
-sites: $page.data.site-urls
-
-
-
-
-
-;;
-;; Sub Headers ->
-
--- ds.column:
-align-content: top-left
-height: fill-container
-
--- h.header:
-toc-list: $page.data.sub-header-links
-
--- l.label: Site name:
-value: $page.data.current-site.name
-
--- l.label: Domain:
-value: $page.data.current-site.url
-
--- l.label: Last updated:
-value: Not yet
-
--- ds.primary-button: Visit Site
-link: $page.data.current-site.url
-
--- ds.primary-button: Edit Site
-link: /scenarios/hostn/site-editor/
-
--- end: ds.column
-
-;; Site info
-;;
-
+		;; Site info
+		;;
 
 
 
 
 
--- end: ds.row
+
+	-- end: ds.row
 
 -- end: p.page
 

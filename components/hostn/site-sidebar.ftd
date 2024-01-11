@@ -12,9 +12,9 @@ align-content: top-left
 inset: $ds.spaces.inset-square.medium
 radius: $ds.radius.medium
 
--- site-link: $site
-for: site in $sidebar.sites
-
+	-- site-link: $site
+	for: site in $sidebar.sites
+	
 -- end: ds.column
 
 -- end: sidebar
