@@ -52,6 +52,11 @@ border-color: $inherited.colors.border
 padding.px: 12
 color: $inherited.colors.text-strong
 
+-- ftd.text: $page.authenticate-user.username-error
+if: { page.authenticate-user.username-error != NULL }
+color: red
+role: $inherited.types.copy-small
+
 
 -- ftd.text-input:
 placeholder: password
@@ -65,6 +70,11 @@ border-width.px: 2
 border-color: $inherited.colors.border
 padding.px: 12
 color: $inherited.colors.text-strong
+
+-- ftd.text: $page.authenticate-user.password-error
+if: { page.authenticate-user.password-error != NULL }
+color: red
+role: $inherited.types.copy-small
 
 
 -- ds.primary-button: Sign In
