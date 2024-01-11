@@ -11,7 +11,7 @@ site-editor-data data:
 background.solid: $ds.colors.background.base
 height: fill-container
 align-content: top-left
-external-css: $assets.files.components.hostn.css.code-editor.css
+css: $assets.files.components.hostn.css.code-editor.css
 spacing: $ds.spaces.vertical-gap.zero
 
 -- h.header-with-logo:
