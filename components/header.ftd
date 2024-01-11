@@ -14,7 +14,7 @@ optional boolean $sidebar: false
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
 inset: $ds.spaces.inset-square.medium
-border-bottom-width: 1
+border-bottom: 1
 margin: $header.margin
 
 -- ds.row:

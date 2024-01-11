@@ -5,8 +5,8 @@ caption university.course-info course:
 
 -- ds.column:
 width.fixed.calc: 50% - 20px
-border-radius.px: 10
-border-width.px: 2
+radius: $ds.radius.medium
+/border-width.px: 2
 border-color: $ds.colors.cta-primary.base
 inset: $ds.spaces.inset-square.zero
 spacing: $ds.spaces.vertical-gap.zero
