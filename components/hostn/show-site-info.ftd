@@ -4,8 +4,7 @@
 caption dashboard.site site:
 
 -- ds.column:
-border-radius.px: 10
-border-width.px: 2
+radius: $ds.radius.medium
 border-color: $ds.colors.cta-primary.base
 inset: $ds.spaces.inset-square.zero
 spacing: $ds.spaces.vertical-gap.zero
