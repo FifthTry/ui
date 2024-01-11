@@ -2,5 +2,5 @@
 
 
 -- signup.page:
-github-url: slides/scenarios/team-dashboard/
-signin-url: slides/scenarios/signin-page/
+github-url: scenarios/slides/team-dashboard/
+signin-url: scenarios/slides/signin-page/
