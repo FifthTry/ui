@@ -42,7 +42,7 @@ spacing: $ds.spaces.horizontal-gap.zero
 
 -- ds.column:
 if: { page.sidebar }
-border-width.px: 1
+/border-width.px: 1
 border-color: $inherited.colors.border
 ;;sticky: true
 ;;top.px: 84
@@ -85,8 +85,8 @@ align-self: center
 if: { !unimplemented }
 align-content: center
 background.solid: $ds.colors.background.step-1
-border-radius.px: 8
-border-width.px: 1
+radius: $ds.radius.medium
+/border-width.px: 1
 border-color: $ds.colors.border
 inset: $ds.spaces.inset-square.medium
 ;;margin-left.px: 32
