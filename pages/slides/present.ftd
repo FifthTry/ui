@@ -28,16 +28,16 @@ width: fill-container
 height: fill-container
 align-content: center
 
--- slide-present-view:
-for: $p in $page.data.all-slide-previews
-src: $p
-current-slide-order: $page.current-slide-order
-order: $increase-by-one(a = $LOOP.COUNTER)
-
--- present-switcher:
-$current-slide-order: $page.current-slide-order
-total-slides: $length(a = $page.data.all-slide-previews)
-
+	-- slide-present-view:
+	for: $p in $page.data.all-slide-previews
+	src: $p
+	current-slide-order: $page.current-slide-order
+	order: $increase-by-one(a = $LOOP.COUNTER)
+	
+	-- present-switcher:
+	$current-slide-order: $page.current-slide-order
+	total-slides: $length(a = $page.data.all-slide-previews)
+	
 -- end: ftd.column
 
 -- end: page
@@ -51,12 +51,12 @@ integer order:
 
 -- ftd.column:
 
--- ftd.image: $slide-present-view.src
-if: { slide-present-view.order == slide-present-view.current-slide-order }
-width.fixed.vw: 100
-height.fixed.vh: 100
-fit: contain
-
+	-- ftd.image: $slide-present-view.src
+	if: { slide-present-view.order == slide-present-view.current-slide-order }
+	width.fixed.vw: 100
+	height.fixed.vh: 100
+	fit: contain
+	
 -- end: ftd.column
 
 -- end: slide-present-view
@@ -84,22 +84,22 @@ padding-vertical.px: 10
 classes: switcher
 css: $assets.files.assets.css.opacity.css
 
--- ds.phosphor-icon-button:
-icon: arrow-fat-left
-$on-click$: $clamp-with-limits($a = $present-switcher.current-slide-order, by=-1, min=1, max=$present-switcher.total-slides)
-
-;; CURRENT SLIDE ORDER
--- ftd.integer: $present-switcher.current-slide-order
-background.solid: $inherited.colors.background.step-2
-color: $inherited.colors.text-strong
-role: $inherited.types.copy-regular
-padding-horizontal.px: 10
-border-radius.px: 15
-
--- ds.phosphor-icon-button:
-icon: arrow-fat-right
-$on-click$: $clamp-with-limits($a = $present-switcher.current-slide-order, by=1, max=$present-switcher.total-slides)
-
+	-- ds.phosphor-icon-button:
+	icon: arrow-fat-left
+	$on-click$: $clamp-with-limits($a = $present-switcher.current-slide-order, by=-1, min=1, max=$present-switcher.total-slides)
+	
+	;; CURRENT SLIDE ORDER
+	-- ftd.integer: $present-switcher.current-slide-order
+	background.solid: $inherited.colors.background.step-2
+	color: $inherited.colors.text-strong
+	role: $inherited.types.copy-regular
+	padding-horizontal.px: 10
+	border-radius.px: 15
+	
+	-- ds.phosphor-icon-button:
+	icon: arrow-fat-right
+	$on-click$: $clamp-with-limits($a = $present-switcher.current-slide-order, by=1, max=$present-switcher.total-slides)
+	
 -- end: ftd.row
 
 -- end: present-switcher

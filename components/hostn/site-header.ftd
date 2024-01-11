@@ -14,9 +14,9 @@ background.solid: $ds.colors.background.step-1
 align-content: top-left
 spacing: $ds.spaces.horizontal-gap.large
 
--- toc-link: $t
-for: t in $header.toc-list
-
+	-- toc-link: $t
+	for: t in $header.toc-list
+	
 -- end: ds.row
 
 -- end: header
@@ -39,37 +39,37 @@ align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
--- ds.row:
-if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
-width: hug-content
-inset: $ds.spaces.inset-square.medium
+	-- ds.row:
+	if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
+	width: hug-content
+	inset: $ds.spaces.inset-square.medium
+	
+		-- ftd.text: $header-with-logo.site-name
+		if: { header-with-logo.site-name != NULL }
+		color: $ds.colors.text-strong
+		role: $ds.types.copy-large
+		
+		-- ftd.image: $header-with-logo.site-logo
+		if: { header-with-logo.site-logo != NULL }
+		width.fixed.px: 30
+		
+		-- ftd.text: $header-with-logo.header-text
+		if: { header-with-logo.header-text != NULL }
+		color: $ds.colors.text-strong
+		role: $ds.types.copy-large
+		
+		
+		
+	-- end: ds.row
 
--- ftd.text: $header-with-logo.site-name
-if: { header-with-logo.site-name != NULL }
-color: $ds.colors.text-strong
-role: $ds.types.copy-large
-
--- ftd.image: $header-with-logo.site-logo
-if: { header-with-logo.site-logo != NULL }
-width.fixed.px: 30
-
--- ftd.text: $header-with-logo.header-text
-if: { header-with-logo.header-text != NULL }
-color: $ds.colors.text-strong
-role: $ds.types.copy-large
-
-
-
--- end: ds.row
-
--- ds.row:
-width: hug-content
-inset: $ds.spaces.inset-square.medium
-
--- toc-link: $t
-for: t in $header-with-logo.toc-list
-
--- end: ds.row
+	-- ds.row:
+	width: hug-content
+	inset: $ds.spaces.inset-square.medium
+	
+		-- toc-link: $t
+		for: t in $header-with-logo.toc-list
+		
+	-- end: ds.row
 
 -- end: ds.row
 

@@ -12,19 +12,19 @@ background.solid: $ds.colors.background.step-1
 align-content: top-left
 inset: $ds.spaces.inset-square.medium
 
--- label-with-three-dots: FILES
+	-- label-with-three-dots: FILES
+	
+	-- ds.column:
+	align-content: top-left
+	spacing: $ds.spaces.horizontal-gap.extra-small
+	
+		-- file-view: $file
+		for: file in $sidebar.files
+		
+	-- end: ds.column
 
--- ds.column:
-align-content: top-left
-spacing: $ds.spaces.horizontal-gap.extra-small
-
--- file-view: $file
-for: file in $sidebar.files
-
--- end: ds.column
-
--- label-with-three-dots: DEPENDENCIES
-
+	-- label-with-three-dots: DEPENDENCIES
+	
 -- end: ds.column
 
 -- end: sidebar
@@ -37,16 +37,16 @@ caption sr.toc-data file:
 align-content: top-left
 spacing: $ds.spaces.horizontal-gap.extra-small
 
--- ftd.image: $file-view.file.icon
-if: { file-view.file.icon != NULL }
-width.fixed.px: 25
-
--- ftd.text: $file-view.file.name
-link: $file-view.file.link
-role: $ds.types.copy-small
-color: $ds.colors.text-strong
-style if { file-view.file.is-active }: underline, bold
-
+	-- ftd.image: $file-view.file.icon
+	if: { file-view.file.icon != NULL }
+	width.fixed.px: 25
+	
+	-- ftd.text: $file-view.file.name
+	link: $file-view.file.link
+	role: $ds.types.copy-small
+	color: $ds.colors.text-strong
+	style if { file-view.file.is-active }: underline, bold
+	
 -- end: ds.row
 
 -- end: file-view
@@ -61,16 +61,16 @@ private boolean $dots-hovered: false
 align-content: top-left
 spacing: $ds.spaces.horizontal-gap.space-between
 
--- ds.copy-small: $label-with-three-dots.label
-style: bold
-
--- ftd.image: $assets.files.assets.dots-three.svg
-width.fixed.px: 20
-opacity: 0.5
-opacity if { label-with-three-dots.dots-hovered }: 1
-$on-mouse-enter$: $ftd.set-bool($a = $label-with-three-dots.dots-hovered, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $label-with-three-dots.dots-hovered, v = false)
-
+	-- ds.copy-small: $label-with-three-dots.label
+	style: bold
+	
+	-- ftd.image: $assets.files.assets.dots-three.svg
+	width.fixed.px: 20
+	opacity: 0.5
+	opacity if { label-with-three-dots.dots-hovered }: 1
+	$on-mouse-enter$: $ftd.set-bool($a = $label-with-three-dots.dots-hovered, v = true)
+	$on-mouse-leave$: $ftd.set-bool($a = $label-with-three-dots.dots-hovered, v = false)
+	
 -- end: ds.row
 
 -- end: label-with-three-dots

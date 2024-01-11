@@ -11,4 +11,3 @@ js: $assets.files.assets.functions.js
 
 callAlert("signup attempt")
 ;; call submit with http options
-
