@@ -10,7 +10,7 @@ spacing: $ds.spaces.horizontal-gap.medium
 background.solid: $ds.colors.background.step-1
 align-content: top-left
 inset: $ds.spaces.inset-square.medium
-border-radius.px: 15
+radius: $ds.radius.medium
 
 -- site-link: $site
 for: site in $sidebar.sites
