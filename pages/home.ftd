@@ -12,8 +12,8 @@ module site-data: site-data
 user-data: $page.user-data
 site-data: $page.site-data
 
--- products:
-
+	-- products:
+	
 -- end: p.page
 
 -- end: page
@@ -31,39 +31,39 @@ outer-background.solid: $ds.colors.background.step-1
 align-content: top-center
 margin: $ds.spaces.vertical-gap.extra-extra-large
 inset: $ds.spaces.inset-square.extra-large
+wrap: true
 
--- product.product: FifthTry Slides
-icon: $assets.files.assets.ftd-logo.svg
-link: /login/?next=/dashboard/
-cta: Get Started
-
-**FifthTry Slides** is a presentation tool that lets you create beautiful slides powered
-by `fastn`. **FifthTry Slides** helps your organisation create workflow to post to your
-social media channels so your entire company can be involved in the process.
-
--- product.product: FifthTry Sites
-icon: $assets.files.assets.ftd-logo.svg
-link: /sites/
-
-Unleash the power of `fastn` to create beautiful websites. FifthTry Sites is the next-gen
-platform for creating websites. `FifthTry Sites` helps you collaborate with your team,
-and publish your website to the world.
-
--- product.product: `fastn` Web Stack
-link: https://fastn.com
-icon: $assets.files.assets.fastn-logo.svg
-
-`fastn` is a programming language and a full stack web framework. `fastn` is designed for
-non programmers but programmers also love it.
-
+	-- product.product: FifthTry Slides
+	icon: $assets.files.assets.ftd-logo.svg
+	link: /login/?next=/dashboard/
+	cta: Get Started
+	
+	**FifthTry Slides** is a presentation tool that lets you create beautiful slides powered
+	by `fastn`. **FifthTry Slides** helps your organisation create workflow to post to your
+	social media channels so your entire company can be involved in the process.
+	
+	-- product.product: FifthTry Sites
+	icon: $assets.files.assets.ftd-logo.svg
+	link: /sites/
+	
+	Unleash the power of `fastn` to create beautiful websites. FifthTry Sites is the next-gen
+	platform for creating websites. `FifthTry Sites` helps you collaborate with your team,
+	and publish your website to the world.
+	
+	-- product.product: `fastn` Web Stack
+	link: https://fastn.com
+	icon: $assets.files.assets.fastn-logo.svg
+	
+	`fastn` is a programming language and a full stack web framework. `fastn` is designed for
+	non programmers but programmers also love it.
+	
+	-- product.product: FifthTry University
+	link: /university/
+	icon: $assets.files.assets.fastn-logo.svg
+	
+	Learn how to use `fastn` to build websites. FifthTry University is a collection of tutorials
+	for people who want to learn how to build websites.
+	
 -- end: ds.section-row
 
 -- end: products
-
-
-
-
-
-
-
-

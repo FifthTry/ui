@@ -1,0 +1,28 @@
+-- import: ui.fifthtry.com/pages/hostn/dashboard
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- dashboard.page:
+data: $data
+user-data: john-doe
+
+-- end: dashboard.page
+
+
+-- dashboard.dashboard-data data:
+sites: $sites
+
+
+-- dashboard.site list sites:
+
+-- dashboard.site: My Homepage
+url: https://my-homepage.fifthtry-sites.com
+detail-url: /scenarios/hostn/my-homepage/
+
+-- dashboard.site: My Startup
+url: https://my-startup.fifthtry-sites.com
+detail-url: /scenarios/hostn/my-homepage/
+
+
+
+-- end: sites

@@ -1,0 +1,78 @@
+-- import: ui.fifthtry.com/components/hostn/page as p
+-- import: ui.fifthtry.com/components/hostn/show-site-info
+-- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/components/hostn/site-sidebar as ss
+-- import: ui.fifthtry.com/components/hostn/site-header as h
+-- import: ui.fifthtry.com/components/label as l
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+
+
+-- record site-info-data:
+string user:
+sr.site current-site:
+sr.toc-data list site-urls:
+sr.toc-data list header-links:
+sr.toc-data list sub-header-links:
+
+
+-- component page:
+module user-data: user-data
+site-info-data data:
+
+-- p.page:
+site-data: site-data
+user-data: $page.user-data
+
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.medium
+	height: fill-container
+	inset: $ds.spaces.inset-square.large
+	
+		;; Sites left sidebar <-
+		-- ss.sidebar:
+		sites: $page.data.site-urls
+		
+		
+		
+		
+		
+		;;
+		;; Sub Headers ->
+		-- ds.column:
+		align-content: top-left
+		height: fill-container
+		
+			-- h.header:
+			toc-list: $page.data.sub-header-links
+			
+			-- l.label: Site name:
+			value: $page.data.current-site.name
+			
+			-- l.label: Domain:
+			value: $page.data.current-site.url
+			
+			-- l.label: Last updated:
+			value: Not yet
+			
+			-- ds.primary-button: Visit Site
+			link: $page.data.current-site.url
+			
+			-- ds.primary-button: Edit Site
+			link: /scenarios/hostn/site-editor/
+			
+		-- end: ds.column
+
+		;; Site info
+		;;
+
+
+
+
+
+
+	-- end: ds.row
+
+-- end: p.page
+
+-- end: page

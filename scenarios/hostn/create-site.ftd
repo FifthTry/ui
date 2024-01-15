@@ -1,0 +1,13 @@
+-- import: ui.fifthtry.com/pages/hostn/create-site
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- create-site.page:
+data: $data
+user-data: john-doe
+
+-- end: create-site.page
+
+
+-- create-site.create-site-data data:
+user: FifthTry

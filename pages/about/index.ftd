@@ -12,30 +12,19 @@ module site-data: site-data
 user-data: $page.user-data
 site-data: $page.site-data
 
--- ds.column:
-inset: $ds.spaces.inset-square.large
-
--- ds.heading-large: About FifthTry
-
--- ds.copy-regular:
-align: left
-;; width.fixed.px: 100
-
-FifthTry is building a better way to build websites.
-
--- end: ds.column
+	-- ds.column:
+	inset: $ds.spaces.inset-square.large
+	
+		-- ds.heading-large: About FifthTry
+		
+		-- ds.copy-regular:
+		align: left
+		;; width.fixed.px: 100
+		
+		FifthTry is building a better way to build websites.
+		
+	-- end: ds.column
 
 -- end: p.page
 
 -- end: page
-
-
-
-
-
-
-
-
-
-
-

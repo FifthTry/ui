@@ -1,24 +1,109 @@
--- import: ui.fifthtry.com/components/slides/action-page
 -- import: ui.fifthtry.com/components/slides/auth-page
 -- import: ui.fifthtry.com/site-data
-
-
-
+-- import: ui.fifthtry.com/actions/slides/authenticate-user
 
 
 -- component page:
 string github-url:
 string signup-url:
+module site-data: site-data
+module authenticate-user: authenticate-user
+private string $current-username: empty
+private string $current-password: empty
 
--- action-page.page:
-header: false
-site-data: site-data
+-- ftd.row:
+width: fill-container
+background.solid: $inherited.colors.background.base
 
--- auth-page.page: $lang.login
-site-data: site-data
-github-url: $page.github-url
-signup-url: $page.signup-url
+	-- ftd.image:
+	src: $assets.files.assets.slides.background.png
+	width.fixed.percent: 65
+	height.fixed.vh: 100
+	fit: cover
+	
+	-- ftd.column:
+	align-content: center
+	padding-top.px: 84
+	width.fixed.percent: 35
+	spacing.fixed.px: 64
+	
+		-- ftd.image:
+		src: $page.site-data.logo
+		width.fixed.px: 170
+		height.fixed.px: 38
+		fit: cover
+		
+		-- ds.copy-large:
+		
+		$lang.login
+		
+		-- ftd.column:
+		
+			-- ftd.text-input:
+			placeholder: username
+			type: text
+			$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
+			width: fill-container
+			height.fixed.px: 48
+			border-radius.px: 4
+			background.solid: transparent
+			border-width.px: 2
+			border-color: $inherited.colors.border
+			padding.px: 12
+			color: $inherited.colors.text-strong
+			
+			
+			-- ftd.text-input:
+			placeholder: password
+			type: password
+			$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
+			width: fill-container
+			height.fixed.px: 48
+			border-radius.px: 4
+			background.solid: transparent
+			border-width.px: 2
+			border-color: $inherited.colors.border
+			padding.px: 12
+			color: $inherited.colors.text-strong
+			
+			
+			-- ds.primary-button: Sign In
+			$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
+			
+		-- end: ftd.column
 
--- end: action-page.page
+
+		-- ftd.column:
+		margin-top.px: 38
+		spacing.fixed.px: 24
+		align-content: center
+		
+			-- ds.icon-button: Continue with Github
+			icon: $assets.files.assets.slides.github-mark-white.svg
+			link: $page.github-url
+			kind: primary
+			width: full
+			
+			-- ftd.row:
+			spacing.fixed.px: 6
+			align-content: center
+			padding.px: 10
+			
+				-- ds.copy-regular:
+				text: $lang.create-account
+				width.fixed.px: 200
+				
+				-- ds.link: $lang.signin-type
+				color: $ds.colors.info.text
+				link if { page.signup-url }: $page.signup-url
+				link: /
+				
+			-- end: ftd.row
+
+		-- end: ftd.column
+
+	-- end: ftd.column
+
+-- end: ftd.row
 
 -- end: page

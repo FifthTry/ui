@@ -11,13 +11,13 @@ border-color: $inherited.colors.border-strong
 padding-vertical.px: 16
 padding-horizontal.px: 24
 
--- ftd.image: $header.site-data.logo
-link: $header.site-data.homepage
-width.fixed.px: 162
-height.fixed.px: 32
-
--- dms.dark-mode-switcher-float:
-
+	-- ftd.image: $header.site-data.logo
+	link: $header.site-data.homepage
+	width.fixed.px: 162
+	height.fixed.px: 32
+	
+	-- dms.dark-mode-switcher-float:
+	
 -- end: ftd.column
 
 -- end: header

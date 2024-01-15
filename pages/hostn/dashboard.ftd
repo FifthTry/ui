@@ -1,0 +1,44 @@
+-- import: ui.fifthtry.com/components/hostn/page as p
+-- import: ui.fifthtry.com/components/hostn/show-site-info
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+
+
+-- record dashboard-data:
+site list sites:
+
+-- record site:
+caption name:
+string url:
+string detail-url:
+
+
+
+
+-- component page:
+module user-data: user-data
+dashboard-data data:
+
+-- p.page:
+site-data: site-data
+user-data: $page.user-data
+align-content: top-center
+
+	-- ds.column:
+	align-content: top-left
+	width.fixed.percent: 60
+	
+		-- ds.heading-large: Sites Dashboard
+		width: hug-content
+		
+		-- show-site-info.show-site-info: $s
+		for: s in $page.data.sites
+		
+		-- ds.primary-button: Create New Site
+		link: /scenarios/hostn/create-site/
+		
+	-- end: ds.column
+
+-- end: p.page
+
+-- end: page

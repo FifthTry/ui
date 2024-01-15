@@ -1,24 +1,17 @@
--- import: ui.fifthtry.com/components/slides/action-page
 -- import: ui.fifthtry.com/components/slides/auth-page
 -- import: ui.fifthtry.com/site-data
-
-
-
+-- import: ui.fifthtry.com/actions/slides/create-user
 
 
 -- component page:
 string github-url:
 string signin-url:
-
--- action-page.page:
-header: false
-site-data: site-data
+module signup-action: create-user
 
 -- auth-page.page: $lang.signup
 site-data: site-data
+signup-action: $page.signup-action
 github-url: $page.github-url
 signin-url: $page.signin-url
-
--- end: action-page.page
 
 -- end: page

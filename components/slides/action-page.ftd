@@ -14,19 +14,13 @@ width: fill-container
 background.solid: $inherited.colors.background.base
 height: fill-container
 
--- action-header.header:
-if: { page.header }
-site-data: $page.site-data
-
--- ui:
-for: $ui in $page.uis
-
+	-- action-header.header:
+	if: { page.header }
+	site-data: $page.site-data
+	
+	-- ui:
+	for: $ui in $page.uis
+	
 -- end: ftd.column
 
 -- end: page
-
-
-
-
-
-

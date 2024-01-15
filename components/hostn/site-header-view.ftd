@@ -1,0 +1,19 @@
+-- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/components/hostn/site-header as h
+
+-- component site-header-view:
+sr.toc-data list header-links:
+children uis:
+
+-- ds.column:
+
+	-- h.header:
+	
+	-- ds.column:
+	content: $site-header-view.uis
+	
+	-- end: ds.column
+
+-- end: ds.column
+
+-- end: site-header-view
