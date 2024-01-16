@@ -8,36 +8,46 @@ sr.toc-data list header-links: $header-links
 site-editor-data data:
 
 -- ds.column:
-background.solid: $ds.colors.background.base
+width: fill-container
 height: fill-container
-align-content: top-left
-css: $assets.files.components.hostn.css.code-editor.css
-spacing: $ds.spaces.vertical-gap.zero
+radius: $ds.radius.zero
+background.solid: $ds.colors.background.base
+css: $assets.files.components.hostn.css.code-editor.css, $assets.files.components.hostn.css.code-preview.css
 
-	-- h.header-with-logo:
-	toc-list: $page.header-links
-	site-name: hostn
-	site-logo: $assets.files.assets.hostn-logo.svg
-	header-text: Welcome to hostn
-	
-	-- ds.row:
-	inset: $ds.spaces.inset-square.medium
+    -- code-preview:
+
+	-- ds.column:
 	height: fill-container
 	align-content: top-left
+	radius: $ds.radius.zero
+	spacing: $ds.spaces.vertical-gap.zero
 	
-		-- fs.sidebar:
-		files: $page.data.files
+		-- h.header-with-logo:
+		toc-list: $page.header-links
+		site-name: hostn
+		site-logo: $assets.files.assets.hostn-logo.svg
+		header-text: Welcome to hostn
 		
-		-- ds.column:
+		-- ds.row:
+		inset: $ds.spaces.inset-square.medium
 		height: fill-container
+		align-content: top-left
 		
-			-- file-header: index.ftd
+			-- fs.sidebar:
+			files: $page.data.files
 			
-			-- code-editor:
+			-- ds.column:
+			height: fill-container
 			
-		-- end: ds.column
+				-- file-header: index.ftd
+				
+				-- code-editor:
+				
+			-- end: ds.column
 
-	-- end: ds.row
+		-- end: ds.row
+
+	-- end: ds.column
 
 -- end: ds.column
 
@@ -126,7 +136,8 @@ sr.toc-data list files:
 
 
 
-
+-- web-component code-preview:
+js: $assets.files.components.hostn.web-components.code-preview.js
 
 -- web-component code-editor:
 js: $assets.files.components.hostn.web-components.code-editor.js
