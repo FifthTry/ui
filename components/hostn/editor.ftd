@@ -12,7 +12,7 @@ width: fill-container
 height: fill-container
 radius: $ds.radius.zero
 background.solid: $ds.colors.background.base
-css: $assets.files.components.hostn.css.code-editor.css, $assets.files.components.hostn.css.code-preview.css
+css: [ $assets.files.components.hostn.css.code-editor.css, $assets.files.components.hostn.css.code-preview.css ]
 
 	-- code-preview:
 	
