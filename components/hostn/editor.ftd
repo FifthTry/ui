@@ -14,8 +14,8 @@ radius: $ds.radius.zero
 background.solid: $ds.colors.background.base
 css: $assets.files.components.hostn.css.code-editor.css, $assets.files.components.hostn.css.code-preview.css
 
-    -- code-preview:
-
+	-- code-preview:
+	
 	-- ds.column:
 	height: fill-container
 	align-content: top-left
