@@ -34,10 +34,7 @@ user-data: $page.user-data
 		sites: $page.data.site-urls
 		
 		
-		
-		
-		
-		;;
+
 		;; Sub Headers ->
 		-- ds.column:
 		align-content: top-left
@@ -64,11 +61,6 @@ user-data: $page.user-data
 		-- end: ds.column
 
 		;; Site info
-		;;
-
-
-
-
 
 
 	-- end: ds.row

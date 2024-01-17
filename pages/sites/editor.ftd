@@ -12,7 +12,7 @@ width: fill-container
 height: fill-container
 radius: $ds.radius.zero
 background.solid: $ds.colors.background.base
-css: [ $assets.files.components.hostn.css.code-editor.css, $assets.files.components.hostn.css.code-preview.css ]
+css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-preview.css ]
 
 	-- code-preview:
 	
@@ -135,9 +135,3 @@ sr.toc-data list files:
 
 
 
-
--- web-component code-preview:
-js: $assets.files.components.hostn.web-components.code-preview.js
-
--- web-component code-editor:
-js: $assets.files.components.hostn.web-components.code-editor.js
