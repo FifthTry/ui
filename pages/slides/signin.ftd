@@ -52,6 +52,11 @@ background.solid: $inherited.colors.background.base
 			padding.px: 12
 			color: $inherited.colors.text-strong
 			
+            -- ftd.text: $page.authenticate-user.username-error
+            if: { page.authenticate-user.username-error != NULL }
+            color: red
+            role: $inherited.types.copy-small
+		
 			
 			-- ftd.text-input:
 			placeholder: password
@@ -65,17 +70,16 @@ background.solid: $inherited.colors.background.base
 			border-color: $inherited.colors.border
 			padding.px: 12
 			color: $inherited.colors.text-strong
-			
+
+            -- ftd.text: $page.authenticate-user.password-error
+            if: { page.authenticate-user.password-error != NULL }
+            color: red
+            role: $inherited.types.copy-small
 			
 			-- ds.primary-button: Sign In
 			$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
 			
 		-- end: ftd.column
-
-		-- ftd.text: $page.authenticate-user.username-error
-		if: { page.authenticate-user.username-error != NULL }
-		color: red
-		role: $inherited.types.copy-small
 
 
 		-- ftd.column:
@@ -105,12 +109,9 @@ background.solid: $inherited.colors.background.base
 				
 			-- end: ftd.row
 
-			-- ftd.text: $page.authenticate-user.password-error
-			if: { page.authenticate-user.password-error != NULL }
-			color: red
-			role: $inherited.types.copy-small
-
 		-- end: ftd.column
+
+	-- end: ftd.column
 
 -- end: ftd.row
 
