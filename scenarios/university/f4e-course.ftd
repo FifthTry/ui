@@ -16,12 +16,12 @@ url: /getting-started-with-fastn/
 
 -- university.chapter.concepts:
 
--- university.concept: Installing `fastn`
-url: /installing-fastn/
-
--- university.concept: Configuring Your Editor
-url: /editor/
-
+	-- university.concept: Installing `fastn`
+	url: /installing-fastn/
+	
+	-- university.concept: Configuring Your Editor
+	url: /editor/
+	
 -- end: university.chapter.concepts
 
 -- end: f4e.chapters

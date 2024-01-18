@@ -14,54 +14,54 @@ optional boolean $sidebar: false
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
 inset: $ds.spaces.inset-square.medium
-border-bottom-width: 1
+border-bottom: 1
 margin: $header.margin
 
--- ds.row:
-width: hug-content
-spacing: $ds.spaces.horizontal-gap.zero
-align-content: center
-inset: $ds.spaces.inset-square.zero
+	-- ds.row:
+	width: hug-content
+	spacing: $ds.spaces.horizontal-gap.zero
+	align-content: center
+	inset: $ds.spaces.inset-square.zero
+	
+		-- ftd.image:
+		src: $assets.files.assets.fifthtry.png
+		width.fixed.px: 104
+		height.fixed.px: 32
+		link: $header.site-data.homepage
+		
+		-- ds.heading-small: $header.product
+		if: { $header.product != NULL }
+		color: $ds.colors.cta-primary.base
+		;; link: /university/
+		
+	-- end: ds.row
 
--- ftd.image:
-src: $assets.files.assets.fifthtry.png
-width.fixed.px: 104
-height.fixed.px: 32
-link: $header.site-data.homepage
-
--- ds.heading-small: $header.product
-if: { $header.product != NULL }
-color: $ds.colors.cta-primary.base
-;; link: /university/
-
--- end: ds.row
-
--- ds.row:
-width: hug-content
-
--- ds.header-link: $lang.about
-if: { header.product == NULL }
-link: /about/
-
--- ds.header-link: $lang.team
-if: { header.product == NULL }
-link: /team/
-
--- language-switcher.dropdown:
-
--- avatar.avatar:
-user-data: $header.user-data
-if: { header.user-data.is-logged-in }
-
--- ds.header-link: $lang.sign-in
-if: { !header.user-data.is-logged-in }
-link: /signin/
-
--- ds.primary-button: $lang.sign-up
-if: { !header.user-data.is-logged-in }
-link: /signup/
-
--- end: ds.row
+	-- ds.row:
+	width: hug-content
+	
+		-- ds.header-link: $lang.about
+		if: { header.product == NULL }
+		link: /about/
+		
+		-- ds.header-link: $lang.team
+		if: { header.product == NULL }
+		link: /team/
+		
+		-- language-switcher.dropdown:
+		
+		-- avatar.avatar:
+		user-data: $header.user-data
+		if: { header.user-data.is-logged-in }
+		
+		-- ds.header-link: $lang.sign-in
+		if: { !header.user-data.is-logged-in }
+		link: /signin/
+		
+		-- ds.primary-button: $lang.sign-up
+		if: { !header.user-data.is-logged-in }
+		link: /signup/
+		
+	-- end: ds.row
 
 -- end: ds.section-row
 

@@ -2,15 +2,15 @@
 
 -- ds.section-row:
 
--- ftd.image:
-src: https://www.fifthtry.com/-/fifthtry.com/assets/images/logo-ycom-dark.svg
-
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.extra-large
-
--- ds.copyright-text: © 2023 FifthTry. All rights reserved
-
--- end: ds.row
+	-- ftd.image:
+	src: https://www.fifthtry.com/-/fifthtry.com/assets/images/logo-ycom-dark.svg
+	
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.extra-large
+	
+		-- ds.copyright-text: © 2023 FifthTry. All rights reserved
+		
+	-- end: ds.row
 
 -- end: ds.section-row
 

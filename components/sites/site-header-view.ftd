@@ -7,12 +7,12 @@ children uis:
 
 -- ds.column:
 
--- h.header:
-
--- ds.column:
-content: $site-header-view.uis
-
--- end: ds.column
+	-- h.header:
+	
+	-- ds.column:
+	content: $site-header-view.uis
+	
+	-- end: ds.column
 
 -- end: ds.column
 

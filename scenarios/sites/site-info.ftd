@@ -41,10 +41,6 @@ is-active: false
 link: /scenarios/hostn/site-info/
 is-active: true
 
--- sr.toc-data: Editor
-link: /editor/
-is-active: false
-
 -- sr.toc-data: Access
 link: /
 is-active: false
@@ -62,5 +58,3 @@ link: /
 is-active: false
 
 -- end: sub-header-links
-
-

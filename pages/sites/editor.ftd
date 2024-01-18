@@ -1,0 +1,137 @@
+-- import: ui.fifthtry.com/components/hostn/site-header as h
+-- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/components/hostn/files-sidebar as fs
+
+-- component page:
+module user-data: user-data
+sr.toc-data list header-links: $header-links
+site-editor-data data:
+
+-- ds.column:
+width: fill-container
+height: fill-container
+radius: $ds.radius.zero
+background.solid: $ds.colors.background.base
+css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-preview.css ]
+
+	-- code-preview:
+	
+	-- ds.column:
+	height: fill-container
+	align-content: top-left
+	radius: $ds.radius.zero
+	spacing: $ds.spaces.vertical-gap.zero
+	
+		-- h.header-with-logo:
+		toc-list: $page.header-links
+		site-name: hostn
+		site-logo: $assets.files.assets.hostn-logo.svg
+		header-text: Welcome to hostn
+		
+		-- ds.row:
+		inset: $ds.spaces.inset-square.medium
+		height: fill-container
+		align-content: top-left
+		
+			-- fs.sidebar:
+			files: $page.data.files
+			
+			-- ds.column:
+			height: fill-container
+			
+				-- file-header: index.ftd
+				
+				-- code-editor:
+				
+			-- end: ds.column
+
+		-- end: ds.row
+
+	-- end: ds.column
+
+-- end: ds.column
+
+-- end: page
+
+
+
+
+
+-- component file-header:
+caption file-name:
+
+-- ds.row:
+width: fill-container
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+background.solid: $ds.colors.background.base
+
+
+	-- ds.row:
+	if: { file-header.file-name != NULL }
+	width: hug-content
+	
+		-- ftd.text: $file-header.file-name
+		color: $ds.colors.text-strong
+		role: $ds.types.copy-regular
+		
+	-- end: ds.row
+
+	-- ds.row:
+	width: hug-content
+	
+		-- ds.primary-button: RUN
+		link: /run/
+		
+		-- ds.secondary-button: PREVIEW
+		link: /preview/
+		
+		-- ds.secondary-button: CONSOLE
+		link: /console/
+		
+	-- end: ds.row
+
+-- end: ds.row
+
+
+
+
+
+
+
+-- end: file-header
+
+
+
+
+
+-- sr.toc-data list header-links:
+
+-- sr.toc-data: Why Hostn?
+link: https://fastn.com
+is-active: false
+
+-- sr.toc-data: Pricing
+link: /pricing/
+is-active: false
+
+-- sr.toc-data: Log In
+link: /login/
+is-active: false
+
+-- end: header-links
+
+
+
+
+
+
+
+-- record site-editor-data:
+string user:
+string current-file:
+sr.toc-data list files:
+
+
+
+

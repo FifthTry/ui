@@ -28,154 +28,154 @@ background.solid: $inherited.colors.background.base
 spacing: $ds.spaces.horizontal-gap.zero
 align-content: top-left
 
--- header.header:
-site-data: $page.site-data
-user-data: $page.user-data
-product: slides
-$sidebar: $page.sidebar
+	-- header.header:
+	site-data: $page.site-data
+	user-data: $page.user-data
+	product: slides
+	$sidebar: $page.sidebar
+	
+	-- ds.row:
+	width: fill-container
+	background.solid: $inherited.colors.background.base
+	align-content: top-left
+	spacing: $ds.spaces.horizontal-gap.zero
+	
+		-- ds.column:
+		if: { page.sidebar }
+		/border-width.px: 1
+		border-color: $inherited.colors.border
+		;;sticky: true
+		;;top.px: 84
+		;;left.px: 0
+		height.fixed.calc: 100vh - 76px
+		;;overflow-y: auto
+		width.fixed.percent: 20
+		align-content: top-left
+		spacing: $ds.spaces.horizontal-gap.zero
+		
+			-- ds.row:
+			if: { !page.hide-team }
+			width: fill-container
+			inset: $ds.spaces.inset-square.medium
+			;;border-width.px: 1
+			;;border-color: $inherited.colors.border
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ds.copy-regular:
+				text: Team:
+				align: inline
+				
+				-- ds.row:
+				spacing: $ds.spaces.horizontal-gap.small
+				align-content: right
+				
+					-- ds.copy-regular:
+					text: $page.team-name
+					width.fixed.px: 70
+					
+					-- ftd.image:
+					if: { !unimplemented }
+					src: $assets.files.assets.slides.toggle-down.svg
+					width.fixed.px: 24
+					align-self: center
+					
+				-- end: ds.row
 
--- ds.row:
-width: fill-container
-background.solid: $inherited.colors.background.base
-align-content: top-left
-spacing: $ds.spaces.horizontal-gap.zero
+				-- ds.column:
+				if: { !unimplemented }
+				align-content: center
+				background.solid: $ds.colors.background.step-1
+				radius: $ds.radius.medium
+				/border-width.px: 1
+				border-color: $ds.colors.border
+				inset: $ds.spaces.inset-square.medium
+				;;margin-left.px: 32
+				;;color: $ds.colors.text
+				
+					-- phosphor.light: gear
+					size: 32
+					
+				-- end: ds.column
 
--- ds.column:
-if: { page.sidebar }
-border-width.px: 1
-border-color: $inherited.colors.border
-;;sticky: true
-;;top.px: 84
-;;left.px: 0
-height.fixed.calc: 100vh - 76px
-;;overflow-y: auto
-width.fixed.percent: 20
-align-content: top-left
-spacing: $ds.spaces.horizontal-gap.zero
+			-- end: ds.row
 
--- ds.row:
-if: { !page.hide-team }
-width: fill-container
-inset: $ds.spaces.inset-square.medium
-;;border-width.px: 1
-;;border-color: $inherited.colors.border
-spacing: $ds.spaces.horizontal-gap.small
+			-- ds.column:
+			width: fill-container
+			height.fixed.calc: 100vh - 136px
+			spacing: $ds.spaces.vertical-gap.space-between
+			inset: $ds.spaces.inset-square.medium
+			
+				-- ds.column:
+				width: fill-container
+				;;border-bottom-width.px: 1
+				;;border-color: $inherited.colors.border
+				
+					-- render-files:
+					for: $obj in $page.list-of-toc
+					title: $obj.title
+					link: $obj.link
+					
+				-- end: ds.column
 
--- ds.copy-regular: 
-text: Team:
-align: inline
+				-- ds.column:
+				width: fill-container
+				
+					-- ds.row:
+					width: fill-container
+					spacing: $ds.spaces.vertical-gap.small
+					;;border-radius.px: 8
+					align-content: center
+					inset: $ds.spaces.inset-square.small
+					background.solid: $ds.colors.background.step-1
+					;;color: $inherited.colors.text
+					
+						-- phosphor.regular: globe
+						size: 24
+						
+						-- ds.copy-regular:
+						text: Explore Templates
+						width: fill-container
+						
+						-- phosphor.regular: caret-right
+						size: 24
+						
+					-- end: ds.row
 
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.small
-align-content: right
+					-- ds.row:
+					width: fill-container
+					spacing: $ds.spaces.vertical-gap.small
+					;;border-radius.px: 8
+					align-content: center
+					inset: $ds.spaces.inset-square.small
+					background.solid: $ds.colors.background.step-1
+					;;color: $inherited.colors.text
+					
+						-- phosphor.regular: trash
+						size: 24
+						
+						-- ds.copy-regular:
+						text: Trash
+						width: fill-container
+						
+						-- phosphor.regular: caret-right
+						size: 24
+						
+					-- end: ds.row
 
--- ds.copy-regular: 
-text: $page.team-name
-width.fixed.px: 70
+				-- end: ds.column
 
--- ftd.image:
-if: { !unimplemented }
-src: $assets.files.assets.slides.toggle-down.svg
-width.fixed.px: 24
-align-self: center
+			-- end: ds.column
 
--- end: ds.row
+		-- end: ds.column
 
--- ds.column:
-if: { !unimplemented }
-align-content: center
-background.solid: $ds.colors.background.step-1
-border-radius.px: 8
-border-width.px: 1
-border-color: $ds.colors.border
-inset: $ds.spaces.inset-square.medium
-;;margin-left.px: 32
-;;color: $ds.colors.text
+		-- ds.column:
+		width.fixed.px if { page.sidebar }: 1140
+		width: fill-container
+		content: $page.uis
+		
+		-- end: ds.column
 
--- phosphor.light: gear
-size: 32
-
--- end: ds.column
-
--- end: ds.row
-
--- ds.column:
-width: fill-container
-height.fixed.calc: 100vh - 136px
-spacing: $ds.spaces.vertical-gap.space-between
-inset: $ds.spaces.inset-square.medium
-
--- ds.column:
-width: fill-container
-;;border-bottom-width.px: 1
-;;border-color: $inherited.colors.border
-
--- render-files:
-for: $obj in $page.list-of-toc
-title: $obj.title
-link: $obj.link
-
--- end: ds.column
-
--- ds.column:
-width: fill-container
-
--- ds.row:
-width: fill-container
-spacing: $ds.spaces.vertical-gap.small
-;;border-radius.px: 8
-align-content: center
-inset: $ds.spaces.inset-square.small
-background.solid: $ds.colors.background.step-1
-;;color: $inherited.colors.text
-
--- phosphor.regular: globe
-size: 24
-
--- ds.copy-regular: 
-text: Explore Templates
-width: fill-container
-
--- phosphor.regular: caret-right
-size: 24
-
--- end: ds.row
-
--- ds.row:
-width: fill-container
-spacing: $ds.spaces.vertical-gap.small
-;;border-radius.px: 8
-align-content: center
-inset: $ds.spaces.inset-square.small
-background.solid: $ds.colors.background.step-1
-;;color: $inherited.colors.text
-
--- phosphor.regular: trash
-size: 24
-
--- ds.copy-regular: 
-text: Trash
-width: fill-container
-
--- phosphor.regular: caret-right
-size: 24
-
--- end: ds.row
-
--- end: ds.column
-
--- end: ds.column
-
--- end: ds.column
-
--- ds.column:
-width.fixed.px if { page.sidebar }: 1140
-width: fill-container
-content: $page.uis
-
--- end: ds.column
-
--- end: ds.row
+	-- end: ds.row
 
 -- end: ds.column
 
@@ -205,14 +205,14 @@ background.solid: $inherited.colors.background.step-1
 ;;color: $inherited.colors.text
 link: $render-files.link
 
--- ds.copy-regular:
-text: $render-files.title
-width: fill-container
-
--- ftd.image:
-src: $assets.files.assets.slides.template-1.png.light
-width.fixed.px: 24
-
+	-- ds.copy-regular:
+	text: $render-files.title
+	width: fill-container
+	
+	-- ftd.image:
+	src: $assets.files.assets.slides.template-1.png.light
+	width.fixed.px: 24
+	
 -- end: ds.row
 
 -- end: render-files

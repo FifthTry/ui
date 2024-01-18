@@ -8,4 +8,3 @@ js: $assets.files.assets.functions.js
 
 callAlert("signin attempt")
 ;; call submit with http options
-

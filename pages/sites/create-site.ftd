@@ -1,0 +1,35 @@
+-- import: ui.fifthtry.com/components/hostn/page as p
+-- import: ui.fifthtry.com/components/label as l
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+
+-- record create-site-data:
+string user:
+
+-- component page:
+module user-data: user-data
+create-site-data data:
+
+-- p.page:
+site-data: site-data
+user-data: $page.user-data
+align-content: top-center
+
+	-- ds.column:
+	align-content: top-left
+	width.fixed.percent: 60
+	
+		-- ds.heading-large: Enter your site details
+		width: hug-content
+		
+		-- l.input-label: Site name:
+		placeholder: Enter your site name here
+		
+		-- ds.primary-button: Create Site
+		link: /scenarios/hostn/site-info/
+		
+	-- end: ds.column
+
+-- end: p.page
+
+-- end: page

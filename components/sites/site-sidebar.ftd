@@ -10,11 +10,11 @@ spacing: $ds.spaces.horizontal-gap.medium
 background.solid: $ds.colors.background.step-1
 align-content: top-left
 inset: $ds.spaces.inset-square.medium
-border-radius.px: 15
+radius: $ds.radius.medium
 
--- site-link: $site
-for: site in $sidebar.sites
-
+	-- site-link: $site
+	for: site in $sidebar.sites
+	
 -- end: ds.column
 
 -- end: sidebar
@@ -25,7 +25,7 @@ caption sr.toc-data site:
 
 -- ftd.text: $site-link.site.name
 link: $site-link.site.link
-role: $ds.types.copy-regular
+role: $ds.types.copy-small
 color: $ds.colors.text-strong
 style if { site-link.site.is-active }: underline, bold
 
