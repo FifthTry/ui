@@ -1,6 +1,7 @@
--- import: ui.fifthtry.com/components/hostn/site-header as h
--- import: ui.fifthtry.com/components/hostn/site-records as sr
--- import: ui.fifthtry.com/components/hostn/files-sidebar as fs
+-- import: ui.fifthtry.com/components/sites/site-header as h
+-- import: ui.fifthtry.com/components/sites/site-records as sr
+-- import: ui.fifthtry.com/components/sites/files-sidebar as fs
+-- import: ui.fifthtry.com/web-components as wc
 
 -- component page:
 module user-data: user-data
@@ -14,7 +15,7 @@ radius: $ds.radius.zero
 background.solid: $ds.colors.background.base
 css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-preview.css ]
 
-	-- code-preview:
+	-- wc.code-preview:
 	
 	-- ds.column:
 	height: fill-container
@@ -41,7 +42,7 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 			
 				-- file-header: index.ftd
 				
-				-- code-editor:
+				-- wc.code-editor:
 				
 			-- end: ds.column
 

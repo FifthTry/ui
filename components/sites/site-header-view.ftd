@@ -1,5 +1,5 @@
--- import: ui.fifthtry.com/components/hostn/site-records as sr
--- import: ui.fifthtry.com/components/hostn/site-header as h
+-- import: ui.fifthtry.com/components/sites/site-records as sr
+-- import: ui.fifthtry.com/components/sites/site-header as h
 
 -- component site-header-view:
 sr.toc-data list header-links:
