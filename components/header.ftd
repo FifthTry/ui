@@ -17,25 +17,10 @@ inset: $ds.spaces.inset-square.medium
 border-bottom: 1
 margin: $header.margin
 
-	-- ds.row:
-	width: hug-content
-	spacing: $ds.spaces.horizontal-gap.zero
-	align-content: center
-	inset: $ds.spaces.inset-square.zero
+	-- ftd.image:
+	src: $assets.files.assets.slides.logo.svg
+	link: $header.site-data.homepage
 	
-		-- ftd.image:
-		src: $assets.files.assets.fifthtry.png
-		width.fixed.px: 104
-		height.fixed.px: 32
-		link: $header.site-data.homepage
-		
-		-- ds.heading-small: $header.product
-		if: { $header.product != NULL }
-		color: $ds.colors.cta-primary.base
-		;; link: /university/
-		
-	-- end: ds.row
-
 	-- ds.row:
 	width: hug-content
 	
@@ -62,7 +47,7 @@ margin: $header.margin
 		link: /signup/
 		
 	-- end: ds.row
-	
+
 -- end: ds.section-row
 
 -- end: header

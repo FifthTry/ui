@@ -3,13 +3,13 @@
 -- component header:
 module site-data: site-data
 
--- ftd.column:
+-- ds.column:
 width: fill-container
-background.solid: $inherited.colors.background.base
-border-bottom-width.px: 1
-border-color: $inherited.colors.border-strong
-padding-vertical.px: 16
-padding-horizontal.px: 24
+background.solid: $ds.colors.background.base
+border: $ds.borders.bottom.small
+border-color: $ds.colors.border-strong
+radius: $ds.radius.zero
+inset: $ds.spaces.inset-square.medium
 
 	-- ftd.image: $header.site-data.logo
 	link: $header.site-data.homepage
@@ -18,6 +18,6 @@ padding-horizontal.px: 24
 	
 	-- dms.dark-mode-switcher-float:
 	
--- end: ftd.column
+-- end: ds.column
 
 -- end: header

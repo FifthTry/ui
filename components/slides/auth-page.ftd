@@ -45,7 +45,7 @@ radius: $ds.radius.zero
 		-- ds.copy-large: $page.title
 		
 		-- ds.column:
-		width.fixed.px: 300
+		width.fixed.px: 284
 		
 			-- ftd.text-input:
 			width: fill-container
@@ -111,18 +111,20 @@ radius: $ds.radius.zero
 			
 			-- ds.primary-button: Sign up
 			$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password)
+			width: full
 			
 		-- end: ds.column
 
 		-- ds.column:
 		;;margin-top.px: 38
 		spacing: $ds.spaces.vertical-gap.medium
-		align-content: center
+		width.fixed.px: 284
 		
 			-- ds.icon-button: Continue with Github
 			icon: $assets.files.assets.slides.github-mark-white.svg
 			link: $page.github-url
 			kind: primary
+			width: full
 			
 			/-- ftd.row:
 			if: { page.signin-url }

@@ -22,6 +22,6 @@ provided-via: ui.fifthtry.com/ds
 -- fastn.auto-import: ui.fifthtry.com/assets
 -- fastn.auto-import: ui.fifthtry.com/ds
 
--- fastn.redirects:
+;;-- fastn.redirects:
 
-/onboarding/scenarios/onboarding-ishaan/ -> /scenarios/cards/onboarding-ishaan/
+;;/onboarding/scenarios/onboarding-ishaan/ -> /scenarios/cards/onboarding-ishaan/
