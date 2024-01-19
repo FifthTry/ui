@@ -1,4 +1,5 @@
 -- optional string $username-error:
+-- optional string $password-error:
 
 -- void submit-values(username, password):
 string username:

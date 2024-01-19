@@ -1,0 +1,5 @@
+-- web-component code-preview:
+js: $assets.files.web-components.code-preview.js
+
+-- web-component code-editor:
+js: $assets.files.web-components.code-editor.js

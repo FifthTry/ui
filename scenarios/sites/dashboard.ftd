@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/pages/hostn/dashboard
+-- import: ui.fifthtry.com/pages/sites/dashboard
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
@@ -17,11 +17,11 @@ sites: $sites
 
 -- dashboard.site: My Homepage
 url: https://my-homepage.fifthtry-sites.com
-detail-url: /scenarios/hostn/my-homepage/
+detail-url: /scenarios/sites/my-homepage/
 
 -- dashboard.site: My Startup
 url: https://my-startup.fifthtry-sites.com
-detail-url: /scenarios/hostn/my-homepage/
+detail-url: /scenarios/sites/my-homepage/
 
 
 
