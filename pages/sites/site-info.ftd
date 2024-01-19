@@ -1,8 +1,8 @@
--- import: ui.fifthtry.com/components/hostn/page as p
--- import: ui.fifthtry.com/components/hostn/show-site-info
--- import: ui.fifthtry.com/components/hostn/site-records as sr
--- import: ui.fifthtry.com/components/hostn/site-sidebar as ss
--- import: ui.fifthtry.com/components/hostn/site-header as h
+-- import: ui.fifthtry.com/components/sites/page as p
+-- import: ui.fifthtry.com/components/sites/show-site-info
+-- import: ui.fifthtry.com/components/sites/site-records as sr
+-- import: ui.fifthtry.com/components/sites/site-sidebar as ss
+-- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data

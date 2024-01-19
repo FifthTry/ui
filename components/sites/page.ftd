@@ -1,6 +1,6 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
--- import: ui.fifthtry.com/components/hostn/site-header as h
+-- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/footer
 
 -- component page:

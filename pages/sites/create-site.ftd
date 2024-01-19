@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/hostn/page as p
+-- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data

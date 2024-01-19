@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/hostn/site-records as sr
+-- import: ui.fifthtry.com/components/sites/site-records as sr
 
 -- component sidebar:
 sr.toc-data list sites:
