@@ -36,10 +36,9 @@ link: scenarios/hostn/site-editor/
 is-active: false
 icon: $assets.files.assets.ftd-logo-2.svg
 
--- sr.toc-data: other.ftd
+-- sr.toc-data: other.txt
 link: scenarios/hostn/site-editor/
 is-active: false
-icon: $assets.files.assets.ftd-logo-2.svg
 
 -- end: sr.toc-data.children
 
