@@ -1,6 +1,6 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/components/sites/show-site-info
--- import: ui.fifthtry.com/components/sites/site-records as sr
+-- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/components/sites/site-sidebar as ss
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/label as l

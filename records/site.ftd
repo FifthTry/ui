@@ -1,0 +1,14 @@
+-- record site-urls:
+string info-url:
+string editor-url:
+
+-- record site:
+caption name:
+string url:
+
+-- record toc-data:
+caption name:
+optional string link:
+boolean is-active:
+optional ftd.image-src icon:
+toc-data list children:

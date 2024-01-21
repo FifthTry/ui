@@ -13,7 +13,7 @@ user-data: $page.user-data
 site-data: $page.site-data
 
 	-- products:
-	
+
 -- end: p.page
 
 -- end: page

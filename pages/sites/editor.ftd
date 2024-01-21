@@ -1,5 +1,5 @@
 -- import: ui.fifthtry.com/components/sites/site-header as h
--- import: ui.fifthtry.com/components/sites/site-records as sr
+-- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/components/sites/files-sidebar as fs
 -- import: ui.fifthtry.com/web-components as wc
 
@@ -35,7 +35,7 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 		align-content: top-left
 		
 			-- fs.sidebar:
-			files: $page.data.files
+			$files: *$page.data.files
 			
 			-- ds.column:
 			height: fill-container
@@ -129,6 +129,5 @@ is-active: false
 
 
 -- record site-editor-data:
-string user:
-string current-file:
+optional string current-file:
 sr.toc-data list files:

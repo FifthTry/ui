@@ -1,5 +1,5 @@
 -- import: ui.fifthtry.com/pages/sites/site-editor
--- import: ui.fifthtry.com/components/sites/site-records as sr
+-- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
@@ -25,5 +25,22 @@ icon: $assets.files.assets.ftd-logo-2.svg
 link: scenarios/hostn/site-editor/
 is-active: false
 icon: $assets.files.assets.ftd-logo-2.svg
+
+-- sr.toc-data: folder
+is-active: false
+
+-- sr.toc-data.children:
+
+-- sr.toc-data: index.ftd
+link: scenarios/hostn/site-editor/
+is-active: false
+icon: $assets.files.assets.ftd-logo-2.svg
+
+-- sr.toc-data: other.ftd
+link: scenarios/hostn/site-editor/
+is-active: false
+icon: $assets.files.assets.ftd-logo-2.svg
+
+-- end: sr.toc-data.children
 
 -- end: files
