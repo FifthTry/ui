@@ -1,8 +1,9 @@
 -- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/actions/sites/editor/open-file
 
 -- component sidebar:
 sr.toc-data list $files:
-
+module open-file: open-file
 
 -- ds.column:
 width.fixed.px: 200
@@ -20,6 +21,7 @@ inset: $ds.spaces.inset-square.medium
 	
 		-- file-view: $file
 		for: file in $sidebar.files
+		open-file: $sidebar.open-file
 		
 	-- end: ds.column
 
@@ -32,6 +34,7 @@ inset: $ds.spaces.inset-square.medium
 
 -- component file-view:
 caption sr.toc-data $file:
+module open-file: open-file
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-small
@@ -62,7 +65,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
         align-self: center
 
         -- ftd.text: $file-view.file.name
-        link: $file-view.file.link
+        $on-click$: $file-view.open-file.submit(name = $file-view.file.full-name)
         role: $ds.types.copy-small
         color: $ds.colors.text-strong
         style if { file-view.file.is-active }: underline, bold
@@ -76,6 +79,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
 
         -- file-view: $obj
         for: $obj in $file-view.file.children
+        open-file: $file-view.open-file
 
 	-- end: ds.column
 	

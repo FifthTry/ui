@@ -2,11 +2,14 @@
 -- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/components/sites/files-sidebar as fs
 -- import: ui.fifthtry.com/web-components as wc
+-- import: ui.fifthtry.com/actions/sites/editor/open-file
 
 -- component page:
 module user-data: user-data
 sr.toc-data list header-links: $header-links
 site-editor-data data:
+string $header-title: Welcome
+module open-file: open-file
 
 -- ds.column:
 width: fill-container
@@ -36,13 +39,16 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 		
 			-- fs.sidebar:
 			$files: *$page.data.files
+			open-file: $page.open-file
 			
 			-- ds.column:
 			height: fill-container
+			align-content: top-center
 			
-				-- file-header: index.ftd
+				-- file-header: $page.header-title
 				
 				-- wc.code-editor:
+				if: { page.header-title != "Welcome" }
 				
 			-- end: ds.column
 
@@ -109,14 +115,17 @@ background.solid: $ds.colors.background.base
 -- sr.toc-data list header-links:
 
 -- sr.toc-data: Why Hostn?
+full-name: Why Hostn?
 link: https://fastn.com
 is-active: false
 
 -- sr.toc-data: Pricing
+full-name: Pricing
 link: /pricing/
 is-active: false
 
 -- sr.toc-data: Log In
+full-name: Log In
 link: /login/
 is-active: false
 

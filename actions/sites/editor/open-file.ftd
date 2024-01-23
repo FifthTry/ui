@@ -1,0 +1,8 @@
+-- optional string $open-error:
+
+-- void submit(name):
+string name:
+js: $assets.files.assets.functions.js
+
+callAlert("open file " + name)
+;; call submit with http options

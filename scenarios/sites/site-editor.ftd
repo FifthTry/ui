@@ -6,6 +6,7 @@
 -- site-editor.page:
 user-data: john-doe
 data: $data
+$header-title: index.ftd
 
 
 -- site-editor.site-editor-data data:
@@ -17,26 +18,31 @@ files: $files
 -- sr.toc-data list files:
 
 -- sr.toc-data: index.ftd
+full-name: index.ftd
 link: scenarios/hostn/site-editor/
 is-active: true
 icon: $assets.files.assets.ftd-logo-2.svg
 
 -- sr.toc-data: FASTN.ftd
+full-name: FASTN.ftd
 link: scenarios/hostn/site-editor/
 is-active: false
 icon: $assets.files.assets.ftd-logo-2.svg
 
 -- sr.toc-data: folder
+full-name: folder
 is-active: false
 
 -- sr.toc-data.children:
 
 -- sr.toc-data: index.ftd
+full-name: folder/index.ftd
 link: scenarios/hostn/site-editor/
 is-active: false
 icon: $assets.files.assets.ftd-logo-2.svg
 
 -- sr.toc-data: other.txt
+full-name: folder/other.txt
 link: scenarios/hostn/site-editor/
 is-active: false
 
