@@ -36,6 +36,17 @@ inset: $ds.spaces.inset-square.medium
 -- end: sidebar
 
 
+
+
+
+
+
+
+
+
+
+
+
 -- component file-view:
 caption sr.toc-data $file:
 string $header-title:
@@ -75,7 +86,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
         $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
         role: $ds.types.copy-small
         color: $ds.colors.text-strong
-        style if { file-view.file.is-active }: underline, bold
+        style if { file-view.header-title == file-view.file.full-name }: underline, bold
 
     -- end: ds.row
 
