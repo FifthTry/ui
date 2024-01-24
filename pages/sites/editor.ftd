@@ -55,7 +55,10 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 				content: $page.open-file.content
 				$filecontents: $page.file-contents
 				filename: $page.header-title
-				if: { page.header-title != "Welcome" }
+				;; Never put `if` condition here like:
+				;; if: { page.header-title != "Welcome" }
+				;; Because this will recreate the web-component everytime the
+				;; mutables in the condition changes
 				
 			-- end: ds.column
 
