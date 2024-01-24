@@ -10,7 +10,6 @@ sr.toc-data list header-links: $header-links
 site-editor-data data:
 string site:
 string $header-title: Welcome
-body $content: *$ftd.empty
 sr.file-content list $file-contents:
 module open-file: open-file
 
@@ -43,7 +42,6 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 			-- fs.sidebar:
 			$files: *$page.data.files
 			$header-title: $page.header-title
-			$content: $page.content
 			site: $page.site
 			open-file: $page.open-file
 			
@@ -54,7 +52,7 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 				-- file-header: $page.header-title
 				
 				-- wc.code-editor:
-				content: $page.content
+				content: $page.open-file.content
 				$filecontents: $page.file-contents
 				filename: $page.header-title
 				if: { page.header-title != "Welcome" }

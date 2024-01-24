@@ -9,8 +9,6 @@ data: $data
 site: ui.fifthtry.com
 $header-title: index.ftd
 
-\-- ftd.text: Hello World
-
 
 -- site-editor.site-editor-data data:
 user: FifthTry

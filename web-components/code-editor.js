@@ -40,14 +40,17 @@ class CodeEditor extends HTMLElement {
     codemirrorJs.src = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js';
     shadow.appendChild(codemirrorJs);
 
-    // Import CodeMirror mode (e.g., JavaScript)
-    const javascriptJs = document.createElement('script');
-    javascriptJs.src = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js';
-    shadow.appendChild(javascriptJs);
+    codemirrorJs.onload = () => {
+      // Import CodeMirror mode (e.g., JavaScript)
+      const javascriptJs = document.createElement('script');
+      javascriptJs.src = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js';
+      shadow.appendChild(javascriptJs);
+    }
 
     // Create textarea
     const codeEditor = document.createElement('textarea');
     codeEditor.value = data.content.get();
+    codeEditor.style.display = "none";
     shadow.appendChild(codeEditor);
 
     // Wait for CodeMirror library to be loaded before initializing the editor
