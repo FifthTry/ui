@@ -3,7 +3,8 @@
 -- void submit(name, content):
 string name:
 string $content:
+string site:
 js: $assets.files.assets.functions.js
 
-callAlert("open file name: " + name + " content: " + content)
+callAlert("open file name: " + name + " content: " + content + " site: " + site)
 ;; call submit with http options

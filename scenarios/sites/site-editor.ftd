@@ -6,6 +6,7 @@
 -- site-editor.page:
 user-data: john-doe
 data: $data
+site: ui.fifthtry.com
 $header-title: index.ftd
 
 \-- ftd.text: Hello World

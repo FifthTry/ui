@@ -5,6 +5,7 @@
 sr.toc-data list $files:
 string $header-title:
 body $content:
+string site:
 module open-file: open-file
 
 -- ds.column:
@@ -25,6 +26,7 @@ inset: $ds.spaces.inset-square.medium
 		for: file in $sidebar.files
 		$header-title: $sidebar.header-title
 		$content: $sidebar.content
+		site: $sidebar.site
 		open-file: $sidebar.open-file
 		
 	-- end: ds.column
@@ -40,6 +42,7 @@ inset: $ds.spaces.inset-square.medium
 caption sr.toc-data $file:
 string $header-title:
 body $content:
+string site:
 module open-file: open-file
 
 -- ds.column:
@@ -72,7 +75,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
 
         -- ftd.text: $file-view.file.name
         $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
-        $on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, $content = $file-view.content)
+        $on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, $content = $file-view.content, site = $file-view.site)
         role: $ds.types.copy-small
         color: $ds.colors.text-strong
         style if { file-view.file.is-active }: underline, bold
@@ -88,6 +91,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
         for: $obj in $file-view.file.children
         $header-title: $file-view.header-title
         $content: $file-view.content
+        site: $file-view.site
         open-file: $file-view.open-file
 
 	-- end: ds.column

@@ -8,8 +8,9 @@
 module user-data: user-data
 sr.toc-data list header-links: $header-links
 site-editor-data data:
+string site:
 string $header-title: Welcome
-body $content:
+body $content: *$ftd.empty
 sr.file-content list $file-contents:
 module open-file: open-file
 
@@ -43,6 +44,7 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 			$files: *$page.data.files
 			$header-title: $page.header-title
 			$content: $page.content
+			site: $page.site
 			open-file: $page.open-file
 			
 			-- ds.column:
