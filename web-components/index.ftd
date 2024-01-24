@@ -1,5 +1,10 @@
+-- import: ui.fifthtry.com/records/site as sr
+
 -- web-component code-preview:
 js: $assets.files.web-components.code-preview.js
 
 -- web-component code-editor:
+caption filename:
+body content:
+sr.file-content list $filecontents:
 js: $assets.files.web-components.code-editor.js

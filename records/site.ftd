@@ -13,3 +13,8 @@ optional string link:
 boolean is-active:
 optional ftd.image-src icon:
 toc-data list children:
+
+
+-- record file-content:
+caption file-path:
+body content:

@@ -20,6 +20,8 @@ class CodeEditor extends HTMLElement {
 
   connectedCallback() {
     const shadow = this.shadowRoot;
+    let data = window.ftd.component_data(this);
+    let initial_content = data.content.get();
 
     // Import CodeMirror CSS
     const codemirrorCss = document.createElement('link');
@@ -45,7 +47,7 @@ class CodeEditor extends HTMLElement {
 
     // Create textarea
     const codeEditor = document.createElement('textarea');
-    codeEditor.value = "-- ftd.text: Hello World";
+    codeEditor.value = data.content.get();
     shadow.appendChild(codeEditor);
 
     // Wait for CodeMirror library to be loaded before initializing the editor
@@ -56,9 +58,40 @@ class CodeEditor extends HTMLElement {
         lineNumbers: true,
         autofocus: true,
         showCursorWhenSelecting: true,
-      }).setSize("100%", "100%");
+      })
+      editor.setSize("100%", "100%");
+      editor.on('change', editor => {
+        let content = editor.getValue().trim();
+        let file_name = data.filename.get().trim();
+        let index = get_index(file_name, data.filecontents.get());
+        if (initial_content !== content) {
+          if (index === null) {
+            data.filecontents.insertAt(0, {
+              "file-path": file_name,
+              "content": content
+            });
+          } else {
+            data.filecontents.set(index, {
+              "file-path": file_name,
+              "content": content
+            });
+          }
+          initial_content = content;
+        }
+      });
     };
   }
 }
 
 customElements.define('code-editor', CodeEditor);
+
+
+function get_index(file_name, file_contents) {
+  for(let i in file_contents) {
+    let i_file_path = fastn_utils.getStaticValue(file_contents[i].item.get("file-path"))
+    if (i_file_path === file_name) {
+      return i;
+    }
+  }
+  return null;
+}
