@@ -20,8 +20,6 @@ class CodeEditor extends HTMLElement {
 
   connectedCallback() {
     const shadow = this.shadowRoot;
-    let data = window.ftd.component_data(this);
-    let initial_content = data.content.get();
 
     // Import CodeMirror CSS
     const codemirrorCss = document.createElement('link');
@@ -49,12 +47,14 @@ class CodeEditor extends HTMLElement {
 
     // Create textarea
     const codeEditor = document.createElement('textarea');
-    codeEditor.value = data.content.get();
     codeEditor.style.display = "none";
     shadow.appendChild(codeEditor);
 
     // Wait for CodeMirror library to be loaded before initializing the editor
     codemirrorJs.onload = () => {
+      let data = window.ftd.component_data(this);
+      let initial_content = data.content.get();
+
       var editor = CodeMirror.fromTextArea(codeEditor, {
         mode: "javascript",
         theme: "dracula",
@@ -82,6 +82,8 @@ class CodeEditor extends HTMLElement {
           initial_content = content;
         }
       });
+      data.content.on_change(function() {editor.setValue(data.content.get());})
+      // editor.setValue(data.content.get());
     };
   }
 }

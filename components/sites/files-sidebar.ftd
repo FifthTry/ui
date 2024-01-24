@@ -71,8 +71,8 @@ spacing: $ds.spaces.vertical-gap.extra-small
         align-self: center
 
         -- ftd.text: $file-view.file.name
-        $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
         $on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site = $file-view.site)
+        $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
         role: $ds.types.copy-small
         color: $ds.colors.text-strong
         style if { file-view.file.is-active }: underline, bold

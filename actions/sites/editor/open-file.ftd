@@ -1,7 +1,7 @@
 -- optional string $open-error:
 -- string $content: \-- ftd.text: Hello
 
--- void submit(name):
+-- void submit(name, site):
 string name:
 string site:
 js: $assets.files.assets.functions.js
