@@ -22,16 +22,13 @@ url: https://my-site.fifthtry-sites.com
 -- sr.toc-data list site-urls:
 
 -- sr.toc-data: My Site
-full-name: My Site
 link: /scenarios/hostn/site-info/
 is-active: true
 
 -- sr.toc-data: My Startup
-full-name: My Startup
 is-active: false
 
 -- sr.toc-data: My Blog
-full-name: My Blog
 is-active: false
 
 -- end: site-urls
@@ -41,27 +38,22 @@ is-active: false
 -- sr.toc-data list sub-header-links:
 
 -- sr.toc-data: Info
-full-name: Info
 link: /scenarios/hostn/site-info/
 is-active: true
 
 -- sr.toc-data: Access
-full-name: Access
 link: /
 is-active: false
 
 -- sr.toc-data: Metrics
-full-name: Metrics
 link: /
 is-active: false
 
 -- sr.toc-data: Activity
-full-name: Activity
 link: /
 is-active: false
 
 -- sr.toc-data: Settings
-full-name: Settings
 link: /
 is-active: false
 

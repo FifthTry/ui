@@ -115,17 +115,14 @@ background.solid: $ds.colors.background.base
 -- sr.toc-data list header-links:
 
 -- sr.toc-data: Why Hostn?
-full-name: Why Hostn?
 link: https://fastn.com
 is-active: false
 
 -- sr.toc-data: Pricing
-full-name: Pricing
 link: /pricing/
 is-active: false
 
 -- sr.toc-data: Log In
-full-name: Log In
 link: /login/
 is-active: false
 

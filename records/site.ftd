@@ -8,7 +8,7 @@ string url:
 
 -- record toc-data:
 caption name:
-string full-name:
+string full-name: $toc-data.name
 optional string link:
 boolean is-active:
 optional ftd.image-src icon:

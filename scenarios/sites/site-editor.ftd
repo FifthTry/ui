@@ -18,19 +18,16 @@ files: $files
 -- sr.toc-data list files:
 
 -- sr.toc-data: index.ftd
-full-name: index.ftd
 link: scenarios/hostn/site-editor/
 is-active: true
 icon: $assets.files.assets.ftd-logo-2.svg
 
 -- sr.toc-data: FASTN.ftd
-full-name: FASTN.ftd
 link: scenarios/hostn/site-editor/
 is-active: false
 icon: $assets.files.assets.ftd-logo-2.svg
 
 -- sr.toc-data: folder
-full-name: folder
 is-active: false
 
 -- sr.toc-data.children:
