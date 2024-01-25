@@ -19,9 +19,10 @@ private string $current-email: empty
 private string $current-username: empty
 private string $current-password: empty
 
--- ftd.row:
+-- ds.row:
 width: fill-container
-background.solid: $inherited.colors.background.base
+background.solid: $ds.colors.background.base
+radius: $ds.radius.zero
 
 	-- ftd.image:
 	src: $assets.files.assets.slides.background.png
@@ -29,11 +30,11 @@ background.solid: $inherited.colors.background.base
 	height.fixed.vh: 100
 	fit: cover
 	
-	-- ftd.column:
+	-- ds.column:
 	align-content: center
-	padding-top.px: 84
+	inset: $ds.spaces.inset-tall.medium
 	width.fixed.percent: 35
-	spacing.fixed.px: 64
+	spacing: $ds.spaces.vertical-gap.large
 	
 		-- ftd.image:
 		src: $page.site-data.logo
@@ -41,11 +42,10 @@ background.solid: $inherited.colors.background.base
 		height.fixed.px: 38
 		fit: cover
 		
-		-- ds.copy-large:
+		-- ds.copy-large: $page.title
 		
-		$page.title
-		
-		-- ftd.column:
+		-- ds.column:
+		width.fixed.px: 284
 		
 			-- ftd.text-input:
 			width: fill-container
@@ -96,7 +96,6 @@ background.solid: $inherited.colors.background.base
 			color: red
 			role: $inherited.types.copy-small
 			
-			
 			-- ftd.text-input:
 			placeholder: password
 			type: password
@@ -110,17 +109,16 @@ background.solid: $inherited.colors.background.base
 			padding.px: 12
 			color: $inherited.colors.text-strong
 			
-			
 			-- ds.primary-button: Sign up
 			$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password)
+			width: full
 			
-		-- end: ftd.column
+		-- end: ds.column
 
-
-		-- ftd.column:
-		margin-top.px: 38
-		spacing.fixed.px: 24
-		align-content: center
+		-- ds.column:
+		;;margin-top.px: 38
+		spacing: $ds.spaces.vertical-gap.medium
+		width.fixed.px: 284
 		
 			-- ds.icon-button: Continue with Github
 			icon: $assets.files.assets.slides.github-mark-white.svg
@@ -141,13 +139,12 @@ background.solid: $inherited.colors.background.base
 				
 			-- end: ftd.row
 
-			-- ftd.row:
-			spacing.fixed.px: 6
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.extra-small
 			align-content: center
-			padding.px: 10
+			inset: $ds.spaces.inset-square.medium
 			
-				-- ds.copy-regular:
-				text: $lang.create-account
+				-- ds.copy-regular: $lang.create-account
 				text if { page.signin-url }: $lang.existing-account
 				width.fixed.px: 200
 				
@@ -158,12 +155,12 @@ background.solid: $inherited.colors.background.base
 				link if { page.signin-url }: $page.signin-url
 				link: /
 				
-			-- end: ftd.row
+			-- end: ds.row
 
-		-- end: ftd.column
+		-- end: ds.column
 
-	-- end: ftd.column
+	-- end: ds.column
 
--- end: ftd.row
+-- end: ds.row
 
 -- end: page

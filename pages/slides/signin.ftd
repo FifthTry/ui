@@ -11,9 +11,9 @@ module authenticate-user: authenticate-user
 private string $current-username: empty
 private string $current-password: empty
 
--- ftd.row:
-width: fill-container
-background.solid: $inherited.colors.background.base
+-- ds.row:
+radius: $ds.radius.zero
+background.solid: $ds.colors.background.base
 
 	-- ftd.image:
 	src: $assets.files.assets.slides.background.png
@@ -21,11 +21,11 @@ background.solid: $inherited.colors.background.base
 	height.fixed.vh: 100
 	fit: cover
 	
-	-- ftd.column:
+	-- ds.column:
 	align-content: center
-	padding-top.px: 84
+	inset: $ds.spaces.inset-tall.medium
 	width.fixed.percent: 35
-	spacing.fixed.px: 64
+	spacing: $ds.spaces.vertical-gap.extra-large
 	
 		-- ftd.image:
 		src: $page.site-data.logo
@@ -33,11 +33,10 @@ background.solid: $inherited.colors.background.base
 		height.fixed.px: 38
 		fit: cover
 		
-		-- ds.copy-large:
+		-- ds.copy-large: $lang.login
 		
-		$lang.login
-		
-		-- ftd.column:
+		-- ds.column:
+		width.fixed.px: 284
 		
 			-- ftd.text-input:
 			placeholder: username
@@ -52,11 +51,10 @@ background.solid: $inherited.colors.background.base
 			padding.px: 12
 			color: $inherited.colors.text-strong
 			
-            -- ftd.text: $page.authenticate-user.username-error
-            if: { page.authenticate-user.username-error != NULL }
-            color: red
-            role: $inherited.types.copy-small
-		
+			-- ftd.text: $page.authenticate-user.username-error
+			if: { page.authenticate-user.username-error != NULL }
+			color: red
+			role: $inherited.types.copy-small
 			
 			-- ftd.text-input:
 			placeholder: password
@@ -70,22 +68,21 @@ background.solid: $inherited.colors.background.base
 			border-color: $inherited.colors.border
 			padding.px: 12
 			color: $inherited.colors.text-strong
-
-            -- ftd.text: $page.authenticate-user.password-error
-            if: { page.authenticate-user.password-error != NULL }
-            color: red
-            role: $inherited.types.copy-small
+			
+			-- ftd.text: $page.authenticate-user.password-error
+			if: { page.authenticate-user.password-error != NULL }
+			color: red
+			role: $inherited.types.copy-small
 			
 			-- ds.primary-button: Sign In
 			$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
+			width: full
 			
-		-- end: ftd.column
+		-- end: ds.column
 
-
-		-- ftd.column:
-		margin-top.px: 38
-		spacing.fixed.px: 24
-		align-content: center
+		-- ds.column:
+		width.fixed.px: 284
+		spacing: $ds.spaces.vertical-gap.medium
 		
 			-- ds.icon-button: Continue with Github
 			icon: $assets.files.assets.slides.github-mark-white.svg
@@ -93,10 +90,9 @@ background.solid: $inherited.colors.background.base
 			kind: primary
 			width: full
 			
-			-- ftd.row:
-			spacing.fixed.px: 6
-			align-content: center
-			padding.px: 10
+			-- ds.row:
+			spacing: $ds.spaces.vertical-gap.small
+			inset: $ds.spaces.inset-square.small
 			
 				-- ds.copy-regular:
 				text: $lang.create-account
@@ -107,12 +103,12 @@ background.solid: $inherited.colors.background.base
 				link if { page.signup-url }: $page.signup-url
 				link: /
 				
-			-- end: ftd.row
+			-- end: ds.row
 
-		-- end: ftd.column
+		-- end: ds.column
 
-	-- end: ftd.column
+	-- end: ds.column
 
--- end: ftd.row
+-- end: ds.row
 
 -- end: page

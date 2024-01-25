@@ -27,6 +27,7 @@ height: fill-container
 background.solid: $inherited.colors.background.base
 spacing: $ds.spaces.horizontal-gap.zero
 align-content: top-left
+radius: $ds.radius.zero
 
 	-- header.header:
 	site-data: $page.site-data
@@ -42,7 +43,8 @@ align-content: top-left
 	
 		-- ds.column:
 		if: { page.sidebar }
-		/border-width.px: 1
+		border-right: $ds.borders.thin
+		radius: $ds.radius.zero
 		border-color: $inherited.colors.border
 		;;sticky: true
 		;;top.px: 84
@@ -56,25 +58,25 @@ align-content: top-left
 			-- ds.row:
 			if: { !page.hide-team }
 			width: fill-container
-			inset: $ds.spaces.inset-square.medium
-			;;border-width.px: 1
-			;;border-color: $inherited.colors.border
+			inset: $ds.spaces.inset-wide.medium
+			border: $ds.borders.bottom.small
+			border-color: $ds.colors.border
+			radius: $ds.radius.zero
 			spacing: $ds.spaces.horizontal-gap.small
 			
-				-- ds.copy-regular:
-				text: Team:
-				align: inline
+				-- ds.copy-regular: Team:
+				width: hug-content
 				
 				-- ds.row:
-				spacing: $ds.spaces.horizontal-gap.small
-				align-content: right
+				width: fill-container
+				spacing: $ds.spaces.horizontal-gap.extra-small
+				align-content: left
 				
-					-- ds.copy-regular:
-					text: $page.team-name
-					width.fixed.px: 70
+					-- ds.copy-regular: $page.team-name
+					width: hug-content
 					
 					-- ftd.image:
-					if: { !unimplemented }
+					;;if: { !unimplemented }
 					src: $assets.files.assets.slides.toggle-down.svg
 					width.fixed.px: 24
 					align-self: center
@@ -82,14 +84,11 @@ align-content: top-left
 				-- end: ds.row
 
 				-- ds.column:
-				if: { !unimplemented }
-				align-content: center
+				;;if: { !unimplemented }
 				background.solid: $ds.colors.background.step-1
-				radius: $ds.radius.medium
-				/border-width.px: 1
-				border-color: $ds.colors.border
-				inset: $ds.spaces.inset-square.medium
-				;;margin-left.px: 32
+				inset: $ds.spaces.inset-square.extra-small
+				width.fixed.px: 48
+				;;border: $ds.borders.uniform.thin
 				;;color: $ds.colors.text
 				
 					-- phosphor.light: gear
@@ -107,8 +106,6 @@ align-content: top-left
 			
 				-- ds.column:
 				width: fill-container
-				;;border-bottom-width.px: 1
-				;;border-color: $inherited.colors.border
 				
 					-- render-files:
 					for: $obj in $page.list-of-toc
@@ -118,7 +115,6 @@ align-content: top-left
 				-- end: ds.column
 
 				-- ds.column:
-				width: fill-container
 				
 					-- ds.row:
 					width: fill-container
@@ -170,7 +166,6 @@ align-content: top-left
 
 		-- ds.column:
 		width.fixed.px if { page.sidebar }: 1140
-		width: fill-container
 		content: $page.uis
 		
 		-- end: ds.column
@@ -201,16 +196,13 @@ spacing: $ds.spaces.vertical-gap.small
 align-content: center
 inset: $ds.spaces.inset-square.small
 background.solid: $inherited.colors.background.step-1
-;;border-radius.px: 8
-;;color: $inherited.colors.text
 link: $render-files.link
 
-	-- ds.copy-regular:
-	text: $render-files.title
+	-- ds.copy-regular: $render-files.title
 	width: fill-container
 	
 	-- ftd.image:
-	src: $assets.files.assets.slides.template-1.png.light
+	src: $assets.files.assets.slides.right.svg
 	width.fixed.px: 24
 	
 -- end: ds.row
