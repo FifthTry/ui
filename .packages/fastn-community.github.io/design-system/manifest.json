@@ -1,0 +1,246 @@
+{
+  "files": {
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "CFC777457291D4F3803FB615BE59EF3113B4D322FA52AAEB66A3E797DD6CA1FA",
+      "size": 588
+    },
+    "LICENSE": {
+      "name": "LICENSE",
+      "checksum": "BEA38468FFF430BF0DC2208700612436E5EAE55EFF7B6956A833375E213CDC66",
+      "size": 1501
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "2C372A7AA51EFF6E5BE56E3D2D56DD55D63FBDF58A4D2E279392A02B55DDB960",
+      "size": 1416
+    },
+    "_config.yml": {
+      "name": "_config.yml",
+      "checksum": "A42D91290C93B5F17412C3B346737EA1C796E5D287306758AFE8B20470119D80",
+      "size": 21
+    },
+    "assets/convert-dark.svg": {
+      "name": "assets/convert-dark.svg",
+      "checksum": "21F8AF60080DB695FF6ABD4DC4D154CFB984CC94D907EAB710B39E2D405E4BCE",
+      "size": 1291
+    },
+    "assets/convert.svg": {
+      "name": "assets/convert.svg",
+      "checksum": "0D5834C7CED25B3DF79D62625C1CFDE9CBFFDBDEB549E3448677D8439828BE2C",
+      "size": 1291
+    },
+    "assets/gradient.svg": {
+      "name": "assets/gradient.svg",
+      "checksum": "DC756B7B1A502111AD9C020DEC05C757F146F7C4BD72572686C19D88A0DA747C",
+      "size": 8026
+    },
+    "assets/hubspot-dark.svg": {
+      "name": "assets/hubspot-dark.svg",
+      "checksum": "B2CCC977110AE13C5D68156F8043801AE049F4E95E2639F0F57802D87DF9CB0E",
+      "size": 9694
+    },
+    "assets/hubspot.svg": {
+      "name": "assets/hubspot.svg",
+      "checksum": "8EC14606B65906EC488A79E901B623E736D1FC62B02A4E87A6048B6DC771FEDD",
+      "size": 9708
+    },
+    "assets/image-2.svg": {
+      "name": "assets/image-2.svg",
+      "checksum": "FF2329C2D966A323E17E0FA97C38FC431211368513FD90D69DD3853661CD3CFD",
+      "size": 5963177
+    },
+    "assets/image.svg": {
+      "name": "assets/image.svg",
+      "checksum": "E47C3B63B9C5C439A8EE601E3D7A236E4AB3F23E88652564F18F160030538DA9",
+      "size": 7379478
+    },
+    "assets/logo-dark.svg": {
+      "name": "assets/logo-dark.svg",
+      "checksum": "8290B3397C465FE1BB40B7CA280C976DF7DA3DABFC655B429805ABF33964FB5B",
+      "size": 16202
+    },
+    "assets/logo.svg": {
+      "name": "assets/logo.svg",
+      "checksum": "A227CF22E798ACFB2D01B6352FC22A28047444F028AF05440C6CE6F9499C0EDF",
+      "size": 15494
+    },
+    "assets/menu.svg": {
+      "name": "assets/menu.svg",
+      "checksum": "02B63490CDD43802AD5E9700389EEEF3AE064297143A7158BD91D5513B080DC5",
+      "size": 402
+    },
+    "assets/placeholder.jpg": {
+      "name": "assets/placeholder.jpg",
+      "checksum": "3CBF7363F01A7FDE9B486232738E557629FC5F1D66EA1602C69233AF189F110A",
+      "size": 4733932
+    },
+    "assets/postgres-dark.svg": {
+      "name": "assets/postgres-dark.svg",
+      "checksum": "864082C2C74871A77484ED773294DCD4E9649C4EB449C9AE7BA2D4261587C3F4",
+      "size": 7658
+    },
+    "assets/postgres.svg": {
+      "name": "assets/postgres.svg",
+      "checksum": "E81B324FCD8ABCEE00AA1E83ECA2AAFC6B91BCB4EEDEF64F7F05C3527312A22C",
+      "size": 7625
+    },
+    "assets/star.svg": {
+      "name": "assets/star.svg",
+      "checksum": "7774F60F53D680F2CC43E234249C09440D338092FF79A710083916E82C260A77",
+      "size": 736
+    },
+    "assets/stripe-dark.svg": {
+      "name": "assets/stripe-dark.svg",
+      "checksum": "B382A85FDFF03357E68BF484C5C8B4C762B3FEDC0E2AB87E4C77613C1A7546E6",
+      "size": 3036
+    },
+    "assets/stripe.svg": {
+      "name": "assets/stripe.svg",
+      "checksum": "2C996EDA691FD5D58207F6F79249B7E32B0D4D2F342AD1AB580E6CA47CD05F1C",
+      "size": 3050
+    },
+    "assets/video.mp4": {
+      "name": "assets/video.mp4",
+      "checksum": "5703CD3F57AA0CDC3CFA4E8C26E460713E6DF08D1E6D5D62127B2C2C408C7151",
+      "size": 3878919
+    },
+    "assets/yc.svg": {
+      "name": "assets/yc.svg",
+      "checksum": "7EF1BEC586D66543FD7A37BDDE0B27F6BF893825D0A9986D5E4AD57C0E16F99E",
+      "size": 7070
+    },
+    "borders.ftd": {
+      "name": "borders.ftd",
+      "checksum": "9A3FD2463C2AB37094DDC687EFBDA97D60C186CFC0E9E1F8FE8BDFBB163375A8",
+      "size": 2338
+    },
+    "demos/code-snippet.ftd": {
+      "name": "demos/code-snippet.ftd",
+      "checksum": "1727D74C7E53AA4C9674DF95C5DA0BC9761A110B79C90450368E7AD2C31975EB",
+      "size": 2013
+    },
+    "demos/dropbase.ftd": {
+      "name": "demos/dropbase.ftd",
+      "checksum": "51622CB449D4AB2760D4A2E659A0ED3F34D165B0E87A48F26CE9DC848C82ECF8",
+      "size": 17433
+    },
+    "demos/ft-old.ftd": {
+      "name": "demos/ft-old.ftd",
+      "checksum": "43588446BC2B7830F901B3E5B54BFBF918E2B41016F0B57D16F7E07A99D9BE66",
+      "size": 3105
+    },
+    "demos/index.ftd": {
+      "name": "demos/index.ftd",
+      "checksum": "667ACFB0FB665574EB99FB9E0C14B802FB6821A58695F67FA68BDEDEEF42B988",
+      "size": 294
+    },
+    "favicon.ico": {
+      "name": "favicon.ico",
+      "checksum": "65056A1D6C6AAE6E3DC4626E29F4BD4B628B17A8E9CC1D3A5E8FE9F6743F306B",
+      "size": 15406
+    },
+    "footer.ftd": {
+      "name": "footer.ftd",
+      "checksum": "E2363B4FBB0988FB41E86E4CF73B6E0C326656BBC0E5DE13742540BCB16C2BD1",
+      "size": 788
+    },
+    "form/button-group.ftd": {
+      "name": "form/button-group.ftd",
+      "checksum": "2445A1575C7240FD5F60B54078330B94929E5D859694E889FE25CF9BF3B11E5C",
+      "size": 412
+    },
+    "form/button.ftd": {
+      "name": "form/button.ftd",
+      "checksum": "637D86626C3BB9CDD78A787CC12831A8773EB7C253A13B823CC3F956EAF7C85B",
+      "size": 13714
+    },
+    "form/icon-button.ftd": {
+      "name": "form/icon-button.ftd",
+      "checksum": "B20DF21FB2E4779E9100C7550FE913A4332BA7B4874E6DF10E92F55CA5BFC716",
+      "size": 12288
+    },
+    "form/input.ftd": {
+      "name": "form/input.ftd",
+      "checksum": "B9A32E0E015A428BB15EBD97DC721447F10AC396510ADF732EAA52F133692EFB",
+      "size": 4940
+    },
+    "header.ftd": {
+      "name": "header.ftd",
+      "checksum": "A50B05EBF8AF41123403E5A132408C7B64EB92DF7BCC6C13FD77735C75D1FF69",
+      "size": 286
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "B4F16F31F74BA81E739F81F2C993DF3D815A7DF9A4FEF626E6872BB0B34128D5",
+      "size": 3713
+    },
+    "layout/column.ftd": {
+      "name": "layout/column.ftd",
+      "checksum": "A6B9C7743F51632E526460912755EA7CFEBD99B1830ECFB47839B3C16F207B31",
+      "size": 3215
+    },
+    "layout/container.ftd": {
+      "name": "layout/container.ftd",
+      "checksum": "819C599F28BEF2F13A3DD847E7687617C7E6CEC4B39C422C248DC86784067E5B",
+      "size": 4406
+    },
+    "layout/floater.ftd": {
+      "name": "layout/floater.ftd",
+      "checksum": "51706B794D8372912BC65FCF2FD4A217D7C1640F6B5D0E0959398766B34AE2F0",
+      "size": 2572
+    },
+    "layout/inline-row.ftd": {
+      "name": "layout/inline-row.ftd",
+      "checksum": "A4BFD9A5E0A0CE3E6A014277482ADD802CEA31F1897991FB9095FCFEDEF71989",
+      "size": 657
+    },
+    "layout/page.ftd": {
+      "name": "layout/page.ftd",
+      "checksum": "A2E89F47BD228A3F251E3B81A38B47B1C293F3D375D802AF984EE12E98346297",
+      "size": 1645
+    },
+    "layout/row.ftd": {
+      "name": "layout/row.ftd",
+      "checksum": "45D4F034812385F895F39AF0FA9B628F6131565BFCED2E64780FAB2E9825DE48",
+      "size": 3563
+    },
+    "layout/section-column.ftd": {
+      "name": "layout/section-column.ftd",
+      "checksum": "496FE40F752D82893CF64309D29221BDB3BA587BA84ECFB7C26F8D34E4FF7C23",
+      "size": 3629
+    },
+    "layout/section-row.ftd": {
+      "name": "layout/section-row.ftd",
+      "checksum": "B926EAB1CBCC189CE8AEA7D3F85392ED3204C0C678ECBD28EACAB198735DD3B3",
+      "size": 2964
+    },
+    "radius.ftd": {
+      "name": "radius.ftd",
+      "checksum": "07C32204FD42F311C2AE55F3235A5E9B4C4D96937FEE3D9922641AD85456CBF8",
+      "size": 1106
+    },
+    "shadow.ftd": {
+      "name": "shadow.ftd",
+      "checksum": "0B894AF60D25C995775C510F950744F049B2A63C551E74CCB1C7E582212231C0",
+      "size": 1095
+    },
+    "slide.ftd": {
+      "name": "slide.ftd",
+      "checksum": "DED1E77FBF1E5845FF5DB62A98BB3EB7711FC1D33D89015DF9082B3EA8DE4689",
+      "size": 721
+    },
+    "spaces.ftd": {
+      "name": "spaces.ftd",
+      "checksum": "91118AAEA9A1C047D31715C96507D318DFAE6533E5B46DA899B8C8397F34C019",
+      "size": 2397
+    },
+    "typography.ftd": {
+      "name": "typography.ftd",
+      "checksum": "0EA7C01F8EBE84956776BF92594E1CAD2C77E8E6203823AC8A7716D9A186CECD",
+      "size": 9722
+    }
+  },
+  "zip_url": "https://github.com/fastn-community/design-system/archive/9ac74b507466cd3fc6ea3310907571fee2c963ab.zip",
+  "checksum": "DBD01EB78E96F679A9BB0D44D9661638F20EBAE58C8B3352FB64DE405A558AFE"
+}
