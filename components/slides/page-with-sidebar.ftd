@@ -43,7 +43,6 @@ radius: $ds.radius.zero
 	
 		-- ds.column:
 		if: { page.sidebar }
-		border-right: $ds.borders.thin
 		radius: $ds.radius.zero
 		border-color: $inherited.colors.border
 		;;sticky: true

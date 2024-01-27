@@ -14,7 +14,6 @@ optional boolean $sidebar: false
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
 inset: $ds.spaces.inset-square.medium
-border-bottom: 1
 margin: $header.margin
 
 	-- ftd.image:
