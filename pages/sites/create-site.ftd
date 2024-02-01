@@ -2,13 +2,16 @@
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/actions/sites/create
 
 -- record create-site-data:
-string user:
+string org-slug:
 
 -- component page:
 module user-data: user-data
+module create-site: create
 create-site-data data:
+private string $current-site-name:
 
 -- p.page:
 site-data: site-data
@@ -18,18 +21,27 @@ align-content: top-center
 	-- ds.column:
 	align-content: top-left
 	width.fixed.percent: 60
-	
+
 		-- ds.heading-large: Enter your site details
 		width: hug-content
-		
-		-- l.input-label: Site name:
+
+		-- ds.row:
+
+		-- ds.heading-small: Site name:
+
+		-- ftd.text-input:
+		width.fixed.px: 200
 		placeholder: Enter your site name here
-		
+		$on-input$: $ftd.set-string($a = $page.current-site-name, v = $VALUE)
+
+		-- end: ds.row
+
 		-- ds.primary-button: Create Site
-		link: /scenarios/hostn/site-info/
-		
+		$on-click$: $page.create-site.submit(org_slug = $page.data.org-slug, site_name = $page.current-site-name)
+
 	-- end: ds.column
 
 -- end: p.page
 
 -- end: page
+
