@@ -6,6 +6,7 @@
 
 -- record dashboard-data:
 site list sites:
+string create-site-url:
 
 -- record site:
 caption name:
@@ -35,7 +36,7 @@ align-content: top-center
 		for: s in $page.data.sites
 		
 		-- ds.primary-button: Create New Site
-		link: /scenarios/hostn/create-site/
+		link: $page.data.create-site-url
 		
 	-- end: ds.column
 

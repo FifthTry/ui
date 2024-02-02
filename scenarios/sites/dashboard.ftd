@@ -11,6 +11,7 @@ user-data: john-doe
 
 -- dashboard.dashboard-data data:
 sites: $sites
+create-site-url: /scenarios/sites/create-site
 
 
 -- dashboard.site list sites:
