@@ -31,6 +31,7 @@ align-content: top-center
 
 		-- ftd.text-input:
 		width.fixed.px: 200
+		padding.px: 5
 		placeholder: Enter your site name here
 		$on-input$: $ftd.set-string($a = $page.current-site-name, v = $VALUE)
 
