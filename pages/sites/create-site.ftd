@@ -11,7 +11,7 @@ string org-slug:
 module user-data: user-data
 module create-site: create
 create-site-data data:
-private string $current-site-name:
+optional string $current-site-name:
 
 -- p.page:
 site-data: site-data

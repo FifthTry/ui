@@ -10,4 +10,4 @@ user-data: john-doe
 
 
 -- create-site.create-site-data data:
-user: FifthTry
+org-slug: fifthtry
