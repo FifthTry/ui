@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/components/sites/avatar
 
 
 
@@ -10,11 +11,36 @@
 sr.toc-data list toc-list:
 
 -- ds.row:
-background.solid: $ds.colors.background.step-1
+border: $ds.borders.bottom.small
 align-content: top-left
-spacing: $ds.spaces.horizontal-gap.large
+inset: $ds.spaces.inset-wide.large
+radius: $ds.radius.zero
+spacing: $ds.spaces.horizontal-gap.medium
 
-	-- toc-link: $t
+	-- ds.copy-regular: Team: FifthTry
+	width: hug-content
+
+	-- ds.row:
+	border: $ds.borders.bottom.small
+	border-color: $ds.colors.accent.primary
+	width: hug-content
+	radius: $ds.radius.zero
+
+	-- ds.copy-regular: Dashboard
+	width: hug-content
+
+	-- end: ds.row
+
+	-- ds.copy-regular: Access
+	width: hug-content
+
+	-- ds.copy-regular: Billing
+	width: hug-content
+
+	-- ds.copy-regular: Setting
+	width: hug-content
+
+	/-- toc-link: $t
 	for: t in $header.toc-list
 	
 -- end: ds.row
@@ -32,17 +58,19 @@ sr.toc-data list toc-list:
 optional string site-name:
 optional ftd.image-src site-logo:
 optional string header-text:
+module site-data: site-data
+module user-data: user-data
 
 -- ds.row:
 width: fill-container
 align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
+inset: $ds.spaces.inset-wide.large
 
 	-- ds.row:
 	if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
 	width: hug-content
-	inset: $ds.spaces.inset-square.medium
 	
 		-- ftd.text: $header-with-logo.site-name
 		if: { header-with-logo.site-name != NULL }
@@ -51,14 +79,12 @@ background.solid: $ds.colors.background.base
 		
 		-- ftd.image: $header-with-logo.site-logo
 		if: { header-with-logo.site-logo != NULL }
-		width.fixed.px: 30
+		width: auto
 		
 		-- ftd.text: $header-with-logo.header-text
 		if: { header-with-logo.header-text != NULL }
 		color: $ds.colors.text-strong
 		role: $ds.types.copy-large
-		
-		
 		
 	-- end: ds.row
 
@@ -70,6 +96,10 @@ background.solid: $ds.colors.background.base
 		for: t in $header-with-logo.toc-list
 		
 	-- end: ds.row
+
+	-- avatar.avatar:
+	user-data: $header-with-logo.user-data
+	if: { header-with-logo.user-data.is-logged-in }
 
 -- end: ds.row
 

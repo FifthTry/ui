@@ -1,0 +1,19 @@
+-- import: ui.fifthtry.com/user-data
+
+-- component avatar:
+module user-data: user-data
+
+-- ds.circle-text-button: $get-initials(name=$avatar.user-data.name)
+
+-- end: avatar
+
+
+
+
+
+
+-- string get-initials(name):
+string name:
+js: $assets.files.assets.functions.js
+
+get_initials(name)

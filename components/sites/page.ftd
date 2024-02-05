@@ -16,9 +16,11 @@ ftd.align align-content: top-left
 
 	-- h.header-with-logo:
 	toc-list: []
-	site-name: hostn
-	site-logo: $assets.files.assets.hostn-logo.svg
-	
+	site-logo: $assets.files.assets.fifthtry-logo.svg
+	user-data: $page.user-data
+
+	-- h.header:
+
 	-- ds.column:
 	inset: $ds.spaces.inset-square.zero
 	content: $page.children

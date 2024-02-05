@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
--- dashboard.page:
+-- dashboard.page: All site
 data: $data
 user-data: john-doe
 
@@ -19,10 +19,12 @@ create-site-url: /scenarios/sites/create-site
 -- dashboard.site: My Homepage
 url: https://my-homepage.fifthtry-sites.com
 detail-url: /scenarios/sites/my-homepage/
+created-on: Created on 14th Feb
 
 -- dashboard.site: My Startup
 url: https://my-startup.fifthtry-sites.com
 detail-url: /scenarios/sites/my-homepage/
+created-on: Created on 14th Feb
 
 
 

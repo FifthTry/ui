@@ -12,11 +12,14 @@ string create-site-url:
 caption name:
 string url:
 string detail-url:
+optional string created-on:
+optional ftd.image-src placeholder-image:
 
 
 
 
 -- component page:
+caption title:
 module user-data: user-data
 dashboard-data data:
 
@@ -26,17 +29,42 @@ user-data: $page.user-data
 align-content: top-center
 
 	-- ds.column:
+	inset: $ds.spaces.inset-wide.large
+	spacing: $ds.spaces.vertical-gap.large
+
+	-- ds.row:
 	align-content: top-left
-	width.fixed.percent: 60
+	spacing: $ds.spaces.horizontal-gap.space-between
+	inset: $ds.spaces.inset-tall.zero-small
 	
-		-- ds.heading-large: Sites Dashboard
-		width: hug-content
+		-- ds.heading-small: All sites
+
+		-- ds.row:
+		align-content: top-right
+		spacing: $ds.spaces.horizontal-gap.medium
 		
+		-- ftd.text-input:
+		placeholder: Search project
+		height.fixed.px: 36
+		width.fixed.px: 320
+		padding.px: 8
+		border-radius.px: 8
+		border-width.px: 1
+		color: $inherited.colors.text-strong
+		border-color: $inherited.colors.border
+		background.solid: $inherited.colors.background.step-1
+
+		-- ds.icon-button: Create new site
+		link: $page.data.create-site-url
+		kind: primary
+		icon-position: at-end
+		icon: $assets.files.assets.add.svg
+
+	-- end: ds.row
+	-- end: ds.row
+
 		-- show-site-info.show-site-info: $s
 		for: s in $page.data.sites
-		
-		-- ds.primary-button: Create New Site
-		link: $page.data.create-site-url
 		
 	-- end: ds.column
 
