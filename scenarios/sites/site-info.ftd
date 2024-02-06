@@ -17,7 +17,9 @@ sub-header-links: $sub-header-links
 
 -- sr.site current-site:
 name: My Site
-url: https://my-site.fifthtry-sites.com
+domain: my-site.fifthtry-sites.com
+domain-with-host: https://my-site.fifthtry-sites.com
+last-updated: Not defined
 
 -- sr.toc-data list site-urls:
 
