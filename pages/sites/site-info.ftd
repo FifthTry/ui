@@ -47,21 +47,19 @@ user-data: $page.user-data
 			value: $page.data.current-site.name
 			
 			-- l.label: Domain:
-			value: $page.data.current-site.url
-			
+			value: $page.data.current-site.domain
+
 			-- l.label: Last updated:
-			value: Not yet
-			
+			value: $page.data.current-site.last-updated
+
 			-- ds.primary-button: Visit Site
-			link: $page.data.current-site.url
-			
-			-- ds.primary-button: Edit Site
+			link: $page.data.current-site.domain-with-host
+
+			;; Editor unimplemented
+			/-- ds.primary-button: Edit Site
 			link: /scenarios/hostn/site-editor/
-			
+
 		-- end: ds.column
-
-		;; Site info
-
 
 	-- end: ds.row
 

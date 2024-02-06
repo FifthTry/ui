@@ -4,7 +4,9 @@ string editor-url:
 
 -- record site:
 caption name:
-string url:
+string domain:
+string domain-with-host:
+string last-updated:
 
 -- record toc-data:
 caption name:
