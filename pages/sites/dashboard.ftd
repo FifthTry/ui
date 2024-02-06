@@ -10,7 +10,8 @@ string create-site-url:
 
 -- record site:
 caption name:
-string url:
+string domain:
+string domain-with-host:
 string detail-url:
 optional string created-on:
 optional ftd.image-src placeholder-image:

@@ -8,7 +8,6 @@ string url:
 string created-on:
 optional ftd.image-src placeholder-image:
 string domain-url:
-;;domain list domain-list:
 
 -- record toc-data:
 caption name:
