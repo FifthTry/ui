@@ -2,5 +2,5 @@
 
 
 -- signup.page: 
-github-url: scenarios/sites/team-dashboard/
-signin-url: /
+github-url: /
+signin-url: scenarios/sites/signin-page/
