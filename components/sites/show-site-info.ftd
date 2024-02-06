@@ -16,10 +16,9 @@ spacing: $ds.spaces.vertical-gap.zero
 		-- ds.heading-tiny: $show-site-info.site.name
 		color: $ds.colors.cta-primary.text
 		
-		
 		-- ds.phosphor-icon-button: Visit Site
 		icon: arrow-right
-		link: $show-site-info.site.url
+		link: $show-site-info.site.domain-with-host
 		icon-position: at-end
 		
 		-- ds.phosphor-icon-button: View Detail
