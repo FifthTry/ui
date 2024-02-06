@@ -9,6 +9,8 @@ string created-on:
 optional ftd.image-src placeholder-image:
 string domain-url:
 
+
+
 -- record toc-data:
 caption name:
 string full-name: $toc-data.name
