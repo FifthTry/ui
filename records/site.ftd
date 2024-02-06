@@ -4,10 +4,11 @@ string editor-url:
 
 -- record site:
 caption name:
-string url:
+string domain:
+string domain-with-host:
 string created-on:
+string last-updated-on:
 optional ftd.image-src placeholder-image:
-string domain-url:
 
 
 
@@ -28,18 +29,15 @@ body content:
 
 -- toc-data list toc-list-data:
 
--- toc-data: Dashboard
-link: /
-is-active: true
-
 -- toc-data: About
 link: /scenarios/sites/site-info/
+is-active: true
 
 -- toc-data: Domain
 link: /scenarios/sites/site-domain/
 
 -- toc-data: Github
-link: /
+link: /scenarios/sites/github/
 
 -- end: toc-list-data
 

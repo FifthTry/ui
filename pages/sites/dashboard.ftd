@@ -20,7 +20,6 @@ optional ftd.image-src placeholder-image:
 
 
 -- component page:
-caption title:
 module user-data: user-data
 dashboard-data data:
 
@@ -28,6 +27,7 @@ dashboard-data data:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
+show-header-links: false
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
@@ -38,7 +38,7 @@ align-content: top-center
 	spacing: $ds.spaces.horizontal-gap.space-between
 	inset: $ds.spaces.inset-tall.zero-small
 	
-		-- ds.heading-small: $page.title
+		-- ds.heading-small: All Sites
 
 		-- ds.row:
 		align-content: top-right

@@ -14,6 +14,7 @@ ds.gap margin: $ds.spaces.vertical-gap.zero
 ds.flush flush: full
 ftd.align align-content: top-left
 boolean show-header: true
+boolean show-header-links: true
 
 -- ds.page: $page.title
 
@@ -27,6 +28,7 @@ boolean show-header: true
 	user-data: $page.user-data
 
 	-- h.header:
+	if: { page.show-header-links }
 	toc-list: $sr.toc-list-data
 
 	-- end: ds.column

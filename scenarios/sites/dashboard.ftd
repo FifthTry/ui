@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
--- dashboard.page: All site
+-- dashboard.page:
 data: $data
 user-data: john-doe
 
