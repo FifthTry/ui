@@ -37,30 +37,20 @@ align-content: top-center
 	spacing: $ds.spaces.horizontal-gap.space-between
 	inset: $ds.spaces.inset-tall.zero-small
 	
-		-- ds.heading-small: All sites
+		-- ds.heading-small: $page.title
 
 		-- ds.row:
 		align-content: top-right
 		spacing: $ds.spaces.horizontal-gap.medium
-		
-		-- ftd.text-input:
-		placeholder: Search project
-		height.fixed.px: 36
-		width.fixed.px: 320
-		padding.px: 8
-		border-radius.px: 8
-		border-width.px: 1
-		color: $inherited.colors.text-strong
-		border-color: $inherited.colors.border
-		background.solid: $inherited.colors.background.step-1
 
 		-- ds.icon-button: Create new site
 		link: $page.data.create-site-url
 		kind: primary
 		icon-position: at-end
-		icon: $assets.files.assets.add.svg
+		icon: $assets.files.assets.sites.add.svg
 
 	-- end: ds.row
+	
 	-- end: ds.row
 
 		-- show-site-info.show-site-info: $s

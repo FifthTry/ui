@@ -1,5 +1,4 @@
 -- import: ui.fifthtry.com/components/sites/page as p
--- import: ui.fifthtry.com/components/sites/show-site-info
 -- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/components/sites/site-sidebar as ss
 -- import: ui.fifthtry.com/components/sites/site-header as h
@@ -17,53 +16,105 @@ sr.toc-data list sub-header-links:
 
 
 -- component page:
+caption title:
 module user-data: user-data
 site-info-data data:
 
 -- p.page:
 site-data: site-data
 user-data: $page.user-data
+align-content: top-center
+
+	-- ds.column:
+	inset: $ds.spaces.inset-wide.large
+	spacing: $ds.spaces.vertical-gap.large
+
+	-- ds.heading-small: $page.title
 
 	-- ds.row:
-	spacing: $ds.spaces.horizontal-gap.medium
-	height: fill-container
+	width.fixed.px: 1152
+	radius: $ds.radius.medium
 	inset: $ds.spaces.inset-square.large
-	
-		;; Sites left sidebar <-
-		-- ss.sidebar:
-		sites: $page.data.site-urls
-		
-		
-		
-		;; Sub Headers ->
+	border: $ds.borders.uniform.small
+	spacing: $ds.spaces.horizontal-gap.large
+	background.solid: $ds.colors.background.step-1
+	align-content: top-left
+
+	-- ftd.image:
+	if: { page.data.current-site.placeholder-image == NULL }
+	src: $assets.files.assets.sites.placeholder.svg
+	width.fixed.px: 568
+	height.fixed.px: 302
+	fit: cover
+
+	-- ftd.image:
+	if: { page.data.current-site.placeholder-image != NULL }
+	src: $page.data.current-site.placeholder-image
+	width.fixed.px: 568
+	height.fixed.px: 302
+	fit: cover
+
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.large
+	align-content: top-left
+
 		-- ds.column:
-		align-content: top-left
-		height: fill-container
-		
-			-- h.header:
-			toc-list: $page.data.sub-header-links
-			
-			-- l.label: Site name:
-			value: $page.data.current-site.name
-			
-			-- l.label: Domain:
-			value: $page.data.current-site.url
-			
-			-- l.label: Last updated:
-			value: Not yet
-			
-			-- ds.primary-button: Visit Site
-			link: $page.data.current-site.url
-			
-			-- ds.primary-button: Edit Site
-			link: /scenarios/hostn/site-editor/
-			
+		spacing: $ds.spaces.vertical-gap.small
+
+		-- ds.copy-regular: Website name
+
+		-- ds.heading-tiny: $page.data.current-site.name
+
 		-- end: ds.column
 
-		;; Site info
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.small
+		align-content: left
 
+		-- ds.copy-regular: Created on
 
+		-- ds.heading-tiny: $page.data.current-site.created-on
+		
+		-- end: ds.column
+
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.small
+
+		-- ds.copy-regular: Domains
+
+		-- ds.row:
+		align-content: left
+		spacing: $ds.spaces.horizontal-gap.small
+
+		-- ds.icon-button: $page.data.current-site.domain-url
+		icon: $assets.files.assets.sites.link.svg
+		link: $page.data.current-site.url
+		icon-position: at-end
+		kind: tertiary
+		size: small
+
+		-- ds.icon-button: $page.data.current-site.domain-url
+		icon: $assets.files.assets.sites.link.svg
+		link: $page.data.current-site.url
+		icon-position: at-end
+		kind: tertiary
+		size: small
+
+		-- end: ds.row
+
+		-- end: ds.column
+
+		-- ds.icon-button: Visit Site
+		icon: $assets.files.assets.sites.link.svg
+		link: $page.data.current-site.url
+		icon-position: at-end
+		width: full
+		
+	-- end: ds.column
+		
 	-- end: ds.row
+		
+	-- end: ds.column
 
 -- end: p.page
 

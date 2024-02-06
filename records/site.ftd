@@ -5,12 +5,16 @@ string editor-url:
 -- record site:
 caption name:
 string url:
+string created-on:
+optional ftd.image-src placeholder-image:
+string domain-url:
+;;domain list domain-list:
 
 -- record toc-data:
 caption name:
 string full-name: $toc-data.name
 optional string link:
-boolean is-active:
+optional boolean is-active: false
 optional ftd.image-src icon:
 toc-data list children:
 
@@ -23,9 +27,19 @@ body content:
 
 -- toc-data list toc-list-data:
 
--- toc-data: Action
+-- toc-data: Dashboard
 link: /
 is-active: true
 
+-- toc-data: About
+link: /scenarios/sites/site-info/
+
+-- toc-data: Domain
+link: /scenarios/sites/site-domain/
+
+-- toc-data: Github
+link: /
+
 -- end: toc-list-data
+
 

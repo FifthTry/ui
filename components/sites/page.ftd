@@ -2,6 +2,8 @@
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/footer
+-- import: ui.fifthtry.com/records/site as sr
+
 
 -- component page:
 module site-data: site-data
@@ -11,8 +13,13 @@ optional caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero
 ds.flush flush: full
 ftd.align align-content: top-left
+boolean show-header: true
 
 -- ds.page: $page.title
+
+	-- ds.column:
+	inset: $ds.spaces.inset-square.zero
+	if: { page.show-header }
 
 	-- h.header-with-logo:
 	toc-list: []
@@ -20,6 +27,9 @@ ftd.align align-content: top-left
 	user-data: $page.user-data
 
 	-- h.header:
+	toc-list: $sr.toc-list-data
+
+	-- end: ds.column
 
 	-- ds.column:
 	inset: $ds.spaces.inset-square.zero

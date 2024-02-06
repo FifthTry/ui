@@ -13,34 +13,11 @@ sr.toc-data list toc-list:
 -- ds.row:
 border: $ds.borders.bottom.small
 align-content: top-left
-inset: $ds.spaces.inset-wide.large
 radius: $ds.radius.zero
 spacing: $ds.spaces.horizontal-gap.medium
+inset: $ds.spaces.inset-wide.large-zero
 
-	-- ds.copy-regular: Team: FifthTry
-	width: hug-content
-
-	-- ds.row:
-	border: $ds.borders.bottom.small
-	border-color: $ds.colors.accent.primary
-	width: hug-content
-	radius: $ds.radius.zero
-
-	-- ds.copy-regular: Dashboard
-	width: hug-content
-
-	-- end: ds.row
-
-	-- ds.copy-regular: Access
-	width: hug-content
-
-	-- ds.copy-regular: Billing
-	width: hug-content
-
-	-- ds.copy-regular: Setting
-	width: hug-content
-
-	/-- toc-link: $t
+	-- toc-link: $t
 	for: t in $header.toc-list
 	
 -- end: ds.row
@@ -114,11 +91,15 @@ inset: $ds.spaces.inset-wide.large
 -- component toc-link:
 caption sr.toc-data toc:
 
--- ftd.text: $toc-link.toc.name
-color: $ds.colors.text-strong
-role: $ds.types.copy-regular
+-- ds.row:
+border if { toc-link.toc.is-active }: $ds.borders.bottom.small
+border-color if { toc-link.toc.is-active }: $ds.colors.accent.primary
 link: $toc-link.toc.link
-style if { toc-link.toc.is-active }: underline
-padding.px: 10
+width: hug-content
+radius: $ds.radius.zero
+
+-- ds.copy-regular: $toc-link.toc.name
+
+-- end: ds.row
 
 -- end: toc-link

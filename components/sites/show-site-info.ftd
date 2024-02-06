@@ -10,10 +10,11 @@ inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 spacing: $ds.spaces.horizontal-gap.large
 background.solid: $ds.colors.background.step-1
+link: $show-site-info.site.detail-url
 
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image == NULL }
-	src: $assets.files.assets.placeholder.svg
+	src: $assets.files.assets.sites.placeholder.svg
 	width.fixed.px: 330
 	height.fixed.px: 125
 	fit: cover
@@ -40,16 +41,11 @@ background.solid: $ds.colors.background.step-1
 	align-content: bottom-right
 		
 		-- ds.icon-button: Visit Site
-		icon: $assets.files.assets.link.svg
+		icon: $assets.files.assets.sites.link.svg
 		link: $show-site-info.site.url
 		icon-position: at-end
 		kind: secondary
 		variant: outline
-		
-		/-- ds.phosphor-icon-button: View Detail
-		icon: arrow-right
-		link: $show-site-info.site.detail-url
-		icon-position: at-end
 		
 	-- end: ds.column
 		
