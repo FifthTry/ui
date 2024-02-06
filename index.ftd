@@ -16,7 +16,10 @@ These are list of products/websites hosted by FifthTry.
 - [User dashboard](/scenarios/sites/dashboard/)
 - [Create Site](/scenarios/sites/create-site/)
 - [Site Info](/scenarios/sites/site-info/)
+- [Site Domain](/scenarios/sites/site-domain/)
 - [Site Editor](/scenarios/sites/site-editor/)
+- [Signin](/scenarios/sites/signin-page/)
+- [Signup](/scenarios/sites/signup-page/)
 
 
 -- lib.h1: Slides Scenarios
