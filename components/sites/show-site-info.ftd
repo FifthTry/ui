@@ -3,32 +3,52 @@
 -- component show-site-info:
 caption dashboard.site site:
 
--- ds.column:
+-- ds.row:
+width.fixed.px: 1152
 radius: $ds.radius.medium
-border-color: $ds.colors.cta-primary.base
-inset: $ds.spaces.inset-square.zero
-spacing: $ds.spaces.vertical-gap.zero
+inset: $ds.spaces.inset-square.large
+border: $ds.borders.uniform.small
+spacing: $ds.spaces.horizontal-gap.large
+background.solid: $ds.colors.background.step-1
+link: $show-site-info.site.detail-url
 
-	-- ds.row:
-	background.solid: $ds.colors.cta-primary.base
-	inset: $ds.spaces.inset-wide.medium
-	
-		-- ds.heading-tiny: $show-site-info.site.name
-		color: $ds.colors.cta-primary.text
+	-- ftd.image:
+	if: { show-site-info.site.placeholder-image == NULL }
+	src: $assets.files.assets.sites.placeholder.svg
+	width.fixed.px: 330
+	height.fixed.px: 125
+	fit: cover
+
+	-- ftd.image:
+	if: { show-site-info.site.placeholder-image != NULL }
+	src: $show-site-info.site.placeholder-image
+	width.fixed.px: 330
+	height.fixed.px: 125
+	fit: cover
+
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.small
+	align-content: left
+
+	-- ds.heading-small: $show-site-info.site.name
+
+	-- ds.copy-small: $show-site-info.site.created-on
+
+	-- end: ds.column
+
+	-- ds.column:
+	height: fill-container
+	align-content: bottom-right
 		
-		-- ds.phosphor-icon-button: Visit Site
-		icon: arrow-right
+		-- ds.icon-button: Visit Site
+		icon: $assets.files.assets.sites.link.svg
 		link: $show-site-info.site.domain-with-host
 		icon-position: at-end
+		kind: secondary
+		variant: outline
 		
-		-- ds.phosphor-icon-button: View Detail
-		icon: arrow-right
-		link: $show-site-info.site.detail-url
-		icon-position: at-end
-		
+	-- end: ds.column
 		
 	-- end: ds.row
-
--- end: ds.column
 
 -- end: show-site-info

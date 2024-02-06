@@ -10,21 +10,22 @@ user-data: john-doe
 
 -- site-info.site-info-data data:
 user: FifthTry
+dashboard-url: /scenarios/sites/dashboard/
 current-site: $current-site
 site-urls: $site-urls
 header-links: []
 sub-header-links: $sub-header-links
 
--- sr.site current-site:
-name: My Site
-domain: my-site.fifthtry-sites.com
-domain-with-host: https://my-site.fifthtry-sites.com
-last-updated: Not defined
+-- sr.site current-site: My Homepage
+domain-with-host: https://my-homepage.fifthtry-sites.com
+domain: my-homepage.fifthtry-sites.com
+created-on: 14th Feb
+last-updated-on: 14th Feb
 
 -- sr.toc-data list site-urls:
 
 -- sr.toc-data: My Site
-link: /scenarios/hostn/site-info/
+link: /scenarios/sites/site-info/
 is-active: true
 
 -- sr.toc-data: My Startup

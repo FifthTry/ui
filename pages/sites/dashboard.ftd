@@ -13,7 +13,8 @@ caption name:
 string domain:
 string domain-with-host:
 string detail-url:
-string last-updated:
+optional string created-on:
+optional ftd.image-src placeholder-image:
 
 
 
@@ -26,19 +27,35 @@ dashboard-data data:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
+show-header-links: false
 
 	-- ds.column:
+	inset: $ds.spaces.inset-wide.large
+	spacing: $ds.spaces.vertical-gap.large
+
+	-- ds.row:
 	align-content: top-left
-	width.fixed.percent: 60
+	spacing: $ds.spaces.horizontal-gap.space-between
+	inset: $ds.spaces.inset-tall.zero-small
 	
-		-- ds.heading-large: Sites Dashboard
-		width: hug-content
-		
+		-- ds.heading-small: All Sites
+
+		-- ds.row:
+		align-content: top-right
+		spacing: $ds.spaces.horizontal-gap.medium
+
+		-- ds.icon-button: Create new site
+		link: $page.data.create-site-url
+		kind: primary
+		icon-position: at-end
+		icon: $assets.files.assets.sites.add.svg
+
+	-- end: ds.row
+	
+	-- end: ds.row
+
 		-- show-site-info.show-site-info: $s
 		for: s in $page.data.sites
-		
-		-- ds.primary-button: Create New Site
-		link: $page.data.create-site-url
 		
 	-- end: ds.column
 

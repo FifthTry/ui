@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/components/sites/avatar
 
 
 
@@ -10,9 +11,11 @@
 sr.toc-data list toc-list:
 
 -- ds.row:
-background.solid: $ds.colors.background.step-1
+border: $ds.borders.bottom.small
 align-content: top-left
-spacing: $ds.spaces.horizontal-gap.large
+radius: $ds.radius.zero
+spacing: $ds.spaces.horizontal-gap.medium
+inset: $ds.spaces.inset-wide.large-zero
 
 	-- toc-link: $t
 	for: t in $header.toc-list
@@ -32,17 +35,19 @@ sr.toc-data list toc-list:
 optional string site-name:
 optional ftd.image-src site-logo:
 optional string header-text:
+module site-data: site-data
+module user-data: user-data
 
 -- ds.row:
 width: fill-container
 align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
+inset: $ds.spaces.inset-wide.large
 
 	-- ds.row:
 	if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
 	width: hug-content
-	inset: $ds.spaces.inset-square.medium
 	
 		-- ftd.text: $header-with-logo.site-name
 		if: { header-with-logo.site-name != NULL }
@@ -51,14 +56,12 @@ background.solid: $ds.colors.background.base
 		
 		-- ftd.image: $header-with-logo.site-logo
 		if: { header-with-logo.site-logo != NULL }
-		width.fixed.px: 30
+		width: auto
 		
 		-- ftd.text: $header-with-logo.header-text
 		if: { header-with-logo.header-text != NULL }
 		color: $ds.colors.text-strong
 		role: $ds.types.copy-large
-		
-		
 		
 	-- end: ds.row
 
@@ -70,6 +73,10 @@ background.solid: $ds.colors.background.base
 		for: t in $header-with-logo.toc-list
 		
 	-- end: ds.row
+
+	-- avatar.avatar:
+	user-data: $header-with-logo.user-data
+	if: { header-with-logo.user-data.is-logged-in }
 
 -- end: ds.row
 
@@ -84,11 +91,15 @@ background.solid: $ds.colors.background.base
 -- component toc-link:
 caption sr.toc-data toc:
 
--- ftd.text: $toc-link.toc.name
-color: $ds.colors.text-strong
-role: $ds.types.copy-regular
+-- ds.row:
+border if { toc-link.toc.is-active }: $ds.borders.bottom.small
+border-color if { toc-link.toc.is-active }: $ds.colors.accent.primary
 link: $toc-link.toc.link
-style if { toc-link.toc.is-active }: underline
-padding.px: 10
+width: hug-content
+radius: $ds.radius.zero
+
+-- ds.copy-regular: $toc-link.toc.name
+
+-- end: ds.row
 
 -- end: toc-link

@@ -6,13 +6,17 @@ string editor-url:
 caption name:
 string domain:
 string domain-with-host:
-string last-updated:
+string created-on:
+string last-updated-on:
+optional ftd.image-src placeholder-image:
+
+
 
 -- record toc-data:
 caption name:
 string full-name: $toc-data.name
 optional string link:
-boolean is-active:
+optional boolean is-active: false
 optional ftd.image-src icon:
 toc-data list children:
 
@@ -20,3 +24,21 @@ toc-data list children:
 -- record file-content:
 caption file-path:
 body content:
+
+
+
+-- toc-data list toc-list-data:
+
+-- toc-data: About
+link: /scenarios/sites/site-info/
+is-active: true
+
+-- toc-data: Domain
+link: /scenarios/sites/site-domain/
+
+-- toc-data: Github
+link: /scenarios/sites/github/
+
+-- end: toc-list-data
+
+
