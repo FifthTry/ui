@@ -1,0 +1,64 @@
+-- import: ui.fifthtry.com/components/sites/page as p
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/records/site as sr
+
+
+
+-- component page:
+caption title:
+module user-data: user-data
+
+-- p.page:
+site-data: site-data
+user-data: $page.user-data
+align-content: top-center
+header-links: $sr.github-toc
+
+	-- ds.column:
+	inset: $ds.spaces.inset-wide.large
+	spacing: $ds.spaces.vertical-gap.large
+
+	-- ds.heading-small: $page.title
+
+	-- ds.column:
+	width.fixed.px: 1152
+	align-content: top-left
+	spacing: $ds.spaces.vertical-gap.large
+
+	-- ds.row:
+	align-content: left
+	spacing: $ds.spaces.horizontal-gap.small
+
+	-- ftd.image:
+	src: $assets.files.assets.sites.info.svg
+
+	-- ds.copy-small: Use clift to update your site from github
+
+	-- end: ds.row
+
+	-- ds.row:
+	radius: $ds.radius.medium
+	inset: $ds.spaces.inset-square.large
+	border: $ds.borders.uniform.small
+	spacing: $ds.spaces.horizontal-gap.space-between
+	background.solid: $ds.colors.background.step-1
+
+	-- ds.copy-large:
+
+	You have not yet configured Github for **fastn.com**
+
+	-- ds.secondary-button: Configure Now
+	link: /scenarios/sites/configure-github/
+	variant: outline
+	radius: curved
+
+	-- end: ds.row
+
+	-- end: ds.column
+		
+	-- end: ds.column
+
+-- end: p.page
+
+-- end: page

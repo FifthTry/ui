@@ -21,6 +21,9 @@ These are list of products/websites hosted by FifthTry.
 - [Create Site](/scenarios/sites/create-site/)
 - [Site Info](/scenarios/sites/site-info/)
 - [Site Domain](/scenarios/sites/site-domain/)
+- [Github (Un-configured)](/scenarios/sites/github/)
+- [Github (Configure form)](/scenarios/sites/configure-github/)
+- [Github (Configured)](/scenarios/sites/repo-detail/)
 - [Site Editor](/scenarios/sites/site-editor/)
 
 
