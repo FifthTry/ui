@@ -33,17 +33,17 @@ is-active: false
 
 -- sr.toc-data.children:
 
--- sr.toc-data: index.ftd
-full-name: folder/index.ftd
-link: scenarios/hostn/site-editor/
-is-active: false
-icon: $assets.files.assets.ftd-logo-2.svg
-
--- sr.toc-data: other.txt
-full-name: folder/other.txt
-link: scenarios/hostn/site-editor/
-is-active: false
-
+	-- sr.toc-data: index.ftd
+	full-name: folder/index.ftd
+	link: scenarios/hostn/site-editor/
+	is-active: false
+	icon: $assets.files.assets.ftd-logo-2.svg
+	
+	-- sr.toc-data: other.txt
+	full-name: folder/other.txt
+	link: scenarios/hostn/site-editor/
+	is-active: false
+	
 -- end: sr.toc-data.children
 
 -- end: files

@@ -29,97 +29,97 @@ align-content: top-center
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 	align-content: left
-
-    -- ds.primary-button: Go Back To Dashboard
-    link: $page.data.dashboard-url
-    size: small
-    radius: curved
-
-	-- ds.heading-small: About
-
-    -- ds.column:
-    inset: $ds.spaces.inset-wide.large
-    spacing: $ds.spaces.vertical-gap.large
-    align-content: center
-
-	-- ds.row:
-	width.fixed.px: 1152
-	radius: $ds.radius.medium
-	inset: $ds.spaces.inset-square.large
-	border: $ds.borders.uniform.small
-	spacing: $ds.spaces.horizontal-gap.large
-	background.solid: $ds.colors.background.step-1
-	align-content: center
-
-	-- ftd.image:
-	if: { page.data.current-site.placeholder-image == NULL }
-	src: $assets.files.assets.sites.placeholder.svg
-	width.fixed.px: 568
-	height.fixed.px: 302
-	fit: cover
-
-	-- ftd.image:
-	if: { page.data.current-site.placeholder-image != NULL }
-	src: $page.data.current-site.placeholder-image
-	width.fixed.px: 568
-	height.fixed.px: 302
-	fit: cover
-
-	-- ds.column:
-	spacing: $ds.spaces.vertical-gap.large
-	align-content: top-left
-
-		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.small
-
-		-- ds.copy-regular: Website name
-
-		-- ds.heading-tiny: $page.data.current-site.name
-
-		-- end: ds.column
-
-		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.small
-		align-content: left
-
-        -- ds.copy-regular: Last Updated on
-
-        -- ds.heading-tiny: $page.data.current-site.last-updated-on
-		
-		-- end: ds.column
-
-		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.small
-
-		-- ds.copy-regular: Domains
-
-		-- ds.row:
-		align-content: left
-		spacing: $ds.spaces.horizontal-gap.small
-
-		-- ds.icon-button: $page.data.current-site.domain
-		icon: $assets.files.assets.sites.link.svg
-		link: $page.data.current-site.domain-with-host
-		icon-position: at-end
-		kind: tertiary
+	
+		-- ds.primary-button: Go Back To Dashboard
+		link: $page.data.dashboard-url
 		size: small
+		radius: curved
+		
+		-- ds.heading-small: About
+		
+		-- ds.column:
+		inset: $ds.spaces.inset-wide.large
+		spacing: $ds.spaces.vertical-gap.large
+		align-content: center
+		
+			-- ds.row:
+			width.fixed.px: 1152
+			radius: $ds.radius.medium
+			inset: $ds.spaces.inset-square.large
+			border: $ds.borders.uniform.small
+			spacing: $ds.spaces.horizontal-gap.large
+			background.solid: $ds.colors.background.step-1
+			align-content: center
+			
+				-- ftd.image:
+				if: { page.data.current-site.placeholder-image == NULL }
+				src: $assets.files.assets.sites.placeholder.svg
+				width.fixed.px: 568
+				height.fixed.px: 302
+				fit: cover
+				
+				-- ftd.image:
+				if: { page.data.current-site.placeholder-image != NULL }
+				src: $page.data.current-site.placeholder-image
+				width.fixed.px: 568
+				height.fixed.px: 302
+				fit: cover
+				
+				-- ds.column:
+				spacing: $ds.spaces.vertical-gap.large
+				align-content: top-left
+				
+					-- ds.column:
+					spacing: $ds.spaces.vertical-gap.small
+					
+						-- ds.copy-regular: Website name
+						
+						-- ds.heading-tiny: $page.data.current-site.name
+						
+					-- end: ds.column
 
-		-- end: ds.row
+					-- ds.column:
+					spacing: $ds.spaces.vertical-gap.small
+					align-content: left
+					
+						-- ds.copy-regular: Last Updated on
+						
+						-- ds.heading-tiny: $page.data.current-site.last-updated-on
+						
+					-- end: ds.column
+
+					-- ds.column:
+					spacing: $ds.spaces.vertical-gap.small
+					
+						-- ds.copy-regular: Domains
+						
+						-- ds.row:
+						align-content: left
+						spacing: $ds.spaces.horizontal-gap.small
+						
+							-- ds.icon-button: $page.data.current-site.domain
+							icon: $assets.files.assets.sites.link.svg
+							link: $page.data.current-site.domain-with-host
+							icon-position: at-end
+							kind: tertiary
+							size: small
+							
+						-- end: ds.row
+
+					-- end: ds.column
+
+					-- ds.icon-button: Visit Site
+					icon: $assets.files.assets.sites.link.svg
+					link: $page.data.current-site.domain-with-host
+					icon-position: at-end
+					width: full
+					
+				-- end: ds.column
+
+			-- end: ds.row
 
 		-- end: ds.column
 
-		-- ds.icon-button: Visit Site
-		icon: $assets.files.assets.sites.link.svg
-		link: $page.data.current-site.domain-with-host
-		icon-position: at-end
-		width: full
-		
-	-- end: ds.column
-
-	-- end: ds.row
-
-	-- end: ds.column
-		
 	-- end: ds.column
 
 -- end: p.page

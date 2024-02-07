@@ -77,7 +77,7 @@ inset: $ds.spaces.inset-wide.large
 	-- avatar.avatar:
 	user-data: $header-with-logo.user-data
 	if: { header-with-logo.user-data.is-logged-in }
-
+	
 -- end: ds.row
 
 -- end: header-with-logo
@@ -98,8 +98,8 @@ link: $toc-link.toc.link
 width: hug-content
 radius: $ds.radius.zero
 
--- ds.copy-regular: $toc-link.toc.name
-
+	-- ds.copy-regular: $toc-link.toc.name
+	
 -- end: ds.row
 
 -- end: toc-link

@@ -56,53 +56,53 @@ module open-file: open-file
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-small
 
-    -- ds.row:
-    align-content: top-left
-    spacing: $ds.spaces.horizontal-gap.extra-small
-    $on-click$: $ftd.toggle($a = $file-view.file.is-active)
-
-        -- ftd.image: $assets.files.assets.down-arrow.svg
-        if: { ftd.len(file-view.file.children) > 0 && file-view.file.is-active }
-        width.fixed.px: 10
-        align-self: center
-
-        -- ftd.image: $assets.files.assets.right-arrow.svg
-        if: { ftd.len(file-view.file.children) > 0 && !file-view.file.is-active }
-        width.fixed.px: 10
-        align-self: center
-
-        -- ftd.image: $file-view.file.icon
-        if: { file-view.file.icon != NULL }
-        width.fixed.px: 25
-        align-self: center
-
-        -- ftd.image: $assets.files.assets.file.svg
-        if: { ftd.len(file-view.file.children) == 0 && file-view.file.icon == NULL }
-        width.fixed.px: 20
-        align-self: center
-
-        -- ftd.text: $file-view.file.name
-        $on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site = $file-view.site)
-        $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
-        role: $ds.types.copy-small
-        color: $ds.colors.text-strong
-        style if { file-view.header-title == file-view.file.full-name }: underline, bold
-
-    -- end: ds.row
+	-- ds.row:
+	align-content: top-left
+	spacing: $ds.spaces.horizontal-gap.extra-small
+	$on-click$: $ftd.toggle($a = $file-view.file.is-active)
+	
+		-- ftd.image: $assets.files.assets.down-arrow.svg
+		if: { ftd.len(file-view.file.children) > 0 && file-view.file.is-active }
+		width.fixed.px: 10
+		align-self: center
+		
+		-- ftd.image: $assets.files.assets.right-arrow.svg
+		if: { ftd.len(file-view.file.children) > 0 && !file-view.file.is-active }
+		width.fixed.px: 10
+		align-self: center
+		
+		-- ftd.image: $file-view.file.icon
+		if: { file-view.file.icon != NULL }
+		width.fixed.px: 25
+		align-self: center
+		
+		-- ftd.image: $assets.files.assets.file.svg
+		if: { ftd.len(file-view.file.children) == 0 && file-view.file.icon == NULL }
+		width.fixed.px: 20
+		align-self: center
+		
+		-- ftd.text: $file-view.file.name
+		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site = $file-view.site)
+		$on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
+		role: $ds.types.copy-small
+		color: $ds.colors.text-strong
+		style if { file-view.header-title == file-view.file.full-name }: underline, bold
+		
+	-- end: ds.row
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.small-zero
 	spacing: $ds.spaces.vertical-gap.zero
 	if: { ftd.len(file-view.file.children) > 0 && file-view.file.is-active }
-
-        -- file-view: $obj
-        for: $obj in $file-view.file.children
-        $header-title: $file-view.header-title
-        site: $file-view.site
-        open-file: $file-view.open-file
-
-	-- end: ds.column
 	
+		-- file-view: $obj
+		for: $obj in $file-view.file.children
+		$header-title: $file-view.header-title
+		site: $file-view.site
+		open-file: $file-view.open-file
+		
+	-- end: ds.column
+
 -- end: ds.column
 
 -- end: file-view

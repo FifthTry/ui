@@ -18,28 +18,28 @@ link: $show-site-info.site.detail-url
 	width.fixed.px: 330
 	height.fixed.px: 125
 	fit: cover
-
+	
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image != NULL }
 	src: $show-site-info.site.placeholder-image
 	width.fixed.px: 330
 	height.fixed.px: 125
 	fit: cover
-
+	
 	-- ds.column:
 	spacing: $ds.spaces.vertical-gap.small
 	align-content: left
-
-	-- ds.heading-small: $show-site-info.site.name
-
-	-- ds.copy-small: $show-site-info.site.created-on
-
+	
+		-- ds.heading-small: $show-site-info.site.name
+		
+		-- ds.copy-small: $show-site-info.site.created-on
+		
 	-- end: ds.column
 
 	-- ds.column:
 	height: fill-container
 	align-content: bottom-right
-		
+	
 		-- ds.icon-button: Visit Site
 		icon: $assets.files.assets.sites.link.svg
 		link: $show-site-info.site.domain-with-host
@@ -48,7 +48,7 @@ link: $show-site-info.site.detail-url
 		variant: outline
 		
 	-- end: ds.column
-		
-	-- end: ds.row
+
+-- end: ds.row
 
 -- end: show-site-info

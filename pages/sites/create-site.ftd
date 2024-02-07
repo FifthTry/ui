@@ -25,55 +25,54 @@ show-header: false
 	border: $ds.borders.uniform.small
 	inset: $ds.spaces.inset-square.extra-large
 	spacing: $ds.spaces.vertical-gap.large
-
+	
 		-- ds.heading-small: Create new site
 		width: hug-content
-
+		
 		-- ds.column:
 		align-content: top-left
 		spacing: $ds.spaces.vertical-gap.extra-small
-
-		-- ds.copy-small: Username
-
-		-- ds.row:
-		spacing: $ds.spaces.horizontal-gap.small
-
-		-- ftd.text-input:
-		placeholder: Enter you domain
-		color: $inherited.colors.text-strong
-		width.fixed.px: 324
-		padding.px: 8
-		border-radius.px: 8
-		border-width.px: 1
-		background.solid: $inherited.colors.background.step-1
-		border-color: $inherited.colors.border
-		$on-input$: $ftd.set-string($a = $page.current-site-name, v = $VALUE)
-
-		-- ds.copy-small: fifthtry.site
-
-		-- end: ds.row
+		
+			-- ds.copy-small: Username
+			
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ftd.text-input:
+				placeholder: Enter you domain
+				color: $inherited.colors.text-strong
+				width.fixed.px: 324
+				padding.px: 8
+				border-radius.px: 8
+				border-width.px: 1
+				background.solid: $inherited.colors.background.step-1
+				border-color: $inherited.colors.border
+				$on-input$: $ftd.set-string($a = $page.current-site-name, v = $VALUE)
+				
+				-- ds.copy-small: fifthtry.site
+				
+			-- end: ds.row
 
 		-- end: ds.column
 
 		-- ds.row:
 		align-content: left
 		spacing: $ds.spaces.horizontal-gap.small
-
-		-- ftd.image:
-		src: $assets.files.assets.sites.info.svg
-
-		-- ds.copy-small: You can add custom domain late
-
+		
+			-- ftd.image:
+			src: $assets.files.assets.sites.info.svg
+			
+			-- ds.copy-small: You can add custom domain late
+			
 		-- end: ds.row
 
 		-- ds.primary-button: Create Site
 		width: full
 		radius: curved
 		$on-click$: $page.create-site.submit(org_slug = $page.data.org-slug, site_name = $page.current-site-name)
-
+		
 	-- end: ds.column
 
 -- end: p.page
 
 -- end: page
-
