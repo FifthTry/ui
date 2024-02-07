@@ -1,0 +1,7 @@
+-- import: ui.fifthtry.com/pages/sites/repo-detail
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- repo-detail.page: Github
+user-data: john-doe
+
