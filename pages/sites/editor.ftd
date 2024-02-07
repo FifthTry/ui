@@ -3,6 +3,8 @@
 -- import: ui.fifthtry.com/components/sites/files-sidebar as fs
 -- import: ui.fifthtry.com/web-components as wc
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/user-data
 
 -- component page:
 ud.user-data user-data: $user-data.user
