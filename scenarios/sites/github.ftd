@@ -3,5 +3,4 @@
 
 
 -- github.page: Github
-user-data: john-doe
-
+user-data: $john-doe.jd
