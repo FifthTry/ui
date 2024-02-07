@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/actions/sites/create
 
@@ -8,7 +9,7 @@
 string org-slug:
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 module create-site: create
 create-site-data data:
 optional string $current-site-name:
@@ -33,7 +34,7 @@ show-header: false
 		align-content: top-left
 		spacing: $ds.spaces.vertical-gap.extra-small
 		
-			-- ds.copy-small: Username
+			-- ds.copy-small: Domain
 			
 			-- ds.row:
 			spacing: $ds.spaces.horizontal-gap.small
@@ -49,7 +50,7 @@ show-header: false
 				border-color: $inherited.colors.border
 				$on-input$: $ftd.set-string($a = $page.current-site-name, v = $VALUE)
 				
-				-- ds.copy-small: fifthtry.site
+				-- ds.copy-small: .fifthtry.site
 				
 			-- end: ds.row
 
@@ -62,7 +63,7 @@ show-header: false
 			-- ftd.image:
 			src: $assets.files.assets.sites.info.svg
 			
-			-- ds.copy-small: You can add custom domain late
+			-- ds.copy-small: You can add custom domain later
 			
 		-- end: ds.row
 

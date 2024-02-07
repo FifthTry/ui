@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/components/slides/full-page
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/actions/slides/toggle-template
 -- import: ui.fifthtry.com/actions/slides/save-presentation-settings
@@ -17,7 +18,7 @@ string team-name:
 -- string save-presentation-settings-module-name: ui.fifthtry.com/actions/slides/save-presentation-settings
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 module site-data: site-data
 module toggle-template: toggle-template
 module save-presentation-settings: save-presentation-settings

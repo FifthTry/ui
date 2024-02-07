@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/sites/avatar
 
@@ -36,7 +37,7 @@ optional string site-name:
 optional ftd.image-src site-logo:
 optional string header-text:
 module site-data: site-data
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 
 -- ds.row:
 width: fill-container

@@ -1,7 +1,8 @@
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 
 -- component avatar:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 boolean $open: false
 
 
@@ -38,7 +39,7 @@ padding.px: 8
 
 
 -- component popup:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 boolean $open:
 
 -- ftd.column:
@@ -68,7 +69,7 @@ padding.px: 8
 		role: $inherited.types.button-medium
 		color: $inherited.colors.text
 		
-		-- ftd.text: $popup.user-data.email
+		/-- ftd.text: $popup.user-data.email
 		role: $inherited.types.label-small
 		color: $inherited.colors.text
 		

@@ -1,4 +1,9 @@
--- boolean is-logged-in: true
--- string name: John Doe
--- string email: john-doe@abc.com
--- string username: john-doe
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/user-data
+
+
+-- ud.user-data jd:
+notifications: 0
+username: john-doe
+name: John Doe
+is-logged-in: true

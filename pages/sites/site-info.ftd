@@ -4,6 +4,7 @@
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 
 
@@ -13,18 +14,17 @@ string dashboard-url:
 sr.site current-site:
 sr.toc-data list site-urls:
 sr.toc-data list header-links:
-sr.toc-data list sub-header-links:
 
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 site-info-data data:
 
 -- p.page:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
-header-links: $sr.about-toc
+header-links: $page.data.header-links
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large

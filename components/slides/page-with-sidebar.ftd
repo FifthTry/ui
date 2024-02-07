@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/header
 -- import: fastn/processors as pr
@@ -12,7 +13,7 @@ string link:
 
 -- component page:
 module site-data: site-data
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 toc-item list list-of-toc: $stable-toc-links
 boolean $sidebar: false
 string team-name:

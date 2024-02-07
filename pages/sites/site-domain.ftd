@@ -2,136 +2,37 @@
 -- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/components/sites/site-sidebar as ss
 -- import: ui.fifthtry.com/components/sites/site-header as h
+-- import: ui.fifthtry.com/components/sites/site-domain-info as sd
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 
 
 -- record site-domain-data:
 string user:
-sr.domain all-domains:
+sr.domain list all-domains:
+sr.toc-data list header-links:
 
 
 -- component page:
-caption title:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 site-domain-data data:
 
 -- p.page:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
-header-links: $sr.domain-toc
+header-links: $page.data.header-links
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 	
-		-- ds.heading-small: $page.title
+		-- ds.heading-small: Domains
 		
-		-- ds.row:
-		width.fixed.px: 1152
-		radius: $ds.radius.medium
-		inset: $ds.spaces.inset-square.medium
-		border: $ds.borders.uniform.small
-		spacing: $ds.spaces.horizontal-gap.space-between
-		background.solid: $ds.colors.background.step-1
-		align-content: top-left
-		
-			-- ds.column:
-			spacing: $ds.spaces.vertical-gap.small
-			align-content: left
-			
-				-- ds.icon-button: $page.data.all-domains.domain
-				icon: $assets.files.assets.sites.link.svg
-				link: $page.data.all-domains.domain-with-host
-				icon-position: at-end
-				kind: tertiary
-				size: small
-				
-				-- ds.row:
-				spacing: $ds.spaces.horizontal-gap.large
-				align-content: left
-				
-					-- ds.icon-button: $page.data.all-domains.primary-text
-					if: { page.data.all-domains.is-primary }
-					icon: $assets.files.assets.sites.circle-tick.svg
-					icon-position: at-start
-					kind: primary
-					size: small
-					rounded: true
-					
-					-- ds.row:
-					width: hug-content
-					align-content: left
-					spacing: $ds.spaces.horizontal-gap.small
-					
-						-- ftd.image:
-						src: $assets.files.assets.sites.check-circle.svg
-						width.fixed.px: 16
-						
-						-- ds.copy-small: $page.data.all-domains.run-checks
-						
-					-- end: ds.row
-
-					-- ds.row:
-					if: { page.data.all-domains.redirect-link }
-					align-content: left
-					width: hug-content
-					spacing: $ds.spaces.horizontal-gap.small
-					
-						-- ftd.image:
-						src: $assets.files.assets.sites.check-circle.svg
-						width.fixed.px: 16
-						
-						-- ds.copy-small: $page.data.all-domains.redirect
-						
-						-- ds.icon-button: $page.data.all-domains.domain
-						icon: $assets.files.assets.sites.link.svg
-						link: $page.data.all-domains.domain-with-host
-						icon-position: at-end
-						kind: tertiary
-						size: small
-						
-					-- end: ds.row
-
-				-- end: ds.row
-
-			-- end: ds.column
-
-			-- ds.row:
-			if: { page.data.all-domains.is-primary }
-			spacing: $ds.spaces.horizontal-gap.large
-			align-content: right
-			inset: $ds.spaces.inset-tall.zero-medium
-			
-				-- ds.secondary-button: Primary Link
-				variant: disabled
-				radius: curved
-				
-				-- ds.danger-button: Delete Domain
-				radius: curved
-				variant: disabled
-				
-			-- end: ds.row
-
-			-- ds.row:
-			if: { !page.data.all-domains.is-primary }
-			spacing: $ds.spaces.horizontal-gap.large
-			align-content: right
-			inset: $ds.spaces.inset-tall.zero-medium
-			
-				-- ds.secondary-button: Primary Link
-				variant: disabled
-				radius: curved
-				
-				-- ds.danger-button: Delete Domain
-				radius: curved
-				variant: disabled
-				
-			-- end: ds.row
-
-		-- end: ds.row
+		-- sd.show-site-domain: $d
+		for: d in $page.data.all-domains
 
 	-- end: ds.column
 

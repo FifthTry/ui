@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/components/slides/page-with-sidebar
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: fastn-community.github.io/svg-icons/phosphor
 
@@ -15,7 +16,7 @@ string team-slug:
 
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 presentation list presentations:
 dashboard-data data:
 folder list folders:

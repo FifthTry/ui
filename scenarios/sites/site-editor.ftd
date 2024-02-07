@@ -4,7 +4,7 @@
 
 
 -- site-editor.page:
-user-data: john-doe
+user-data: $john-doe.jd
 data: $data
 site: ui.fifthtry.com
 $header-title: index.ftd

@@ -1,18 +1,27 @@
 -- import: ui.fifthtry.com/components/page as p
 -- import: ui.fifthtry.com/components/about/product
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 module site-data: site-data
 
 -- p.page: FifthTry | Better way To Build Websites
 user-data: $page.user-data
 site-data: $page.site-data
+hide-footer: true
 
-	-- products:
+-- ds.heading-hero: Build your next website with FifthTry
+width: hug-content
+
+-- ds.copy-small: New and efficient way to build your website
+
+-- ds.primary-button: Get Started
+link: signin/
+radius: curved
 	
 -- end: p.page
 

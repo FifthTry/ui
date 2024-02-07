@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/components/slides/full-page
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/actions/slides/create-slide
 -- import: ui.fifthtry.com/actions/slides/delete-slide
@@ -57,7 +58,7 @@ body text:
 
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 module create-slide: create-slide
 module delete-slide: delete-slide
 module save-slide: save-slide
