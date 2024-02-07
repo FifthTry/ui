@@ -1,10 +1,12 @@
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/actions/slides/authenticate-user
 
 
 -- component page:
 string github-url:
 string signup-url:
 module site-data: site-data
+module authenticate-user: authenticate-user
 private string $current-username: empty
 private string $current-password: empty
 
@@ -13,35 +15,35 @@ radius: $ds.radius.zero
 background.solid: $ds.colors.background.step-1
 
 	-- ftd.image:
-	src: $assets.files.assets.sites.background.svg
+	src: $assets.files.assets.background.svg
 	width.fixed.percent: 70
 	height.fixed.vh: 100
 	fit: cover
 	
 	-- ds.column:
-	align-content: top-center
+	align-content: center
 	inset: $ds.spaces.inset-tall.medium
 	width.fixed.percent: 30
 	spacing: $ds.spaces.vertical-gap.large
 	
 		-- ftd.image:
-		src: $page.site-data.site-logo
-		width.fixed.px: 170
-		height.fixed.px: 38
+		src: $page.site-data.logo
+		width.fixed.px: 89
+		height.fixed.px: 33
 		fit: cover
 		
-		-- ds.copy-large: $lang.login
+		-- ds.heading-small: $lang.login
+		width: hug-content
 		
 		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.medium
 		width.fixed.px: 342
 
-		-- ds.column:
-		align-content: left
-		spacing: $ds.spaces.vertical-gap.extra-extra-small
+			-- ds.column:
+			spacing: $ds.spaces.vertical-gap.extra-extra-small
+			align-content: left
 
-		-- ds.copy-small: Username
-
+			-- ds.copy-small: Username
+		
 			-- ftd.text-input:
 			placeholder: Enter username
 			type: text
@@ -55,14 +57,19 @@ background.solid: $ds.colors.background.step-1
 			padding.px: 8
 			color: $inherited.colors.text-strong
 
-		-- end: ds.column
-		
+			-- ftd.text: $page.authenticate-user.username-error
+			if: { page.authenticate-user.username-error != NULL }
+			color: red
+			role: $inherited.types.copy-small
+			
+			-- end: ds.column
+
 			-- ds.column:
-			align-content: left
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
+			align-content: left
 
 			-- ds.copy-small: Password
-			
+
 			-- ftd.text-input:
 			placeholder: Enter password
 			type: password
@@ -76,14 +83,20 @@ background.solid: $ds.colors.background.step-1
 			padding.px: 8
 			color: $inherited.colors.text-strong
 			
+			-- ftd.text: $page.authenticate-user.password-error
+			if: { page.authenticate-user.password-error != NULL }
+			color: red
+			role: $inherited.types.copy-small
+
 			-- end: ds.column
 
 			-- ds.checkbox: I accept Terms and Conditions
 			size: small
-
+			
 			-- ds.primary-button: Login
-			radius: curved
+			$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
 			width: full
+			radius: curved
 
 			-- ds.row:
 			spacing: $ds.spaces.vertical-gap.small
@@ -91,7 +104,7 @@ background.solid: $ds.colors.background.step-1
 			
 				-- ds.copy-regular:
 				text: $lang.create-account
-				width.fixed.px: 200
+				width: hug-content
 				
 				-- ds.link: $lang.signin-type
 				color: $ds.colors.info.text
@@ -99,8 +112,8 @@ background.solid: $ds.colors.background.step-1
 				link: /
 				
 			-- end: ds.row
-
-					-- ds.column:
+			
+		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.medium
 
 		-- ds.row:
@@ -121,19 +134,20 @@ background.solid: $ds.colors.background.step-1
 		-- end: ds.row
 
 		-- end: ds.row
-		
+
 			-- ds.icon-button: Continue with Github
-			icon: $assets.files.assets.slides.github-mark-white.svg
+			icon: $assets.files.assets.github-mark-white.svg
 			link: $page.github-url
 			kind: secondary
 			variant: outline
 			width: full
 
-			-- ds.link-button: I forgot my password
+			-- ds.link: I forgot my password
 			link: /
 
 		-- end: ds.column
-			
+
+
 		-- end: ds.column
 
 	-- end: ds.column

@@ -1,5 +1,4 @@
 -- string homepage: /
 
--- ftd.image-src logo: $assets.files.assets.slides.logo.svg
+-- ftd.image-src logo: $assets.files.assets.logo.svg
 
--- ftd.image-src site-logo: $assets.files.assets.sites.logo.svg
