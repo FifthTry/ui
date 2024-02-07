@@ -1,0 +1,50 @@
+-- import: ui.fifthtry.com/pages/sites/about-page
+
+-- component site-domain:
+caption about-page.about-site about-site:
+
+-- ds.row:
+width.fixed.px: 1152
+radius: $ds.radius.medium
+inset: $ds.spaces.inset-square.medium
+border: $ds.borders.uniform.small
+spacing: $ds.spaces.horizontal-gap.space-between
+background.solid: $ds.colors.background.step-1
+align-content: top-left
+
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.large
+	align-content: top-left
+
+	-- ds.icon-button: $site-domain.about-site.domain-url
+	icon: $assets.files.assets.link.svg
+	link: $site-domain.about-site.url
+	icon-position: at-end
+	kind: tertiary
+	size: small
+
+	-- ds.icon-button: $site-domain.about-site.domain-url
+	icon: $assets.files.assets.link.svg
+	link: $site-domain.about-site.url
+	icon-position: at-end
+	kind: tertiary
+	size: small
+
+	-- end: ds.column
+
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.large
+	align-content: right
+
+	-- ds.secondary-button: Primary Link
+	variant: outline
+	radius: curved
+
+	-- ds.danger-button: Delete Domain
+	radius: curved
+		
+	-- end: ds.row
+
+	-- end: ds.row
+
+-- end: site-domain

@@ -10,13 +10,21 @@ string created-on:
 string last-updated-on:
 optional ftd.image-src placeholder-image:
 
+-- record domain:
+string domain:
+string domain-with-host:
+optional string primary-text:
+boolean is-primary: false
+optional string run-checks:
+optional string redirect:
+boolean redirect-link: false
 
 
 -- record toc-data:
 caption name:
 string full-name: $toc-data.name
 optional string link:
-optional boolean is-active: false
+optional boolean is-active:
 optional ftd.image-src icon:
 toc-data list children:
 
