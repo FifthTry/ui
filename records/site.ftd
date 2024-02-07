@@ -13,11 +13,13 @@ optional ftd.image-src placeholder-image:
 -- record domain:
 string domain:
 string domain-with-host:
-optional string primary-text:
-boolean is-primary: false
-optional string run-checks:
-optional string redirect:
-boolean redirect-link: false
+string primary-domain:
+string primary-domain-with-host:
+boolean is-primary:
+string dns-status:
+string ssl-status:
+string last-updated:
+string created-at:
 
 
 -- record toc-data:

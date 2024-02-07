@@ -5,7 +5,7 @@
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 sr.toc-data list header-links: $header-links
 site-editor-data data:
 string site:

@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/components/slides/page-with-sidebar
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/actions/slides/create-template-presentation
 
@@ -18,7 +19,7 @@ string team-avatar:
 string list slides:
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 module create-template-presentation: create-template-presentation
 template-data data:
 string cta-text:

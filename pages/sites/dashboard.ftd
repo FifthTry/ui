@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/components/sites/show-site-info
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 
 
@@ -20,7 +21,7 @@ optional ftd.image-src placeholder-image:
 
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 dashboard-data data:
 
 -- p.page:

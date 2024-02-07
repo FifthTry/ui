@@ -1,4 +1,9 @@
--- boolean is-logged-in: false
--- string name: $ftd.empty
--- string email: $ftd.empty
--- string username: $ftd.empty
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/user-data
+
+
+-- ud.user-data user:
+notifications: 0
+username: $ftd.empty
+name: $ftd.empty
+is-logged-in: false

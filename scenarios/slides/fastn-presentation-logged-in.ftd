@@ -3,7 +3,7 @@
 
 
 -- presentation.page:
-user-data: john-doe
+user-data: $john-doe.jd
 data: $data
 team-slug: fifthtry
 order: 1

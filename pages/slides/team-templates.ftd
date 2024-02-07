@@ -11,7 +11,7 @@ template list templates:
 string team-name:
 
 -- component page:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 template-data data:
 
 -- page-with-sidebar.page:

@@ -5,7 +5,7 @@
 -- dashboard.page:
 folders: $folders
 data: $data
-user-data: john-doe
+user-data: $john-doe.jd
 add-presentation-url: slides/scenarios/logged-in-templates/
 
 

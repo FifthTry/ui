@@ -3,9 +3,9 @@
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
--- site-domain.page: Domain
+-- site-domain.page:
 data: $data
-user-data: john-doe
+user-data: $john-doe.jd
 
 
 -- site-domain.site-domain-data data:
@@ -15,9 +15,10 @@ all-domains: $all-domains
 -- sr.domain all-domains:
 domain: fastn.com
 domain-with-host: fastn.com
+primary-domain: fastn.com
+primary-domain-with-host: fastn.com
 is-primary: true
-primary-text: Primary link
-run-checks: All the test run successfuly
-redirects: Created on 14th Feb
-redirect: Redirects to
-redirect-link: false
+dns-status: Verified
+ssl-status: Verified
+last-updated: Just now
+created-at: Just now

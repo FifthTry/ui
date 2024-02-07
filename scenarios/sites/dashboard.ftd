@@ -4,7 +4,7 @@
 
 -- dashboard.page:
 data: $data
-user-data: john-doe
+user-data: $john-doe.jd
 
 -- end: dashboard.page
 

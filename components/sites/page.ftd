@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/footer
@@ -7,7 +8,7 @@
 
 -- component page:
 module site-data: site-data
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 children children:
 optional caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero
@@ -15,6 +16,7 @@ ds.flush flush: full
 ftd.align align-content: top-left
 boolean show-header: true
 boolean show-header-links: true
+sr.toc-data list header-links:
 
 -- ds.page: $page.title
 
@@ -29,7 +31,7 @@ boolean show-header-links: true
 		
 		-- h.header:
 		if: { page.show-header-links }
-		toc-list: $sr.toc-list-data
+		toc-list: $page.header-links
 		
 	-- end: ds.column
 

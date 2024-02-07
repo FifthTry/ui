@@ -1,7 +1,8 @@
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 
 -- component avatar:
-module user-data: user-data
+ud.user-data user-data: $user-data.user
 
 -- ds.circle-text-button: $get-initials(name=$avatar.user-data.name)
 

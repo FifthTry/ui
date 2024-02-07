@@ -1,0 +1,5 @@
+-- record user-data:
+integer notifications:
+string username:
+string name:
+boolean is-logged-in:

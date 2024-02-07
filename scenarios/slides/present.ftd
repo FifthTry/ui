@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 -- present.page:
-user-data: john-doe
+user-data: $john-doe.jd
 data: $data
 team-slug: fifthtry
 presentation-slug: fifthtry-presentation
