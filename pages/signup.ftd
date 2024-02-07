@@ -39,115 +39,115 @@ background.solid: $ds.colors.background.step-1
 		width.fixed.px: 89
 		height.fixed.px: 33
 		fit: cover
-
+		
 		-- ds.heading-small: $lang.signup
 		width: hug-content
 		
 		-- ds.column:
 		width.fixed.px: 342
-
-			-- ds.column:
-			spacing: $ds.spaces.vertical-gap.extra-extra-small
-			align-content: left
-
-			-- ds.copy-small: Username
 		
-			-- ftd.text-input:
-			width: fill-container
-			type: text
-			$on-input$: $ftd.set-string($a = $page.current-name, v = $VALUE)
-			height.fixed.px: 40
-			border-radius.px: 8
-			placeholder: username
-			background.solid: transparent
-			border-width.px: 1
-			border-color: $inherited.colors.border
-			padding.px: 8
-			color: $inherited.colors.text-strong
-			
-		-- end: ds.column
-
 			-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
-
-			-- ds.copy-small: Email
-
-			-- ftd.text-input:
-			placeholder: Enter email
-			type: email
-			$on-input$: $ftd.set-string($a = $page.current-email, v = $VALUE)
-			width: fill-container
-			height.fixed.px: 40
-			border-radius.px: 8
-			background.solid: transparent
-			border-width.px: 1
-			border-color: $inherited.colors.border
-			padding.px: 8
-			color: $inherited.colors.text-strong
 			
-			-- ftd.text: $page.signup-action.email-error
-			if: { page.signup-action.email-error != NULL }
-			color: red
-			role: $inherited.types.copy-small
-
+				-- ds.copy-small: Username
+				
+				-- ftd.text-input:
+				width: fill-container
+				type: text
+				$on-input$: $ftd.set-string($a = $page.current-name, v = $VALUE)
+				height.fixed.px: 40
+				border-radius.px: 8
+				placeholder: username
+				background.solid: transparent
+				border-width.px: 1
+				border-color: $inherited.colors.border
+				padding.px: 8
+				color: $inherited.colors.text-strong
+				
 			-- end: ds.column
 
 			-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
-
-			-- ds.copy-small: Password
 			
-			-- ftd.text-input:
-			placeholder: Enter password
-			type: password
-			$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
-			width: fill-container
-			height.fixed.px: 40
-			border-radius.px: 8
-			background.solid: transparent
-			border-width.px: 1
-			border-color: $inherited.colors.border
-			padding.px: 8
-			color: $inherited.colors.text-strong
-			
-			-- ftd.text: $page.signup-action.username-error
-			if: { page.signup-action.username-error != NULL }
-			color: red
-			role: $inherited.types.copy-small
-
+				-- ds.copy-small: Email
+				
+				-- ftd.text-input:
+				placeholder: Enter email
+				type: email
+				$on-input$: $ftd.set-string($a = $page.current-email, v = $VALUE)
+				width: fill-container
+				height.fixed.px: 40
+				border-radius.px: 8
+				background.solid: transparent
+				border-width.px: 1
+				border-color: $inherited.colors.border
+				padding.px: 8
+				color: $inherited.colors.text-strong
+				
+				-- ftd.text: $page.signup-action.email-error
+				if: { page.signup-action.email-error != NULL }
+				color: red
+				role: $inherited.types.copy-small
+				
 			-- end: ds.column
 
 			-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
-
-			-- ds.copy-small: Confirm Password
 			
-			-- ftd.text-input:
-			placeholder: Confirm password
-			type: password
-			$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
-			width: fill-container
-			height.fixed.px: 40
-			border-radius.px: 8
-			background.solid: transparent
-			border-width.px: 1
-			border-color: $inherited.colors.border
-			padding.px: 8
-			color: $inherited.colors.text-strong
-
+				-- ds.copy-small: Password
+				
+				-- ftd.text-input:
+				placeholder: Enter password
+				type: password
+				$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
+				width: fill-container
+				height.fixed.px: 40
+				border-radius.px: 8
+				background.solid: transparent
+				border-width.px: 1
+				border-color: $inherited.colors.border
+				padding.px: 8
+				color: $inherited.colors.text-strong
+				
+				-- ftd.text: $page.signup-action.username-error
+				if: { page.signup-action.username-error != NULL }
+				color: red
+				role: $inherited.types.copy-small
+				
 			-- end: ds.column
+
+			-- ds.column:
+			spacing: $ds.spaces.vertical-gap.extra-extra-small
+			align-content: left
 			
+				-- ds.copy-small: Confirm Password
+				
+				-- ftd.text-input:
+				placeholder: Confirm password
+				type: password
+				$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
+				width: fill-container
+				height.fixed.px: 40
+				border-radius.px: 8
+				background.solid: transparent
+				border-width.px: 1
+				border-color: $inherited.colors.border
+				padding.px: 8
+				color: $inherited.colors.text-strong
+				
+			-- end: ds.column
+
 			-- ds.checkbox: I accept Terms and Conditions
 			size: small
-
+			
 			-- ds.primary-button: Sign up
 			$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password)
 			width: full
 			radius: curved
-
+			
 			-- ds.row:
 			spacing: $ds.spaces.horizontal-gap.extra-small
 			align-content: center
@@ -166,24 +166,24 @@ background.solid: $ds.colors.background.step-1
 				
 			-- end: ds.row
 
-		-- ds.row:
-		spacing: $ds.spaces.horizontal-gap.medium
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.medium
+			
+				-- ds.row:
+				width.fixed.px: 111
+				border: $ds.borders.top.small
+				
+				-- end: ds.row
 
-		-- ds.row:
-		width.fixed.px: 111
-		border: $ds.borders.top.small
+				-- ds.copy-small: Or login using
+				
+				-- ds.row:
+				width.fixed.px: 111
+				border: $ds.borders.top.small
+				
+				-- end: ds.row
 
-		-- end: ds.row
-
-		-- ds.copy-small: Or login using
-
-		-- ds.row:
-		width.fixed.px: 111
-		border: $ds.borders.top.small
-
-		-- end: ds.row
-
-		-- end: ds.row
+			-- end: ds.row
 
 			-- ds.icon-button: Continue with Github
 			icon: $assets.files.assets.github-mark-white.svg
@@ -191,7 +191,7 @@ background.solid: $ds.colors.background.step-1
 			kind: secondary
 			variant: outline
 			width: full
-
+			
 		-- end: ds.column
 
 	-- end: ds.column
@@ -199,4 +199,3 @@ background.solid: $ds.colors.background.step-1
 -- end: ds.row
 
 -- end: page
-

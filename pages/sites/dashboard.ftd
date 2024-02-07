@@ -34,27 +34,27 @@ show-header-links: false
 	spacing: $ds.spaces.vertical-gap.large
 	border: $ds.borders.top.small
 	radius: $ds.radius.zero
-
-	-- ds.row:
-	align-content: top-left
-	spacing: $ds.spaces.horizontal-gap.space-between
-	inset: $ds.spaces.inset-tall.zero-small
 	
-		-- ds.heading-small: All Sites
-
 		-- ds.row:
-		align-content: top-right
-		spacing: $ds.spaces.horizontal-gap.medium
+		align-content: top-left
+		spacing: $ds.spaces.horizontal-gap.space-between
+		inset: $ds.spaces.inset-tall.zero-small
+		
+			-- ds.heading-small: All Sites
+			
+			-- ds.row:
+			align-content: top-right
+			spacing: $ds.spaces.horizontal-gap.medium
+			
+				-- ds.icon-button: Create new site
+				link: $page.data.create-site-url
+				kind: primary
+				icon-position: at-end
+				icon: $assets.files.assets.sites.add.svg
+				
+			-- end: ds.row
 
-		-- ds.icon-button: Create new site
-		link: $page.data.create-site-url
-		kind: primary
-		icon-position: at-end
-		icon: $assets.files.assets.sites.add.svg
-
-	-- end: ds.row
-	
-	-- end: ds.row
+		-- end: ds.row
 
 		-- show-site-info.show-site-info: $s
 		for: s in $page.data.sites

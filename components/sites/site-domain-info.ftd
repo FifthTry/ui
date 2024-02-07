@@ -15,36 +15,36 @@ align-content: top-left
 	-- ds.column:
 	spacing: $ds.spaces.vertical-gap.large
 	align-content: top-left
-
-	-- ds.icon-button: $site-domain.about-site.domain-url
-	icon: $assets.files.assets.link.svg
-	link: $site-domain.about-site.url
-	icon-position: at-end
-	kind: tertiary
-	size: small
-
-	-- ds.icon-button: $site-domain.about-site.domain-url
-	icon: $assets.files.assets.link.svg
-	link: $site-domain.about-site.url
-	icon-position: at-end
-	kind: tertiary
-	size: small
-
+	
+		-- ds.icon-button: $site-domain.about-site.domain-url
+		icon: $assets.files.assets.link.svg
+		link: $site-domain.about-site.url
+		icon-position: at-end
+		kind: tertiary
+		size: small
+		
+		-- ds.icon-button: $site-domain.about-site.domain-url
+		icon: $assets.files.assets.link.svg
+		link: $site-domain.about-site.url
+		icon-position: at-end
+		kind: tertiary
+		size: small
+		
 	-- end: ds.column
 
 	-- ds.row:
 	spacing: $ds.spaces.horizontal-gap.large
 	align-content: right
-
-	-- ds.secondary-button: Primary Link
-	variant: outline
-	radius: curved
-
-	-- ds.danger-button: Delete Domain
-	radius: curved
+	
+		-- ds.secondary-button: Primary Link
+		variant: outline
+		radius: curved
+		
+		-- ds.danger-button: Delete Domain
+		radius: curved
 		
 	-- end: ds.row
 
-	-- end: ds.row
+-- end: ds.row
 
 -- end: site-domain

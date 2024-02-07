@@ -21,16 +21,16 @@ boolean show-header-links: true
 	-- ds.column:
 	inset: $ds.spaces.inset-square.zero
 	if: { page.show-header }
-
-	-- h.header-with-logo:
-	toc-list: []
-	site-logo: $assets.files.assets.fifthtry-logo.svg
-	user-data: $page.user-data
-
-	-- h.header:
-	if: { page.show-header-links }
-	toc-list: $sr.toc-list-data
-
+	
+		-- h.header-with-logo:
+		toc-list: []
+		site-logo: $assets.files.assets.fifthtry-logo.svg
+		user-data: $page.user-data
+		
+		-- h.header:
+		if: { page.show-header-links }
+		toc-list: $sr.toc-list-data
+		
 	-- end: ds.column
 
 	-- ds.column:

@@ -38,57 +38,57 @@ background.solid: $ds.colors.background.step-1
 		
 		-- ds.column:
 		width.fixed.px: 342
-
+		
 			-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
-
-			-- ds.copy-small: Username
-		
-			-- ftd.text-input:
-			placeholder: Enter username
-			type: text
-			$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
-			width: fill-container
-			height.fixed.px: 40
-			border-radius.px: 8
-			background.solid: transparent
-			border-width.px: 1
-			border-color: $inherited.colors.border
-			padding.px: 8
-			color: $inherited.colors.text-strong
-
-			-- ftd.text: $page.authenticate-user.username-error
-			if: { page.authenticate-user.username-error != NULL }
-			color: red
-			role: $inherited.types.copy-small
 			
+				-- ds.copy-small: Username
+				
+				-- ftd.text-input:
+				placeholder: Enter username
+				type: text
+				$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
+				width: fill-container
+				height.fixed.px: 40
+				border-radius.px: 8
+				background.solid: transparent
+				border-width.px: 1
+				border-color: $inherited.colors.border
+				padding.px: 8
+				color: $inherited.colors.text-strong
+				
+				-- ftd.text: $page.authenticate-user.username-error
+				if: { page.authenticate-user.username-error != NULL }
+				color: red
+				role: $inherited.types.copy-small
+				
 			-- end: ds.column
 
 			-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
-
-			-- ds.copy-small: Password
-
-			-- ftd.text-input:
-			placeholder: Enter password
-			type: password
-			$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
-			width: fill-container
-			height.fixed.px: 40
-			border-radius.px: 8
-			background.solid: transparent
-			border-width.px: 1
-			border-color: $inherited.colors.border
-			padding.px: 8
-			color: $inherited.colors.text-strong
 			
-			-- ftd.text: $page.authenticate-user.password-error
-			if: { page.authenticate-user.password-error != NULL }
-			color: red
-			role: $inherited.types.copy-small
-
+				-- ds.copy-small: Password
+				
+				-- ftd.text-input:
+				placeholder: Enter password
+				type: password
+				$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
+				width: fill-container
+				height.fixed.px: 40
+				border-radius.px: 8
+				background.solid: transparent
+				border-width.px: 1
+				border-color: $inherited.colors.border
+				padding.px: 8
+				color: $inherited.colors.text-strong
+				
+				-- ftd.text: $page.authenticate-user.password-error
+				if: { page.authenticate-user.password-error != NULL }
+				color: red
+				role: $inherited.types.copy-small
+				
 			-- end: ds.column
 
 			-- ds.checkbox: I accept Terms and Conditions
@@ -98,7 +98,7 @@ background.solid: $ds.colors.background.step-1
 			$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
 			width: full
 			radius: curved
-
+			
 			-- ds.row:
 			spacing: $ds.spaces.vertical-gap.small
 			inset: $ds.spaces.inset-square.small
@@ -113,40 +113,40 @@ background.solid: $ds.colors.background.step-1
 				link: /
 				
 			-- end: ds.row
+
+			-- ds.column:
+			spacing: $ds.spaces.vertical-gap.medium
 			
-		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.medium
+				-- ds.row:
+				spacing: $ds.spaces.horizontal-gap.medium
+				
+					-- ds.row:
+					width.fixed.px: 111
+					border: $ds.borders.top.small
+					
+					-- end: ds.row
 
-		-- ds.row:
-		spacing: $ds.spaces.horizontal-gap.medium
+					-- ds.copy-small: Or login using
+					
+					-- ds.row:
+					width.fixed.px: 111
+					border: $ds.borders.top.small
+					
+					-- end: ds.row
 
-		-- ds.row:
-		width.fixed.px: 111
-		border: $ds.borders.top.small
+				-- end: ds.row
 
-		-- end: ds.row
-
-		-- ds.copy-small: Or login using
-
-		-- ds.row:
-		width.fixed.px: 111
-		border: $ds.borders.top.small
-
-		-- end: ds.row
-
-		-- end: ds.row
-
-			-- ds.icon-button: Continue with Github
-			icon: $assets.files.assets.github-mark-white.svg
-			link: $page.github-url
-			kind: secondary
-			variant: outline
-			width: full
-
-			-- ds.link: I forgot my password
-			link: $page.forgot-url
-
-		-- end: ds.column
+				-- ds.icon-button: Continue with Github
+				icon: $assets.files.assets.github-mark-white.svg
+				link: $page.github-url
+				kind: secondary
+				variant: outline
+				width: full
+				
+				-- ds.link: I forgot my password
+				link: $page.forgot-url
+				
+			-- end: ds.column
 
 
 		-- end: ds.column

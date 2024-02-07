@@ -10,6 +10,10 @@ These are list of products/websites hosted by FifthTry.
 - [Logged out Home page](/scenarios/logged-out-home/)
 - [Logged In About page](/scenarios/about/logged-in-about/)
 - [Logged In Team page](/scenarios/about/logged-in-team/)
+- [Login page](/scenarios/signin-page/)
+- [Signup page](/scenarios/signup-page/)
+- [Forgot Password page](/scenarios/forgot-password/)
+- [Password Recovery page](/scenarios/password-recovery/)
 
 -- lib.h1: Sites Scenarios
 
@@ -18,10 +22,6 @@ These are list of products/websites hosted by FifthTry.
 - [Site Info](/scenarios/sites/site-info/)
 - [Site Domain](/scenarios/sites/site-domain/)
 - [Site Editor](/scenarios/sites/site-editor/)
-- [Signin](/scenarios/sites/signin-page/)
-- [Signup](/scenarios/sites/signup-page/)
-- [Forgot Password](/scenarios/sites/forgot-password/)
-- [Password Recovery](/scenarios/sites/password-recovery/)
 
 
 -- lib.h1: Slides Scenarios
