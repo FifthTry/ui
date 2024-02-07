@@ -15,6 +15,7 @@ ds.flush flush: full
 ftd.align align-content: top-left
 boolean show-header: true
 boolean show-header-links: true
+sr.toc-data list header-links:
 
 -- ds.page: $page.title
 
@@ -29,7 +30,7 @@ boolean show-header-links: true
 		
 		-- h.header:
 		if: { page.show-header-links }
-		toc-list: $sr.toc-list-data
+		toc-list: $page.header-links
 		
 	-- end: ds.column
 

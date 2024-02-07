@@ -32,6 +32,26 @@ align-content: top-center
 	spacing: $ds.spaces.vertical-gap.extra-extra-small
 	align-content: left
 
+	-- ds.copy-small: Github Account
+
+	-- ftd.text-input:
+	placeholder: Github account name
+	type: text
+	width: fill-container
+	height.fixed.px: 40
+	border-radius.px: 8
+	background.solid: transparent
+	border-width.px: 1
+	border-color: $inherited.colors.border
+	padding.px: 8
+	color: $inherited.colors.text-strong
+
+	-- end: ds.column
+
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.extra-extra-small
+	align-content: left
+
 	-- ds.copy-small: Repo
 
 	-- ftd.text-input:

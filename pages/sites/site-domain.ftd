@@ -21,6 +21,7 @@ site-domain-data data:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
+header-links: $sr.domain-toc
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large

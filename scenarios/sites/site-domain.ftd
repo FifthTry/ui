@@ -3,7 +3,7 @@
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
--- site-domain.page: Domain
+-- site-domain.page: Domains
 data: $data
 user-data: john-doe
 

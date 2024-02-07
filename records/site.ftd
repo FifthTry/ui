@@ -35,16 +35,52 @@ body content:
 
 
 
--- toc-data list toc-list-data:
+-- toc-data list about-toc:
 
 -- toc-data: About
 link: /scenarios/sites/site-info/
 is-active: true
 
--- toc-data: Domain
+-- toc-data: Domains
 link: /scenarios/sites/site-domain/
 
 -- toc-data: Github
 link: /scenarios/sites/github/
 
--- end: toc-list-data
+-- end: about-toc
+
+
+
+-- toc-data list domain-toc:
+
+-- toc-data: About
+link: /scenarios/sites/site-info/
+
+-- toc-data: Domains
+link: /scenarios/sites/site-domain/
+is-active: true
+
+-- toc-data: Github
+link: /scenarios/sites/github/
+
+-- end: domain-toc
+
+
+
+-- toc-data list github-toc:
+
+-- toc-data: About
+link: /scenarios/sites/site-info/
+
+-- toc-data: Domains
+link: /scenarios/sites/site-domain/
+
+-- toc-data: Github
+link: /scenarios/sites/github/
+is-active: true
+
+-- end: github-toc
+
+
+
+

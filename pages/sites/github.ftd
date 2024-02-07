@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/records/site as sr
 
 
 
@@ -12,6 +13,7 @@ module user-data: user-data
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
+header-links: $sr.github-toc
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
@@ -47,7 +49,7 @@ align-content: top-center
 	You have not yet configured Github for **fastn.com**
 
 	-- ds.secondary-button: Configure Now
-	link: /scenarios/sites/github-detail/
+	link: /scenarios/sites/configure-github/
 	variant: outline
 	radius: curved
 

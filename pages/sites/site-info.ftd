@@ -24,6 +24,7 @@ site-info-data data:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
+header-links: $sr.about-toc
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large

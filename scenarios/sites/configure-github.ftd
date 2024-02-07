@@ -1,0 +1,7 @@
+-- import: ui.fifthtry.com/pages/sites/configure-github
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- configure-github.page: Github
+user-data: john-doe
+
