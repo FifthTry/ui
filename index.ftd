@@ -20,6 +20,8 @@ These are list of products/websites hosted by FifthTry.
 - [Site Editor](/scenarios/sites/site-editor/)
 - [Signin](/scenarios/sites/signin-page/)
 - [Signup](/scenarios/sites/signup-page/)
+- [Forgot Password](/scenarios/sites/forgot-password/)
+- [Password Recovery](/scenarios/sites/password-recovery/)
 
 
 -- lib.h1: Slides Scenarios
