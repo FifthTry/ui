@@ -4,3 +4,4 @@
 -- signin.page:
 github-url: /
 signup-url: scenarios/sites/signup-page/
+forgot-url: scenarios/sites/forgot-password/
