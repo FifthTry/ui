@@ -210,20 +210,32 @@ string org-slug:
 module add-domain: add-domain
 
 -- ds.row:
+width: fill-container
 align-content: left
-width: hug-content
+spacing: $ds.spaces.horizontal-gap.large
 
 -- ftd.text-input:
-width.fixed.px: 300
-padding.px: 5
+width.fixed.px: 950
+background.solid: $ds.colors.background.step-1
+border-width.px: 1
+padding.px: 8
+height.fixed.px: 40
+border-radius.px: 8
+border-color: $ds.colors.border
 placeholder: Enter new domain
 $on-input$: $ftd.set-string($a = $domain-input.current-domain, v = $VALUE)
 border-width.px: 1
 border-color: $ds.colors.border
 
--- ds.primary-button: Add
+-- ds.row:
+align-content: right
+width.fixed.px: 150
+
+-- ds.primary-button: Add Domain
 radius: curved
 $on-click$: $domain-input.add-domain.submit(org_slug=$domain-input.org-slug, site_slug=$domain-input.site-slug, domain=$domain-input.current-domain)
+
+-- end: ds.row
 
 -- end: ds.row
 

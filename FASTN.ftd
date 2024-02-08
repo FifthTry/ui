@@ -3,7 +3,7 @@
 -- fastn.package: ui.fifthtry.com
 favicon: /-/fifthtry.github.io/ui/favicon.ico
 zip: https://codeload.github.com/fifthtry/ui/zip/refs/heads/main
-default-language: hi
+default-language: en
 translation-en: ui.fifthtry.com/i18n/en
 translation-hi: ui.fifthtry.com/i18n/hi
 

@@ -17,7 +17,7 @@ border-color: $inherited.colors.border
 background.solid: $inherited.colors.background.step-1
 padding.px: 8
 
-	-- ds.circle-text-button: $get-initials(name=$avatar.user-data.name)
+	-- ds.circle-text-button: $get-initials(name=$avatar.user-data.username)
 	
 	-- ftd.image:
 	src: $assets.files.assets.slides.toggle-down.svg
@@ -64,7 +64,7 @@ padding.px: 8
 	border-bottom-width.px: 1
 	border-color: $inherited.colors.border
 	
-		-- ds.circle-text-button: $get-initials(name=$popup.user-data.name)
+		-- ds.circle-text-button: $get-initials(name=$popup.user-data.username)
 		
 		-- ftd.text: $popup.user-data.name
 		role: $inherited.types.button-medium

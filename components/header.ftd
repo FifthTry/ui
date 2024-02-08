@@ -1,8 +1,9 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
--- import: ui.fifthtry.com/components/slides/avatar
+-- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
+
 
 -- component header:
 module site-data: site-data
@@ -14,13 +15,13 @@ optional boolean $sidebar: false
 -- ds.section-row:
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.medium
+inset: $ds.spaces.inset-square.large
 margin: $header.margin
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
 	link: $header.site-data.homepage
-	
+
 	-- ds.row:
 	width: hug-content
 	
@@ -35,8 +36,8 @@ margin: $header.margin
 		-- language-switcher.dropdown:
 		
 		-- avatar.avatar:
-		user-data: $header.user-data
 		if: { header.user-data.is-logged-in }
+		user-data: $header.user-data
 		
 		-- ds.header-link: $lang.sign-in
 		if: { !header.user-data.is-logged-in }
