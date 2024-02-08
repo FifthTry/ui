@@ -50,9 +50,8 @@ header-links: $page.data.header-links
 
 	$github-message(domain = $page.data.site-domain)
 
-	-- ds.secondary-button: Configure Now
+	-- ds.primary-button: Configure Now
 	link: $page.data.configure-url
-	variant: outline
 	radius: curved
 
 	-- end: ds.row
