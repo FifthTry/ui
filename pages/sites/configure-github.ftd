@@ -3,12 +3,21 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/actions/sites/github/configure
 
+
+-- record configure-github-data:
+string org-slug:
+string site-slug:
 
 
 -- component page:
-caption title:
 ud.user-data user-data: $user-data.user
+configure-github-data data:
+optional string $github-org:
+optional string $github-repo-name:
+optional string $github-repo-branch:
+module configure: configure
 
 -- p.page:
 site-data: site-data
@@ -20,7 +29,7 @@ header-links: $sr.github-toc
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 
-	-- ds.heading-small: $page.title
+	-- ds.heading-small: Github
 
 	-- ds.column:
 	width.fixed.px: 508
@@ -35,10 +44,10 @@ header-links: $sr.github-toc
 	spacing: $ds.spaces.vertical-gap.extra-extra-small
 	align-content: left
 
-	-- ds.copy-small: Github Account
+	-- ds.copy-small: Github Organization
 
 	-- ftd.text-input:
-	placeholder: Github account name
+	placeholder: Github organization name
 	type: text
 	width: fill-container
 	height.fixed.px: 40
@@ -48,6 +57,7 @@ header-links: $sr.github-toc
 	border-color: $inherited.colors.border
 	padding.px: 8
 	color: $inherited.colors.text-strong
+	$on-input$: $ftd.set-string($a = $page.github-org, v = $VALUE)
 
 	-- end: ds.column
 
@@ -55,10 +65,10 @@ header-links: $sr.github-toc
 	spacing: $ds.spaces.vertical-gap.extra-extra-small
 	align-content: left
 
-	-- ds.copy-small: Repo
+	-- ds.copy-small: Github Repo name
 
 	-- ftd.text-input:
-	placeholder: Repo name
+	placeholder: Github Repo name
 	type: text
 	width: fill-container
 	height.fixed.px: 40
@@ -68,6 +78,7 @@ header-links: $sr.github-toc
 	border-color: $inherited.colors.border
 	padding.px: 8
 	color: $inherited.colors.text-strong
+	$on-input$: $ftd.set-string($a = $page.github-repo-name, v = $VALUE)
 
 	-- end: ds.column
 
@@ -78,7 +89,7 @@ header-links: $sr.github-toc
 	-- ds.copy-small: Branch
 
 	-- ftd.text-input:
-	placeholder: Branch name
+	placeholder: Github Repo Branch
 	type: text
 	width: fill-container
 	height.fixed.px: 40
@@ -88,6 +99,7 @@ header-links: $sr.github-toc
 	border-color: $inherited.colors.border
 	padding.px: 8
 	color: $inherited.colors.text-strong
+	$on-input$: $ftd.set-string($a = $page.github-repo-branch, v = $VALUE)
 
 	-- end: ds.column
 
@@ -105,7 +117,7 @@ header-links: $sr.github-toc
 	-- ds.primary-button: Save
 	width: full
 	radius: curved
-	link: /scenarios/sites/repo-detail/
+	$on-click$: $page.configure.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
 
 	-- end: ds.column
 

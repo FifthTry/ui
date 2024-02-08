@@ -14,3 +14,5 @@ account: FifthTry
 repo: ft
 branch: main
 is-configured: true
+configure-url: /scenarios/sites/configure-github/
+site-domain: fastn.com

@@ -48,10 +48,10 @@ header-links: $page.data.header-links
 
 	-- ds.copy-large:
 
-	You have not yet configured Github for **fastn.com**
+	$github-message(domain = $page.data.site-domain)
 
 	-- ds.secondary-button: Configure Now
-	link: /scenarios/sites/configure-github/
+	link: $page.data.configure-url
 	variant: outline
 	radius: curved
 
@@ -64,3 +64,11 @@ header-links: $page.data.header-links
 -- end: p.page
 
 -- end: page
+
+
+
+
+-- string github-message(domain):
+string domain:
+
+"You have not yet configured Github for " + domain

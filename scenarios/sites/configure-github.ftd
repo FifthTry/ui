@@ -2,5 +2,10 @@
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
--- configure-github.page: Github
+-- configure-github.page:
 user-data: $john-doe.jd
+data: $data
+
+-- configure-github.configure-github-data data:
+site-slug: fifthtry
+org-slug: fifthtry

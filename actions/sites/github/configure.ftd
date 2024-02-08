@@ -1,0 +1,11 @@
+-- optional string $configure-github-error:
+
+-- void submit(org_slug, site_slug, github_org, github_repo_name, github_repo_branch):
+string org_slug:
+string site_slug:
+string github_org:
+string github_repo_name:
+string github_repo_branch:
+js: $assets.files.assets.functions.js
+
+callAlert("Configuring github")
