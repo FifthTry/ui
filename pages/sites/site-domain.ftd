@@ -10,7 +10,7 @@
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
 -- import: ui.fifthtry.com/user-data
-
+-- import: ui.fifthtry.com/components/sites/utils as u
 
 -- record site-domain-data:
 string site-slug:
@@ -37,6 +37,11 @@ header-links: $page.data.header-links
 	spacing: $ds.spaces.vertical-gap.large
 	
 		-- ds.heading-small: Domains
+
+        -- ds.primary-button: Go Back To Dashboard
+        link: $u.dashboard-url(org_slug=$page.data.org-slug)
+        size: small
+        radius: curved
 
 		-- ds.row:
 		align-content: left

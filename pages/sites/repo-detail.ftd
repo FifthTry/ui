@@ -4,7 +4,7 @@
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/records/site as sr
 -- import: ui.fifthtry.com/actions/sites/github/remove-github-access
-
+-- import: ui.fifthtry.com/components/sites/utils as u
 
 
 -- component page:
@@ -24,6 +24,11 @@ header-links: $page.data.header-links
 	spacing: $ds.spaces.vertical-gap.large
 
 	-- ds.heading-small: Github
+
+    -- ds.primary-button: Go Back To Dashboard
+    link: $u.dashboard-url(org_slug=$page.data.org-slug)
+    size: small
+    radius: curved
 
 	-- ds.column:
 	width.fixed.px: 1152

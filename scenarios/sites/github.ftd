@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/records/site as sr
 
--- github.page: Github
+-- github.page:
 user-data: $john-doe.jd
 data: $data
 

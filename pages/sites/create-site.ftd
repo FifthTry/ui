@@ -4,9 +4,12 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/actions/sites/create
+-- import: ui.fifthtry.com/components/sites/utils as u
 
 -- record create-site-data:
 string org-slug:
+
+
 
 -- component page:
 ud.user-data user-data: $user-data.user
@@ -26,6 +29,11 @@ show-header: false
 	border: $ds.borders.uniform.small
 	inset: $ds.spaces.inset-square.extra-large
 	spacing: $ds.spaces.vertical-gap.large
+
+	    -- ds.primary-button: Go Back To Dashboard
+        link: $u.dashboard-url(org_slug=$page.data.org-slug)
+        size: small
+        radius: curved
 	
 		-- ds.heading-small: Create new site
 		width: hug-content
@@ -71,6 +79,10 @@ show-header: false
 		width: full
 		radius: curved
 		$on-click$: $page.create-site.submit(org_slug = $page.data.org-slug, site_name = $page.current-site-name)
+
+		-- ftd.text: $page.create-site.create-site-error
+		color: red
+		if: { page.create-site.create-site-error != NULL }
 		
 	-- end: ds.column
 
