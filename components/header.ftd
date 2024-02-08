@@ -4,6 +4,7 @@
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
 
+
 -- component header:
 module site-data: site-data
 ud.user-data user-data: $user-data.user
@@ -14,13 +15,13 @@ optional boolean $sidebar: false
 -- ds.section-row:
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.medium
+inset: $ds.spaces.inset-square.large
 margin: $header.margin
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
 	link: $header.site-data.homepage
-	
+
 	-- ds.row:
 	width: hug-content
 	
