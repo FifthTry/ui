@@ -10,9 +10,9 @@
 -- component page:
 ud.user-data user-data: $user-data.user
 sr.gh-oidc-data data:
-optional string $github-org:
-optional string $github-repo-name:
-optional string $github-repo-branch:
+string $github-org: *$page.data.account
+string $github-repo-name: *$page.data.repo
+string $github-repo-branch: *$page.data.branch
 module configure: configure
 
 -- p.page:
