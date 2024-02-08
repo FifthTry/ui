@@ -7,6 +7,7 @@
 
 
 -- component page:
+sr.gh-oidc-data data:
 caption title:
 ud.user-data user-data: $user-data.user
 
@@ -14,7 +15,7 @@ ud.user-data user-data: $user-data.user
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
-header-links: $sr.github-toc
+header-links: $page.data.header-links
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large

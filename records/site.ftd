@@ -37,6 +37,15 @@ body content:
 
 
 
+-- record gh-oidc-data:
+string account:
+string repo:
+string branch:
+boolean is-configured:
+toc-data list header-links:
+
+
+
 -- toc-data list about-toc:
 
 -- toc-data: About
@@ -82,7 +91,3 @@ link: /scenarios/sites/github/
 is-active: true
 
 -- end: github-toc
-
-
-
-

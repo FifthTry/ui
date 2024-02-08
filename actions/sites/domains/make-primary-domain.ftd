@@ -1,0 +1,8 @@
+-- optional string $make-primary-domain-error:
+
+-- void submit(name, site):
+string site_slug:
+string domain:
+js: $assets.files.assets.functions.js
+
+callAlert("Making primary domain: " + domain + ", for site: " + site_slug)

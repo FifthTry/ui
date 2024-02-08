@@ -1,0 +1,8 @@
+-- optional string $delete-domain-error:
+
+-- void submit(name, site):
+string site_slug:
+string domain:
+js: $assets.files.assets.functions.js
+
+callAlert("Deleting domain: " + domain + ", for site: " + site_slug)

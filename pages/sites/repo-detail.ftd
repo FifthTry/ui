@@ -7,20 +7,21 @@
 
 
 -- component page:
-caption title:
+sr.gh-oidc-data data:
+string domain:
 ud.user-data user-data: $user-data.user
 
 -- p.page:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
-header-links: $sr.github-toc
+header-links: $page.data.header-links
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 
-	-- ds.heading-small: $page.title
+	-- ds.heading-small: Github
 
 	-- ds.column:
 	width.fixed.px: 1152
@@ -47,7 +48,7 @@ header-links: $sr.github-toc
 
 	-- ds.copy-large:
 
-	**Repo** name on Github is allowed to update this site **fastn.com**
+    $description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.domain)
 
 	-- ds.row:
 	spacing: $ds.spaces.horizontal-gap.medium
@@ -71,3 +72,21 @@ header-links: $sr.github-toc
 -- end: p.page
 
 -- end: page
+
+
+
+-- string description(account,repo,branch,domain):
+string account:
+string repo:
+string branch:
+string domain:
+
+"**" +
+account +
+"/" +
+repo +
+"** (" +
+branch +
+") on Github is allowed to update this site **" +
+domain +
+"**"

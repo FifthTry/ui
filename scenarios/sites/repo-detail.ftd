@@ -1,6 +1,16 @@
 -- import: ui.fifthtry.com/pages/sites/repo-detail
 -- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/records/site as sr
 
 
--- repo-detail.page: Github
+-- repo-detail.page:
 user-data: $john-doe.jd
+data: $data
+domain: fastn.com
+
+
+-- sr.gh-oidc-data data:
+account: FifthTry
+repo: ft
+branch: main
+is-configured: true
