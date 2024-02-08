@@ -85,6 +85,7 @@ size: small
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.large
 align-content: left
+width: fill-container
 
 -- ds.icon-button: Primary Domain
 if: { show-site-domain.domain.is-primary }
@@ -94,25 +95,11 @@ kind: primary
 size: small
 rounded: true
 
-/-- ds.row:
-width: hug-content
-align-content: left
-spacing: $ds.spaces.horizontal-gap.small
-
--- ftd.image:
-src: $assets.files.assets.sites.check-circle.svg
-width.fixed.px: 16
-
--- ds.copy-small: All tests have run successfully
-
--- end: ds.row
-
 -- ds.row:
 width: hug-content
 spacing: $ds.spaces.horizontal-gap.small
 
 -- ds.copy-small: DNS Status:
-align: inline
 
 -- ds.copy-small: $show-site-domain.domain.dns-status
 color: $inherited.colors.text
@@ -127,7 +114,6 @@ width: hug-content
 spacing: $ds.spaces.horizontal-gap.small
 
 -- ds.copy-small: SSL Status:
-align: inline
 
 -- ds.copy-small: $show-site-domain.domain.ssl-status
 color: $inherited.colors.text
@@ -142,10 +128,6 @@ if: { !show-site-domain.domain.is-primary }
 align-content: left
 width: hug-content
 spacing: $ds.spaces.horizontal-gap.small
-
--- ftd.image:
-src: $assets.files.assets.sites.check-circle.svg
-width.fixed.px: 16
 
 -- ds.copy-small: Redirects to
 
@@ -167,6 +149,7 @@ if: { show-site-domain.domain.is-primary }
 spacing: $ds.spaces.horizontal-gap.large
 align-content: right
 inset: $ds.spaces.inset-tall.zero-medium
+width.fixed.percent: 20
 
 -- ds.danger-button: Delete Domain
 radius: curved
@@ -180,6 +163,7 @@ if: { !show-site-domain.domain.is-primary }
 spacing: $ds.spaces.horizontal-gap.large
 align-content: right
 inset: $ds.spaces.inset-tall.zero-medium
+width.fixed.percent: 40
 
 -- ds.secondary-button: Make Primary
 variant: disabled
