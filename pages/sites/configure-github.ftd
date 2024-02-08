@@ -9,6 +9,7 @@
 -- record configure-github-data:
 string org-slug:
 string site-slug:
+sr.toc-data list header-links:
 
 
 -- component page:
@@ -23,7 +24,7 @@ module configure: configure
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
-header-links: $sr.github-toc
+header-links: $page.data.header-links
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
