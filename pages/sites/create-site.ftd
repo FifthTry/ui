@@ -67,10 +67,20 @@ show-header: false
 			
 		-- end: ds.row
 
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.medium
+
 		-- ds.primary-button: Create Site
 		width: full
 		radius: curved
 		$on-click$: $page.create-site.submit(org_slug = $page.data.org-slug, site_name = $page.current-site-name)
+
+		-- ds.secondary-button: Cancel
+		width: full
+		radius: curved
+		link: /scenarios/sites/dashboard/
+
+		-- end: ds.row
 		
 	-- end: ds.column
 

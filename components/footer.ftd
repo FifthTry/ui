@@ -1,6 +1,11 @@
 -- component footer:
 
 -- ds.section-row:
+flush: full
+inset: $ds.spaces.inset-square.large
+spacing: $ds.spaces.horizontal-gap.space-between
+margin: $ds.spaces.vertical-gap.zero
+border: $ds.borders.top.small
 
 	-- ftd.image:
 	src: https://www.fifthtry.com/-/fifthtry.com/assets/images/logo-ycom-dark.svg

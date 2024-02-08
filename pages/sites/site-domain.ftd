@@ -40,11 +40,9 @@ header-links: $page.data.header-links
 
 		-- ds.row:
 		align-content: left
-		width: fill-container
-
-		-- ds.copy-regular: Add new domain
-		width: auto
-		align: inline
+		width.fixed.px: 1150
+		background.solid: $ds.colors.background.step-1
+		inset: $ds.spaces.inset-square.medium
 
 		-- sd.domain-input:
 		add-domain: $page.add-domain
