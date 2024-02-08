@@ -48,21 +48,25 @@ header-links: $page.data.header-links
 	spacing: $ds.spaces.horizontal-gap.space-between
 	background.solid: $ds.colors.background.step-1
 
-	-- ds.copy-large:
-
+	-- ds.link:
+	color: $ds.colors.text-strong
+	link: /
+	
     $description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.domain)
 
 	-- ds.row:
 	spacing: $ds.spaces.horizontal-gap.medium
 	align-content: right
-	width: hug-content
+	width.fixed.px: 278
 
 		-- ds.danger-button: Remove Access
 		radius: curved
 		$on-click$: $page.remove-github-access.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug)
+		width: full
 
 		-- ds.secondary-button: Edit
 		radius: curved
+		width: full
 		link: $page.data.configure-url
 		
 	-- end: ds.row
