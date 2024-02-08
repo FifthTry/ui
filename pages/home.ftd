@@ -12,20 +12,60 @@ module site-data: site-data
 -- p.page: FifthTry | Better way To Build Websites
 user-data: $page.user-data
 site-data: $page.site-data
-hide-footer: true
+hide-footer: false
 
--- ds.heading-hero: Build your next website with FifthTry
-width: hug-content
+-- hero: Build your next website with fifthtry
 
--- ds.copy-small: New and efficient way to build your website
-
--- ds.primary-button: Get Started
-link: signin/
-radius: curved
+new and efficient way to build you website
 	
 -- end: p.page
 
 -- end: page
+
+
+
+
+
+
+
+
+
+
+-- component hero:
+caption title:
+body body:
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+background.image: $assets.files.assets.sites.background.png 
+width.fixed.px: 1440
+height.fixed.vh: 100
+radius: $ds.radius.zero
+
+-- ds.column:
+width.fixed.px: 552
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-large: $hero.title
+width: hug-content
+align: center
+
+-- ds.copy-large:
+
+$hero.body
+
+-- end: ds.column
+
+-- ds.icon-button: Get started
+link: signin/
+icon-position: at-end
+icon: $assets.files.assets.sites.right-arrow.svg
+rounded: true
+
+-- end: ds.column
+
+-- end: hero
+
 
 
 

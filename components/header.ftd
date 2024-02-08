@@ -1,8 +1,6 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
--- import: ui.fifthtry.com/components/slides/avatar
--- import: ui.fifthtry.com/components/language-switcher
 
 -- component header:
 module site-data: site-data
@@ -14,38 +12,30 @@ optional boolean $sidebar: false
 -- ds.section-row:
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.medium
+inset: $ds.spaces.inset-square.large
 margin: $header.margin
 
 	-- ftd.image:
 	src: $assets.files.assets.slides.logo.svg
 	link: $header.site-data.homepage
-	
+
 	-- ds.row:
-	width: hug-content
-	
-		-- ds.header-link: $lang.about
-		if: { header.product == NULL }
-		link: /about/
-		
-		-- ds.header-link: $lang.team
-		if: { header.product == NULL }
-		link: /team/
-		
-		-- language-switcher.dropdown:
-		
-		-- avatar.avatar:
-		user-data: $header.user-data
-		if: { header.user-data.is-logged-in }
-		
-		-- ds.header-link: $lang.sign-in
-		if: { !header.user-data.is-logged-in }
-		link: /signin/
-		
-		-- ds.primary-button: $lang.sign-up
-		if: { !header.user-data.is-logged-in }
-		link: /signup/
-		
+	spacing: $ds.spaces.horizontal-gap.medium
+	align-content: top-right
+	width.fixed.px: 270
+
+	-- ds.secondary-button: Login
+	if: { header.user-data.is-logged-in }
+	link: /signin/
+	rounded: true
+	width: full
+
+	-- ds.primary-button: Sign up
+	if: { header.user-data.is-logged-in }
+	link: /signup/
+	rounded: true
+	width: full
+
 	-- end: ds.row
 
 -- end: ds.section-row

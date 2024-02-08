@@ -25,7 +25,6 @@ boolean hide-footer: false
 	-- ds.section-column:
 	inset: $ds.spaces.inset-square.zero
 	content: $page.children
-	margin: $ds.spaces.vertical-gap.extra-extra-large
 	flush: $page.flush
 	
 	-- end: ds.section-column
