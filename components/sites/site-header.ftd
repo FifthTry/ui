@@ -58,7 +58,7 @@ inset: $ds.spaces.inset-wide.large
 		-- ftd.image: $header-with-logo.site-logo
 		if: { header-with-logo.site-logo != NULL }
 		width: auto
-		link: /scenarios/sites/dashboard/
+		link: /
 		
 		-- ftd.text: $header-with-logo.header-text
 		if: { header-with-logo.header-text != NULL }
