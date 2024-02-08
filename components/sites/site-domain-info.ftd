@@ -3,6 +3,7 @@
 -- import: ui.fifthtry.com/actions/sites/domains/add-domain
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
+-- import: ui.fifthtry.com/components/label as l
 
 -- component site-domain:
 caption about-page.about-site about-site:
@@ -93,7 +94,7 @@ kind: primary
 size: small
 rounded: true
 
--- ds.row:
+/-- ds.row:
 width: hug-content
 align-content: left
 spacing: $ds.spaces.horizontal-gap.small
@@ -103,6 +104,36 @@ src: $assets.files.assets.sites.check-circle.svg
 width.fixed.px: 16
 
 -- ds.copy-small: All tests have run successfully
+
+-- end: ds.row
+
+-- ds.row:
+width: hug-content
+spacing: $ds.spaces.horizontal-gap.small
+
+-- ds.copy-small: DNS Status:
+align: inline
+
+-- ds.copy-small: $show-site-domain.domain.dns-status
+color: $inherited.colors.text
+color if { $show-site-domain.domain.dns-status == "Verified" }: $inherited.colors.success.text
+color if { $show-site-domain.domain.dns-status == "Pending" }: $inherited.colors.warning.text
+color if { $show-site-domain.domain.dns-status == "Failed" }: $inherited.colors.error.text
+
+-- end: ds.row
+
+-- ds.row:
+width: hug-content
+spacing: $ds.spaces.horizontal-gap.small
+
+-- ds.copy-small: SSL Status:
+align: inline
+
+-- ds.copy-small: $show-site-domain.domain.ssl-status
+color: $inherited.colors.text
+color if { $show-site-domain.domain.ssl-status == "Verified" }: $inherited.colors.success.text
+color if { $show-site-domain.domain.ssl-status == "Pending" }: $inherited.colors.warning.text
+color if { $show-site-domain.domain.ssl-status == "Failed" }: $inherited.colors.error.text
 
 -- end: ds.row
 
