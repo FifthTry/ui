@@ -11,6 +11,7 @@ user-data: $john-doe.jd
 -- site-domain.site-domain-data data:
 user: FifthTry
 site-slug: fifthtry
+org-slug: fifthtry
 all-domains: $all-domains
 
 -- sr.domain all-domains:
