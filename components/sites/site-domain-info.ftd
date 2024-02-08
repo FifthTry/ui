@@ -116,9 +116,9 @@ align: inline
 
 -- ds.copy-small: $show-site-domain.domain.dns-status
 color: $inherited.colors.text
-color if { $show-site-domain.domain.dns-status == "Verified" }: $inherited.colors.success.text
-color if { $show-site-domain.domain.dns-status == "Pending" }: $inherited.colors.warning.text
-color if { $show-site-domain.domain.dns-status == "Failed" }: $inherited.colors.error.text
+color if { $show-site-domain.domain.dns-status == "verified" }: $inherited.colors.success.text
+color if { $show-site-domain.domain.dns-status == "pending" }: $inherited.colors.warning.text
+color if { $show-site-domain.domain.dns-status == "failed" }: $inherited.colors.error.text
 
 -- end: ds.row
 
@@ -131,9 +131,9 @@ align: inline
 
 -- ds.copy-small: $show-site-domain.domain.ssl-status
 color: $inherited.colors.text
-color if { $show-site-domain.domain.ssl-status == "Verified" }: $inherited.colors.success.text
-color if { $show-site-domain.domain.ssl-status == "Pending" }: $inherited.colors.warning.text
-color if { $show-site-domain.domain.ssl-status == "Failed" }: $inherited.colors.error.text
+color if { $show-site-domain.domain.ssl-status == "verified" }: $inherited.colors.success.text
+color if { $show-site-domain.domain.ssl-status == "pending" }: $inherited.colors.warning.text
+color if { $show-site-domain.domain.ssl-status == "failed" }: $inherited.colors.error.text
 
 -- end: ds.row
 
