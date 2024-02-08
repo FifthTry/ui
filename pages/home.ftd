@@ -59,7 +59,7 @@ $hero.body
 -- ds.icon-button: Get started
 link: signin/
 icon-position: at-end
-icon: $assets.files.assets.sites.right-arrow.svg
+icon: $assets.files.assets.sites.arrow.svg
 rounded: true
 
 -- end: ds.column
