@@ -14,8 +14,28 @@ user-data: $page.user-data
 site-data: $page.site-data
 hide-footer: false
 
--- pricing: Free
-items: free-pricing-items
+-- ds.heading-large: Pricing
+width: hug-content
+
+-- ds.copy-regular: Free for Beta version
+width: hug-content
+
+-- ds.row:
+
+-- pricing: Personal
+items: $free-pricing-items
+description: Perfect for passion projects & simple websites.
+cta-text: Get Started
+cta-link: /
+price-value: FREE
+
+-- pricing: Team
+items: $basic-pricing-items
+description: Collaborate with different permissions and access patterns.
+cta-text: Coming Soon
+price-value: \$10/member
+
+-- end: ds.row
 
 -- end: p.page
 
@@ -43,7 +63,7 @@ items: free-pricing-items
 value: Free
 
 -- kv-data: Team
-value: $10/member
+value: \$10/member
 
 -- end: free-pricing-items
 
@@ -52,23 +72,80 @@ value: $10/member
 
 
 
+-- kv-data list basic-pricing-items:
+
+-- kv-data: Personal
+value: \$2
+
+-- kv-data: Team
+value: \$10/member
+
+-- end: basic-pricing-items
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- component pricing:
 caption name:
+string description:
+string cta-text:
+optional string cta-link:
 kv-data list items:
+string price-value:
 
--- ds.column:
+-- ftd.column:
 width.fixed.px: 400
-height.fixed.px: 1000
+height.fixed.px: 400
+border-color: $ds.colors.border
+border-width.px: 2
+align-content: center
+padding.px: 20
+spacing.fixed.px: 20
 
 -- ds.heading-medium: $pricing.name
+width: hug-content
+margin: $ds.spaces.vertical-gap.medium
 
--- kv-view: $k
+-- ds.row:
+height.fixed.px: 50
+/margin: $ds.spaces.vertical-gap.medium
+
+-- ds.copy-regular: $pricing.description
+width: hug-content
+align: center
+
+-- end: ds.row
+
+-- ds.primary-button: $pricing.cta-text
+if: { pricing.cta-link != NULL }
+link: $pricing.cta-link
+radius: curved
+width: full
+
+-- ds.secondary-button: $pricing.cta-text
+if: { pricing.cta-link == NULL }
+radius: curved
+width: full
+variant: outline
+
+-- ds.heading-small: $pricing.price-value
+width: hug-content
+
+/-- kv-view: $k
 for: k in $pricing.items
 
--- end: ds.column
+-- end: ftd.column
 
-
--- end: pricing:
+-- end: pricing
 
 
 -- component kv-view:
@@ -76,16 +153,21 @@ caption kv-data kv:
 
 -- ds.row:
 width: fill-container
-align-content: left
+align-content: center
 
--- ds.copy-regular: $kv-view.key
-
--- ds.copy-regular: $kv-view.value
+-- ds.copy-regular: $kv-format(a = $kv-view.kv.key, b = $kv-view.kv.value)
+width: hug-content
 
 -- end: ds.row
 
 -- end: kv-view
 
+
+-- string kv-format(a,b):
+string a:
+string b:
+
+"**" + a + "** :"+ b
 
 -- record kv-data:
 caption key:
