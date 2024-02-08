@@ -14,9 +14,9 @@ user-data: $page.user-data
 site-data: $page.site-data
 hide-footer: false
 
--- hero: Build your next website with fifthtry
+-- hero: Build your next website with FifthTry
 
--- ds.copy-small: New and efficient way to build your website
+New and efficient way to build your website
 
 -- ds.primary-button: Get Started
 link: signup/
