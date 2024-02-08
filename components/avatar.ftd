@@ -110,7 +110,7 @@ padding.px: 8
 		-- ftd.text: $lang.sign-out
 		role: $inherited.types.copy-regular
 		color: $inherited.colors.text
-		link: /admin/logout/?next=/
+		link: /-/auth/logout/
 		
 	-- end: ftd.row
 
