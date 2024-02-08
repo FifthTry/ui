@@ -16,7 +16,11 @@ hide-footer: false
 
 -- hero: Build your next website with fifthtry
 
-new and efficient way to build you website
+-- ds.copy-small: New and efficient way to build your website
+
+-- ds.primary-button: Get Started
+link: signup/
+radius: curved
 	
 -- end: p.page
 

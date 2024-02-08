@@ -40,6 +40,7 @@ padding.px: 8
 
 -- component popup:
 ud.user-data user-data: $user-data.user
+optional string logout-url: /-/auth/logout/?next=/
 boolean $open:
 
 -- ftd.column:
@@ -110,7 +111,7 @@ padding.px: 8
 		-- ftd.text: $lang.sign-out
 		role: $inherited.types.copy-regular
 		color: $inherited.colors.text
-		link: /admin/logout/?next=/
+		link: $popup.logout-url
 		
 	-- end: ftd.row
 

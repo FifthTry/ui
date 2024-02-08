@@ -1,5 +1,7 @@
+-- optional string $name-error:
 -- optional string $username-error:
 -- optional string $email-error:
+-- optional string $password-error:
 
 
 -- void submit-values(name, email, username, password):
