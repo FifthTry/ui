@@ -83,11 +83,11 @@ inset: $ds.spaces.inset-wide.large
 
 	-- ds.link: Home
 	color: $ds.colors.text-strong
-	link: /scenarios/sites/dashboard/
+	link: /
 
 	-- ds.link: Pricing
 	color: $ds.colors.text-strong
-	link: /scenarios/sites/dashboard/
+	link: /pricing/
 
 	-- avatar.avatar:
 	if: { header-with-logo.user-data.is-logged-in }

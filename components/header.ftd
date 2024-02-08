@@ -25,15 +25,15 @@ margin: $header.margin
 	-- ds.row:
 	width: hug-content
 	
-		-- ds.header-link: $lang.company
+		-- ds.header-link: $lang.home
 		if: { header.product == NULL }
-		link: /company/
+		link: /
 		
 		-- ds.header-link: $lang.pricing
 		if: { header.product == NULL }
 		link: /pricing/
 
-		-- language-switcher.dropdown:
+		/-- language-switcher.dropdown:
 		
 		-- avatar.avatar:
 		if: { header.user-data.is-logged-in }
