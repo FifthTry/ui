@@ -10,7 +10,7 @@
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
 -- import: ui.fifthtry.com/user-data
-
+-- import: ui.fifthtry.com/components/sites/utils as u
 
 -- record site-domain-data:
 string site-slug:
@@ -44,12 +44,22 @@ header-links: $page.data.header-links
 		background.solid: $ds.colors.background.step-1
 		inset: $ds.spaces.inset-square.medium
 
-		-- sd.domain-input:
-		add-domain: $page.add-domain
-		site-slug: $page.data.site-slug
-		org-slug: $page.data.org-slug
+                -- ds.copy-regular: Add new domain
+                width: auto
+                align: inline
 
-		-- end: ds.row
+                -- sd.domain-input:
+                add-domain: $page.add-domain
+                site-slug: $page.data.site-slug
+                org-slug: $page.data.org-slug
+
+            -- end: ds.row
+
+            -- ftd.text: $page.add-domain.add-domain-error
+            color: red
+            if: { page.add-domain.add-domain-error != NULL }
+
+		-- end: ds.column
 		
 		-- sd.show-site-domain: $d
 		for: d in $page.data.all-domains

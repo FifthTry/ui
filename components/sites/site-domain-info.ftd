@@ -62,13 +62,16 @@ string site-slug:
 module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
 
--- ds.row:
+-- ds.column:
 width.fixed.px: 1152
 radius: $ds.radius.medium
 inset: $ds.spaces.inset-square.medium
 border: $ds.borders.uniform.small
-spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.step-1
+align-content: top-left
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
 align-content: top-left
 
 -- ds.column:
@@ -179,6 +182,16 @@ $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.s
 
 -- end: ds.row
 
+-- ftd.text: $show-site-domain.delete-domain.delete-domain-error
+color: red
+if: { show-site-domain.delete-domain.delete-domain-error != NULL }
+
+-- ftd.text: $show-site-domain.make-primary-domain.make-primary-domain-error
+color: red
+if: { show-site-domain.make-primary-domain.make-primary-domain-error != NULL }
+
+-- end: ds.column
+
 -- end: show-site-domain
 
 
@@ -211,6 +224,8 @@ border-radius.px: 8
 border-color: $ds.colors.border
 placeholder: Enter new domain
 $on-input$: $ftd.set-string($a = $domain-input.current-domain, v = $VALUE)
+border-width.px: 1
+border-color: $ds.colors.border
 
 -- ds.row:
 align-content: right
