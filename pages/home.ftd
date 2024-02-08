@@ -20,7 +20,7 @@ width: hug-content
 -- ds.copy-small: New and efficient way to build your website
 
 -- ds.primary-button: Get Started
-link: signin/
+link: signup/
 radius: curved
 	
 -- end: p.page
