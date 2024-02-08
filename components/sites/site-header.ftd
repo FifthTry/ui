@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
--- import: ui.fifthtry.com/components/sites/avatar
+-- import: ui.fifthtry.com/components/avatar
 
 
 
@@ -76,8 +76,8 @@ inset: $ds.spaces.inset-wide.large
 	-- end: ds.row
 
 	-- avatar.avatar:
-	user-data: $header-with-logo.user-data
 	if: { header-with-logo.user-data.is-logged-in }
+	user-data: $header-with-logo.user-data
 	
 -- end: ds.row
 

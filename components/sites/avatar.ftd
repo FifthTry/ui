@@ -4,7 +4,7 @@
 -- component avatar:
 ud.user-data user-data: $user-data.user
 
--- ds.circle-text-button: $get-initials(name=$avatar.user-data.name)
+-- ds.circle-text-button: $get-initials(name=$avatar.user-data.username)
 
 -- end: avatar
 
