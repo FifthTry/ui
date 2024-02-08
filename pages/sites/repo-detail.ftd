@@ -3,6 +3,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/actions/sites/github/remove-github-access
 
 
 
@@ -10,6 +11,7 @@
 sr.gh-oidc-data data:
 string domain:
 ud.user-data user-data: $user-data.user
+module remove-github-access: remove-github-access
 
 -- p.page:
 site-data: site-data
@@ -57,9 +59,11 @@ header-links: $page.data.header-links
 
 		-- ds.danger-button: Remove Access
 		radius: curved
+		$on-click$: $page.remove-github-access.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug)
 
 		-- ds.secondary-button: Edit
 		radius: curved
+		link: $page.data.configure-url
 		
 	-- end: ds.row
 

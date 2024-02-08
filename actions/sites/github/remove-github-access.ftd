@@ -1,0 +1,8 @@
+-- optional string $remove-github-access-error:
+
+-- void submit(org_slug, site_slug, github_org, github_repo_name, github_repo_branch):
+string org_slug:
+string site_slug:
+js: $assets.files.assets.functions.js
+
+callAlert("Remove github access")
