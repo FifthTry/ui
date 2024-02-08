@@ -13,3 +13,5 @@ branch: main
 is-configured: true
 configure-url: /scenarios/sites/configure-github/
 site-domain: fastn.com
+org-slug: fifthtry
+site-slug: fifthtry

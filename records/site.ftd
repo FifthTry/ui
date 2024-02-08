@@ -41,6 +41,8 @@ body content:
 string account:
 string repo:
 string branch:
+string site-slug:
+string org-slug:
 string site-domain:
 string configure-url:
 boolean is-configured:
