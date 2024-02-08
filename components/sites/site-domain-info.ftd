@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/pages/sites/about-page
 -- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/actions/sites/domains/add-domain
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
 
@@ -164,3 +165,36 @@ $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.s
 -- end: ds.row
 
 -- end: show-site-domain
+
+
+
+
+
+
+
+
+
+
+-- component domain-input:
+optional string $current-domain:
+string site-slug:
+string org-slug:
+module add-domain: add-domain
+
+-- ds.row:
+align-content: left
+width: hug-content
+
+-- ftd.text-input:
+width.fixed.px: 300
+padding.px: 5
+placeholder: Enter new domain
+$on-input$: $ftd.set-string($a = $domain-input.current-domain, v = $VALUE)
+
+-- ds.primary-button: Add
+radius: curved
+$on-click$: $domain-input.add-domain.submit(org_slug=$domain-input.org-slug, site_slug=$domain-input.site-slug, domain=$domain-input.current-domain)
+
+-- end: ds.row
+
+-- end: domain-input

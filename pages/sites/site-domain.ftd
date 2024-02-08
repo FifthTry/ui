@@ -6,14 +6,15 @@
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/actions/sites/domains/add-domain
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
 -- import: ui.fifthtry.com/user-data
 
 
 -- record site-domain-data:
-string user:
 string site-slug:
+string org-slug:
 sr.domain list all-domains:
 sr.toc-data list header-links:
 
@@ -21,6 +22,7 @@ sr.toc-data list header-links:
 -- component page:
 ud.user-data user-data: $user-data.user
 site-domain-data data:
+module add-domain: add-domain
 module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
 
@@ -35,6 +37,21 @@ header-links: $page.data.header-links
 	spacing: $ds.spaces.vertical-gap.large
 	
 		-- ds.heading-small: Domains
+
+		-- ds.row:
+		align-content: left
+		width: fill-container
+
+		-- ds.copy-regular: Add new domain
+		width: auto
+		align: inline
+
+		-- sd.domain-input:
+		add-domain: $page.add-domain
+		site-slug: $page.data.site-slug
+		org-slug: $page.data.org-slug
+
+		-- end: ds.row
 		
 		-- sd.show-site-domain: $d
 		for: d in $page.data.all-domains
