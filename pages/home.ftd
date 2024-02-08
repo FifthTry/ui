@@ -17,10 +17,6 @@ hide-footer: false
 -- hero: Build your next website with FifthTry
 
 New and efficient way to build your website
-
--- ds.primary-button: Get Started
-link: signup/
-radius: curved
 	
 -- end: p.page
 
