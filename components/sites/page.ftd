@@ -43,6 +43,8 @@ sr.toc-data list header-links:
 	
 	-- end: ds.column
 
+	-- footer.footer:
+
 -- end: ds.page
 
 -- end: page
