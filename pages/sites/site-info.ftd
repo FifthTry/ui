@@ -30,11 +30,6 @@ header-links: $page.data.header-links
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 	align-content: left
-	
-		-- ds.primary-button: Go Back To Dashboard
-		link: $page.data.dashboard-url
-		size: small
-		radius: curved
 		
 		-- ds.heading-small: About
 		

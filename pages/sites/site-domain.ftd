@@ -18,7 +18,6 @@ string org-slug:
 sr.domain list all-domains:
 sr.toc-data list header-links:
 
-
 -- component page:
 ud.user-data user-data: $user-data.user
 site-domain-data data:
@@ -35,31 +34,17 @@ header-links: $page.data.header-links
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
-
-        -- ds.row:
-        align-content: left
-        width: fill-container
-
-        -- ds.primary-button: Go Back To Dashboard
-        link: $u.dashboard-url(org_slug=$page.data.org-slug)
-        size: small
-        radius: curved
-
-        -- end: ds.row
 	
 		-- ds.heading-small: Domains
 
-        -- ds.column:
-        width: fill-container
-        align-content: left
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.small
 
-            -- ds.row:
-            align-content: left
-            width: fill-container
-
-                -- ds.copy-regular: Add new domain
-                width: auto
-                align: inline
+		-- ds.row:
+		align-content: left
+		width.fixed.px: 1150
+		background.solid: $ds.colors.background.step-1
+		inset: $ds.spaces.inset-square.medium
 
                 -- sd.domain-input:
                 add-domain: $page.add-domain

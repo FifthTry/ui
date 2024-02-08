@@ -5,6 +5,7 @@ flush: full
 inset: $ds.spaces.inset-square.large
 spacing: $ds.spaces.horizontal-gap.space-between
 margin: $ds.spaces.vertical-gap.zero
+border: $ds.borders.top.small
 
 	-- ftd.image:
 	src: $assets.files.assets.sites.yc.svg

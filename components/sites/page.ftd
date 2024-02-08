@@ -44,8 +44,7 @@ sr.toc-data list header-links:
 	
 	-- end: ds.column
 
-    -- footer.footer:
-    if: { !page.hide-footer }
+	-- footer.footer:
 
 -- end: ds.page
 

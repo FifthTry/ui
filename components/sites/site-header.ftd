@@ -58,6 +58,7 @@ inset: $ds.spaces.inset-wide.large
 		-- ftd.image: $header-with-logo.site-logo
 		if: { header-with-logo.site-logo != NULL }
 		width: auto
+		link: /scenarios/sites/dashboard/
 		
 		-- ftd.text: $header-with-logo.header-text
 		if: { header-with-logo.header-text != NULL }
@@ -75,10 +76,25 @@ inset: $ds.spaces.inset-wide.large
 		
 	-- end: ds.row
 
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.large
+	align-content: right
+	;;width.fixed.px: 420
+
+	-- ds.link: Home
+	color: $ds.colors.text-strong
+	link: /scenarios/sites/dashboard/
+
+	-- ds.link: Pricing
+	color: $ds.colors.text-strong
+	link: /scenarios/sites/dashboard/
+
 	-- avatar.avatar:
 	if: { header-with-logo.user-data.is-logged-in }
 	user-data: $header-with-logo.user-data
 	
+-- end: ds.row
+
 -- end: ds.row
 
 -- end: header-with-logo
