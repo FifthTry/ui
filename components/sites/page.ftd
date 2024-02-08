@@ -16,6 +16,7 @@ ds.flush flush: full
 ftd.align align-content: top-left
 boolean show-header: true
 boolean show-header-links: true
+boolean hide-footer: false
 sr.toc-data list header-links:
 
 -- ds.page: $page.title

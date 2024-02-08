@@ -3,12 +3,11 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/records/site as sr
-
+-- import: ui.fifthtry.com/components/sites/utils as u
 
 
 -- component page:
 sr.gh-oidc-data data:
-caption title:
 ud.user-data user-data: $user-data.user
 
 -- p.page:
@@ -21,7 +20,18 @@ header-links: $page.data.header-links
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 
-	-- ds.heading-small: $page.title
+    -- ds.row:
+    align-content: left
+    width: fill-container
+
+    -- ds.primary-button: Go Back To Dashboard
+    link: $u.dashboard-url(org_slug=$page.data.org-slug)
+    size: small
+    radius: curved
+
+    -- end: ds.row
+
+	-- ds.heading-small: Github
 
 	-- ds.column:
 	width.fixed.px: 1152
