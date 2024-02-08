@@ -1,7 +1,7 @@
 function get_initials(name) {
     return fastn_utils.getStaticValue(name)
         .split(" ")
-        .map((p) => p[0])
+        .map((p) => p[0].toUpperCase())
         .join("");
 }
 

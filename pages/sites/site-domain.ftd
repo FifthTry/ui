@@ -10,7 +10,7 @@
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
 -- import: ui.fifthtry.com/user-data
-
+-- import: ui.fifthtry.com/components/sites/utils as u
 
 -- record site-domain-data:
 string site-slug:
@@ -35,23 +35,44 @@ header-links: $page.data.header-links
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
+
+        -- ds.row:
+        align-content: left
+        width: fill-container
+
+        -- ds.primary-button: Go Back To Dashboard
+        link: $u.dashboard-url(org_slug=$page.data.org-slug)
+        size: small
+        radius: curved
+
+        -- end: ds.row
 	
 		-- ds.heading-small: Domains
 
-		-- ds.row:
-		align-content: left
-		width: fill-container
+        -- ds.column:
+        width: fill-container
+        align-content: left
 
-		-- ds.copy-regular: Add new domain
-		width: auto
-		align: inline
+            -- ds.row:
+            align-content: left
+            width: fill-container
 
-		-- sd.domain-input:
-		add-domain: $page.add-domain
-		site-slug: $page.data.site-slug
-		org-slug: $page.data.org-slug
+                -- ds.copy-regular: Add new domain
+                width: auto
+                align: inline
 
-		-- end: ds.row
+                -- sd.domain-input:
+                add-domain: $page.add-domain
+                site-slug: $page.data.site-slug
+                org-slug: $page.data.org-slug
+
+            -- end: ds.row
+
+            -- ftd.text: $page.add-domain.add-domain-error
+            color: red
+            if: { page.add-domain.add-domain-error != NULL }
+
+		-- end: ds.column
 		
 		-- sd.show-site-domain: $d
 		for: d in $page.data.all-domains

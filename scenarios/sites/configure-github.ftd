@@ -1,11 +1,18 @@
 -- import: ui.fifthtry.com/pages/sites/configure-github
 -- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/records/site as sr
 
 
 -- configure-github.page:
 user-data: $john-doe.jd
 data: $data
 
--- configure-github.configure-github-data data:
-site-slug: fifthtry
+-- sr.gh-oidc-data data:
+account: FifthTry
+repo: ft
+branch: main
+is-configured: true
+configure-url: /scenarios/sites/configure-github/
+site-domain: fastn.com
 org-slug: fifthtry
+site-slug: fifthtry
