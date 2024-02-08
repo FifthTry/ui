@@ -6,6 +6,7 @@
 -- import: ui.fifthtry.com/actions/sites/github/configure
 -- import: ui.fifthtry.com/components/sites/utils as u
 
+
 -- component page:
 ud.user-data user-data: $user-data.user
 sr.gh-oidc-data data:
@@ -127,6 +128,10 @@ header-links: $page.data.header-links
 	width: full
 	radius: curved
 	$on-click$: $page.configure.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
+
+	-- ftd.text: $page.configure.configure-github-error
+    color: red
+    if: { page.configure.configure-github-error != NULL }
 
 	-- end: ds.column
 

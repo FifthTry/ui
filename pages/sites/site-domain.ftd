@@ -49,20 +49,30 @@ header-links: $page.data.header-links
 	
 		-- ds.heading-small: Domains
 
-		-- ds.row:
-		align-content: left
-		width: fill-container
+        -- ds.column:
+        width: fill-container
+        align-content: left
 
-		-- ds.copy-regular: Add new domain
-		width: auto
-		align: inline
+            -- ds.row:
+            align-content: left
+            width: fill-container
 
-		-- sd.domain-input:
-		add-domain: $page.add-domain
-		site-slug: $page.data.site-slug
-		org-slug: $page.data.org-slug
+                -- ds.copy-regular: Add new domain
+                width: auto
+                align: inline
 
-		-- end: ds.row
+                -- sd.domain-input:
+                add-domain: $page.add-domain
+                site-slug: $page.data.site-slug
+                org-slug: $page.data.org-slug
+
+            -- end: ds.row
+
+            -- ftd.text: $page.add-domain.add-domain-error
+            color: red
+            if: { page.add-domain.add-domain-error != NULL }
+
+		-- end: ds.column
 		
 		-- sd.show-site-domain: $d
 		for: d in $page.data.all-domains
