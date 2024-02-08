@@ -18,20 +18,20 @@ inset: $ds.spaces.inset-square.medium
 margin: $header.margin
 
 	-- ftd.image:
-	src: $assets.files.assets.slides.logo.svg
+	src: $assets.files.assets.fifthtry-logo.svg
 	link: $header.site-data.homepage
 	
 	-- ds.row:
 	width: hug-content
 	
-		-- ds.header-link: $lang.about
+		-- ds.header-link: $lang.company
 		if: { header.product == NULL }
-		link: /about/
+		link: /company/
 		
-		-- ds.header-link: $lang.team
+		-- ds.header-link: $lang.pricing
 		if: { header.product == NULL }
-		link: /team/
-		
+		link: /pricing/
+
 		-- language-switcher.dropdown:
 		
 		-- avatar.avatar:
