@@ -1,0 +1,92 @@
+-- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/components/about/product
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/user-data
+
+
+-- component page:
+ud.user-data user-data: $user-data.user
+module site-data: site-data
+
+-- p.page: FifthTry | Better way To Build Websites
+user-data: $page.user-data
+site-data: $page.site-data
+hide-footer: false
+
+-- pricing: Free
+items: free-pricing-items
+
+-- end: p.page
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- kv-data list free-pricing-items:
+
+-- kv-data: Personal
+value: Free
+
+-- kv-data: Team
+value: $10/member
+
+-- end: free-pricing-items
+
+
+
+
+
+
+-- component pricing:
+caption name:
+kv-data list items:
+
+-- ds.column:
+width.fixed.px: 400
+height.fixed.px: 1000
+
+-- ds.heading-medium: $pricing.name
+
+-- kv-view: $k
+for: k in $pricing.items
+
+-- end: ds.column
+
+
+-- end: pricing:
+
+
+-- component kv-view:
+caption kv-data kv:
+
+-- ds.row:
+width: fill-container
+align-content: left
+
+-- ds.copy-regular: $kv-view.key
+
+-- ds.copy-regular: $kv-view.value
+
+-- end: ds.row
+
+-- end: kv-view
+
+
+-- record kv-data:
+caption key:
+string value:
