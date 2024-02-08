@@ -46,6 +46,7 @@ margin: $header.margin
 		-- ds.primary-button: $lang.sign-up
 		if: { !header.user-data.is-logged-in }
 		link: /signup/
+		radius: curved
 		
 	-- end: ds.row
 
