@@ -81,11 +81,11 @@ inset: $ds.spaces.inset-wide.large
 	align-content: right
 	;;width.fixed.px: 420
 
-	-- ds.link: Home
+	-- ds.link: $lang.home
 	color: $ds.colors.text-strong
 	link: /
 
-	-- ds.link: Pricing
+	-- ds.link: $lang.pricing
 	color: $ds.colors.text-strong
 	link: /pricing/
 
