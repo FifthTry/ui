@@ -20,6 +20,8 @@ width: hug-content
 -- ds.copy-regular: Free for Beta version
 width: hug-content
 
+-- ftd.desktop:
+
 -- ds.row:
 
 -- pricing: Personal
@@ -36,6 +38,30 @@ cta-text: Coming Soon
 price-value: \$10/member
 
 -- end: ds.row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.column:
+
+-- pricing: Personal
+items: $free-pricing-items
+description: Perfect for passion projects & simple websites.
+cta-text: Get Started
+cta-link: /
+price-value: FREE
+
+-- pricing: Team
+items: $basic-pricing-items
+description: Collaborate with different permissions and access patterns.
+cta-text: Coming Soon
+price-value: \$10/member
+
+-- end: ds.column
+
+-- end: ftd.mobile
+
 
 -- end: p.page
 
