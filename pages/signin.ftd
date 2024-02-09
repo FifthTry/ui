@@ -8,8 +8,8 @@ string signup-url:
 string forgot-url:
 module site-data: site-data
 module authenticate-user: authenticate-user
-private string $current-username: empty
-private string $current-password: empty
+private string $current-username: *$ftd.empty
+private string $current-password: *$ftd.empty
 
 -- ds.column:
 

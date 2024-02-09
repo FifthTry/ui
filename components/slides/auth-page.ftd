@@ -14,10 +14,10 @@ module signup-action: create-user
 string github-url:
 optional string signup-url:
 optional string signin-url:
-private string $current-name: empty
-private string $current-email: empty
-private string $current-username: empty
-private string $current-password: empty
+private string $current-name: *$ftd.empty
+private string $current-email: *$ftd.empty
+private string $current-username: *$ftd.empty
+private string $current-password: *$ftd.empty
 
 -- ds.row:
 width: fill-container
