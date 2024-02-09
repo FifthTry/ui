@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/components/about/product
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
@@ -13,6 +13,7 @@ module site-data: site-data
 user-data: $page.user-data
 site-data: $page.site-data
 hide-footer: false
+align-content: center
 
 -- ds.heading-large: Pricing
 width: hug-content

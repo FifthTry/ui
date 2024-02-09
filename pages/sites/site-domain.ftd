@@ -9,6 +9,7 @@
 -- import: ui.fifthtry.com/actions/sites/domains/add-domain
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
+-- import: ui.fifthtry.com/actions/sites/domains/re-check-domain
 -- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/sites/utils as u
 
@@ -25,6 +26,7 @@ site-domain-data data:
 module add-domain: add-domain
 module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
+module re-check-domain: re-check-domain
 
 -- p.page:
 site-data: site-data
@@ -66,8 +68,10 @@ header-links: $page.data.header-links
 		-- sd.show-site-domain: $d
 		for: d in $page.data.all-domains
 		site-slug: $page.data.site-slug
+		org-slug: $page.data.org-slug
 		delete-domain: $page.delete-domain
 		make-primary-domain: $page.make-primary-domain
+		re-check-domain: $page.re-check-domain
 
 	-- end: ds.column
 

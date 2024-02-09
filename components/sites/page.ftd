@@ -23,6 +23,7 @@ sr.toc-data list header-links:
 
 	-- ds.column:
 	inset: $ds.spaces.inset-square.zero
+	spacing: $ds.spaces.horizontal-gap.small
 	if: { page.show-header }
 	
 		-- h.header-with-logo:
@@ -31,7 +32,7 @@ sr.toc-data list header-links:
 		user-data: $page.user-data
 		
 		-- h.header:
-		if: { page.show-header-links }
+		if: { page.show-header-links && ftd.len($page.header-links) > 0}
 		toc-list: $page.header-links
 		
 	-- end: ds.column

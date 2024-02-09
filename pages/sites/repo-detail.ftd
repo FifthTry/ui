@@ -59,7 +59,7 @@ header-links: $page.data.header-links
                 	-- ds.row:
 	                spacing: $ds.spaces.horizontal-gap.medium
 	                align-content: right
-	                width.fixed.px: 278
+	                width.fixed.px: 285
 
 		              -- ds.danger-button: Remove Access
 		               radius: curved

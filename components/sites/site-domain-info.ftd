@@ -3,6 +3,7 @@
 -- import: ui.fifthtry.com/actions/sites/domains/add-domain
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
+-- import: ui.fifthtry.com/actions/sites/domains/re-check-domain
 -- import: ui.fifthtry.com/components/label as l
 
 -- component site-domain:
@@ -63,9 +64,11 @@ align-content: top-left
 
 -- component show-site-domain:
 caption sr.domain domain:
+string org-slug:
 string site-slug:
 module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
+module re-check-domain: re-check-domain
 private boolean $show-buttons: false
 
 -- ds.column:
@@ -182,6 +185,12 @@ spacing: $ds.spaces.horizontal-gap.large
 align-content: right
 inset: $ds.spaces.inset-tall.zero-medium
 width.fixed.percent: 40
+
+-- ds.secondary-button: Re-validate domain
+if: { $show-site-domain.domain.dns-status == "pending" || $show-site-domain.domain.ssl-status == "pending" }
+variant: outline
+radius: curved
+$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site-slug, org_slug=$show-site-domain.org-slug, domain=$show-site-domain.domain.domain)
 
 -- ds.secondary-button: Make Primary
 if: { $show-site-domain.domain.dns-status == "verified" && $show-site-domain.domain.ssl-status == "verified" }
