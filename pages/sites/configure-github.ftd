@@ -115,10 +115,20 @@ header-links: $page.data.header-links
 
 	-- end: ds.row
 
-	-- ds.primary-button: Save
-	width: full
-	radius: curved
-	$on-click$: $page.configure.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
+    -- ds.row:
+    spacing: $ds.spaces.horizontal-gap.small
+
+    -- ds.secondary-button: Cancel
+    width: wide
+    radius: curved
+    link: $u.github-access-url(site_slug = $page.data.site-slug, org_slug = $page.data.org-slug)
+
+    -- ds.primary-button: Save
+    width: wide
+    radius: curved
+    $on-click$: $page.configure.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
+
+    -- end: ds.row
 
 	-- ftd.text: $page.configure.configure-github-error
     color: red
