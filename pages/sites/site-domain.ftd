@@ -37,14 +37,16 @@ header-links: $page.data.header-links
 	
 		-- ds.heading-small: Domains
 
+
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
 
 		-- ds.row:
 		align-content: left
-		width.fixed.px: 1150
+		width.fixed.px if { ftd.device != "mobile" }: 1150
 		background.solid: $ds.colors.background.step-1
 		inset: $ds.spaces.inset-square.medium
+		border: $ds.borders.uniform.small
 
                 -- sd.domain-input:
                 add-domain: $page.add-domain

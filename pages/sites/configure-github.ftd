@@ -25,18 +25,9 @@ header-links: $page.data.header-links
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 
-    -- ds.row:
-    align-content: left
-    width: fill-container
-
-    -- ds.primary-button: Go Back To Dashboard
-    link: $u.dashboard-url(org_slug=$page.data.org-slug)
-    size: small
-    radius: curved
-
-    -- end: ds.row
-
 	-- ds.heading-small: Configure Github
+
+	-- ftd.desktop:
 
 	-- ds.column:
 	width.fixed.px: 508
@@ -134,6 +125,108 @@ header-links: $page.data.header-links
     if: { page.configure.configure-github-error != NULL }
 
 	-- end: ds.column
+
+	-- end: ftd.desktop
+
+	-- ftd.mobile:
+
+	-- ds.column:
+	align-content: top-left
+	spacing: $ds.spaces.vertical-gap.large
+	radius: $ds.radius.medium
+	inset: $ds.spaces.inset-square.large
+	border: $ds.borders.uniform.small
+	background.solid: $ds.colors.background.step-1
+
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.extra-small
+	align-content: left
+
+	-- ds.copy-small: Github Organization
+
+	-- ftd.text-input:
+	default-value if { page.data.is-configured }: $page.data.account
+	placeholder: Github organization name
+	type: text
+	width: fill-container
+	height.fixed.px: 40
+	border-radius.px: 8
+	background.solid: transparent
+	border-width.px: 1
+	border-color: $inherited.colors.border
+	padding.px: 8
+	color: $inherited.colors.text-strong
+	$on-input$: $ftd.set-string($a = $page.github-org, v = $VALUE)
+
+	-- end: ds.column
+
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.extra-small
+	align-content: left
+
+	-- ds.copy-small: Github Repo name
+
+	-- ftd.text-input:
+	default-value if { page.data.is-configured }: $page.data.repo
+	placeholder: Github Repo name
+	type: text
+	width: fill-container
+	height.fixed.px: 40
+	border-radius.px: 8
+	background.solid: transparent
+	border-width.px: 1
+	border-color: $inherited.colors.border
+	padding.px: 8
+	color: $inherited.colors.text-strong
+	$on-input$: $ftd.set-string($a = $page.github-repo-name, v = $VALUE)
+
+	-- end: ds.column
+
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.extra-small
+	align-content: left
+
+	-- ds.copy-small: Branch
+
+	-- ftd.text-input:
+	default-value if { page.data.is-configured }: $page.data.branch
+	placeholder: Github Repo Branch
+	type: text
+	width: fill-container
+	height.fixed.px: 40
+	border-radius.px: 8
+	background.solid: transparent
+	border-width.px: 1
+	border-color: $inherited.colors.border
+	padding.px: 8
+	color: $inherited.colors.text-strong
+	$on-input$: $ftd.set-string($a = $page.github-repo-branch, v = $VALUE)
+
+	-- end: ds.column
+
+	-- ds.row:
+	align-content: left
+	spacing: $ds.spaces.horizontal-gap.small
+
+	-- ftd.image:
+	src: $assets.files.assets.sites.info.svg
+
+	-- ds.copy-small: Any change in this can update your website
+
+	-- end: ds.row
+
+	-- ds.primary-button: Save
+	width: full
+	radius: curved
+	$on-click$: $page.configure.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
+
+	-- ftd.text: $page.configure.configure-github-error
+    color: red
+    if: { page.configure.configure-github-error != NULL }
+
+	-- end: ds.column
+
+	-- end: ftd.mobile
 
 	-- end: ds.column
 
