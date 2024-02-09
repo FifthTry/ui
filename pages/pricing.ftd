@@ -44,6 +44,7 @@ price-value: \$10/member
 -- ftd.mobile:
 
 -- ds.column:
+inset: $ds.spaces.inset-wide.medium
 
 -- pricing: Personal
 items: $free-pricing-items
@@ -128,14 +129,13 @@ optional string cta-link:
 kv-data list items:
 string price-value:
 
--- ftd.column:
-width.fixed.px: 400
+-- ds.column:
+width.fixed.px if { ftd.device != "mobile" }: 400
 height.fixed.px: 400
-border-color: $ds.colors.border
-border-width.px: 2
+border: $ds.borders.uniform.small
 align-content: center
-padding.px: 20
-spacing.fixed.px: 20
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.medium
 
 -- ds.heading-medium: $pricing.name
 width: hug-content
@@ -169,7 +169,7 @@ width: hug-content
 /-- kv-view: $k
 for: k in $pricing.items
 
--- end: ftd.column
+-- end: ds.column
 
 -- end: pricing
 

@@ -87,7 +87,7 @@ margin: $header.margin
 	if: { header.menu }
 	top: 38
 	width.fixed.px: 424
-	right: -30
+	right: -62
 	background.solid: $ds.colors.background.step-1
 	inset: $ds.spaces.inset-square.medium
 
