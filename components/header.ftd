@@ -105,13 +105,13 @@ margin: $header.margin
 		/-- language-switcher.dropdown:
 		
 		-- ds.secondary-button: $lang.sign-in
-		if: { header.user-data.is-logged-in }
+		if: { !header.user-data.is-logged-in }
 		link: /signin/
 		rounded: true
 		width: full
 		
 		-- ds.primary-button: $lang.sign-up
-		if: { header.user-data.is-logged-in }
+		if: { !header.user-data.is-logged-in }
 		link: /signup/
 		rounded: true
 		width: full
