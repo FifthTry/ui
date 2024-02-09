@@ -14,7 +14,6 @@ optional ftd.background background:
 optional ftd.resizing height:
 ds.element-radius radius: $ds.radius.medium
 ds.border-data border: $ds.borders.uniform.zero
-optional string link:
 ftd.color border-color: $ds.colors.border
 optional ftd.color color:
 string list css:
@@ -31,7 +30,6 @@ spacing.fixed.px: $column.spacing.gap
 spacing if { column.spacing.gap == spaces.HACK-SPACE-BETWEEN-MAGIC-NUMBER }: space-between
 children: $column.content
 background: $column.background
-link: $column.link
 align-content: $column.align-content
 border-color: $column.border-color
 height: $column.height
