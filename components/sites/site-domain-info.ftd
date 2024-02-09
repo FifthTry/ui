@@ -164,15 +164,20 @@ size: small
 -- end: ds.column
 
 -- ds.row:
-if: { show-site-domain.domain.is-primary }
+if: { show-site-domain.domain.is-primary && show-site-domain.show-buttons }
 spacing: $ds.spaces.horizontal-gap.large
 align-content: right
 inset: $ds.spaces.inset-tall.zero-medium
-width.fixed.percent: 20
+width.fixed.percent: 40
 height: fill-container
 
+-- ds.secondary-button: Re-validate domain
+if: { show-site-domain.domain.dns-status == "pending" || show-site-domain.domain.ssl-status == "pending" }
+variant: outline
+radius: curved
+$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site-slug, org_slug=$show-site-domain.org-slug, domain=$show-site-domain.domain.domain)
+
 -- ds.danger-button: Delete Domain
-if: { show-site-domain.show-buttons }
 radius: curved
 variant: disabled
 $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
