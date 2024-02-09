@@ -10,20 +10,8 @@ boolean $open: false
 spacing.fixed.px: 4
 $on-click$: $ftd.toggle($a = $avatar.open)
 $on-click-outside$: $ftd.set-boolean($a = $avatar.open, v = false)
-align-content: center
-border-radius.px: 8
-border-width.px: 1
-border-color: $inherited.colors.border
-background.solid: $inherited.colors.background.step-1
-padding.px: 8
 
 	-- ds.circle-text-button: $get-initials(name=$avatar.user-data.username)
-	
-	-- ftd.image:
-	src: $assets.files.assets.slides.toggle-down.svg
-	src if { avatar.open }: $assets.files.assets.slides.toggle-up.svg
-	width.fixed.px: 24
-	height.fixed.px: 24
 	
 	-- popup:
 	user-data: $avatar.user-data
