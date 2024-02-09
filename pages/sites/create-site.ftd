@@ -29,17 +29,6 @@ show-header: false
 	border: $ds.borders.uniform.small
 	inset: $ds.spaces.inset-square.extra-large
 	spacing: $ds.spaces.vertical-gap.large
-
-		-- ds.row:
-		align-content: left
-		width: fill-container
-
-        -- ds.primary-button: Go Back To Dashboard
-        link: $u.dashboard-url(org_slug=$page.data.org-slug)
-        size: small
-        radius: curved
-
-        -- end: ds.row
 	
 		-- ds.heading-small: Create new site
 		width: hug-content
@@ -92,7 +81,7 @@ show-header: false
 		-- ds.secondary-button: Cancel
 		width: full
 		radius: curved
-		link: /scenarios/sites/dashboard/
+		link: $u.dashboard-url(org_slug=$page.data.org-slug)
 
 		-- end: ds.row
     

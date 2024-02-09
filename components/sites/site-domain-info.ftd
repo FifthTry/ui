@@ -61,14 +61,18 @@ caption sr.domain domain:
 string site-slug:
 module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
+private boolean $show-buttons: false
 
 -- ds.column:
 width.fixed.px: 1152
+height.fixed.px: 100
 radius: $ds.radius.medium
 inset: $ds.spaces.inset-square.medium
 border: $ds.borders.uniform.small
 background.solid: $ds.colors.background.step-1
 align-content: top-left
+$on-mouse-enter$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -153,8 +157,10 @@ spacing: $ds.spaces.horizontal-gap.large
 align-content: right
 inset: $ds.spaces.inset-tall.zero-medium
 width.fixed.percent: 20
+height: fill-container
 
 -- ds.danger-button: Delete Domain
+if: { show-site-domain.show-buttons }
 radius: curved
 variant: disabled
 $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
@@ -162,13 +168,14 @@ $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.s
 -- end: ds.row
 
 -- ds.row:
-if: { !show-site-domain.domain.is-primary }
+if: { !show-site-domain.domain.is-primary && show-site-domain.show-buttons }
 spacing: $ds.spaces.horizontal-gap.large
 align-content: right
 inset: $ds.spaces.inset-tall.zero-medium
 width.fixed.percent: 40
 
 -- ds.secondary-button: Make Primary
+if: { $show-site-domain.domain.dns-status == "verified" && $show-site-domain.domain.ssl-status == "verified" }
 variant: disabled
 radius: curved
 $on-click$: $show-site-domain.make-primary-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
@@ -216,6 +223,7 @@ spacing: $ds.spaces.horizontal-gap.large
 
 -- ftd.text-input:
 width.fixed.px: 950
+color: $ds.colors.text-strong
 background.solid: $ds.colors.background.step-1
 border-width.px: 1
 padding.px: 8

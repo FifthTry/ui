@@ -13,6 +13,7 @@
 -- import: ui.fifthtry.com/components/sites/utils as u
 
 -- record site-domain-data:
+string site-name:
 string site-slug:
 string org-slug:
 sr.domain list all-domains:
@@ -34,8 +35,9 @@ header-links: $page.data.header-links
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
-	
-		-- ds.heading-small: Domains
+
+	    -- ds.heading-small: Domains
+		/-- ds.heading-small: $site-domain-format(site = $page.data.site-slug)
 
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
@@ -70,3 +72,9 @@ header-links: $page.data.header-links
 -- end: p.page
 
 -- end: page
+
+
+-- string site-domain-format(site):
+string site:
+
+"**" + site + "** Domains"
