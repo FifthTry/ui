@@ -16,8 +16,39 @@ hide-footer: false
 
 -- hero: Build your next website with FifthTry
 
-New and efficient way to build your website
-	
+Escape the trade-off between restrictive website builders and 
+complex React development. With FifthTry, your non-tech teams can 
+build, host and publish websites without sacrificing 
+scalability and customization.
+
+-- build-with-fastn: Build with fastn and host on FifthTry
+
+fastn is an easy-to-learn, open-source programming language and a framework
+for building modern content-centric and database-driven websites.FifthTry
+provides an easy-to-use website hosting solution designed for
+non-developers. 
+
+-- why-fastn: Why fastn
+card: $card-list
+
+-- testimonial: From skeptic to web developer in an afternoon!
+author-name: Nandini Devi
+avatar: $assets.files.assets.homepage.avatar.svg
+role: Content Writer
+
+“I was very skeptical about learning to write any syntax; I had never done any
+coding before. But I decided to give it a shot and went through the videos.
+It’s actually surprisingly simple; it doesn't feel like coding at all. It's
+just like writing text in a text file, and you end up with a beautifully
+designed website. Definitely the most productive and result-oriented
+activity I've ever undertaken in a single afternoon.“
+
+-- fastn-power: Have built their first fastn-powered website within 2 hours of discovering fastn.
+number: 3000+
+
+-- explore: 
+explore-card-list: $explore-list
+
 -- end: p.page
 
 -- end: page
@@ -36,31 +67,93 @@ caption title:
 body body:
 
 -- ds.column:
-spacing: $ds.spaces.vertical-gap.large
-background.image: $assets.files.assets.sites.background.png 
-width.fixed.px: 1440
-height.fixed.vh: 100
-radius: $ds.radius.zero
+
+-- ftd.desktop:
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+width.fixed.px: 1152
+align-content: left
 
 -- ds.column:
-width.fixed.px: 552
+width.fixed.px: 567
+align-content: left
 spacing: $ds.spaces.vertical-gap.large
 
 -- ds.heading-large: $hero.title
-width: hug-content
-align: center
+width.fixed.px: 524
 
 -- ds.copy-large:
 
 $hero.body
 
--- end: ds.column
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.medium
+align-content: left
 
 -- ds.icon-button: Get started
 link: signin/
 icon-position: at-end
 icon: $assets.files.assets.sites.arrow.svg
-rounded: true
+radius: curved
+
+-- ds.icon-button: Start Learning
+link: signin/
+icon-position: at-end
+icon: $assets.files.assets.sites.arrow.svg
+radius: curved
+kind: tertiary
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- ftd.image:
+src: $assets.files.assets.homepage.hero.png
+width.fixed.px: 552
+
+-- end: ds.row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+inset: $ds.spaces.inset-square.large
+
+-- ftd.image:
+src: $assets.files.assets.homepage.hero.png
+width: fill-container
+
+-- ds.heading-large: $hero.title
+
+-- ds.copy-large:
+
+$hero.body
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.medium
+align-content: left
+
+-- ds.icon-button: Get started
+link: signin/
+icon-position: at-end
+icon: $assets.files.assets.sites.arrow.svg
+radius: curved
+
+-- ds.icon-button: Start Learning
+link: signin/
+icon-position: at-end
+icon: $assets.files.assets.sites.arrow.svg
+radius: curved
+kind: tertiary
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ftd.mobile
 
 -- end: ds.column
 
@@ -68,6 +161,323 @@ rounded: true
 
 
 
+
+
+
+
+
+
+
+-- component build-with-fastn:
+caption title:
+body body:
+
+-- ds.column:
+
+-- ftd.desktop:
+
+-- ds.container:
+background.solid: $ds.colors.background.step-1
+border: $ds.borders.uniform.small
+margin-vertical: $ds.spaces.vertical-gap.extra-large
+radius: $ds.radius.small
+inset: $ds.spaces.inset-square.large
+width.fixed.px: 1152
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-large: $build-with-fastn.title
+align: center
+
+-- ds.heading-tiny: $build-with-fastn.body
+align: center
+
+-- end: ds.column
+
+-- end: ds.container
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.container:
+background.solid: $ds.colors.background.step-1
+border: $ds.borders.uniform.small
+margin-vertical: $ds.spaces.vertical-gap.extra-large
+radius: $ds.radius.small
+inset: $ds.spaces.inset-square.large
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-large: $build-with-fastn.title
+align: center
+
+-- ds.heading-tiny: $build-with-fastn.body
+align: center
+
+-- end: ds.column
+
+-- end: ds.container
+
+-- end: ftd.mobile
+
+-- end: ds.column
+
+-- end: build-with-fastn
+
+
+
+
+
+
+
+
+
+
+-- component why-fastn:
+caption title:
+cards list card:
+
+-- ds.column:
+width.fixed.px if { ftd.device != "mobile" }: 1142
+spacing: $ds.spaces.vertical-gap.extra-large
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+
+-- ds.heading-large: $why-fastn.title
+width: hug-content
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.medium
+align-content if { ftd.device != "mobile" }: left
+wrap: true
+
+-- card-info: $obj.text
+for: obj in $why-fastn.card
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: why-fastn
+
+
+
+
+
+
+
+
+
+
+-- component explore:
+explore-lists list explore-card-list:
+
+-- ds.container:
+width.fixed.px if { ftd.device != "mobile" }: 1142
+margin-vertical: $ds.spaces.vertical-gap.extra-large
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.medium
+wrap: true
+
+-- explore-card-info: $obj.text
+for: obj in $explore.explore-card-list
+
+-- end: ds.row
+
+-- end: ds.container
+
+-- end: explore
+
+
+
+
+
+
+
+
+
+-- component explore-card-info:
+caption text:
+;;ftd.background-image bg-image:
+
+-- ds.column:
+width.fixed.px: 556
+background.solid: $ds.colors.background.step-1
+inset: $ds.spaces.inset-square.large
+border: $ds.borders.uniform.small
+
+-- ds.heading-small: $explore-card-info.text
+align: center
+width.fixed.px: 476
+
+-- end: ds.column
+
+-- end: explore-card-info
+
+
+
+
+
+
+
+
+-- component card-info:
+caption text:
+;;ftd.background-image bg-image:
+
+-- ds.column:
+width.fixed.px: 362
+background.solid: $ds.colors.background.step-1
+inset: $ds.spaces.inset-square.large
+border: $ds.borders.uniform.small
+
+-- ds.copy-regular: $card-info.text
+
+-- end: ds.column
+
+-- end: card-info
+
+
+
+
+
+
+
+
+
+
+-- component testimonial:
+caption title:
+body body:
+ftd.image-src avatar:
+string author-name:
+string role:
+
+-- ds.container:
+width.fixed.px if { ftd.device != "mobile" }: 1140
+inset: $ds.spaces.inset-square.large
+margin-vertical: $ds.spaces.vertical-gap.large
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-medium: $testimonial.title
+width: hug-content
+align: center
+
+-- ds.copy-regular: $testimonial.body
+align: center
+
+-- ds.row:
+width: hug-content
+align-content: center
+spacing: $ds.spaces.horizontal-gap.small
+
+-- ftd.image:
+src: $testimonial.avatar
+width.fixed.px: 75
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.extra-small
+
+-- ds.copy-large: $testimonial.author-name
+
+-- ds.copy-regular: $testimonial.role
+width: hug-content
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ds.container
+
+-- end: testimonial
+
+
+
+
+
+
+
+
+
+
+
+-- component fastn-power:
+caption title:
+string number:
+
+-- ds.column:
+width.fixed.px if { ftd.device != "mobile" }: 1140
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-large: $fastn-power.number
+color: $ds.colors.accent.primary
+width: hug-content
+
+-- ftd.image:
+src: $assets.files.assets.homepage.circle.svg
+width.fixed.px: 208
+height.fixed.px: 160
+anchor: parent
+top.px: -46
+
+-- ds.heading-medium: $fastn-power.title
+width: hug-content
+align: center
+
+-- end: ds.column
+
+-- end: fastn-power
+
+
+
+
+
+
+
+
+
+
+-- record cards:
+caption text:
+
+-- cards list card-list:
+
+-- cards:
+text: Minimal, user-friendly syntax ensures anyone in your team can learn fastn in a day.
+
+-- cards:
+text: Access a rich library of components, color schemes, and templates for faster development.
+
+-- cards:
+text: 1000+ developers and designers are actively building fastn components for you.
+
+-- end: card-list
+
+
+
+
+
+-- record explore-lists:
+caption text:
+
+-- explore-lists list explore-list:
+
+-- explore-lists:
+text: Explore how fastn compares to other languages and frameworks.
+
+-- explore-lists:
+text: Explore how fastn compares to WYSIWYG website builders.
+
+-- end: explore-list
 
 
 
