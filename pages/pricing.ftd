@@ -24,6 +24,7 @@ width: hug-content
 -- ftd.desktop:
 
 -- ds.row:
+inset: $ds.spaces.inset-tall.large
 
 -- pricing: Personal
 items: $free-pricing-items
@@ -131,26 +132,37 @@ kv-data list items:
 string price-value:
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 400
-height.fixed.px: 400
+width.fixed.px if { ftd.device != "mobile" }: 360
 border: $ds.borders.uniform.small
-align-content: center
-inset: $ds.spaces.inset-square.medium
-spacing: $ds.spaces.vertical-gap.medium
+align-content: top-center
+spacing: $ds.spaces.vertical-gap.large
+background.solid: $ds.colors.background.step-1
+inset: $ds.spaces.inset-wide.medium
 
 -- ds.heading-medium: $pricing.name
 width: hug-content
-margin: $ds.spaces.vertical-gap.medium
 
--- ds.row:
-height.fixed.px: 50
-/margin: $ds.spaces.vertical-gap.medium
+-- ds.column:
+background.solid: $ds.colors.accent.primary
+radius: $ds.radius.small
+inset: $ds.spaces.inset-square.small
+align-content: center
+
+-- ds.heading-medium: $pricing.price-value
+width: hug-content
+
+-- end: ds.column
+
+/-- kv-view: $k
+for: k in $pricing.items
 
 -- ds.copy-regular: $pricing.description
 width: hug-content
 align: center
 
--- end: ds.row
+-- ds.column:
+height: fill-container
+align-content: bottom-center
 
 -- ds.primary-button: $pricing.cta-text
 if: { pricing.cta-link != NULL }
@@ -162,17 +174,20 @@ width: full
 if: { pricing.cta-link == NULL }
 radius: curved
 width: full
-variant: outline
 
--- ds.heading-small: $pricing.price-value
-width: hug-content
-
-/-- kv-view: $k
-for: k in $pricing.items
+-- end: ds.column
 
 -- end: ds.column
 
 -- end: pricing
+
+
+
+
+
+
+
+
 
 
 -- component kv-view:
