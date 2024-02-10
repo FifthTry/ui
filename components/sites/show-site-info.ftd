@@ -15,24 +15,23 @@ border: $ds.borders.uniform.small
 spacing: $ds.spaces.horizontal-gap.large
 background.solid: $ds.colors.background.step-1
 link: $show-site-info.site.detail-url
+align-content: top-center
 
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image == NULL }
 	src: $assets.files.assets.sites.placeholder.svg
 	width.fixed.px: 330
-	height.fixed.px: 125
 	fit: cover
 	
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image != NULL }
 	src: $show-site-info.site.placeholder-image
 	width.fixed.px: 330
-	height.fixed.px: 125
 	fit: cover
 	
 	-- ds.column:
-	spacing: $ds.spaces.vertical-gap.small
-	align-content: left
+	spacing: $ds.spaces.vertical-gap.medium
+	align-content: top-left
 	
 		-- ds.heading-small: $show-site-info.site.name
 
@@ -52,14 +51,12 @@ link: $show-site-info.site.detail-url
         link: $show-site-info.site.detail-url
         icon-position: at-end
         kind: secondary
-        variant: outline
 	
 		-- ds.icon-button: Visit Site
 		icon: $assets.files.assets.sites.link.svg
 		link: $show-site-info.site.domain-with-host
 		icon-position: at-end
 		kind: secondary
-		variant: outline
 		
 	-- end: ds.column
 
@@ -82,28 +79,37 @@ link: $show-site-info.site.detail-url
 	if: { show-site-info.site.placeholder-image == NULL }
 	src: $assets.files.assets.sites.placeholder.svg
 	width: fill-container
-	height.fixed.px: 125
+	height.fixed.px: 124
 	fit: cover
-	border-radius.px: 8
+	border-radius.px: 6
 	
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image != NULL }
 	src: $show-site-info.site.placeholder-image
 	width: fill-container
-	height.fixed.px: 125
+	height.fixed.px: 124
 	fit: cover
-	border-radius.px: 8
+	border-radius.px: 6
 	
 		-- ds.heading-small: $show-site-info.site.name
+
+		-- ds.copy-small: $show-site-info.site.domain
 		
-		-- ds.copy-small: $show-site-info.site.created-on
+		-- ds.copy-small: $last-updated-format(value = $show-site-info.site.last-updated-on)
+	
+		-- ds.icon-button: View Details
+        icon: $assets.files.assets.sites.link.svg
+        link: $show-site-info.site.detail-url
+        icon-position: at-end
+        kind: secondary
+        width: full
 	
 		-- ds.icon-button: Visit Site
 		icon: $assets.files.assets.sites.link.svg
 		link: $show-site-info.site.domain-with-host
 		icon-position: at-end
 		kind: secondary
-		variant: outline
+		width: full
 
 -- end: ds.column
 
