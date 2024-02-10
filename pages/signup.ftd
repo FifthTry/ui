@@ -26,16 +26,17 @@ private string $current-password: *$ftd.empty
 -- ds.row:
 radius: $ds.radius.zero
 background.solid: $ds.colors.background.step-1
+align-content: top-center
 
 	-- ftd.image:
 	src: $assets.files.assets.background.svg
 	width.fixed.percent: 70
-	height.fixed.vh: 108
+	height.fixed.px: 780
 	fit: cover
 	
 	-- ds.column:
-	align-content: center
-	inset: $ds.spaces.inset-tall.medium
+	align-content: top-center
+	inset: $ds.spaces.inset-tall.large
 	width.fixed.percent: 30
 	spacing: $ds.spaces.vertical-gap.large
 	
@@ -185,7 +186,7 @@ background.solid: $ds.colors.background.step-1
 			spacing: $ds.spaces.horizontal-gap.medium
 			
 				-- ds.row:
-				width.fixed.px: 111
+				width.fixed.px: 110
 				border: $ds.borders.top.small
 				
 				-- end: ds.row
@@ -193,7 +194,7 @@ background.solid: $ds.colors.background.step-1
 				-- ds.copy-small: Or login using
 				
 				-- ds.row:
-				width.fixed.px: 111
+				width.fixed.px: 110
 				border: $ds.borders.top.small
 				
 				-- end: ds.row
@@ -204,7 +205,6 @@ background.solid: $ds.colors.background.step-1
 			icon: $assets.files.assets.github-mark-white.svg
 			link: $page.github-url
 			kind: secondary
-			variant: outline
 			width: full
 			
 		-- end: ds.column
@@ -356,7 +356,7 @@ background.solid: $ds.colors.background.step-1
 			
 				-- ds.copy-regular: $lang.create-account
 				text if { page.signin-url }: $lang.existing-account
-				width.fixed.px: 200
+				width: hug-content
 				
 				-- ds.link: $lang.signin-type
 				color: $ds.colors.info.text
@@ -390,7 +390,6 @@ background.solid: $ds.colors.background.step-1
 			icon: $assets.files.assets.github-mark-white.svg
 			link: $page.github-url
 			kind: secondary
-			variant: outline
 			width: full
 			
 		-- end: ds.column
