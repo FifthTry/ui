@@ -174,7 +174,7 @@ align-content: top-center
 				width.fixed.px: 200
 				
 				-- ds.link: $lang.signin-type
-				color: $ds.colors.info.text
+				color: $ds.colors.accent.primary
 				text if { page.signin-url }: $lang.signup-type
 				link if { page.signup-url }: $page.signup-url
 				link if { page.signin-url }: $page.signin-url
@@ -359,7 +359,7 @@ align-content: top-center
 				width: hug-content
 				
 				-- ds.link: $lang.signin-type
-				color: $ds.colors.info.text
+				color: $ds.colors.accent.primary
 				text if { page.signin-url }: $lang.signup-type
 				link if { page.signup-url }: $page.signup-url
 				link if { page.signin-url }: $page.signin-url
