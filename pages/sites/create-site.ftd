@@ -26,10 +26,10 @@ show-header: false
 	-- ftd.desktop:
 
 	-- ds.column:
-	width.fixed.px: 484
+	width.fixed.px: 454
 	background.solid: $ds.colors.background.step-1
 	border: $ds.borders.uniform.small
-	inset: $ds.spaces.inset-square.extra-large
+	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
 	
 		-- ds.heading-small: Create new site
@@ -38,6 +38,7 @@ show-header: false
 		-- ds.column:
 		align-content: top-left
 		spacing: $ds.spaces.vertical-gap.extra-small
+		height.fixed.px: 84
 		
 			-- ds.copy-small: Domain
 			
@@ -58,6 +59,10 @@ show-header: false
 				-- ds.copy-small: .fifthtry.site
 				
 			-- end: ds.row
+
+			-- ds.copy-regular: $page.create-site.create-site-error
+			color: $ds.colors.error.text
+			if: { page.create-site.create-site-error != NULL }
 
 		-- end: ds.column
 
@@ -86,16 +91,12 @@ show-header: false
 		link: $u.dashboard-url(org_slug=$page.data.org-slug)
 
 		-- end: ds.row
-    
-		-- ftd.text: $page.create-site.create-site-error
-		color: red
-		if: { page.create-site.create-site-error != NULL }
 
 	-- end: ds.column
 
 	-- end: ftd.desktop
 
-		-- ftd.mobile:
+	-- ftd.mobile:
 
 	-- ds.column:
 	border: $ds.borders.uniform.small
@@ -109,6 +110,7 @@ show-header: false
 		-- ds.column:
 		align-content: top-left
 		spacing: $ds.spaces.vertical-gap.extra-small
+		height.fixed.px: 84
 		
 			-- ds.copy-small: Domain
 			
@@ -130,6 +132,10 @@ show-header: false
 				
 			-- end: ds.row
 
+			-- ds.copy-regular: $page.create-site.create-site-error
+			color: $ds.colors.error.text
+			if: { page.create-site.create-site-error != NULL }
+
 		-- end: ds.column
 
 		-- ds.row:
@@ -143,6 +149,9 @@ show-header: false
 			
 		-- end: ds.row
 
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.medium
+
 		-- ds.primary-button: Create Site
 		width: full
 		radius: curved
@@ -152,10 +161,8 @@ show-header: false
 		width: full
 		radius: curved
 		link: /scenarios/sites/dashboard/
-    
-		-- ftd.text: $page.create-site.create-site-error
-		color: red
-		if: { page.create-site.create-site-error != NULL }
+
+	-- end: ds.column
 
 	-- end: ds.column
 
