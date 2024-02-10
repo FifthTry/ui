@@ -145,7 +145,6 @@ align-content: top-center
 				icon: $assets.files.assets.github-mark-white.svg
 				link: $page.github-url
 				kind: secondary
-				variant: outline
 				width: full
 				
 				-- ds.link: I forgot my password
@@ -246,7 +245,7 @@ align-content: top-center
 			radius: curved
 			
 			-- ds.row:
-			spacing: $ds.spaces.vertical-gap.small
+			spacing: $ds.spaces.vertical-gap.extra-small
 			inset: $ds.spaces.inset-square.small
 			
 				-- ds.copy-regular:
@@ -286,7 +285,6 @@ align-content: top-center
 				icon: $assets.files.assets.github-mark-white.svg
 				link: $page.github-url
 				kind: secondary
-				variant: outline
 				width: full
 				
 				-- ds.link: I forgot my password
