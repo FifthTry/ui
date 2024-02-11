@@ -1,0 +1,6 @@
+-- import: ui.fifthtry.com/pages/privacy
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- privacy.page:
+user-data: $john-doe.jd

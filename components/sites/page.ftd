@@ -18,6 +18,7 @@ boolean show-header: true
 boolean show-header-links: true
 boolean hide-footer: false
 sr.toc-data list header-links:
+optional ftd.resizing height: fill-container
 
 -- ds.page: $page.title
 
@@ -41,7 +42,7 @@ sr.toc-data list header-links:
 	inset: $ds.spaces.inset-square.zero
 	content: $page.children
 	align-content: $page.align-content
-	height: fill-container
+	height: $page.height
 	
 	-- end: ds.column
 
