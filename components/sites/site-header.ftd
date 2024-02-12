@@ -68,7 +68,7 @@ height.fixed.px: 80
 		-- ds.copy-large: $header-with-logo.header-text
 		if: { header-with-logo.header-text != NULL }
 		
-		-- ds.copy-large: $header-with-logo.current-site.name
+		-- ds.copy-regular: $header-with-logo.current-site.name
 		if: { header-with-logo.current-site != NULL }
 
 	-- end: ds.row
@@ -130,7 +130,7 @@ height.fixed.px: 80
 		-- ds.copy-large: $header-with-logo.header-text
 		if: { header-with-logo.header-text != NULL }
 		
-		-- ds.copy-large: $header-with-logo.current-site.name
+		-- ds.copy-regular: $header-with-logo.current-site.name
 		if: { header-with-logo.current-site != NULL }
 
 	-- end: ds.row
