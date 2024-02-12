@@ -33,11 +33,17 @@ inset: $ds.spaces.inset-wide.large-zero
 
 -- component header-with-logo:
 sr.toc-data list toc-list:
+optional sr.site current-site:
 optional string site-name:
 optional ftd.image-src site-logo:
 optional string header-text:
 module site-data: site-data
 ud.user-data user-data: $user-data.user
+boolean $open: false
+
+-- ds.column:
+
+-- ftd.desktop:
 
 -- ds.row:
 width: fill-container
@@ -49,23 +55,22 @@ height.fixed.px: 80
 
 	-- ds.row:
 	if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
-	width: hug-content
+	align-content: left
 	
-		-- ftd.text: $header-with-logo.site-name
+		-- ds.copy-large: $header-with-logo.site-name
 		if: { header-with-logo.site-name != NULL }
-		color: $ds.colors.text-strong
-		role: $ds.types.copy-large
 		
 		-- ftd.image: $header-with-logo.site-logo
 		if: { header-with-logo.site-logo != NULL }
 		width: auto
 		link: /
 		
-		-- ftd.text: $header-with-logo.header-text
+		-- ds.copy-large: $header-with-logo.header-text
 		if: { header-with-logo.header-text != NULL }
-		color: $ds.colors.text-strong
-		role: $ds.types.copy-large
 		
+		-- ds.copy-large: $header-with-logo.current-site.name
+		if: { header-with-logo.current-site != NULL }
+
 	-- end: ds.row
 
 	-- ds.row:
@@ -97,6 +102,84 @@ height.fixed.px: 80
 -- end: ds.row
 
 -- end: ds.row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.row:
+width: fill-container
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+background.solid: $ds.colors.background.base
+inset: $ds.spaces.inset-wide.large
+height.fixed.px: 80
+
+	-- ds.row:
+	if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
+	align-content: left
+	
+		-- ds.copy-large: $header-with-logo.site-name
+		if: { header-with-logo.site-name != NULL }
+		
+		-- ftd.image: $header-with-logo.site-logo
+		if: { header-with-logo.site-logo != NULL }
+		width: auto
+		link: /
+		
+		-- ds.copy-large: $header-with-logo.header-text
+		if: { header-with-logo.header-text != NULL }
+		
+		-- ds.copy-large: $header-with-logo.current-site.name
+		if: { header-with-logo.current-site != NULL }
+
+	-- end: ds.row
+
+	/-- ds.row:
+	width: hug-content
+	inset: $ds.spaces.inset-square.medium
+	
+		-- toc-link: $t
+		for: t in $header-with-logo.toc-list
+		
+	-- end: ds.row
+
+	-- ftd.image:
+	src: $assets.files.assets.sites.menu.svg
+	$on-click$: $ftd.toggle($a = $header-with-logo.open)
+
+	-- ds.floater:
+	if: { header-with-logo.open }
+	background.solid: $ds.colors.background.step-1
+	left: 0
+	top: 66
+	inset: $ds.spaces.inset-tall.medium
+
+	-- ds.column:
+	spacing: $ds.spaces.horizontal-gap.large
+	;;width.fixed.px: 420
+
+	-- ds.link: $lang.home
+	color: $ds.colors.text-strong
+	link: /
+
+	-- ds.link: $lang.pricing
+	color: $ds.colors.text-strong
+	link: /pricing/
+
+	-- avatar.avatar:
+	if: { header-with-logo.user-data.is-logged-in }
+	user-data: $header-with-logo.user-data
+	
+	-- end: ds.column
+
+	-- end: ds.floater
+
+-- end: ds.row
+
+-- end: ftd.mobile
+
+-- end: ds.column
 
 -- end: header-with-logo
 
