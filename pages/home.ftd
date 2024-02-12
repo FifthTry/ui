@@ -14,22 +14,33 @@ user-data: $page.user-data
 site-data: $page.site-data
 hide-footer: false
 
--- hero: Build your next website with FifthTry
+-- hero: Build your next website in less than 2 hours
 
-Escape the trade-off between restrictive website builders and 
-complex React development. With FifthTry, your non-tech teams can 
-build, host and publish websites without sacrificing 
-scalability and customization.
+- Over 300 Websites Already Launched.
+- Loved by 3000+ tech-enthusiasts
 
--- build-with-fastn: Build with fastn and host on FifthTry
+/-- build-with-fastn: Build with fastn and host on FifthTry
 
 fastn is an easy-to-learn, open-source programming language and a framework
 for building modern content-centric and database-driven websites.FifthTry
 provides an easy-to-use website hosting solution designed for
 non-developers. 
 
--- why-fastn: Why fastn
-card: $card-list
+-- card: Challenges in Today's Website Development
+card-list: $challange-list
+
+-- card: How FifthTry solves this for you
+card-list: $solution-list
+
+-- fastn-power: Stars on GitHub
+number: 400+
+
+Escape the trade-off between restrictive website builders and complex JavaScript development. 
+With FifthTry, your non-tech teams can build, host and publish websites 
+without sacrificing reliability and customization.
+
+-- section-card:
+section-card-list: $explore
 
 -- testimonial: From skeptic to web developer in an afternoon!
 author-name: Nandini Devi
@@ -43,11 +54,8 @@ just like writing text in a text file, and you end up with a beautifully
 designed website. Definitely the most productive and result-oriented
 activity I've ever undertaken in a single afternoon.“
 
--- fastn-power: Have built their first fastn-powered website within 2 hours of discovering fastn.
-number: 3000+
-
--- explore: 
-explore-card-list: $explore-list
+-- testimonial-card: Loved  by 3000+ Engineers, Founder & Creators 
+testimonial-list: $testimonial-lists
 
 -- end: p.page
 
@@ -70,9 +78,12 @@ body body:
 
 -- ftd.desktop:
 
+-- ds.container:
+margin-vertical: $ds.spaces.vertical-gap.extra-large
+width.fixed.px: 1152
+
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
-width.fixed.px: 1152
 align-content: left
 
 -- ds.column:
@@ -81,30 +92,16 @@ align-content: left
 spacing: $ds.spaces.vertical-gap.large
 
 -- ds.heading-large: $hero.title
-width.fixed.px: 524
 
--- ds.copy-large:
+-- ds.copy-regular:
 
 $hero.body
 
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.medium
-align-content: left
-
--- ds.icon-button: Get started
+-- ds.icon-button: Start Building
 link: signin/
 icon-position: at-end
 icon: $assets.files.assets.sites.arrow.svg
 radius: curved
-
--- ds.icon-button: Start Learning
-link: signin/
-icon-position: at-end
-icon: $assets.files.assets.sites.arrow.svg
-radius: curved
-kind: tertiary
-
--- end: ds.row
 
 -- end: ds.column
 
@@ -113,6 +110,8 @@ src: $assets.files.assets.homepage.hero.png
 width.fixed.px: 552
 
 -- end: ds.row
+
+-- end: ds.container
 
 -- end: ftd.desktop
 
@@ -236,87 +235,46 @@ align: center
 
 
 
--- component why-fastn:
-caption title:
-cards list card:
+-- component card:
+optional caption title:
+cards list card-list:
 
--- ds.column:
+-- ds.container:
+margin-vertical: $ds.spaces.vertical-gap.large
 width.fixed.px if { ftd.device != "mobile" }: 1142
-spacing: $ds.spaces.vertical-gap.extra-large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
 
--- ds.heading-large: $why-fastn.title
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.extra-large
+
+-- ds.heading-large: $card.title
+if: { card.title != NULL }
 width: hug-content
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.medium
-align-content if { ftd.device != "mobile" }: left
 wrap: true
 
--- card-info: $obj.text
-for: obj in $why-fastn.card
+-- card-info: $obj.title
+for: obj in $card.card-list
+triangle-icon-1: $obj.triangle-icon-1
+triangle-icon-2: $obj.triangle-icon-2
+triangle-icon-3: $obj.triangle-icon-3
+circle-icon-1: $obj.circle-icon-1
+circle-icon-2: $obj.circle-icon-2
+circle-icon-3: $obj.circle-icon-3
+
+$obj.body
 
 -- end: ds.row
 
 -- end: ds.column
-
--- end: why-fastn
-
-
-
-
-
-
-
-
-
-
--- component explore:
-explore-lists list explore-card-list:
-
--- ds.container:
-width.fixed.px if { ftd.device != "mobile" }: 1142
-margin-vertical: $ds.spaces.vertical-gap.extra-large
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
-
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.medium
-wrap: true
-
--- explore-card-info: $obj.text
-for: obj in $explore.explore-card-list
-
--- end: ds.row
 
 -- end: ds.container
 
--- end: explore
+-- end: card
 
 
-
-
-
-
-
-
-
--- component explore-card-info:
-caption text:
-;;ftd.background-image bg-image:
-
--- ds.column:
-width.fixed.px: 556
-background.solid: $ds.colors.background.step-1
-inset: $ds.spaces.inset-square.large
-border: $ds.borders.uniform.small
-
--- ds.heading-small: $explore-card-info.text
-align: center
-width.fixed.px: 476
-
--- end: ds.column
-
--- end: explore-card-info
 
 
 
@@ -326,21 +284,132 @@ width.fixed.px: 476
 
 
 -- component card-info:
-caption text:
-;;ftd.background-image bg-image:
+caption title:
+optional body body:
+optional ftd.image-src triangle-icon-1:
+optional ftd.image-src triangle-icon-2:
+optional ftd.image-src triangle-icon-3:
+optional ftd.image-src circle-icon-1:
+optional ftd.image-src circle-icon-2:
+optional ftd.image-src circle-icon-3:
 
 -- ds.column:
-width.fixed.px: 362
+width.fixed.px: 364
+height.fixed.px: 369
 background.solid: $ds.colors.background.step-1
-inset: $ds.spaces.inset-square.large
+inset: $ds.spaces.inset-square.medium
 border: $ds.borders.uniform.small
+align-content: top-left
 
--- ds.copy-regular: $card-info.text
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ftd.image:
+if: { card-info.triangle-icon-1 != NULL }
+src: $card-info.triangle-icon-1
+
+-- ftd.image:
+if: { card-info.circle-icon-1 != NULL }
+src: $card-info.circle-icon-1
+
+-- ftd.image:
+if: { card-info.triangle-icon-2 != NULL }
+src: $card-info.triangle-icon-2
+
+-- ftd.image:
+if: { card-info.circle-icon-2 != NULL }
+src: $card-info.circle-icon-2
+anchor: parent
+right.px: 0
+top.px: -18
+
+-- ftd.image:
+if: { card-info.triangle-icon-3 != NULL }
+src: $card-info.triangle-icon-3
+
+-- ftd.image:
+if: { card-info.circle-icon-3 != NULL }
+src: $card-info.circle-icon-3
+
+-- end: ds.row
+
+-- ds.heading-small: $card-info.title
+width: hug-content
+
+-- ds.copy-regular: $card-info.body
+if: { card-info.body != NULL }
 
 -- end: ds.column
 
 -- end: card-info
 
+
+
+
+
+
+
+
+
+
+
+
+-- component section-card:
+optional caption title:
+section-cards list section-card-list:
+
+-- ds.container:
+margin-vertical: $ds.spaces.vertical-gap.large
+width.fixed.px if { ftd.device != "mobile" }: 1142
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.extra-large
+
+-- ds.heading-large: $section-card.title
+if: { section-card.title != NULL }
+width: hug-content
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.medium
+wrap: true
+
+-- section-card-info: $obj.title
+for: obj in $section-card.section-card-list
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ds.container
+
+-- end: section-card
+
+
+
+
+
+
+
+
+
+
+-- component section-card-info:
+caption title:
+
+-- ds.column:
+width.fixed.px: 556
+background.solid: $ds.colors.background.step-1
+inset: $ds.spaces.inset-square.large
+border: $ds.borders.uniform.small
+
+-- ds.heading-small: $section-card-info.title
+width: hug-content
+align: center
+
+-- end: ds.column
+
+-- end: section-card-info
 
 
 
@@ -359,7 +428,7 @@ string role:
 
 -- ds.container:
 width.fixed.px if { ftd.device != "mobile" }: 1140
-inset: $ds.spaces.inset-square.large
+inset: $ds.spaces.inset-wide.large
 margin-vertical: $ds.spaces.vertical-gap.large
 
 -- ds.column:
@@ -375,7 +444,7 @@ align: center
 -- ds.row:
 width: hug-content
 align-content: center
-spacing: $ds.spaces.horizontal-gap.small
+spacing: $ds.spaces.horizontal-gap.medium
 
 -- ftd.image:
 src: $testimonial.avatar
@@ -408,14 +477,123 @@ width: hug-content
 
 
 
+-- component testimonial-card:
+caption title:
+testimonials list testimonial-list:
+
+-- ds.container:
+margin-vertical: $ds.spaces.vertical-gap.large
+width.fixed.px if { ftd.device != "mobile" }: 1142
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.extra-large
+
+-- ds.heading-large: $testimonial-card.title
+if: { testimonial-card.title != NULL }
+width: hug-content
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.large
+wrap: true
+
+-- testimonial-card-info: $obj.name
+for: obj in $testimonial-card.testimonial-list
+role: $obj.role
+avatar: $obj.avatar
+body: $obj.body
+card-1: $obj.card-1
+card-2: $obj.card-2
+card-3: $obj.card-3
+card-4: $obj.card-4
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ds.container
+
+-- end: testimonial-card
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-info:
+caption name:
+string role:
+ftd.image-src avatar:
+body body:
+optional ftd.shadow card-1:
+optional ftd.shadow card-2:
+optional ftd.shadow card-3:
+optional ftd.shadow card-4:
+
+-- ds.column:
+width.fixed.px: 532
+height.fixed.px: 350
+align-content: top-left
+border: $ds.borders.uniform.small
+spacing: $ds.spaces.vertical-gap.medium
+background.solid: $ds.colors.background.step-1
+shadow if { testimonial-card-info.card-1 != NULL }: $testimonial-card-info.card-1
+shadow if { testimonial-card-info.card-2 != NULL }: $testimonial-card-info.card-2
+shadow if { testimonial-card-info.card-3 != NULL }: $testimonial-card-info.card-3
+shadow if { testimonial-card-info.card-4 != NULL }: $testimonial-card-info.card-4
+inset: $ds.spaces.inset-square.medium
+
+-- ds.row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.medium
+
+-- ftd.image:
+src: $testimonial-card-info.avatar
+width.fixed.px: 75
+
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.extra-small
+
+-- ds.heading-small: $testimonial-card-info.name
+width: hug-content
+
+-- ds.copy-regular: $testimonial-card-info.role
+width: hug-content
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- ds.copy-large: $testimonial-card-info.body
+
+-- end: ds.column
+
+-- end: testimonial-card-info
+
+
+
+
+
+
+
+
+
 
 -- component fastn-power:
 caption title:
+body body:
 string number:
 
--- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 1140
+-- ds.container:
+margin-vertical: $ds.spaces.vertical-gap.large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+
+-- ds.column:
 spacing: $ds.spaces.vertical-gap.large
 
 -- ds.heading-large: $fastn-power.number
@@ -433,7 +611,12 @@ top.px: -46
 width: hug-content
 align: center
 
+-- ds.copy-large: $fastn-power.body
+align: center
+
 -- end: ds.column
+
+-- end: ds.container
 
 -- end: fastn-power
 
@@ -447,37 +630,188 @@ align: center
 
 
 -- record cards:
-caption text:
+caption title:
+optional body body:
+optional ftd.image-src triangle-icon-1:
+optional ftd.image-src triangle-icon-2:
+optional ftd.image-src triangle-icon-3:
+optional ftd.image-src circle-icon-1:
+optional ftd.image-src circle-icon-2:
+optional ftd.image-src circle-icon-3:
 
--- cards list card-list:
+-- cards list challange-list:
 
--- cards:
-text: Minimal, user-friendly syntax ensures anyone in your team can learn fastn in a day.
+-- cards: Building Your site
+triangle-icon-1: $assets.files.assets.homepage.triangle-1.svg
+circle-icon-1: $assets.files.assets.homepage.circle-1.svg
 
--- cards:
-text: Access a rich library of components, color schemes, and templates for faster development.
+- Learn at least HTML, CSS, and JS for a simple site.
+- Deal with JS Frameworks, bundling tools, and CSS Frameworks.
+- Create your own design system from scratch
 
--- cards:
-text: 1000+ developers and designers are actively building fastn components for you.
+-- cards: Hosting Your Site
+triangle-icon-2: $assets.files.assets.homepage.triangle-2.svg
+circle-icon-2: $assets.files.assets.homepage.circle-2.svg
 
--- end: card-list
+- Tackle Domain Mapping intricacies.
+- Manage AWS or Vercel configurations.
+- Oversee server/build configurations, uptime monitoring, and security.
+
+-- cards: Updating Your Site
+triangle-icon-3: $assets.files.assets.homepage.triangle-3.svg
+circle-icon-3: $assets.files.assets.homepage.circle-3.svg
+
+- Managing complexities on GitHub or GitLab.
+- Unreliable custom solutions
+- Difficulty in team collaboration during updates.
+
+-- end: challange-list
 
 
 
 
 
--- record explore-lists:
-caption text:
+-- cards list solution-list:
 
--- explore-lists list explore-list:
+-- cards: fastn.com
+triangle-icon-1: $assets.files.assets.homepage.triangle-1.svg
+circle-icon-1: $assets.files.assets.homepage.circle-1.svg
 
--- explore-lists:
-text: Explore how fastn compares to other languages and frameworks.
+- Open-source programming language and full stack framework
+- Learn in a week, even for non-developers
+- Integrated Design System for effortless styling
 
--- explore-lists:
-text: Explore how fastn compares to WYSIWYG website builders.
+-- cards: FifthTry Hosting
+triangle-icon-2: $assets.files.assets.homepage.triangle-2.svg
+circle-icon-2: $assets.files.assets.homepage.circle-2.svg
 
--- end: explore-list
+- Fast and Secure hosting.
+- Seamless integration with fastn and the editor.
+- Hosting designed for non-developers.
+
+-- cards: FifthTry Collaborative Editor
+triangle-icon-3: $assets.files.assets.homepage.triangle-3.svg
+circle-icon-3: $assets.files.assets.homepage.circle-3.svg
+
+- Robust Version Control
+- Collaborative Change-Requests System
+- Intuitive GUI for easy updates to your website
+
+-- end: solution-list
+
+
+
+
+
+
+
+-- record section-cards:
+caption title:
+
+-- section-cards list explore:
+
+-- section-cards: Explore how fastn compares to other languages and frameworks.
+
+-- section-cards: Explore how fastn compares to WYSIWYG website builders.
+
+-- end: explore
+
+
+
+
+
+
+
+
+
+
+-- record testimonials:
+caption name:
+string role:
+ftd.image-src avatar:
+body body:
+optional ftd.shadow card-1:
+optional ftd.shadow card-2:
+optional ftd.shadow card-3:
+optional ftd.shadow card-4:
+
+-- testimonials list testimonial-lists:
+
+-- testimonials: Rutuja Kapate
+role: Web Developer
+avatar: $assets.files.assets.homepage.rutuja.png
+card-1: $card-1
+
+As a web developer, I've found fastn to be a game-changer. Its user-friendly
+ftd language makes building beautiful websites a breeze. With ready-made UI
+components and easy deployment options, fastn streamlines web development.
+Highly recommend!
+
+-- testimonials: Swapnendu Banerjee
+role: Co-founder & PR lead at NoobCode
+avatar: $assets.files.assets.homepage.swapnendu.png
+card-2: $card-2
+
+Learning and working with fastn is really fun because here we get frontend and
+backend under the umbrella and the syntax is really very much user friendly.
+I am learning and enjoying fastn.
+
+-- testimonials: Jahanvi Raycha
+role: Software Developer
+avatar: $assets.files.assets.homepage.jahanvi.png
+card-3: $card-3
+
+fastn made web development a breeze for me. I launched my portfolio website on
+GitHub Pages within 30 minutes, thanks to its intuitive language and the
+ever-helpful community on Discord. It's my go-to framework for a seamless
+coding experience.
+
+-- testimonials: Govindaraman S
+role: Front End Developer, Trizwit
+avatar: $assets.files.assets.homepage.govind.png
+card-4: $card-4
+
+fastn web framework, tailored for someone with a design background and zero
+coding experience like me, has revolutionized website creation. Building
+websites is a walk in the park, and what's truly impressive is how easily I
+can modify the colors and content in a matter of minutes.
+
+-- end: testimonial-lists
+
+
+
+
+
+
+
+-- ftd.shadow card-1:
+color: #EBBE52
+blur.px: 0
+spread.px: 4
+x-offset.px: 6
+y-offset.px: 8
+
+-- ftd.shadow card-2:
+color: #4AA35C
+blur.px: 0
+spread.px: 4
+x-offset.px: 6
+y-offset.px: 8
+
+-- ftd.shadow card-3:
+color: #5C2860
+blur.px: 0
+spread.px: 4
+x-offset.px: 6
+y-offset.px: 8
+
+-- ftd.shadow card-4:
+color: #EC8943
+blur.px: 0
+spread.px: 4
+x-offset.px: 6
+y-offset.px: 8
+
 
 
 
