@@ -142,16 +142,8 @@ inset: $ds.spaces.inset-wide.medium
 -- ds.heading-medium: $pricing.name
 width: hug-content
 
--- ds.column:
-background.solid: $ds.colors.accent.primary
-radius: $ds.radius.small
-inset: $ds.spaces.inset-square.small
-align-content: center
-
 -- ds.heading-medium: $pricing.price-value
 width: hug-content
-
--- end: ds.column
 
 /-- kv-view: $k
 for: k in $pricing.items
