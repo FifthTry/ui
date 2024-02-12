@@ -19,6 +19,7 @@ string site-slug:
 string org-slug:
 sr.domain list all-domains:
 sr.toc-data list header-links:
+sr.site current-site:
 
 -- component page:
 ud.user-data user-data: $user-data.user
@@ -33,6 +34,7 @@ site-data: site-data
 user-data: $page.user-data
 align-content: top-center
 header-links: $page.data.header-links
+current-site: $page.data.current-site
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large

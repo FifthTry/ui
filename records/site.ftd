@@ -47,6 +47,7 @@ string site-domain:
 string configure-url:
 boolean is-configured:
 toc-data list header-links:
+site current-site:
 
 
 
