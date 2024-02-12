@@ -13,8 +13,8 @@ user: FifthTry
 dashboard-url: /scenarios/sites/dashboard/
 current-site: $current-site
 site-urls: $site-urls
-header-links: []
-sub-header-links: $sub-header-links
+header-links: $header-links
+sub-header-links: []
 
 -- sr.site current-site: My Homepage
 domain-with-host: https://my-homepage.fifthtry-sites.com
@@ -38,26 +38,22 @@ is-active: false
 
 
 
--- sr.toc-data list sub-header-links:
 
--- sr.toc-data: Info
-link: /scenarios/hostn/site-info/
+
+
+
+-- sr.toc-data list header-links:
+
+-- sr.toc-data: About
+link: /scenarios/sites/site-info/
 is-active: true
 
--- sr.toc-data: Access
-link: /
+-- sr.toc-data: Domains
+link: /scenarios/sites/site-domain/
 is-active: false
 
--- sr.toc-data: Metrics
-link: /
+-- sr.toc-data: Github
+link: /scenarios/sites/github/
 is-active: false
 
--- sr.toc-data: Activity
-link: /
-is-active: false
-
--- sr.toc-data: Settings
-link: /
-is-active: false
-
--- end: sub-header-links
+-- end: header-links
