@@ -188,74 +188,6 @@ kind: tertiary
 
 
 
--- component build-with-fastn:
-caption title:
-body body:
-
--- ds.column:
-
--- ftd.desktop:
-
--- ds.container:
-background.solid: $ds.colors.background.step-1
-border: $ds.borders.uniform.small
-margin-vertical: $ds.spaces.vertical-gap.extra-large
-radius: $ds.radius.small
-inset: $ds.spaces.inset-square.large
-width.fixed.px: 1152
-
--- ds.column:
-spacing: $ds.spaces.vertical-gap.large
-
--- ds.heading-large: $build-with-fastn.title
-align: center
-
--- ds.heading-tiny: $build-with-fastn.body
-align: center
-
--- end: ds.column
-
--- end: ds.container
-
--- end: ftd.desktop
-
--- ftd.mobile:
-
--- ds.container:
-background.solid: $ds.colors.background.step-1
-border: $ds.borders.uniform.small
-margin-vertical: $ds.spaces.vertical-gap.extra-large
-radius: $ds.radius.small
-inset: $ds.spaces.inset-square.large
-
--- ds.column:
-spacing: $ds.spaces.vertical-gap.large
-
--- ds.heading-large: $build-with-fastn.title
-align: center
-
--- ds.heading-tiny: $build-with-fastn.body
-align: center
-
--- end: ds.column
-
--- end: ds.container
-
--- end: ftd.mobile
-
--- end: ds.column
-
--- end: build-with-fastn
-
-
-
-
-
-
-
-
-
-
 -- component card:
 optional caption title:
 cards list card-list:
@@ -653,7 +585,7 @@ width: hug-content
 
 -- end: ds.row
 
--- ds.copy-large: $testimonial-card-info.body
+-- ds.copy-regular: $testimonial-card-info.body
 
 -- end: ds.column
 
