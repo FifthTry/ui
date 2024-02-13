@@ -2,3 +2,10 @@
 string org_slug:
 
 "/s/" + org_slug + "/"
+
+
+-- string github-access-url(site_slug, org_slug):
+string site_slug:
+string org_slug:
+
+"/s/" + org_slug + "/" + site_slug + "/github/"

@@ -14,6 +14,7 @@ site-name: FifthTry
 site-slug: fifthtry
 org-slug: fifthtry
 all-domains: $all-domains
+header-links: $header-links
 
 -- sr.domain all-domains:
 domain: fastn.com
@@ -25,3 +26,20 @@ dns-status: Verified
 ssl-status: Verified
 last-updated: Just now
 created-at: Just now
+
+
+-- sr.toc-data list header-links:
+
+-- sr.toc-data: About
+link: /scenarios/sites/site-info/
+is-active: false
+
+-- sr.toc-data: Domains
+link: /scenarios/sites/site-domain/
+is-active: true
+
+-- sr.toc-data: Github
+link: /scenarios/sites/github/
+is-active: false
+
+-- end: header-links

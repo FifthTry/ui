@@ -10,7 +10,12 @@ module site-data: site-data
 ud.user-data user-data: $user-data.user
 optional string product:
 ds.gap margin: $ds.spaces.vertical-gap.zero
-optional boolean $sidebar: false
+boolean $sidebar: false
+boolean $menu: false
+
+-- ds.column:
+
+-- ftd.desktop:
 
 -- ds.section-row:
 flush: full
@@ -51,5 +56,76 @@ margin: $header.margin
 	-- end: ds.row
 
 -- end: ds.section-row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.section-row:
+flush: full
+spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.large
+margin: $header.margin
+
+	-- ftd.image:
+	src: $assets.files.assets.fifthtry-logo.svg
+	link: $header.site-data.homepage
+
+	-- ds.row:
+	align-content: right
+	spacing: $ds.spaces.horizontal-gap.medium
+
+	-- avatar.avatar:
+	if: { header.user-data.is-logged-in }
+	user-data: $header.user-data
+
+	-- ftd.image:
+	src: $assets.files.assets.menu.svg
+	$on-click$: $ftd.toggle($a = $header.menu)
+
+	-- ds.floater:
+	if: { header.menu }
+	top: 38
+	width.fixed.px: 424
+	right: -62
+	background.solid: $ds.colors.background.step-1
+	inset: $ds.spaces.inset-square.medium
+
+	-- ds.column:
+	width.fixed.px: 200
+	
+		-- ds.header-link: $lang.home
+		if: { header.product == NULL }
+		link: /
+		
+		-- ds.header-link: $lang.pricing
+		if: { header.product == NULL }
+		link: /pricing/
+
+		/-- language-switcher.dropdown:
+		
+		-- ds.secondary-button: $lang.sign-in
+		if: { !header.user-data.is-logged-in }
+		link: /signin/
+		rounded: true
+		width: full
+		
+		-- ds.primary-button: $lang.sign-up
+		if: { !header.user-data.is-logged-in }
+		link: /signup/
+		rounded: true
+		width: full
+		
+	-- end: ds.column
+
+	-- end: ds.floater
+
+-- end: ds.row
+
+-- end: ds.section-row
+
+-- end: ftd.mobile
+
+-- end: ds.column
 
 -- end: header

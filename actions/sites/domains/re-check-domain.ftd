@@ -1,0 +1,9 @@
+-- optional string $recheck-error:
+
+-- void submit(site_slug, org_slug, domain):
+string site_slug:
+string org_slug:
+string domain:
+js: $assets.files.assets.functions.js
+
+callAlert("Re checking domain")

@@ -45,6 +45,7 @@ align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 inset: $ds.spaces.inset-wide.large
+height.fixed.px: 80
 
 	-- ds.row:
 	if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
