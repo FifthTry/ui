@@ -21,7 +21,6 @@ boolean $menu: false
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
 inset: $ds.spaces.inset-square.large
-margin: $header.margin
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
