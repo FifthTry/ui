@@ -7,6 +7,7 @@
 -- ds.section-column:
 flush: full
 inset: $ds.spaces.inset-square.large
+margin: $ds.spaces.vertical-gap.zero
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between

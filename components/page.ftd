@@ -16,6 +16,11 @@ boolean hide-footer: false
 
 -- ds.page: $page.title
 
+-- ftd.column:
+max-width.fixed.px: 1360
+width: fill-container
+align-self: center
+
 	-- header.header:
 	site-data: $page.site-data
 	user-data: $page.user-data
@@ -30,6 +35,8 @@ boolean hide-footer: false
 
 	-- footer.footer:
 	if: { !page.hide-footer }
+
+	-- end: ftd.column
 	
 -- end: ds.page
 
