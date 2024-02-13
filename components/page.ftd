@@ -11,7 +11,7 @@ optional string product:
 children children:
 optional caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero
-ds.flush flush: to-header
+ds.flush flush: full
 boolean hide-footer: false
 
 -- ds.page: $page.title
@@ -32,6 +32,5 @@ boolean hide-footer: false
 	if: { !page.hide-footer }
 	
 -- end: ds.page
-
 
 -- end: page

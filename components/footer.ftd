@@ -5,8 +5,8 @@
 -- ftd.desktop:
 
 -- ds.section-column:
-flush: wide
-inset: $ds.spaces.inset-tall.zero-medium
+flush: full
+inset: $ds.spaces.inset-square.large
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between

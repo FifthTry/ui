@@ -18,9 +18,9 @@ boolean $menu: false
 -- ftd.desktop:
 
 -- ds.section-row:
-flush: wide
+flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-tall.zero-medium
+inset: $ds.spaces.inset-square.large
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
