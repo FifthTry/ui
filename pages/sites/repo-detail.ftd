@@ -18,6 +18,7 @@ site-data: site-data
 user-data: $page.user-data
 align-content: top-center
 header-links: $page.data.header-links
+current-site: $page.data.current-site
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.large

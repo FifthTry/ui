@@ -60,38 +60,32 @@ inset: $ds.spaces.inset-square.large
 
 -- ftd.mobile:
 
--- ds.section-row:
-flush: full
+-- ds.row:
+width: fill-container
+align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.medium
-margin: $header.margin
+background.solid: $ds.colors.background.base
+inset: $ds.spaces.inset-wide.large
+height.fixed.px: 80
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
 	link: $header.site-data.homepage
 
-	-- ds.row:
-	align-content: right
-	spacing: $ds.spaces.horizontal-gap.medium
-
-	-- avatar.avatar:
-	if: { header.user-data.is-logged-in }
-	user-data: $header.user-data
-
 	-- ftd.image:
-	src: $assets.files.assets.menu.svg
+	src: $assets.files.assets.sites.menu.svg
 	$on-click$: $ftd.toggle($a = $header.menu)
 
 	-- ds.floater:
 	if: { header.menu }
-	top: 38
-	width.fixed.px: 424
-	right: -62
 	background.solid: $ds.colors.background.step-1
-	inset: $ds.spaces.inset-square.medium
+	left: 0
+	top: 66
+	inset: $ds.spaces.inset-tall.medium
 
 	-- ds.column:
-	width.fixed.px: 200
+	spacing: $ds.spaces.horizontal-gap.large
+	;;width.fixed.px: 420
 	
 		-- ds.header-link: $lang.home
 		if: { header.product == NULL }
@@ -114,14 +108,16 @@ margin: $header.margin
 		link: /signup/
 		rounded: true
 		width: full
+
+		-- avatar.avatar:
+		if: { header.user-data.is-logged-in }
+		user-data: $header.user-data
 		
 	-- end: ds.column
 
 	-- end: ds.floater
 
 -- end: ds.row
-
--- end: ds.section-row
 
 -- end: ftd.mobile
 
