@@ -17,11 +17,10 @@ boolean $menu: false
 
 -- ftd.desktop:
 
--- ds.section-row:
-flush: full
+-- ds.row:
+width.fixed.px: 1152
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.large
-margin: $header.margin
+inset: $ds.spaces.inset-tall.zero-medium
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
@@ -55,7 +54,7 @@ margin: $header.margin
 		
 	-- end: ds.row
 
--- end: ds.section-row
+-- end: ds.row
 
 -- end: ftd.desktop
 
