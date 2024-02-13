@@ -18,3 +18,21 @@ configure-url: /scenarios/sites/configure-github/
 site-domain: fastn.com
 org-slug: fifthtry
 site-slug: fifthtry
+header-links: $header-links
+
+
+-- sr.toc-data list header-links:
+
+-- sr.toc-data: About
+link: /scenarios/sites/site-info/
+is-active: false
+
+-- sr.toc-data: Domains
+link: /scenarios/sites/site-domain/
+is-active: false
+
+-- sr.toc-data: Github
+link: /scenarios/sites/github/
+is-active: true
+
+-- end: header-links

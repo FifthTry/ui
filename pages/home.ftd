@@ -176,6 +176,41 @@ kind: tertiary
 
 -- end: ds.column
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+background.image: $assets.files.assets.sites.background.png 
+height.fixed.vh: 100
+radius: $ds.radius.zero
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-large: $hero.title
+width: hug-content
+align: center
+
+-- ds.copy-large:
+
+$hero.body
+
+-- end: ds.column
+
+-- ds.icon-button: Get started
+link: signin/
+icon-position: at-end
+icon: $assets.files.assets.sites.arrow.svg
+rounded: true
+
+-- end: ds.column
+
+-- end: ftd.mobile
+
+-- end: ds.column
+
 -- end: hero
 
 
