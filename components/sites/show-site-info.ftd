@@ -7,14 +7,14 @@ caption dashboard.site site:
 
 -- ftd.desktop:
 
--- ds.row:
-width.fixed.px: 1152
+-- ds.section-row:
+flush: full
 radius: $ds.radius.medium
+align-content: top-left
 inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 spacing: $ds.spaces.horizontal-gap.large
-background.solid: $ds.colors.background.step-1
-link: $show-site-info.site.detail-url
+outer-background.solid: $ds.colors.background.step-1
 
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image == NULL }
@@ -22,6 +22,7 @@ link: $show-site-info.site.detail-url
 	width.fixed.px: 330
 	height.fixed.px: 125
 	fit: cover
+	link: $show-site-info.site.detail-url
 	
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image != NULL }
@@ -63,7 +64,7 @@ link: $show-site-info.site.detail-url
 		
 	-- end: ds.column
 
--- end: ds.row
+-- end: ds.section-row
 
 -- end: ftd.desktop
 

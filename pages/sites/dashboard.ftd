@@ -31,11 +31,12 @@ user-data: $page.user-data
 align-content: top-center
 show-header-links: false
 
-	-- ds.column:
-	inset: $ds.spaces.inset-wide.large
+	-- ds.section-column:
+	flush: full
+	inset: $ds.spaces.inset-square.medium
 	spacing: $ds.spaces.vertical-gap.large
 	border: $ds.borders.top.small
-	radius: $ds.radius.zero
+	;;radius: $ds.radius.zero
 	
 		-- ds.row:
 		align-content: top-left
@@ -61,7 +62,7 @@ show-header-links: false
 		-- show-site-info.show-site-info: $s
 		for: s in $page.data.sites
 		
-	-- end: ds.column
+	-- end: ds.section-column
 
 -- end: p.page
 
