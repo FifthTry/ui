@@ -18,6 +18,7 @@ boolean show-header: true
 boolean show-header-links: true
 boolean hide-footer: false
 sr.toc-data list header-links:
+optional sr.site current-site:
 optional ftd.resizing height: fill-container
 
 -- ds.page: $page.title
@@ -31,6 +32,7 @@ optional ftd.resizing height: fill-container
 		toc-list: []
 		site-logo: $assets.files.assets.fifthtry-logo.svg
 		user-data: $page.user-data
+		current-site: $page.current-site
 		
 		-- h.header:
 		if: { page.show-header-links && ftd.len($page.header-links) > 0}
