@@ -87,7 +87,6 @@ inset: $ds.spaces.inset-square.large
 spacing: $ds.spaces.horizontal-gap.extra-large
 
 -- ds.column:
-width.fixed.px: 567
 align-content: left
 spacing: $ds.spaces.vertical-gap.large
 inset: $ds.spaces.inset-square.zero
@@ -122,7 +121,7 @@ radius: curved
 
 -- ftd.image:
 src: $assets.files.assets.homepage.hero.png
-width.fixed.px: 552
+width: auto
 
 -- end: ds.section-row
 
