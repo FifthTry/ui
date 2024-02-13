@@ -17,8 +17,8 @@ boolean $menu: false
 
 -- ftd.desktop:
 
--- ds.row:
-width.fixed.px: 1152
+-- ds.section-row:
+flush: wide
 spacing: $ds.spaces.horizontal-gap.space-between
 inset: $ds.spaces.inset-tall.zero-medium
 
@@ -54,7 +54,7 @@ inset: $ds.spaces.inset-tall.zero-medium
 		
 	-- end: ds.row
 
--- end: ds.row
+-- end: ds.section-row
 
 -- end: ftd.desktop
 
@@ -63,7 +63,7 @@ inset: $ds.spaces.inset-tall.zero-medium
 -- ds.section-row:
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.large
+inset: $ds.spaces.inset-square.medium
 margin: $header.margin
 
 	-- ftd.image:

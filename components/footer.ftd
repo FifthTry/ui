@@ -4,11 +4,9 @@
 
 -- ftd.desktop:
 
--- ds.column:
-width.fixed.px: 1152
+-- ds.section-column:
+flush: wide
 inset: $ds.spaces.inset-tall.zero-medium
-border: $ds.borders.top.small
-radius: $ds.radius.zero
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -91,69 +89,93 @@ spacing: $ds.spaces.horizontal-gap.space-between
 
 	-- end: ds.row
 
-	-- end: ds.column
+	-- end: ds.section-column
 
 -- end: ftd.desktop
 
 -- ftd.mobile:
 
 -- ds.section-column:
-flush: full
-inset: $ds.spaces.inset-square.large
-spacing: $ds.spaces.vertical-gap.large
-margin: $ds.spaces.vertical-gap.zero
-;;border: $ds.borders.top.small
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.extra-large
+align-content: top-left
+
+-- ds.column:
+align-content: top-left
+spacing: $ds.spaces.vertical-gap.medium
 
 	-- ftd.image:
-	src: $assets.files.assets.sites.yc.svg
-	height: fill-container
-	width.fixed.px: 300
-	link: https://www.ycombinator.com/companies/fifthtry
-
-	-- ds.column:
-	spacing: $ds.spaces.vertical-gap.medium
+	src: $assets.files.assets.fifthtry-logo.svg
+	width.fixed.px: 90
 
 	-- ds.row:
+	align-content: left
 	spacing: $ds.spaces.horizontal-gap.medium
 
-	-- ds.link: - **Team**
+	-- ds.link: **Team**
 	color: $ds.colors.text-strong
 	link: /team/
 	align: center
 
-	-- ds.link: - **Handbook**
-	color: $ds.colors.text-strong
-	link: /handbook/
-	align: center
-
-	-- ds.link: - **Terms**
+	-- ds.link: **Terms**
 	color: $ds.colors.text-strong
 	link: https://fifthtry.com/terms/
 	align: center
 
-	-- ds.link: - **Privacy**
+	-- ds.link: **Privacy**
 	color: $ds.colors.text-strong
 	link: https://fifthtry.com/privacy/
 	align: center
 
 	-- end: ds.row
 
-	-- ds.copy-small: © 2023 FifthTry. All rights reserved
+	-- end: ds.column
+
+-- ds.column:
+align-content: top-left
+spacing: $ds.spaces.vertical-gap.medium
+
+	-- ftd.image:
+	src: $assets.files.assets.yc.svg
+	height: fill-container
+	width.fixed.px: 243
+	link: https://www.ycombinator.com/companies/fifthtry
+
+	-- ftd.image:
+	src: $assets.files.assets.hostn.svg
+	width.fixed.px: 187
 
 	-- end: ds.column
 
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.large
+	border: $ds.borders.top.small
+	inset: $ds.spaces.inset-tall.zero-medium
+	radius: $ds.radius.zero
+	align-content: left
+
+	-- ds.copy-small: © 2023 FifthTry. All rights reserved
+
 	-- ds.row:
+	align-content: right
+	width: hug-content
 	spacing: $ds.spaces.horizontal-gap.medium
 
 	-- ftd.image:
-	src: $assets.files.assets.sites.fastn.svg
-	width.fixed.px: 166
+	src: $assets.files.assets.homepage.tweet.svg
 
 	-- ftd.image:
-	src: $assets.files.assets.sites.hostn.svg
-	width.fixed.px: 166
+	src: $assets.files.assets.homepage.linkedin.svg
+
+	-- ftd.image:
+	src: $assets.files.assets.homepage.fb.svg
+
+	-- ftd.image:
+	src: $assets.files.assets.homepage.gh.svg
 
 	-- end: ds.row
+
+	-- end: ds.column
 
 -- end: ds.section-column
 

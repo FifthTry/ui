@@ -83,9 +83,9 @@ body body:
 
 -- ftd.desktop:
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.extra-large
-width.fixed.px: 1152
+-- ds.section-row:
+flush: wide
+inset: $ds.spaces.inset-tall.zero-medium
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -131,46 +131,52 @@ width.fixed.px: 552
 
 -- end: ds.row
 
--- end: ds.container
+-- end: ds.section-row
 
 -- end: ftd.desktop
 
 -- ftd.mobile:
 
+-- ds.section-column:
+flush: to-header
+
 -- ds.column:
+align-content: left
 spacing: $ds.spaces.vertical-gap.large
-inset: $ds.spaces.inset-square.large
 
 -- ftd.image:
 src: $assets.files.assets.homepage.hero.png
 width: fill-container
 
--- ds.heading-large: $hero.title
+-- ds.container:
+margin-vertical: $ds.spaces.vertical-gap.zero
+margin-horizontal: $ds.spaces.vertical-gap.zero
 
--- ds.copy-large:
+-- ds.heading-large: $hero.title 
+width: hug-content
+
+-- ftd.text: $hero.highlight-text
+role: $inherited.types.heading-large
+margin-left.px: 10
+display: inline
+width: hug-content
+color: $ds.colors.accent.primary
+
+-- end: ds.container
+
+-- ds.copy-regular:
 
 $hero.body
 
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.medium
-align-content: left
-
--- ds.icon-button: Get started
+-- ds.icon-button: Start Building
 link: signin/
 icon-position: at-end
 icon: $assets.files.assets.sites.arrow.svg
 radius: curved
-
--- ds.icon-button: Start Learning
-link: signin/
-icon-position: at-end
-icon: $assets.files.assets.sites.arrow.svg
-radius: curved
-kind: tertiary
-
--- end: ds.row
 
 -- end: ds.column
+
+-- end: ds.section-column
 
 -- end: ftd.mobile
 
@@ -192,10 +198,10 @@ kind: tertiary
 optional caption title:
 cards list card-list:
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.large
-width.fixed.px if { ftd.device != "mobile" }: 1142
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+-- ds.section-column:
+flush if { ftd.device != "mobile" }: wide
+inset: $ds.spaces.inset-tall.zero-medium
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-large
@@ -205,6 +211,7 @@ if: { card.title != NULL }
 width: hug-content
 
 -- ds.row:
+align-content: left
 spacing: $ds.spaces.horizontal-gap.medium
 wrap: true
 
@@ -225,7 +232,7 @@ $obj.body
 
 -- end: ds.column
 
--- end: ds.container
+-- end: ds.section-column
 
 -- end: card
 
@@ -252,8 +259,9 @@ optional string cta-link:
 
 
 -- ds.column:
-width.fixed.px: 364
-height.fixed.px: 400
+width.fixed.px if { ftd.device != "mobile" }: 322
+height.fixed.px: 424
+height.fixed.px if { ftd.device == "mobile" }: 380
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
@@ -335,10 +343,10 @@ size: small
 optional caption title:
 section-cards list section-card-list:
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.large
-width.fixed.px if { ftd.device != "mobile" }: 1142
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+-- ds.section-column:
+flush if { ftd.device != "mobile" }: wide
+inset: $ds.spaces.inset-tall.zero-medium
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-large
@@ -350,6 +358,7 @@ width: hug-content
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.medium
 wrap: true
+align-content: left
 
 -- section-card-info: $obj.title
 for: obj in $section-card.section-card-list
@@ -360,7 +369,7 @@ text: $obj.text
 
 -- end: ds.column
 
--- end: ds.container
+-- end: ds.section-column
 
 -- end: section-card
 
@@ -379,9 +388,12 @@ string fastn:
 string text:
 
 -- ds.container:
-width.fixed.px: 500
+width.fixed.px if { ftd.device != "mobile" }: 476
+width: fill-container
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
+margin-vertical if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.zero
+margin-horizontal if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.zero
 border: $ds.borders.uniform.small
 
 -- ds.heading-small: $section-card-info.title
@@ -420,10 +432,10 @@ ftd.image-src avatar:
 string author-name:
 string role:
 
--- ds.container:
-width.fixed.px if { ftd.device != "mobile" }: 1140
-inset: $ds.spaces.inset-wide.large
-margin-vertical: $ds.spaces.vertical-gap.large
+-- ds.section-column:
+flush if { ftd.device != "mobile" }: wide
+inset: $ds.spaces.inset-tall.zero-medium
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.large
@@ -458,7 +470,7 @@ width: hug-content
 
 -- end: ds.column
 
--- end: ds.container
+-- end: ds.section-column
 
 -- end: testimonial
 
@@ -477,17 +489,15 @@ string highlight-text:
 string text:
 testimonials list testimonial-list:
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.large
-width.fixed.px if { ftd.device != "mobile" }: 1142
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+-- ds.section-column:
+flush if { ftd.device != "mobile" }: wide
+inset: $ds.spaces.inset-tall.zero-medium
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-large
 
 -- ds.container:
-
--- ds.row:
 
 -- ds.heading-large: $testimonial-card.title
 if: { testimonial-card.title != NULL }
@@ -496,22 +506,23 @@ width: hug-content
 -- ftd.text: $testimonial-card.highlight-text
 role: $inherited.types.heading-large
 display: inline
+margin-left.px: 10
 width: hug-content
 color: $ds.colors.accent.primary
 
 -- ftd.text: $testimonial-card.text
 role: $inherited.types.heading-large
 display: inline
+margin-left.px: 10
 width: hug-content
 color: $ds.colors.text-strong
-
--- end: ds.row
 
 -- end: ds.container
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.large
 wrap: true
+align-content: left
 
 -- testimonial-card-info: $obj.name
 for: obj in $testimonial-card.testimonial-list
@@ -527,7 +538,7 @@ card-4: $obj.card-4
 
 -- end: ds.column
 
--- end: ds.container
+-- end: ds.section-column
 
 -- end: testimonial-card
 
@@ -551,8 +562,9 @@ optional ftd.shadow card-3:
 optional ftd.shadow card-4:
 
 -- ds.column:
-width.fixed.px: 532
+width.fixed.px if { ftd.device != "mobile" }: 484
 height.fixed.px: 350
+height.fixed.px if { ftd.device == "mobile" }: 320
 align-content: top-left
 border: $ds.borders.uniform.small
 spacing: $ds.spaces.vertical-gap.medium
@@ -607,10 +619,14 @@ string number:
 string highlight-text:
 string text:
 
+-- ds.column:
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.large
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.large
+-- ftd.desktop:
+
+-- ds.section-column:
+flush: wide
+inset: $ds.spaces.inset-tall.zero-medium
+;;margin-vertical: $ds.spaces.vertical-gap.large
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.large
@@ -664,7 +680,72 @@ width: hug-content
 
 -- end: ds.column
 
+-- end: ds.section-column
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.medium
+inset: $ds.spaces.inset-square.medium
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-large: $fastn-power.number
+color: $ds.colors.accent.primary
+width: hug-content
+
+-- ftd.image:
+src: $assets.files.assets.homepage.circle.svg
+width.fixed.px: 208
+height.fixed.px: 160
+anchor: parent
+top.px: -56
+
+-- ds.row:
+
+-- ds.heading-medium: $fastn-power.title
+width: hug-content
+align: center
+
+-- ftd.image:
+src: $assets.files.assets.homepage.git.svg
+align-self: center
+width.fixed.px: 38
+height.fixed.px: 38
+
+-- end: ds.row
+
+-- ds.container:
+margin-vertical: $ds.spaces.vertical-gap.zero
+margin-horizontal: $ds.spaces.vertical-gap.zero
+
+-- ds.copy-large: $fastn-power.body
+
+-- ftd.text: $fastn-power.highlight-text
+role: $inherited.types.copy-large
+margin-left.px: 10
+display: inline
+width: hug-content
+color: $ds.colors.accent.primary
+
+-- ftd.text: $fastn-power.text
+role: $inherited.types.copy-large
+margin-left.px: 10
+display: inline
+width: hug-content
+
 -- end: ds.container
+
+-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: ftd.mobile
+
+-- end: ds.column
 
 -- end: fastn-power
 
