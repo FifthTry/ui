@@ -56,7 +56,7 @@ just like writing text in a text file, and you end up with a beautifully
 designed website. Definitely the most productive and result-oriented
 activity I've ever undertaken in a single afternoon.“
 
--- testimonial-card: Loved  by 
+-- testimonial-card: Loved by 
 highlight-text: 3000+ 
 text: Engineers, Founder & Creators 
 testimonial-list: $testimonial-lists
@@ -498,6 +498,9 @@ inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.vertical-gap.extra-large
 
 -- ds.container:
+if: { ftd.device != "mobile" }
+margin-vertical: $ds.spaces.vertical-gap.zero
+margin-horizontal: $ds.spaces.vertical-gap.zero
 
 -- ds.heading-large: $testimonial-card.title
 if: { testimonial-card.title != NULL }
@@ -512,6 +515,31 @@ color: $ds.colors.accent.primary
 
 -- ftd.text: $testimonial-card.text
 role: $inherited.types.heading-large
+display: inline
+margin-left.px: 10
+width: hug-content
+color: $ds.colors.text-strong
+
+-- end: ds.container
+
+-- ds.container:
+if: { ftd.device == "mobile" }
+margin-vertical: $ds.spaces.vertical-gap.zero
+margin-horizontal: $ds.spaces.vertical-gap.zero
+
+-- ds.heading-medium: $testimonial-card.title
+if: { testimonial-card.title != NULL }
+width: hug-content
+
+-- ftd.text: $testimonial-card.highlight-text
+role: $inherited.types.heading-medium
+display: inline
+margin-left.px: 10
+width: hug-content
+color: $ds.colors.accent.primary
+
+-- ftd.text: $testimonial-card.text
+role: $inherited.types.heading-medium
 display: inline
 margin-left.px: 10
 width: hug-content
@@ -564,7 +592,7 @@ optional ftd.shadow card-4:
 -- ds.column:
 width.fixed.px if { ftd.device != "mobile" }: 484
 height.fixed.px: 350
-height.fixed.px if { ftd.device == "mobile" }: 320
+height if { ftd.device == "mobile" }: hug-content
 align-content: top-left
 border: $ds.borders.uniform.small
 spacing: $ds.spaces.vertical-gap.medium
