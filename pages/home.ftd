@@ -18,7 +18,10 @@ hide-footer: false
 src: $assets.files.assets.homepage.powered-by.png
 anchor: window
 right.px: 0
-top.px: 620
+top.px: 630
+top.px if { ftd.device == "mobile" }: 566
+link: https://fastn.com/
+open-in-new-tab: true
 z-index: 9999999
 
 -- hero: Build your next website in less than
@@ -84,7 +87,7 @@ body body:
 -- ds.section-row:
 flush: full
 inset: $ds.spaces.inset-square.large
-spacing: $ds.spaces.horizontal-gap.extra-large
+spacing: $ds.spaces.horizontal-gap.large
 
 -- ds.column:
 align-content: left
