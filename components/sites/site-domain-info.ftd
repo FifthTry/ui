@@ -166,7 +166,6 @@ size: small
 if: { show-site-domain.domain.is-primary && show-site-domain.show-buttons }
 spacing: $ds.spaces.horizontal-gap.large
 align-content: right
-inset: $ds.spaces.inset-tall.zero-medium
 width.fixed.percent: 40
 height: fill-container
 
@@ -367,17 +366,15 @@ module add-domain: add-domain
 -- ds.row:
 width: fill-container
 align-content: left
-spacing: $ds.spaces.horizontal-gap.large
+spacing: $ds.spaces.horizontal-gap.medium
 
 -- ftd.text-input:
 width: fill-container
 color: $ds.colors.text-strong
 background.solid: $ds.colors.background.step-1
-border-width.px: 1
 padding.px: 8
 height.fixed.px: 40
 border-radius.px: 8
-border-color: $ds.colors.border
 placeholder: Enter new domain
 $on-input$: $ftd.set-string($a = $domain-input.current-domain, v = $VALUE)
 border-width.px: 1

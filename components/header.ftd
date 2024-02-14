@@ -21,6 +21,8 @@ boolean $menu: false
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
 inset: $ds.spaces.inset-square.large
+border: $ds.borders.bottom.small
+radius: $ds.radius.zero
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
@@ -43,9 +45,10 @@ inset: $ds.spaces.inset-square.large
 		if: { header.user-data.is-logged-in }
 		user-data: $header.user-data
 		
-		-- ds.header-link: $lang.sign-in
+		-- ds.secondary-button: $lang.sign-in
 		if: { !header.user-data.is-logged-in }
 		link: /signin/
+		radius: curved
 		
 		-- ds.primary-button: $lang.sign-up
 		if: { !header.user-data.is-logged-in }

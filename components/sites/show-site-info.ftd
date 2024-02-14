@@ -14,12 +14,12 @@ inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 spacing: $ds.spaces.horizontal-gap.large
 inner-background.solid: $ds.colors.background.step-1
+link: $show-site-info.site.detail-url
 
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image == NULL }
 	src: $assets.files.assets.sites.placeholder.svg
 	fit: cover
-	link: $show-site-info.site.detail-url
 	
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image != NULL }
@@ -41,13 +41,6 @@ inner-background.solid: $ds.colors.background.step-1
 	-- ds.column:
 	height: fill-container
 	align-content: bottom-right
-	spacing: $ds.spaces.vertical-gap.space-between
-
-        -- ds.icon-button: View Details
-        icon: $assets.files.assets.sites.link.svg
-        link: $show-site-info.site.detail-url
-        icon-position: at-end
-        kind: secondary
 	
 		-- ds.icon-button: Visit Site
 		icon: $assets.files.assets.sites.link.svg
