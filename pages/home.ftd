@@ -38,11 +38,10 @@ card-list: $solution-list
 
 -- fastn-power: Stars on GitHub
 number: 400+
-highlight-text: your non-tech teams can build, host and publish websites 
-text: without sacrificing reliability and customization.
 
-Escape the trade-off between restrictive website builders and complex JavaScript development. 
-With FifthTry,
+Escape the trade-off between restrictive website builders and complex
+JavaScript development. With FifthTry, **your non-tech teams can build, host
+and publish websites** without sacrificing reliability and customization.
 
 -- section-card:
 section-card-list: $explore
@@ -433,13 +432,13 @@ inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.large
 width: hug-content
-inset: $ds.spaces.inset-square.extra-large
 
 -- ds.heading-medium: $testimonial.title
 width: hug-content
 align: center
 
 -- ds.copy-regular: $testimonial.body
+width.fixed.px if { ftd.device != "mobile" }: 640
 align: center
 
 -- ds.row:
@@ -591,8 +590,6 @@ width: hug-content
 caption title:
 body body:
 string number:
-string highlight-text:
-string text:
 
 -- ds.column:
 
@@ -630,27 +627,9 @@ height.fixed.px: 56
 
 -- end: ds.row
 
--- ds.container:
-inset: $ds.spaces.inset-square.extra-large
-margin-vertical: $ds.spaces.vertical-gap.zero
-margin-horizontal: $ds.spaces.vertical-gap.zero
-
--- ds.copy-large: $fastn-power.body
-
--- ftd.text: $fastn-power.highlight-text
-role: $inherited.types.copy-large
-margin-left.px: 10
-display: inline
-width: hug-content
-color: $ds.colors.accent.primary
-
--- ftd.text: $fastn-power.text
-role: $inherited.types.copy-large
-margin-left.px: 10
-display: inline
-width: hug-content
-
--- end: ds.container
+-- ds.copy-regular: $fastn-power.body
+width.fixed.px: 640
+align: center
 
 -- end: ds.column
 
@@ -692,26 +671,8 @@ height.fixed.px: 38
 
 -- end: ds.row
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.zero
-margin-horizontal: $ds.spaces.vertical-gap.zero
-
 -- ds.copy-large: $fastn-power.body
-
--- ftd.text: $fastn-power.highlight-text
-role: $inherited.types.copy-large
-margin-left.px: 10
-display: inline
-width: hug-content
-color: $ds.colors.accent.primary
-
--- ftd.text: $fastn-power.text
-role: $inherited.types.copy-large
-margin-left.px: 10
-display: inline
-width: hug-content
-
--- end: ds.container
+align: center
 
 -- end: ds.column
 
