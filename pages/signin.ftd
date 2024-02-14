@@ -38,7 +38,7 @@ align-content: top-center
 		height.fixed.px: 33
 		fit: cover
 		
-		-- ds.heading-small: $lang.login
+		-- ds.heading-small: $lang.sign-in
 		width: hug-content
 		
 		-- ds.column:
@@ -109,7 +109,7 @@ align-content: top-center
 				text: $lang.create-account
 				width: hug-content
 				
-				-- ds.link: $lang.signin-type
+				-- ds.link: $lang.sign-up
 				color: $ds.colors.accent.primary
 				link if { page.signup-url }: $page.signup-url
 				link: /
@@ -175,7 +175,7 @@ align-content: top-center
 		height.fixed.px: 33
 		fit: cover
 		
-		-- ds.heading-small: $lang.login
+		-- ds.heading-small: $lang.sign-in
 		width: hug-content
 		
 		-- ds.column:
@@ -249,7 +249,7 @@ align-content: top-center
 				text: $lang.create-account
 				width: hug-content
 				
-				-- ds.link: $lang.signin-type
+				-- ds.link: $lang.sign-in
 				color: $ds.colors.accent.primary
 				link if { page.signup-url }: $page.signup-url
 				link: /

@@ -8,7 +8,7 @@ string github-url:
 string signin-url:
 module signup-action: create-user
 
--- auth-page.page: $lang.signup
+-- auth-page.page: $lang.sign-up
 site-data: site-data
 signup-action: $page.signup-action
 github-url: $page.github-url

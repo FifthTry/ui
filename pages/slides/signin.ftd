@@ -33,7 +33,7 @@ background.solid: $ds.colors.background.base
 		height.fixed.px: 38
 		fit: cover
 		
-		-- ds.copy-large: $lang.login
+		-- ds.copy-large: $lang.sign-in
 		
 		-- ds.column:
 		width.fixed.px: 284
@@ -98,7 +98,7 @@ background.solid: $ds.colors.background.base
 				text: $lang.create-account
 				width.fixed.px: 200
 				
-				-- ds.link: $lang.signin-type
+				-- ds.link: $lang.sign-in
 				color: $ds.colors.info.text
 				link if { page.signup-url }: $page.signup-url
 				link: /

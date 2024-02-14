@@ -148,9 +148,9 @@ radius: $ds.radius.zero
 				text if { page.signin-url }: $lang.existing-account
 				width.fixed.px: 200
 				
-				-- ds.link: $lang.signin-type
+				-- ds.link: $lang.sign-in
 				color: $ds.colors.info.text
-				text if { page.signin-url }: $lang.signup-type
+				text if { page.signin-url }: $lang.sign-up
 				link if { page.signup-url }: $page.signup-url
 				link if { page.signin-url }: $page.signin-url
 				link: /
