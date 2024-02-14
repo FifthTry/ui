@@ -27,41 +27,32 @@ align-content: top-center
 header-links: $page.data.header-links
 current-site: $page.data.current-site
 
-	-- ds.column:
-	inset: $ds.spaces.inset-wide.large
+	-- ds.section-column:
+	flush: full
+	inset: $ds.spaces.inset-square.medium
 	spacing: $ds.spaces.vertical-gap.large
-	align-content: left
+	border: $ds.borders.top.small
 		
 		-- ds.heading-small: About
 
 		-- ftd.desktop:
 		
-		-- ds.column:
-		inset: $ds.spaces.inset-wide.large
-		spacing: $ds.spaces.vertical-gap.large
-		align-content: center
-		
-			-- ds.row:
-			width.fixed.px: 1152
+			-- ds.section-row:
+			flush: full
 			radius: $ds.radius.medium
 			inset: $ds.spaces.inset-square.large
 			border: $ds.borders.uniform.small
-			spacing: $ds.spaces.horizontal-gap.large
-			background.solid: $ds.colors.background.step-1
-			align-content: center
+			spacing: $ds.spaces.horizontal-gap.medium
+			inner-background.solid: $ds.colors.background.step-1
 			
 				-- ftd.image:
 				if: { page.data.current-site.placeholder-image == NULL }
 				src: $assets.files.assets.sites.about-card.svg
-				width.fixed.px: 568
-				height.fixed.px: 302
 				fit: cover
 				
 				-- ftd.image:
 				if: { page.data.current-site.placeholder-image != NULL }
 				src: $page.data.current-site.placeholder-image
-				width.fixed.px: 568
-				height.fixed.px: 302
 				fit: cover
 				
 				-- ds.column:
@@ -89,12 +80,9 @@ current-site: $page.data.current-site
 
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.small
+					align-content: left
 					
 						-- ds.copy-regular: Domains
-						
-						-- ds.row:
-						align-content: left
-						spacing: $ds.spaces.horizontal-gap.small
 						
 							-- ds.icon-button: $page.data.current-site.domain
 							icon: $assets.files.assets.sites.link.svg
@@ -102,8 +90,6 @@ current-site: $page.data.current-site
 							icon-position: at-end
 							kind: tertiary
 							size: small
-							
-						-- end: ds.row
 
 					-- end: ds.column
 
@@ -115,9 +101,7 @@ current-site: $page.data.current-site
 					
 				-- end: ds.column
 
-			-- end: ds.row
-
-		-- end: ds.column
+			-- end: ds.section-row
 
 		-- end: ftd.desktop
 
@@ -196,7 +180,7 @@ current-site: $page.data.current-site
 
 		-- end: ftd.mobile
 
-	-- end: ds.column
+	-- end: ds.section-column
 
 -- end: p.page
 

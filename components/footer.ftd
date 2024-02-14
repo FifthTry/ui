@@ -5,8 +5,9 @@
 -- ftd.desktop:
 
 -- ds.section-column:
+border: $ds.borders.top.small
 flush: full
-inset: $ds.spaces.inset-square.large
+radius: $ds.radius.zero
 margin: $ds.spaces.vertical-gap.zero
 
 -- ds.row:

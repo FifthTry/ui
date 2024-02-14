@@ -22,6 +22,12 @@ optional sr.site current-site:
 optional ftd.resizing height: fill-container
 
 -- ds.page: $page.title
+	
+	-- ftd.column:
+	max-width.fixed.px: 1360
+	width: fill-container
+	height: fill-container
+	align-self: center
 
 	-- ds.column:
 	inset: $ds.spaces.inset-square.zero
@@ -49,6 +55,8 @@ optional ftd.resizing height: fill-container
 	-- end: ds.column
 
 	-- footer.footer:
+
+	-- end: ftd.column
 
 -- end: ds.page
 

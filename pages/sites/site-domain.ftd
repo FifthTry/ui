@@ -36,9 +36,12 @@ align-content: top-center
 header-links: $page.data.header-links
 current-site: $page.data.current-site
 
-	-- ds.column:
-	inset: $ds.spaces.inset-wide.large
+	-- ds.section-column:
+	flush: full
+	inset: $ds.spaces.inset-square.medium
 	spacing: $ds.spaces.vertical-gap.large
+	border: $ds.borders.top.small
+	margin: $ds.spaces.vertical-gap.extra-extra-large
 
 	    -- ds.heading-small: Domains
 		/-- ds.heading-small: $site-domain-format(site = $page.data.site-slug)
@@ -47,10 +50,10 @@ current-site: $page.data.current-site
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
 
-		-- ds.row:
+		-- ds.section-row:
+		flush: full
 		align-content: left
-		width.fixed.px if { ftd.device != "mobile" }: 1150
-		background.solid: $ds.colors.background.step-1
+		inner-background.solid: $ds.colors.background.step-1
 		inset: $ds.spaces.inset-square.medium
 		border: $ds.borders.uniform.small
 
@@ -59,7 +62,7 @@ current-site: $page.data.current-site
                 site-slug: $page.data.site-slug
                 org-slug: $page.data.org-slug
 
-            -- end: ds.row
+            -- end: ds.section-row
 
             -- ftd.text: $page.add-domain.add-domain-error
             color: red
@@ -75,7 +78,7 @@ current-site: $page.data.current-site
 		make-primary-domain: $page.make-primary-domain
 		re-check-domain: $page.re-check-domain
 
-	-- end: ds.column
+	-- end: ds.section-column
 
 -- end: p.page
 

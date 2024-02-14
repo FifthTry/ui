@@ -10,23 +10,20 @@ caption dashboard.site site:
 -- ds.section-row:
 flush: full
 radius: $ds.radius.medium
-align-content: top-left
 inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 spacing: $ds.spaces.horizontal-gap.large
-outer-background.solid: $ds.colors.background.step-1
+inner-background.solid: $ds.colors.background.step-1
 
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image == NULL }
 	src: $assets.files.assets.sites.placeholder.svg
-	width.fixed.px: 330
 	fit: cover
 	link: $show-site-info.site.detail-url
 	
 	-- ftd.image:
 	if: { show-site-info.site.placeholder-image != NULL }
 	src: $show-site-info.site.placeholder-image
-	width.fixed.px: 330
 	fit: cover
 	
 	-- ds.column:
