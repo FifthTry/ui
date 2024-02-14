@@ -124,7 +124,7 @@ radius: curved
 
 -- ftd.image:
 src: $assets.files.assets.homepage.hero.svg
-width: auto
+min-width.fixed.px: 520
 
 -- end: ds.section-row
 
@@ -313,7 +313,7 @@ align-content: bottom-left
 icon-position: at-end
 icon: $assets.files.assets.homepage.arrow.svg
 link: $card-info.cta-link
-variant: link
+kind: link
 size: small
 
 -- end: ds.row
@@ -432,6 +432,8 @@ inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.large
+width: hug-content
+inset: $ds.spaces.inset-square.extra-large
 
 -- ds.heading-medium: $testimonial.title
 width: hug-content
@@ -629,6 +631,7 @@ height.fixed.px: 56
 -- end: ds.row
 
 -- ds.container:
+inset: $ds.spaces.inset-square.extra-large
 margin-vertical: $ds.spaces.vertical-gap.zero
 margin-horizontal: $ds.spaces.vertical-gap.zero
 
@@ -779,7 +782,6 @@ circle-icon-3: $assets.files.assets.homepage.circle-3.svg
 triangle-icon-1: $assets.files.assets.homepage.triangle-1.svg
 circle-icon-1: $assets.files.assets.homepage.circle-1.svg
 cta-text: Learn More
-cta-link: /
 
 - Open-source programming language and full stack framework
 - Learn in a week, even for non-developers
@@ -789,7 +791,6 @@ cta-link: /
 triangle-icon-2: $assets.files.assets.homepage.triangle-2.svg
 circle-icon-2: $assets.files.assets.homepage.circle-2.svg
 cta-text: Start Now
-cta-link: /
 
 - Fast and Secure hosting.
 - Seamless integration with fastn and the editor.
@@ -799,7 +800,6 @@ cta-link: /
 triangle-icon-3: $assets.files.assets.homepage.triangle-3.svg
 circle-icon-3: $assets.files.assets.homepage.circle-3.svg
 cta-text: Coming soon
-cta-link: /
 
 - Robust Version Control
 - Collaborative Change-Requests System

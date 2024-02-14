@@ -55,7 +55,8 @@ optional ftd.resizing height: fill-container
 	-- end: ds.column
 
 	-- footer.footer:
-
+	if: { !page.hide-footer }
+	
 	-- end: ftd.column
 
 -- end: ds.page

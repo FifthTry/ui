@@ -53,7 +53,7 @@ current-site: $page.data.current-site
 		-- ds.section-row:
 		flush: full
 		align-content: left
-		inner-background.solid: $ds.colors.background.step-1
+		outer-background.solid: $ds.colors.background.step-1
 		inset: $ds.spaces.inset-square.medium
 		border: $ds.borders.uniform.small
 

@@ -22,6 +22,7 @@ site-data: site-data
 user-data: $page.user-data
 align-content: center
 show-header: false
+hide-footer: true
 
 	-- ftd.desktop:
 
@@ -120,7 +121,7 @@ show-header: false
 				-- ftd.text-input:
 				placeholder: Enter you domain
 				color: $inherited.colors.text-strong
-				width.fixed.px: 324
+				width: fill-container
 				padding.px: 8
 				border-radius.px: 8
 				border-width.px: 1
