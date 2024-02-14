@@ -16,7 +16,7 @@ border: $ds.borders.bottom.small
 align-content: top-left
 radius: $ds.radius.zero
 spacing: $ds.spaces.horizontal-gap.medium
-inset: $ds.spaces.inset-wide.large-zero
+inset: $ds.spaces.inset-wide.medium-zero
 
 	-- toc-link: $t
 	for: t in $header.toc-list

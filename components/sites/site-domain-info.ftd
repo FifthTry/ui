@@ -75,13 +75,12 @@ private boolean $show-buttons: false
 
 -- ftd.desktop:
 
--- ds.column:
-width.fixed.px: 1152
-height.fixed.px: 100
-radius: $ds.radius.medium
+-- ds.section-column:
+flush: full
 inset: $ds.spaces.inset-square.medium
 border: $ds.borders.uniform.small
-background.solid: $ds.colors.background.step-1
+inner-background.solid: $ds.colors.background.step-1
+radius: $ds.radius.medium
 align-content: top-left
 $on-mouse-enter$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
@@ -220,7 +219,7 @@ if: { show-site-domain.delete-domain.delete-domain-error != NULL }
 color: red
 if: { show-site-domain.make-primary-domain.make-primary-domain-error != NULL }
 
--- end: ds.column
+-- end: ds.section-column
 
 -- end: ftd.desktop
 
@@ -371,7 +370,7 @@ align-content: left
 spacing: $ds.spaces.horizontal-gap.large
 
 -- ftd.text-input:
-width.fixed.px: 950
+width: fill-container
 color: $ds.colors.text-strong
 background.solid: $ds.colors.background.step-1
 border-width.px: 1
