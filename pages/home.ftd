@@ -15,7 +15,7 @@ site-data: $page.site-data
 hide-footer: false
 
 -- ftd.image:
-src: $assets.files.assets.homepage.powered-by.png
+src: $assets.files.assets.homepage.powered-by.svg
 anchor: window
 right.px: 0
 top.px: 630
@@ -123,7 +123,7 @@ radius: curved
 -- end: ds.column
 
 -- ftd.image:
-src: $assets.files.assets.homepage.hero.png
+src: $assets.files.assets.homepage.hero.svg
 width: auto
 
 -- end: ds.section-row
