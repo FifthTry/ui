@@ -140,7 +140,7 @@ align-content: left
 spacing: $ds.spaces.vertical-gap.large
 
 -- ftd.image:
-src: $assets.files.assets.homepage.hero.png
+src: $assets.files.assets.homepage.hero.svg
 width: fill-container
 
 -- ds.container:
