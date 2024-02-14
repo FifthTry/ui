@@ -23,11 +23,11 @@ optional ftd.resizing height: fill-container
 
 -- ds.page: $page.title
 	
-	-- ftd.column:
-	max-width.fixed.px: 1360
-	width: fill-container
-	height: fill-container
-	align-self: center
+-- ftd.column:
+max-width.fixed.px: 1360
+width: fill-container
+height: fill-container
+align-self: center
 
 	-- ds.column:
 	inset: $ds.spaces.inset-square.zero
@@ -57,7 +57,7 @@ optional ftd.resizing height: fill-container
 	-- footer.footer:
 	if: { !page.hide-footer }
 	
-	-- end: ftd.column
+-- end: ftd.column
 
 -- end: ds.page
 
