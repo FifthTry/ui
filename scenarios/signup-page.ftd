@@ -3,4 +3,4 @@
 
 -- signup.page:
 github-url: /
-signin-url: scenarios/sites/signin-page/
+signin-url: /scenarios/signin-page/

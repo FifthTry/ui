@@ -12,8 +12,7 @@ module site-data: site-data
 ud.user-data user-data: $user-data.user
 module signup-action: create-user
 string github-url:
-optional string signup-url:
-optional string signin-url:
+string signin-url:
 private string $current-name: *$ftd.empty
 private string $current-email: *$ftd.empty
 private string $current-username: *$ftd.empty
@@ -49,7 +48,7 @@ align-content: top-center
 		height.fixed.px: 33
 		fit: cover
 		
-		-- ds.heading-small: $lang.signup
+		-- ds.heading-small: $lang.sign-up
 		width: hug-content
 		
 		-- ds.column:
@@ -174,12 +173,9 @@ align-content: top-center
 				text if { page.signin-url }: $lang.existing-account
 				width: hug-content
 				
-				-- ds.link: $lang.signin-type
+				-- ds.link: $lang.sign-in
 				color: $ds.colors.accent.primary
-				text if { page.signin-url }: $lang.signup-type
-				link if { page.signup-url }: $page.signup-url
-				link if { page.signin-url }: $page.signin-url
-				link: /
+				link: $page.signin-url
 				
 			-- end: ds.row
 
@@ -223,7 +219,7 @@ align-content: top-center
 		height.fixed.px: 33
 		fit: cover
 		
-		-- ds.heading-small: $lang.signup
+		-- ds.heading-small: $lang.sign-up
 		width: hug-content
 		
 		-- ds.column:
@@ -350,12 +346,9 @@ align-content: top-center
 				text if { page.signin-url }: $lang.existing-account
 				width: hug-content
 				
-				-- ds.link: $lang.signin-type
+				-- ds.link: $lang.sign-in
 				color: $ds.colors.accent.primary
-				text if { page.signin-url }: $lang.signup-type
-				link if { page.signup-url }: $page.signup-url
-				link if { page.signin-url }: $page.signin-url
-				link: /
+				link: $page.signin-url
 				
 			-- end: ds.row
 

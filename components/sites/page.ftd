@@ -59,6 +59,8 @@ optional ftd.resizing height: fill-container
 	
 	-- end: ftd.column
 
+	-- end: ftd.column
+
 -- end: ds.page
 
 -- end: page
