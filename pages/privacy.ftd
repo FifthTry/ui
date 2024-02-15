@@ -17,6 +17,11 @@ align-content: center
 height: NULL
 
 -- ds.column:
+border: $ds.borders.top.small
+radius: $ds.radius.zero
+inset: $ds.spaces.inset-tall.zero-medium
+
+-- ds.column:
 width.fixed.percent: 48
 
 -- ds.heading-large: Privacy Policy – FifthTry Inc.
@@ -740,6 +745,8 @@ updates will be posted here, so you should also revisit this Privacy Policy
 periodically.  Your continued use of the Website and any Services following the
 posting of any such changes shall automatically be deemed your acceptance of all
 changes.
+
+-- end: ds.column
 
 -- end: ds.column
 

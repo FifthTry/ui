@@ -1,4 +1,4 @@
--- string login: **Login**
+-- string login: **Log in**
 
 -- string signup: **Create an account**
 
@@ -10,7 +10,7 @@
 
 -- string signin-type: Sign up
 
--- string signup-type: Login
+-- string signup-type: Log in
 
 -- string all-presentations: All Presentations
 
@@ -34,8 +34,8 @@
 
 -- string enroll-now: Enroll Now
 
--- string sign-in: Sign In
--- string sign-up: Sign Up
+-- string sign-in: Log in
+-- string sign-up: Sign up
 -- string sign-out: Sign Out
 
 -- string team: Team

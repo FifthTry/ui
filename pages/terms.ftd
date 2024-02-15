@@ -17,7 +17,13 @@ align-content: center
 height: NULL
 
 -- ds.column:
+border: $ds.borders.top.small
+radius: $ds.radius.zero
+inset: $ds.spaces.inset-tall.zero-medium
+
+-- ds.column:
 width.fixed.percent: 48
+inset: $ds.spaces.inset-tall.zero-medium
 
 -- ds.heading-large: TERMS AND CONDITIONS
 align: left
@@ -418,6 +424,8 @@ align: left
 
 If you have any questions about these Terms, please contact us at
 legal@fifthtry.com.
+
+-- end: ds.column
 
 -- end: ds.column
 

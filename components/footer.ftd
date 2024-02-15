@@ -1,11 +1,17 @@
 -- component footer:
+boolean $icon-1: false
+boolean $icon-2: false
+boolean $icon-3: false
+boolean $icon-4: false
 
 -- ds.column:
 
 -- ftd.desktop:
 
 -- ds.section-column:
-border: $ds.borders.top.small
+border: $ds.borders.top.medium
+border-color: $ds.colors.cta-primary.border
+inset: $ds.spaces.inset-square.medium
 flush: full
 radius: $ds.radius.zero
 margin: $ds.spaces.vertical-gap.zero
@@ -76,16 +82,28 @@ spacing: $ds.spaces.horizontal-gap.space-between
 	spacing: $ds.spaces.horizontal-gap.medium
 
 	-- ftd.image:
-	src: $assets.files.assets.homepage.tweet.svg
+	src if { !footer.icon-1 }: $assets.files.assets.homepage.tweet.svg
+	src: $assets.files.assets.homepage.tweet-h.svg
+	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-1, v = true)
+	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-1, v = false)
 
 	-- ftd.image:
-	src: $assets.files.assets.homepage.linkedin.svg
+	src if { !footer.icon-2 }: $assets.files.assets.homepage.linkedin.svg
+	src: $assets.files.assets.homepage.linkedin-h.svg
+	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-2, v = true)
+	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-2, v = false)
 
 	-- ftd.image:
-	src: $assets.files.assets.homepage.fb.svg
+	src if { !footer.icon-3 }: $assets.files.assets.homepage.fb.svg
+	src: $assets.files.assets.homepage.fb-h.svg
+	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-3, v = true)
+	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-3, v = false)
 
 	-- ftd.image:
-	src: $assets.files.assets.homepage.gh.svg
+	src if { !footer.icon-4 }: $assets.files.assets.homepage.gh.svg
+	src: $assets.files.assets.homepage.gh-h.svg
+	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-4, v = true)
+	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-4, v = false)
 
 	-- end: ds.row
 

@@ -15,6 +15,11 @@ site-data: $page.site-data
 hide-footer: false
 align-content: center
 
+-- ds.column:
+border: $ds.borders.top.small
+radius: $ds.radius.zero
+inset: $ds.spaces.inset-tall.zero-medium
+
 -- ds.heading-large: Pricing
 width: hug-content
 
@@ -65,6 +70,7 @@ price-value: \$10/member
 
 -- end: ftd.mobile
 
+-- end: ds.column
 
 -- end: p.page
 
@@ -166,6 +172,7 @@ width: full
 if: { pricing.cta-link == NULL }
 radius: curved
 width: full
+variant: disabled
 
 -- end: ds.column
 

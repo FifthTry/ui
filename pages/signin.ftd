@@ -107,7 +107,7 @@ align-content: top-center
 			spacing: $ds.spaces.vertical-gap.small
 			inset: $ds.spaces.inset-square.small
 			wrap: true
-			
+
 				-- ds.copy-regular:
 				text: $lang.create-account
 				width: hug-content
@@ -125,7 +125,7 @@ align-content: top-center
 			spacing: $ds.spaces.vertical-gap.medium
 			inset: $ds.spaces.inset-tall.zero-small
 
-				-- ds.copy-small: Or login using
+				-- ds.copy-small: Or log in using
 
 				-- ds.icon-button: Continue with Github
 				icon: $assets.files.assets.github-mark-white.svg
@@ -250,7 +250,7 @@ align-content: top-center
 			spacing: $ds.spaces.vertical-gap.medium
 			inset: $ds.spaces.inset-tall.zero-small
 
-				-- ds.copy-small: Or login using
+				-- ds.copy-small: Or log in using
 
 				-- ds.icon-button: Continue with Github
 				icon: $assets.files.assets.github-mark-white.svg
