@@ -495,7 +495,7 @@ width: hug-content
 align: center
 
 -- ds.row:
-spacing: $ds.spaces.horizontal-gap.large
+spacing: $ds.spaces.horizontal-gap.extra-large
 wrap: true
 
 -- testimonial-card-info: $obj.name
@@ -536,7 +536,7 @@ optional ftd.shadow card-3:
 optional ftd.shadow card-4:
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 484
+width.fixed.px if { ftd.device != "mobile" }: 548
 height.fixed.px: 350
 height if { ftd.device == "mobile" }: hug-content
 align-content: top-left

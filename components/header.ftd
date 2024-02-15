@@ -20,7 +20,7 @@ boolean $menu: false
 -- ds.section-row:
 flush: full
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.large
+inset: $ds.spaces.inset-wide.large
 border: $ds.borders.bottom.small
 radius: $ds.radius.zero
 

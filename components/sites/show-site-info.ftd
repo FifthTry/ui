@@ -87,13 +87,6 @@ link: $show-site-info.site.detail-url
 		
 		-- ds.copy-small: $last-updated-format(value = $show-site-info.site.last-updated-on)
 	
-		-- ds.icon-button: View Details
-        icon: $assets.files.assets.sites.link.svg
-        link: $show-site-info.site.detail-url
-        icon-position: at-end
-        kind: secondary
-        width: full
-	
 		-- ds.icon-button: Visit Site
 		icon: $assets.files.assets.sites.link.svg
 		link: $show-site-info.site.domain-with-host

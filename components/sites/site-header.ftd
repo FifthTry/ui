@@ -192,7 +192,7 @@ height.fixed.px: 80
 caption sr.toc-data toc:
 
 -- ds.row:
-border if { toc-link.toc.is-active }: $ds.borders.bottom.small
+border if { toc-link.toc.is-active }: $ds.borders.bottom.medium
 border-color if { toc-link.toc.is-active }: $ds.colors.accent.primary
 link: $toc-link.toc.link
 width: hug-content

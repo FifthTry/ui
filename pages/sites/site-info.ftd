@@ -32,6 +32,7 @@ current-site: $page.data.current-site
 	inset: $ds.spaces.inset-square.medium
 	spacing: $ds.spaces.vertical-gap.large
 	border: $ds.borders.top.small
+	radius: $ds.radius.zero
 		
 		-- ds.heading-small: About
 
@@ -49,6 +50,7 @@ current-site: $page.data.current-site
 				if: { page.data.current-site.placeholder-image == NULL }
 				src: $assets.files.assets.sites.about-card.svg
 				fit: cover
+				;;height.fixed.px: 313
 				
 				-- ftd.image:
 				if: { page.data.current-site.placeholder-image != NULL }
@@ -60,7 +62,7 @@ current-site: $page.data.current-site
 				align-content: top-left
 				
 					-- ds.column:
-					spacing: $ds.spaces.vertical-gap.small
+					spacing: $ds.spaces.vertical-gap.extra-small
 					
 						-- ds.copy-regular: Website name
 						
@@ -69,7 +71,7 @@ current-site: $page.data.current-site
 					-- end: ds.column
 
 					-- ds.column:
-					spacing: $ds.spaces.vertical-gap.small
+					spacing: $ds.spaces.vertical-gap.extra-small
 					align-content: left
 					
 						-- ds.copy-regular: Last Updated on
@@ -79,7 +81,7 @@ current-site: $page.data.current-site
 					-- end: ds.column
 
 					-- ds.column:
-					spacing: $ds.spaces.vertical-gap.small
+					spacing: $ds.spaces.vertical-gap.extra-small
 					align-content: left
 					
 						-- ds.copy-regular: Domains

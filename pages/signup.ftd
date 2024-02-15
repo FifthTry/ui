@@ -53,7 +53,7 @@ align-content: top-center
 		
 		-- ds.column:
 		
-			-- ds.column:
+			/-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
 			
@@ -157,6 +157,32 @@ align-content: top-center
 				
 			-- end: ds.column
 
+			-- ds.column:
+			spacing: $ds.spaces.vertical-gap.extra-extra-small
+			align-content: left
+			
+				-- ds.copy-small: Confirm Password
+				
+				-- ftd.text-input:
+				placeholder: confirm password
+				type: password
+				$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
+				width: fill-container
+				height.fixed.px: 40
+				border-radius.px: 8
+				background.solid: transparent
+				border-width.px: 1
+				border-color: $inherited.colors.border
+				border-color if { page.signup-action.password-error != NULL }: $inherited.colors.error.border
+				padding.px: 8
+				color: $inherited.colors.text-strong
+				
+				-- ds.copy-small: $page.signup-action.password-error
+				if: { page.signup-action.password-error != NULL }
+				color: $ds.colors.error.text
+				
+			-- end: ds.column
+
 			-- ds.checkbox: I accept Terms and Conditions
 			size: small
 			
@@ -186,7 +212,7 @@ align-content: top-center
 			spacing: $ds.spaces.vertical-gap.medium
 			inset: $ds.spaces.inset-tall.zero-small
 
-				-- ds.copy-small: Or Sign Up using
+				-- ds.copy-small: Or Sign up using
 
 			-- ds.icon-button: Continue with Github
 			icon: $assets.files.assets.github-mark-white.svg
