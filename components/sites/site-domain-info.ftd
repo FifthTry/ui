@@ -363,6 +363,10 @@ module add-domain: add-domain
 
 -- ftd.desktop:
 
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.small
+
 -- ds.row:
 width: fill-container
 align-content: left
@@ -379,6 +383,7 @@ placeholder: Enter new domain
 $on-input$: $ftd.set-string($a = $domain-input.current-domain, v = $VALUE)
 border-width.px: 1
 border-color: $ds.colors.border
+border-color if { domain-input.add-domain.add-domain-error != NULL }: $ds.colors.error.border
 
 -- ds.row:
 align-content: right
@@ -391,6 +396,12 @@ $on-click$: $domain-input.add-domain.submit(org_slug=$domain-input.org-slug, sit
 -- end: ds.row
 
 -- end: ds.row
+
+-- ds.copy-small: $domain-input.add-domain.add-domain-error
+color: $ds.colors.error.text
+if: { domain-input.add-domain.add-domain-error != NULL }
+
+-- end: ds.column
 
 -- end: ftd.desktop
 

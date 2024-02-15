@@ -26,7 +26,7 @@ align-content: top-center
 	-- ftd.image:
 	src: $assets.files.assets.background.svg
 	width.fixed.percent: 70
-	height.fixed.vh: 100
+	height: fill-container
 	fit: cover
 	
 	-- ds.column:
@@ -62,13 +62,13 @@ align-content: top-center
 				background.solid: transparent
 				border-width.px: 1
 				border-color: $inherited.colors.border
+				border-color if { page.authenticate-user.username-error != NULL }: $inherited.colors.error.border
 				padding.px: 8
 				color: $inherited.colors.text-strong
 				
-				-- ftd.text: $page.authenticate-user.username-error
+				-- ds.copy-small: $page.authenticate-user.username-error
 				if: { page.authenticate-user.username-error != NULL }
-				color: red
-				role: $inherited.types.copy-small
+				color: $ds.colors.error.text
 				
 			-- end: ds.column
 
@@ -88,13 +88,13 @@ align-content: top-center
 				background.solid: transparent
 				border-width.px: 1
 				border-color: $inherited.colors.border
+				border-color if { page.authenticate-user.password-error != NULL }: $inherited.colors.error.border
 				padding.px: 8
 				color: $inherited.colors.text-strong
 				
-				-- ftd.text: $page.authenticate-user.password-error
+				-- ds.copy-small: $page.authenticate-user.password-error
 				if: { page.authenticate-user.password-error != NULL }
-				color: red
-				role: $inherited.types.copy-small
+				color: $ds.colors.error.text
 				
 			-- end: ds.column
 
@@ -106,6 +106,7 @@ align-content: top-center
 			-- ds.row:
 			spacing: $ds.spaces.vertical-gap.small
 			inset: $ds.spaces.inset-square.small
+			wrap: true
 			
 				-- ds.copy-regular:
 				text: $lang.create-account
@@ -184,13 +185,13 @@ align-content: top-center
 				background.solid: transparent
 				border-width.px: 1
 				border-color: $inherited.colors.border
+				border-color if { page.authenticate-user.username-error != NULL }: $inherited.colors.error.border
 				padding.px: 8
 				color: $inherited.colors.text-strong
 				
-				-- ftd.text: $page.authenticate-user.username-error
+				-- ds.copy-small: $page.authenticate-user.username-error
 				if: { page.authenticate-user.username-error != NULL }
-				color: red
-				role: $inherited.types.copy-small
+				color: $ds.colors.error.text
 				
 			-- end: ds.column
 
@@ -210,13 +211,13 @@ align-content: top-center
 				background.solid: transparent
 				border-width.px: 1
 				border-color: $inherited.colors.border
+				border-color if { page.authenticate-user.password-error != NULL }: $inherited.colors.error.border
 				padding.px: 8
 				color: $inherited.colors.text-strong
 				
-				-- ftd.text: $page.authenticate-user.password-error
+				-- ds.copy-small: $page.authenticate-user.password-error
 				if: { page.authenticate-user.password-error != NULL }
-				color: red
-				role: $inherited.types.copy-small
+				color: $ds.colors.error.text
 				
 			-- end: ds.column
 

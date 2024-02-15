@@ -50,7 +50,7 @@ current-site: $page.data.current-site
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
 
-		-- ds.section-row:
+		-- ds.section-column:
 		flush: full
 		align-content: left
 		outer-background.solid: $ds.colors.background.step-1
@@ -62,11 +62,7 @@ current-site: $page.data.current-site
                 site-slug: $page.data.site-slug
                 org-slug: $page.data.org-slug
 
-            -- end: ds.section-row
-
-            -- ftd.text: $page.add-domain.add-domain-error
-            color: red
-            if: { page.add-domain.add-domain-error != NULL }
+            -- end: ds.section-column
 
 		-- end: ds.column
 		
