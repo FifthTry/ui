@@ -97,6 +97,42 @@ margin: $ds.spaces.vertical-gap.zero
 	-- avatar.avatar:
 	if: { header-with-logo.user-data.is-logged-in }
 	user-data: $header-with-logo.user-data
+
+	-- ftd.row:
+		if: { ftd.follow-system-dark-mode }
+		$on-click$: $ftd.enable-light-mode()
+
+		-- ftd.image:
+		src: $assets.files.assets.system-mode-active.png
+		height.fixed.px: 24
+		align-self: center
+		width.fixed.px: 24
+
+		-- end: ftd.row
+
+		-- ftd.row:
+		if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
+		$on-click$: $ftd.enable-dark-mode()
+
+		-- ftd.image:
+		src: $assets.files.assets.light-mode-active.png
+		height.fixed.px: 24
+		align-self: center
+		width.fixed.px: 24
+
+		-- end: ftd.row
+
+		-- ftd.row:
+		if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
+		$on-click$: $ftd.enable-system-mode()
+
+		-- ftd.image:
+		src: $assets.files.assets.dark-mode-active.png
+		height.fixed.px: 24
+		align-self: center
+		width.fixed.px: 24
+
+		-- end: ftd.row
 	
 -- end: ds.row
 
@@ -111,7 +147,7 @@ width: fill-container
 align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
-inset: $ds.spaces.inset-wide.large
+inset: $ds.spaces.inset-wide.medium
 height.fixed.px: 80
 
 	-- ds.row:
@@ -156,7 +192,6 @@ height.fixed.px: 80
 
 	-- ds.column:
 	spacing: $ds.spaces.horizontal-gap.large
-	;;width.fixed.px: 420
 
 	-- ds.link: $lang.home
 	color: $ds.colors.text-strong
@@ -170,6 +205,42 @@ height.fixed.px: 80
 	if: { header-with-logo.user-data.is-logged-in }
 	user-data: $header-with-logo.user-data
 	
+	-- ftd.row:
+		if: { ftd.follow-system-dark-mode }
+		$on-click$: $ftd.enable-light-mode()
+
+		-- ftd.image:
+		src: $assets.files.assets.system-mode-active.png
+		height.fixed.px: 24
+		align-self: center
+		width.fixed.px: 24
+
+		-- end: ftd.row
+
+		-- ftd.row:
+		if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
+		$on-click$: $ftd.enable-dark-mode()
+
+		-- ftd.image:
+		src: $assets.files.assets.light-mode-active.png
+		height.fixed.px: 24
+		align-self: center
+		width.fixed.px: 24
+
+		-- end: ftd.row
+
+		-- ftd.row:
+		if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
+		$on-click$: $ftd.enable-system-mode()
+
+		-- ftd.image:
+		src: $assets.files.assets.dark-mode-active-dark.png
+		height.fixed.px: 24
+		align-self: center
+		width.fixed.px: 24
+
+		-- end: ftd.row
+
 	-- end: ds.column
 
 	-- end: ds.floater
