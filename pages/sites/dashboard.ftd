@@ -36,6 +36,7 @@ show-header-links: false
 	inset: $ds.spaces.inset-square.medium
 	spacing: $ds.spaces.vertical-gap.large
 	border: $ds.borders.top.small
+	radius: $ds.radius.zero
 	
 		-- ds.row:
 		align-content: top-left

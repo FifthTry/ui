@@ -18,11 +18,10 @@ hide-footer: false
 src: $assets.files.assets.homepage.powered-by.svg
 anchor: window
 right.px: 0
-top.px: 630
-top.px if { ftd.device == "mobile" }: 566
+bottom.px: 0
+z-index: 99999999999999
 link: https://fastn.com/
 open-in-new-tab: true
-z-index: 9999999
 
 -- hero: Build your next website in less than
 highlight-text: 2 hours
