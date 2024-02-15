@@ -105,6 +105,10 @@ current-site: $page.data.current-site
 	color: $inherited.colors.text-strong
 	$on-input$: $ftd.set-string($a = $page.github-repo-branch, v = $VALUE)
 
+	-- ds.copy-small: $page.configure.configure-github-error
+	color: $ds.colors.error.text
+    if: { page.configure.configure-github-error != NULL }
+
 	-- end: ds.column
 
 	-- ds.row:
@@ -132,10 +136,6 @@ current-site: $page.data.current-site
     $on-click$: $page.configure.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
 
     -- end: ds.row
-
-	-- ftd.text: $page.configure.configure-github-error
-    color: red
-    if: { page.configure.configure-github-error != NULL }
 
 	-- end: ds.column
 
@@ -215,6 +215,10 @@ current-site: $page.data.current-site
 	color: $inherited.colors.text-strong
 	$on-input$: $ftd.set-string($a = $page.github-repo-branch, v = $VALUE)
 
+	-- ds.copy-small: $page.configure.configure-github-error
+	color: $ds.colors.error.text
+    if: { page.configure.configure-github-error != NULL }
+
 	-- end: ds.column
 
 	-- ds.row:
@@ -232,10 +236,6 @@ current-site: $page.data.current-site
 	width: full
 	radius: curved
 	$on-click$: $page.configure.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
-
-	-- ftd.text: $page.configure.configure-github-error
-    color: red
-    if: { page.configure.configure-github-error != NULL }
 
 	-- end: ds.column
 
