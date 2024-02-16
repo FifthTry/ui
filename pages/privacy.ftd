@@ -16,8 +16,6 @@ align-content: center
 height: NULL
 
 -- ds.column:
-border: $ds.borders.top.small
-radius: $ds.radius.zero
 inset: $ds.spaces.inset-tall.zero-medium
 
 -- ds.column:

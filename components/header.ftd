@@ -36,13 +36,13 @@ radius: $ds.radius.zero
 
 	-- ds.row:
 	width: hug-content
-	spacing: $ds.spaces.horizontal-gap.large
+	spacing: $ds.spaces.horizontal-gap.medium
 	
-		-- ds.header-link: $lang.home
+		-- ds.copy-regular: $lang.home
 		if: { header.product == NULL }
 		link: /
 		
-		-- ds.header-link: $lang.pricing
+		-- ds.copy-regular: $lang.pricing
 		if: { header.product == NULL }
 		link: /pricing/
 
