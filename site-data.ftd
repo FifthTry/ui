@@ -1,3 +1,8 @@
 -- string homepage: /
 
 -- ftd.image-src logo: $assets.files.assets.logo.svg
+
+-- string sign-in-url: /-/auth/login/
+-- string sign-up-url: /-/auth/create-account/
+-- string github-url: /-/auth/github/
+-- string logout-url: /-/auth/logout/

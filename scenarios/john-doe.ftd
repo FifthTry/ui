@@ -7,3 +7,10 @@ notifications: 0
 username: john-doe
 name: John Doe
 is-logged-in: true
+
+
+-- ud.user-data anon:
+notifications: 0
+username: john-doe
+name: John Doe
+is-logged-in: false

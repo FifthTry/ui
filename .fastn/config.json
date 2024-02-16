@@ -1492,8 +1492,8 @@
         },
         "components/button.ftd": {
           "name": "components/button.ftd",
-          "checksum": "69CD3C6745FDA3C77B8921A412C155684A769106A274DC629301FCF7183414B9",
-          "size": 13754
+          "checksum": "5741B62FD6792AD24D479AE3DE123D003259FCF75858782262F88A15D2F15F76",
+          "size": 13782
         },
         "components/checkbox.ftd": {
           "name": "components/checkbox.ftd",
@@ -1512,8 +1512,8 @@
         },
         "components/icon-button.ftd": {
           "name": "components/icon-button.ftd",
-          "checksum": "0BE848B343D22EEA1E7BB8375741F700A756F8363278B8AA3A178B30BB0100A8",
-          "size": 9785
+          "checksum": "311EE7F79429241DE496E683451ABFD90E63A4CA2A22E435322FCC96D77212D5",
+          "size": 9946
         },
         "components/input.ftd": {
           "name": "components/input.ftd",
@@ -1577,8 +1577,8 @@
         },
         "foundation-elements/page.ftd": {
           "name": "foundation-elements/page.ftd",
-          "checksum": "2D79160E39E53ACB4CD5FE525C6C4E8EC1CE31DB531DD9E4A17E20341FDE959B",
-          "size": 1440
+          "checksum": "5FA301995009D65781E5CEC7654D0607BDE4AC0E15B579D0AD4D322F72DEA315",
+          "size": 1499
         },
         "foundation-elements/radius.ftd": {
           "name": "foundation-elements/radius.ftd",
@@ -1592,13 +1592,13 @@
         },
         "foundation-elements/section-column.ftd": {
           "name": "foundation-elements/section-column.ftd",
-          "checksum": "594DF839FBBB77B5AC2233C5E39DC402EBEABC721681220807761573A23FD66E",
-          "size": 4037
+          "checksum": "B24C2460622A314853589BEDF29D1A1BA34E8276C7F542F72D99B37B48373472",
+          "size": 4140
         },
         "foundation-elements/section-row.ftd": {
           "name": "foundation-elements/section-row.ftd",
-          "checksum": "71CA0ED53F87870BEF0410EE8C6B21D9F798E76E3146201E82801FEA4C0F533C",
-          "size": 4195
+          "checksum": "4A58584FDE12E8EBE0128FA3CF023D16BFEE1BDE3602DDB783A274616F0BE271",
+          "size": 4292
         },
         "foundation-elements/shadow.ftd": {
           "name": "foundation-elements/shadow.ftd",
@@ -1626,8 +1626,8 @@
           "size": 9722
         }
       },
-      "zip_url": "https://github.com/fastn-community/design-system/archive/cc98e8529903445d65bf28b333ea47966cc412d6.zip",
-      "checksum": "04DFB1B120EE1280A97D9382AB544432CCBB6FB26D3C219044FBD740090F189F"
+      "zip_url": "https://github.com/fastn-community/design-system/archive/07d99b5c58ee846e61e0848c4c7338931122614d.zip",
+      "checksum": "66829B8A0707D57CAC4551DDC31123CD179E3D99E8FEDB2FB61851FB3053F5B9"
     },
     "fastn-community.github.io/doc-site": {
       "files": {

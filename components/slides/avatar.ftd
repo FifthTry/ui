@@ -40,7 +40,7 @@ padding.px: 8
 
 -- component popup:
 ud.user-data user-data: $user-data.user
-optional string logout-url: /-/auth/logout/?next=/
+optional string logout-url: /-/auth/logout/
 boolean $open:
 
 -- ftd.column:

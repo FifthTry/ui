@@ -1,13 +1,12 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
 
 
 -- component header:
 module site-data: site-data
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 optional string product:
 ds.gap margin: $ds.spaces.vertical-gap.zero
 boolean $sidebar: false
@@ -44,15 +43,16 @@ radius: $ds.radius.zero
 		-- avatar.avatar:
 		if: { header.user-data.is-logged-in }
 		user-data: $header.user-data
+		site-data: $header.site-data
 		
 		-- ds.secondary-button: $lang.sign-in
 		if: { !header.user-data.is-logged-in }
-		link: /signin/
+		link: $header.site-data.sign-in-url
 		radius: curved
 		
 		-- ds.primary-button: $lang.sign-up
 		if: { !header.user-data.is-logged-in }
-		link: /signup/
+		link: $header.site-data.sign-up-url
 		radius: curved
 
 		-- ftd.row:
@@ -137,13 +137,13 @@ height.fixed.px: 80
 		
 		-- ds.secondary-button: $lang.sign-in
 		if: { !header.user-data.is-logged-in }
-		link: /signin/
+		link: $header.site-data.sign-in-url
 		rounded: true
 		width: full
 		
 		-- ds.primary-button: $lang.sign-up
 		if: { !header.user-data.is-logged-in }
-		link: /signup/
+		link: $header.site-data.sign-up-url
 		rounded: true
 		width: full
 

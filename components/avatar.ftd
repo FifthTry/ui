@@ -1,8 +1,9 @@
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
+-- import: ui.fifthtry.com/site-data
 
 -- component avatar:
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
+module site-data: site-data
 boolean $open: false
 
 
@@ -15,8 +16,9 @@ $on-click-outside$: $ftd.set-boolean($a = $avatar.open, v = false)
 	
 	-- popup:
 	user-data: $avatar.user-data
+	site-data: $avatar.site-data
 	$open: $avatar.open
-	
+
 -- end: ftd.row
 
 
@@ -27,7 +29,8 @@ $on-click-outside$: $ftd.set-boolean($a = $avatar.open, v = false)
 
 
 -- component popup:
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
+module site-data: site-data
 boolean $open:
 
 -- ftd.column:
@@ -98,7 +101,7 @@ padding.px: 8
 		-- ftd.text: $lang.sign-out
 		role: $inherited.types.copy-regular
 		color: $inherited.colors.text
-		link: /-/auth/logout/
+		link: $popup.site-data.logout-url
 		
 	-- end: ftd.row
 
