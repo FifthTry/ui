@@ -154,7 +154,7 @@ align-content: top-center
 				color: $ds.colors.error.text
 				
 			-- end: ds.column
-			
+
 			/-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
@@ -204,7 +204,7 @@ align-content: top-center
 				
 			-- end: ds.row
 
-			-- ds.column:
+			/-- ds.column:
 			border: $ds.borders.top.small
 			radius: $ds.radius.zero
 			spacing: $ds.spaces.vertical-gap.medium
