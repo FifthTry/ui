@@ -4,8 +4,6 @@
 
 
 -- component page:
-string github-url:
-string signup-url:
 module site-data: site-data
 module authenticate-user: authenticate-user
 private string $current-username: *$ftd.empty

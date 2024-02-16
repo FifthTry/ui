@@ -3,9 +3,6 @@
 
 
 -- component page:
-string github-url:
-string signup-url:
-string forgot-url:
 module site-data: site-data
 module authenticate-user: authenticate-user
 private string $current-username: *$ftd.empty
@@ -114,7 +111,7 @@ align-content: top-center
 				
 				-- ds.link: $lang.sign-up
 				color: $ds.colors.accent.primary
-				link if { page.signup-url }: $page.signup-url
+				link if { page.site-data.sign-up-url }: $page.site-data.sign-up-url
 				link: /
 				
 			-- end: ds.row
@@ -129,12 +126,12 @@ align-content: top-center
 
 				-- ds.icon-button: Continue with Github
 				icon: $assets.files.assets.github-mark-white.svg
-				link: $page.github-url
+				link: $page.site-data.github-url
 				kind: secondary
 				width: full
 				
 				-- ds.link: I forgot my password
-				link: $page.forgot-url
+				link: /
 				
 			-- end: ds.column
 
@@ -239,7 +236,7 @@ align-content: top-center
 				
 				-- ds.link: $lang.sign-in
 				color: $ds.colors.accent.primary
-				link if { page.signup-url }: $page.signup-url
+				link if { page.site-data.sign-up-url }: $page.site-data.sign-up-url
 				link: /
 				
 			-- end: ds.row
@@ -254,12 +251,12 @@ align-content: top-center
 
 				-- ds.icon-button: Continue with Github
 				icon: $assets.files.assets.github-mark-white.svg
-				link: $page.github-url
+				link: $page.site-data.github-url
 				kind: secondary
 				width: full
 				
 				-- ds.link: I forgot my password
-				link: $page.forgot-url
+				link: /
 				
 			-- end: ds.column
 

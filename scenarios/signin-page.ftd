@@ -1,7 +1,6 @@
 -- import: ui.fifthtry.com/pages/signin
-
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 -- signin.page:
-github-url: /
-signup-url: /scenarios/signup-page/
-forgot-url: /scenarios/password-recovery/
+site-data: scenario-site

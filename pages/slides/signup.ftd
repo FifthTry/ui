@@ -4,8 +4,6 @@
 
 
 -- component page:
-string github-url:
-string signin-url:
 module signup-action: create-user
 
 -- auth-page.page: $lang.sign-up
