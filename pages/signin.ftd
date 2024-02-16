@@ -131,7 +131,7 @@ align-content: top-center
 				width: full
 				
 				-- ds.link: I forgot my password
-				link: /
+				link: $page.site-data.forgot-url
 				
 			-- end: ds.column
 
@@ -256,7 +256,7 @@ align-content: top-center
 				width: full
 				
 				-- ds.link: I forgot my password
-				link: /
+				link: $page.site-data.forgot-url
 				
 			-- end: ds.column
 
