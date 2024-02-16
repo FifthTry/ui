@@ -1,7 +1,0 @@
--- import: ui.fifthtry.com/pages/signin
-
-
--- signin.page:
-github-url: scenarios/slides/team-dashboard/
-signup-url: scenarios/slides/signup-page/
-forgot-url: scenarios/sites/forgot-password/

@@ -30,17 +30,6 @@ These are list of products/websites hosted by FifthTry.
 - [Site Editor](/scenarios/sites/site-editor/)
 
 
--- lib.h1: Slides Scenarios
-
-- [Signin page](/scenarios/slides/signin-page/)
-- [Signup page](/scenarios/slides/signup-page/)
-- [Logged in templates](/scenarios/slides/logged-in-templates/)
-- [Team dashboard](/scenarios/slides/team-dashboard/)
-- [fastn Presentation logged in](/scenarios/slides/fastn-presentation-logged-in/)
-- [Present view page](/scenarios/slides/present/)
-- [Presentation settings](/scenarios/slides/presentation-settings/)
-
-
 -- lib.h1: University Scenarios
 
 - [University Homepage](/scenarios/university/home-page/)
