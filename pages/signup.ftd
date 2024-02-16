@@ -155,7 +155,7 @@ align-content: top-center
 				
 			-- end: ds.column
 
-			-- ds.column:
+			/-- ds.column:
 			spacing: $ds.spaces.vertical-gap.extra-extra-small
 			align-content: left
 			
