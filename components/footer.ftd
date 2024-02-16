@@ -11,7 +11,7 @@ boolean $icon-4: false
 -- ds.section-column:
 border: $ds.borders.top.medium
 border-color: $ds.colors.cta-primary.border
-inset: $ds.spaces.inset-square.medium
+inset: $ds.spaces.inset-wide.large
 flush: full
 radius: $ds.radius.zero
 margin: $ds.spaces.vertical-gap.zero

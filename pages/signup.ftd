@@ -31,7 +31,6 @@ align-content: top-center
 	-- ftd.image:
 	src: $assets.files.assets.background.svg
 	width.fixed.percent: 70
-	height.fixed.px: 780
 	fit: cover
 	
 	-- ds.column:

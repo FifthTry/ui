@@ -77,14 +77,14 @@ caption title:
 string highlight-text:
 body body:
 
--- ds.column:
+-- ds.section-column:
+flush: full
+inset: $ds.spaces.inset-square.zero
 
 -- ftd.desktop:
 
--- ds.section-row:
-flush: full
-inset: $ds.spaces.inset-square.large
-spacing: $ds.spaces.horizontal-gap.large
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
 
 -- ds.column:
 align-content: left
@@ -123,14 +123,14 @@ radius: curved
 src: $assets.files.assets.homepage.hero.svg
 min-width.fixed.px: 520
 
--- end: ds.section-row
+-- end: ds.row
 
 -- end: ftd.desktop
 
 -- ftd.mobile:
 
--- ds.section-column:
-flush: to-header
+-- ds.column:
+inset: $ds.spaces.inset-wide.medium
 
 -- ds.column:
 align-content: left
@@ -168,11 +168,11 @@ radius: curved
 
 -- end: ds.column
 
--- end: ds.section-column
+-- end: ds.column
 
 -- end: ftd.mobile
 
--- end: ds.column
+-- end: ds.section-column
 
 -- end: hero
 
@@ -203,7 +203,7 @@ if: { card.title != NULL }
 width: hug-content
 
 -- ds.row:
-spacing: $ds.spaces.horizontal-gap.large
+spacing: $ds.spaces.horizontal-gap.medium
 wrap: true
 
 -- card-info: $obj.title
@@ -250,7 +250,7 @@ optional string cta-link:
 
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 363
+width.fixed.px if { ftd.device != "mobile" }: 359
 height.fixed.px: 424
 height.fixed.px if { ftd.device == "mobile" }: 380
 background.solid: $ds.colors.background.step-1
@@ -378,7 +378,7 @@ string fastn:
 string text:
 
 -- ds.container:
-width.fixed.px if { ftd.device != "mobile" }: 556
+width.fixed.px if { ftd.device != "mobile" }: 520
 width: fill-container
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
@@ -534,7 +534,7 @@ optional ftd.shadow card-3:
 optional ftd.shadow card-4:
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 548
+width.fixed.px if { ftd.device != "mobile" }: 520
 height.fixed.px: 350
 height if { ftd.device == "mobile" }: hug-content
 align-content: top-left
@@ -589,16 +589,15 @@ caption title:
 body body:
 string number:
 
--- ds.column:
+-- ds.section-column:
+flush: full
+inset: $ds.spaces.inset-square.zero
 
 -- ftd.desktop:
 
--- ds.section-column:
-flush: full
-inset: $ds.spaces.inset-square.large
-
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.large
+inset: $ds.spaces.inset-square.large
 
 -- ds.heading-large: $fastn-power.number
 color: $ds.colors.accent.primary
@@ -609,7 +608,7 @@ src: $assets.files.assets.homepage.circle.svg
 width.fixed.px: 208
 height.fixed.px: 160
 anchor: parent
-top.px: -46
+top.px: -16
 
 -- ds.row:
 
@@ -631,17 +630,12 @@ align: center
 
 -- end: ds.column
 
--- end: ds.section-column
-
 -- end: ftd.desktop
 
 -- ftd.mobile:
 
--- ds.section-column:
-margin: $ds.spaces.vertical-gap.medium
-inset: $ds.spaces.inset-square.medium
-
 -- ds.column:
+inset: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.vertical-gap.large
 
 -- ds.heading-large: $fastn-power.number
@@ -674,11 +668,9 @@ align: center
 
 -- end: ds.column
 
--- end: ds.section-column
-
 -- end: ftd.mobile
 
--- end: ds.column
+-- end: ds.section-column
 
 -- end: fastn-power
 

@@ -16,7 +16,7 @@ boolean hide-footer: false
 -- ds.page: $page.title
 
 -- ftd.column:
-max-width.fixed.px: 1360
+max-width.fixed.px: 1240
 width: fill-container
 align-self: center
 
@@ -26,9 +26,10 @@ align-self: center
 	margin: $page.margin
 	
 	-- ds.section-column:
-	inset: $ds.spaces.inset-square.zero
+	inset: $ds.spaces.inset-wide.large
 	content: $page.children
 	flush: $page.flush
+	;;spacing: $ds.spaces.vertical-gap.zero
 	
 	-- end: ds.section-column
 

@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/footer
+-- import: ui.fifthtry.com/components/header
 -- import: ui.fifthtry.com/records/site as sr
 
 
@@ -23,7 +24,7 @@ optional ftd.resizing height: fill-container
 -- ds.page: $page.title
 	
 -- ftd.column:
-max-width.fixed.px: 1360
+max-width.fixed.px: 1240
 width: fill-container
 height: fill-container
 align-self: center
@@ -32,14 +33,20 @@ align-self: center
 	inset: $ds.spaces.inset-square.zero
 	spacing: $ds.spaces.horizontal-gap.small
 	if: { page.show-header }
+
+		-- header.header:
+		;;if: { page.show-header-links && ftd.len($page.header-links) > 0}
+		site-data: $page.site-data
+		user-data: $page.user-data
+		current-site: $page.current-site
+		toc-list: $page.header-links
 	
-		-- h.header-with-logo:
+		/-- h.header-with-logo:
 		toc-list: []
 		site-logo: $assets.files.assets.fifthtry-logo.svg
 		user-data: $page.user-data
-		current-site: $page.current-site
 		
-		-- h.header:
+		/-- h.header:
 		if: { page.show-header-links && ftd.len($page.header-links) > 0}
 		toc-list: $page.header-links
 		

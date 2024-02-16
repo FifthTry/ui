@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
-
+-- import: ui.fifthtry.com/records/site as sr
 
 -- component header:
 module site-data: site-data
@@ -11,15 +11,22 @@ optional string product:
 ds.gap margin: $ds.spaces.vertical-gap.zero
 boolean $sidebar: false
 boolean $menu: false
+sr.toc-data list toc-list:
+optional sr.site current-site:
 
--- ds.column:
+-- ds.section-column:
+flush: full
+margin: $ds.spaces.vertical-gap.zero
+spacing: $ds.spaces.vertical-gap.zero
 
 -- ftd.desktop:
 
--- ds.section-row:
-flush: full
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.medium
+
+-- ds.row:
+inset: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-wide.large
 border: $ds.borders.bottom.small
 radius: $ds.radius.zero
 
@@ -29,6 +36,7 @@ radius: $ds.radius.zero
 
 	-- ds.row:
 	width: hug-content
+	spacing: $ds.spaces.horizontal-gap.large
 	
 		-- ds.header-link: $lang.home
 		if: { header.product == NULL }
@@ -93,7 +101,20 @@ radius: $ds.radius.zero
 		
 	-- end: ds.row
 
--- end: ds.section-row
+	-- end: ds.row
+
+	-- ds.row:
+	;;border if { !header.toc-list }: $ds.borders.bottom.small
+	align-content: top-left
+	spacing: $ds.spaces.horizontal-gap.medium
+	inset: $ds.spaces.inset-wide.medium-zero
+
+	-- toc-link: $t
+	for: t in $header.toc-list
+	
+-- end: ds.row
+
+-- end: ds.column
 
 -- end: ftd.desktop
 
@@ -195,6 +216,29 @@ height.fixed.px: 80
 
 -- end: ftd.mobile
 
--- end: ds.column
+-- end: ds.section-column
 
 -- end: header
+
+
+
+
+
+
+
+
+-- component toc-link:
+caption sr.toc-data toc:
+
+-- ds.row:
+border if { toc-link.toc.is-active }: $ds.borders.bottom.medium
+border-color if { toc-link.toc.is-active }: $ds.colors.accent.primary
+link: $toc-link.toc.link
+width: hug-content
+radius: $ds.radius.zero
+
+	-- ds.copy-regular: $toc-link.toc.name
+	
+-- end: ds.row
+
+-- end: toc-link
