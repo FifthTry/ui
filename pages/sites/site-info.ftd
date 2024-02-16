@@ -8,7 +8,6 @@
 
 
 -- record site-info-data:
-string user:
 string dashboard-url:
 sr.site current-site:
 sr.toc-data list site-urls:

@@ -1,4 +1,4 @@
--- optional string $create-site-error:
+-- optional string $site-error:
 
 -- void submit(name, site):
 string org_slug:

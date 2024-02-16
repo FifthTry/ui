@@ -54,15 +54,15 @@ hide-footer: true
 				border-width.px: 1
 				background.solid: $inherited.colors.background.step-1
 				border-color: $inherited.colors.border
-				border-color if { page.create-site.create-site-error != NULL }: $inherited.colors.error.border
+				border-color if { page.create-site.site-error != NULL }: $inherited.colors.error.border
 				$on-input$: $ftd.set-string($a = $page.current-site-name, v = $VALUE)
-				
+
 				-- ds.copy-small: .fifthtry.site
-				
+
 			-- end: ds.row
 
-			-- ds.copy-small: $page.create-site.create-site-error
-			if: { page.create-site.create-site-error != NULL }
+			-- ds.copy-small: $page.create-site.site-error
+			if: { page.create-site.site-error != NULL }
 			color: $ds.colors.error.text
 
 		-- end: ds.column
@@ -70,12 +70,12 @@ hide-footer: true
 		-- ds.row:
 		align-content: left
 		spacing: $ds.spaces.horizontal-gap.small
-		
+
 			-- ftd.image:
 			src: $assets.files.assets.sites.info.svg
-			
+
 			-- ds.copy-small: You can add custom domain later
-			
+
 		-- end: ds.row
 
 		-- ds.row:
@@ -107,17 +107,17 @@ hide-footer: true
 
 		-- ds.heading-small: Create new site
 		width: hug-content
-		
+
 		-- ds.column:
 		align-content: top-left
 		spacing: $ds.spaces.vertical-gap.extra-small
 		height.fixed.px: 84
-		
+
 			-- ds.copy-small: Domain
-			
+
 			-- ds.row:
 			spacing: $ds.spaces.horizontal-gap.small
-			
+
 				-- ftd.text-input:
 				placeholder: Enter you domain
 				color: $inherited.colors.text-strong
@@ -128,14 +128,14 @@ hide-footer: true
 				background.solid: $inherited.colors.background.step-1
 				border-color: $inherited.colors.border
 				$on-input$: $ftd.set-string($a = $page.current-site-name, v = $VALUE)
-				
+
 				-- ds.copy-small: .fifthtry.site
-				
+
 			-- end: ds.row
 
-			-- ds.copy-regular: $page.create-site.create-site-error
+			-- ds.copy-regular: $page.create-site.site-error
 			color: $ds.colors.error.text
-			if: { page.create-site.create-site-error != NULL }
+			if: { page.create-site.site-error != NULL }
 
 		-- end: ds.column
 
