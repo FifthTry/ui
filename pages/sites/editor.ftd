@@ -4,10 +4,9 @@
 -- import: ui.fifthtry.com/web-components as wc
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 
 -- component page:
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 sr.toc-data list header-links: $header-links
 site-editor-data data:
 string site:
@@ -33,6 +32,7 @@ css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-p
 		-- h.header-with-logo:
 		toc-list: $page.header-links
 		site-name: hostn
+		user-data: $page.user-data
 		site-logo: $assets.files.assets.hostn-logo.svg
 		header-text: Welcome to hostn
 		

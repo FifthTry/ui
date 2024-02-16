@@ -1,6 +1,5 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/footer
 -- import: ui.fifthtry.com/records/site as sr
@@ -8,7 +7,7 @@
 
 -- component page:
 module site-data: site-data
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 children children:
 optional caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero

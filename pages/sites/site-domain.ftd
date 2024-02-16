@@ -10,7 +10,6 @@
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
 -- import: ui.fifthtry.com/actions/sites/domains/re-check-domain
--- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/sites/utils as u
 
 -- record site-domain-data:
@@ -22,7 +21,7 @@ sr.toc-data list header-links:
 sr.site current-site:
 
 -- component page:
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 site-domain-data data:
 module add-domain: add-domain
 module delete-domain: delete-domain

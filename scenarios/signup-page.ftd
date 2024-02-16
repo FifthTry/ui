@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/pages/signup
-
+-- import: ui.fifthtry.com/scenarios/john-doe
 
 -- signup.page:
 github-url: /
 signin-url: /scenarios/signin-page/
+user-data: $john-doe.jd

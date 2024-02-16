@@ -3,11 +3,10 @@
 exposing: team-member
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 
 
 -- component page:
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 module site-data: site-data
 
 -- p.page: About FifthTry | Better way To Build Websites
