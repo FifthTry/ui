@@ -23,7 +23,6 @@ align-content: top-center
 	-- ftd.image:
 	src: $assets.files.assets.background.svg
 	width.fixed.percent: 70
-	height: fill-container
 	fit: cover
 	
 	-- ds.column:
@@ -116,7 +115,7 @@ align-content: top-center
 				
 			-- end: ds.row
 
-			-- ds.column:
+			/-- ds.column:
 			border: $ds.borders.top.small
 			radius: $ds.radius.zero
 			spacing: $ds.spaces.vertical-gap.medium
