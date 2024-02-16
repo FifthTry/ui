@@ -22,48 +22,48 @@ optional sr.site current-site:
 optional ftd.resizing height: fill-container
 
 -- ds.page: $page.title
-	
--- ftd.column:
-max-width.fixed.px: 1240
-width: fill-container
-height: fill-container
-align-self: center
 
-	-- ds.column:
-	inset: $ds.spaces.inset-square.zero
-	spacing: $ds.spaces.horizontal-gap.small
-	if: { page.show-header }
-
-		-- header.header:
-		;;if: { page.show-header-links && ftd.len($page.header-links) > 0}
-		site-data: $page.site-data
-		user-data: $page.user-data
-		current-site: $page.current-site
-		toc-list: $page.header-links
+	-- ftd.column:
+	max-width.fixed.px: 1240
+	width: fill-container
+	height: fill-container
+	align-self: center
 	
-		/-- h.header-with-logo:
-		toc-list: []
-		site-logo: $assets.files.assets.fifthtry-logo.svg
-		user-data: $page.user-data
+		-- ds.column:
+		inset: $ds.spaces.inset-square.zero
+		spacing: $ds.spaces.horizontal-gap.small
+		if: { page.show-header }
 		
-		/-- h.header:
-		if: { page.show-header-links && ftd.len($page.header-links) > 0}
-		toc-list: $page.header-links
+			-- header.header:
+			;;if: { page.show-header-links && ftd.len($page.header-links) > 0}
+			site-data: $page.site-data
+			user-data: $page.user-data
+			current-site: $page.current-site
+			toc-list: $page.header-links
+			
+			/-- h.header-with-logo:
+			toc-list: []
+			site-logo: $assets.files.assets.fifthtry-logo.svg
+			user-data: $page.user-data
+			
+			/-- h.header:
+			if: { page.show-header-links && ftd.len($page.header-links) > 0}
+			toc-list: $page.header-links
+			
+		-- end: ds.column
+
+		-- ds.column:
+		inset: $ds.spaces.inset-square.zero
+		content: $page.children
+		align-content: $page.align-content
+		height: $page.height
 		
-	-- end: ds.column
+		-- end: ds.column
 
-	-- ds.column:
-	inset: $ds.spaces.inset-square.zero
-	content: $page.children
-	align-content: $page.align-content
-	height: $page.height
-	
-	-- end: ds.column
-
-	-- footer.footer:
-	if: { !page.hide-footer }
-	
--- end: ftd.column
+		-- footer.footer:
+		if: { !page.hide-footer }
+		
+	-- end: ftd.column
 
 -- end: ds.page
 

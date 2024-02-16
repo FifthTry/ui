@@ -20,129 +20,129 @@ header-links: $page.data.header-links
 current-site: $page.data.current-site
 
 	-- ds.section-column:
-    flush: full
-    inset: $ds.spaces.inset-square.large
-    spacing: $ds.spaces.vertical-gap.large
-    margin: $ds.spaces.vertical-gap.extra-extra-large
-
-        -- ds.heading-small: Github
-
-        -- ftd.desktop:
-
-        -- ds.section-column:
-        flush: full
-        inset: $ds.spaces.inset-square.zero
-        spacing: $ds.spaces.vertical-gap.large
-        margin: $ds.spaces.vertical-gap.extra-extra-large
-        align-content: top-left
-
-            -- ds.row:
-            align-content: left
-            spacing: $ds.spaces.horizontal-gap.small
-
-                -- ftd.image:
-                src: $assets.files.assets.sites.info.svg
-
-                -- ds.copy-small: Use clift to update your site from github
-
-            -- end: ds.row
-
-            -- ds.row:
-            radius: $ds.radius.medium
-            inset: $ds.spaces.inset-square.large
-            border: $ds.borders.uniform.small
-            spacing: $ds.spaces.horizontal-gap.space-between
-            background.solid: $ds.colors.background.step-1
-
-                	-- ds.link:
-	                 color: $ds.colors.text-strong
-	                 link: /
+	   flush: full
+	   inset: $ds.spaces.inset-square.large
+	   spacing: $ds.spaces.vertical-gap.large
+	   margin: $ds.spaces.vertical-gap.extra-extra-large
 	
-                    $description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.domain)
-
-                	-- ds.row:
-	                spacing: $ds.spaces.horizontal-gap.medium
-	                align-content: right
-	                width.fixed.px: 285
-
-		              -- ds.danger-button: Remove Access
-		               radius: curved
-		               $on-click$: $page.remove-github-access.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug)
-		               width: full
-
-		                -- ds.secondary-button: Edit
-		                radius: curved
-		                width: full
-		                link: $page.data.configure-url
+		-- ds.heading-small: Github
 		
-	                  -- end: ds.row
-
-            -- end: ds.row
-
-            -- ftd.text: $page.remove-github-access.remove-github-access-error
-            color: red
-            if: { page.remove-github-access.remove-github-access-error != NULL }
-
-        -- end: ds.section-column
-
-        -- end: ftd.desktop
-
-        -- ftd.mobile:
-
-        -- ds.column:
-        align-content: top-left
-        spacing: $ds.spaces.vertical-gap.large
-
-            -- ds.row:
-            align-content: left
-            spacing: $ds.spaces.horizontal-gap.small
-
-                -- ftd.image:
-                src: $assets.files.assets.sites.info.svg
-
-                -- ds.copy-small: Use clift to update your site from github
-
-            -- end: ds.row
-
-            -- ds.column:
-            radius: $ds.radius.medium
-            inset: $ds.spaces.inset-square.medium
-            border: $ds.borders.uniform.small
-            spacing: $ds.spaces.vertical-gap.medium
-            background.solid: $ds.colors.background.step-1
-
-                    -- ds.link:
-                     color: $ds.colors.text-strong
-                     link: /
-    
-                    $description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.domain)
-
-                    -- ds.row:
-                    spacing: $ds.spaces.horizontal-gap.medium
-                    align-content: left
-
-                      -- ds.danger-button: Remove Access
-                       radius: curved
-                       $on-click$: $page.remove-github-access.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug)
-                       width: full
-
-                        -- ds.secondary-button: Edit
-                        radius: curved
-                        width: full
-                        link: $page.data.configure-url
-        
-                      -- end: ds.row
-
-            -- end: ds.column
-
-            -- ftd.text: $page.remove-github-access.remove-github-access-error
-            color: red
-            if: { page.remove-github-access.remove-github-access-error != NULL }
-
-        -- end: ds.column
-
-        -- end: ftd.mobile
+		-- ftd.desktop:
 		
+			-- ds.section-column:
+			flush: full
+			inset: $ds.spaces.inset-square.zero
+			spacing: $ds.spaces.vertical-gap.large
+			margin: $ds.spaces.vertical-gap.extra-extra-large
+			align-content: top-left
+			
+				-- ds.row:
+				align-content: left
+				spacing: $ds.spaces.horizontal-gap.small
+				
+					-- ftd.image:
+					src: $assets.files.assets.sites.info.svg
+					
+					-- ds.copy-small: Use clift to update your site from github
+					
+				-- end: ds.row
+
+				-- ds.row:
+				radius: $ds.radius.medium
+				inset: $ds.spaces.inset-square.large
+				border: $ds.borders.uniform.small
+				spacing: $ds.spaces.horizontal-gap.space-between
+				background.solid: $ds.colors.background.step-1
+				
+					-- ds.link:
+					 color: $ds.colors.text-strong
+					 link: /
+					
+					   $description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.domain)
+					
+					-- ds.row:
+					spacing: $ds.spaces.horizontal-gap.medium
+					align-content: right
+					width.fixed.px: 285
+					
+						-- ds.danger-button: Remove Access
+						 radius: curved
+						 $on-click$: $page.remove-github-access.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug)
+						 width: full
+						
+						-- ds.secondary-button: Edit
+						radius: curved
+						width: full
+						link: $page.data.configure-url
+						
+					-- end: ds.row
+
+				-- end: ds.row
+
+				-- ftd.text: $page.remove-github-access.remove-github-access-error
+				color: red
+				if: { page.remove-github-access.remove-github-access-error != NULL }
+				
+			-- end: ds.section-column
+
+		-- end: ftd.desktop
+
+		-- ftd.mobile:
+		
+			-- ds.column:
+			align-content: top-left
+			spacing: $ds.spaces.vertical-gap.large
+			
+				-- ds.row:
+				align-content: left
+				spacing: $ds.spaces.horizontal-gap.small
+				
+					-- ftd.image:
+					src: $assets.files.assets.sites.info.svg
+					
+					-- ds.copy-small: Use clift to update your site from github
+					
+				-- end: ds.row
+
+				-- ds.column:
+				radius: $ds.radius.medium
+				inset: $ds.spaces.inset-square.medium
+				border: $ds.borders.uniform.small
+				spacing: $ds.spaces.vertical-gap.medium
+				background.solid: $ds.colors.background.step-1
+				
+					-- ds.link:
+					 color: $ds.colors.text-strong
+					 link: /
+					
+					$description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.domain)
+					
+					-- ds.row:
+					spacing: $ds.spaces.horizontal-gap.medium
+					align-content: left
+					
+						-- ds.danger-button: Remove Access
+						 radius: curved
+						 $on-click$: $page.remove-github-access.submit(org_slug=$page.data.org-slug, site_slug=$page.data.site-slug)
+						 width: full
+						
+						-- ds.secondary-button: Edit
+						radius: curved
+						width: full
+						link: $page.data.configure-url
+						
+					-- end: ds.row
+
+				-- end: ds.column
+
+				-- ftd.text: $page.remove-github-access.remove-github-access-error
+				color: red
+				if: { page.remove-github-access.remove-github-access-error != NULL }
+				
+			-- end: ds.column
+
+		-- end: ftd.mobile
+
 	-- end: ds.section-column
 
 -- end: p.page

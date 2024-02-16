@@ -21,87 +21,87 @@ current-site: $page.data.current-site
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.extra-extra-large
-
-	-- ds.heading-small: Github
-
-	-- ftd.desktop:
-
-	-- ds.section-column:
-	flush: full
-	spacing: $ds.spaces.vertical-gap.large
-	align-content: top-left
-	inset: $ds.spaces.inset-square.zero
-
-	-- ds.row:
-	align-content: left
-	spacing: $ds.spaces.horizontal-gap.small
-
-	-- ftd.image:
-	src: $assets.files.assets.sites.info.svg
-
-	-- ds.copy-small: Use clift to update your site from github
-
-	-- end: ds.row
-
-	-- ds.row:
-	radius: $ds.radius.medium
-	inset: $ds.spaces.inset-square.large
-	border: $ds.borders.uniform.small
-	spacing: $ds.spaces.horizontal-gap.space-between
-	background.solid: $ds.colors.background.step-1
-
-	-- ds.copy-large:
-
-	$github-message(domain = $page.data.site-domain)
-
-	-- ds.primary-button: Configure Now
-	link: $page.data.configure-url
-	radius: curved
-
-	-- end: ds.row
-
-	-- end: ds.section-column
+	
+		-- ds.heading-small: Github
 		
-	-- end: ftd.desktop
-
-	-- ftd.mobile:
-
-	-- ds.column:
-	align-content: top-left
-	spacing: $ds.spaces.vertical-gap.large
-
-	-- ds.row:
-	align-content: left
-	spacing: $ds.spaces.horizontal-gap.small
-
-	-- ftd.image:
-	src: $assets.files.assets.sites.info.svg
-
-	-- ds.copy-small: Use clift to update your site from github
-
-	-- end: ds.row
-
-	-- ds.column:
-	radius: $ds.radius.medium
-	inset: $ds.spaces.inset-square.large
-	border: $ds.borders.uniform.small
-	spacing: $ds.spaces.vertical-gap.medium
-	background.solid: $ds.colors.background.step-1
-	align-content: right
-
-	-- ds.copy-large:
-
-	$github-message(domain = $page.data.site-domain)
-
-	-- ds.secondary-button: Configure Now
-	link: $page.data.configure-url
-	radius: curved
-
-	-- end: ds.column
-
-	-- end: ds.column
+		-- ftd.desktop:
 		
-	-- end: ftd.mobile
+			-- ds.section-column:
+			flush: full
+			spacing: $ds.spaces.vertical-gap.large
+			align-content: top-left
+			inset: $ds.spaces.inset-square.zero
+			
+				-- ds.row:
+				align-content: left
+				spacing: $ds.spaces.horizontal-gap.small
+				
+					-- ftd.image:
+					src: $assets.files.assets.sites.info.svg
+					
+					-- ds.copy-small: Use clift to update your site from github
+					
+				-- end: ds.row
+
+				-- ds.row:
+				radius: $ds.radius.medium
+				inset: $ds.spaces.inset-square.large
+				border: $ds.borders.uniform.small
+				spacing: $ds.spaces.horizontal-gap.space-between
+				background.solid: $ds.colors.background.step-1
+				
+					-- ds.copy-large:
+					
+					$github-message(domain = $page.data.site-domain)
+					
+					-- ds.primary-button: Configure Now
+					link: $page.data.configure-url
+					radius: curved
+					
+				-- end: ds.row
+
+			-- end: ds.section-column
+
+		-- end: ftd.desktop
+
+		-- ftd.mobile:
+		
+			-- ds.column:
+			align-content: top-left
+			spacing: $ds.spaces.vertical-gap.large
+			
+				-- ds.row:
+				align-content: left
+				spacing: $ds.spaces.horizontal-gap.small
+				
+					-- ftd.image:
+					src: $assets.files.assets.sites.info.svg
+					
+					-- ds.copy-small: Use clift to update your site from github
+					
+				-- end: ds.row
+
+				-- ds.column:
+				radius: $ds.radius.medium
+				inset: $ds.spaces.inset-square.large
+				border: $ds.borders.uniform.small
+				spacing: $ds.spaces.vertical-gap.medium
+				background.solid: $ds.colors.background.step-1
+				align-content: right
+				
+					-- ds.copy-large:
+					
+					$github-message(domain = $page.data.site-domain)
+					
+					-- ds.secondary-button: Configure Now
+					link: $page.data.configure-url
+					radius: curved
+					
+				-- end: ds.column
+
+			-- end: ds.column
+
+		-- end: ftd.mobile
 
 	-- end: ds.section-column
 

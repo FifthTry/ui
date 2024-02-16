@@ -40,30 +40,30 @@ current-site: $page.data.current-site
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.extra-extra-large
-
-	    -- ds.heading-small: Domains
+	
+		-- ds.heading-small: Domains
 		/-- ds.heading-small: $site-domain-format(site = $page.data.site-slug)
-
-
+		
+		
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
-
-		-- ds.section-column:
-		flush: full
-		align-content: left
-		outer-background.solid: $ds.colors.background.step-1
-		inset: $ds.spaces.inset-square.medium
-		border: $ds.borders.uniform.small
-
-                -- sd.domain-input:
-                add-domain: $page.add-domain
-                site-slug: $page.data.site-slug
-                org-slug: $page.data.org-slug
-
-            -- end: ds.section-column
+		
+			-- ds.section-column:
+			flush: full
+			align-content: left
+			outer-background.solid: $ds.colors.background.step-1
+			inset: $ds.spaces.inset-square.medium
+			border: $ds.borders.uniform.small
+			
+				-- sd.domain-input:
+				add-domain: $page.add-domain
+				site-slug: $page.data.site-slug
+				org-slug: $page.data.org-slug
+				
+			-- end: ds.section-column
 
 		-- end: ds.column
-		
+
 		-- sd.show-site-domain: $d
 		for: d in $page.data.all-domains
 		site-slug: $page.data.site-slug
@@ -71,7 +71,7 @@ current-site: $page.data.current-site
 		delete-domain: $page.delete-domain
 		make-primary-domain: $page.make-primary-domain
 		re-check-domain: $page.re-check-domain
-
+		
 	-- end: ds.section-column
 
 -- end: p.page

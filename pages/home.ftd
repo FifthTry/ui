@@ -13,52 +13,52 @@ user-data: $page.user-data
 site-data: $page.site-data
 hide-footer: false
 
--- ftd.image:
-src: $assets.files.assets.homepage.powered-by.svg
-anchor: window
-right.px: 0
-bottom.px: 0
-z-index: 99999999999999
-link: https://fastn.com/
-open-in-new-tab: true
-
--- hero: Build your next website in less than
-highlight-text: 2 hours
-
-- Over 300 Websites Already Launched.
-- Loved by 3000+ tech-enthusiasts 
-
--- card: Challenges in Today's Website Development
-card-list: $challange-list
-
--- card: How FifthTry solves this for you
-card-list: $solution-list
-
--- fastn-power: Stars on GitHub
-number: 400+
-
-Escape the trade-off between restrictive website builders and complex
-JavaScript development. With FifthTry, **your non-tech teams can build, host
-and publish websites** without sacrificing reliability and customization.
-
--- section-card:
-section-card-list: $explore
-
--- testimonial: From skeptic to web developer in an afternoon!
-author-name: Nandini Devi
-avatar: $assets.files.assets.homepage.avatar.svg
-role: Content Writer
-
-“I was very skeptical about learning to write any syntax; I had never done any
-coding before. But I decided to give it a shot and went through the videos.
-It’s actually surprisingly simple; it doesn't feel like coding at all. It's
-just like writing text in a text file, and you end up with a beautifully
-designed website. Definitely the most productive and result-oriented
-activity I've ever undertaken in a single afternoon.“
-
--- testimonial-card: Loved by 3000+ Engineers, Founder & Creators 
-testimonial-list: $testimonial-lists
-
+	-- ftd.image:
+	src: $assets.files.assets.homepage.powered-by.svg
+	anchor: window
+	right.px: 0
+	bottom.px: 0
+	z-index: 99999999999999
+	link: https://fastn.com/
+	open-in-new-tab: true
+	
+	-- hero: Build your next website in less than
+	highlight-text: 2 hours
+	
+	- Over 300 Websites Already Launched.
+	- Loved by 3000+ tech-enthusiasts
+	
+	-- card: Challenges in Today's Website Development
+	card-list: $challange-list
+	
+	-- card: How FifthTry solves this for you
+	card-list: $solution-list
+	
+	-- fastn-power: Stars on GitHub
+	number: 400+
+	
+	Escape the trade-off between restrictive website builders and complex
+	JavaScript development. With FifthTry, **your non-tech teams can build, host
+	and publish websites** without sacrificing reliability and customization.
+	
+	-- section-card:
+	section-card-list: $explore
+	
+	-- testimonial: From skeptic to web developer in an afternoon!
+	author-name: Nandini Devi
+	avatar: $assets.files.assets.homepage.avatar.svg
+	role: Content Writer
+	
+	“I was very skeptical about learning to write any syntax; I had never done any
+	coding before. But I decided to give it a shot and went through the videos.
+	It’s actually surprisingly simple; it doesn't feel like coding at all. It's
+	just like writing text in a text file, and you end up with a beautifully
+	designed website. Definitely the most productive and result-oriented
+	activity I've ever undertaken in a single afternoon.“
+	
+	-- testimonial-card: Loved by 3000+ Engineers, Founder & Creators
+	testimonial-list: $testimonial-lists
+	
 -- end: p.page
 
 -- end: page
@@ -81,96 +81,96 @@ body body:
 flush: full
 inset: $ds.spaces.inset-square.zero
 
--- ftd.desktop:
+	-- ftd.desktop:
+	
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.space-between
+		
+			-- ds.column:
+			align-content: left
+			spacing: $ds.spaces.vertical-gap.large
+			inset: $ds.spaces.inset-square.zero
+			
+				-- ds.container:
+				margin-vertical: $ds.spaces.vertical-gap.zero
+				margin-horizontal: $ds.spaces.vertical-gap.zero
+				
+					-- ds.heading-large: $hero.title
+					width: hug-content
+					
+					-- ftd.text: $hero.highlight-text
+					role: $inherited.types.heading-large
+					margin-left.px: 10
+					display: inline
+					width: hug-content
+					color: $ds.colors.accent.primary
+					
+				-- end: ds.container
 
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.space-between
+				-- ds.copy-regular:
+				
+				$hero.body
+				
+				-- ds.icon-button: Start Building
+				link: signin/
+				icon-position: at-end
+				icon: $assets.files.assets.sites.arrow.svg
+				radius: curved
+				
+			-- end: ds.column
 
--- ds.column:
-align-content: left
-spacing: $ds.spaces.vertical-gap.large
-inset: $ds.spaces.inset-square.zero
+			-- ftd.image:
+			src: $assets.files.assets.homepage.hero.svg
+			min-width.fixed.px: 520
+			
+		-- end: ds.row
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.zero
-margin-horizontal: $ds.spaces.vertical-gap.zero
+	-- end: ftd.desktop
 
--- ds.heading-large: $hero.title 
-width: hug-content
+	-- ftd.mobile:
+	
+		-- ds.column:
+		inset: $ds.spaces.inset-wide.medium
+		
+			-- ds.column:
+			align-content: left
+			spacing: $ds.spaces.vertical-gap.large
+			
+				-- ftd.image:
+				src: $assets.files.assets.homepage.hero.svg
+				width: fill-container
+				
+				-- ds.container:
+				margin-vertical: $ds.spaces.vertical-gap.zero
+				margin-horizontal: $ds.spaces.vertical-gap.zero
+				
+					-- ds.heading-large: $hero.title
+					width: hug-content
+					
+					-- ftd.text: $hero.highlight-text
+					role: $inherited.types.heading-large
+					margin-left.px: 10
+					display: inline
+					width: hug-content
+					color: $ds.colors.accent.primary
+					
+				-- end: ds.container
 
--- ftd.text: $hero.highlight-text
-role: $inherited.types.heading-large
-margin-left.px: 10
-display: inline
-width: hug-content
-color: $ds.colors.accent.primary
+				-- ds.copy-regular:
+				
+				$hero.body
+				
+				-- ds.icon-button: Start Building
+				link: signin/
+				icon-position: at-end
+				icon: $assets.files.assets.sites.arrow.svg
+				radius: curved
+				
+			-- end: ds.column
 
--- end: ds.container
+		-- end: ds.column
 
--- ds.copy-regular:
-
-$hero.body
-
--- ds.icon-button: Start Building
-link: signin/
-icon-position: at-end
-icon: $assets.files.assets.sites.arrow.svg
-radius: curved
-
--- end: ds.column
-
--- ftd.image:
-src: $assets.files.assets.homepage.hero.svg
-min-width.fixed.px: 520
-
--- end: ds.row
-
--- end: ftd.desktop
-
--- ftd.mobile:
-
--- ds.column:
-inset: $ds.spaces.inset-wide.medium
-
--- ds.column:
-align-content: left
-spacing: $ds.spaces.vertical-gap.large
-
--- ftd.image:
-src: $assets.files.assets.homepage.hero.svg
-width: fill-container
-
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.zero
-margin-horizontal: $ds.spaces.vertical-gap.zero
-
--- ds.heading-large: $hero.title 
-width: hug-content
-
--- ftd.text: $hero.highlight-text
-role: $inherited.types.heading-large
-margin-left.px: 10
-display: inline
-width: hug-content
-color: $ds.colors.accent.primary
-
--- end: ds.container
-
--- ds.copy-regular:
-
-$hero.body
-
--- ds.icon-button: Start Building
-link: signin/
-icon-position: at-end
-icon: $assets.files.assets.sites.arrow.svg
-radius: curved
-
--- end: ds.column
-
--- end: ds.column
-
--- end: ftd.mobile
+	-- end: ftd.mobile
 
 -- end: ds.section-column
 
@@ -195,33 +195,33 @@ flush if { ftd.device != "mobile" }: full
 inset: $ds.spaces.inset-square.large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
--- ds.column:
-spacing: $ds.spaces.vertical-gap.extra-large
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.extra-large
+	
+		-- ds.heading-large: $card.title
+		if: { card.title != NULL }
+		width: hug-content
+		
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.medium
+		wrap: true
+		
+			-- card-info: $obj.title
+			for: obj in $card.card-list
+			triangle-icon-1: $obj.triangle-icon-1
+			triangle-icon-2: $obj.triangle-icon-2
+			triangle-icon-3: $obj.triangle-icon-3
+			circle-icon-1: $obj.circle-icon-1
+			circle-icon-2: $obj.circle-icon-2
+			circle-icon-3: $obj.circle-icon-3
+			cta-text: $obj.cta-text
+			cta-link: $obj.cta-link
+			
+			$obj.body
+			
+		-- end: ds.row
 
--- ds.heading-large: $card.title
-if: { card.title != NULL }
-width: hug-content
-
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.medium
-wrap: true
-
--- card-info: $obj.title
-for: obj in $card.card-list
-triangle-icon-1: $obj.triangle-icon-1
-triangle-icon-2: $obj.triangle-icon-2
-triangle-icon-3: $obj.triangle-icon-3
-circle-icon-1: $obj.circle-icon-1
-circle-icon-2: $obj.circle-icon-2
-circle-icon-3: $obj.circle-icon-3
-cta-text: $obj.cta-text
-cta-link: $obj.cta-link
-
-$obj.body
-
--- end: ds.row
-
--- end: ds.column
+	-- end: ds.column
 
 -- end: ds.section-column
 
@@ -259,62 +259,62 @@ border: $ds.borders.uniform.small
 align-content: top-left
 spacing: $ds.spaces.vertical-gap.space-between
 
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.space-between
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.space-between
+	
+		-- ftd.image:
+		if: { card-info.triangle-icon-1 != NULL }
+		src: $card-info.triangle-icon-1
+		
+		-- ftd.image:
+		if: { card-info.circle-icon-1 != NULL }
+		src: $card-info.circle-icon-1
+		anchor: parent
+		right.px: -32
+		top.px: -32
+		
+		-- ftd.image:
+		if: { card-info.triangle-icon-2 != NULL }
+		src: $card-info.triangle-icon-2
+		
+		-- ftd.image:
+		if: { card-info.circle-icon-2 != NULL }
+		src: $card-info.circle-icon-2
+		anchor: parent
+		right.px: -32
+		top.px: -32
+		
+		-- ftd.image:
+		if: { card-info.triangle-icon-3 != NULL }
+		src: $card-info.triangle-icon-3
+		
+		-- ftd.image:
+		if: { card-info.circle-icon-3 != NULL }
+		src: $card-info.circle-icon-3
+		anchor: parent
+		right.px: -32
+		top.px: -32
+		
+	-- end: ds.row
 
--- ftd.image:
-if: { card-info.triangle-icon-1 != NULL }
-src: $card-info.triangle-icon-1
-
--- ftd.image:
-if: { card-info.circle-icon-1 != NULL }
-src: $card-info.circle-icon-1
-anchor: parent
-right.px: -32
-top.px: -32
-
--- ftd.image:
-if: { card-info.triangle-icon-2 != NULL }
-src: $card-info.triangle-icon-2
-
--- ftd.image:
-if: { card-info.circle-icon-2 != NULL }
-src: $card-info.circle-icon-2
-anchor: parent
-right.px: -32
-top.px: -32
-
--- ftd.image:
-if: { card-info.triangle-icon-3 != NULL }
-src: $card-info.triangle-icon-3
-
--- ftd.image:
-if: { card-info.circle-icon-3 != NULL }
-src: $card-info.circle-icon-3
-anchor: parent
-right.px: -32
-top.px: -32
-
--- end: ds.row
-
--- ds.heading-small: $card-info.title
-width: hug-content
-
--- ds.copy-regular: $card-info.body
-if: { card-info.body != NULL }
-
--- ds.row:
-if: { card-info.cta-text != NULL }
-align-content: bottom-left
-
--- ds.icon-button: $card-info.cta-text
-icon-position: at-end
-icon: $assets.files.assets.homepage.arrow.svg
-link: $card-info.cta-link
-kind: link
-size: small
-
--- end: ds.row
+	-- ds.heading-small: $card-info.title
+	width: hug-content
+	
+	-- ds.copy-regular: $card-info.body
+	if: { card-info.body != NULL }
+	
+	-- ds.row:
+	if: { card-info.cta-text != NULL }
+	align-content: bottom-left
+	
+		-- ds.icon-button: $card-info.cta-text
+		icon-position: at-end
+		icon: $assets.files.assets.homepage.arrow.svg
+		link: $card-info.cta-link
+		kind: link
+		size: small
+		
+	-- end: ds.row
 
 -- end: ds.column
 
@@ -340,25 +340,25 @@ flush if { ftd.device != "mobile" }: full
 inset: $ds.spaces.inset-square.large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
--- ds.column:
-spacing: $ds.spaces.vertical-gap.extra-large
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.extra-large
+	
+		-- ds.heading-large: $section-card.title
+		if: { section-card.title != NULL }
+		width: hug-content
+		
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.large
+		wrap: true
+		
+			-- section-card-info: $obj.title
+			for: obj in $section-card.section-card-list
+			fastn: $obj.fastn
+			text: $obj.text
+			
+		-- end: ds.row
 
--- ds.heading-large: $section-card.title
-if: { section-card.title != NULL }
-width: hug-content
-
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.large
-wrap: true
-
--- section-card-info: $obj.title
-for: obj in $section-card.section-card-list
-fastn: $obj.fastn
-text: $obj.text
-
--- end: ds.row
-
--- end: ds.column
+	-- end: ds.column
 
 -- end: ds.section-column
 
@@ -387,23 +387,23 @@ margin-vertical if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.zero
 margin-horizontal if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.zero
 border: $ds.borders.uniform.small
 
--- ds.heading-small: $section-card-info.title
-width: hug-content
-
--- ftd.text: $section-card-info.fastn
-role: $inherited.types.heading-small
-display: inline
-width: hug-content
-margin-left.px: 10
-color: $ds.colors.accent.primary
-
--- ftd.text: $section-card-info.text
-role: $inherited.types.heading-small
-display: inline
-width: hug-content
-margin-left.px: 10
-color: $ds.colors.text-strong
-
+	-- ds.heading-small: $section-card-info.title
+	width: hug-content
+	
+	-- ftd.text: $section-card-info.fastn
+	role: $inherited.types.heading-small
+	display: inline
+	width: hug-content
+	margin-left.px: 10
+	color: $ds.colors.accent.primary
+	
+	-- ftd.text: $section-card-info.text
+	role: $inherited.types.heading-small
+	display: inline
+	width: hug-content
+	margin-left.px: 10
+	color: $ds.colors.text-strong
+	
 -- end: ds.container
 
 -- end: section-card-info
@@ -428,40 +428,40 @@ flush if { ftd.device != "mobile" }: full
 inset: $ds.spaces.inset-square.large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
--- ds.column:
-spacing: $ds.spaces.vertical-gap.large
-width: hug-content
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.large
+	width: hug-content
+	
+		-- ds.heading-medium: $testimonial.title
+		width: hug-content
+		align: center
+		
+		-- ds.copy-regular: $testimonial.body
+		width.fixed.px if { ftd.device != "mobile" }: 640
+		align: center
+		
+		-- ds.row:
+		width: hug-content
+		align-content: center
+		spacing: $ds.spaces.horizontal-gap.medium
+		
+			-- ftd.image:
+			src: $testimonial.avatar
+			width.fixed.px: 75
+			
+			-- ds.column:
+			spacing: $ds.spaces.vertical-gap.extra-small
+			
+				-- ds.copy-large: $testimonial.author-name
+				
+				-- ds.copy-regular: $testimonial.role
+				width: hug-content
+				
+			-- end: ds.column
 
--- ds.heading-medium: $testimonial.title
-width: hug-content
-align: center
+		-- end: ds.row
 
--- ds.copy-regular: $testimonial.body
-width.fixed.px if { ftd.device != "mobile" }: 640
-align: center
-
--- ds.row:
-width: hug-content
-align-content: center
-spacing: $ds.spaces.horizontal-gap.medium
-
--- ftd.image:
-src: $testimonial.avatar
-width.fixed.px: 75
-
--- ds.column:
-spacing: $ds.spaces.vertical-gap.extra-small
-
--- ds.copy-large: $testimonial.author-name
-
--- ds.copy-regular: $testimonial.role
-width: hug-content
-
--- end: ds.column
-
--- end: ds.row
-
--- end: ds.column
+	-- end: ds.column
 
 -- end: ds.section-column
 
@@ -485,31 +485,31 @@ flush if { ftd.device != "mobile" }: full
 inset: $ds.spaces.inset-square.large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
--- ds.column:
-spacing: $ds.spaces.vertical-gap.extra-large
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.extra-large
+	
+		-- ds.heading-large: $testimonial-card.title
+		if: { testimonial-card.title != NULL }
+		width: hug-content
+		align: center
+		
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.extra-large
+		wrap: true
+		
+			-- testimonial-card-info: $obj.name
+			for: obj in $testimonial-card.testimonial-list
+			role: $obj.role
+			avatar: $obj.avatar
+			body: $obj.body
+			card-1: $obj.card-1
+			card-2: $obj.card-2
+			card-3: $obj.card-3
+			card-4: $obj.card-4
+			
+		-- end: ds.row
 
--- ds.heading-large: $testimonial-card.title
-if: { testimonial-card.title != NULL }
-width: hug-content
-align: center
-
--- ds.row:
-spacing: $ds.spaces.horizontal-gap.extra-large
-wrap: true
-
--- testimonial-card-info: $obj.name
-for: obj in $testimonial-card.testimonial-list
-role: $obj.role
-avatar: $obj.avatar
-body: $obj.body
-card-1: $obj.card-1
-card-2: $obj.card-2
-card-3: $obj.card-3
-card-4: $obj.card-4
-
--- end: ds.row
-
--- end: ds.column
+	-- end: ds.column
 
 -- end: ds.section-column
 
@@ -548,30 +548,30 @@ shadow if { testimonial-card-info.card-3 != NULL }: $testimonial-card-info.card-
 shadow if { testimonial-card-info.card-4 != NULL }: $testimonial-card-info.card-4
 inset: $ds.spaces.inset-square.medium
 
--- ds.row:
-align-content: left
-spacing: $ds.spaces.horizontal-gap.medium
+	-- ds.row:
+	align-content: left
+	spacing: $ds.spaces.horizontal-gap.medium
+	
+		-- ftd.image:
+		src: $testimonial-card-info.avatar
+		width.fixed.px: 75
+		
+		-- ds.column:
+		align-content: left
+		spacing: $ds.spaces.vertical-gap.extra-small
+		
+			-- ds.heading-small: $testimonial-card-info.name
+			width: hug-content
+			
+			-- ds.copy-regular: $testimonial-card-info.role
+			width: hug-content
+			
+		-- end: ds.column
 
--- ftd.image:
-src: $testimonial-card-info.avatar
-width.fixed.px: 75
+	-- end: ds.row
 
--- ds.column:
-align-content: left
-spacing: $ds.spaces.vertical-gap.extra-small
-
--- ds.heading-small: $testimonial-card-info.name
-width: hug-content
-
--- ds.copy-regular: $testimonial-card-info.role
-width: hug-content
-
--- end: ds.column
-
--- end: ds.row
-
--- ds.copy-regular: $testimonial-card-info.body
-
+	-- ds.copy-regular: $testimonial-card-info.body
+	
 -- end: ds.column
 
 -- end: testimonial-card-info
@@ -594,82 +594,82 @@ string number:
 flush: full
 inset: $ds.spaces.inset-square.zero
 
--- ftd.desktop:
+	-- ftd.desktop:
+	
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.large
+		inset: $ds.spaces.inset-square.large
+		
+			-- ds.heading-large: $fastn-power.number
+			color: $ds.colors.accent.primary
+			width: hug-content
+			
+			-- ftd.image:
+			src: $assets.files.assets.homepage.circle.svg
+			width.fixed.px: 208
+			height.fixed.px: 160
+			anchor: parent
+			top.px: -16
+			
+			-- ds.row:
+			
+				-- ds.heading-medium: $fastn-power.title
+				width: hug-content
+				align: center
+				
+				-- ftd.image:
+				src: $assets.files.assets.homepage.git.svg
+				align-self: center
+				width.fixed.px: 56
+				height.fixed.px: 56
+				
+			-- end: ds.row
 
--- ds.column:
-spacing: $ds.spaces.vertical-gap.large
-inset: $ds.spaces.inset-square.large
+			-- ds.copy-regular: $fastn-power.body
+			width.fixed.px: 640
+			align: center
+			
+		-- end: ds.column
 
--- ds.heading-large: $fastn-power.number
-color: $ds.colors.accent.primary
-width: hug-content
+	-- end: ftd.desktop
 
--- ftd.image:
-src: $assets.files.assets.homepage.circle.svg
-width.fixed.px: 208
-height.fixed.px: 160
-anchor: parent
-top.px: -16
+	-- ftd.mobile:
+	
+		-- ds.column:
+		inset: $ds.spaces.inset-square.medium
+		spacing: $ds.spaces.vertical-gap.large
+		
+			-- ds.heading-large: $fastn-power.number
+			color: $ds.colors.accent.primary
+			width: hug-content
+			
+			-- ftd.image:
+			src: $assets.files.assets.homepage.circle.svg
+			width.fixed.px: 208
+			height.fixed.px: 160
+			anchor: parent
+			top.px: -56
+			
+			-- ds.row:
+			
+				-- ds.heading-medium: $fastn-power.title
+				width: hug-content
+				align: center
+				
+				-- ftd.image:
+				src: $assets.files.assets.homepage.git.svg
+				align-self: center
+				width.fixed.px: 38
+				height.fixed.px: 38
+				
+			-- end: ds.row
 
--- ds.row:
+			-- ds.copy-large: $fastn-power.body
+			align: center
+			
+		-- end: ds.column
 
--- ds.heading-medium: $fastn-power.title
-width: hug-content
-align: center
-
--- ftd.image:
-src: $assets.files.assets.homepage.git.svg
-align-self: center
-width.fixed.px: 56
-height.fixed.px: 56
-
--- end: ds.row
-
--- ds.copy-regular: $fastn-power.body
-width.fixed.px: 640
-align: center
-
--- end: ds.column
-
--- end: ftd.desktop
-
--- ftd.mobile:
-
--- ds.column:
-inset: $ds.spaces.inset-square.medium
-spacing: $ds.spaces.vertical-gap.large
-
--- ds.heading-large: $fastn-power.number
-color: $ds.colors.accent.primary
-width: hug-content
-
--- ftd.image:
-src: $assets.files.assets.homepage.circle.svg
-width.fixed.px: 208
-height.fixed.px: 160
-anchor: parent
-top.px: -56
-
--- ds.row:
-
--- ds.heading-medium: $fastn-power.title
-width: hug-content
-align: center
-
--- ftd.image:
-src: $assets.files.assets.homepage.git.svg
-align-self: center
-width.fixed.px: 38
-height.fixed.px: 38
-
--- end: ds.row
-
--- ds.copy-large: $fastn-power.body
-align: center
-
--- end: ds.column
-
--- end: ftd.mobile
+	-- end: ftd.mobile
 
 -- end: ds.section-column
 
@@ -772,12 +772,12 @@ string text:
 
 -- section-cards list explore:
 
--- section-cards: Explore how  
+-- section-cards: Explore how
 fastn: fastn
 text: compares to other languages and frameworks.
 
--- section-cards: Explore how 
-fastn: fastn 
+-- section-cards: Explore how
+fastn: fastn
 text: compares to WYSIWYG website builders.
 
 -- end: explore
