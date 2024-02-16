@@ -6,3 +6,4 @@
 -- string sign-up-url: /-/auth/create-account/
 -- string github-url: /-/auth/github/
 -- string logout-url: /-/auth/logout/
+-- string forgot-url: /-/auth/forgot/

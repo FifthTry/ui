@@ -5,4 +5,5 @@
 -- string sign-in-url: /scenarios/signin-page/
 -- string sign-up-url: /scenarios/signup-page/
 -- string github-url: /-/auth/github/
+-- string forgot-url: /-/auth/forgot/
 -- string logout-url: /scenarios/logged-out-home/
