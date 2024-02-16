@@ -15,7 +15,6 @@ sr.toc-data list toc-list:
 optional sr.site current-site:
 
 -- ds.section-column:
-flush: full
 margin: $ds.spaces.vertical-gap.zero
 spacing: $ds.spaces.vertical-gap.zero
 

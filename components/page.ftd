@@ -10,34 +10,28 @@ optional string product:
 children children:
 optional caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero
-ds.flush flush: full
+ds.flush flush: to-header
 boolean hide-footer: false
 
 -- ds.page: $page.title
 
--- ftd.column:
-max-width.fixed.px: 1240
-width: fill-container
-align-self: center
 
-	-- header.header:
-	site-data: $page.site-data
-	user-data: $page.user-data
-	margin: $page.margin
-	
-	-- ds.section-column:
-	inset: $ds.spaces.inset-wide.large
-	content: $page.children
-	flush: $page.flush
-	;;spacing: $ds.spaces.vertical-gap.zero
-	
-	-- end: ds.section-column
+-- header.header:
+site-data: $page.site-data
+user-data: $page.user-data
+margin: $page.margin
 
-	-- footer.footer:
-	if: { !page.hide-footer }
+-- ds.section-column:
+inset: $ds.spaces.inset-wide.large
+content: $page.children
+flush: $page.flush
+;;spacing: $ds.spaces.vertical-gap.zero
 
-	-- end: ftd.column
-	
+-- end: ds.section-column
+
+-- footer.footer:
+if: { !page.hide-footer }
+
 -- end: ds.page
 
 -- end: page
