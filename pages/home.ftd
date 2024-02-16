@@ -257,6 +257,7 @@ background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 align-content: top-left
+spacing: $ds.spaces.vertical-gap.space-between
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
