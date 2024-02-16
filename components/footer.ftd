@@ -86,24 +86,28 @@ spacing: $ds.spaces.horizontal-gap.space-between
 	src: $assets.files.assets.homepage.tweet-h.svg
 	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-1, v = true)
 	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-1, v = false)
+	link: https://twitter.com/FifthTryHQ
 
 	-- ftd.image:
 	src if { !footer.icon-2 }: $assets.files.assets.homepage.linkedin.svg
 	src: $assets.files.assets.homepage.linkedin-h.svg
 	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-2, v = true)
 	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-2, v = false)
+	link: https://in.linkedin.com/company/fifthtry
 
 	-- ftd.image:
 	src if { !footer.icon-3 }: $assets.files.assets.homepage.fb.svg
 	src: $assets.files.assets.homepage.fb-h.svg
 	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-3, v = true)
 	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-3, v = false)
-
+	link: https://github.com/FifthTry
+	
 	-- ftd.image:
 	src if { !footer.icon-4 }: $assets.files.assets.homepage.gh.svg
 	src: $assets.files.assets.homepage.gh-h.svg
 	$on-mouse-enter$: $ftd.set-bool($a = $footer.icon-4, v = true)
 	$on-mouse-leave$: $ftd.set-bool($a = $footer.icon-4, v = false)
+	link: https://github.com/FifthTry
 
 	-- end: ds.row
 
