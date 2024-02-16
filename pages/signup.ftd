@@ -11,8 +11,6 @@
 module site-data: site-data
 ud.user-data user-data:
 module signup-action: create-user
-string github-url:
-string signin-url:
 private string $current-name: *$ftd.empty
 private string $current-email: *$ftd.empty
 private string $current-username: *$ftd.empty
@@ -197,12 +195,12 @@ align-content: top-center
 			wrap: true
 			
 				-- ds.copy-regular: $lang.create-account
-				text if { page.signin-url }: $lang.existing-account
+				text if { page.site-data.sign-in-url }: $lang.existing-account
 				width: hug-content
 				
 				-- ds.link: $lang.sign-in
 				color: $ds.colors.accent.primary
-				link: $page.signin-url
+				link: $page.site-data.sign-in-url
 				
 			-- end: ds.row
 
@@ -216,7 +214,7 @@ align-content: top-center
 
 			-- ds.icon-button: Continue with Github
 			icon: $assets.files.assets.github-mark-white.svg
-			link: $page.github-url
+			link: $page.site-data.github-url
 			kind: secondary
 			width: full
 			
@@ -370,12 +368,12 @@ align-content: top-center
 			inset: $ds.spaces.inset-square.medium
 			
 				-- ds.copy-regular: $lang.create-account
-				text if { page.signin-url }: $lang.existing-account
+				text if { page.site-data.sign-in-url }: $lang.existing-account
 				width: hug-content
 				
 				-- ds.link: $lang.sign-in
 				color: $ds.colors.accent.primary
-				link: $page.signin-url
+				link: $page.site-data.sign-in-url
 				
 			-- end: ds.row
 
@@ -389,7 +387,7 @@ align-content: top-center
 
 			-- ds.icon-button: Continue with Github
 			icon: $assets.files.assets.github-mark-white.svg
-			link: $page.github-url
+			link: $page.site-data.github-url
 			kind: secondary
 			width: full
 			
