@@ -37,11 +37,9 @@ current-site: $page.data.current-site
 
 	-- ds.section-column:
 	flush: full
-	inset: $ds.spaces.inset-square.medium
+	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
-	border: $ds.borders.top.small
 	margin: $ds.spaces.vertical-gap.extra-extra-large
-	radius: $ds.radius.zero
 
 	    -- ds.heading-small: Domains
 		/-- ds.heading-small: $site-domain-format(site = $page.data.site-slug)

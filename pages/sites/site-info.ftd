@@ -28,10 +28,8 @@ current-site: $page.data.current-site
 
 	-- ds.section-column:
 	flush: full
-	inset: $ds.spaces.inset-square.medium
+	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
-	border: $ds.borders.top.small
-	radius: $ds.radius.zero
 		
 		-- ds.heading-small: About
 

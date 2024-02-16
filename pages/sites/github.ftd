@@ -18,7 +18,7 @@ current-site: $page.data.current-site
 
 	-- ds.section-column:
 	flush: full
-	inset: $ds.spaces.inset-square.medium
+	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.extra-extra-large
 
