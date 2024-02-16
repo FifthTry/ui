@@ -1,6 +1,5 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 -- import: ui.fifthtry.com/components/page as p
 -- import: ui.fifthtry.com/pages/university
 -- import: ui.fifthtry.com/components/university/show-course-info
@@ -9,7 +8,7 @@
 -- component page:
 university.course-info list courses:
 module site-data: site-data
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 
 -- p.page:
 product: $lang.university

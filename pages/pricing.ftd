@@ -2,12 +2,11 @@
 -- import: ui.fifthtry.com/components/about/product
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 
 
 -- component page:
-ud.user-data user-data: $user-data.user
 module site-data: site-data
+ud.user-data user-data:
 
 -- p.page: FifthTry | Better way To Build Websites
 user-data: $page.user-data

@@ -5,7 +5,6 @@
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 
 
 -- record site-info-data:
@@ -17,7 +16,7 @@ sr.toc-data list header-links:
 
 
 -- component page:
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 site-info-data data:
 
 -- p.page:

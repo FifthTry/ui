@@ -1,8 +1,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/user-data
 
 -- component avatar:
-ud.user-data user-data: $user-data.user
+ud.user-data user-data:
 boolean $open: false
 
 
