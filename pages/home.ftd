@@ -26,7 +26,7 @@ hide-footer: false
 	-- card: How FifthTry solves this for you
 	card-list: $solution-list
 	
-	-- fastn-power: Stars on GitHub
+	-- github-stars: Stars on GitHub
 	number: 400+
 	
 	Escape the trade-off between restrictive website builders and complex
@@ -321,32 +321,17 @@ spacing: $ds.spaces.vertical-gap.medium
 optional caption title:
 section-cards list section-card-list:
 
--- ds.section-column:
+-- ds.section-row:
 flush if { ftd.device != "mobile" }: full
-inset: $ds.spaces.inset-square.large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
+wrap: true
 
-	-- ds.column:
-	spacing: $ds.spaces.vertical-gap.extra-large
-	
-		-- ds.heading-large: $section-card.title
-		if: { section-card.title != NULL }
-		width: hug-content
-		
-		-- ds.row:
-		spacing: $ds.spaces.horizontal-gap.large
-		wrap: true
-		
-			-- section-card-info: $obj.title
-			for: obj in $section-card.section-card-list
-			fastn: $obj.fastn
-			text: $obj.text
+    -- section-card-info: $obj.title
+    for: obj in $section-card.section-card-list
+    fastn: $obj.fastn
+    text: $obj.text
 			
-		-- end: ds.row
-
-	-- end: ds.column
-
--- end: ds.section-column
+-- end: ds.section-row
 
 -- end: section-card
 
@@ -365,7 +350,7 @@ string fastn:
 string text:
 
 -- ds.container:
-width.fixed.px if { ftd.device != "mobile" }: 520
+width.fixed.px if { ftd.device != "mobile" }: 450
 width: fill-container
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
@@ -379,14 +364,12 @@ border: $ds.borders.uniform.small
 	-- ftd.text: $section-card-info.fastn
 	role: $inherited.types.heading-small
 	display: inline
-	width: hug-content
 	margin-left.px: 10
 	color: $ds.colors.accent.primary
 	
 	-- ftd.text: $section-card-info.text
 	role: $inherited.types.heading-small
 	display: inline
-	width: hug-content
 	margin-left.px: 10
 	color: $ds.colors.text-strong
 	
@@ -571,13 +554,13 @@ inset: $ds.spaces.inset-square.medium
 
 
 
--- component fastn-power:
+-- component github-stars:
 caption title:
 body body:
 string number:
 
 -- ds.section-column:
-flush: full
+flush: narrow
 inset: $ds.spaces.inset-square.zero
 
 	-- ftd.desktop:
@@ -586,7 +569,7 @@ inset: $ds.spaces.inset-square.zero
 		spacing: $ds.spaces.vertical-gap.large
 		inset: $ds.spaces.inset-square.large
 		
-			-- ds.heading-large: $fastn-power.number
+			-- ds.heading-large: $github-stars.number
 			color: $ds.colors.accent.primary
 			width: hug-content
 			
@@ -599,7 +582,7 @@ inset: $ds.spaces.inset-square.zero
 			
 			-- ds.row:
 			
-				-- ds.heading-medium: $fastn-power.title
+				-- ds.heading-medium: $github-stars.title
 				width: hug-content
 				align: center
 				
@@ -611,7 +594,7 @@ inset: $ds.spaces.inset-square.zero
 				
 			-- end: ds.row
 
-			-- ds.copy-regular: $fastn-power.body
+			-- ds.copy-regular: $github-stars.body
 			width.fixed.px: 640
 			align: center
 			
@@ -625,7 +608,7 @@ inset: $ds.spaces.inset-square.zero
 		inset: $ds.spaces.inset-square.medium
 		spacing: $ds.spaces.vertical-gap.large
 		
-			-- ds.heading-large: $fastn-power.number
+			-- ds.heading-large: $github-stars.number
 			color: $ds.colors.accent.primary
 			width: hug-content
 			
@@ -638,7 +621,7 @@ inset: $ds.spaces.inset-square.zero
 			
 			-- ds.row:
 			
-				-- ds.heading-medium: $fastn-power.title
+				-- ds.heading-medium: $github-stars.title
 				width: hug-content
 				align: center
 				
@@ -650,7 +633,7 @@ inset: $ds.spaces.inset-square.zero
 				
 			-- end: ds.row
 
-			-- ds.copy-large: $fastn-power.body
+			-- ds.copy-large: $github-stars.body
 			align: center
 			
 		-- end: ds.column
@@ -659,7 +642,7 @@ inset: $ds.spaces.inset-square.zero
 
 -- end: ds.section-column
 
--- end: fastn-power
+-- end: github-stars
 
 
 
@@ -730,17 +713,17 @@ triangle-icon-2: $assets.files.assets.homepage.triangle-2.svg
 circle-icon-2: $assets.files.assets.homepage.circle-2.svg
 cta-text: Start Now
 
-- Fast and Secure hosting.
-- Seamless integration with fastn and the editor.
-- Hosting designed for non-developers.
+- Fast and secure hosting service
+- Seamless integration with `fastn` and the editor
+- Powerful hosting solution designed for non-developers
 
--- cards: FifthTry Collaborative Editor
+-- cards: FifthTry Hub
 triangle-icon-3: $assets.files.assets.homepage.triangle-3.svg
 circle-icon-3: $assets.files.assets.homepage.circle-3.svg
 cta-text: Coming soon
 
-- Robust Version Control
-- Collaborative Change-Requests System
+- Version control system designed for everyday users
+- Online, collaborative change request system
 - Intuitive GUI for easy updates to your website
 
 -- end: solution-list
