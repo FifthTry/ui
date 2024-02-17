@@ -7,37 +7,13 @@
 
 
 
+
+
 -- component header:
-sr.toc-data list toc-list:
-
--- ds.row:
-border: $ds.borders.bottom.small
-align-content: top-left
-radius: $ds.radius.zero
-spacing: $ds.spaces.horizontal-gap.medium
-inset: $ds.spaces.inset-wide.medium-zero
-
-	-- toc-link: $t
-	for: t in $header.toc-list
-	
--- end: ds.row
-
--- end: header
-
-
-
-
-
-
-
--- component header-with-logo:
-sr.toc-data list toc-list:
-optional sr.site current-site:
-optional string site-name:
-optional ftd.image-src site-logo:
-optional string header-text:
 module site-data: site-data
 ud.user-data user-data:
+sites-records.site-common-data site:
+sites-records.navigation-info nav:
 boolean $open: false
 
 -- ds.column:
@@ -52,32 +28,13 @@ boolean $open: false
 		margin: $ds.spaces.vertical-gap.zero
 		
 			-- ds.row:
-			if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
 			align-content: left
 			
-				-- ds.copy-large: $header-with-logo.site-name
-				if: { header-with-logo.site-name != NULL }
-				
-				-- ftd.image: $header-with-logo.site-logo
-				if: { header-with-logo.site-logo != NULL }
-				width: auto
+				-- ftd.image: $header.site-data.logo
 				link: /
-				
-				-- ds.copy-large: $header-with-logo.header-text
-				if: { header-with-logo.header-text != NULL }
-				
-				-- ds.copy-regular: $header-with-logo.current-site.name
-				if: { header-with-logo.current-site != NULL }
-				
-			-- end: ds.row
 
-			-- ds.row:
-			width: hug-content
-			inset: $ds.spaces.inset-square.medium
-			
-				-- toc-link: $t
-				for: t in $header-with-logo.toc-list
-				
+				-- ds.copy-regular: $header.site.site-name
+
 			-- end: ds.row
 
 			-- ds.row:
@@ -88,165 +45,43 @@ boolean $open: false
 				-- ds.link: $lang.home
 				color: $ds.colors.text-strong
 				link: /
-				
-				-- ds.link: $lang.pricing
-				color: $ds.colors.text-strong
-				link: /pricing/
-				
+
 				-- avatar.avatar:
 				if: { header-with-logo.user-data.is-logged-in }
 				user-data: $header-with-logo.user-data
 				
-				-- ftd.row:
-				 if: { ftd.follow-system-dark-mode }
-				 $on-click$: $ftd.enable-light-mode()
-				
-					-- ftd.image:
-					src: $assets.files.assets.system-mode-active.png
-					height.fixed.px: 24
-					align-self: center
-					width.fixed.px: 24
-					
-				-- end: ftd.row
 
-				-- ftd.row:
-				if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
-				$on-click$: $ftd.enable-dark-mode()
-				
-					-- ftd.image:
-					src: $assets.files.assets.light-mode-active.png
-					height.fixed.px: 24
-					align-self: center
-					width.fixed.px: 24
-					
-				-- end: ftd.row
+                -- ftd.image:
+                if: { ftd.follow-system-dark-mode }
+                $on-click$: $ftd.enable-light-mode()
+                src: $assets.files.assets.system-mode-active.png
+                height.fixed.px: 24
+                align-self: center
+                width.fixed.px: 24
 
-				-- ftd.row:
-				if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
-				$on-click$: $ftd.enable-system-mode()
-				
-					-- ftd.image:
-					src: $assets.files.assets.dark-mode-active.png
-					height.fixed.px: 24
-					align-self: center
-					width.fixed.px: 24
-					
-				-- end: ftd.row
+
+                -- ftd.image:
+                if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
+                $on-click$: $ftd.enable-dark-mode()
+                src: $assets.files.assets.light-mode-active.png
+                height.fixed.px: 24
+                align-self: center
+                width.fixed.px: 24
+
+
+                -- ftd.image:
+                if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
+                $on-click$: $ftd.enable-system-mode()
+                src: $assets.files.assets.dark-mode-active.png
+                height.fixed.px: 24
+                align-self: center
+                width.fixed.px: 24
 
 			-- end: ds.row
 
 		-- end: ds.section-row
 
 	-- end: ftd.desktop
-
-	-- ftd.mobile:
-	
-		-- ds.row:
-		width: fill-container
-		align-content: left
-		spacing: $ds.spaces.horizontal-gap.space-between
-		background.solid: $ds.colors.background.base
-		inset: $ds.spaces.inset-wide.medium
-		height.fixed.px: 80
-		
-			-- ds.row:
-			if: { header-with-logo.site-name != NULL || header-with-logo.site-logo != NULL }
-			align-content: left
-			
-				-- ds.copy-large: $header-with-logo.site-name
-				if: { header-with-logo.site-name != NULL }
-				
-				-- ftd.image: $header-with-logo.site-logo
-				if: { header-with-logo.site-logo != NULL }
-				width: auto
-				link: /
-				
-				-- ds.copy-large: $header-with-logo.header-text
-				if: { header-with-logo.header-text != NULL }
-				
-				-- ds.copy-regular: $header-with-logo.current-site.name
-				if: { header-with-logo.current-site != NULL }
-				
-			-- end: ds.row
-
-			/-- ds.row:
-			width: hug-content
-			inset: $ds.spaces.inset-square.medium
-			
-				-- toc-link: $t
-				for: t in $header-with-logo.toc-list
-				
-			-- end: ds.row
-
-			-- ftd.image:
-			src: $assets.files.assets.sites.menu.svg
-			$on-click$: $ftd.toggle($a = $header-with-logo.open)
-			
-			-- ds.floater:
-			if: { header-with-logo.open }
-			background.solid: $ds.colors.background.step-1
-			left: 0
-			top: 66
-			inset: $ds.spaces.inset-tall.medium
-			
-				-- ds.column:
-				spacing: $ds.spaces.horizontal-gap.large
-				
-					-- ds.link: $lang.home
-					color: $ds.colors.text-strong
-					link: /
-					
-					-- ds.link: $lang.pricing
-					color: $ds.colors.text-strong
-					link: /pricing/
-					
-					-- avatar.avatar:
-					if: { header-with-logo.user-data.is-logged-in }
-					user-data: $header-with-logo.user-data
-					
-					-- ftd.row:
-					 if: { ftd.follow-system-dark-mode }
-					 $on-click$: $ftd.enable-light-mode()
-					
-						-- ftd.image:
-						src: $assets.files.assets.system-mode-active.png
-						height.fixed.px: 24
-						align-self: center
-						width.fixed.px: 24
-						
-					-- end: ftd.row
-
-					-- ftd.row:
-					if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
-					$on-click$: $ftd.enable-dark-mode()
-					
-						-- ftd.image:
-						src: $assets.files.assets.light-mode-active.png
-						height.fixed.px: 24
-						align-self: center
-						width.fixed.px: 24
-						
-					-- end: ftd.row
-
-					-- ftd.row:
-					if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
-					$on-click$: $ftd.enable-system-mode()
-					
-						-- ftd.image:
-						src: $assets.files.assets.dark-mode-active-dark.png
-						height.fixed.px: 24
-						align-self: center
-						width.fixed.px: 24
-						
-					-- end: ftd.row
-
-				-- end: ds.column
-
-			-- end: ds.floater
-
-		-- end: ds.row
-
-	-- end: ftd.mobile
 
 -- end: ds.column
 
@@ -258,18 +93,3 @@ boolean $open: false
 
 
 
--- component toc-link:
-caption sr.toc-data toc:
-
--- ds.row:
-border if { toc-link.toc.is-active }: $ds.borders.bottom.medium
-border-color if { toc-link.toc.is-active }: $ds.colors.accent.primary
-link: $toc-link.toc.link
-width: hug-content
-radius: $ds.radius.zero
-
-	-- ds.copy-regular: $toc-link.toc.name
-	
--- end: ds.row
-
--- end: toc-link
