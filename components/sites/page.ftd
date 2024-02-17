@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/footer
 -- import: ui.fifthtry.com/components/sites/site-header
--- import: ui.fifthtry.com/records/sites as sr
+-- import: ui.fifthtry.com/records/sites as sites-records
 
 
 -- component page:
@@ -12,7 +12,7 @@ sites-records.site-common-data site:
 sites-records.navigation-info nav:
 children children:
 
--- ds.page: $page.title
+-- ds.page:
 
 	-- ftd.image:
 	src: $assets.files.assets.homepage.powered-by.svg
@@ -35,7 +35,6 @@ children children:
 	for: $child in $page.children
 
     -- footer.footer:
-    if: { !page.hide-footer }
 
 -- end: ds.page
 

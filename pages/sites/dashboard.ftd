@@ -2,18 +2,11 @@
 -- import: ui.fifthtry.com/components/sites/show-site-info
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/sites as sites-records
 
--- record site-common-data:
-string site-name:
-string primary-domain:
-string info-url:
-string github-url:
-string domains-url:
-string updated-on:
-ftd.image-src preview-image:
 
 -- record dashboard-data:
-site-common-data list sites:
+sites-records.site-common-data list sites:
 string create-site-url:
 
 
@@ -21,12 +14,11 @@ string create-site-url:
 -- component page:
 ud.user-data user-data:
 dashboard-data data:
+module site-data: site-data
 
 -- sites-page.page:
 site-data: site-data
 user-data: $page.user-data
-align-content: top-center
-show-header-links: false
 
 	-- ds.section-column:
 	flush: full

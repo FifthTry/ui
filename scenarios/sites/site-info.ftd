@@ -1,17 +1,19 @@
 -- import: ui.fifthtry.com/pages/sites/site-info
+-- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
 -- site-info.page:
-site: $fifthtry-site
+site: $acme-site
+site-data: site-data
 nav: $nav
 user-data: $john-doe.jd
 
 
--- sites-records.site-common-data fifthtry-site:
-site-name: FifthTry
-primary-domain: www.fifthtry.com
+-- sites-records.site-common-data acme-site:
+site-name: Acme, Inc
+primary-domain: www.acme.com
 info-url: /scenarios/sites/site-info/
 string github-url: /scenarios/sites/github/
 string domains-url: /scenarios/sites/site-domain/
