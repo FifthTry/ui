@@ -1,23 +1,20 @@
--- import: ui.fifthtry.com/components/sites/page as p
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/components/sites/page as sites-page
+-- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/site-sidebar as ss
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/utils
 -- import: ui.fifthtry.com/records/user-data as ud
 
-
--- record site-info-data:
-string dashboard-url:
-sr.site current-site:
-sr.toc-data list header-links:
 
 
 -- component page:
 ud.user-data user-data:
-site-info-data data:
+sites-records.site-common-data site:
+sites-records.navigation-info nav:
 
--- p.page:
+-- sites-page.page:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
@@ -83,7 +80,7 @@ current-site: $page.data.current-site
 						
 						-- ds.icon-button: $page.data.current-site.domain
 						icon: $assets.files.assets.sites.link.svg
-						link: $page.data.current-site.domain-with-scheme
+						link: $utils.with-https(domain=page.data.current-site.domain)
 						icon-position: at-end
 						kind: tertiary
 						size: small
@@ -92,7 +89,7 @@ current-site: $page.data.current-site
 
 					-- ds.icon-button: Visit Site
 					icon: $assets.files.assets.sites.open.svg
-					link: $page.data.current-site.domain-with-scheme
+					link: $utils.with-https(domain=page.data.current-site.domain)
 					icon-position: at-end
 					width: full
 					
@@ -179,6 +176,6 @@ current-site: $page.data.current-site
 
 	-- end: ds.section-column
 
--- end: p.page
+-- end: sites-page.page
 
 -- end: page

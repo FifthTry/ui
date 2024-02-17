@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sr
 
 -- web-component code-preview:
 js: $assets.files.web-components.code-preview.js

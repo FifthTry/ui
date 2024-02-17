@@ -2,7 +2,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sr
 
 -- component header:
 module site-data: site-data

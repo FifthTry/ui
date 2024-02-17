@@ -1,0 +1,4 @@
+-- string with-https(domain):
+string domain:
+
+"https://" + domain

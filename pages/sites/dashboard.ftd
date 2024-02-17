@@ -1,22 +1,20 @@
--- import: ui.fifthtry.com/components/sites/page as p
+-- import: ui.fifthtry.com/components/sites/page as sites-page
 -- import: ui.fifthtry.com/components/sites/show-site-info
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 
+-- record site-common-data:
+string site-name:
+string primary-domain:
+string info-url:
+string github-url:
+string domains-url:
+string updated-on:
+ftd.image-src preview-image:
 
 -- record dashboard-data:
-site list sites:
+site-common-data list sites:
 string create-site-url:
-
-
--- record site:
-caption name:
-string domain:
-string domain-with-scheme:
-string detail-url:
-string last-updated-on:
-optional ftd.image-src preview-image:
-
 
 
 
@@ -24,7 +22,7 @@ optional ftd.image-src preview-image:
 ud.user-data user-data:
 dashboard-data data:
 
--- p.page:
+-- sites-page.page:
 site-data: site-data
 user-data: $page.user-data
 align-content: top-center
@@ -63,6 +61,6 @@ show-header-links: false
 		
 	-- end: ds.section-column
 
--- end: p.page
+-- end: sites-page.page
 
 -- end: page

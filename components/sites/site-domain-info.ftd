@@ -1,10 +1,12 @@
 -- import: ui.fifthtry.com/pages/sites/about-page
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/actions/sites/domains/add-domain
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
 -- import: ui.fifthtry.com/actions/sites/domains/re-check-domain
 -- import: ui.fifthtry.com/components/label as l
+-- import: ui.fifthtry.com/utils
+
 
 -- component site-domain:
 caption about-page.about-site about-site:
@@ -95,7 +97,7 @@ private boolean $show-buttons: false
 				
 					-- ds.icon-button: $show-site-domain.domain.domain
 					icon: $assets.files.assets.sites.link.svg
-					link: $show-site-domain.domain.domain-with-scheme
+					link: $utils.with-https(domain=show-site-domain.domain.domain)
 					icon-position: at-end
 					kind: tertiary
 					size: small
@@ -151,7 +153,7 @@ private boolean $show-buttons: false
 							
 							-- ds.icon-button: $show-site-domain.domain.primary-domain
 							icon: $assets.files.assets.sites.link.svg
-							link: $show-site-domain.domain.primary-domain-with-scheme
+							link: $utils.with-https(show-site-domain.data.domain)
 							icon-position: at-end
 							kind: tertiary
 							size: small

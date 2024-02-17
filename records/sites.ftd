@@ -1,0 +1,68 @@
+;; every site related page has this common data
+-- record site-common-data:
+string site-name:
+string primary-domain:
+string info-url:
+string github-url:
+string domains-url:
+string updated-on:
+ftd.image-src preview-image:
+
+
+
+-- record navigation-info:
+string dashboard-url:
+string current-page:  ;; can be one of "info", "github" or "domains"
+
+
+
+
+;; ---------- to be deleted ----------------
+
+-- record site-urls:
+string info-url:
+string editor-url:
+
+-- record site:
+caption name:
+string domain:
+string created-on:
+string last-updated-on:
+optional ftd.image-src preview-image:
+
+-- record domain:
+string domain:
+boolean is-primary:
+string dns-status:
+string ssl-status:
+string last-updated:
+string created-at:
+
+
+-- record toc-data:
+caption name:
+string full-name: $toc-data.name
+optional string link:
+optional boolean is-active:
+optional ftd.image-src icon:
+toc-data list children:
+
+
+-- record file-content:
+caption file-path:
+body content:
+
+
+
+-- record gh-oidc-data:
+string account:
+string repo:
+string branch:
+string site-slug:
+string org-slug:
+string site-domain:
+string configure-url:
+boolean is-configured:
+toc-data list header-links:
+site current-site:
+

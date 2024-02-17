@@ -3,7 +3,7 @@
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/footer
 -- import: ui.fifthtry.com/components/header
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sr
 
 
 -- component page:

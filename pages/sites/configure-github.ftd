@@ -1,7 +1,7 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/actions/sites/github/configure
 -- import: ui.fifthtry.com/components/sites/utils as u
 

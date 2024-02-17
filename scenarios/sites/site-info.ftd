@@ -1,5 +1,5 @@
 -- import: ui.fifthtry.com/pages/sites/site-info
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
@@ -17,7 +17,6 @@ header-links: $header-links
 sub-header-links: []
 
 -- sr.site current-site: My Homepage
-domain-with-scheme: https://my-homepage.fifthtry-sites.com
 domain: my-homepage.fifthtry-sites.com
 created-on: 14th Feb
 last-updated-on: 14th Feb

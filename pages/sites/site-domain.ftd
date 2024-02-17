@@ -1,5 +1,5 @@
 -- import: ui.fifthtry.com/components/sites/page as p
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/components/sites/site-sidebar as ss
 -- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/sites/site-domain-info as sd
