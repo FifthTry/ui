@@ -13,6 +13,7 @@ sites-records.navigation-info nav:
 children children:
 
 -- ds.page:
+spacing: $ds.spaces.vertical-gap.small.gap
 
 	-- ftd.image:
 	src: $assets.files.assets.homepage.powered-by.svg
@@ -30,6 +31,34 @@ children children:
     nav: $page.nav
     site: $page.site
 
+
+    -- ds.section-row:
+
+        -- ds.secondary-button: About
+        if: { page.nav.current-page != "info" }
+        link: $page.site.info-url
+
+        -- ds.primary-button: About
+        if: { page.nav.current-page == "info" }
+        link: $page.site.info-url
+
+        -- ds.secondary-button: Domains
+        if: { page.nav.current-page != "domains" }
+        link: $page.site.domains-url
+
+        -- ds.primary-button: Domains
+        if: { page.nav.current-page == "domains" }
+        link: $page.site.domains-url
+
+        -- ds.secondary-button: Github
+        if: { page.nav.current-page != "github" }
+        link: $page.site.github-url
+
+        -- ds.primary-button: Github
+        if: { page.nav.current-page == "github" }
+        link: $page.site.github-url
+
+    -- end: ds.section-row
 
 	-- child:
 	for: $child in $page.children

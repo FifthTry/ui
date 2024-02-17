@@ -24,9 +24,7 @@ nav: $page.nav
 	-- ds.section-column:
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
-	
-		-- ds.heading-small: About
-		
+
 		-- ftd.desktop:
 		
 			-- ds.row:
