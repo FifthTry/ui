@@ -13,15 +13,7 @@ user-data: $page.user-data
 site-data: $page.site-data
 hide-footer: false
 
-	-- ftd.image:
-	src: $assets.files.assets.homepage.powered-by.svg
-	anchor: window
-	right.px: 0
-	bottom.px: 0
-	z-index: 99999999999999
-	link: https://fastn.com/
-	open-in-new-tab: true
-	
+
 	-- hero: Build your next website in less than
 	highlight-text: 2 hours
 	
@@ -29,7 +21,7 @@ hide-footer: false
 	- Loved by 3000+ tech-enthusiasts
 	
 	-- card: Challenges in Today's Website Development
-	card-list: $challange-list
+	card-list: $challenge-list
 	
 	-- card: How FifthTry solves this for you
 	card-list: $solution-list
@@ -78,8 +70,6 @@ string highlight-text:
 body body:
 
 -- ds.section-column:
-flush: full
-inset: $ds.spaces.inset-square.zero
 
 	-- ftd.desktop:
 	
@@ -191,14 +181,12 @@ optional caption title:
 cards list card-list:
 
 -- ds.section-column:
-flush if { ftd.device != "mobile" }: full
-inset: $ds.spaces.inset-square.large
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 
 	-- ds.column:
 	spacing: $ds.spaces.vertical-gap.extra-large
 	
-		-- ds.heading-large: $card.title
+		-- ds.heading-medium: $card.title
 		if: { card.title != NULL }
 		width: hug-content
 		
@@ -250,17 +238,15 @@ optional string cta-link:
 
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 359
-height.fixed.px: 424
-height.fixed.px if { ftd.device == "mobile" }: 380
+width.fixed.percent if { ftd.device != "mobile" }: 30
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 align-content: top-left
-spacing: $ds.spaces.vertical-gap.space-between
+spacing: $ds.spaces.vertical-gap.medium
 
 	-- ds.row:
-	spacing: $ds.spaces.horizontal-gap.space-between
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ftd.image:
 		if: { card-info.triangle-icon-1 != NULL }
@@ -696,7 +682,7 @@ optional ftd.image-src circle-icon-3:
 optional string cta-text:
 optional string cta-link:
 
--- cards list challange-list:
+-- cards list challenge-list:
 
 -- cards: Building Your site
 triangle-icon-1: $assets.files.assets.homepage.triangle-1.svg
@@ -722,7 +708,7 @@ circle-icon-3: $assets.files.assets.homepage.circle-3.svg
 - Unreliable custom solutions
 - Difficulty in team collaboration during updates.
 
--- end: challange-list
+-- end: challenge-list
 
 
 
