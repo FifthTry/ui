@@ -43,14 +43,14 @@ current-site: $page.data.current-site
 			inner-background.solid: $ds.colors.background.step-1
 			
 				-- ftd.image:
-				if: { page.data.current-site.placeholder-image == NULL }
+				if: { page.data.current-site.preview-image == NULL }
 				src: $assets.files.assets.sites.about-card.svg
 				fit: cover
 				;;height.fixed.px: 313
 				
 				-- ftd.image:
-				if: { page.data.current-site.placeholder-image != NULL }
-				src: $page.data.current-site.placeholder-image
+				if: { page.data.current-site.preview-image != NULL }
+				src: $page.data.current-site.preview-image
 				fit: cover
 				
 				-- ds.column:
@@ -112,14 +112,14 @@ current-site: $page.data.current-site
 			background.solid: $ds.colors.background.step-1
 			
 				-- ftd.image:
-				if: { page.data.current-site.placeholder-image == NULL }
+				if: { page.data.current-site.preview-image == NULL }
 				src: $assets.files.assets.sites.about-card.svg
 				width: fill-container
 				border-radius.px: 8
 				
 				-- ftd.image:
-				if: { page.data.current-site.placeholder-image != NULL }
-				src: $page.data.current-site.placeholder-image
+				if: { page.data.current-site.preview-image != NULL }
+				src: $page.data.current-site.preview-image
 				width: fill-container
 				border-radius.px: 8
 				

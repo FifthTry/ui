@@ -14,9 +14,8 @@ caption name:
 string domain:
 string domain-with-scheme:
 string detail-url:
-string created-on:
 string last-updated-on:
-optional ftd.image-src placeholder-image:
+optional ftd.image-src preview-image:
 
 
 

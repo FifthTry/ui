@@ -8,7 +8,7 @@ string domain:
 string domain-with-scheme:
 string created-on:
 string last-updated-on:
-optional ftd.image-src placeholder-image:
+optional ftd.image-src preview-image:
 
 -- record domain:
 string domain:

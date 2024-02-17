@@ -17,13 +17,13 @@ caption dashboard.site site:
 		link: $show-site-info.site.detail-url
 		
 			-- ftd.image:
-			if: { show-site-info.site.placeholder-image == NULL }
+			if: { show-site-info.site.preview-image == NULL }
 			src: $assets.files.assets.sites.placeholder.svg
 			fit: cover
 			
 			-- ftd.image:
-			if: { show-site-info.site.placeholder-image != NULL }
-			src: $show-site-info.site.placeholder-image
+			if: { show-site-info.site.preview-image != NULL }
+			src: $show-site-info.site.preview-image
 			fit: cover
 			
 			-- ds.column:
@@ -66,7 +66,7 @@ caption dashboard.site site:
 		link: $show-site-info.site.detail-url
 		
 			-- ftd.image:
-			if: { show-site-info.site.placeholder-image == NULL }
+			if: { show-site-info.site.preview-image == NULL }
 			src: $assets.files.assets.sites.placeholder.svg
 			width: fill-container
 			height.fixed.px: 124
@@ -74,8 +74,8 @@ caption dashboard.site site:
 			border-radius.px: 6
 			
 			-- ftd.image:
-			if: { show-site-info.site.placeholder-image != NULL }
-			src: $show-site-info.site.placeholder-image
+			if: { show-site-info.site.preview-image != NULL }
+			src: $show-site-info.site.preview-image
 			width: fill-container
 			height.fixed.px: 124
 			fit: cover
