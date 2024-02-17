@@ -1,6 +1,8 @@
 ;; every site related page has this common data
 -- record site-common-data:
+string account-name:
 string site-name:
+string site-slug:
 string primary-domain:
 string info-url:
 string github-url:
@@ -14,6 +16,13 @@ ftd.image-src preview-image:
 string dashboard-url:
 string current-page:  ;; can be one of "info", "github" or "domains"
 
+
+
+-- record gh-oidc-data:
+string account:
+string repo:
+string branch:
+boolean is-configured:
 
 
 
@@ -53,16 +62,4 @@ caption file-path:
 body content:
 
 
-
--- record gh-oidc-data:
-string account:
-string repo:
-string branch:
-string site-slug:
-string org-slug:
-string site-domain:
-string configure-url:
-boolean is-configured:
-toc-data list header-links:
-site current-site:
 

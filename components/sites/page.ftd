@@ -14,6 +14,7 @@ children children:
 
 -- ds.page:
 spacing: $ds.spaces.vertical-gap.small.gap
+margin: $ds.spaces.vertical-gap.zero
 
 	-- ftd.image:
 	src: $assets.files.assets.homepage.powered-by.svg
@@ -33,29 +34,19 @@ spacing: $ds.spaces.vertical-gap.small.gap
 
 
     -- ds.section-row:
+    align-content: left
+    margin: $ds.spaces.vertical-gap.zero
 
-        -- ds.secondary-button: About
-        if: { page.nav.current-page != "info" }
+        -- tab-link: About
+        is-active if { page.nav.current-page == "info" }: true
         link: $page.site.info-url
 
-        -- ds.primary-button: About
-        if: { page.nav.current-page == "info" }
-        link: $page.site.info-url
-
-        -- ds.secondary-button: Domains
-        if: { page.nav.current-page != "domains" }
+        -- tab-link: Domains
+        is-active if { page.nav.current-page == "domains" }: true
         link: $page.site.domains-url
 
-        -- ds.primary-button: Domains
-        if: { page.nav.current-page == "domains" }
-        link: $page.site.domains-url
-
-        -- ds.secondary-button: Github
-        if: { page.nav.current-page != "github" }
-        link: $page.site.github-url
-
-        -- ds.primary-button: Github
-        if: { page.nav.current-page == "github" }
+        -- tab-link: Github
+        is-active if { page.nav.current-page == "github" }: true
         link: $page.site.github-url
 
     -- end: ds.section-row
@@ -71,6 +62,23 @@ spacing: $ds.spaces.vertical-gap.small.gap
 
 
 
+-- component tab-link:
+caption text:
+string link:
+boolean is-active: false
+
+-- ds.row:
+border if { tab-link.is-active }: $ds.borders.bottom.medium
+border-color if { tab-link.is-active }: $ds.colors.accent.primary
+link: $tab-link.link
+width: hug-content
+radius: $ds.radius.zero
+
+	-- ds.copy-regular: $tab-link.text
+
+-- end: ds.row
+
+-- end: tab-link
 
 
 

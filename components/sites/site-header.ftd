@@ -17,6 +17,7 @@ sites-records.navigation-info nav:
 boolean $open: false
 
 -- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
 
 	-- ftd.desktop:
 	
@@ -29,11 +30,22 @@ boolean $open: false
 		
 			-- ds.row:
 			align-content: left
+			width: hug-content
 			
 				-- ftd.image: $header.site-data.logo
 				link: /
 
+                -- ds.copy-regular: →
+                white-space: nowrap
+
+                -- ds.copy-regular: $header.site.account-name
+                white-space: nowrap
+
+                -- ds.copy-regular: →
+                white-space: nowrap
+
 				-- ds.copy-regular: $header.site.site-name
+                white-space: nowrap
 
 			-- end: ds.row
 
