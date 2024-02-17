@@ -84,7 +84,7 @@ current-site: $page.data.current-site
 						
 						-- ds.icon-button: $page.data.current-site.domain
 						icon: $assets.files.assets.sites.link.svg
-						link: $page.data.current-site.domain-with-host
+						link: $page.data.current-site.domain-with-scheme
 						icon-position: at-end
 						kind: tertiary
 						size: small
@@ -93,7 +93,7 @@ current-site: $page.data.current-site
 
 					-- ds.icon-button: Visit Site
 					icon: $assets.files.assets.sites.open.svg
-					link: $page.data.current-site.domain-with-host
+					link: $page.data.current-site.domain-with-scheme
 					icon-position: at-end
 					width: full
 					
@@ -157,7 +157,7 @@ current-site: $page.data.current-site
 						
 							-- ds.icon-button: $page.data.current-site.domain
 							icon: $assets.files.assets.sites.link.svg
-							link: $page.data.current-site.domain-with-host
+							link: $page.data.current-site.domain-with-scheme
 							icon-position: at-end
 							kind: tertiary
 							size: small
@@ -168,7 +168,7 @@ current-site: $page.data.current-site
 
 					-- ds.icon-button: Visit Site
 					icon: $assets.files.assets.sites.open.svg
-					link: $page.data.current-site.domain-with-host
+					link: $page.data.current-site.domain-with-scheme
 					icon-position: at-end
 					width: full
 					

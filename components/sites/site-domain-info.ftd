@@ -95,7 +95,7 @@ private boolean $show-buttons: false
 				
 					-- ds.icon-button: $show-site-domain.domain.domain
 					icon: $assets.files.assets.sites.link.svg
-					link: $show-site-domain.domain.domain-with-host
+					link: $show-site-domain.domain.domain-with-scheme
 					icon-position: at-end
 					kind: tertiary
 					size: small
@@ -151,7 +151,7 @@ private boolean $show-buttons: false
 							
 							-- ds.icon-button: $show-site-domain.domain.primary-domain
 							icon: $assets.files.assets.sites.link.svg
-							link: $show-site-domain.domain.primary-domain-with-host
+							link: $show-site-domain.domain.primary-domain-with-scheme
 							icon-position: at-end
 							kind: tertiary
 							size: small
@@ -237,7 +237,7 @@ private boolean $show-buttons: false
 			
 				-- ds.icon-button: $show-site-domain.domain.domain
 				icon: $assets.files.assets.sites.link.svg
-				link: $show-site-domain.domain.domain-with-host
+				link: $show-site-domain.domain.domain-with-scheme
 				icon-position: at-end
 				kind: tertiary
 				size: small
@@ -288,7 +288,7 @@ private boolean $show-buttons: false
 					
 					-- ds.icon-button: $show-site-domain.domain.primary-domain
 					icon: $assets.files.assets.sites.link.svg
-					link: $show-site-domain.domain.primary-domain-with-host
+					link: $show-site-domain.domain.primary-domain-with-scheme
 					icon-position: at-end
 					kind: tertiary
 					size: small

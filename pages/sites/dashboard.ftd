@@ -8,10 +8,11 @@
 site list sites:
 string create-site-url:
 
+
 -- record site:
 caption name:
 string domain:
-string domain-with-host:
+string domain-with-scheme:
 string detail-url:
 string created-on:
 string last-updated-on:

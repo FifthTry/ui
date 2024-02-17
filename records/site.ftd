@@ -5,16 +5,16 @@ string editor-url:
 -- record site:
 caption name:
 string domain:
-string domain-with-host:
+string domain-with-scheme:
 string created-on:
 string last-updated-on:
 optional ftd.image-src placeholder-image:
 
 -- record domain:
 string domain:
-string domain-with-host:
+string domain-with-scheme:
 string primary-domain:
-string primary-domain-with-host:
+string primary-domain-with-scheme:
 boolean is-primary:
 string dns-status:
 string ssl-status:
@@ -49,50 +49,3 @@ boolean is-configured:
 toc-data list header-links:
 site current-site:
 
-
-
--- toc-data list about-toc:
-
--- toc-data: About
-link: /scenarios/sites/site-info/
-is-active: true
-
--- toc-data: Domains
-link: /scenarios/sites/site-domain/
-
--- toc-data: Github
-link: /scenarios/sites/github/
-
--- end: about-toc
-
-
-
--- toc-data list domain-toc:
-
--- toc-data: About
-link: /scenarios/sites/site-info/
-
--- toc-data: Domains
-link: /scenarios/sites/site-domain/
-is-active: true
-
--- toc-data: Github
-link: /scenarios/sites/github/
-
--- end: domain-toc
-
-
-
--- toc-data list github-toc:
-
--- toc-data: About
-link: /scenarios/sites/site-info/
-
--- toc-data: Domains
-link: /scenarios/sites/site-domain/
-
--- toc-data: Github
-link: /scenarios/sites/github/
-is-active: true
-
--- end: github-toc

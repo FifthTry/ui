@@ -44,7 +44,7 @@ caption dashboard.site site:
 			
 				-- ds.icon-button: Visit Site
 				icon: $assets.files.assets.sites.link.svg
-				link: $show-site-info.site.domain-with-host
+				link: $show-site-info.site.domain-with-scheme
 				icon-position: at-end
 				kind: secondary
 				
@@ -89,7 +89,7 @@ caption dashboard.site site:
 			
 			-- ds.icon-button: Visit Site
 			icon: $assets.files.assets.sites.link.svg
-			link: $show-site-info.site.domain-with-host
+			link: $show-site-info.site.domain-with-scheme
 			icon-position: at-end
 			kind: secondary
 			width: full

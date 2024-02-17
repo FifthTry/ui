@@ -17,14 +17,14 @@ create-site-url: /scenarios/sites/create-site
 -- dashboard.site list sites:
 
 -- dashboard.site: My Homepage
-domain-with-host: https://my-homepage.fifthtry-sites.com
+domain-with-scheme: https://my-homepage.fifthtry-sites.com
 domain: my-homepage.fifthtry-sites.com
 detail-url: /scenarios/sites/site-info/
 created-on: Just now
 last-updated-on: Just now
 
 -- dashboard.site: My Startup
-domain-with-host: https://my-startup.fifthtry-sites.com
+domain-with-scheme: https://my-startup.fifthtry-sites.com
 domain: my-startup.fifthtry-sites.com
 detail-url: /scenarios/sites/site-info/
 created-on: Just now
