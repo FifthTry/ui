@@ -10,7 +10,6 @@
 -- record site-info-data:
 string dashboard-url:
 sr.site current-site:
-sr.toc-data list site-urls:
 sr.toc-data list header-links:
 
 
