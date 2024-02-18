@@ -2,26 +2,22 @@
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/actions/sites/create
--- import: ui.fifthtry.com/components/sites/utils as u
-
--- record create-site-data:
-string org-slug:
-
+-- import: ui.fifthtry.com/actions/user/create-site
+-- import: ui.fifthtry.com/utils as u
 
 
 -- component page:
 ud.user-data user-data:
-module create-site: create
-create-site-data data:
+module create-site: create-site
+module site-data: site-data
+string dashboard-url:
+string create-site-url:
 optional string $current-site-name:
 
 -- p.page:
-site-data: site-data
+site-data: $page.site-data
 user-data: $page.user-data
-align-content: center
-show-header: false
-hide-footer: true
+create-site-url: $page.create-site-url
 
 	-- ftd.desktop:
 	
@@ -84,12 +80,12 @@ hide-footer: true
 				-- ds.primary-button: Create Site
 				width: full
 				radius: curved
-				$on-click$: $page.create-site.submit(org_slug = $page.data.org-slug, site_name = $page.current-site-name)
+				$on-click$: $page.create-site.submit(username = $page.user-data.username, site_name = $page.current-site-name)
 				
 				-- ds.secondary-button: Cancel
 				width: full
 				radius: curved
-				link: $u.dashboard-url(org_slug=$page.data.org-slug)
+				link: $page.dashboard-url
 				
 			-- end: ds.row
 
@@ -156,12 +152,12 @@ hide-footer: true
 				-- ds.primary-button: Create Site
 				width: full
 				radius: curved
-				$on-click$: $page.create-site.submit(org_slug = $page.data.org-slug, site_name = $page.current-site-name)
+				$on-click$: $page.create-site.submit(username = $page.user-data.username, site_name = $page.current-site-name)
 				
 				-- ds.secondary-button: Cancel
 				width: full
 				radius: curved
-				link: /scenarios/sites/dashboard/
+				link: $page.dashboard-url
 				
 			-- end: ds.column
 

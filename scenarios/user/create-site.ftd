@@ -3,12 +3,6 @@
 -- import: ui.fifthtry.com/scenarios/scenario-site
 
 -- create-site.page:
-data: $data
 user-data: $john-doe.jd
 site-data: scenario-site
-
--- end: create-site.page
-
-
--- create-site.create-site-data data:
-org-slug: fifthtry
+create-site-url: /scenarios/user/create-site/
