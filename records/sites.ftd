@@ -5,6 +5,7 @@ string site-name:
 string site-slug:
 string primary-domain:
 string info-url:
+string editor-url:
 string github-url:
 string domains-url:
 string updated-on:
@@ -14,7 +15,7 @@ ftd.image-src preview-image:
 
 -- record navigation-info:
 string dashboard-url:
-string current-page:  ;; can be one of "info", "github" or "domains"
+string current-page:  ;; can be one of "info", "github", "domains" or "editor"
 
 
 
@@ -31,35 +32,26 @@ boolean is-primary: false
 string status:  ;; verified | pending | failed
 
 
-
-;; ---------- to be deleted ----------------
-
--- record site-urls:
-string info-url:
-string editor-url:
-
--- record site:
-caption name:
-string domain:
-string created-on:
-string last-updated-on:
-optional ftd.image-src preview-image:
+;; base-name and full-name start without slash, eg `index.ftd` or `foo/bar.ftd`
+-- record file-info:
+caption base-name: ;; to be shown in UI (only the file name part, with extension)
+string full-name: $file-info.base-name ;; to be used in actions (eg rename file etc)
+boolean is-active: false
+string file-type:  ftd ;; folder, FASTN, FTD, Image, Video, Text, Markdown, Source
+file-info list children:
 
 
-
--- record toc-data:
-caption name:
-string full-name: $toc-data.name
-optional string link:
-optional boolean is-active:
-optional ftd.image-src icon:
-toc-data list children:
+-- record file:
+caption base-name:
+string full-name: $file.base-name
+string lang: ftd ;; compatible with ftd.code.lang
+string url:
+optional body content: ;; not present in case of binary files
 
 
 
--- record file-content:
-caption file-path:
-body content:
+
+
 
 
 

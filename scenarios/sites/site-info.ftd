@@ -17,10 +17,11 @@ site-name: Acme, Inc
 site-slug: acme
 primary-domain: www.acme.com
 info-url: /scenarios/sites/site-info/
-string github-url: /scenarios/sites/github/
-string domains-url: /scenarios/sites/domains/
-string updated-on: 14th Feb
-ftd.image-src preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
+github-url: /scenarios/sites/github/
+domains-url: /scenarios/sites/domains/
+editor-url: /scenarios/sites/editor/
+updated-on: 14th Feb
+preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 
 -- sites-records.navigation-info nav:
 dashboard-url: /scenarios/user/dashboard/

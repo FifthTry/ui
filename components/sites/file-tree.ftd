@@ -1,10 +1,10 @@
 -- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 
--- component sidebar:
-sr.toc-data list $files:
-string $header-title:
-string site:
+-- component file-tree:
+sr.file-info list files:
+string $header-title: todo
+string site-slug:
 module open-file: open-file
 
 -- ds.column:
@@ -22,18 +22,16 @@ inset: $ds.spaces.inset-square.medium
 	spacing: $ds.spaces.horizontal-gap.extra-small
 	
 		-- file-view: $file
-		for: file in $sidebar.files
-		$header-title: $sidebar.header-title
-		site: $sidebar.site
-		open-file: $sidebar.open-file
+		for: file in $file-tree.files
+		$header-title: $file-tree.header-title
+		site-slug: $file-tree.site-slug
+		open-file: $file-tree.open-file
 		
 	-- end: ds.column
 
-	-- label-with-three-dots: DEPENDENCIES
-	
 -- end: ds.column
 
--- end: sidebar
+-- end: file-tree
 
 
 
@@ -48,10 +46,11 @@ inset: $ds.spaces.inset-square.medium
 
 
 -- component file-view:
-caption sr.toc-data $file:
+caption sr.file-info file:
 string $header-title:
-string site:
+string site-slug:
 module open-file: open-file
+boolean $is-open: true
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-small
@@ -59,7 +58,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
 	-- ds.row:
 	align-content: top-left
 	spacing: $ds.spaces.horizontal-gap.extra-small
-	$on-click$: $ftd.toggle($a = $file-view.file.is-active)
+	$on-click$: $ftd.toggle($a = $file-view.is-open)
 	
 		-- ftd.image: $assets.files.assets.down-arrow.svg
 		if: { ftd.len(file-view.file.children) > 0 && file-view.file.is-active }
@@ -70,19 +69,14 @@ spacing: $ds.spaces.vertical-gap.extra-small
 		if: { ftd.len(file-view.file.children) > 0 && !file-view.file.is-active }
 		width.fixed.px: 10
 		align-self: center
-		
-		-- ftd.image: $file-view.file.icon
-		if: { file-view.file.icon != NULL }
-		width.fixed.px: 25
-		align-self: center
-		
+
 		-- ftd.image: $assets.files.assets.file.svg
-		if: { ftd.len(file-view.file.children) == 0 && file-view.file.icon == NULL }
+		if: { ftd.len(file-view.file.children) == 0 }
 		width.fixed.px: 20
 		align-self: center
 		
-		-- ftd.text: $file-view.file.name
-		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site = $file-view.site)
+		-- ftd.text: $file-view.file.base-name
+		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site-slug = $file-view.site-slug)
 		$on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
 		role: $ds.types.copy-small
 		color: $ds.colors.text-strong
@@ -98,7 +92,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
 		-- file-view: $obj
 		for: $obj in $file-view.file.children
 		$header-title: $file-view.header-title
-		site: $file-view.site
+		site-slug: $file-view.site-slug
 		open-file: $file-view.open-file
 		
 	-- end: ds.column

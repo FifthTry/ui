@@ -60,6 +60,10 @@ margin: $ds.spaces.vertical-gap.zero
                 is-active if { header.nav.current-page == "info" }: true
                 link: $header.site.info-url
 
+                -- tab-link: Editor
+                is-active if { header.nav.current-page == "editor" }: true
+                link: $header.site.editor-url
+
                 -- tab-link: Domains
                 is-active if { header.nav.current-page == "domains" }: true
                 link: $header.site.domains-url

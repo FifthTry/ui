@@ -18,7 +18,7 @@ string $github-repo-branch: *$page.data.branch
 module configure: configure
 
 -- p.page:
-site-data: site-data
+site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
 nav: $page.nav
