@@ -1,10 +1,12 @@
 -- import: ui.fifthtry.com/pages/sites/dashboard
 -- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 
 -- dashboard.page:
 data: $data
 user-data: $john-doe.jd
+site-data: scenario-site
 
 -- end: dashboard.page
 

@@ -4,8 +4,8 @@
 -- import: ui.fifthtry.com/scenarios/sites/site-info
 -- import: ui.fifthtry.com/scenarios/scenario-site
 
-
 -- configure-github.page:
+site-data: scenario-site
 user-data: $john-doe.jd
 site: $site-info.acme-site
 nav: $nav

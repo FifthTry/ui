@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/pages/sites/site-editor
 -- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 
 -- site-editor.page:
@@ -8,7 +9,7 @@ user-data: $john-doe.jd
 data: $data
 site: ui.fifthtry.com
 $header-title: index.ftd
-
+site-data: scenario-site
 
 -- site-editor.site-editor-data data:
 user: FifthTry

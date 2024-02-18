@@ -1,12 +1,13 @@
 -- import: ui.fifthtry.com/pages/sites/site-domain
 -- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 
 -- site-domain.page:
 data: $data
 user-data: $john-doe.jd
-
+site-data: scenario-site
 
 -- site-domain.site-domain-data data:
 user: FifthTry

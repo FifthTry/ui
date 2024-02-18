@@ -9,6 +9,7 @@ user-data: $john-doe.jd
 site: $site-info.acme-site
 nav: $nav
 data: $data
+site-data: scenario-site
 
 -- sites-records.gh-oidc-data data:
 account: FifthTry

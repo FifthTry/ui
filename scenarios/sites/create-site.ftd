@@ -1,10 +1,11 @@
 -- import: ui.fifthtry.com/pages/sites/create-site
 -- import: ui.fifthtry.com/scenarios/john-doe
-
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 -- create-site.page:
 data: $data
 user-data: $john-doe.jd
+site-data: scenario-site
 
 -- end: create-site.page
 
