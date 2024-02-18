@@ -5,4 +5,5 @@
 -- create-site.page:
 user-data: $john-doe.jd
 site-data: scenario-site
+dashboard-url: /scenarios/user/dashboard/
 create-site-url: /scenarios/user/create-site/
