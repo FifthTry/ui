@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/avatar
+-- import: ui.fifthtry.com/components/dark-mode-toggle
 
 
 
@@ -55,32 +56,7 @@ margin: $ds.spaces.vertical-gap.zero
             -- avatar.avatar:
             user-data: $header.user-data
 
-
-            -- ftd.image:
-            if: { ftd.follow-system-dark-mode }
-            $on-click$: $ftd.enable-light-mode()
-            src: $assets.files.assets.system-mode-active.png
-            height.fixed.px: 24
-            align-self: center
-            width.fixed.px: 24
-
-
-            -- ftd.image:
-            if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
-            $on-click$: $ftd.enable-dark-mode()
-            src: $assets.files.assets.light-mode-active.png
-            height.fixed.px: 24
-            align-self: center
-            width.fixed.px: 24
-
-
-            -- ftd.image:
-            if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
-            $on-click$: $ftd.enable-system-mode()
-            src: $assets.files.assets.dark-mode-active.png
-            height.fixed.px: 24
-            align-self: center
-            width.fixed.px: 24
+            -- dark-mode-toggle.dark-mode-toggle:
 
         -- end: ds.row
 
