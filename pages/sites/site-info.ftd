@@ -57,7 +57,7 @@ nav: $page.nav
 					spacing: $ds.spaces.vertical-gap.extra-small
 					align-content: left
 					
-						-- ds.copy-regular: Last Updated on
+						-- ds.copy-regular: Last Updated
 						
 						-- ds.heading-tiny: $page.site.updated-on
 						
@@ -125,7 +125,7 @@ nav: $page.nav
 					spacing: $ds.spaces.vertical-gap.small
 					align-content: left
 					
-						-- ds.copy-regular: Last Updated on
+						-- ds.copy-regular: Last Updated
 						
 						-- ds.heading-tiny: $page.site.updated-on
 						

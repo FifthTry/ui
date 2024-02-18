@@ -36,6 +36,7 @@ margin: $ds.spaces.vertical-gap.zero
 	for: $child in $page.children
 
     -- footer.footer:
+    site-data: $page.site-data
 
 -- end: ds.page
 

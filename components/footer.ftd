@@ -1,4 +1,7 @@
+-- import: ui.fifthtry.com/site-data
+
 -- component footer:
+module site-data: site-data
 boolean $icon-1: false
 boolean $icon-2: false
 boolean $icon-3: false
@@ -32,22 +35,22 @@ boolean $icon-4: false
 
 						-- ds.link: **Pricing**
 						color: $ds.colors.text-strong
-						link: /pricing/
+						link: $footer.site-data.pricing-url
 						align: center
 
 						-- ds.link: **Team**
 						color: $ds.colors.text-strong
-						link: /team/
+						link: $footer.site-data.team-url
 						align: center
 						
 						-- ds.link: **Terms**
 						color: $ds.colors.text-strong
-						link: /terms/
+						link: $footer.site-data.terms-url
 						align: center
 						
 						-- ds.link: **Privacy**
 						color: $ds.colors.text-strong
-						link: /privacy/
+						link: $footer.site-data.privacy-url
 						align: center
 						
 					-- end: ds.row
@@ -142,22 +145,22 @@ boolean $icon-4: false
 
                     -- ds.link: **Pricing**
                     color: $ds.colors.text-strong
-                    link: /pricing/
+                    link: $footer.site-data.pricing-url
                     align: center
 
 					-- ds.link: **Team**
 					color: $ds.colors.text-strong
-					link: /team/
+					link: $footer.site-data.team-url
 					align: center
 					
 					-- ds.link: **Terms**
 					color: $ds.colors.text-strong
-					link: /terms/
+					link: $footer.site-data.terms-url
 					align: center
 					
 					-- ds.link: **Privacy**
 					color: $ds.colors.text-strong
-					link: /privacy/
+					link: $footer.site-data.privacy-url
 					align: center
 					
 				-- end: ds.row
