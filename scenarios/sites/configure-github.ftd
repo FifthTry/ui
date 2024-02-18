@@ -1,6 +1,6 @@
 -- import: ui.fifthtry.com/pages/sites/configure-github
 -- import: ui.fifthtry.com/scenarios/john-doe
--- import: ui.fifthtry.com/records/sites as sr
+-- import: ui.fifthtry.com/records/sites as site-records
 -- import: ui.fifthtry.com/scenarios/sites/site-info
 -- import: ui.fifthtry.com/scenarios/scenario-site
 
@@ -11,7 +11,7 @@ site: $site-info.acme-site
 nav: $site-info.nav
 data: $data
 
--- sr.gh-oidc-data data:
+-- site-records.gh-oidc-data data:
 account: FifthTry
 repo: ft
 branch: main

@@ -1,29 +1,29 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/records/sites as sr
+-- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/utils as u
 
 
 -- component page:
-sr.gh-oidc-data data:
+module site-data: site-data
 ud.user-data user-data:
+sites-records.site-common-data site:
+sites-records.navigation-info nav:
+sites-records.gh-oidc-data data:
 
 -- p.page:
 site-data: site-data
 user-data: $page.user-data
-align-content: top-center
-header-links: $page.data.header-links
-current-site: $page.data.current-site
+site: $page.site
+nav: $page.nav
 
 	-- ds.section-column:
-	flush: full
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.extra-extra-large
 	
-		-- ds.heading-small: Github
-		
+
 		-- ftd.desktop:
 		
 			-- ds.section-column:
@@ -52,10 +52,10 @@ current-site: $page.data.current-site
 				
 					-- ds.copy-large:
 					
-					$github-message(domain = $page.data.site-domain)
+					$github-message(domain = $page.site.primary-domain)
 					
 					-- ds.primary-button: Configure Now
-					link: $page.data.configure-url
+					link: $page.site.github-url
 					radius: curved
 					
 				-- end: ds.row
@@ -91,10 +91,10 @@ current-site: $page.data.current-site
 				
 					-- ds.copy-large:
 					
-					$github-message(domain = $page.data.site-domain)
+					$github-message(domain = $page.site.primary-domain)
 					
 					-- ds.secondary-button: Configure Now
-					link: $page.data.configure-url
+					link: $page.site.github-url
 					radius: curved
 					
 				-- end: ds.column
@@ -115,4 +115,4 @@ current-site: $page.data.current-site
 -- string github-message(domain):
 string domain:
 
-"You have not yet configured Github for " + domain
+"You have not yet configured Github for [" + domain + "](///" + domain + ")."
