@@ -34,7 +34,7 @@ margin: $ds.spaces.vertical-gap.zero
 			width: hug-content
 			
 				-- ftd.image: $header.site-data.logo
-				link: /
+				link: $header.site-data.homepage
 
                 -- ds.copy-regular: →
                 white-space: nowrap

@@ -153,7 +153,7 @@ radius: $ds.radius.zero
 				text if { page.signin-url }: $lang.sign-up
 				link if { page.signup-url }: $page.signup-url
 				link if { page.signin-url }: $page.signin-url
-				link: /
+				link: $page.site-data.homepage
 				
 			-- end: ds.row
 
