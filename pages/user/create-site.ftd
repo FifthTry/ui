@@ -2,13 +2,13 @@
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/actions/user/create-site
+-- import: ui.fifthtry.com/actions/user/create-site-action
 -- import: ui.fifthtry.com/utils as u
 
 
 -- component page:
 ud.user-data user-data:
-module create-site: create-site
+module create-site: create-site-action
 module site-data: site-data
 string dashboard-url:
 string create-site-url:
@@ -60,7 +60,7 @@ create-site-url: $page.create-site-url
 
                     -- end: ds.row
 
-                    /-- ds.copy-small: $page.create-site.site-error
+                    -- ds.copy-small: $page.create-site.site-error
                     if: { page.create-site.site-error != NULL }
                     color: $ds.colors.error.text
 
@@ -134,7 +134,7 @@ create-site-url: $page.create-site-url
 					
 				-- end: ds.row
 
-				/-- ds.copy-regular: $page.create-site.site-error
+				-- ds.copy-regular: $page.create-site.site-error
 				color: $ds.colors.error.text
 				if: { page.create-site.site-error != NULL }
 				
