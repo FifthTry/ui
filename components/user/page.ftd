@@ -1,22 +1,21 @@
 -- import: ui.fifthtry.com/site-data  ;; this is global site data for FifthTry.com
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/footer
--- import: ui.fifthtry.com/components/sites/site-header
+-- import: ui.fifthtry.com/components/user/header as user-header
 -- import: ui.fifthtry.com/records/sites as sites-records
 
 
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
-sites-records.site-common-data site:
-sites-records.navigation-info nav:
+string create-site-url:
 children children:
 
 -- ds.page:
 spacing: $ds.spaces.vertical-gap.small.gap
 margin: $ds.spaces.vertical-gap.zero
 
-	-- ftd.image:
+	-- ftd.image:  ;; todo: move this to design-system itself
 	src: $assets.files.assets.homepage.powered-by.svg
 	anchor: window
 	right.px: 0
@@ -26,30 +25,10 @@ margin: $ds.spaces.vertical-gap.zero
 	open-in-new-tab: true
 
 
-    -- site-header.header:
+    -- user-header.header:
     site-data: $page.site-data
     user-data: $page.user-data
-    nav: $page.nav
-    site: $page.site
-
-
-    -- ds.section-row:
-    align-content: left
-    margin: $ds.spaces.vertical-gap.zero
-
-        -- tab-link: About
-        is-active if { page.nav.current-page == "info" }: true
-        link: $page.site.info-url
-
-        -- tab-link: Domains
-        is-active if { page.nav.current-page == "domains" }: true
-        link: $page.site.domains-url
-
-        -- tab-link: Github
-        is-active if { page.nav.current-page == "github" }: true
-        link: $page.site.github-url
-
-    -- end: ds.section-row
+    create-site-url: $page.create-site-url
 
 	-- child:
 	for: $child in $page.children
@@ -60,25 +39,6 @@ margin: $ds.spaces.vertical-gap.zero
 
 -- end: page
 
-
-
--- component tab-link:
-caption text:
-string link:
-boolean is-active: false
-
--- ds.row:
-border if { tab-link.is-active }: $ds.borders.bottom.medium
-border-color if { tab-link.is-active }: $ds.colors.accent.primary
-link: $tab-link.link
-width: hug-content
-radius: $ds.radius.zero
-
-	-- ds.copy-regular: $tab-link.text
-
--- end: ds.row
-
--- end: tab-link
 
 
 

@@ -12,7 +12,7 @@ user-data: $john-doe.jd
 
 
 -- sites-records.site-common-data acme-site:
-account-name: John Doe's sites
+account-name: John Doe
 site-name: Acme, Inc
 site-slug: acme
 primary-domain: www.acme.com
@@ -23,6 +23,6 @@ string updated-on: 14th Feb
 ftd.image-src preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 
 -- sites-records.navigation-info nav:
-dashboard-url: /scenarios/sites/dashboard/
+dashboard-url: /scenarios/user/dashboard/
 current-page: info
 

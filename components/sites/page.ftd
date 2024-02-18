@@ -1,7 +1,7 @@
 -- import: ui.fifthtry.com/site-data  ;; this is global site data for FifthTry.com
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/footer
--- import: ui.fifthtry.com/components/sites/site-header
+-- import: ui.fifthtry.com/components/sites/header as site-header
 -- import: ui.fifthtry.com/records/sites as sites-records
 
 

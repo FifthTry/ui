@@ -5,15 +5,11 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
 
 
--- record dashboard-data:
-sites-records.site-common-data list sites:
-string create-site-url:
-
 
 
 -- component page:
 ud.user-data user-data:
-dashboard-data data:
+ud.dashboard-data data:
 module site-data: site-data
 
 -- sites-page.page:

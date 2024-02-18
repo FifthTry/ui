@@ -1,33 +1,32 @@
 -- import: ui.fifthtry.com/pages/user/dashboard
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
 
 
 -- dashboard.page:
-data: $data
 user-data: $john-doe.jd
 site-data: scenario-site
+data: $data
 
 
--- dashboard.dashboard-data data:
+-- ud.dashboard-data data:
 sites: $sites
-create-site-url: /scenarios/user/create-site
+create-site-url: /scenarios/user/create-site/
 
 
--- dashboard.site list sites:
+-- sites-records.site-common-data list sites:
 
--- dashboard.site: My Homepage
-domain: my-homepage.fifthtry-sites.com
-detail-url: /scenarios/sites/site-info/
-created-on: Just now
-last-updated-on: Just now
-
--- dashboard.site: My Startup
-domain: my-startup.fifthtry-sites.com
-detail-url: /scenarios/sites/site-info/
-created-on: Just now
-last-updated-on: Just now
-
-
+-- sites-records.site-common-data:
+account-name: John Doe
+site-name: Acme, Inc
+site-slug: acme
+primary-domain: www.acme.com
+info-url: /scenarios/sites/site-info/
+string github-url: /scenarios/sites/github/
+string domains-url: /scenarios/sites/domains/
+string updated-on: 14th Feb
+ftd.image-src preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 
 -- end: sites

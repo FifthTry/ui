@@ -1,102 +1,50 @@
--- import: ui.fifthtry.com/pages/sites/dashboard
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/utils
 
 -- component show-site-info:
-caption dashboard.site site:
+caption sites-records.site-common-data site:
 
 -- ds.column:
+    -- ds.section-row:
+    flush: full
+    radius: $ds.radius.medium
+    inset: $ds.spaces.inset-square.large
+    border: $ds.borders.uniform.small
+    spacing: $ds.spaces.horizontal-gap.large
+    inner-background.solid: $ds.colors.background.step-1
+    link: $show-site-info.site.info-url
 
-	-- ftd.desktop:
-	
-		-- ds.section-row:
-		flush: full
-		radius: $ds.radius.medium
-		inset: $ds.spaces.inset-square.large
-		border: $ds.borders.uniform.small
-		spacing: $ds.spaces.horizontal-gap.large
-		inner-background.solid: $ds.colors.background.step-1
-		link: $show-site-info.site.detail-url
-		
-			-- ftd.image:
-			if: { show-site-info.site.preview-image == NULL }
-			src: $assets.files.assets.sites.placeholder.svg
-			fit: cover
-			
-			-- ftd.image:
-			if: { show-site-info.site.preview-image != NULL }
-			src: $show-site-info.site.preview-image
-			fit: cover
-			
-			-- ds.column:
-			spacing: $ds.spaces.vertical-gap.medium
-			align-content: top-left
-			
-				-- ds.heading-small: $show-site-info.site.name
-				
-				-- ds.copy-small: $show-site-info.site.domain
-				
-				-- ds.copy-small: $last-updated-format(value = $show-site-info.site.last-updated-on)
-				
-			-- end: ds.column
 
-			-- ds.column:
-			height: fill-container
-			align-content: bottom-right
-			
-				-- ds.icon-button: Visit Site
-				icon: $assets.files.assets.sites.link.svg
-				link: $show-site-info.site.domain-with-scheme
-				icon-position: at-end
-				kind: secondary
-				
-			-- end: ds.column
+        -- ftd.image:
+        src: $show-site-info.site.preview-image
+        fit: cover
 
-		-- end: ds.section-row
+        -- ds.column:
+        spacing: $ds.spaces.vertical-gap.medium
+        align-content: top-left
 
-	-- end: ftd.desktop
+            -- ds.heading-small: $show-site-info.site.site-name
 
-	-- ftd.mobile:
-	
-		-- ds.column:
-		radius: $ds.radius.medium
-		inset: $ds.spaces.inset-square.medium
-		border: $ds.borders.uniform.small
-		spacing: $ds.spaces.vertical-gap.medium
-		align-content: left
-		background.solid: $ds.colors.background.step-1
-		link: $show-site-info.site.detail-url
-		
-			-- ftd.image:
-			if: { show-site-info.site.preview-image == NULL }
-			src: $assets.files.assets.sites.placeholder.svg
-			width: fill-container
-			height.fixed.px: 124
-			fit: cover
-			border-radius.px: 6
-			
-			-- ftd.image:
-			if: { show-site-info.site.preview-image != NULL }
-			src: $show-site-info.site.preview-image
-			width: fill-container
-			height.fixed.px: 124
-			fit: cover
-			border-radius.px: 6
-			
-			-- ds.heading-small: $show-site-info.site.name
-			
-			-- ds.copy-small: $show-site-info.site.domain
-			
-			-- ds.copy-small: $last-updated-format(value = $show-site-info.site.last-updated-on)
-			
-			-- ds.icon-button: Visit Site
-			icon: $assets.files.assets.sites.link.svg
-			link: $show-site-info.site.domain-with-scheme
-			icon-position: at-end
-			kind: secondary
-			width: full
-			
-		-- end: ds.column
+            -- ds.copy-small: $show-site-info.site.primary-domain
 
-	-- end: ftd.mobile
+            -- ds.copy-small: $show-site-info.site.updated-on
+
+        -- end: ds.column
+
+        -- ds.column:
+        height: fill-container
+        align-content: bottom-right
+
+            -- ds.icon-button: Visit Site
+            icon: $assets.files.assets.sites.link.svg
+            link: $utils.with-https(domain = show-site-info.site.domain)
+            icon-position: at-end
+            kind: secondary
+
+        -- end: ds.column
+
+    -- end: ds.section-row
+
 
 -- end: ds.column
 
@@ -104,7 +52,3 @@ caption dashboard.site site:
 
 
 
--- string last-updated-format(value):
-string value:
-
-"**Last updated:** " + value

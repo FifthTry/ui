@@ -39,6 +39,7 @@ margin: $ds.spaces.vertical-gap.zero
                 white-space: nowrap
 
                 -- ds.copy-regular: $header.site.account-name
+                link: $header.nav.dashboard-url
                 white-space: nowrap
 
                 -- ds.copy-regular: →
