@@ -29,7 +29,12 @@ boolean $icon-4: false
 					-- ds.row:
 					align-content: left
 					spacing: $ds.spaces.horizontal-gap.medium
-					
+
+						-- ds.link: **Pricing**
+						color: $ds.colors.text-strong
+						link: /pricing/
+						align: center
+
 						-- ds.link: **Team**
 						color: $ds.colors.text-strong
 						link: /team/
@@ -134,7 +139,12 @@ boolean $icon-4: false
 				-- ds.row:
 				align-content: left
 				spacing: $ds.spaces.horizontal-gap.medium
-				
+
+                    -- ds.link: **Pricing**
+                    color: $ds.colors.text-strong
+                    link: /pricing/
+                    align: center
+
 					-- ds.link: **Team**
 					color: $ds.colors.text-strong
 					link: /team/
