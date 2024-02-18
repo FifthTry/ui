@@ -7,7 +7,7 @@
 -- github.page:
 user-data: $john-doe.jd
 site: $site-info.acme-site
-nav: $site-info.nav
+nav: $nav
 data: $data
 
 -- sites-records.gh-oidc-data data:
@@ -16,3 +16,6 @@ repo: ft
 branch: main
 is-configured: true
 
+-- sites-records.navigation-info nav:
+dashboard-url: /scenarios/sites/dashboard/
+current-page: github
