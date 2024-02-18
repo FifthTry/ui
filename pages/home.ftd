@@ -11,7 +11,6 @@ module site-data: site-data
 -- p.page: FifthTry | Better way To Build Websites
 user-data: $page.user-data
 site-data: $page.site-data
-hide-footer: false
 
 
 	-- hero: Build your next website in less than
