@@ -25,6 +25,12 @@ string branch:
 boolean is-configured:
 
 
+-- record domain:
+caption domain:
+boolean is-primary: false
+string status:  ;; verified | pending | failed
+
+
 
 ;; ---------- to be deleted ----------------
 
@@ -39,13 +45,6 @@ string created-on:
 string last-updated-on:
 optional ftd.image-src preview-image:
 
--- record domain:
-string domain:
-boolean is-primary:
-string dns-status:
-string ssl-status:
-string last-updated:
-string created-at:
 
 
 -- record toc-data:
@@ -55,6 +54,7 @@ optional string link:
 optional boolean is-active:
 optional ftd.image-src icon:
 toc-data list children:
+
 
 
 -- record file-content:

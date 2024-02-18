@@ -18,7 +18,7 @@ site-slug: acme
 primary-domain: www.acme.com
 info-url: /scenarios/sites/site-info/
 string github-url: /scenarios/sites/github/
-string domains-url: /scenarios/sites/site-domain/
+string domains-url: /scenarios/sites/domains/
 string updated-on: 14th Feb
 ftd.image-src preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 

@@ -1,50 +1,39 @@
--- import: ui.fifthtry.com/pages/sites/site-domain
--- import: ui.fifthtry.com/records/sites as sr
+-- import: ui.fifthtry.com/pages/sites/domains
+-- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
+-- import: ui.fifthtry.com/scenarios/sites/site-info
 
 
--- site-domain.page:
-data: $data
-user-data: $john-doe.jd
+-- domains.page:
 site-data: scenario-site
+user-data: $john-doe.jd
+site: $site-info.acme-site
+nav: $nav
+domains: $domains
 
--- site-domain.site-domain-data data:
-user: FifthTry
-site-name: FifthTry
-site-slug: fifthtry
-org-slug: fifthtry
-all-domains: $all-domains
-header-links: $header-links
-current-site: $current-site
 
--- sr.domain all-domains:
-domain: fastn.com
+-- sites-records.navigation-info nav:
+dashboard-url: /scenarios/sites/dashboard/
+current-page: domains
+
+
+-- sites-records.domain list domains:
+
+-- sites-records.domain: fastn.com
 is-primary: true
-dns-status: Verified
-ssl-status: Verified
-last-updated: Just now
-created-at: Just now
+status: verified
 
+-- sites-records.domain: fastn.fifthtry.sites
+is-primary: false
+status: verified
 
--- sr.site current-site: My Homepage
-domain: my-homepage.fifthtry-sites.com
-created-on: 14th Feb
-last-updated-on: 14th Feb
+-- sites-records.domain: fpm.dev
+is-primary: false
+status: pending
 
+-- sites-records.domain: ftd.dev
+is-primary: false
+status: failed
 
--- sr.toc-data list header-links:
-
--- sr.toc-data: About
-link: /scenarios/sites/site-info/
-is-active: false
-
--- sr.toc-data: Domains
-link: /scenarios/sites/site-domain/
-is-active: true
-
--- sr.toc-data: Github
-link: /scenarios/sites/github/
-is-active: false
-
--- end: header-links
+-- end: domains

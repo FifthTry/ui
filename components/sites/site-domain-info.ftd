@@ -1,5 +1,5 @@
 -- import: ui.fifthtry.com/pages/sites/about-page
--- import: ui.fifthtry.com/records/sites as sr
+-- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/actions/sites/domains/add-domain
 -- import: ui.fifthtry.com/actions/sites/domains/delete-domain
 -- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
@@ -65,284 +65,145 @@ align-content: top-left
 
 
 -- component show-site-domain:
-caption sr.domain domain:
-string org-slug:
-string site-slug:
+caption sites-records.domain domain:
+sites-records.site-common-data site:
 module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
 module re-check-domain: re-check-domain
 private boolean $show-buttons: false
 
 -- ds.column:
+inset: $ds.spaces.inset-square.medium
+border: $ds.borders.uniform.small
+background.solid: $ds.colors.background.step-1
+radius: $ds.radius.medium
+align-content: top-left
+$on-mouse-enter$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
 
-	-- ftd.desktop:
-	
-		-- ds.section-column:
-		flush: full
-		inset: $ds.spaces.inset-square.medium
-		border: $ds.borders.uniform.small
-		inner-background.solid: $ds.colors.background.step-1
-		radius: $ds.radius.medium
-		align-content: top-left
-		$on-mouse-enter$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = true)
-		$on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
-		
-			-- ds.row:
-			spacing: $ds.spaces.horizontal-gap.space-between
-			align-content: top-left
-			
-				-- ds.column:
-				spacing: $ds.spaces.vertical-gap.small
-				align-content: left
-				
-					-- ds.icon-button: $show-site-domain.domain.domain
-					icon: $assets.files.assets.sites.link.svg
-					link: $utils.with-https(domain=show-site-domain.domain.domain)
-					icon-position: at-end
-					kind: tertiary
-					size: small
-					
-					-- ds.row:
-					spacing: $ds.spaces.horizontal-gap.large
-					align-content: left
-					width: fill-container
-					
-						-- ds.icon-button: Primary Domain
-						if: { show-site-domain.domain.is-primary }
-						icon: $assets.files.assets.sites.circle-tick.svg
-						icon-position: at-start
-						kind: primary
-						size: small
-						rounded: true
-						
-						-- ds.row:
-						width: hug-content
-						spacing: $ds.spaces.horizontal-gap.small
-						
-							-- ds.copy-small: DNS Status:
-							
-							-- ds.copy-small: $show-site-domain.domain.dns-status
-							color: $inherited.colors.text
-							color if { $show-site-domain.domain.dns-status == "verified" }: $inherited.colors.success.text
-							color if { $show-site-domain.domain.dns-status == "pending" }: $inherited.colors.warning.text
-							color if { $show-site-domain.domain.dns-status == "failed" }: $inherited.colors.error.text
-							
-						-- end: ds.row
+    -- ds.row:
+    spacing: $ds.spaces.horizontal-gap.space-between
+    align-content: top-left
 
-						-- ds.row:
-						width: hug-content
-						spacing: $ds.spaces.horizontal-gap.small
-						
-							-- ds.copy-small: SSL Status:
-							
-							-- ds.copy-small: $show-site-domain.domain.ssl-status
-							color: $inherited.colors.text
-							color if { $show-site-domain.domain.ssl-status == "verified" }: $inherited.colors.success.text
-							color if { $show-site-domain.domain.ssl-status == "pending" }: $inherited.colors.warning.text
-							color if { $show-site-domain.domain.ssl-status == "failed" }: $inherited.colors.error.text
-							
-						-- end: ds.row
+        -- ds.column:
+        spacing: $ds.spaces.vertical-gap.small
+        align-content: left
 
-						-- ds.row:
-						if: { !show-site-domain.domain.is-primary }
-						align-content: left
-						width: hug-content
-						spacing: $ds.spaces.horizontal-gap.small
-						
-							-- ds.copy-small: Redirects to
-							
-							-- ds.icon-button: $show-site-domain.domain.primary-domain
-							icon: $assets.files.assets.sites.link.svg
-							link: $utils.with-https(show-site-domain.data.domain)
-							icon-position: at-end
-							kind: tertiary
-							size: small
-							
-						-- end: ds.row
+            -- ds.icon-button: $show-site-domain.domain.domain
+            icon: $assets.files.assets.sites.link.svg
+            link: $utils.with-https(domain=show-site-domain.domain.domain)
+            icon-position: at-end
+            kind: tertiary
+            size: small
 
-					-- end: ds.row
+            -- ds.row:
+            spacing: $ds.spaces.horizontal-gap.large
+            align-content: left
+            width: fill-container
 
-				-- end: ds.column
+                -- ds.icon-button: Primary Domain
+                if: { show-site-domain.domain.is-primary }
+                icon: $assets.files.assets.sites.circle-tick.svg
+                icon-position: at-start
+                kind: primary
+                size: small
+                rounded: true
 
-				-- ds.row:
-				if: { show-site-domain.domain.is-primary && show-site-domain.show-buttons }
-				spacing: $ds.spaces.horizontal-gap.large
-				align-content: right
-				width.fixed.percent: 40
-				height: fill-container
-				
-					-- ds.secondary-button: Re-validate domain
-					if: { show-site-domain.domain.dns-status == "pending" || show-site-domain.domain.ssl-status == "pending" }
-					variant: outline
-					radius: curved
-					$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site-slug, org_slug=$show-site-domain.org-slug, domain=$show-site-domain.domain.domain)
-					
-					-- ds.danger-button: Delete Domain
-					radius: curved
-					variant: disabled
-					$on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
-					
-				-- end: ds.row
+                -- ds.row:
+                width: hug-content
+                spacing: $ds.spaces.horizontal-gap.small
 
-				-- ds.row:
-				if: { !show-site-domain.domain.is-primary && show-site-domain.show-buttons }
-				spacing: $ds.spaces.horizontal-gap.large
-				align-content: right
-				inset: $ds.spaces.inset-tall.zero-medium
-				width.fixed.percent: 40
-				
-					-- ds.secondary-button: Re-validate domain
-					if: { $show-site-domain.domain.dns-status == "pending" || $show-site-domain.domain.ssl-status == "pending" }
-					variant: outline
-					radius: curved
-					$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site-slug, org_slug=$show-site-domain.org-slug, domain=$show-site-domain.domain.domain)
-					
-					-- ds.secondary-button: Make Primary
-					if: { $show-site-domain.domain.dns-status == "verified" && $show-site-domain.domain.ssl-status == "verified" }
-					variant: disabled
-					radius: curved
-					$on-click$: $show-site-domain.make-primary-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
-					
-					-- ds.danger-button: Delete Domain
-					radius: curved
-					variant: disabled
-					$on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
-					
-				-- end: ds.row
+                    -- ds.copy-small: Status:
 
-			-- end: ds.row
+                    -- ds.copy-small: Verified
+                    text if { show-site-domain.domain.status == "pending"  }: Checking
+                    text if { show-site-domain.domain.status == "failed"  }: Failed
+                    color: $inherited.colors.success.text
+                    color if { $show-site-domain.domain.status == "pending" }: $inherited.colors.warning.text
+                    color if { $show-site-domain.domain.status == "failed" }: $inherited.colors.error.text
 
-			-- ftd.text: $show-site-domain.delete-domain.delete-domain-error
-			color: red
-			if: { show-site-domain.delete-domain.delete-domain-error != NULL }
-			
-			-- ftd.text: $show-site-domain.make-primary-domain.make-primary-domain-error
-			color: red
-			if: { show-site-domain.make-primary-domain.make-primary-domain-error != NULL }
-			
-		-- end: ds.section-column
+                -- end: ds.row
 
-	-- end: ftd.desktop
+                -- ds.row:
+                if: { !show-site-domain.domain.is-primary }
+                align-content: left
+                width: hug-content
+                spacing: $ds.spaces.horizontal-gap.small
 
-	-- ftd.mobile:
-	
-		-- ds.column:
-		radius: $ds.radius.medium
-		inset: $ds.spaces.inset-square.medium
-		border: $ds.borders.uniform.small
-		background.solid: $ds.colors.background.step-1
-		align-content: top-left
-		
-			-- ds.column:
-			spacing: $ds.spaces.vertical-gap.medium
-			align-content: left
-			
-				-- ds.icon-button: $show-site-domain.domain.domain
-				icon: $assets.files.assets.sites.link.svg
-				link: $show-site-domain.domain.domain-with-scheme
-				icon-position: at-end
-				kind: tertiary
-				size: small
-				
-				-- ds.icon-button: Primary Domain
-				if: { show-site-domain.domain.is-primary }
-				icon: $assets.files.assets.sites.circle-tick.svg
-				icon-position: at-start
-				kind: primary
-				size: small
-				rounded: true
-				
-				-- ds.row:
-				width: hug-content
-				spacing: $ds.spaces.horizontal-gap.small
-				
-					-- ds.copy-small: DNS Status:
-					
-					-- ds.copy-small: $show-site-domain.domain.dns-status
-					color: $inherited.colors.text
-					color if { $show-site-domain.domain.dns-status == "verified" }: $inherited.colors.success.text
-					color if { $show-site-domain.domain.dns-status == "pending" }: $inherited.colors.warning.text
-					color if { $show-site-domain.domain.dns-status == "failed" }: $inherited.colors.error.text
-					
-				-- end: ds.row
+                    -- ds.copy-small: Redirects to
 
-				-- ds.row:
-				width: hug-content
-				spacing: $ds.spaces.horizontal-gap.small
-				
-					-- ds.copy-small: SSL Status:
-					
-					-- ds.copy-small: $show-site-domain.domain.ssl-status
-					color: $inherited.colors.text
-					color if { $show-site-domain.domain.ssl-status == "verified" }: $inherited.colors.success.text
-					color if { $show-site-domain.domain.ssl-status == "pending" }: $inherited.colors.warning.text
-					color if { $show-site-domain.domain.ssl-status == "failed" }: $inherited.colors.error.text
-					
-				-- end: ds.row
+                    -- ds.icon-button: $show-site-domain.site.primary-domain
+                    icon: $assets.files.assets.sites.link.svg
+                    link: $utils.with-https(domain=show-site-domain.site.primary-domain)
+                    icon-position: at-end
+                    kind: tertiary
+                    size: small
 
-				-- ds.row:
-				if: { !show-site-domain.domain.is-primary }
-				align-content: left
-				width: hug-content
-				spacing: $ds.spaces.horizontal-gap.small
-				
-					-- ds.copy-small: Redirects to
-					
-					-- ds.icon-button: $show-site-domain.domain.primary-domain
-					icon: $assets.files.assets.sites.link.svg
-					link: $show-site-domain.domain.primary-domain-with-scheme
-					icon-position: at-end
-					kind: tertiary
-					size: small
-					
-				-- end: ds.row
+                -- end: ds.row
 
-			-- end: ds.column
+            -- end: ds.row
 
-			-- ds.row:
-			if: { show-site-domain.domain.is-primary }
-			spacing: $ds.spaces.horizontal-gap.large
-			align-content: left
-			inset: $ds.spaces.inset-tall.zero-small
-			
-				-- ds.danger-button: Delete Domain
-				radius: curved
-				variant: disabled
-				$on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
-				
-			-- end: ds.row
+        -- end: ds.column
 
-			-- ds.row:
-			if: { !show-site-domain.domain.is-primary }
-			spacing: $ds.spaces.horizontal-gap.large
-			align-content: right
-			inset: $ds.spaces.inset-tall.zero-medium
-			
-				-- ds.secondary-button: Make Primary
-				variant: disabled
-				radius: curved
-				$on-click$: $show-site-domain.make-primary-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
-				
-				-- ds.danger-button: Delete Domain
-				radius: curved
-				variant: disabled
-				$on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site-slug, domain=$show-site-domain.domain.domain)
-				
-			-- end: ds.row
+        -- ds.row:
+        if: { show-site-domain.domain.is-primary && show-site-domain.show-buttons }
+        spacing: $ds.spaces.horizontal-gap.large
+        align-content: right
+        width.fixed.percent: 40
+        height: fill-container
 
-			-- ftd.text: $show-site-domain.delete-domain.delete-domain-error
-			color: red
-			if: { show-site-domain.delete-domain.delete-domain-error != NULL }
-			
-			-- ftd.text: $show-site-domain.make-primary-domain.make-primary-domain-error
-			color: red
-			if: { show-site-domain.make-primary-domain.make-primary-domain-error != NULL }
-			
-		-- end: ds.column
+            -- ds.secondary-button: Re-validate domain
+            if: { show-site-domain.domain.status == "pending" }
+            variant: outline
+            radius: curved
+            $on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
 
-	-- end: ftd.mobile
+            -- ds.danger-button: Delete Domain
+            if: { !show-site-domain.domain.is-primary }
+            radius: curved
+            variant: disabled
+            $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+
+        -- end: ds.row
+
+        -- ds.row:
+        if: { !show-site-domain.domain.is-primary && show-site-domain.show-buttons }
+        spacing: $ds.spaces.horizontal-gap.large
+        align-content: right
+        inset: $ds.spaces.inset-tall.zero-medium
+        width.fixed.percent: 40
+
+            -- ds.secondary-button: Re-validate domain
+            if: { $show-site-domain.domain.status == "pending" }
+            variant: outline
+            radius: curved
+            $on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+
+            -- ds.secondary-button: Make Primary
+            if: { $show-site-domain.domain.status == "verified" }
+            variant: disabled
+            radius: curved
+            $on-click$: $show-site-domain.make-primary-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+
+            -- ds.danger-button: Delete Domain
+            radius: curved
+            variant: disabled
+            $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+
+        -- end: ds.row
+
+    -- end: ds.row
+
+    -- ftd.text: $show-site-domain.delete-domain.delete-domain-error
+    color: red
+    if: { show-site-domain.delete-domain.delete-domain-error != NULL }
+
+    -- ftd.text: $show-site-domain.make-primary-domain.make-primary-domain-error
+    color: red
+    if: { show-site-domain.make-primary-domain.make-primary-domain-error != NULL }
 
 -- end: ds.column
+
 
 -- end: show-site-domain
 
@@ -358,7 +219,6 @@ private boolean $show-buttons: false
 -- component domain-input:
 optional string $current-domain:
 string site-slug:
-string org-slug:
 module add-domain: add-domain
 
 -- ds.column:
@@ -393,7 +253,7 @@ module add-domain: add-domain
 				
 					-- ds.primary-button: Add Domain
 					radius: curved
-					$on-click$: $domain-input.add-domain.submit(org_slug=$domain-input.org-slug, site_slug=$domain-input.site-slug, domain=$domain-input.current-domain)
+					$on-click$: $domain-input.add-domain.submit(site_slug=$domain-input.site-slug, domain=$domain-input.current-domain)
 					
 				-- end: ds.row
 
