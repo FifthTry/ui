@@ -23,11 +23,15 @@ These are list of products/websites hosted by FifthTry.
 
 -- lib.h1: Org Pages
 
-- [Org dashboard](/scenarios/sites/dashboard/)
+- [Org dashboard](/scenarios/org/dashboard/)
+
+-- lib.h1: User Pages
+
+- [User dashboard](/scenarios/user/dashboard/)
+- [Create Site](/scenarios/user/create-site/)
 
 -- lib.h1: Site Pages
 
-- [Create Site](/scenarios/sites/create-site/)
 - [Site Info](/scenarios/sites/site-info/)
 - [Site Domains](/scenarios/sites/domains/)
 - [Github (Un-configured)](/scenarios/sites/github/)

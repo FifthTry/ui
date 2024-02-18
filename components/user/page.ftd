@@ -32,6 +32,25 @@ margin: $ds.spaces.vertical-gap.zero
     nav: $page.nav
     site: $page.site
 
+
+    -- ds.section-row:
+    align-content: left
+    margin: $ds.spaces.vertical-gap.zero
+
+        -- tab-link: About
+        is-active if { page.nav.current-page == "info" }: true
+        link: $page.site.info-url
+
+        -- tab-link: Domains
+        is-active if { page.nav.current-page == "domains" }: true
+        link: $page.site.domains-url
+
+        -- tab-link: Github
+        is-active if { page.nav.current-page == "github" }: true
+        link: $page.site.github-url
+
+    -- end: ds.section-row
+
 	-- child:
 	for: $child in $page.children
 
@@ -40,6 +59,27 @@ margin: $ds.spaces.vertical-gap.zero
 -- end: ds.page
 
 -- end: page
+
+
+
+-- component tab-link:
+caption text:
+string link:
+boolean is-active: false
+
+-- ds.row:
+border if { tab-link.is-active }: $ds.borders.bottom.medium
+border-color if { tab-link.is-active }: $ds.colors.accent.primary
+link: $tab-link.link
+width: hug-content
+radius: $ds.radius.zero
+
+	-- ds.copy-regular: $tab-link.text
+
+-- end: ds.row
+
+-- end: tab-link
+
 
 
 

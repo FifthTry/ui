@@ -1,0 +1,33 @@
+-- import: ui.fifthtry.com/pages/user/dashboard
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
+
+
+-- dashboard.page:
+data: $data
+user-data: $john-doe.jd
+site-data: scenario-site
+
+
+-- dashboard.dashboard-data data:
+sites: $sites
+create-site-url: /scenarios/user/create-site
+
+
+-- dashboard.site list sites:
+
+-- dashboard.site: My Homepage
+domain: my-homepage.fifthtry-sites.com
+detail-url: /scenarios/sites/site-info/
+created-on: Just now
+last-updated-on: Just now
+
+-- dashboard.site: My Startup
+domain: my-startup.fifthtry-sites.com
+detail-url: /scenarios/sites/site-info/
+created-on: Just now
+last-updated-on: Just now
+
+
+
+-- end: sites

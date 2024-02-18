@@ -1,0 +1,8 @@
+-- optional string $site-error:
+
+-- void submit(username, site_name):
+string username:
+string site_name:
+js: $assets.files.assets.functions.js
+
+callAlert("creating site: " + site_name + ", under org: " + username)
