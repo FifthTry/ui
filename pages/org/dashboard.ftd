@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/sites/page as sites-page
+-- import: ui.fifthtry.com/components/user/page as user-page
 -- import: ui.fifthtry.com/components/sites/show-site-info
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
@@ -6,49 +6,27 @@
 
 
 
-
 -- component page:
+module site-data: site-data
 ud.user-data user-data:
 ud.dashboard-data data:
-module site-data: site-data
 
--- sites-page.page:
-site-data: site-data
+-- user-page.page:
+site-data: $page.site-data
 user-data: $page.user-data
+create-site-url: $page.data.create-site-url
 
 	-- ds.section-column:
-	flush: full
 	inset: $ds.spaces.inset-wide.large
 	spacing: $ds.spaces.vertical-gap.large
 	;;border: $ds.borders.top.small
 	radius: $ds.radius.zero
-	
-		-- ds.row:
-		align-content: top-left
-		spacing: $ds.spaces.horizontal-gap.space-between
-		inset: $ds.spaces.inset-tall.zero-small
-		
-			-- ds.heading-small: All Sites
-			
-			-- ds.row:
-			align-content: top-right
-			spacing: $ds.spaces.horizontal-gap.medium
-			
-				-- ds.icon-button: Create new site
-				link: $page.data.create-site-url
-				kind: primary
-				icon-position: at-end
-				icon: $assets.files.assets.sites.add.svg
-				
-			-- end: ds.row
-
-		-- end: ds.row
 
 		-- show-site-info.show-site-info: $s
 		for: s in $page.data.sites
-		
+
 	-- end: ds.section-column
 
--- end: sites-page.page
+-- end: user-page.page
 
 -- end: page
