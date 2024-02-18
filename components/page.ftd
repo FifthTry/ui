@@ -6,7 +6,6 @@
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
-optional string product:
 children children:
 optional caption title:
 ds.gap margin: $ds.spaces.vertical-gap.zero

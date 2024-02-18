@@ -1,7 +1,7 @@
 ;; this is site data for the scenario site. This file must contain all the variables defined in
 ;; ui.fifthtry.com/site-data.ftd.
 
--- string homepage: /
+-- string homepage: /scenarios/logged-in-home/
 
 -- ftd.image-src logo: $assets.files.assets.logo.svg
 

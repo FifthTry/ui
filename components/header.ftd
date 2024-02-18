@@ -2,17 +2,15 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
--- import: ui.fifthtry.com/records/sites as sr
+-- import: ui.fifthtry.com/records/link
 
 -- component header:
 module site-data: site-data
 ud.user-data user-data:
-optional string product:
+link.link list links:
 ds.gap margin: $ds.spaces.vertical-gap.zero
 boolean $sidebar: false
 boolean $menu: false
-sr.toc-data list toc-list:
-optional sr.site current-site:
 
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.zero
@@ -36,12 +34,10 @@ spacing: $ds.spaces.vertical-gap.zero
             spacing: $ds.spaces.horizontal-gap.medium
 
                 -- ds.copy-regular: $lang.home
-                if: { header.product == NULL }
-                link: /
+                link: $header.site-data.homepage
 
                 -- ds.copy-regular: $lang.pricing
-                if: { header.product == NULL }
-                link: /pricing/
+                link: $header.site-data.pricing-url
 
                 /-- language-switcher.dropdown:
 
@@ -89,13 +85,12 @@ spacing: $ds.spaces.vertical-gap.zero
         -- end: ds.row
 
         -- ds.row:
-        ;;border if { !header.toc-list }: $ds.borders.bottom.small
         align-content: top-left
         spacing: $ds.spaces.horizontal-gap.medium
         inset: $ds.spaces.inset-wide.medium-zero
 
             -- toc-link: $t
-            for: t in $header.toc-list
+            for: t in $header.links
 
         -- end: ds.row
 
@@ -131,12 +126,10 @@ spacing: $ds.spaces.vertical-gap.zero
 				spacing: $ds.spaces.horizontal-gap.large
 
 					-- ds.header-link: $lang.home
-					if: { header.product == NULL }
-					link: /
+					link: $header.site-data.homepage
 
 					-- ds.header-link: $lang.pricing
-					if: { header.product == NULL }
-					link: /pricing/
+					link: $header.site-data.pricing-url
 
 					/-- language-switcher.dropdown:
 
@@ -201,16 +194,16 @@ spacing: $ds.spaces.vertical-gap.zero
 
 
 -- component toc-link:
-caption sr.toc-data toc:
+caption link.link link:
 
 -- ds.row:
-border if { toc-link.toc.is-active }: $ds.borders.bottom.medium
-border-color if { toc-link.toc.is-active }: $ds.colors.accent.primary
-link: $toc-link.toc.link
+border if { toc-link.link.is-active }: $ds.borders.bottom.medium
+border-color if { toc-link.link.is-active }: $ds.colors.accent.primary
+link: $toc-link.link.url
 width: hug-content
 radius: $ds.radius.zero
 
-	-- ds.copy-regular: $toc-link.toc.name
+	-- ds.copy-regular: $toc-link.link.text
 	
 -- end: ds.row
 
