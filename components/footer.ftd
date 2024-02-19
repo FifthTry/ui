@@ -42,7 +42,12 @@ boolean $icon-4: false
 						color: $ds.colors.text-strong
 						link: $footer.site-data.team-url
 						align: center
-						
+
+						-- ds.link: **About Us**
+						color: $ds.colors.text-strong
+						link: $footer.site-data.about-url
+						align: center
+
 						-- ds.link: **Terms**
 						color: $ds.colors.text-strong
 						link: $footer.site-data.terms-url
