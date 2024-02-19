@@ -37,7 +37,7 @@ caption sites-records.site-common-data site:
 
             -- ds.icon-button: Visit Site
             icon: $assets.files.assets.sites.link.svg
-            link: $utils.with-https(domain = show-site-info.site.domain)
+            link: $utils.with-https(domain = $show-site-info.site.primary-domain)
             icon-position: at-end
             kind: secondary
 

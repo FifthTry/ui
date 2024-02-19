@@ -91,7 +91,7 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
 
             -- ds.icon-button: $show-site-domain.domain.domain
             icon: $assets.files.assets.sites.link.svg
-            link: $utils.with-https(domain=show-site-domain.domain.domain)
+            link: $utils.with-https(domain = $show-site-domain.domain.domain)
             icon-position: at-end
             kind: tertiary
             size: small
@@ -134,7 +134,7 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
 
                     -- ds.icon-button: $show-site-domain.site.primary-domain
                     icon: $assets.files.assets.sites.link.svg
-                    link: $utils.with-https(domain=show-site-domain.site.primary-domain)
+                    link: $utils.with-https(domain = $show-site-domain.site.primary-domain)
                     icon-position: at-end
                     kind: tertiary
                     size: small

@@ -70,7 +70,7 @@ nav: $page.nav
 
 						-- ds.icon-button: $page.site.primary-domain
 						icon: $assets.files.assets.sites.link.svg
-						link: $utils.with-https(domain=page.site.primary-domain)
+						link: $utils.with-https(domain = $page.site.primary-domain)
 						icon-position: at-end
 						kind: tertiary
 						size: small
@@ -79,7 +79,7 @@ nav: $page.nav
 
 					-- ds.icon-button: Visit Site
 					icon: $assets.files.assets.sites.open.svg
-					link: $utils.with-https(domain=page.data.current-site.domain)
+					link: $utils.with-https(domain = $page.site.primary-domain)
 					icon-position: at-end
 					width: full
 					
@@ -141,7 +141,7 @@ nav: $page.nav
 						
 							-- ds.icon-button: $page.site.primary-domain
 							icon: $assets.files.assets.sites.link.svg
-							link: $utils.with-https(domain=page.site.primary-domain)
+							link: $utils.with-https(domain = $page.site.primary-domain)
 							icon-position: at-end
 							kind: tertiary
 							size: small
@@ -152,7 +152,7 @@ nav: $page.nav
 
 					-- ds.icon-button: Visit Site
 					icon: $assets.files.assets.sites.open.svg
-					link: $utils.with-https(domain=page.site.primary-domain)
+					link: $utils.with-https(domain = $page.site.primary-domain)
 					icon-position: at-end
 					width: full
 					
