@@ -194,13 +194,21 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
 
     -- end: ds.row
 
-    -- ftd.text: $show-site-domain.delete-domain.delete-domain-error
+    -- ftd.text: $show-site-domain.delete-domain.domain-error
     color: red
-    if: { show-site-domain.delete-domain.delete-domain-error != NULL }
+    if: { show-site-domain.delete-domain.domain-error != NULL && show-site-domain.delete-domain.manage-site-error == NULL }
+
+    -- ftd.text: $show-site-domain.delete-domain.manage-site-error
+    color: red
+    if: { show-site-domain.delete-domain.manage-site-error != NULL }
 
     -- ftd.text: $show-site-domain.make-primary-domain.make-primary-domain-error
     color: red
-    if: { show-site-domain.make-primary-domain.make-primary-domain-error != NULL }
+    if: { show-site-domain.make-primary-domain.make-primary-domain-error != NULL && show-site-domain.make-primary-domain.manage-site-error == NULL }
+
+     -- ftd.text: $show-site-domain.make-primary-domain.manage-site-error
+    color: red
+    if: { show-site-domain.make-primary-domain.manage-site-error != NULL }
 
 -- end: ds.column
 

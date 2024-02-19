@@ -1,4 +1,5 @@
--- optional string $delete-domain-error:
+-- optional string $domain-error:
+-- optional string $manage-site-error:
 
 -- void submit(site_slug, domain):
 string site_slug:
