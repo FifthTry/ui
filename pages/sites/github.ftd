@@ -46,7 +46,7 @@ nav: $page.nav
             $github-message(domain = $page.site.primary-domain)
 
             -- ds.primary-button: Configure Now
-            link: $page.site.github-url
+            link: $page.data.configure-url
             width: wide
             radius: curved
 

@@ -24,6 +24,7 @@ string account:
 string repo:
 string branch:
 boolean is-configured:
+string configure-url:
 
 
 -- record domain:
@@ -47,11 +48,3 @@ string full-name: $file.base-name
 string lang: ftd ;; compatible with ftd.code.lang
 string url:
 optional body content: ;; not present in case of binary files
-
-
-
-
-
-
-
-
