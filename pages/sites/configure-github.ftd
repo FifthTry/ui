@@ -4,6 +4,7 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/actions/sites/github/configure
 -- import: ui.fifthtry.com/components/sites/utils as u
+-- import: ui.fifthtry.com/utils
 
 
 -- component page:
@@ -58,6 +59,11 @@ nav: $page.nav
                 padding.px: 8
                 color: $inherited.colors.text-strong
                 $on-input$: $ftd.set-string($a = $page.github-org, v = $VALUE)
+                $on-input$: $utils.set-null($var = $page.configure.github-org-name-error)
+
+                -- ds.copy-small: $page.configure.github-org-name-error
+                color: $ds.colors.error.text
+                if: { page.configure.github-org-name-error != NULL }
 
             -- end: ds.column
 
@@ -80,6 +86,11 @@ nav: $page.nav
                 padding.px: 8
                 color: $inherited.colors.text-strong
                 $on-input$: $ftd.set-string($a = $page.github-repo-name, v = $VALUE)
+                $on-input$: $utils.set-null($var = $page.configure.github-repo-name-error)
+
+                -- ds.copy-small: $page.configure.github-repo-name-error
+                color: $ds.colors.error.text
+                if: { page.configure.github-repo-name-error != NULL }
 
             -- end: ds.column
 
@@ -102,10 +113,11 @@ nav: $page.nav
                 padding.px: 8
                 color: $inherited.colors.text-strong
                 $on-input$: $ftd.set-string($a = $page.github-repo-branch, v = $VALUE)
+                $on-input$: $utils.set-null($var = $page.configure.github-repo-branch-error)
 
-                -- ds.copy-small: $page.configure.configure-github-error
+                -- ds.copy-small: $page.configure.github-repo-branch-error
                 color: $ds.colors.error.text
-                   if: { page.configure.configure-github-error != NULL }
+                if: { page.configure.github-repo-branch-error != NULL }
 
             -- end: ds.column
 

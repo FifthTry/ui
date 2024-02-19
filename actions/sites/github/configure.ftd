@@ -1,4 +1,6 @@
--- optional string $configure-github-error:
+-- optional string $github-org-name-error:
+-- optional string $github-repo-name-error:
+-- optional string $github-repo-branch-error:
 
 -- void submit(site_slug, github_org, github_repo_name, github_repo_branch):
 string site_slug:
