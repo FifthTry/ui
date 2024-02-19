@@ -75,9 +75,9 @@ nav: $page.nav
 
             -- end: ds.row
 
-            -- ftd.text: $page.remove-github-access.remove-github-access-error
+            -- ftd.text: $page.remove-github-access.manage-site-error
             color: red
-            if: { page.remove-github-access.remove-github-access-error != NULL }
+            if: { page.remove-github-access.manage-site-error != NULL }
 
         -- end: ds.section-column
 
