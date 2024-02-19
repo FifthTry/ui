@@ -16,6 +16,7 @@ account: FifthTry
 repo: ft
 branch: main
 is-configured: true
+configure-url: /scenarios/sites/configure-github/
 
 
 -- sites-records.navigation-info nav:
