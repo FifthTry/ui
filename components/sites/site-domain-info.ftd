@@ -217,7 +217,7 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
 
 
 -- component domain-input:
-optional string $current-domain:
+string $current-domain: *$ftd.empty
 string site-slug:
 module add-domain: add-domain
 
@@ -243,9 +243,10 @@ module add-domain: add-domain
 				border-radius.px: 8
 				placeholder: Enter new domain
 				$on-input$: $ftd.set-string($a = $domain-input.current-domain, v = $VALUE)
+    			$on-input$: $utils.set-null($var = $domain-input.add-domain.domain-error)
 				border-width.px: 1
 				border-color: $ds.colors.border
-				border-color if { domain-input.add-domain.add-domain-error != NULL }: $ds.colors.error.border
+				border-color if { domain-input.add-domain.domain-error != NULL }: $ds.colors.error.border
 				
 				-- ds.row:
 				align-content: right
@@ -259,9 +260,9 @@ module add-domain: add-domain
 
 			-- end: ds.row
 
-			-- ds.copy-small: $domain-input.add-domain.add-domain-error
+			-- ds.copy-small: $domain-input.add-domain.domain-error
 			color: $ds.colors.error.text
-			if: { domain-input.add-domain.add-domain-error != NULL }
+			if: { domain-input.add-domain.domain-error != NULL }
 			
 		-- end: ds.column
 
@@ -284,6 +285,7 @@ module add-domain: add-domain
 			border-color: $ds.colors.border
 			placeholder: Enter new domain
 			$on-input$: $ftd.set-string($a = $domain-input.current-domain, v = $VALUE)
+			$on-input$: $utils.set-null($var = $domain-input.add-domain.domain-error)
 			border-width.px: 1
 			border-color: $ds.colors.border
 			

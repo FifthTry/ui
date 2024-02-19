@@ -1,4 +1,4 @@
--- optional string $add-domain-error:
+-- optional string $domain-error:
 
 -- void submit(site_slug, domain):
 string site_slug:
