@@ -15,3 +15,9 @@ string site_slug:
 string org_slug:
 
 "/s/" + org_slug + "/" + site_slug + "/github/"
+
+
+-- string set-null(var):
+optional string $var:
+
+var = null
