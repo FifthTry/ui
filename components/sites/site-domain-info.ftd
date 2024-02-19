@@ -82,6 +82,7 @@ radius: $ds.radius.medium
 align-content: top-left
 $on-mouse-enter$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
+$on-mouse-leave$: $ftd.set-integer($a=$show-site-domain.active, v=-1)
 
     -- ds.row:
     spacing: $ds.spaces.horizontal-gap.space-between
