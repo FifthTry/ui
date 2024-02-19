@@ -1,7 +1,8 @@
--- import: ui.fifthtry.com/pages/pricing
+-- import: ui.fifthtry.com/pages/about/privacy
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
 
--- pricing.page:
+
+-- privacy.page:
 user-data: $john-doe.jd
 site-data: scenario-site
