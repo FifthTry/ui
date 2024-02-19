@@ -69,7 +69,7 @@ nav: $page.nav
                     -- ds.secondary-button: Edit
                     radius: curved
                     width: full
-                    link: $page.site.github-url
+                    link: $page.data.configure-url
 
                 -- end: ds.row
 

@@ -101,7 +101,7 @@ nav: $page.nav
                 -- ds.copy-small: Branch
 
                 -- ftd.text-input:
-                default-value if { page.data.is-configured }: $page.data.branch
+                default-value: $page.data.branch
                 placeholder: Github Repo Branch
                 type: text
                 width: fill-container
