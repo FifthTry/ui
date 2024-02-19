@@ -3,6 +3,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/actions/sites/github/configure
+-- import: ui.fifthtry.com/actions/sites/github/reconfigure
 -- import: ui.fifthtry.com/components/sites/utils as u
 -- import: ui.fifthtry.com/utils
 
@@ -17,6 +18,7 @@ string $github-org: *$page.data.account
 string $github-repo-name: *$page.data.repo
 string $github-repo-branch: *$page.data.branch
 module configure: configure
+module reconfigure: reconfigure
 
 -- p.page:
 site-data: $page.site-data
@@ -141,6 +143,13 @@ nav: $page.nav
                 link: $page.site.github-url
 
                 -- ds.primary-button: Save
+                if: { page.data.is-configured }
+                width: wide
+                radius: curved
+                $on-click$: $page.reconfigure.submit(site_slug=$page.site.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
+
+                -- ds.primary-button: Save
+                if: { !page.data.is-configured }
                 width: wide
                 radius: curved
                 $on-click$: $page.configure.submit(site_slug=$page.site.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
