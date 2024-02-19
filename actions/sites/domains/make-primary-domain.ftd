@@ -1,4 +1,4 @@
--- optional string $make-primary-domain-error:
+-- optional string $domain-error:
 -- optional string $manage-site-error:
 
 -- void submit(site_slug, domain):
