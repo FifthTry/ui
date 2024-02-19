@@ -71,6 +71,8 @@ module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
 module re-check-domain: re-check-domain
 private boolean $show-buttons: false
+integer index:
+integer $active:
 
 -- ds.column:
 inset: $ds.spaces.inset-square.medium
@@ -157,12 +159,14 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
             variant: outline
             radius: curved
             $on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+            $on-click$: $ftd.set-integer($a=$show-site-domain.active, v=$show-site-domain.index)
 
             -- ds.danger-button: Delete Domain
             if: { !show-site-domain.domain.is-primary }
             radius: curved
             ;; variant: disabled
             $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+            $on-click$: $ftd.set-integer($a=$show-site-domain.active, v=$show-site-domain.index)
 
         -- end: ds.row
 
@@ -178,37 +182,46 @@ $on-mouse-leave$: $ftd.set-bool($a = $show-site-domain.show-buttons, v = false)
             variant: outline
             radius: curved
             $on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+            $on-click$: $ftd.set-integer($a=$show-site-domain.active, v=$show-site-domain.index)
 
             -- ds.secondary-button: Make Primary
             if: { $show-site-domain.domain.status == "verified" }
             variant: disabled
             radius: curved
             $on-click$: $show-site-domain.make-primary-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+            $on-click$: $ftd.set-integer($a=$show-site-domain.active, v=$show-site-domain.index)
 
             -- ds.danger-button: Delete Domain
             radius: curved
             ;; variant: disabled
             $on-click$: $show-site-domain.delete-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
+            $on-click$: $ftd.set-integer($a=$show-site-domain.active, v=$show-site-domain.index)
 
         -- end: ds.row
 
     -- end: ds.row
 
-    -- ftd.text: $show-site-domain.delete-domain.domain-error
-    color: red
-    if: { show-site-domain.delete-domain.domain-error != NULL && show-site-domain.delete-domain.manage-site-error == NULL }
+    -- ds.column:
+    align-content: left
+    if: { show-site-domain.active == show-site-domain.index }
 
-    -- ftd.text: $show-site-domain.delete-domain.manage-site-error
-    color: red
-    if: { show-site-domain.delete-domain.manage-site-error != NULL }
+        -- ftd.text: $show-site-domain.delete-domain.domain-error
+        color: red
+        if: { show-site-domain.delete-domain.domain-error != NULL && show-site-domain.delete-domain.manage-site-error == NULL }
 
-    -- ftd.text: $show-site-domain.make-primary-domain.domain-error
-    color: red
-    if: { show-site-domain.make-primary-domain.domain-error != NULL && show-site-domain.make-primary-domain.manage-site-error == NULL }
+        -- ftd.text: $show-site-domain.delete-domain.manage-site-error
+        color: red
+        if: { show-site-domain.delete-domain.manage-site-error != NULL }
 
-     -- ftd.text: $show-site-domain.make-primary-domain.manage-site-error
-    color: red
-    if: { show-site-domain.make-primary-domain.manage-site-error != NULL }
+        -- ftd.text: $show-site-domain.make-primary-domain.domain-error
+        color: red
+        if: { show-site-domain.make-primary-domain.domain-error != NULL && show-site-domain.make-primary-domain.manage-site-error == NULL }
+
+         -- ftd.text: $show-site-domain.make-primary-domain.manage-site-error
+        color: red
+        if: { show-site-domain.make-primary-domain.manage-site-error != NULL }
+
+    -- end: ds.column
 
 -- end: ds.column
 

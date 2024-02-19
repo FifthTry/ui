@@ -22,6 +22,7 @@ module add-domain: add-domain
 module delete-domain: delete-domain
 module make-primary-domain: make-primary-domain
 module re-check-domain: re-check-domain
+integer $active: -1
 
 -- p.page:
 site-data: $page.site-data
@@ -54,15 +55,15 @@ nav: $page.nav
 
 		-- site-domain-info.show-site-domain: $d
 		for: d in $page.domains
+		index: $LOOP.COUNTER
 		site: $page.site
 		delete-domain: $page.delete-domain
 		make-primary-domain: $page.make-primary-domain
 		re-check-domain: $page.re-check-domain
+		$active: $page.active
 		
 	-- end: ds.section-column
 
 -- end: p.page
 
 -- end: page
-
-
