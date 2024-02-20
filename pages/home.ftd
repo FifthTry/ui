@@ -121,7 +121,7 @@ radius: curved
 
 -- ftd.image:
 src: $assets.files.assets.homepage.hero.svg
-min-width.fixed.px: 520
+width.fixed.percent: 50
 
 -- end: ds.row
 
