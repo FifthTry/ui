@@ -191,6 +191,7 @@ spacing: $ds.spaces.vertical-gap.extra-large
 -- ds.heading-large: $card.title
 if: { card.title != NULL }
 width: hug-content
+align: center
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.medium
@@ -240,14 +241,15 @@ optional string cta-link:
 
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 350
+width.fixed.px if { ftd.device != "mobile" }: 320
 height.fixed.px: 424
 height.fixed.px if { ftd.device == "mobile" }: 380
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 align-content: top-left
-spacing: $ds.spaces.vertical-gap.space-between
+spacing if { card-info.cta-text != NULL }: $ds.spaces.vertical-gap.space-between
+spacing: $ds.spaces.vertical-gap.large
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
