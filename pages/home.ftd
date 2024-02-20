@@ -340,7 +340,7 @@ if: { section-card.title != NULL }
 width: hug-content
 
 -- ds.row:
-spacing: $ds.spaces.horizontal-gap.large
+spacing: $ds.spaces.horizontal-gap.medium
 wrap: true
 
 -- section-card-info: $obj.title
@@ -371,7 +371,7 @@ string fastn:
 string text:
 
 -- ds.container:
-width.fixed.px if { ftd.device != "mobile" }: 510
+width.fixed.px if { ftd.device != "mobile" }: 454
 width: fill-container
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
@@ -486,7 +486,7 @@ width: hug-content
 align: center
 
 -- ds.row:
-spacing: $ds.spaces.horizontal-gap.extra-large
+spacing: $ds.spaces.horizontal-gap.large
 wrap: true
 
 -- testimonial-card-info: $obj.name
@@ -527,7 +527,7 @@ optional ftd.shadow card-3:
 optional ftd.shadow card-4:
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 510
+width.fixed.px if { ftd.device != "mobile" }: 460
 height.fixed.px: 350
 height if { ftd.device == "mobile" }: hug-content
 align-content: top-left
