@@ -1,6 +1,0 @@
--- import: ui.fifthtry.com/pages/pricing
--- import: ui.fifthtry.com/scenarios/john-doe
-
-
--- pricing.page:
-user-data: $john-doe.jd

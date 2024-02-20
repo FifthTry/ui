@@ -1,25 +1,24 @@
 -- import: ui.fifthtry.com/pages/sites/configure-github
 -- import: ui.fifthtry.com/scenarios/john-doe
--- import: ui.fifthtry.com/records/site as sr
-
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/scenarios/sites/site-info
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 -- configure-github.page:
+site-data: scenario-site
 user-data: $john-doe.jd
+site: $site-info.acme-site
+nav: $nav
 data: $data
 
--- sr.gh-oidc-data data:
+-- sites-records.gh-oidc-data data:
 account: FifthTry
 repo: ft
 branch: main
 is-configured: true
 configure-url: /scenarios/sites/configure-github/
-site-domain: fastn.com
-org-slug: fifthtry
-site-slug: fifthtry
-current-site: $current-site
 
--- sr.site current-site: My Homepage
-domain-with-host: https://my-homepage.fifthtry-sites.com
-domain: my-homepage.fifthtry-sites.com
-created-on: 14th Feb
-last-updated-on: 14th Feb
+
+-- sites-records.navigation-info nav:
+dashboard-url: /scenarios/sites/dashboard/
+current-page: github

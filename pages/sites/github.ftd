@@ -1,107 +1,56 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/utils as u
 
 
 -- component page:
-sr.gh-oidc-data data:
+module site-data: site-data
 ud.user-data user-data:
+sites-records.site-common-data site:
+sites-records.navigation-info nav:
+sites-records.gh-oidc-data data:
 
 -- p.page:
-site-data: site-data
+site-data: $page.site-data
 user-data: $page.user-data
-align-content: top-center
-header-links: $page.data.header-links
-current-site: $page.data.current-site
+site: $page.site
+nav: $page.nav
 
 	-- ds.section-column:
-	flush: full
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.extra-extra-large
 
-	-- ds.heading-small: Github
+        -- ds.row:
+        align-content: left
+        spacing: $ds.spaces.horizontal-gap.small
 
-	-- ftd.desktop:
+            -- ftd.image:
+            src: $assets.files.assets.sites.info.svg
 
-	-- ds.section-column:
-	flush: full
-	spacing: $ds.spaces.vertical-gap.large
-	align-content: top-left
-	inset: $ds.spaces.inset-square.zero
+            -- ds.copy-small: Use clift to update your site from github
 
-	-- ds.row:
-	align-content: left
-	spacing: $ds.spaces.horizontal-gap.small
+        -- end: ds.row
 
-	-- ftd.image:
-	src: $assets.files.assets.sites.info.svg
+        -- ds.row:
+        radius: $ds.radius.medium
+        inset: $ds.spaces.inset-square.large
+        border: $ds.borders.uniform.small
+        spacing: $ds.spaces.horizontal-gap.space-between
+        background.solid: $ds.colors.background.step-1
 
-	-- ds.copy-small: Use clift to update your site from github
+            -- ds.copy-large:
 
-	-- end: ds.row
+            $github-message(domain = $page.site.primary-domain)
 
-	-- ds.row:
-	radius: $ds.radius.medium
-	inset: $ds.spaces.inset-square.large
-	border: $ds.borders.uniform.small
-	spacing: $ds.spaces.horizontal-gap.space-between
-	background.solid: $ds.colors.background.step-1
+            -- ds.primary-button: Configure Now
+            link: $page.data.configure-url
+            width: wide
+            radius: curved
 
-	-- ds.copy-large:
-
-	$github-message(domain = $page.data.site-domain)
-
-	-- ds.primary-button: Configure Now
-	link: $page.data.configure-url
-	radius: curved
-
-	-- end: ds.row
-
-	-- end: ds.section-column
-		
-	-- end: ftd.desktop
-
-	-- ftd.mobile:
-
-	-- ds.column:
-	align-content: top-left
-	spacing: $ds.spaces.vertical-gap.large
-
-	-- ds.row:
-	align-content: left
-	spacing: $ds.spaces.horizontal-gap.small
-
-	-- ftd.image:
-	src: $assets.files.assets.sites.info.svg
-
-	-- ds.copy-small: Use clift to update your site from github
-
-	-- end: ds.row
-
-	-- ds.column:
-	radius: $ds.radius.medium
-	inset: $ds.spaces.inset-square.large
-	border: $ds.borders.uniform.small
-	spacing: $ds.spaces.vertical-gap.medium
-	background.solid: $ds.colors.background.step-1
-	align-content: right
-
-	-- ds.copy-large:
-
-	$github-message(domain = $page.data.site-domain)
-
-	-- ds.secondary-button: Configure Now
-	link: $page.data.configure-url
-	radius: curved
-
-	-- end: ds.column
-
-	-- end: ds.column
-		
-	-- end: ftd.mobile
+        -- end: ds.row
 
 	-- end: ds.section-column
 
@@ -115,4 +64,4 @@ current-site: $page.data.current-site
 -- string github-message(domain):
 string domain:
 
-"You have not yet configured Github for " + domain
+"You have not yet configured Github for [" + domain + "](///" + domain + ")."

@@ -1,70 +1,46 @@
--- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/site-data  ;; this is global site data for FifthTry.com
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/components/sites/site-header as h
 -- import: ui.fifthtry.com/components/footer
--- import: ui.fifthtry.com/components/header
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/components/sites/header as site-header
+-- import: ui.fifthtry.com/records/sites as sites-records
 
 
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
+sites-records.site-common-data site:
+sites-records.navigation-info nav:
 children children:
-optional caption title:
-ds.gap margin: $ds.spaces.vertical-gap.zero
-ds.flush flush: full
-ftd.align align-content: top-left
-boolean show-header: true
-boolean show-header-links: true
-boolean hide-footer: false
-sr.toc-data list header-links:
-optional sr.site current-site:
-optional ftd.resizing height: fill-container
 
--- ds.page: $page.title
-	
--- ftd.column:
-max-width.fixed.px: 1240
-width: fill-container
-height: fill-container
-align-self: center
+-- ds.page:
+spacing: $ds.spaces.vertical-gap.small.gap
+margin: $ds.spaces.vertical-gap.zero
 
-	-- ds.column:
-	inset: $ds.spaces.inset-square.zero
-	spacing: $ds.spaces.horizontal-gap.small
-	if: { page.show-header }
+	-- ftd.image:
+	src: $assets.files.assets.homepage.powered-by.svg
+	anchor: window
+	right.px: 0
+	bottom.px: 0
+	z-index: 99999999999999
+	link: https://fastn.com/
+	open-in-new-tab: true
 
-		-- header.header:
-		;;if: { page.show-header-links && ftd.len($page.header-links) > 0}
-		site-data: $page.site-data
-		user-data: $page.user-data
-		current-site: $page.current-site
-		toc-list: $page.header-links
-	
-		/-- h.header-with-logo:
-		toc-list: []
-		site-logo: $assets.files.assets.fifthtry-logo.svg
-		user-data: $page.user-data
-		
-		/-- h.header:
-		if: { page.show-header-links && ftd.len($page.header-links) > 0}
-		toc-list: $page.header-links
-		
-	-- end: ds.column
 
-	-- ds.column:
-	inset: $ds.spaces.inset-square.zero
-	content: $page.children
-	align-content: $page.align-content
-	height: $page.height
-	
-	-- end: ds.column
+    -- site-header.header:
+    site-data: $page.site-data
+    user-data: $page.user-data
+    nav: $page.nav
+    site: $page.site
 
-	-- footer.footer:
-	if: { !page.hide-footer }
-	
--- end: ftd.column
+	-- child:
+	for: $child in $page.children
+
+    -- footer.footer:
+    site-data: $page.site-data
 
 -- end: ds.page
 
 -- end: page
+
+
+

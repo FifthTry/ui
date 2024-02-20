@@ -1,59 +1,29 @@
 -- import: ui.fifthtry.com/pages/sites/site-info
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 
 -- site-info.page:
-data: $data
+site-data: scenario-site
+site: $acme-site
+nav: $nav
 user-data: $john-doe.jd
 
 
--- site-info.site-info-data data:
-user: FifthTry
-dashboard-url: /scenarios/sites/dashboard/
-current-site: $current-site
-site-urls: $site-urls
-header-links: $header-links
-sub-header-links: []
+-- sites-records.site-common-data acme-site:
+account-name: John Doe
+site-name: Acme, Inc
+site-slug: acme
+primary-domain: www.acme.com
+info-url: /scenarios/sites/site-info/
+github-url: /scenarios/sites/github/
+domains-url: /scenarios/sites/domains/
+editor-url: /scenarios/sites/editor/
+updated-on: 14th Feb
+preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 
--- sr.site current-site: My Homepage
-domain-with-host: https://my-homepage.fifthtry-sites.com
-domain: my-homepage.fifthtry-sites.com
-created-on: 14th Feb
-last-updated-on: 14th Feb
+-- sites-records.navigation-info nav:
+dashboard-url: /scenarios/user/dashboard/
+current-page: info
 
--- sr.toc-data list site-urls:
-
--- sr.toc-data: My Site
-link: /scenarios/sites/site-info/
-is-active: true
-
--- sr.toc-data: My Startup
-is-active: false
-
--- sr.toc-data: My Blog
-is-active: false
-
--- end: site-urls
-
-
-
-
-
-
-
--- sr.toc-data list header-links:
-
--- sr.toc-data: About
-link: /scenarios/sites/site-info/
-is-active: true
-
--- sr.toc-data: Domains
-link: /scenarios/sites/site-domain/
-is-active: false
-
--- sr.toc-data: Github
-link: /scenarios/sites/github/
-is-active: false
-
--- end: header-links

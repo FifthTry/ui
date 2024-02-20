@@ -1,41 +1,23 @@
 -- import: ui.fifthtry.com/pages/sites/github
 -- import: ui.fifthtry.com/scenarios/john-doe
--- import: ui.fifthtry.com/records/site as sr
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/scenarios/sites/site-info
+-- import: ui.fifthtry.com/scenarios/scenario-site
 
 -- github.page:
 user-data: $john-doe.jd
+site: $site-info.acme-site
+nav: $nav
 data: $data
+site-data: scenario-site
 
--- sr.gh-oidc-data data:
+-- sites-records.gh-oidc-data data:
 account: FifthTry
 repo: ft
 branch: main
 is-configured: true
 configure-url: /scenarios/sites/configure-github/
-site-domain: fastn.com
-org-slug: fifthtry
-site-slug: fifthtry
-header-links: $header-links
-current-site: $current-site
 
--- sr.site current-site: My Homepage
-domain-with-host: https://my-homepage.fifthtry-sites.com
-domain: my-homepage.fifthtry-sites.com
-created-on: 14th Feb
-last-updated-on: 14th Feb
-
--- sr.toc-data list header-links:
-
--- sr.toc-data: About
-link: /scenarios/sites/site-info/
-is-active: false
-
--- sr.toc-data: Domains
-link: /scenarios/sites/site-domain/
-is-active: false
-
--- sr.toc-data: Github
-link: /scenarios/sites/github/
-is-active: true
-
--- end: header-links
+-- sites-records.navigation-info nav:
+dashboard-url: /scenarios/sites/dashboard/
+current-page: github

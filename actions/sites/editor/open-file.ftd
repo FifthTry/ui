@@ -1,10 +1,10 @@
 -- optional string $open-error:
 -- string $content: \-- ftd.text: Hello
 
--- void submit(name, site):
+-- void submit(name, site-slug):
 string name:
-string site:
+string site-slug:
 js: $assets.files.assets.functions.js
 
-callAlert("open file name: " + name + " site: " + site)
+callAlert("open file name: " + name + " site: " + site-slug)
 ;; call submit with http options
