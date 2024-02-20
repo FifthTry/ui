@@ -4,16 +4,16 @@ boolean $icon-2: false
 boolean $icon-3: false
 boolean $icon-4: false
 
--- ds.column:
-
--- ftd.desktop:
-
 -- ds.section-column:
 border: $ds.borders.top.medium
 border-color: $ds.colors.cta-primary.border
-inset: $ds.spaces.inset-wide.large
 radius: $ds.radius.zero
 margin: $ds.spaces.vertical-gap.zero
+
+-- ftd.desktop:
+
+-- ds.column:
+inset: $ds.spaces.inset-wide.large
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -112,13 +112,13 @@ spacing: $ds.spaces.horizontal-gap.space-between
 
 	-- end: ds.row
 
-	-- end: ds.section-column
+	-- end: ds.column
 
 -- end: ftd.desktop
 
 -- ftd.mobile:
 
--- ds.section-column:
+-- ds.column:
 inset: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.vertical-gap.extra-large
 align-content: top-left
@@ -200,10 +200,10 @@ spacing: $ds.spaces.vertical-gap.medium
 
 	-- end: ds.column
 
--- end: ds.section-column
+-- end: ds.column
 
 -- end: ftd.mobile
 
--- end: ds.column
+-- end: ds.section-column
 
 -- end: footer
