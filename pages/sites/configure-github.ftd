@@ -156,6 +156,19 @@ nav: $page.nav
 
             -- end: ds.row
 
+            -- ds.column:
+            align-content: left
+
+            -- ds.copy-small: $page.reconfigure.manage-site-error
+            if: { page.data.is-configured && page.reconfigure.manage-site-error != NULL }
+            color: $ds.colors.error.text
+
+            -- ds.copy-small: $page.configure.manage-site-error
+            if: { !page.data.is-configured && page.configure.manage-site-error != NULL }
+            color: $ds.colors.error.text
+
+            -- end: ds.column
+
         -- end: ds.column
 
 	-- end: ds.section-column

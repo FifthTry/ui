@@ -64,6 +64,10 @@ create-site-url: $page.create-site-url
                     if: { page.create-site-action.site-error != NULL }
                     color: $ds.colors.error.text
 
+                    -- ds.copy-small: $page.create-site-action.manage-site-error
+                    if: { page.create-site-action.manage-site-error != NULL }
+                    color: $ds.colors.error.text
+
                 -- end: ds.column
 
                 -- ds.row:

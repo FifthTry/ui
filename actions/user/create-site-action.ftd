@@ -1,4 +1,5 @@
 -- optional string $site-error:
+-- optional string $manage-site-error:
 
 -- void submit(username, site_slug):
 string username:
