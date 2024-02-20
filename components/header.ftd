@@ -12,11 +12,9 @@ ds.gap margin: $ds.spaces.vertical-gap.zero
 boolean $sidebar: false
 boolean $menu: false
 sr.toc-data list toc-list:
-ds.flush flush: wide
 optional sr.site current-site:
 
 -- ds.section-column:
-flush: $header.flush
 margin: $ds.spaces.vertical-gap.zero
 spacing: $ds.spaces.vertical-gap.zero
 

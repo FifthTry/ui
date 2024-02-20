@@ -78,6 +78,7 @@ string highlight-text:
 body body:
 
 -- ds.section-column:
+flush: full
 inset: $ds.spaces.inset-square.zero
 
 -- ftd.desktop:
