@@ -78,7 +78,6 @@ string highlight-text:
 body body:
 
 -- ds.section-column:
-flush: full
 inset: $ds.spaces.inset-square.zero
 
 -- ftd.desktop:
@@ -250,7 +249,7 @@ optional string cta-link:
 
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 359
+width.fixed.px if { ftd.device != "mobile" }: 350
 height.fixed.px: 424
 height.fixed.px if { ftd.device == "mobile" }: 380
 background.solid: $ds.colors.background.step-1
@@ -379,7 +378,7 @@ string fastn:
 string text:
 
 -- ds.container:
-width.fixed.px if { ftd.device != "mobile" }: 520
+width.fixed.px if { ftd.device != "mobile" }: 510
 width: fill-container
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
@@ -535,7 +534,7 @@ optional ftd.shadow card-3:
 optional ftd.shadow card-4:
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 520
+width.fixed.px if { ftd.device != "mobile" }: 510
 height.fixed.px: 350
 height if { ftd.device == "mobile" }: hug-content
 align-content: top-left
