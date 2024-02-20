@@ -11,16 +11,6 @@ module site-data: site-data
 -- p.page: FifthTry | Better way To Build Websites
 user-data: $page.user-data
 site-data: $page.site-data
-hide-footer: false
-
--- ftd.image:
-src: $assets.files.assets.homepage.powered-by.svg
-anchor: window
-right.px: 0
-bottom.px: 0
-z-index: 99999999999999
-link: https://fastn.com/
-open-in-new-tab: true
 
 -- hero: Build your next website in less than
 highlight-text: 2 hours
@@ -121,7 +111,7 @@ radius: curved
 
 -- ftd.image:
 src: $assets.files.assets.homepage.hero.svg
-width.fixed.percent: 50
+min-width.fixed.percent: 50
 
 -- end: ds.row
 

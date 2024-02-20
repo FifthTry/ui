@@ -1,4 +1,7 @@
+-- import: ui.fifthtry.com/site-data
+
 -- component footer:
+module site-data: site-data
 boolean $icon-1: false
 boolean $icon-2: false
 boolean $icon-3: false
@@ -30,19 +33,29 @@ spacing: $ds.spaces.horizontal-gap.space-between
 	align-content: left
 	spacing: $ds.spaces.horizontal-gap.medium
 
+	-- ds.link: **Pricing**
+	color: $ds.colors.text-strong
+	link: $footer.site-data.pricing-url
+	align: center
+
 	-- ds.link: **Team**
 	color: $ds.colors.text-strong
-	link: /team/
+	link: $footer.site-data.team-url
+	align: center
+
+	-- ds.link: **About Us**
+	color: $ds.colors.text-strong
+	link: $footer.site-data.about-url
 	align: center
 
 	-- ds.link: **Terms**
 	color: $ds.colors.text-strong
-	link: https://fifthtry.com/terms/
+	link: $footer.site-data.terms-url
 	align: center
-
+	
 	-- ds.link: **Privacy**
 	color: $ds.colors.text-strong
-	link: https://fifthtry.com/privacy/
+	link: $footer.site-data.privacy-url
 	align: center
 
 	-- end: ds.row
@@ -135,19 +148,24 @@ spacing: $ds.spaces.vertical-gap.medium
 	align-content: left
 	spacing: $ds.spaces.horizontal-gap.medium
 
+	-- ds.link: **Pricing**
+	color: $ds.colors.text-strong
+	link: $footer.site-data.pricing-url
+	align: center
+
 	-- ds.link: **Team**
 	color: $ds.colors.text-strong
-	link: /team/
+	link: $footer.site-data.team-url
 	align: center
-
+	
 	-- ds.link: **Terms**
 	color: $ds.colors.text-strong
-	link: https://fifthtry.com/terms/
+	link: $footer.site-data.terms-url
 	align: center
-
+	
 	-- ds.link: **Privacy**
 	color: $ds.colors.text-strong
-	link: https://fifthtry.com/privacy/
+	link: $footer.site-data.privacy-url
 	align: center
 
 	-- end: ds.row
