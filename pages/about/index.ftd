@@ -13,12 +13,12 @@ user-data: $page.user-data
 site-data: $page.site-data
 
 	-- ds.section-column:
+	inset: $ds.spaces.inset-tall.zero-medium
 
 		-- ds.heading-large: About FifthTry
 		
 		-- ds.copy-regular:
 		align: left
-		;; width.fixed.px: 100
 		
 		FifthTry is building a better way to build websites.
 		
