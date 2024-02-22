@@ -17,10 +17,9 @@ margin: $ds.spaces.vertical-gap.zero
 spacing: $ds.spaces.vertical-gap.zero
 
 	-- ftd.desktop:
-	
 
         -- ds.row:
-        inset: $ds.spaces.inset-tall.zero-small
+        inset: $ds.spaces.inset-square.medium
         spacing: $ds.spaces.horizontal-gap.space-between
         border: $ds.borders.bottom.small
         radius: $ds.radius.zero

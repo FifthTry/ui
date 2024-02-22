@@ -214,7 +214,7 @@ private string $current-password: *$ftd.empty
 		inset: $ds.spaces.inset-wide.large
 		background.solid: $ds.colors.background.step-1
 		spacing: $ds.spaces.vertical-gap.large
-		height: fill-container
+		height.fixed.vh: 100
 		radius: $ds.radius.zero
 		
 			-- ftd.image:
