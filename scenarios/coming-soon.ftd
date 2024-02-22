@@ -1,14 +1,13 @@
--- import: ui.fifthtry.com/pages/sites/site-info
--- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/pages/coming-soon
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
+-- import: ui.fifthtry.com/records/sites as sites-records
 
-
--- site-info.page:
+-- coming-soon.page:
+user-data: $john-doe.jd
 site-data: scenario-site
 site: $acme-site
 nav: $nav
-user-data: $john-doe.jd
 
 
 -- sites-records.site-common-data acme-site:
@@ -25,4 +24,4 @@ preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 
 -- sites-records.navigation-info nav:
 dashboard-url: /scenarios/user/dashboard/
-current-page: info
+current-page: editor
