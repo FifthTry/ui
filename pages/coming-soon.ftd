@@ -1,0 +1,33 @@
+-- import: ui.fifthtry.com/components/sites/page as sites-page
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/sites as sites-records
+
+
+-- component page:
+ud.user-data user-data:
+module site-data: site-data
+sites-records.site-common-data site:
+sites-records.navigation-info nav:
+
+-- sites-page.page:
+user-data: $page.user-data
+site-data: $page.site-data
+site: $page.site
+nav: $page.nav
+
+	-- ds.section-column:
+	inset: $ds.spaces.inset-tall.zero-medium
+
+		-- ds.heading-large: Coming Soon
+
+		-- ds.copy-regular:
+		align: left
+
+		This page is under development.
+
+	-- end: ds.section-column
+
+-- end: sites-page.page
+
+-- end: page
