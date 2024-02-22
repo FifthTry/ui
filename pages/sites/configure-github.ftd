@@ -31,10 +31,8 @@ nav: $page.nav
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.extra-extra-large
 	
-
-
         -- ds.column:
-        width.fixed.px: 508
+        width.fixed.px if { ftd.device != "mobile" }: 508
         align-content: top-left
         spacing: $ds.spaces.vertical-gap.large
         radius: $ds.radius.medium

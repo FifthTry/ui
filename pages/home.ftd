@@ -205,6 +205,7 @@ triangle-icon-3: $obj.triangle-icon-3
 circle-icon-1: $obj.circle-icon-1
 circle-icon-2: $obj.circle-icon-2
 circle-icon-3: $obj.circle-icon-3
+text: $obj.text
 cta-text: $obj.cta-text
 cta-link: $obj.cta-link
 
@@ -236,6 +237,7 @@ optional ftd.image-src triangle-icon-3:
 optional ftd.image-src circle-icon-1:
 optional ftd.image-src circle-icon-2:
 optional ftd.image-src circle-icon-3:
+optional string text:
 optional string cta-text:
 optional string cta-link:
 
@@ -249,7 +251,7 @@ inset: $ds.spaces.inset-square.large
 border: $ds.borders.uniform.small
 align-content: top-left
 spacing if { card-info.cta-text != NULL }: $ds.spaces.vertical-gap.space-between
-spacing: $ds.spaces.vertical-gap.large
+spacing: $ds.spaces.vertical-gap.medium
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -295,6 +297,11 @@ width: hug-content
 -- ds.copy-regular: $card-info.body
 if: { card-info.body != NULL }
 
+-- ds.copy-regular: $card-info.text
+if: { card-info.text != NULL }
+color: $ds.colors.accent.primary
+align: center
+
 -- ds.row:
 if: { card-info.cta-text != NULL }
 align-content: bottom-left
@@ -307,6 +314,7 @@ kind: link
 size: small
 
 -- end: ds.row
+
 
 -- end: ds.column
 
@@ -686,6 +694,7 @@ optional ftd.image-src circle-icon-1:
 optional ftd.image-src circle-icon-2:
 optional ftd.image-src circle-icon-3:
 optional string cta-text:
+optional string text:
 optional string cta-link:
 
 -- cards list challange-list:
@@ -726,6 +735,7 @@ circle-icon-3: $assets.files.assets.homepage.circle-3.svg
 triangle-icon-1: $assets.files.assets.homepage.triangle-1.svg
 circle-icon-1: $assets.files.assets.homepage.circle-1.svg
 cta-text: Learn More
+cta-link: https://fastn.com/
 
 - Open-source programming language and full stack framework
 - Learn in a week, even for non-developers
@@ -735,6 +745,7 @@ cta-text: Learn More
 triangle-icon-2: $assets.files.assets.homepage.triangle-2.svg
 circle-icon-2: $assets.files.assets.homepage.circle-2.svg
 cta-text: Start Now
+cta-link: https://fastn.com/ft/
 
 - Fast and Secure hosting.
 - Seamless integration with fastn and the editor.
@@ -743,7 +754,7 @@ cta-text: Start Now
 -- cards: FifthTry Collaborative Editor
 triangle-icon-3: $assets.files.assets.homepage.triangle-3.svg
 circle-icon-3: $assets.files.assets.homepage.circle-3.svg
-cta-text: Coming soon
+text: Coming soon
 
 - Robust Version Control
 - Collaborative Change-Requests System

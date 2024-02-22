@@ -17,11 +17,15 @@ site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
 nav: $page.nav
+    
+    -- ds.section-column:
+    inset: $ds.spaces.inset-square.zero
+    spacing: $ds.spaces.vertical-gap.zero
+    margin: $ds.spaces.vertical-gap.extra-extra-large
 
-	-- ds.section-column:
+	-- ds.column:
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
-	margin: $ds.spaces.vertical-gap.extra-extra-large
 
         -- ds.row:
         align-content: left
@@ -35,6 +39,7 @@ nav: $page.nav
         -- end: ds.row
 
         -- ds.row:
+        if: { ftd.device != "mobile" }
         radius: $ds.radius.medium
         inset: $ds.spaces.inset-square.large
         border: $ds.borders.uniform.small
@@ -51,6 +56,27 @@ nav: $page.nav
             radius: curved
 
         -- end: ds.row
+
+        -- ds.column:
+        if: { ftd.device == "mobile" }
+        radius: $ds.radius.medium
+        inset: $ds.spaces.inset-square.medium
+        border: $ds.borders.uniform.small
+        spacing: $ds.spaces.vertical-gap.large
+        background.solid: $ds.colors.background.step-1
+
+            -- ds.copy-large:
+
+            $github-message(domain = $page.site.primary-domain)
+
+            -- ds.primary-button: Configure Now
+            link: $page.data.configure-url
+            width: full
+            radius: curved
+
+        -- end: ds.column
+
+        -- end: ds.column
 
 	-- end: ds.section-column
 

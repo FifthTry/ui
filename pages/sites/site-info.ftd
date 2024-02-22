@@ -92,12 +92,13 @@ nav: $page.nav
 		-- ftd.mobile:
 		
 			-- ds.column:
-			inset: $ds.spaces.inset-square.large
+			inset: $ds.spaces.inset-square.medium
 			spacing: $ds.spaces.vertical-gap.large
 			align-content: left
 			background.solid: $ds.colors.background.step-1
 			
 				-- ftd.image:
+				if: { page.site.preview-image == NULL }
 				src: $assets.files.assets.sites.about-card.svg
 				width: fill-container
 				border-radius.px: 8
