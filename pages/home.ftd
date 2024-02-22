@@ -102,7 +102,7 @@ color: $ds.colors.accent.primary
 $hero.body
 
 -- ds.icon-button: Start Building
-link: signin/
+link: $site-data.sign-in-url
 icon-position: at-end
 icon: $assets.files.assets.sites.arrow.svg
 radius: curved
@@ -151,7 +151,7 @@ color: $ds.colors.accent.primary
 $hero.body
 
 -- ds.icon-button: Start Building
-link: signin/
+link: $site-data.sign-in-url
 icon-position: at-end
 icon: $assets.files.assets.sites.arrow.svg
 radius: curved
@@ -768,7 +768,7 @@ string text:
 fastn: fastn
 text: compares to other languages and frameworks.
 
--- section-cards: Explore how 
+-- section-cards: Explore how
 fastn: fastn 
 text: compares to WYSIWYG website builders.
 
