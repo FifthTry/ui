@@ -145,6 +145,16 @@
       "checksum": "E81B324FCD8ABCEE00AA1E83ECA2AAFC6B91BCB4EEDEF64F7F05C3527312A22C",
       "size": 7625
     },
+    "assets/powered-by.png": {
+      "name": "assets/powered-by.png",
+      "checksum": "20404E6AAED557CF4EFC7A8EDB70D6E5C751DFB756024675AAB50DAF4EADB31B",
+      "size": 2999
+    },
+    "assets/powered-by.svg": {
+      "name": "assets/powered-by.svg",
+      "checksum": "AF53213A694EA60A37905CCF0B62C29DF6D452182407CE64B730B852CF057FFD",
+      "size": 14034
+    },
     "assets/star.svg": {
       "name": "assets/star.svg",
       "checksum": "7774F60F53D680F2CC43E234249C09440D338092FF79A710083916E82C260A77",
@@ -182,8 +192,8 @@
     },
     "components/button.ftd": {
       "name": "components/button.ftd",
-      "checksum": "C1A3062FF63F2F6D61BABEB8730A75C65647070DF6E0DDF07F6601C066E8C40B",
-      "size": 13796
+      "checksum": "E534F6E37EA74B5C0ECCF987325D5A9ED66055DB8C3E67BACEA2EDD53EB7E2C0",
+      "size": 13802
     },
     "components/checkbox.ftd": {
       "name": "components/checkbox.ftd",
@@ -202,8 +212,8 @@
     },
     "components/icon-button.ftd": {
       "name": "components/icon-button.ftd",
-      "checksum": "AFE707079400585618DCE8C66DA8A8BB3DC8DF2337BF1070C800DC3F72C2187B",
-      "size": 9950
+      "checksum": "7BE1B62DE5CC48672F57F3ECFB73783529BDD3008A57CA31E64BF74A2785538B",
+      "size": 10055
     },
     "components/input.ftd": {
       "name": "components/input.ftd",
@@ -247,13 +257,13 @@
     },
     "foundation-elements/column.ftd": {
       "name": "foundation-elements/column.ftd",
-      "checksum": "C92FC1C90E10257DFBE746C84FB3C5A64A71B357410958940B00D80DED60A62F",
-      "size": 3336
+      "checksum": "AEAB988085CB3D2866184C6FD40F04764516AD2A86EE2FCC2130F7976ACC6403",
+      "size": 3405
     },
     "foundation-elements/container.ftd": {
       "name": "foundation-elements/container.ftd",
-      "checksum": "D4E2A46474A2E6ED8C7C85C6C2CE57332BAB140CB7CDEE180C3DD89725D01488",
-      "size": 4466
+      "checksum": "16DF7A3990BADC4BBF99F2837005CD942ABBA3859448F28AA6E1615C1901F9D1",
+      "size": 4462
     },
     "foundation-elements/floater.ftd": {
       "name": "foundation-elements/floater.ftd",
@@ -267,8 +277,8 @@
     },
     "foundation-elements/page.ftd": {
       "name": "foundation-elements/page.ftd",
-      "checksum": "B224638EE74E3E2D8F9B297A7DDA5A4583A767710DE67B4D6995ADE4EAE611DC",
-      "size": 1504
+      "checksum": "B10FCDCB5844B584CDA8EE46551C3395BAEAD46077576CDF11A985408AC593A8",
+      "size": 1731
     },
     "foundation-elements/radius.ftd": {
       "name": "foundation-elements/radius.ftd",
@@ -277,18 +287,18 @@
     },
     "foundation-elements/row.ftd": {
       "name": "foundation-elements/row.ftd",
-      "checksum": "C7F465C62979B61E2DEAD78CBC19380D3B8CE30326AF439134D069AB78E5D946",
-      "size": 3643
+      "checksum": "2B0319EE5EEA1344C8026B35CEAC2B3A95EAE57BA9752A901CD1CDC5A64A8C81",
+      "size": 3709
     },
     "foundation-elements/section-column.ftd": {
       "name": "foundation-elements/section-column.ftd",
-      "checksum": "B24C2460622A314853589BEDF29D1A1BA34E8276C7F542F72D99B37B48373472",
-      "size": 4140
+      "checksum": "EB80A87707627BF1C28704C44484EB03770C20D769E3F0D5070962A546B52433",
+      "size": 4113
     },
     "foundation-elements/section-row.ftd": {
       "name": "foundation-elements/section-row.ftd",
-      "checksum": "B5E3FE43BD74C11F4A2B60FD6411AA9129FD9E285941B119705F43B740C621BF",
-      "size": 4293
+      "checksum": "F2C0D27EE4C95517F706264852F9B975E9AC319F4E4FEF1C66EF00BBC143C6E1",
+      "size": 4320
     },
     "foundation-elements/shadow.ftd": {
       "name": "foundation-elements/shadow.ftd",
@@ -312,10 +322,10 @@
     },
     "typography.ftd": {
       "name": "typography.ftd",
-      "checksum": "DFE912AE24539FD0E0E377464D9472C0ACAD02427B3B11EE69CB126887CF0F1D",
-      "size": 10331
+      "checksum": "49B5794C75C81871C7D0FB897BACCDC4AB80B4545F4F2A109E9974309A50A43B",
+      "size": 10310
     }
   },
-  "zip_url": "https://github.com/fastn-community/design-system/archive/4391e5e51fbca310476f8febaf139e5307619d8e.zip",
-  "checksum": "724E37941795687F076B7CDF432EDFA702DEC2B306AA8D18ED79D091DBD0FE42"
+  "zip_url": "https://github.com/fastn-community/design-system/archive/4810b48c252074ab89d6920be1bfdbf967c5b20f.zip",
+  "checksum": "9F584A02A643D1B9629A6DD40544FAF4992F3B9D769DAE1D5651215D740A0436"
 }
