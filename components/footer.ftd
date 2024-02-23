@@ -8,15 +8,15 @@ boolean $icon-3: false
 boolean $icon-4: false
 
 -- ds.section-column:
-border: $ds.borders.top.medium
-border-color: $ds.colors.cta-primary.border
-radius: $ds.radius.zero
-margin: $ds.spaces.vertical-gap.zero
+inset: $ds.spaces.inset-wide.medium
 
 -- ftd.desktop:
 
 -- ds.column:
-inset: $ds.spaces.inset-square.medium
+border: $ds.borders.top.medium
+border-color: $ds.colors.cta-primary.border
+radius: $ds.radius.zero
+inset: $ds.spaces.inset-tall.zero-small
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -132,7 +132,6 @@ spacing: $ds.spaces.horizontal-gap.space-between
 -- ftd.mobile:
 
 -- ds.column:
-inset: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.vertical-gap.extra-large
 align-content: top-left
 

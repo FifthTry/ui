@@ -16,7 +16,7 @@ site-data: $page.site-data
 highlight-text: 2 hours
 
 - Over 300 Websites Already Launched.
-- Loved by 3000+ tech-enthusiasts 
+- Loved by 3000+ tech-enthusiasts
 
 -- card: Challenges in Today's Website Development
 card-list: $challange-list
@@ -57,57 +57,22 @@ testimonial-list: $testimonial-lists
 
 
 
-
-
-
-
-
 -- component hero:
 caption title:
 string highlight-text:
 body body:
 
 -- ds.section-column:
-flush: full
-inset: $ds.spaces.inset-square.zero
 
 -- ftd.desktop:
 
 -- ds.row:
+inset: $ds.spaces.inset-tall.zero-medium
 spacing: $ds.spaces.horizontal-gap.space-between
 
--- ds.column:
-align-content: left
-spacing: $ds.spaces.vertical-gap.large
-inset: $ds.spaces.inset-square.zero
-
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.zero
-margin-horizontal: $ds.spaces.vertical-gap.zero
-
--- ds.heading-large: $hero.title 
-width: hug-content
-
--- ftd.text: $hero.highlight-text
-role: $inherited.types.heading-large
-margin-left.px: 10
-display: inline
-width: hug-content
-color: $ds.colors.accent.primary
-
--- end: ds.container
-
--- ds.copy-regular:
-
-$hero.body
-
--- ds.icon-button: Start Building
-link: $site-data.sign-in-url
-icon-position: at-end
-icon: $assets.files.assets.sites.arrow.svg
-radius: curved
-
--- end: ds.column
+-- hero-content: $hero.title
+highlight-text: $hero.highlight-text
+body: $hero.body
 
 -- ftd.image:
 src: $assets.files.assets.homepage.hero.svg
@@ -120,43 +85,15 @@ min-width.fixed.percent: 50
 -- ftd.mobile:
 
 -- ds.column:
-inset: $ds.spaces.inset-wide.medium
-
--- ds.column:
-align-content: left
 spacing: $ds.spaces.vertical-gap.large
 
 -- ftd.image:
 src: $assets.files.assets.homepage.hero.svg
 width: fill-container
 
--- ds.container:
-margin-vertical: $ds.spaces.vertical-gap.zero
-margin-horizontal: $ds.spaces.vertical-gap.zero
-
--- ds.heading-large: $hero.title 
-width: hug-content
-
--- ftd.text: $hero.highlight-text
-role: $inherited.types.heading-large
-margin-left.px: 10
-display: inline
-width: hug-content
-color: $ds.colors.accent.primary
-
--- end: ds.container
-
--- ds.copy-regular:
-
-$hero.body
-
--- ds.icon-button: Start Building
-link: $site-data.sign-in-url
-icon-position: at-end
-icon: $assets.files.assets.sites.arrow.svg
-radius: curved
-
--- end: ds.column
+-- hero-content: $hero.title
+highlight-text: $hero.highlight-text
+body: $hero.body
 
 -- end: ds.column
 
@@ -170,7 +107,42 @@ radius: curved
 
 
 
+-- component hero-content:
+caption title:
+string highlight-text:
+body body:
 
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.container:
+
+-- ds.heading-large: $hero-content.title 
+width: hug-content
+
+-- ftd.text: $hero-content.highlight-text
+role: $inherited.types.heading-large
+margin-left.px: 10
+display: inline
+width: hug-content
+color: $ds.colors.accent.primary
+
+-- end: ds.container
+
+-- ds.copy-regular:
+
+$hero-content.body
+
+-- ds.icon-button: Start Building
+link: $site-data.sign-in-url
+icon-position: at-end
+icon: $assets.files.assets.sites.arrow.svg
+radius: curved
+
+-- end: ds.column
+
+-- end: hero-content
 
 
 
@@ -181,11 +153,6 @@ optional caption title:
 cards list card-list:
 
 -- ds.section-column:
-flush if { ftd.device != "mobile" }: full
-inset: $ds.spaces.inset-square.large
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
-
--- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-large
 
 -- ds.heading-large: $card.title
@@ -213,16 +180,9 @@ $obj.body
 
 -- end: ds.row
 
--- end: ds.column
-
 -- end: ds.section-column
 
 -- end: card
-
-
-
-
-
 
 
 
@@ -241,9 +201,8 @@ optional string text:
 optional string cta-text:
 optional string cta-link:
 
-
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 320
+max-width.fixed.px: 358
 height.fixed.px: 424
 height.fixed.px if { ftd.device == "mobile" }: 380
 background.solid: $ds.colors.background.step-1
@@ -315,17 +274,9 @@ size: small
 
 -- end: ds.row
 
-
 -- end: ds.column
 
 -- end: card-info
-
-
-
-
-
-
-
 
 
 
@@ -336,11 +287,6 @@ optional caption title:
 section-cards list section-card-list:
 
 -- ds.section-column:
-flush if { ftd.device != "mobile" }: full
-inset: $ds.spaces.inset-square.large
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
-
--- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-large
 
 -- ds.heading-large: $section-card.title
@@ -358,16 +304,9 @@ text: $obj.text
 
 -- end: ds.row
 
--- end: ds.column
-
 -- end: ds.section-column
 
 -- end: section-card
-
-
-
-
-
 
 
 
@@ -379,13 +318,14 @@ string fastn:
 string text:
 
 -- ds.container:
-width.fixed.px if { ftd.device != "mobile" }: 454
+width.fixed.px if { ftd.device != "mobile" }: 540
 width: fill-container
 background.solid: $ds.colors.background.step-1
 inset: $ds.spaces.inset-square.large
 margin-vertical if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.zero
 margin-horizontal if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.zero
 border: $ds.borders.uniform.small
+radius: $ds.radius.medium
 
 -- ds.heading-small: $section-card-info.title
 width: hug-content
@@ -412,10 +352,6 @@ color: $ds.colors.text-strong
 
 
 
-
-
-
-
 -- component testimonial:
 caption title:
 body body:
@@ -424,16 +360,9 @@ string author-name:
 string role:
 
 -- ds.section-column:
-flush if { ftd.device != "mobile" }: full
-inset: $ds.spaces.inset-square.large
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
-
--- ds.column:
 spacing: $ds.spaces.vertical-gap.large
-width: hug-content
 
 -- ds.heading-medium: $testimonial.title
-width: hug-content
 align: center
 
 -- ds.copy-regular: $testimonial.body
@@ -455,21 +384,14 @@ spacing: $ds.spaces.vertical-gap.extra-small
 -- ds.copy-large: $testimonial.author-name
 
 -- ds.copy-regular: $testimonial.role
-width: hug-content
 
 -- end: ds.column
 
 -- end: ds.row
 
--- end: ds.column
-
 -- end: ds.section-column
 
 -- end: testimonial
-
-
-
-
 
 
 
@@ -481,16 +403,10 @@ caption title:
 testimonials list testimonial-list:
 
 -- ds.section-column:
-flush if { ftd.device != "mobile" }: full
-inset: $ds.spaces.inset-square.large
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
-
--- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-large
 
 -- ds.heading-large: $testimonial-card.title
 if: { testimonial-card.title != NULL }
-width: hug-content
 align: center
 
 -- ds.row:
@@ -509,16 +425,9 @@ card-4: $obj.card-4
 
 -- end: ds.row
 
--- end: ds.column
-
 -- end: ds.section-column
 
 -- end: testimonial-card
-
-
-
-
-
 
 
 
@@ -535,7 +444,7 @@ optional ftd.shadow card-3:
 optional ftd.shadow card-4:
 
 -- ds.column:
-width.fixed.px if { ftd.device != "mobile" }: 460
+max-width.fixed.px: 538
 height.fixed.px: 350
 height if { ftd.device == "mobile" }: hug-content
 align-content: top-left
@@ -580,25 +489,14 @@ width: hug-content
 
 
 
-
-
-
-
-
 -- component fastn-power:
 caption title:
 body body:
 string number:
 
 -- ds.section-column:
-flush: full
-inset: $ds.spaces.inset-square.zero
-
--- ftd.desktop:
-
--- ds.column:
+margin: $ds.spaces.vertical-gap.medium
 spacing: $ds.spaces.vertical-gap.large
-inset: $ds.spaces.inset-square.large
 
 -- ds.heading-large: $fastn-power.number
 color: $ds.colors.accent.primary
@@ -609,7 +507,8 @@ src: $assets.files.assets.homepage.circle.svg
 width.fixed.px: 208
 height.fixed.px: 160
 anchor: parent
-top.px: -16
+top.px if { ftd.device != "mobile" }: -50
+top.px if { ftd.device == "mobile" }: -54
 
 -- ds.row:
 
@@ -620,56 +519,16 @@ align: center
 -- ftd.image:
 src: $assets.files.assets.homepage.git.svg
 align-self: center
-width.fixed.px: 56
-height.fixed.px: 56
+width.fixed.px if { ftd.device != "mobile" }: 56
+height.fixed.px if { ftd.device != "mobile" }: 56
+width.fixed.px if { ftd.device == "mobile" }: 36
+height.fixed.px if { ftd.device == "mobile" }: 36
 
 -- end: ds.row
 
 -- ds.copy-regular: $fastn-power.body
-width.fixed.px: 640
+width.fixed.px if { ftd.device != "mobile" }: 640
 align: center
-
--- end: ds.column
-
--- end: ftd.desktop
-
--- ftd.mobile:
-
--- ds.column:
-inset: $ds.spaces.inset-square.medium
-spacing: $ds.spaces.vertical-gap.large
-
--- ds.heading-large: $fastn-power.number
-color: $ds.colors.accent.primary
-width: hug-content
-
--- ftd.image:
-src: $assets.files.assets.homepage.circle.svg
-width.fixed.px: 208
-height.fixed.px: 160
-anchor: parent
-top.px: -56
-
--- ds.row:
-
--- ds.heading-medium: $fastn-power.title
-width: hug-content
-align: center
-
--- ftd.image:
-src: $assets.files.assets.homepage.git.svg
-align-self: center
-width.fixed.px: 38
-height.fixed.px: 38
-
--- end: ds.row
-
--- ds.copy-large: $fastn-power.body
-align: center
-
--- end: ds.column
-
--- end: ftd.mobile
 
 -- end: ds.section-column
 

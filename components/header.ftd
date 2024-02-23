@@ -14,12 +14,12 @@ boolean $menu: false
 
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.zero
-spacing: $ds.spaces.vertical-gap.zero
+inset: $ds.spaces.inset-wide.medium
 
 	-- ftd.desktop:
 
         -- ds.row:
-        inset: $ds.spaces.inset-square.medium
+        inset: $ds.spaces.inset-tall.zero-small
         spacing: $ds.spaces.horizontal-gap.space-between
         border: $ds.borders.bottom.small
         radius: $ds.radius.zero
@@ -93,7 +93,6 @@ spacing: $ds.spaces.vertical-gap.zero
 
         -- end: ds.row
 
-
 	-- end: ftd.desktop
 
 	-- ftd.mobile:
@@ -103,7 +102,6 @@ spacing: $ds.spaces.vertical-gap.zero
 		align-content: left
 		spacing: $ds.spaces.horizontal-gap.space-between
 		background.solid: $ds.colors.background.base
-		inset: $ds.spaces.inset-wide.medium
 		height.fixed.px: 80
 		
 			-- ftd.image:
