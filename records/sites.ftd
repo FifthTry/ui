@@ -41,10 +41,13 @@ boolean is-active: false
 string file-type:  ftd ;; folder, FASTN, FTD, Image, Video, Text, Markdown, Source
 file-info list children:
 
+-- record file-text:
+caption lang: ftd ;; compatible with ftd.code.lang
+body content: ;; not present in case of binary files
 
 -- record file:
 caption base-name:
 string full-name: $file.base-name
-string lang: ftd ;; compatible with ftd.code.lang
+string file-type:  ftd ;; folder, FASTN, FTD, Image, Video, Text, Markdown, Source
 string url:
-optional body content: ;; not present in case of binary files
+optional file-text text:

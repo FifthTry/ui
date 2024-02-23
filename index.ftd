@@ -1,10 +1,15 @@
--- import: ui.fifthtry.com/lib
+-- ds.page: FifthTry UIs
 
--- lib.page: FifthTry UIs
+-- ds.section-column:
+align-content: top-left
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.medium.gap
+
+-- ds.copy-regular:
 
 These are list of products/websites hosted by FifthTry.
 
--- lib.h1: Website Pages
+-- page-block: Website Pages
 
 - [Logged in Home page](/scenarios/logged-in-home/)
 - [Logged out Home page](/scenarios/logged-out-home/)
@@ -16,23 +21,23 @@ These are list of products/websites hosted by FifthTry.
 - [Team page](/scenarios/about/team-page/)
 - [About Us page](/scenarios/about/)
 
--- lib.h1: Auth Pages
+-- page-block: Auth Pages
 
 - [Login page](/scenarios/signin-page/)
 - [Signup page](/scenarios/signup-page/)
 - [Forgot Password page](/scenarios/forgot-password/)
 - [Password Recovery page](/scenarios/password-recovery/)
 
--- lib.h1: Org Pages
+-- page-block: Org Pages
 
 - [Org dashboard](/scenarios/org/dashboard/)
 
--- lib.h1: User Pages
+-- page-block: User Pages
 
 - [User dashboard](/scenarios/user/dashboard/)
 - [Create Site](/scenarios/user/create-site/)
 
--- lib.h1: Site Pages
+-- page-block: Site Pages
 
 - [Site Info](/scenarios/sites/site-info/)
 - [Site Domains](/scenarios/sites/domains/)
@@ -41,18 +46,38 @@ These are list of products/websites hosted by FifthTry.
 - [Github (Configured)](/scenarios/sites/github-configured/)
 - [Coming Soon page](/scenarios/sites/coming-soon/)
 
--- lib.h1: Site Editor Pages
+-- page-block: Site Editor Pages
 
 - [Site Editor](/scenarios/sites/editor/)
 
 
--- lib.h1: University Scenarios
+-- page-block: University Scenarios
 
 - [University Homepage](/scenarios/university/home-page/)
 - [f4e course](/scenarios/university/f4e-course/)
 
--- lib.h1: Onboarding Scenarios
+-- page-block: Onboarding Scenarios
 
 - [Onboarding Ishaan](/scenarios/cards/onboarding-ishaan/)
 
--- end: lib.page
+-- end: ds.section-column
+
+-- end: ds.page
+
+
+-- component page-block:
+caption title:
+body body:
+
+-- ds.column:
+align-content: top-left
+spacing: $ds.spaces.vertical-gap.medium.gap
+
+-- ds.heading-medium: $page-block.title
+
+-- ds.copy-regular:
+
+$page-block.body
+
+-- end: ds.column
+-- end: page-block
