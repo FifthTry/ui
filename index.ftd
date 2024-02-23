@@ -15,7 +15,6 @@ These are list of products/websites hosted by FifthTry.
 - [Privacy page](/scenarios/about/privacy-page/)
 - [Team page](/scenarios/about/team-page/)
 - [About Us page](/scenarios/about/)
-- [Coming Soon page](/scenarios/coming-soon/)
 
 -- lib.h1: Auth Pages
 
@@ -40,6 +39,7 @@ These are list of products/websites hosted by FifthTry.
 - [Github (Un-configured)](/scenarios/sites/github/)
 - [Github (Configure form)](/scenarios/sites/configure-github/)
 - [Github (Configured)](/scenarios/sites/github-configured/)
+- [Coming Soon page](/scenarios/sites/coming-soon/)
 
 -- lib.h1: Site Editor Pages
 
