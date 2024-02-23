@@ -2,14 +2,14 @@
 
 -- ds.section-column:
 align-content: top-left
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.medium.gap
 
 -- ds.copy-regular:
 
 These are list of products/websites hosted by FifthTry.
 
--- ds.heading-medium: Website Pages
-
--- ds.copy-regular:
+-- page-block: Website Pages
 
 - [Logged in Home page](/scenarios/logged-in-home/)
 - [Logged out Home page](/scenarios/logged-out-home/)
@@ -21,31 +21,23 @@ These are list of products/websites hosted by FifthTry.
 - [Team page](/scenarios/about/team-page/)
 - [About Us page](/scenarios/about/)
 
--- ds.heading-medium: Auth Pages
-
--- ds.copy-regular:
+-- page-block: Auth Pages
 
 - [Login page](/scenarios/signin-page/)
 - [Signup page](/scenarios/signup-page/)
 - [Forgot Password page](/scenarios/forgot-password/)
 - [Password Recovery page](/scenarios/password-recovery/)
 
--- ds.heading-medium: Org Pages
-
--- ds.copy-regular:
+-- page-block: Org Pages
 
 - [Org dashboard](/scenarios/org/dashboard/)
 
--- ds.heading-medium: User Pages
-
--- ds.copy-regular:
+-- page-block: User Pages
 
 - [User dashboard](/scenarios/user/dashboard/)
 - [Create Site](/scenarios/user/create-site/)
 
--- ds.heading-medium: Site Pages
-
--- ds.copy-regular:
+-- page-block: Site Pages
 
 - [Site Info](/scenarios/sites/site-info/)
 - [Site Domains](/scenarios/sites/domains/)
@@ -54,26 +46,38 @@ These are list of products/websites hosted by FifthTry.
 - [Github (Configured)](/scenarios/sites/github-configured/)
 - [Coming Soon page](/scenarios/sites/coming-soon/)
 
--- ds.heading-medium: Site Editor Pages
-
--- ds.copy-regular:
+-- page-block: Site Editor Pages
 
 - [Site Editor](/scenarios/sites/editor/)
 
 
--- ds.heading-medium: University Scenarios
-
--- ds.copy-regular:
+-- page-block: University Scenarios
 
 - [University Homepage](/scenarios/university/home-page/)
 - [f4e course](/scenarios/university/f4e-course/)
 
--- ds.heading-medium: Onboarding Scenarios
-
--- ds.copy-regular:
+-- page-block: Onboarding Scenarios
 
 - [Onboarding Ishaan](/scenarios/cards/onboarding-ishaan/)
 
 -- end: ds.section-column
 
 -- end: ds.page
+
+
+-- component page-block:
+caption title:
+body body:
+
+-- ds.column:
+align-content: top-left
+spacing: $ds.spaces.vertical-gap.medium.gap
+
+-- ds.heading-medium: $page-block.title
+
+-- ds.copy-regular:
+
+$page-block.body
+
+-- end: ds.column
+-- end: page-block
