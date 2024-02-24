@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/site-data
 
 -- component footer:
+module site-data: site-data
 
 -- ds.section-column:
 inset: $ds.spaces.inset-wide.medium
