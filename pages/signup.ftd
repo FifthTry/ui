@@ -17,6 +17,7 @@ private string $current-email: *$ftd.empty
 private string $current-username: *$ftd.empty
 private string $current-password: *$ftd.empty
 private string $confirm-password: *$ftd.empty
+private boolean $accept-tos: false
 
 -- ds.column:
 
@@ -189,11 +190,12 @@ private string $confirm-password: *$ftd.empty
 					-- end: ds.column
 
 
-					/-- ds.checkbox: I accept Terms and Conditions
+					-- ds.checkbox: I accept Terms and Conditions
+					$on-click$: $ftd.set-bool($a = $page.accept-tos, v = $CHECKED)
 					size: small
 					
 					-- ds.primary-button: Sign up
-					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password)
+					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept-tos = $page.accept-tos)
 					width: full
 					radius: curved
 					
@@ -393,11 +395,12 @@ private string $confirm-password: *$ftd.empty
 					
 				-- end: ds.column
 
-				/-- ds.checkbox: I accept Terms and Conditions
+				-- ds.checkbox: I accept Terms and Conditions
+				$on-click$: $ftd.set-bool($a = $page.accept-tos, v = $CHECKED)
 				size: small
 				
 				-- ds.primary-button: Sign up
-				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password)
+				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept-tos = $page.accept-tos)
 				width: full
 				radius: curved
 				
