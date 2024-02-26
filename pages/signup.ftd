@@ -191,7 +191,7 @@ private boolean $accept-tos: false
 
 
 					-- ds.checkbox: I accept Terms and Conditions
-					$on-click$: $ftd.set-bool($a = $page.accept-tos, v = $CHECKED)
+					$on-click$: $ftd.toggle($a = $page.accept-tos)
 					size: small
 					
 					-- ds.primary-button: Sign up
@@ -396,7 +396,7 @@ private boolean $accept-tos: false
 				-- end: ds.column
 
 				-- ds.checkbox: I accept Terms and Conditions
-				$on-click$: $ftd.set-bool($a = $page.accept-tos, v = $CHECKED)
+				$on-click$: $ftd.toggle($a = $page.accept-tos)
 				size: small
 				
 				-- ds.primary-button: Sign up
