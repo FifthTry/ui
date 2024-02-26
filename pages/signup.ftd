@@ -195,7 +195,7 @@ private boolean $accept-tos: false
 					align-content: left
 					
 						-- ds.checkbox: I accept Terms and Conditions
-						$on-click$: $ftd.toggle($a = $page.accept-tos)
+						$is-checked: $page.accept-tos
 						$on-click$: $utils.set-null($var = $page.signup-action.accept-terms-error)
 						size: small
 						
@@ -411,7 +411,7 @@ private boolean $accept-tos: false
 				align-content: left
 				
 					-- ds.checkbox: I accept Terms and Conditions
-					$on-click$: $ftd.toggle($a = $page.accept-tos)
+					$is-checked: $page.accept-tos
 					$on-click$: $utils.set-null($var = $page.signup-action.accept-terms-error)
 					size: small
 					

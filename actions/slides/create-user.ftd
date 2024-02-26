@@ -15,5 +15,5 @@ string password2:
 boolean accept_terms:
 js: $assets.files.assets.functions.js
 
-callAlert("signup attempt")
+callAlert(__args__.accept_terms.get())
 ;; call submit with http options
