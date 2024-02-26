@@ -29,7 +29,7 @@ border: $ds.borders.top.small
 inset: $ds.spaces.inset-tall.zero-medium
 radius: $ds.radius.zero
 
--- ds.copy-small: © 2023 FifthTry. All rights reserved
+-- ds.copy-small: © 2024 FifthTry. All rights reserved
 -- footer-social-content:
 
 -- end: ds.row
@@ -44,7 +44,7 @@ align-content: top-left
 
 -- footer-toc-content:
 -- footer-logo-content:
--- ds.copy-small: © 2023 FifthTry. All rights reserved
+-- ds.copy-small: © 2024 FifthTry. All rights reserved
 -- footer-social-content:
 
 -- end: ds.column
