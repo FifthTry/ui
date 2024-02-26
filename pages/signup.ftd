@@ -190,10 +190,21 @@ private boolean $accept-tos: false
 					-- end: ds.column
 
 
-					-- ds.checkbox: I accept Terms and Conditions
-					$on-click$: $ftd.toggle($a = $page.accept-tos)
-					size: small
+					-- ds.column:
+					spacing: $ds.spaces.vertical-gap.extra-extra-small
+					align-content: left
 					
+						-- ds.checkbox: I accept Terms and Conditions
+						$on-click$: $ftd.toggle($a = $page.accept-tos)
+						$on-click$: $utils.set-null($var = $page.signup-action.accept-terms-error)
+						size: small
+						
+						-- ds.copy-small: $page.signup-action.accept-terms-error
+						if: { page.signup-action.accept-terms-error != NULL }
+						color: $ds.colors.error.text
+						
+					-- end: ds.column
+
 					-- ds.primary-button: Sign up
 					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 					width: full
@@ -395,10 +406,21 @@ private boolean $accept-tos: false
 					
 				-- end: ds.column
 
-				-- ds.checkbox: I accept Terms and Conditions
-				$on-click$: $ftd.toggle($a = $page.accept-tos)
-				size: small
+				-- ds.column:
+				spacing: $ds.spaces.vertical-gap.extra-extra-small
+				align-content: left
 				
+					-- ds.checkbox: I accept Terms and Conditions
+					$on-click$: $ftd.toggle($a = $page.accept-tos)
+					$on-click$: $utils.set-null($var = $page.signup-action.accept-terms-error)
+					size: small
+					
+					-- ds.copy-small: $page.signup-action.accept-terms-error
+					if: { page.signup-action.accept-terms-error != NULL }
+					color: $ds.colors.error.text
+					
+				-- end: ds.column
+
 				-- ds.primary-button: Sign up
 				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 				width: full
