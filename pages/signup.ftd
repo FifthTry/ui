@@ -195,7 +195,7 @@ private boolean $accept-tos: false
 					size: small
 					
 					-- ds.primary-button: Sign up
-					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept-tos = $page.accept-tos)
+					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 					width: full
 					radius: curved
 					
@@ -400,7 +400,7 @@ private boolean $accept-tos: false
 				size: small
 				
 				-- ds.primary-button: Sign up
-				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept-tos = $page.accept-tos)
+				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 				width: full
 				radius: curved
 				

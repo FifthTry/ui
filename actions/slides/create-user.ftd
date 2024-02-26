@@ -5,13 +5,13 @@
 -- optional string $confirm-password-error:
 
 
--- void submit-values(name, email, username, password, password2, accept-tos):
+-- void submit-values(name, email, username, password, password2, accept_terms):
 string name:
 string email:
 string username:
 string password:
 string password2:
-boolean accept-tos:
+boolean accept_terms:
 js: $assets.files.assets.functions.js
 
 callAlert("signup attempt")
