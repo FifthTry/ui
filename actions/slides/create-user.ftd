@@ -2,13 +2,15 @@
 -- optional string $username-error:
 -- optional string $email-error:
 -- optional string $password-error:
+-- optional string $repeat-password-error:
 
 
--- void submit-values(name, email, username, password):
+-- void submit-values(name, email, username, password, password2):
 string name:
 string email:
 string username:
 string password:
+string password2:
 js: $assets.files.assets.functions.js
 
 callAlert("signup attempt")
