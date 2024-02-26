@@ -189,6 +189,7 @@ private boolean $accept-tos: false
 						
 					-- end: ds.column
 
+					;; Accept Terms and Conditions checkbox
 
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-extra-small
@@ -405,6 +406,8 @@ private boolean $accept-tos: false
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
+
+				;; Accept Terms and Conditions checkbox
 
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
