@@ -2,7 +2,7 @@
 -- optional string $username-error:
 -- optional string $email-error:
 -- optional string $password-error:
--- optional string $repeat-password-error:
+-- optional string $confirm-password-error:
 
 
 -- void submit-values(name, email, username, password, password2):

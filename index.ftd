@@ -5,61 +5,61 @@ align-content: top-left
 inset: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.vertical-gap.medium.gap
 
--- ds.copy-regular:
-
-These are list of products/websites hosted by FifthTry.
-
--- page-block: Website Pages
-
-- [Logged in Home page](/scenarios/logged-in-home/)
-- [Logged out Home page](/scenarios/logged-out-home/)
-- [Logged In About page](/scenarios/about/logged-in-about/)
-- [Logged In Team page](/scenarios/about/logged-in-team/)
-- [Pricing page](/scenarios/about/pricing/)
-- [Term page](/scenarios/about/terms-page/)
-- [Privacy page](/scenarios/about/privacy-page/)
-- [Team page](/scenarios/about/team-page/)
-- [About Us page](/scenarios/about/)
-
--- page-block: Auth Pages
-
-- [Login page](/scenarios/signin-page/)
-- [Signup page](/scenarios/signup-page/)
-- [Forgot Password page](/scenarios/forgot-password/)
-- [Password Recovery page](/scenarios/password-recovery/)
-
--- page-block: Org Pages
-
-- [Org dashboard](/scenarios/org/dashboard/)
-
--- page-block: User Pages
-
-- [User dashboard](/scenarios/user/dashboard/)
-- [Create Site](/scenarios/user/create-site/)
-
--- page-block: Site Pages
-
-- [Site Info](/scenarios/sites/site-info/)
-- [Site Domains](/scenarios/sites/domains/)
-- [Github (Un-configured)](/scenarios/sites/github/)
-- [Github (Configure form)](/scenarios/sites/configure-github/)
-- [Github (Configured)](/scenarios/sites/github-configured/)
-- [Coming Soon page](/scenarios/sites/coming-soon/)
-
--- page-block: Site Editor Pages
-
-- [Site Editor](/scenarios/sites/editor/)
-
-
--- page-block: University Scenarios
-
-- [University Homepage](/scenarios/university/home-page/)
-- [f4e course](/scenarios/university/f4e-course/)
-
--- page-block: Onboarding Scenarios
-
-- [Onboarding Ishaan](/scenarios/cards/onboarding-ishaan/)
-
+	-- ds.copy-regular:
+	
+	These are list of products/websites hosted by FifthTry.
+	
+	-- page-block: Website Pages
+	
+	- [Logged in Home page](/scenarios/logged-in-home/)
+	- [Logged out Home page](/scenarios/logged-out-home/)
+	- [Logged In About page](/scenarios/about/logged-in-about/)
+	- [Logged In Team page](/scenarios/about/logged-in-team/)
+	- [Pricing page](/scenarios/about/pricing/)
+	- [Term page](/scenarios/about/terms-page/)
+	- [Privacy page](/scenarios/about/privacy-page/)
+	- [Team page](/scenarios/about/team-page/)
+	- [About Us page](/scenarios/about/)
+	
+	-- page-block: Auth Pages
+	
+	- [Login page](/scenarios/signin-page/)
+	- [Signup page](/scenarios/signup-page/)
+	- [Forgot Password page](/scenarios/forgot-password/)
+	- [Password Recovery page](/scenarios/password-recovery/)
+	
+	-- page-block: Org Pages
+	
+	- [Org dashboard](/scenarios/org/dashboard/)
+	
+	-- page-block: User Pages
+	
+	- [User dashboard](/scenarios/user/dashboard/)
+	- [Create Site](/scenarios/user/create-site/)
+	
+	-- page-block: Site Pages
+	
+	- [Site Info](/scenarios/sites/site-info/)
+	- [Site Domains](/scenarios/sites/domains/)
+	- [Github (Un-configured)](/scenarios/sites/github/)
+	- [Github (Configure form)](/scenarios/sites/configure-github/)
+	- [Github (Configured)](/scenarios/sites/github-configured/)
+	- [Coming Soon page](/scenarios/sites/coming-soon/)
+	
+	-- page-block: Site Editor Pages
+	
+	- [Site Editor](/scenarios/sites/editor/)
+	
+	
+	-- page-block: University Scenarios
+	
+	- [University Homepage](/scenarios/university/home-page/)
+	- [f4e course](/scenarios/university/f4e-course/)
+	
+	-- page-block: Onboarding Scenarios
+	
+	- [Onboarding Ishaan](/scenarios/cards/onboarding-ishaan/)
+	
 -- end: ds.section-column
 
 -- end: ds.page
@@ -73,11 +73,11 @@ body body:
 align-content: top-left
 spacing: $ds.spaces.vertical-gap.medium.gap
 
--- ds.heading-medium: $page-block.title
-
--- ds.copy-regular:
-
-$page-block.body
-
+	-- ds.heading-medium: $page-block.title
+	
+	-- ds.copy-regular:
+	
+	$page-block.body
+	
 -- end: ds.column
 -- end: page-block

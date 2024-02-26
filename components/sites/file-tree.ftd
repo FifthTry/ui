@@ -69,7 +69,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
 		if: { ftd.len(file-view.file.children) > 0 && !file-view.file.is-active }
 		width.fixed.px: 10
 		align-self: center
-
+		
 		-- ftd.image: $assets.files.assets.file.svg
 		if: { ftd.len(file-view.file.children) == 0 }
 		width.fixed.px: 20

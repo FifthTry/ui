@@ -10,5 +10,3 @@
 user-data: $john-doe.jd
 site-data: scenario-site
 data: $user-dashboard.data
-
-

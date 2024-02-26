@@ -178,7 +178,7 @@ private string $current-password: *$ftd.empty
 					placeholder: Enter username
 					type: text
 					$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
-                    $on-input$: $utils.set-null($var = $page.authenticate-user.username-error)
+					               $on-input$: $utils.set-null($var = $page.authenticate-user.username-error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
@@ -205,7 +205,7 @@ private string $current-password: *$ftd.empty
 					placeholder: Enter password
 					type: password
 					$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
-                    $on-input$: $utils.set-null($var = $page.authenticate-user.password-error)
+					               $on-input$: $utils.set-null($var = $page.authenticate-user.password-error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8

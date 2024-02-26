@@ -5,50 +5,47 @@
 caption sites-records.site-common-data site:
 
 -- ds.column:
-    -- ds.section-row:
-    flush: full
-    radius: $ds.radius.medium
-    inset: $ds.spaces.inset-square.large
-    border: $ds.borders.uniform.small
-    spacing: $ds.spaces.horizontal-gap.large
-    inner-background.solid: $ds.colors.background.step-1
-    link: $show-site-info.site.info-url
+	-- ds.section-row:
+	flush: full
+	radius: $ds.radius.medium
+	inset: $ds.spaces.inset-square.large
+	border: $ds.borders.uniform.small
+	spacing: $ds.spaces.horizontal-gap.large
+	inner-background.solid: $ds.colors.background.step-1
+	link: $show-site-info.site.info-url
+	
+	
+		-- ftd.image:
+		src: $show-site-info.site.preview-image
+		fit: cover
+		
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.medium
+		align-content: top-left
+		
+			-- ds.heading-small: $show-site-info.site.site-name
+			
+			-- ds.copy-small: $show-site-info.site.primary-domain
+			
+			-- ds.copy-small: $show-site-info.site.updated-on
+			
+		-- end: ds.column
 
+		-- ds.column:
+		height: fill-container
+		align-content: bottom-right
+		
+			-- ds.icon-button: Visit Site
+			icon: $assets.files.assets.sites.link.svg
+			link: $utils.with-https(domain = $show-site-info.site.primary-domain)
+			icon-position: at-end
+			kind: secondary
+			
+		-- end: ds.column
 
-        -- ftd.image:
-        src: $show-site-info.site.preview-image
-        fit: cover
-
-        -- ds.column:
-        spacing: $ds.spaces.vertical-gap.medium
-        align-content: top-left
-
-            -- ds.heading-small: $show-site-info.site.site-name
-
-            -- ds.copy-small: $show-site-info.site.primary-domain
-
-            -- ds.copy-small: $show-site-info.site.updated-on
-
-        -- end: ds.column
-
-        -- ds.column:
-        height: fill-container
-        align-content: bottom-right
-
-            -- ds.icon-button: Visit Site
-            icon: $assets.files.assets.sites.link.svg
-            link: $utils.with-https(domain = $show-site-info.site.primary-domain)
-            icon-position: at-end
-            kind: secondary
-
-        -- end: ds.column
-
-    -- end: ds.section-row
+	-- end: ds.section-row
 
 
 -- end: ds.column
 
 -- end: show-site-info
-
-
-

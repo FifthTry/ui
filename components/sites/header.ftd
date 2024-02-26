@@ -35,20 +35,20 @@ margin: $ds.spaces.vertical-gap.zero
 			
 				-- ftd.image: $header.site-data.logo
 				link: $header.site-data.homepage
-
-                -- ds.copy-regular: →
-                white-space: nowrap
-
-                -- ds.copy-regular: $header.site.account-name
-                link: $header.nav.dashboard-url
-                white-space: nowrap
-
-                -- ds.copy-regular: →
-                white-space: nowrap
-
+				
+				-- ds.copy-regular: →
+				white-space: nowrap
+				
+				-- ds.copy-regular: $header.site.account-name
+				link: $header.nav.dashboard-url
+				white-space: nowrap
+				
+				-- ds.copy-regular: →
+				white-space: nowrap
+				
 				-- ds.copy-regular: $header.site.site-name
-                white-space: nowrap
-
+				            white-space: nowrap
+				
 			-- end: ds.row
 
 			-- ds.row:
@@ -56,28 +56,28 @@ margin: $ds.spaces.vertical-gap.zero
 			align-content: right
 			;;width.fixed.px: 420
 			
-                -- tab-link: About
-                is-active if { header.nav.current-page == "info" }: true
-                link: $header.site.info-url
-
-                -- tab-link: Editor
-                is-active if { header.nav.current-page == "editor" }: true
-                link: $header.site.editor-url
-
-                -- tab-link: Domains
-                is-active if { header.nav.current-page == "domains" }: true
-                link: $header.site.domains-url
-
-                -- tab-link: Github
-                is-active if { header.nav.current-page == "github" }: true
-                link: $header.site.github-url
-
+				-- tab-link: About
+				is-active if { header.nav.current-page == "info" }: true
+				link: $header.site.info-url
+				
+				-- tab-link: Editor
+				is-active if { header.nav.current-page == "editor" }: true
+				link: $header.site.editor-url
+				
+				-- tab-link: Domains
+				is-active if { header.nav.current-page == "domains" }: true
+				link: $header.site.domains-url
+				
+				-- tab-link: Github
+				is-active if { header.nav.current-page == "github" }: true
+				link: $header.site.github-url
+				
 				-- avatar.avatar:
 				user-data: $header.user-data
 				
-
-                -- dark-mode-toggle.dark-mode-toggle:
-
+				
+				-- dark-mode-toggle.dark-mode-toggle:
+				
 			-- end: ds.row
 
 		-- end: ds.section-row
@@ -106,12 +106,7 @@ width: hug-content
 radius: $ds.radius.zero
 
 	-- ds.copy-regular: $tab-link.text
-
+	
 -- end: ds.row
 
 -- end: tab-link
-
-
-
-
-

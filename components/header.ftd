@@ -17,81 +17,81 @@ margin: $ds.spaces.vertical-gap.zero
 spacing: $ds.spaces.vertical-gap.zero
 
 	-- ftd.desktop:
+	
+		-- ds.row:
+		inset: $ds.spaces.inset-square.medium
+		spacing: $ds.spaces.horizontal-gap.space-between
+		border: $ds.borders.bottom.small
+		radius: $ds.radius.zero
+		
+			-- ftd.image:
+			src: $assets.files.assets.fifthtry-logo.svg
+			link: $header.site-data.homepage
+			
+			-- ds.row:
+			width: hug-content
+			spacing: $ds.spaces.horizontal-gap.medium
+			
+				-- ds.copy-regular: $lang.home
+				link: $header.site-data.homepage
+				
+				-- ds.copy-regular: $lang.pricing
+				link: $header.site-data.pricing-url
+				
+				/-- language-switcher.dropdown:
+				
+				-- avatar.avatar:
+				if: { header.user-data.is-logged-in }
+				user-data: $header.user-data
+				site-data: $header.site-data
+				
+				-- ds.secondary-button: $lang.sign-in
+				if: { !header.user-data.is-logged-in }
+				link: $header.site-data.sign-in-url
+				radius: curved
+				
+				-- ds.primary-button: $lang.sign-up
+				if: { !header.user-data.is-logged-in }
+				link: $header.site-data.sign-up-url
+				radius: curved
+				
+				-- ftd.image:
+				src: $assets.files.assets.system-mode-active.png
+				height.fixed.px: 24
+				align-self: center
+				width.fixed.px: 24
+				if: { ftd.follow-system-dark-mode }
+				$on-click$: $ftd.enable-light-mode()
+				
+				-- ftd.image:
+				src: $assets.files.assets.light-mode-active.png
+				height.fixed.px: 24
+				align-self: center
+				width.fixed.px: 24
+				if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
+				$on-click$: $ftd.enable-dark-mode()
+				
+				-- ftd.image:
+				if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
+				$on-click$: $ftd.enable-system-mode()
+				src: $assets.files.assets.dark-mode-active-dark.png
+				height.fixed.px: 24
+				align-self: center
+				width.fixed.px: 24
+				
+			-- end: ds.row
 
-        -- ds.row:
-        inset: $ds.spaces.inset-square.medium
-        spacing: $ds.spaces.horizontal-gap.space-between
-        border: $ds.borders.bottom.small
-        radius: $ds.radius.zero
+		-- end: ds.row
 
-            -- ftd.image:
-            src: $assets.files.assets.fifthtry-logo.svg
-            link: $header.site-data.homepage
-
-            -- ds.row:
-            width: hug-content
-            spacing: $ds.spaces.horizontal-gap.medium
-
-                -- ds.copy-regular: $lang.home
-                link: $header.site-data.homepage
-
-                -- ds.copy-regular: $lang.pricing
-                link: $header.site-data.pricing-url
-
-                /-- language-switcher.dropdown:
-
-                -- avatar.avatar:
-                if: { header.user-data.is-logged-in }
-                user-data: $header.user-data
-                site-data: $header.site-data
-
-                -- ds.secondary-button: $lang.sign-in
-                if: { !header.user-data.is-logged-in }
-                link: $header.site-data.sign-in-url
-                radius: curved
-
-                -- ds.primary-button: $lang.sign-up
-                if: { !header.user-data.is-logged-in }
-                link: $header.site-data.sign-up-url
-                radius: curved
-
-            -- ftd.image:
-            src: $assets.files.assets.system-mode-active.png
-            height.fixed.px: 24
-            align-self: center
-            width.fixed.px: 24
-            if: { ftd.follow-system-dark-mode }
-            $on-click$: $ftd.enable-light-mode()
-
-            -- ftd.image:
-            src: $assets.files.assets.light-mode-active.png
-            height.fixed.px: 24
-            align-self: center
-            width.fixed.px: 24
-            if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
-            $on-click$: $ftd.enable-dark-mode()
-
-            -- ftd.image:
-            if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
-            $on-click$: $ftd.enable-system-mode()
-            src: $assets.files.assets.dark-mode-active-dark.png
-            height.fixed.px: 24
-            align-self: center
-            width.fixed.px: 24
-
-            -- end: ds.row
-
-        -- end: ds.row
-
-        -- ds.row:
-        align-content: top-left
-        spacing: $ds.spaces.horizontal-gap.medium
-        inset: $ds.spaces.inset-wide.medium-zero
-
-            -- toc-link: $t
-            for: t in $header.links
-
-        -- end: ds.row
+		-- ds.row:
+		align-content: top-left
+		spacing: $ds.spaces.horizontal-gap.medium
+		inset: $ds.spaces.inset-wide.medium-zero
+		
+			-- toc-link: $t
+			for: t in $header.links
+			
+		-- end: ds.row
 
 
 	-- end: ftd.desktop
@@ -109,70 +109,70 @@ spacing: $ds.spaces.vertical-gap.zero
 			-- ftd.image:
 			src: $assets.files.assets.fifthtry-logo.svg
 			link: $header.site-data.homepage
-
+			
 			-- ftd.image:
 			src: $assets.files.assets.sites.menu.svg
 			$on-click$: $ftd.toggle($a = $header.menu)
-
+			
 			-- ds.floater:
 			if: { header.menu }
 			background.solid: $ds.colors.background.step-1
 			left: 0
 			top: 66
 			inset: $ds.spaces.inset-tall.medium
-
+			
 				-- ds.column:
 				spacing: $ds.spaces.horizontal-gap.large
-
+				
 					-- ds.header-link: $lang.home
 					link: $header.site-data.homepage
-
+					
 					-- ds.header-link: $lang.pricing
 					link: $header.site-data.pricing-url
-
+					
 					/-- language-switcher.dropdown:
-
+					
 					-- ds.secondary-button: $lang.sign-in
 					if: { !header.user-data.is-logged-in }
 					link: $header.site-data.sign-in-url
 					rounded: true
 					width: full
-
+					
 					-- ds.primary-button: $lang.sign-up
 					if: { !header.user-data.is-logged-in }
 					link: $header.site-data.sign-up-url
 					rounded: true
 					width: full
-
+					
 					-- avatar.avatar:
 					if: { header.user-data.is-logged-in }
 					user-data: $header.user-data
-
-                    -- ftd.image:
-                    src: $assets.files.assets.system-mode-active.png
-                    height.fixed.px: 24
-                    align-self: center
-                    width.fixed.px: 24
-                    if: { ftd.follow-system-dark-mode }
-                    $on-click$: $ftd.enable-light-mode()
-
-                    -- ftd.image:
-                    src: $assets.files.assets.light-mode-active.png
-                    height.fixed.px: 24
-                    align-self: center
-                    width.fixed.px: 24
-                    if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
-                    $on-click$: $ftd.enable-dark-mode()
-
-                    -- ftd.image:
-                    if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
-                    $on-click$: $ftd.enable-system-mode()
-                    src: $assets.files.assets.dark-mode-active-dark.png
-                    height.fixed.px: 24
-                    align-self: center
-                    width.fixed.px: 24
-
-
+					
+					-- ftd.image:
+					src: $assets.files.assets.system-mode-active.png
+					height.fixed.px: 24
+					align-self: center
+					width.fixed.px: 24
+					if: { ftd.follow-system-dark-mode }
+					$on-click$: $ftd.enable-light-mode()
+					
+					-- ftd.image:
+					src: $assets.files.assets.light-mode-active.png
+					height.fixed.px: 24
+					align-self: center
+					width.fixed.px: 24
+					if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
+					$on-click$: $ftd.enable-dark-mode()
+					
+					-- ftd.image:
+					if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
+					$on-click$: $ftd.enable-system-mode()
+					src: $assets.files.assets.dark-mode-active-dark.png
+					height.fixed.px: 24
+					align-self: center
+					width.fixed.px: 24
+					
+					
 				-- end: ds.column
 
 			-- end: ds.floater

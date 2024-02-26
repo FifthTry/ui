@@ -34,7 +34,7 @@ nav: $page.nav
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.extra-extra-large
-
+	
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
 		
@@ -48,7 +48,7 @@ nav: $page.nav
 				-- site-domain-info.domain-input:
 				add-domain: $page.add-domain
 				site-slug: $page.site.site-slug
-
+				
 			-- end: ds.section-column
 
 		-- end: ds.column
