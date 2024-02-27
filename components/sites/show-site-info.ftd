@@ -5,8 +5,6 @@
 caption sites-records.site-common-data site:
 
 -- ds.section-column:
-flush: full
-inset: $ds.spaces.inset-square.zero
 
 -- ftd.desktop:
 
@@ -24,14 +22,38 @@ inset: $ds.spaces.inset-square.zero
         width: fill-container
 
         -- ds.column:
-        spacing: $ds.spaces.vertical-gap.medium
+        spacing: $ds.spaces.vertical-gap.large
         align-content: top-left
 
-            -- ds.heading-small: $show-site-info.site.site-name
+        -- ds.column:
+        spacing: $ds.spaces.vertical-gap.extra-small
+        align-content: top-left
 
-            -- ds.copy-small: $show-site-info.site.primary-domain
+        -- ds.copy-regular: Website name
 
-            -- ds.copy-small: $show-site-info.site.updated-on
+        -- ds.heading-tiny: $show-site-info.site.site-name
+
+        -- end: ds.column
+
+        -- ds.column:
+        spacing: $ds.spaces.vertical-gap.extra-small
+        align-content: top-left
+
+        -- ds.copy-regular: Primary Domain
+
+            -- ds.heading-tiny: $show-site-info.site.primary-domain
+
+        -- end: ds.column
+
+        -- ds.column:
+        spacing: $ds.spaces.vertical-gap.extra-small
+        align-content: top-left
+
+        -- ds.copy-regular: Last Updated
+
+            -- ds.heading-tiny: $show-site-info.site.updated-on
+
+        -- end: ds.column
 
         -- end: ds.column
 

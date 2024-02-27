@@ -76,8 +76,7 @@ integer $active:
 
 -- ds.section-column:
 flush: full
-inset: $ds.spaces.inset-square.zero
-spacing: $ds.spaces.vertical-gap.zero
+margin: $ds.spaces.vertical-gap.zero
 
 	-- ftd.desktop:
 

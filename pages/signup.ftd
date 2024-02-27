@@ -23,12 +23,9 @@ private boolean $accept-tos: false
 
 	-- ftd.desktop:
 	
-		-- ds.section-row:
-		flush: full
-		inset: $ds.spaces.inset-square.zero
+		-- ds.row:
 		radius: $ds.radius.zero
-		outer-background.solid: $ds.colors.background.step-1
-		margin: $ds.spaces.vertical-gap.zero
+		background.solid: $ds.colors.background.step-1
 		align-content: top-center
 		
 			-- ftd.image:
@@ -52,7 +49,8 @@ private boolean $accept-tos: false
 				width: hug-content
 				
 				-- ds.column:
-				
+				spacing: $ds.spaces.vertical-gap.medium
+
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-extra-small
 					align-content: left
@@ -246,7 +244,7 @@ private boolean $accept-tos: false
 
 			-- end: ds.column
 
-		-- end: ds.section-row
+		-- end: ds.row
 
 	-- end: ftd.desktop
 

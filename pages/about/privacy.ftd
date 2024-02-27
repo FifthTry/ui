@@ -13,6 +13,8 @@ user-data: $page.user-data
 site-data: $page.site-data
 
 	-- ds.section-column:
+	spacing: $ds.spaces.vertical-gap.large
+	inset: $ds.spaces.inset-tall.zero-medium
 	
 		-- ds.heading-large: Privacy Policy – FifthTry Inc.
 		

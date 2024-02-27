@@ -13,6 +13,8 @@ user-data: $page.user-data
 site-data: $page.site-data
 
 	-- ds.section-column:
+	spacing: $ds.spaces.vertical-gap.large
+	inset: $ds.spaces.inset-tall.zero-medium
 	
 		-- ds.heading-large: Pricing
 		width: hug-content
@@ -24,6 +26,7 @@ site-data: $page.site-data
 		
 			-- ds.row:
 			inset: $ds.spaces.inset-tall.large
+			spacing: $ds.spaces.horizontal-gap.medium
 			
 				-- pricing: Personal
 				items: $free-pricing-items
@@ -137,7 +140,7 @@ border: $ds.borders.uniform.small
 align-content: top-center
 spacing: $ds.spaces.vertical-gap.large
 background.solid: $ds.colors.background.step-1
-inset: $ds.spaces.inset-wide.medium
+inset: $ds.spaces.inset-square.medium
 
 	-- ds.heading-medium: $pricing.name
 	width: hug-content

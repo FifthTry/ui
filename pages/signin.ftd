@@ -13,17 +13,16 @@ private string $current-password: *$ftd.empty
 
 	-- ftd.desktop:
 	
-		-- ds.section-row:
-		flush: full
-		inset: $ds.spaces.inset-square.zero
+		-- ds.row:
+		background.solid: $ds.colors.background.step-1
 		radius: $ds.radius.zero
-		outer-background.solid: $ds.colors.background.step-1
-		margin: $ds.spaces.vertical-gap.zero
 		align-content: top-center
+		height.fixed.vh: 100
 		
 			-- ftd.image:
 			src: $assets.files.assets.background.svg
 			width.fixed.percent: 70
+			height: fill-container
 			fit: cover
 			
 			-- ds.column:
@@ -42,6 +41,8 @@ private string $current-password: *$ftd.empty
 				width: hug-content
 				
 				-- ds.column:
+				spacing: $ds.spaces.vertical-gap.large
+
 				
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-extra-small
@@ -141,7 +142,7 @@ private string $current-password: *$ftd.empty
 
 			-- end: ds.column
 
-		-- end: ds.section-row
+		-- end: ds.row
 
 	-- end: ftd.desktop
 
@@ -154,7 +155,6 @@ private string $current-password: *$ftd.empty
 		spacing: $ds.spaces.vertical-gap.large
 		height.fixed.vh: 100
 		radius: $ds.radius.zero
-		
 		
 			-- ftd.image:
 			src: $page.site-data.logo
