@@ -69,14 +69,14 @@ spacing: $ds.spaces.vertical-gap.extra-small
 		if: { ftd.len(file-view.file.children) > 0 && !file-view.file.is-active }
 		width.fixed.px: 10
 		align-self: center
-
+		
 		-- ftd.image: $assets.files.assets.file.svg
 		if: { ftd.len(file-view.file.children) == 0 }
 		width.fixed.px: 20
 		align-self: center
 		
 		-- ftd.text: $file-view.file.base-name
-		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site-slug = $file-view.site-slug)
+		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site_slug = $file-view.site-slug)
 		$on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
 		role: $ds.types.copy-small
 		color: $ds.colors.text-strong

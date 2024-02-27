@@ -14,7 +14,7 @@ site-data: $page.site-data
 
 	-- ds.section-column:
 	inset: $ds.spaces.inset-tall.zero-medium
-
+	
 		-- ds.heading-large: About FifthTry
 		
 		-- ds.copy-regular:

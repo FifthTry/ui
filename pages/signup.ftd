@@ -16,6 +16,8 @@ private string $current-name: *$ftd.empty
 private string $current-email: *$ftd.empty
 private string $current-username: *$ftd.empty
 private string $current-password: *$ftd.empty
+private string $confirm-password: *$ftd.empty
+private boolean $accept-tos: false
 
 -- ds.column:
 
@@ -61,7 +63,7 @@ private string $current-password: *$ftd.empty
 						width: fill-container
 						type: text
 						$on-input$: $ftd.set-string($a = $page.current-name, v = $VALUE)
-                        $on-input$: $utils.set-null($var = $page.signup-action.name-error)
+						                  $on-input$: $utils.set-null($var = $page.signup-action.name-error)
 						height.fixed.px: 40
 						border-radius.px: 8
 						placeholder: name
@@ -160,11 +162,52 @@ private string $current-password: *$ftd.empty
 					-- end: ds.column
 
 
-					/-- ds.checkbox: I accept Terms and Conditions
-					size: small
+					-- ds.column:
+					spacing: $ds.spaces.vertical-gap.extra-extra-small
+					align-content: left
 					
+						-- ds.copy-small: Confirm Password
+						
+						-- ftd.text-input:
+						placeholder: Enter password again
+						type: password
+						$on-input$: $ftd.set-string($a = $page.confirm-password, v = $VALUE)
+						$on-input$: $utils.set-null($var = $page.signup-action.confirm-password-error)
+						width: fill-container
+						height.fixed.px: 40
+						border-radius.px: 8
+						background.solid: transparent
+						border-width.px: 1
+						border-color: $inherited.colors.border
+						border-color if { page.signup-action.confirm-password-error != NULL }: $inherited.colors.error.border
+						padding.px: 8
+						color: $inherited.colors.text-strong
+						
+						-- ds.copy-small: $page.signup-action.password-error
+						if: { page.signup-action.confirm-password-error != NULL }
+						color: $ds.colors.error.text
+						
+					-- end: ds.column
+
+					;; Accept Terms and Conditions checkbox
+
+					-- ds.column:
+					spacing: $ds.spaces.vertical-gap.extra-extra-small
+					align-content: left
+					
+						-- ds.checkbox: I accept Terms and Conditions
+						$is-checked: $page.accept-tos
+						$on-click$: $utils.set-null($var = $page.signup-action.accept-terms-error)
+						size: small
+						
+						-- ds.copy-small: $page.signup-action.accept-terms-error
+						if: { page.signup-action.accept-terms-error != NULL }
+						color: $ds.colors.error.text
+						
+					-- end: ds.column
+
 					-- ds.primary-button: Sign up
-					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password)
+					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 					width: full
 					radius: curved
 					
@@ -239,7 +282,7 @@ private string $current-password: *$ftd.empty
 					width: fill-container
 					type: text
 					$on-input$: $ftd.set-string($a = $page.current-name, v = $VALUE)
-                    $on-input$: $utils.set-null($var = $page.signup-action.name-error)
+					               $on-input$: $utils.set-null($var = $page.signup-action.name-error)
 					height.fixed.px: 40
 					border-radius.px: 8
 					placeholder: name
@@ -266,7 +309,7 @@ private string $current-password: *$ftd.empty
 					width: fill-container
 					type: text
 					$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
-                    $on-input$: $utils.set-null($var = $page.signup-action.username-error)
+					               $on-input$: $utils.set-null($var = $page.signup-action.username-error)
 					height.fixed.px: 40
 					border-radius.px: 8
 					placeholder: username
@@ -293,7 +336,7 @@ private string $current-password: *$ftd.empty
 					placeholder: Enter email
 					type: email
 					$on-input$: $ftd.set-string($a = $page.current-email, v = $VALUE)
-                    $on-input$: $utils.set-null($var = $page.signup-action.email-error)
+					               $on-input$: $utils.set-null($var = $page.signup-action.email-error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
@@ -320,7 +363,7 @@ private string $current-password: *$ftd.empty
 					placeholder: Enter password
 					type: password
 					$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
-                    $on-input$: $utils.set-null($var = $page.signup-action.password-error)
+					               $on-input$: $utils.set-null($var = $page.signup-action.password-error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
@@ -337,11 +380,52 @@ private string $current-password: *$ftd.empty
 					
 				-- end: ds.column
 
-				/-- ds.checkbox: I accept Terms and Conditions
-				size: small
+				-- ds.column:
+				spacing: $ds.spaces.vertical-gap.extra-extra-small
+				align-content: left
 				
+					-- ds.copy-small: Confirm Password
+					
+					-- ftd.text-input:
+					placeholder: Enter password again
+					type: password
+					$on-input$: $ftd.set-string($a = $page.confirm-password, v = $VALUE)
+					$on-input$: $utils.set-null($var = $page.signup-action.confirm-password-error)
+					width: fill-container
+					height.fixed.px: 40
+					border-radius.px: 8
+					background.solid: transparent
+					border-width.px: 1
+					border-color: $inherited.colors.border
+					border-color if { page.signup-action.confirm-password-error != NULL }: $inherited.colors.error.border
+					padding.px: 8
+					color: $inherited.colors.text-strong
+					
+					-- ds.copy-small: $page.signup-action.password-error
+					if: { page.signup-action.confirm-password-error != NULL }
+					color: $ds.colors.error.text
+					
+				-- end: ds.column
+
+				;; Accept Terms and Conditions checkbox
+
+				-- ds.column:
+				spacing: $ds.spaces.vertical-gap.extra-extra-small
+				align-content: left
+				
+					-- ds.checkbox: I accept Terms and Conditions
+					$is-checked: $page.accept-tos
+					$on-click$: $utils.set-null($var = $page.signup-action.accept-terms-error)
+					size: small
+					
+					-- ds.copy-small: $page.signup-action.accept-terms-error
+					if: { page.signup-action.accept-terms-error != NULL }
+					color: $ds.colors.error.text
+					
+				-- end: ds.column
+
 				-- ds.primary-button: Sign up
-				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password)
+				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 				width: full
 				radius: curved
 				

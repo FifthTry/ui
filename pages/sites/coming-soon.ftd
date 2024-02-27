@@ -18,14 +18,14 @@ nav: $page.nav
 
 	-- ds.section-column:
 	inset: $ds.spaces.inset-tall.zero-medium
-
+	
 		-- ds.heading-large: Coming Soon
-
+		
 		-- ds.copy-regular:
 		align: left
-
+		
 		This page is under development.
-
+		
 	-- end: ds.section-column
 
 -- end: sites-page.page
