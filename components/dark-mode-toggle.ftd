@@ -6,25 +6,32 @@ inset: $ds.spaces.inset-square.medium
 height.fixed.px: 24
 width.fixed.px: 24
 
-	-- ftd.image:
-	if: { ftd.follow-system-dark-mode }
-	$on-click$: $ftd.enable-light-mode()
-	src: $assets.files.assets.auto-mode.svg
-	align-self: center
-	
-	
-	-- ftd.image:
-	if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
-	$on-click$: $ftd.enable-dark-mode()
-	src: $assets.files.assets.light-mode.svg
-	align-self: center
-	
-	
-	-- ftd.image:
-	if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
-	$on-click$: $ftd.enable-system-mode()
-	src: $assets.files.assets.dark-mode.svg
-	align-self: center
+-- ds.row:
+if: { ftd.follow-system-dark-mode }
+$on-click$: $ftd.enable-light-mode()
+
+-- ftd.image:
+src: $assets.files.assets.auto-mode.svg
+
+-- end: ds.row
+
+-- ds.row:
+if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
+$on-click$: $ftd.enable-dark-mode()
+
+-- ftd.image:
+src: $assets.files.assets.light-mode.svg
+
+-- end: ds.row
+
+-- ds.row:
+if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
+$on-click$: $ftd.enable-system-mode()
+
+-- ftd.image:
+src: $assets.files.assets.dark-mode-dark.svg
+
+-- end: ds.row
 	
 -- end: ds.row
 
