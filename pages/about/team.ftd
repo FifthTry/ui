@@ -14,8 +14,7 @@ user-data: $page.user-data
 site-data: $page.site-data
 
 	-- ds.section-column:
-	flush: full
-	inset: $ds.spaces.inset-square.zero
+	margin: $ds.spaces.vertical-gap.zero
 	
 		-- team: Meet the team
 		
@@ -75,59 +74,46 @@ caption title:
 body body:
 children team-wrap:
 
--- ftd.column:
-width: fill-container
-padding-vertical.px if { ftd.device == "mobile" }: 30
-padding-vertical.px: 100
+-- ds.section-column:
+inset: $ds.spaces.inset-tall.zero-medium
+spacing: $ds.spaces.vertical-gap.large
+margin: $ds.spaces.vertical-gap.zero
 
-	-- ftd.column:
-	width: fill-container
-	max-width.fixed.px: 1320
+	-- ds.column:
 	align-content: center
-	margin-bottom.px: 100
-	spacing.fixed.px: 16
+	spacing: $ds.spaces.vertical-gap.small
+	inset: $$ds.spaces.inset-tall.large
 	
-		-- ftd.text: $team.title
-		role: $inherited.types.heading-large
-		color: $inherited.colors.text-strong
-		text-align: center
+		-- ds.heading-large: $team.title
+		align: center
 		
-		-- ftd.text:
-		role: $inherited.types.copy-regular
-		color: $inherited.colors.text
-		text-align: center
+		-- ds.copy-regular:
+		align: center
 		
 		$team.body
 		
-	-- end: ftd.column
+	-- end: ds.column
 
 	-- ftd.desktop:
 	
-		-- ftd.row:
-		width: fill-container
-		max-width.fixed.px: 1120
-		align-self: center
+		-- ds.row:
 		wrap: true
-		children: $team.team-wrap
-		spacing: space-between
+		content: $team.team-wrap
+		spacing: $ds.spaces.horizontal-gap.space-between
 		
-		-- end: ftd.row
+		-- end: ds.row
 
 	-- end: ftd.desktop
 
-
 	-- ftd.mobile:
 	
-		-- ftd.column:
-		width: fill-container
-		children: $team.team-wrap
-		align-self: center
-		align-content: center
+		-- ds.column:
+		content: $team.team-wrap
 		
-		-- end: ftd.column
+		-- end: ds.column
 
 	-- end: ftd.mobile
 
--- end: ftd.column
+-- end: ds.section-column
 
 -- end: team

@@ -22,13 +22,14 @@ create-site-url: $page.create-site-url
 	-- ftd.desktop:
 	
 		-- ds.section-column:
-		inner-background.solid: $ds.colors.background.step-1
-		border: $ds.borders.uniform.small
-		inset: $ds.spaces.inset-square.large
-		spacing: $ds.spaces.vertical-gap.large
-		align-content: center
+		inset: $ds.spaces.inset-square.extra-large
+		margin: $ds.spaces.vertical-gap.zero
 		
 			-- ds.column:
+			background.solid: $ds.colors.background.step-1
+			border: $ds.borders.uniform.small
+			inset: $ds.spaces.inset-square.large
+			spacing: $ds.spaces.vertical-gap.large
 			width.fixed.px: 454
 			
 				-- ds.heading-small: Create new site
