@@ -4,9 +4,9 @@ exposing: page-widths
 
 
 -- page-widths widths:
-regular.percent: 80
-narrow.percent: 60
-wide.percent: 100
+regular.px: 1140
+narrow.px: 800
+wide.px: 1340
 
 
 
