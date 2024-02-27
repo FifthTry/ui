@@ -68,8 +68,8 @@ align-content: top-left
 module site-data: site-data
 
 -- ds.column:
-	spacing: $ds.spaces.vertical-gap.large
-	align-content: left
+spacing: $ds.spaces.vertical-gap.large
+align-content: left
 
 	-- ftd.image:
 	src: $assets.files.assets.fifthtry-logo.svg
@@ -106,9 +106,9 @@ module site-data: site-data
 
 	-- end: ds.row
 
-	-- end: ds.column
+-- end: ds.column
 
-	-- end: footer-toc-content
+-- end: footer-toc-content
 
 
 
