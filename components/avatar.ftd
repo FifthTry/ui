@@ -56,13 +56,9 @@ padding.px: 8
 	
 		-- ds.circle-text-button: $get-initials(name=$popup.user-data.username)
 		
-		-- ftd.text: $popup.user-data.name
-		role: $inherited.types.button-medium
-		color: $inherited.colors.text
+		-- ds.copy-regular: $popup.user-data.name
 		
-		/-- ftd.text: $popup.user-data.email
-		role: $inherited.types.label-small
-		color: $inherited.colors.text
+		-- ds.copy-regular: $popup.user-data.username
 		
 	-- end: ftd.column
 
