@@ -19,56 +19,50 @@ string create-site-url:
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.zero
 
-    -- ds.section-row:
-    flush: full
-    spacing: $ds.spaces.horizontal-gap.space-between
-    outer-background.solid: $ds.colors.background.base
-    inset: $ds.spaces.inset-square.medium
-    margin: $ds.spaces.vertical-gap.zero
+	-- ds.section-row:
+	flush: full
+	spacing: $ds.spaces.horizontal-gap.space-between
+	outer-background.solid: $ds.colors.background.base
+	inset: $ds.spaces.inset-square.medium
+	margin: $ds.spaces.vertical-gap.zero
+	
+		-- ds.row:
+		align-content: left
+		width: hug-content
+		
+			-- ftd.image: $header.site-data.logo
+			link: $header.site-data.homepage
+			
+			-- ds.copy-regular: →
+			white-space: nowrap
+			
+			-- ds.copy-regular: My Sites
+			white-space: nowrap
+			
+		-- end: ds.row
 
-        -- ds.row:
-        align-content: left
-        width: hug-content
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.large
+		align-content: right
+		;;width.fixed.px: 420
+		
+			-- ds.icon-button: Create new site
+			link: $header.create-site-url
+			kind: primary
+			icon-position: at-end
+			icon: $assets.files.assets.sites.add.svg
+			
+			
+			-- avatar.avatar:
+			user-data: $header.user-data
+			
+			-- dark-mode-toggle.dark-mode-toggle:
+			
+		-- end: ds.row
 
-            -- ftd.image: $header.site-data.logo
-            link: $header.site-data.homepage
-
-            -- ds.copy-regular: →
-            white-space: nowrap
-
-            -- ds.copy-regular: My Sites
-            white-space: nowrap
-
-        -- end: ds.row
-
-        -- ds.row:
-        spacing: $ds.spaces.horizontal-gap.large
-        align-content: right
-        ;;width.fixed.px: 420
-
-            -- ds.icon-button: Create new site
-            link: $header.create-site-url
-            kind: primary
-            icon-position: at-end
-            icon: $assets.files.assets.sites.add.svg
-
-
-            -- avatar.avatar:
-            user-data: $header.user-data
-
-            -- dark-mode-toggle.dark-mode-toggle:
-
-        -- end: ds.row
-
-    -- end: ds.section-row
+	-- end: ds.section-row
 
 
 -- end: ds.section-column
 
 -- end: header
-
-
-
-
-
-

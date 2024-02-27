@@ -25,61 +25,61 @@ nav: $page.nav
 	   spacing: $ds.spaces.vertical-gap.large
 	   margin: $ds.spaces.vertical-gap.extra-extra-large
 	
-        -- ds.section-column:
-        flush: full
-        inset: $ds.spaces.inset-square.zero
-        spacing: $ds.spaces.vertical-gap.large
-        margin: $ds.spaces.vertical-gap.extra-extra-large
-        align-content: top-left
+		-- ds.section-column:
+		flush: full
+		inset: $ds.spaces.inset-square.zero
+		spacing: $ds.spaces.vertical-gap.large
+		margin: $ds.spaces.vertical-gap.extra-extra-large
+		align-content: top-left
+		
+			-- ds.row:
+			align-content: left
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ftd.image:
+				src: $assets.files.assets.sites.info.svg
+				
+				-- ds.copy-small: Use clift to update your site from github
+				
+			-- end: ds.row
 
-            -- ds.row:
-            align-content: left
-            spacing: $ds.spaces.horizontal-gap.small
+			-- ds.row:
+			radius: $ds.radius.medium
+			inset: $ds.spaces.inset-square.large
+			border: $ds.borders.uniform.small
+			spacing: $ds.spaces.horizontal-gap.space-between
+			background.solid: $ds.colors.background.step-1
+			
+				-- ds.link:
+				 color: $ds.colors.text-strong
+				 link: /
+				
+				   $description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.site.primary-domain)
+				
+				-- ds.row:
+				spacing: $ds.spaces.horizontal-gap.medium
+				align-content: right
+				width.fixed.px: 285
+				
+					-- ds.danger-button: Remove Access
+					 radius: curved
+					 $on-click$: $page.remove-github-access.submit(site_slug=$page.site.site-slug)
+					 width: full
+					
+					-- ds.secondary-button: Edit
+					radius: curved
+					width: full
+					link: $page.data.configure-url
+					
+				-- end: ds.row
 
-                -- ftd.image:
-                src: $assets.files.assets.sites.info.svg
+			-- end: ds.row
 
-                -- ds.copy-small: Use clift to update your site from github
-
-            -- end: ds.row
-
-            -- ds.row:
-            radius: $ds.radius.medium
-            inset: $ds.spaces.inset-square.large
-            border: $ds.borders.uniform.small
-            spacing: $ds.spaces.horizontal-gap.space-between
-            background.solid: $ds.colors.background.step-1
-
-                -- ds.link:
-                 color: $ds.colors.text-strong
-                 link: /
-
-                   $description(account=$page.data.account, repo=$page.data.repo, branch=$page.data.branch, domain=$page.site.primary-domain)
-
-                -- ds.row:
-                spacing: $ds.spaces.horizontal-gap.medium
-                align-content: right
-                width.fixed.px: 285
-
-                    -- ds.danger-button: Remove Access
-                     radius: curved
-                     $on-click$: $page.remove-github-access.submit(site_slug=$page.site.site-slug)
-                     width: full
-
-                    -- ds.secondary-button: Edit
-                    radius: curved
-                    width: full
-                    link: $page.data.configure-url
-
-                -- end: ds.row
-
-            -- end: ds.row
-
-            -- ftd.text: $page.remove-github-access.manage-site-error
-            color: red
-            if: { page.remove-github-access.manage-site-error != NULL }
-
-        -- end: ds.section-column
+			-- ftd.text: $page.remove-github-access.manage-site-error
+			color: red
+			if: { page.remove-github-access.manage-site-error != NULL }
+			
+		-- end: ds.section-column
 
 
 	-- end: ds.section-column

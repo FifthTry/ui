@@ -10,4 +10,3 @@ site: $site-info.acme-site
 nav: $configure-github.nav
 data: $configure-github.data
 site-data: scenario-site
-

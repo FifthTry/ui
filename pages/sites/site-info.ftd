@@ -23,7 +23,7 @@ nav: $page.nav
 	-- ds.section-column:
 	inset: $ds.spaces.inset-square.large
 	spacing: $ds.spaces.vertical-gap.large
-
+	
 		-- ftd.desktop:
 		
 			-- ds.row:
@@ -38,7 +38,7 @@ nav: $page.nav
 				fit: cover
 				;;height.fixed.px: 313
 				
-
+				
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.large
 				align-content: top-left
@@ -65,9 +65,9 @@ nav: $page.nav
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-small
 					align-content: left
-
+					
 						-- ds.copy-regular: Primary Domain
-
+						
 						-- ds.icon-button: $page.site.primary-domain
 						icon: $assets.files.assets.sites.link.svg
 						link: $utils.with-https(domain = $page.site.primary-domain)

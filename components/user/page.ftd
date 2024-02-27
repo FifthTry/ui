@@ -23,24 +23,19 @@ margin: $ds.spaces.vertical-gap.zero
 	z-index: 99999999999999
 	link: https://fastn.com/
 	open-in-new-tab: true
-
-
-    -- user-header.header:
-    site-data: $page.site-data
-    user-data: $page.user-data
-    create-site-url: $page.create-site-url
-
+	
+	
+	-- user-header.header:
+	site-data: $page.site-data
+	user-data: $page.user-data
+	create-site-url: $page.create-site-url
+	
 	-- child:
 	for: $child in $page.children
-
-    -- footer.footer:
-    site-data: $page.site-data
-
+	
+	-- footer.footer:
+	site-data: $page.site-data
+	
 -- end: ds.page
 
 -- end: page
-
-
-
-
-
