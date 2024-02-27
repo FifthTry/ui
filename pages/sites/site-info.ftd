@@ -45,6 +45,8 @@ nav: $page.nav
 				
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-small
+					align-content: top-left
+
 					
 						-- ds.copy-regular: Website name
 						
