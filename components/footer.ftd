@@ -72,7 +72,7 @@ spacing: $ds.spaces.vertical-gap.large
 align-content: left
 
 	-- ftd.image:
-	src: $assets.files.assets.fifthtry-logo.svg
+	src: $assets.files.assets.logo.svg
 	width.fixed.px: 90
 
 	-- ds.row:

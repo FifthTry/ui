@@ -27,7 +27,7 @@ inset: $ds.spaces.inset-wide.medium
         radius: $ds.radius.zero
 
             -- ftd.image:
-            src: $assets.files.assets.fifthtry-logo.svg
+            src: $site-data.logo
             link: $header.site-data.homepage
 
             -- ds.row:
@@ -86,7 +86,7 @@ inset: $ds.spaces.inset-wide.medium
 		height.fixed.px: 80
 		
 			-- ftd.image:
-			src: $assets.files.assets.fifthtry-logo.svg
+			src: $site-data.logo
 			link: $header.site-data.homepage
 
 			-- ftd.image:
