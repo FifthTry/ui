@@ -25,7 +25,7 @@ id: $card.id
 	width: fill-container
 	height: hug-content
 	
-		-- ftd.image: $assets.files.assets.fifthtry.png
+		-- ftd.image: $assets.files.assets.logo.svg
 		align-self: end
 		height.fixed.px: 50
 		
