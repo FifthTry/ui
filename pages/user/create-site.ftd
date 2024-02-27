@@ -12,7 +12,7 @@ module create-site-action: create-site-action
 module site-data: site-data
 string dashboard-url:
 string create-site-url:
-optional string $current-site-slug:
+string $current-site-slug: *$ftd.empty
 
 -- p.page:
 site-data: $page.site-data
