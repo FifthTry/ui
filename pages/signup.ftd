@@ -64,7 +64,7 @@ private boolean $accept-tos: false
 						                  $on-input$: $utils.set-null($var = $page.signup-action.name-error)
 						height.fixed.px: 40
 						border-radius.px: 8
-						placeholder: name
+						placeholder: Enter name
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
@@ -91,7 +91,7 @@ private boolean $accept-tos: false
 						$on-input$: $utils.set-null($var = $page.signup-action.username-error)
 						height.fixed.px: 40
 						border-radius.px: 8
-						placeholder: username
+						placeholder: Enter username
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
