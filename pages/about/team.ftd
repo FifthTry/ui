@@ -35,13 +35,13 @@ site-data: $page.site-data
 			link: https://www.linkedin.com/in/harshsingh-in/
 			designation: Software Developer
 			
-			-- team-member: Ishaan Kaustav
-			photo: $assets.files.assets.team.ishaan.png
-			link: https://www.linkedin.com/in/ishaan-kaustav-573a481b0/
+			-- team-member: Siddhant Kumar 
+			photo: $assets.files.assets.team.siddhant.jpeg
+			link: https://www.linkedin.com/in/siddhantcodes/
 			designation: Software Developer Intern
 			
 			-- team-member: Meenu Kumari
-			photo: $assets.files.assets.team.meenu.jpg
+			photo: $assets.files.assets.team.meenu.jpeg
 			link: https://github.com/MeenuKumari28
 			designation: Fastn Builder - FTD Dev
 			
@@ -59,6 +59,11 @@ site-data: $page.site-data
 			photo: $assets.files.assets.team.yashveer-mehra.jpg
 			link: https://www.linkedin.com/in/yashveer-mehra-4b2a171a9
 			designation: Design Consultant
+
+			-- team-member: Aditya Vikram Singh
+			photo: $assets.files.assets.team.aditya.jpg
+			link: https://www.linkedin.com/in/xypnox/
+			designation: Software Developer
 			
 		-- end: team
 
