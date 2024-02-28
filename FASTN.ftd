@@ -1,7 +1,7 @@
 -- import: fastn
 
 -- fastn.package: ui.fifthtry.com
-favicon: https://fifthtry.github.io/ui/-/fifthtry.github.io/ui/favicon.svg
+favicon: /favicon.svg
 zip: https://codeload.github.com/fifthtry/ui/zip/refs/heads/main
 default-language: en
 translation-en: ui.fifthtry.com/i18n/en
