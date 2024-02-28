@@ -41,6 +41,7 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	
 	- [Site Info](/scenarios/sites/site-info/)
 	- [Site Domains](/scenarios/sites/domains/)
+	- [Site Tokens](/scenarios/sites/tokens/)
 	- [Github (Un-configured)](/scenarios/sites/github/)
 	- [Github (Configure form)](/scenarios/sites/configure-github/)
 	- [Github (Configured)](/scenarios/sites/github-configured/)

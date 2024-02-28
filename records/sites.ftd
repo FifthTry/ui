@@ -6,6 +6,7 @@ string site-slug:
 string primary-domain:
 string info-url:
 string editor-url:
+string tokens-url:
 string github-url:
 string domains-url:
 string updated-on:
@@ -15,7 +16,7 @@ ftd.image-src preview-image:
 
 -- record navigation-info:
 string dashboard-url:
-string current-page:  ;; can be one of "info", "github", "domains" or "editor"
+string current-page:  ;; can be one of "info", "github", "domains", "editor" or "tokens"
 
 
 
@@ -32,6 +33,14 @@ caption domain:
 boolean is-primary: false
 string status:  ;; verified | pending | failed
 
+-- record token:
+integer id:
+body about:
+caption token:
+boolean can-read:
+boolean can-write:
+string created-at:
+optional string last-used-at:
 
 ;; base-name and full-name start without slash, eg `index.ftd` or `foo/bar.ftd`
 -- record file-info:
