@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/file-tree
+-- import: ui.fifthtry.com/components/sites/file-browser
 -- import: ui.fifthtry.com/web-components
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 -- import: ui.fifthtry.com/records/user-data as ud
@@ -9,6 +10,11 @@
 -- record editor-data:
 sites-records.file-info list files:
 sites-records.file current-file:
+
+
+
+
+
 
 -- component page:
 module site-data: site-data
@@ -44,6 +50,8 @@ nav: $page.nav
 		align-content: top-center
 		
 			-- file-header: $page.header-title
+
+			-- file-browser.file-browser: $page.data.current-file
 			
 			/-- web-components.code-editor: $page.header-title
 			$file: $page.data.current-file

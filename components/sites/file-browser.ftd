@@ -1,0 +1,51 @@
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: fastn-community.github.io/doc-site
+
+
+
+-- component file-browser:
+caption sites-records.file file:
+
+-- ds.column:
+
+-- code:
+if: { file-browser.file.text != NULL }
+file: $file-browser.file.text
+
+-- doc-site.image:
+if: { file-browser.file.file-type == "image" }
+src: $file-browser.file.url
+
+-- doc-site.youtube:
+if: { file-browser.file.file-type == "video" }
+v: $file-browser.file.url
+
+-- end: ds.column
+
+-- end: file-browser
+
+
+
+
+
+
+
+
+-- component code:
+sites-records.file-text file:
+
+-- doc-site.code:
+lang: $code.file.lang
+line-numbers: true
+
+$code.file.content
+
+-- end: code
+
+
+-- component video:
+
+-- doc-site.youtube:
+v: tsHB2Vrhb2c
+
+-- end: video

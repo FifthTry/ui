@@ -25,6 +25,9 @@ current-page: editor
 -- sr.file current-file: index.ftd
 url: /scenarios/sites/editor/
 text: $index-text
+;; file-type: image
+;; url: $assets.files.assets.slides.background.png.light
+
 
 -- sr.file-text index-text: ftd
 
