@@ -9,7 +9,7 @@ exposing: team-member
 ud.user-data user-data:
 module site-data: site-data
 
--- p.page: About FifthTry | Better way To Build Websites
+-- p.page: Team FifthTry | Better way To Build Websites
 user-data: $page.user-data
 site-data: $page.site-data
 
