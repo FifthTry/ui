@@ -7,6 +7,9 @@ function dragElement(element) {
     const cornerL = element.querySelector('.corner-l');
     const cornerR= element.querySelector('.corner-r')
     const cornerB= element.querySelector('.corner-b')
+    const minimize= element.querySelector('.minimize')
+    const content= element.querySelector('.content')
+    let expand = true
 
     title.addEventListener('mousedown', (e) => {
         title.style.background = '#202020';
@@ -132,6 +135,15 @@ function dragElement(element) {
         document.addEventListener('mousemove', drag);
 
     });
+    minimize.addEventListener("click", (e) => {
+        e.preventDefault();
+        expand = !expand;
+        if (expand) {
+            content.style.display = "block"
+        } else {
+            content.style.display = "none"
+        }
+    })
  }
 
 
@@ -155,16 +167,17 @@ class CodePreview extends HTMLElement {
     container.style.right = '100px';
     container.style.width = '400px';
     container.style.height = '400px';
-    container.style.zIndex = '100';
+    container.style.zIndex = '1000';
 
     var iframe_url = "https://fastn.com";
 
     // Set up the HTML content for the shadow DOM
     container.innerHTML = `
-      <div class="header" style="cursor: move; color: white; background: black;">
+      <div class="header" style="cursor: move; color: white; background: black; padding: 0 10px; justify-content: space-between; display: flex">
         <div>Preview</div>
+        <div class="minimize" style="cursor: pointer">--</div>
       </div>
-      <div id="content" style="height: calc(100% - 24px)">
+      <div class="content" style="height: calc(100% - 24px)">
         <div id="iframe-container" style="height: 100%">
           <!-- You can replace 'your-url-here' with the desired URL -->
           <iframe src=${iframe_url} frameborder="0" width="100%" height="100%"></iframe>
