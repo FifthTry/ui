@@ -2,7 +2,7 @@
 -- optional string $username-error:
 -- optional string $email-error:
 -- optional string $password-error:
--- optional string $confirm-password-error:
+-- optional string $password2-error:
 -- optional string $accept-terms-error:
 
 
