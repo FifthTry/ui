@@ -46,6 +46,7 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	- [Github (Configure form)](/scenarios/sites/configure-github/)
 	- [Github (Configured)](/scenarios/sites/github-configured/)
 	- [Coming Soon page](/scenarios/sites/coming-soon/)
+	- [Page with top message](/scenarios/sites/top-message/)
 	
 	-- page-block: Site Editor Pages
 	

@@ -1,0 +1,29 @@
+-- import: ui.fifthtry.com/pages/sites/coming-soon
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
+-- import: ui.fifthtry.com/records/sites as sites-records
+
+-- coming-soon.page:
+user-data: $john-doe.jd
+site-data: scenario-site
+site: $acme-site
+nav: $nav
+top-message: This message can be passed to every page using the `top-message`. [Links](/) are also supported
+
+
+-- sites-records.site-common-data acme-site:
+account-name: John Doe
+site-name: Acme, Inc
+site-slug: acme
+primary-domain: www.acme.com
+info-url: /scenarios/sites/site-info/
+github-url: /scenarios/sites/github/
+domains-url: /scenarios/sites/domains/
+tokens-url: /scenarios/sites/tokens/
+editor-url: /scenarios/coming-soon/
+updated-on: 14th Feb
+preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
+
+-- sites-records.navigation-info nav:
+dashboard-url: /scenarios/user/dashboard/
+current-page: editor
