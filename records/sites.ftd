@@ -60,3 +60,4 @@ string full-name: $file.base-name
 string file-type:  ftd ;; folder, FASTN, FTD, Image, Video, Text, Markdown, Source
 string url:
 optional file-text text:
+optional string error:

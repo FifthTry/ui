@@ -53,7 +53,11 @@ nav: $page.nav
 
 			-- file-header: $page.header-title
 
+            -- file-browser.file-browser: $page.open-file.content
+            if: { page.open-file.content != NULL }
+
 			-- file-browser.file-browser: $page.data.current-file
+			if: { page.open-file.content == NULL }
 
 			/-- web-components.code-editor: $page.header-title
 			$file: $page.data.current-file

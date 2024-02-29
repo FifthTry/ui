@@ -182,7 +182,7 @@ class CodePreview extends HTMLElement {
         <div>Preview</div>
         <div class="minimize" style="cursor: pointer">--</div>
       </div>
-      <div class="content" style="height: calc(100% - 24px); border-width: 1px; border-style: solid; border-color: black">
+      <div class="content" style="height: calc(100% - 24px); border-width: 1px; border-style: solid; border-color: black; background-color: white">
         <div id="iframe-container" style="height: 100%">
           <!-- You can replace 'your-url-here' with the desired URL -->
           <iframe src=${iframe_url} frameborder="0" width="100%" height="100%"></iframe>

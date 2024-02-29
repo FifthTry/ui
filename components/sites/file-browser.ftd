@@ -9,16 +9,21 @@ caption sites-records.file file:
 -- ds.column:
 
 -- code:
-if: { file-browser.file.text != NULL }
+if: { file-browser.file.text != NULL && file-browser.file.error == NULL }
 file: $file-browser.file.text
 
 -- doc-site.image:
 if: { file-browser.file.file-type == "image" }
 src: $file-browser.file.url
 
--- doc-site.youtube:
-if: { file-browser.file.file-type == "video" }
-v: $file-browser.file.url
+-- ds.heading-large: Can't read file
+if: { file-browser.file.text == NULL && file-browser.file.error == NULL && file-browser.file.file-type != "image" }
+color: $ds.colors.error.text
+
+
+-- ds.heading-large: $file-browser.file.error
+if: { file-browser.file.error != NULL }
+color: $ds.colors.error.text
 
 -- end: ds.column
 

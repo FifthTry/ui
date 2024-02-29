@@ -89,7 +89,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
         role: $ds.types.copy-small
         color: $ds.colors.text-strong
         style if { file-view.header-title == file-view.file.full-name }: underline, bold
-
+        
 	-- end: ds.row
 
 	-- ds.column:
