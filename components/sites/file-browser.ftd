@@ -34,7 +34,7 @@ v: $file-browser.file.url
 -- component code:
 sites-records.file-text file:
 
--- doc-site.code:
+-- doc-site.code: Code
 lang: $code.file.lang
 line-numbers: true
 
