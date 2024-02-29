@@ -3,6 +3,7 @@
 -- web-component code-preview:
 js: $assets.files.web-components.code-preview.js
 boolean dark-mode: $ftd.dark-mode
+string url:
 
 -- web-component code-editor:
 caption filename:

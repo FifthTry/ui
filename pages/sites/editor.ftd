@@ -10,6 +10,7 @@
 -- record editor-data:
 sites-records.file-info list files:
 sites-records.file current-file:
+string site-homepage-url:
 
 
 
@@ -36,30 +37,31 @@ nav: $page.nav
 	radius: $ds.radius.zero
 	inner-background.solid: $ds.colors.background.base
 	;; css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-preview.css ]
-	
+
 		-- web-components.code-preview:
-		
+		url: $page.data.site-homepage-url
+
 		-- file-tree.file-tree:
 		files: $page.data.files
 		open-file: $page.open-file
 		$header-title: $page.header-title
 		site-slug: $page.site.site-slug
-		
+
 		-- ds.column:
 		height: fill-container
 		align-content: top-center
-		
+
 			-- file-header: $page.header-title
 
 			-- file-browser.file-browser: $page.data.current-file
-			
+
 			/-- web-components.code-editor: $page.header-title
 			$file: $page.data.current-file
 			;; Never put `if` condition here like:
 			;; if: { page.header-title != "Welcome" }
 			;; Because this will recreate the web-component everytime the
 			;; mutable in the condition changes
-			
+
 		-- end: ds.column
 
 	-- end: ds.section-row
@@ -85,25 +87,25 @@ background.solid: $ds.colors.background.base
 	-- ds.row:
 	if: { file-header.file-name != NULL }
 	width: hug-content
-	
+
 		-- ftd.text: $file-header.file-name
 		color: $ds.colors.text-strong
 		role: $ds.types.copy-regular
-		
+
 	-- end: ds.row
 
 	-- ds.row:
 	width: hug-content
-	
+
 		-- ds.primary-button: RUN
 		link: /run/
-		
+
 		-- ds.secondary-button: PREVIEW
 		link: /preview/
-		
+
 		-- ds.secondary-button: CONSOLE
 		link: /console/
-		
+
 	-- end: ds.row
 
 -- end: ds.row

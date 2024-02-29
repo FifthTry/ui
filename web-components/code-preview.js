@@ -173,7 +173,7 @@ class CodePreview extends HTMLElement {
     container.style.height = '400px';
     container.style.zIndex = '1000';
     let data = window.ftd.component_data(this);
-    var iframe_url = "https://fastn.com";
+    var iframe_url = data.url.get();
     let dragBG = {color: '#636161'};
 
     // Set up the HTML content for the shadow DOM
