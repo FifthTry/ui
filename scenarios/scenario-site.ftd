@@ -11,7 +11,7 @@
 -- string forgot-url: /-/auth/forgot/
 -- string logout-url: /scenarios/logged-out-home/
 
--- string pricing-url: /scenarios/pricing/
+-- string pricing-url: /scenarios/about/pricing/
 -- string team-url: /team/
 -- string terms-url: /scenarios/terms-page/
 -- string privacy-url: /scenarios/privacy-page/

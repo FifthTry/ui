@@ -19,7 +19,7 @@ primary-domain: www.acme.com
 info-url: /scenarios/sites/site-info/
 github-url: /scenarios/sites/github/
 domains-url: /scenarios/sites/domains/
-editor-url: /scenarios/coming-soon/
+editor-url: /scenarios/sites/editor/
 tokens-url: /scenarios/sites/tokens/
 updated-on: 14th Feb
 preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg

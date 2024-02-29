@@ -24,7 +24,7 @@ site-name: Acme, Inc
 site-slug: acme
 primary-domain: www.acme.com
 info-url: /scenarios/sites/site-info/
-editor-url: /scenarios/coming-soon/
+editor-url: /scenarios/sites/editor/
 github-url: /scenarios/sites/github/
 tokens-url: /scenarios/sites/tokens/
 domains-url: /scenarios/sites/domains/
