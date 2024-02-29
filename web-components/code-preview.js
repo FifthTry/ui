@@ -188,11 +188,11 @@ class CodePreview extends HTMLElement {
           <iframe src=${iframe_url} frameborder="0" width="100%" height="100%"></iframe>
         </div>
       </div>
-      <div class="corner-rb" style="position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; cursor: nwse-resize"></div>
-      <div class="corner-lb" style="position: absolute; bottom: 0; left: 0; width: 12px; height: 12px; cursor: nesw-resize"></div>
-      <div class="corner-l" style="position: absolute; left: 0; top: 0; width: 12px; height: calc(100% - 12px); cursor: ew-resize"></div>
-      <div class="corner-r" style="position: absolute; right: 0; top: 0; width: 12px; height: calc(100% - 12px); cursor: ew-resize"></div>
-      <div class="corner-b" style="position: absolute; left: 12px; bottom: 0; width: calc(100% - 24px); height: 12px; cursor: ns-resize"></div>
+      <div class="corner-rb" style="position: absolute; bottom: 0; right: 0; width: 6px; height: 6px; cursor: nwse-resize"></div>
+      <div class="corner-lb" style="position: absolute; bottom: 0; left: 0; width: 6px; height: 6px; cursor: nesw-resize"></div>
+      <div class="corner-l" style="position: absolute; left: 0; top: 0; width: 6px; height: calc(100% - 6px); cursor: ew-resize"></div>
+      <div class="corner-r" style="position: absolute; right: 0; top: 0; width: 6px; height: calc(100% - 6px); cursor: ew-resize"></div>
+      <div class="corner-b" style="position: absolute; left: 6px; bottom: 0; width: calc(100% - 12px); height: 6px; cursor: ns-resize"></div>
     `;
 
       const title= container.querySelector('.header');
