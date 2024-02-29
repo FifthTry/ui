@@ -1,4 +1,4 @@
--- optional string $domain-error:
+-- optional string $token-error:
 -- optional string $manage-site-error:
 
 -- void submit(site_slug, token_id):
