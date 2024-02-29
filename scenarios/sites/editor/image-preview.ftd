@@ -24,11 +24,9 @@ dashboard-url: /scenarios/user/dashboard/
 current-page: editor
 
 
--- sr.file current-file: index.ftd
-url: /scenarios/sites/editor/
-text: $index-text
-;; file-type: image
-;; url: $assets.files.assets.slides.background.png.light
+-- sr.file current-file: background.png
+filetype: image
+url: $assets.files.assets.slides.background.png.light
 
 
 -- sr.file-text index-text: ftd
@@ -42,7 +40,7 @@ text: $index-text
 is-active: true
 
 -- sr.file-info: FASTN.ftd
-file-type: FASTN
+type: FASTN
 
 -- sr.file-info: folder
 is-active: false
@@ -54,7 +52,7 @@ is-active: false
 
 	-- sr.file-info: other.txt
 	full-name: folder/other.txt
-	file-type: source
+	type: source
 
 -- end: sr.file-info.children
 

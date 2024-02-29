@@ -50,7 +50,8 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	
 	-- page-block: Site Editor Pages
 	
-	- [Site Editor](/scenarios/sites/editor/)
+	- [Site Editor With Code Preview](/scenarios/sites/editor/)
+	- [Site Editor With Image Preview](/scenarios/sites/editor/image-preview/)
 	
 	
 	-- page-block: University Scenarios

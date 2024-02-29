@@ -4,30 +4,54 @@
 
 
 -- component file-browser:
-caption sites-records.file file:
+caption title:
+sites-records.file file:
 
 -- ds.column:
 
--- code:
+-- code: $file-browser.title
 if: { file-browser.file.text != NULL && file-browser.file.error == NULL }
 file: $file-browser.file.text
 
--- doc-site.image:
-if: { file-browser.file.file-type == "image" }
-src: $file-browser.file.url
-
--- ds.heading-large: Can't read file
-if: { file-browser.file.text == NULL && file-browser.file.error == NULL && file-browser.file.file-type != "image" }
-color: $ds.colors.error.text
-
-
--- ds.heading-large: $file-browser.file.error
-if: { file-browser.file.error != NULL }
-color: $ds.colors.error.text
+-- non-code: $file-browser.title
+if: { file-browser.file.text == NULL }
+file: $file-browser.file
 
 -- end: ds.column
 
 -- end: file-browser
+
+
+
+
+-- component non-code:
+caption title:
+sites-records.file file:
+
+-- ds.column:
+
+-- ftd.text: $non-code.title
+color: $ds.colors.text-strong
+role: $ds.types.source-code
+align-self: start
+
+-- doc-site.image:
+if: { non-code.file.filetype == "image" }
+src: $non-code.file.url
+
+-- ds.heading-large: Can't read file
+if: { non-code.file.error == NULL && non-code.file.filetype != "image" }
+color: $ds.colors.error.text
+
+-- ds.heading-large: $non-code.file.error
+if: { non-code.file.error != NULL }
+color: $ds.colors.error.text
+
+
+-- end: ds.column
+
+
+-- end: non-code
 
 
 
@@ -37,9 +61,10 @@ color: $ds.colors.error.text
 
 
 -- component code:
+caption title:
 sites-records.file-text file:
 
--- doc-site.code: Code
+-- doc-site.code: $code.title
 lang: $code.file.lang
 line-numbers: true
 

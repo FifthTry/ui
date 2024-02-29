@@ -42,6 +42,7 @@ top-message: $page.top-message
 
 		-- web-components.code-preview:
 		url: $page.data.site-homepage-url
+		if: { page.data.current-file.filetype != "image" }
 
 		-- file-tree.file-tree:
 		files: $page.data.files
@@ -53,12 +54,15 @@ top-message: $page.top-message
 		height: fill-container
 		align-content: top-center
 
-			-- file-header: $page.header-title
 
-            -- file-browser.file-browser: $page.open-file.content
+            -- file-browser.file-browser:
+            file: $page.open-file.content
+            title: $page.header-title
             if: { page.open-file.content != NULL }
 
-			-- file-browser.file-browser: $page.data.current-file
+			-- file-browser.file-browser:
+			file: $page.data.current-file
+			title: $page.header-title
 			if: { page.open-file.content == NULL }
 
 			/-- web-components.code-editor: $page.header-title
@@ -89,28 +93,13 @@ align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
-
 	-- ds.row:
 	if: { file-header.file-name != NULL }
 	width: hug-content
 
 		-- ftd.text: $file-header.file-name
 		color: $ds.colors.text-strong
-		role: $ds.types.copy-regular
-
-	-- end: ds.row
-
-	-- ds.row:
-	width: hug-content
-
-		-- ds.primary-button: RUN
-		link: /run/
-
-		-- ds.secondary-button: PREVIEW
-		link: /preview/
-
-		-- ds.secondary-button: CONSOLE
-		link: /console/
+		role: $ds.types.source-code
 
 	-- end: ds.row
 
