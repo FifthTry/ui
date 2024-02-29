@@ -25,6 +25,7 @@ sites-records.navigation-info nav:
 editor-data data:
 module open-file: open-file
 string $header-title: *$page.data.current-file.full-name
+optional string top-message:
 
 
 -- p.page:
@@ -32,6 +33,7 @@ site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
 nav: $page.nav
+top-message: $page.top-message
 
 	-- ds.section-row:
 	radius: $ds.radius.zero
