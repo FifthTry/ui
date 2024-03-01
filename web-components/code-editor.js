@@ -21,6 +21,8 @@ class CodeEditor extends HTMLElement {
   connectedCallback() {
     const shadow = this.shadowRoot;
     const webComponent = this;
+    webComponent.style.width = '100%';
+    webComponent.style.height = '100%';
 
     // Import CodeMirror CSS
     const codemirrorCss = document.createElement('link');
@@ -54,8 +56,7 @@ class CodeEditor extends HTMLElement {
     // Wait for CodeMirror library to be loaded before initializing the editor
     codemirrorJs.onload = () => {
       let data = window.ftd.component_data(this);
-      let initial_content = data.content.get();
-      let fileName = data.filename.get().trim();
+      let initial_content = fastn_utils.getStaticValue(data.file.get().get('content')).trim();
 
       var editor = CodeMirror.fromTextArea(codeEditor, {
         mode: "javascript",
@@ -67,47 +68,15 @@ class CodeEditor extends HTMLElement {
       editor.setSize("100%", "100%");
       editor.on('change', editor => {
         let content = editor.getValue().trim();
-        let index = get_index(fileName, data.filecontents.get());
         if (initial_content !== content) {
-          if (index === null) {
-            data.filecontents.insertAt(0, {
-              "file-path": fileName,
-              "content": content
-            });
-          } else {
-            data.filecontents.set(index, {
-              "file-path": fileName,
-              "content": content
-            });
-          }
-          initial_content = content;
-        }
-      });
-      if (fileName === "Welcome") {
-        webComponent.style.display = "none";
-      }
-      data.filename.on_change(function() {
-        if (data.filename.get().trim() === "Welcome") {
-          webComponent.style.display = "none";
+          data.content.set(content)
         } else {
-          webComponent.style.display = null;
+          data.content.set(null)
         }
       });
-      data.content.on_change(function() {editor.setValue(data.content.get());})
-      // editor.setValue(data.content.get());
+      editor.setValue(initial_content);
     };
   }
 }
 
 customElements.define('code-editor', CodeEditor);
-
-
-function get_index(fileName, file_contents) {
-  for(let i in file_contents) {
-    let i_file_path = fastn_utils.getStaticValue(file_contents[i].item.get("file-path"))
-    if (i_file_path === fileName) {
-      return i;
-    }
-  }
-  return null;
-}
