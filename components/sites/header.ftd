@@ -48,7 +48,7 @@ radius: $ds.radius.zero
 				white-space: nowrap
 				
 				-- ds.copy-regular: $header.site.site-name
-				            white-space: nowrap
+                white-space: nowrap
 				
 			-- end: ds.row
 
@@ -72,7 +72,11 @@ radius: $ds.radius.zero
 				-- tab-link: Github
 				is-active if { header.nav.current-page == "github" }: true
 				link: $header.site.github-url
-				
+
+				-- tab-link: Tokens
+				is-active if { header.nav.current-page == "tokens" }: true
+				link: $header.site.tokens-url
+
 				-- avatar.avatar:
 				user-data: $header.user-data
 				

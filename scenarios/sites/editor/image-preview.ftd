@@ -16,15 +16,18 @@ data: $data
 -- editor.editor-data data:
 files: $files
 current-file: $current-file
+;; site-homepage-url: https://www.fastn.com/
+site-homepage-url: /
 
 -- sr.navigation-info nav:
 dashboard-url: /scenarios/user/dashboard/
 current-page: editor
 
 
--- sr.file current-file: index.ftd
-url: /scenarios/sites/editor/
-text: $index-text
+-- sr.file current-file: background.png
+filetype: image
+url: $assets.files.assets.slides.background.png.light
+
 
 -- sr.file-text index-text: ftd
 
@@ -37,7 +40,7 @@ text: $index-text
 is-active: true
 
 -- sr.file-info: FASTN.ftd
-file-type: FASTN
+type: FASTN
 
 -- sr.file-info: folder
 is-active: false
@@ -46,11 +49,11 @@ is-active: false
 
 	-- sr.file-info: index.ftd
 	full-name: folder/index.ftd
-	
+
 	-- sr.file-info: other.txt
 	full-name: folder/other.txt
-	file-type: source
-	
+	type: source
+
 -- end: sr.file-info.children
 
 -- end: files

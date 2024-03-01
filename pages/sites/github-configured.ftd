@@ -13,12 +13,14 @@ sites-records.site-common-data site:
 sites-records.navigation-info nav:
 sites-records.gh-oidc-data data:
 module remove-github-access: remove-github-access
+optional string top-message:
 
 -- p.page:
 site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
 nav: $page.nav
+top-message: $page.top-message
 
 	-- ds.section-column:
 	   inset: $ds.spaces.inset-square.large

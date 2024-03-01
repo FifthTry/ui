@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/file-tree
+-- import: ui.fifthtry.com/components/sites/file-browser
 -- import: ui.fifthtry.com/web-components
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 -- import: ui.fifthtry.com/records/user-data as ud
@@ -9,6 +10,12 @@
 -- record editor-data:
 sites-records.file-info list files:
 sites-records.file current-file:
+string site-homepage-url:
+
+
+
+
+
 
 -- component page:
 module site-data: site-data
@@ -18,6 +25,7 @@ sites-records.navigation-info nav:
 editor-data data:
 module open-file: open-file
 string $header-title: *$page.data.current-file.full-name
+optional string top-message:
 
 
 -- p.page:
@@ -25,33 +33,45 @@ site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
 nav: $page.nav
+top-message: $page.top-message
 
 	-- ds.section-row:
 	radius: $ds.radius.zero
 	inner-background.solid: $ds.colors.background.base
 	;; css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-preview.css ]
-	
+
 		-- web-components.code-preview:
-		
+		url: $page.data.site-homepage-url
+		if: { page.data.current-file.filetype != "image" }
+
 		-- file-tree.file-tree:
 		files: $page.data.files
 		open-file: $page.open-file
 		$header-title: $page.header-title
 		site-slug: $page.site.site-slug
-		
+
 		-- ds.column:
 		height: fill-container
 		align-content: top-center
-		
-			-- file-header: $page.header-title
-			
+
+
+            -- file-browser.file-browser:
+            file: $page.open-file.content
+            title: $page.header-title
+            if: { page.open-file.content != NULL }
+
+			-- file-browser.file-browser:
+			file: $page.data.current-file
+			title: $page.header-title
+			if: { page.open-file.content == NULL }
+
 			/-- web-components.code-editor: $page.header-title
 			$file: $page.data.current-file
 			;; Never put `if` condition here like:
 			;; if: { page.header-title != "Welcome" }
 			;; Because this will recreate the web-component everytime the
 			;; mutable in the condition changes
-			
+
 		-- end: ds.column
 
 	-- end: ds.section-row
@@ -73,29 +93,14 @@ align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
-
 	-- ds.row:
 	if: { file-header.file-name != NULL }
 	width: hug-content
-	
+
 		-- ftd.text: $file-header.file-name
 		color: $ds.colors.text-strong
-		role: $ds.types.copy-regular
-		
-	-- end: ds.row
+		role: $ds.types.source-code
 
-	-- ds.row:
-	width: hug-content
-	
-		-- ds.primary-button: RUN
-		link: /run/
-		
-		-- ds.secondary-button: PREVIEW
-		link: /preview/
-		
-		-- ds.secondary-button: CONSOLE
-		link: /console/
-		
 	-- end: ds.row
 
 -- end: ds.row

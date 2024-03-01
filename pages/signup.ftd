@@ -170,19 +170,19 @@ private boolean $accept-tos: false
 						placeholder: Enter password again
 						type: password
 						$on-input$: $ftd.set-string($a = $page.confirm-password, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.signup-action.confirm-password-error)
+						$on-input$: $utils.set-null($var = $page.signup-action.password2-error)
 						width: fill-container
 						height.fixed.px: 40
 						border-radius.px: 8
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.signup-action.confirm-password-error != NULL }: $inherited.colors.error.border
+						border-color if { page.signup-action.password2-error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.signup-action.password-error
-						if: { page.signup-action.confirm-password-error != NULL }
+						-- ds.copy-small: $page.signup-action.password2-error
+						if: { page.signup-action.password2-error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -388,19 +388,19 @@ private boolean $accept-tos: false
 					placeholder: Enter password again
 					type: password
 					$on-input$: $ftd.set-string($a = $page.confirm-password, v = $VALUE)
-					$on-input$: $utils.set-null($var = $page.signup-action.confirm-password-error)
+					$on-input$: $utils.set-null($var = $page.signup-action.password2-error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.signup-action.confirm-password-error != NULL }: $inherited.colors.error.border
+					border-color if { page.signup-action.password2-error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.signup-action.password-error
-					if: { page.signup-action.confirm-password-error != NULL }
+					-- ds.copy-small: $page.signup-action.password2-error
+					if: { page.signup-action.password2-error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column

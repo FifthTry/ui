@@ -1,0 +1,137 @@
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/actions/sites/tokens/create-token
+-- import: ui.fifthtry.com/actions/sites/tokens/delete-token
+-- import: ui.fifthtry.com/utils
+
+
+
+
+
+
+-- component show-token:
+caption sites-records.token token:
+sites-records.site-common-data site:
+module delete-token: delete-token
+private boolean $show-buttons: false
+integer index:
+integer $active:
+
+-- ds.section-column:
+
+	-- ds.column:
+	inset: $ds.spaces.inset-square.large
+	border: $ds.borders.uniform.small
+	background.solid: $ds.colors.background.step-1
+	radius: $ds.radius.medium
+	align-content: top-left
+	$on-mouse-enter$: $ftd.set-bool($a = $show-token.show-buttons, v = true)
+	$on-mouse-leave$: $ftd.set-bool($a = $show-token.show-buttons, v = false)
+	$on-mouse-leave$: $ftd.set-integer($a=$show-token.active, v=-1)
+
+	    -- ds.row:
+	    spacing: $ds.spaces.horizontal-gap.space-between
+	    align-content: top-left
+
+	        -- ds.column:
+	        spacing: $ds.spaces.vertical-gap.medium
+	        align-content: left
+
+                ;; todo: show some feedback when user clicks on copy button
+	            -- ds.heading-medium: $show-token.token.token
+	            $on-click$: $ftd.copy-to-clipboard(a = $show-token.token.token)
+
+	            -- ds.copy-regular: $show-token.token.about
+
+                -- ds.heading-tiny: Created At
+	            -- ds.copy-small: $show-token.token.created-at
+
+                -- ds.heading-tiny: Last Used At
+                if: { show-token.token.last-used-at != NULL }
+	            -- ds.copy-small: $show-token.token.created-at
+                if: { show-token.token.last-used-at != NULL }
+
+	        -- end: ds.column
+
+	        -- ds.row:
+	        if: { show-token.show-buttons }
+	        spacing: $ds.spaces.horizontal-gap.large
+	        align-content: right
+	        width: hug-content
+	        height: fill-container
+
+	            -- ds.danger-button: Delete Token
+	            radius: curved
+	            $on-click$: $show-token.delete-token.submit(site_slug=$show-token.site.site-slug, token_id=$show-token.token.id)
+	            $on-click$: $ftd.set-integer($a=$show-token.active, v=$show-token.index)
+
+	        -- end: ds.row
+
+	    -- end: ds.row
+
+	-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: show-token
+
+
+
+
+
+
+
+
+
+
+-- component token-input:
+string $current-token: *$ftd.empty
+string site-slug:
+module create-token: create-token
+
+-- ds.section-column:
+
+		-- ds.column:
+		align-content: left
+		spacing: $ds.spaces.vertical-gap.small
+		
+			-- ds.row:
+			width: fill-container
+			align-content: left
+			spacing: $ds.spaces.horizontal-gap.medium
+			
+				-- ftd.text-input:
+				width: fill-container
+				color: $ds.colors.text-strong
+				background.solid: $ds.colors.background.step-1
+				padding.px: 8
+				height.fixed.px: 40
+				border-radius.px: 8
+				placeholder: What is the purpose of this token?
+				$on-input$: $ftd.set-string($a = $token-input.current-token, v = $VALUE)
+    			$on-input$: $utils.set-null($var = $token-input.create-token.token-error)
+				border-width.px: 1
+				border-color: $ds.colors.border
+				border-color if { token-input.create-token.token-error != NULL || token-input.create-token.manage-site-error != NULL }: $ds.colors.error.border
+
+                ;; TODO: button is too big, but I am not going to wrap it in row, we have to fix the default
+                ;;       width of buttons.
+                -- ds.primary-button: Create Token
+                radius: curved
+                $on-click$: $token-input.create-token.submit(site_slug=$token-input.site-slug, token_about=$token-input.current-token)
+
+			-- end: ds.row
+
+			-- ds.copy-small: $token-input.create-token.token-error
+			if: { token-input.create-token.token-error != NULL }
+			color: $ds.colors.error.text
+
+			-- ds.copy-small: $token-input.create-token.manage-site-error
+            if: { token-input.create-token.manage-site-error != NULL }
+            color: $ds.colors.error.text
+
+		-- end: ds.column
+
+
+-- end: ds.section-column
+
+-- end: token-input

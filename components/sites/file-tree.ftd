@@ -50,7 +50,7 @@ caption sr.file-info file:
 string $header-title:
 string site-slug:
 module open-file: open-file
-boolean $is-open: true
+boolean $is-open: false
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.extra-small
@@ -59,35 +59,43 @@ spacing: $ds.spaces.vertical-gap.extra-small
 	align-content: top-left
 	spacing: $ds.spaces.horizontal-gap.extra-small
 	$on-click$: $ftd.toggle($a = $file-view.is-open)
-	
+
 		-- ftd.image: $assets.files.assets.down-arrow.svg
-		if: { ftd.len(file-view.file.children) > 0 && file-view.file.is-active }
+		if: { ftd.len(file-view.file.children) > 0 && file-view.is-open }
 		width.fixed.px: 10
 		align-self: center
-		
+
 		-- ftd.image: $assets.files.assets.right-arrow.svg
-		if: { ftd.len(file-view.file.children) > 0 && !file-view.file.is-active }
+		if: { ftd.len(file-view.file.children) > 0 && !file-view.is-open }
 		width.fixed.px: 10
 		align-self: center
-		
+
 		-- ftd.image: $assets.files.assets.file.svg
 		if: { ftd.len(file-view.file.children) == 0 }
 		width.fixed.px: 20
 		align-self: center
-		
+
 		-- ftd.text: $file-view.file.base-name
+		if: { ftd.len(file-view.file.children) == 0 }
 		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site_slug = $file-view.site-slug)
 		$on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
 		role: $ds.types.copy-small
 		color: $ds.colors.text-strong
 		style if { file-view.header-title == file-view.file.full-name }: underline, bold
-		
+
+		-- ftd.text: $file-view.file.base-name
+        if: { ftd.len(file-view.file.children) > 0 }
+        $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
+        role: $ds.types.copy-small
+        color: $ds.colors.text-strong
+        style if { file-view.header-title == file-view.file.full-name }: underline, bold
+        
 	-- end: ds.row
 
 	-- ds.column:
 	inset: $ds.spaces.inset-wide.small-zero
 	spacing: $ds.spaces.vertical-gap.zero
-	if: { ftd.len(file-view.file.children) > 0 && file-view.file.is-active }
+	if: { ftd.len(file-view.file.children) > 0 && file-view.is-open }
 	
 		-- file-view: $obj
 		for: $obj in $file-view.file.children

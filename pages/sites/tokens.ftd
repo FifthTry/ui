@@ -1,14 +1,12 @@
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/site-header
--- import: ui.fifthtry.com/components/sites/site-domain-info
+-- import: ui.fifthtry.com/components/sites/token-info
 -- import: ui.fifthtry.com/components/label
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/actions/sites/domains/add-domain
--- import: ui.fifthtry.com/actions/sites/domains/delete-domain
--- import: ui.fifthtry.com/actions/sites/domains/make-primary-domain
--- import: ui.fifthtry.com/actions/sites/domains/re-check-domain
+-- import: ui.fifthtry.com/actions/sites/tokens/create-token
+-- import: ui.fifthtry.com/actions/sites/tokens/delete-token
 -- import: ui.fifthtry.com/utils as u
 
 
@@ -17,11 +15,9 @@ module site-data: site-data
 ud.user-data user-data:
 sites-records.site-common-data site:
 sites-records.navigation-info nav:
-sites-records.domain list domains:
-module add-domain: add-domain
-module delete-domain: delete-domain
-module make-primary-domain: make-primary-domain
-module re-check-domain: re-check-domain
+sites-records.token list tokens:
+module create-token: create-token
+module delete-token: delete-token
 integer $active: -1
 optional string top-message:
 
@@ -46,21 +42,19 @@ top-message: $page.top-message
 			inset: $ds.spaces.inset-square.medium
 			border: $ds.borders.uniform.small
 			
-				-- site-domain-info.domain-input:
-				add-domain: $page.add-domain
+				-- token-info.token-input:
+				create-token: $page.create-token
 				site-slug: $page.site.site-slug
 				
 			-- end: ds.column
 
 		-- end: ds.column
 
-		-- site-domain-info.show-site-domain: $d
-		for: d in $page.domains
+		-- token-info.show-token: $d
+		for: d in $page.tokens
 		index: $LOOP.COUNTER
 		site: $page.site
-		delete-domain: $page.delete-domain
-		make-primary-domain: $page.make-primary-domain
-		re-check-domain: $page.re-check-domain
+		delete-token: $page.delete-token
 		$active: $page.active
 		
 	-- end: ds.section-column

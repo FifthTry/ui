@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/header
 -- import: ui.fifthtry.com/components/footer
+-- import: ui.fifthtry.com/components/header-message as hm
 
 -- component page:
 module site-data: site-data
@@ -14,8 +15,12 @@ ds.flush flush: to-header
 boolean hide-footer: false
 boolean hide-header: false
 boolean theme-toggle: true
+optional string top-message:
 
 -- ds.page: $page.title
+
+-- hm.header-message: $page.top-message
+if: { $page.top-message }
 
 -- header.header:
 if: { !page.hide-header }

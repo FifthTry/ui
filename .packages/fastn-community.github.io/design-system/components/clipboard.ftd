@@ -1,0 +1,125 @@
+-- import: fastn-community.github.io/design-system/foundation-elements/spaces
+
+
+
+
+-- component copy-to-clipboard-icon:
+caption or body text:
+boolean copy: true
+string lang: ftd
+string $copy-text: null
+boolean $copy-mouse-in: false
+boolean $mouse-in: false
+string clean-code: $ftd.clean-code(a = $copy-to-clipboard-icon.text, lang = $copy-to-clipboard-icon.lang)
+
+-- ds.floater:
+if: { copy-to-clipboard-icon.copy }
+align-content: right
+$on-mouse-enter$: $ftd.set-bool($a = $copy-to-clipboard-icon.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $copy-to-clipboard-icon.mouse-in, v = false)
+$on-mouse-leave$: $ftd.set-string($a = $copy-to-clipboard-icon.copy-text, v = null)
+anchor: parent
+top: 4
+right: 20
+
+-- ds.row:
+width: hug-content
+spacing: $ds.spaces.horizontal-gap.small
+
+-- ftd.image:
+if: { copy-to-clipboard-icon.copy-text == "null" }
+src: $assets.files.assets.copy.svg
+src if { copy-to-clipboard-icon.copy-mouse-in }: $assets.files.assets.copy-hover.svg
+$on-mouse-enter$: $ftd.set-bool($a = $copy-to-clipboard-icon.copy-mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $copy-to-clipboard-icon.copy-mouse-in, v = false)
+$on-click$: $ftd.copy-to-clipboard(a = $copy-to-clipboard-icon.clean-code)
+$on-click$: $ftd.set-string($a = $copy-to-clipboard-icon.copy-text, v = Copied!)
+width.fixed.px: 18
+
+-- ftd.image:
+if: { copy-to-clipboard-icon.copy-text != "null" }
+src: $assets.files.assets.tick.svg
+width.fixed.px: 18
+
+-- ds.copy-regular: $copy-to-clipboard-icon.copy-text
+if: { copy-to-clipboard-icon.copy-text != "null" }
+
+-- end: ds.row
+
+-- end: ds.floater
+
+-- end: copy-to-clipboard-icon
+
+
+
+
+
+
+
+
+
+
+-- component copy-to-clipboard-text:
+caption or body text:
+
+-- ds.section-row:
+align-content: left
+margin: $ds.spaces.vertical-gap.medium
+
+-- ds.copy-regular: $copy-to-clipboard-text.text
+
+-- copy-to-clipboard-icon:
+text: $copy-to-clipboard-text.text
+
+-- end: ds.section-row
+
+-- end: copy-to-clipboard-text
+
+
+
+
+
+-- ds.page: Copy to clipboard
+
+-- ds.section-column: 
+ flush: full
+ align-content: center
+
+	-- ds.row:
+	align-content: left
+	
+		-- ds.phosphor-icon-button: Back
+		icon: arrow-left
+		link: /
+		
+		-- ds.heading-hero: Copy to clipboard
+		width: hug-content
+		
+	-- end: ds.row
+
+	-- ds.rendered:
+		
+		\-- copy-to-clipboard-icon:
+		
+			-- copy-to-clipboard-icon:
+
+			Hello
+			
+		-- end: ds.rendered
+
+	-- ds.rendered:
+		
+		\-- copy-to-clipboard-text:
+
+		This is clipboard text
+		
+			-- copy-to-clipboard-text:
+
+			This is clipboard text
+			
+		-- end: ds.rendered
+		
+
+-- end: ds.section-column
+
+-- end: ds.page

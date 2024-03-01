@@ -13,6 +13,7 @@ module site-data: site-data
 string dashboard-url:
 string create-site-url:
 string $current-site-slug: *$ftd.empty
+optional string top-message:
 
 -- p.page:
 site-data: $page.site-data
@@ -20,6 +21,7 @@ user-data: $page.user-data
 create-site-url: $page.create-site-url
 hide-footer: true
 hide-header: true
+top-message: $page.top-message
 
 	-- ftd.desktop:
 	

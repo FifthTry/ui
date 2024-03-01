@@ -11,7 +11,7 @@
 
 -- end: button-kind
 
-;; These are variants
+These are variants
 
 -- or-type button-variant:
 
@@ -86,9 +86,10 @@ align-content: center
 $on-mouse-enter$: $ftd.set-bool($a = $primary-button.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $primary-button.hover, v = false)
 spacing: $ds.spaces.horizontal-gap.small
-;; width if { primary-button.width == default }: hug-content
+width if { primary-button.width == default }: hug-content
 width.fixed.px if { primary-button.width == wide }: 200
 width if { primary-button.width == full }: fill-container
+link: $primary-button.link
 
 	-- ds.link:
 	text: $primary-button.title
@@ -133,11 +134,12 @@ align-content: center
 $on-mouse-enter$: $ftd.set-bool($a = $secondary-button.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $secondary-button.hover, v = false)
 spacing: $ds.spaces.horizontal-gap.small
-;; width if { secondary-button.width == default }: hug-content
+width if { secondary-button.width == default }: hug-content
 width.fixed.px if { secondary-button.width == wide }: 200
 width if { secondary-button.width == full }: fill-container
 border: $ds.borders.uniform.small
 border-color: $ds.colors.cta-secondary.border
+link: $secondary-button.link
 
 	-- ds.link:
 	text: $secondary-button.title
@@ -172,12 +174,13 @@ background.solid if { tertiary-button.hover && tertiary-button.variant != link }
 $on-mouse-enter$: $ftd.set-bool($a = $tertiary-button.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $tertiary-button.hover, v = false)
 spacing: $ds.spaces.horizontal-gap.small
-;; width if { tertiary-button.width == default }: hug-content
+width if { tertiary-button.width == default }: hug-content
 width.fixed.px if { tertiary-button.width == wide }: 200
 width if { tertiary-button.width == full }: fill-container
 inset if { tertiary-button.size == small }: $ds.spaces.inset-wide.small
 inset if { tertiary-button.size == medium }: $ds.spaces.inset-wide.medium
 inset if { tertiary-button.size == large }: $ds.spaces.inset-wide.large
+link: $tertiary-button.link
 
 	-- ds.link:
 	text: $tertiary-button.title
@@ -211,7 +214,7 @@ boolean $hover: false
 -- ds.row:
 align-content: center
 spacing: $ds.spaces.horizontal-gap.small
-;; width if { link-button.width == default }: hug-content
+width if { link-button.width == default }: hug-content
 width.fixed.px if { link-button.width == wide }: 200
 width if { link-button.width == full }: fill-container
 inset if { link-button.size == small }: $ds.spaces.inset-wide.small
@@ -221,6 +224,7 @@ border if { link-button.hover }: $ds.borders.bottom.small
 border-color if { link-button.hover }: $ds.colors.accent.primary
 $on-mouse-enter$: $ftd.set-bool($a = $link-button.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $link-button.hover, v = false)
+link: $link-button.link
 
 	-- ds.link:
 	text: $link-button.title
@@ -266,9 +270,10 @@ align-content: center
 $on-mouse-enter$: $ftd.set-bool($a = $danger-button.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $danger-button.hover, v = false)
 spacing: $ds.spaces.horizontal-gap.small
-;; width if { danger-button.width == default }: hug-content
+width if { danger-button.width == default }: hug-content
 width.fixed.px if { danger-button.width == wide }: 200
 width if { danger-button.width == full }: fill-container
+link: $danger-button.link
 
 	-- ds.link:
 	text: $danger-button.title
@@ -288,11 +293,11 @@ width if { danger-button.width == full }: fill-container
 
 
 
--- ds.page:
+-- ds.page: Buttons
 
 -- ds.section-column:
-flush: full
-align-content: center
+align-content: left
+spacing: $ds.spaces.vertical-gap.medium
 
 	-- ds.row:
 	align-content: left
@@ -310,7 +315,7 @@ align-content: center
 	-- ds.heading-hero: Primary Buttons
 	
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Default
 		width: hug-content
@@ -358,7 +363,7 @@ align-content: center
 	-- end: ds.section-row
 
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Disabled
 		width: hug-content
@@ -410,7 +415,7 @@ align-content: center
 	-- ds.heading-hero: Secondary Buttons
 	
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Default
 		width: hug-content
@@ -459,7 +464,7 @@ align-content: center
 
 
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Disabled
 		width: hug-content
@@ -511,7 +516,7 @@ align-content: center
 	-- ds.heading-hero: Tertiary Buttons
 	
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Default
 		width: hug-content
@@ -557,7 +562,7 @@ align-content: center
 	-- ds.heading-hero: Link Buttons
 	
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Default
 		width: hug-content
@@ -603,7 +608,7 @@ align-content: center
 	-- ds.heading-hero: Danger Buttons
 	
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Default
 		width: hug-content
@@ -651,7 +656,7 @@ align-content: center
 	-- end: ds.section-row
 
 	-- ds.section-row:
-	flush: full
+	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.heading-small: Disabled
 		width: hug-content
