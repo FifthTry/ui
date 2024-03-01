@@ -26,7 +26,8 @@ editor-data data:
 module open-file: open-file
 string $header-title: *$page.data.current-file.full-name
 optional string top-message:
-
+boolean $edit: false
+optional string $content:
 
 -- p.page:
 site-data: $page.site-data
@@ -42,7 +43,7 @@ top-message: $page.top-message
 
 		-- web-components.code-preview:
 		url: $page.data.site-homepage-url
-		if: { page.data.current-file.filetype != "image" }
+		if: { page.data.current-file.filetype != "image" && !page.edit }
 
 		-- file-tree.file-tree:
 		files: $page.data.files
@@ -53,24 +54,23 @@ top-message: $page.top-message
 		-- ds.column:
 		height: fill-container
 		align-content: top-center
+		width: fill-container
 
+		    -- file-header:
+		    data: $page.data
+		    $edit: $page.edit
+		    $content: $page.content
 
-            -- file-browser.file-browser:
-            file: $page.open-file.content
-            title: $page.header-title
-            if: { page.open-file.content != NULL }
+            -- browser:
+            data: $page.data
+            open-file: $page.open-file
+            $header-title: $page.header-title
+            if: { !page.edit }
 
-			-- file-browser.file-browser:
-			file: $page.data.current-file
-			title: $page.header-title
-			if: { page.open-file.content == NULL }
-
-			/-- web-components.code-editor: $page.header-title
-			$file: $page.data.current-file
-			;; Never put `if` condition here like:
-			;; if: { page.header-title != "Welcome" }
-			;; Because this will recreate the web-component everytime the
-			;; mutable in the condition changes
+			-- web-components.code-editor: $page.header-title
+			file: $page.data.current-file.text
+			$content: $page.content
+			if: { page.edit && page.data.current-file.text != NULL }
 
 		-- end: ds.column
 
@@ -85,30 +85,54 @@ top-message: $page.top-message
 
 
 -- component file-header:
-caption file-name:
+editor-data data:
+boolean $edit: false
+optional string $content:
 
 -- ds.row:
 width: fill-container
-align-content: left
-spacing: $ds.spaces.horizontal-gap.space-between
+align-content: right
+;; spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
 	-- ds.row:
-	if: { file-header.file-name != NULL }
-	width: hug-content
+    width: hug-content
 
-		-- ftd.text: $file-header.file-name
-		color: $ds.colors.text-strong
-		role: $ds.types.source-code
+        -- ds.primary-button: EDIT
+        if: { file-header.data.current-file.text != NULL }
+        $on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
 
-	-- end: ds.row
+        -- ds.primary-button: SAVE
+        if: { file-header.content != NULL }
+
+    -- end: ds.row
 
 -- end: ds.row
 
-
-
-
-
-
-
 -- end: file-header
+
+
+
+
+
+
+-- component browser:
+editor-data data:
+module open-file: open-file
+string $header-title:
+
+-- ds.column:
+
+    -- file-browser.file-browser:
+    file: $browser.open-file.content
+    title: $browser.header-title
+    if: { browser.open-file.content != NULL }
+
+    -- file-browser.file-browser:
+    file: $browser.data.current-file
+    title: $browser.header-title
+    if: { browser.open-file.content == NULL }
+
+-- end: ds.column
+
+-- end: browser
