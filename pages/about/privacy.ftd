@@ -9,7 +9,7 @@ ud.user-data user-data:
 module site-data: site-data
 optional string top-message:
 
--- p.page:
+-- p.page: Privacy FifthTry | Better way To Build Websites
 user-data: $page.user-data
 site-data: $page.site-data
 top-message: $page.top-message
@@ -17,6 +17,7 @@ top-message: $page.top-message
 	-- ds.section-column:
 	spacing: $ds.spaces.vertical-gap.large
 	inset: $ds.spaces.inset-tall.zero-medium
+	align-content: left
 	
 		-- ds.heading-large: Privacy Policy – FifthTry Inc.
 		
