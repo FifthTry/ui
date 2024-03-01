@@ -21,6 +21,7 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	- [Team page](/scenarios/about/team-page/)
 	- [About Us page](/scenarios/about/)
 	- [Blog](/scenarios/blogs/)
+	- [Blog Homepage](/scenarios/blogs/blog-home/)
 	
 	-- page-block: Auth Pages
 	
