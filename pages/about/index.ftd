@@ -16,6 +16,7 @@ top-message: $page.top-message
 
 	-- ds.section-column:
 	inset: $ds.spaces.inset-tall.zero-medium
+	align-content: left
 	
 		-- ds.heading-large: About FifthTry
 		
