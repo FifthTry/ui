@@ -1,0 +1,10 @@
+-- optional string $save-error:
+
+-- void submit(site_slug, file_name, content):
+string site_slug:
+string file_name:
+string content:
+js: $assets.files.assets.functions.js
+
+callAlert("save file name: " + name + " site: " + site_slug + " content: " + content)
+;; call submit with http options

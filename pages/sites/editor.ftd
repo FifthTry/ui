@@ -3,6 +3,7 @@
 -- import: ui.fifthtry.com/components/sites/file-browser
 -- import: ui.fifthtry.com/web-components
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
+-- import: ui.fifthtry.com/actions/sites/editor/save-file
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/sites/page as p
 -- import: ui.fifthtry.com/site-data
@@ -24,6 +25,7 @@ sites-records.site-common-data site:
 sites-records.navigation-info nav:
 editor-data data:
 module open-file: open-file
+module save-file: save-file
 string $header-title: *$page.data.current-file.full-name
 optional string top-message:
 boolean $edit: false
@@ -60,6 +62,10 @@ top-message: $page.top-message
 		    data: $page.data
 		    $edit: $page.edit
 		    $content: $page.content
+		    file-name: $page.header-title
+		    save-file: $page.save-file
+		    site-slug: $page.site.site-slug
+
 
             -- browser:
             data: $page.data
@@ -88,6 +94,9 @@ top-message: $page.top-message
 editor-data data:
 boolean $edit: false
 optional string $content:
+string file-name:
+string site-slug:
+module save-file: save-file
 
 -- ds.row:
 width: fill-container
@@ -99,11 +108,12 @@ background.solid: $ds.colors.background.base
     width: hug-content
 
         -- ds.primary-button: EDIT
-        if: { file-header.data.current-file.text != NULL }
+        if: { file-header.data.current-file.text != NULL && !file-header.edit }
         $on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
 
         -- ds.primary-button: SAVE
         if: { file-header.content != NULL }
+        $on-click$: $file-header.save-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content)
 
     -- end: ds.row
 
