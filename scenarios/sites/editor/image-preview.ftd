@@ -26,6 +26,7 @@ current-page: editor
 
 -- sr.file current-file: background.png
 filetype: image
+updated-at: 2 hours ago
 url: $assets.files.assets.slides.background.png.light
 
 
