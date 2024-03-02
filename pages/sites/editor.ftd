@@ -113,7 +113,7 @@ background.solid: $ds.colors.background.base
 
         -- ds.primary-button: SAVE
         if: { file-header.content != NULL }
-        $on-click$: $file-header.save-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content)
+        $on-click$: $file-header.save-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content, updated_at = $file-header.data.current-file.updated-at)
 
     -- end: ds.row
 
