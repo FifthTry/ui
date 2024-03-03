@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/pages/sites/github
+-- import: ui.fifthtry.com/pages/sites/setting/github
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/sites/site-info
@@ -7,7 +7,7 @@
 -- github.page:
 user-data: $john-doe.jd
 site: $site-info.acme-site
-nav: $nav
+dashboard-url: /scenarios/user/dashboard/
 data: $data
 site-data: scenario-site
 
@@ -16,7 +16,7 @@ account: FifthTry
 repo: ft
 branch: main
 is-configured: true
-configure-url: /scenarios/sites/configure-github/
+configure-url: /scenarios/sites/setting/configure-github/
 
 -- sites-records.navigation-info nav:
 dashboard-url: /scenarios/sites/dashboard/

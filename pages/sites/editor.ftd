@@ -22,7 +22,7 @@ string site-homepage-url:
 module site-data: site-data
 ud.user-data user-data:
 sites-records.site-common-data site:
-sites-records.navigation-info nav:
+string dashboard-url:
 editor-data data:
 module open-file: open-file
 module save-file: save-file
@@ -35,7 +35,8 @@ optional string $content:
 site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
-nav: $page.nav
+current-page: editor
+dashboard-url: $page.dashboard-url
 top-message: $page.top-message
 
 	-- ds.section-row:

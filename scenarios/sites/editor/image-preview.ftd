@@ -8,7 +8,7 @@
 site-data: scenario-site
 user-data: $john-doe.jd
 site: $site-info.acme-site
-nav: $nav
+dashboard-url: /scenarios/user/dashboard/
 data: $data
 
 
@@ -18,10 +18,6 @@ files: $files
 current-file: $current-file
 ;; site-homepage-url: https://www.fastn.com/
 site-homepage-url: /
-
--- sr.navigation-info nav:
-dashboard-url: /scenarios/user/dashboard/
-current-page: editor
 
 
 -- sr.file current-file: background.png

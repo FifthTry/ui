@@ -14,7 +14,8 @@
 module site-data: site-data
 ud.user-data user-data:
 sites-records.site-common-data site:
-sites-records.navigation-info nav:
+string dashboard-url:
+string current-page:
 boolean $open: false
 
 -- ds.section-column:
@@ -41,7 +42,7 @@ radius: $ds.radius.zero
 				white-space: nowrap
 				
 				-- ds.copy-regular: $header.site.account-name
-				link: $header.nav.dashboard-url
+				link: $header.dashboard-url
 				white-space: nowrap
 				
 				-- ds.copy-regular: →
@@ -58,24 +59,21 @@ radius: $ds.radius.zero
 			;;width.fixed.px: 420
 			
 				-- tab-link: About
-				is-active if { header.nav.current-page == "info" }: true
+				is-active if { header.current-page == "info" }: true
 				link: $header.site.info-url
 				
 				-- tab-link: Editor
-				is-active if { header.nav.current-page == "editor" }: true
+				is-active if { header.current-page == "editor" }: true
 				link: $header.site.editor-url
 				
-				-- tab-link: Domains
-				is-active if { header.nav.current-page == "domains" }: true
-				link: $header.site.domains-url
-				
-				-- tab-link: Github
-				is-active if { header.nav.current-page == "github" }: true
-				link: $header.site.github-url
+				/-- tab-link: Change Requests
+				is-active if { header.current-page == "cr" }: true
+				link: $header.site.cr-url
 
-				-- tab-link: Tokens
-				is-active if { header.nav.current-page == "tokens" }: true
-				link: $header.site.tokens-url
+				-- tab-link: Settings
+				is-active if { header.current-page == "setting" }: true
+				link: $header.site.setting-url
+
 
 				-- avatar.avatar:
 				user-data: $header.user-data
@@ -110,6 +108,7 @@ width: hug-content
 radius: $ds.radius.zero
 
 	-- ds.copy-regular: $tab-link.text
+	white-space: nowrap
 	
 -- end: ds.row
 

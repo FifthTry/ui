@@ -8,15 +8,11 @@ string info-url:
 string editor-url:
 string tokens-url:
 string github-url:
+string setting-url:
+string cr-url:
 string domains-url:
 string updated-on:
 ftd.image-src preview-image:
-
-
-
--- record navigation-info:
-string dashboard-url:
-string current-page:  ;; can be one of "info", "github", "domains", "editor" or "tokens"
 
 
 
