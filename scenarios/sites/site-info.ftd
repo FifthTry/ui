@@ -21,7 +21,7 @@ github-url: /scenarios/sites/setting/github/
 domains-url: /scenarios/sites/setting/domains/
 editor-url: /scenarios/sites/editor/
 setting-url: /scenarios/sites/setting/domains/
-cr-url: /scenarios/sites/cr/
+cr-list-url: /scenarios/sites/cr-list/
 tokens-url: /scenarios/sites/setting/tokens/
 updated-on: 14th Feb
 preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
