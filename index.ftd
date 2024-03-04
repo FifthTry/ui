@@ -24,6 +24,7 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	- [Login page](/scenarios/signin-page/)
 	- [Signup page](/scenarios/signup-page/)
 	- [Forgot Password page](/scenarios/forgot-password/)
+	- [Change Password page](/scenarios/change-password/?code=auth) ;; ?code is required
 	- [Password Recovery page](/scenarios/password-recovery/)
 	
 	-- page-block: Org Pages
