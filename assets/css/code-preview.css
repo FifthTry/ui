@@ -1,35 +1,12 @@
-body {
-  margin: 0;
-  overflow: hidden;
+.mobile {
+  border-image: url("mobile.svg") 134 / 31 / 12.74 stretch;
 }
 
-#floating-window {
-  position: absolute;
-  width: 400px;
-  height: 300px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
+.desktop {
+  border-image: url("desktop.svg") 74 / 97 / 39 stretch;
 }
 
-#header {
-  background-color: #3498db;
-  color: #fff;
-  padding: 8px;
-  cursor: move;
-}
 
-#content {
-  height: calc(100% - 30px);
-  overflow: hidden;
-}
-
-#iframe-container {
-  width: 100%;
-  height: 100%;
-}
-
-button {
-  cursor: pointer;
+.tablet {
+  border-image: url("tablet.svg") 164 / 31 / 27.74 stretch;
 }

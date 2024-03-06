@@ -4,6 +4,7 @@
 js: $assets.files.web-components.code-preview.js
 boolean dark-mode: $ftd.dark-mode
 string url:
+ftd.image-src refresh: $assets.files.assets.refresh.svg
 
 -- web-component code-editor:
 caption filename:
