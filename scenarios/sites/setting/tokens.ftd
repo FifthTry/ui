@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/pages/sites/tokens
+-- import: ui.fifthtry.com/pages/sites/setting/tokens
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
@@ -9,13 +9,8 @@
 site-data: scenario-site
 user-data: $john-doe.jd
 site: $site-info.acme-site
-nav: $nav
+dashboard-url: /scenarios/user/dashboard/
 tokens: $tokens
-
-
--- sites-records.navigation-info nav:
-dashboard-url: /scenarios/sites/dashboard/
-current-page: tokens
 
 
 -- sites-records.token list tokens:
