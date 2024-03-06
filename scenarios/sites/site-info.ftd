@@ -7,7 +7,7 @@
 -- site-info.page:
 site-data: scenario-site
 site: $acme-site
-nav: $nav
+dashboard-url: /scenarios/user/dashboard/
 user-data: $john-doe.jd
 
 
@@ -17,13 +17,12 @@ site-name: Acme, Inc
 site-slug: acme
 primary-domain: www.acme.com
 info-url: /scenarios/sites/site-info/
-github-url: /scenarios/sites/github/
-domains-url: /scenarios/sites/domains/
+github-url: /scenarios/sites/setting/github/
+domains-url: /scenarios/sites/setting/domains/
 editor-url: /scenarios/sites/editor/
-tokens-url: /scenarios/sites/tokens/
+setting-url: /scenarios/sites/setting/domains/
+cr-list-url: /scenarios/sites/cr-list/
+tokens-url: /scenarios/sites/setting/tokens/
 updated-on: 14th Feb
 preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 
--- sites-records.navigation-info nav:
-dashboard-url: /scenarios/user/dashboard/
-current-page: info

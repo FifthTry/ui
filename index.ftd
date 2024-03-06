@@ -16,7 +16,7 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	- [Logged In About page](/scenarios/about/logged-in-about/)
 	- [Logged In Team page](/scenarios/about/logged-in-team/)
 	- [Pricing page](/scenarios/about/pricing/)
-	- [Term page](/scenarios/about/terms-page/)
+	- [Terms page](/scenarios/about/terms-page/)
 	- [Privacy page](/scenarios/about/privacy-page/)
 	- [Team page](/scenarios/about/team-page/)
 	- [About Us page](/scenarios/about/)
@@ -28,6 +28,7 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	- [Login page](/scenarios/signin-page/)
 	- [Signup page](/scenarios/signup-page/)
 	- [Forgot Password page](/scenarios/forgot-password/)
+	- [Change Password page](/scenarios/change-password/?code=auth) ;; ?code is required
 	- [Password Recovery page](/scenarios/password-recovery/)
 	
 	-- page-block: Org Pages
@@ -42,14 +43,16 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	-- page-block: Site Pages
 	
 	- [Site Info](/scenarios/sites/site-info/)
-	- [Site Domains](/scenarios/sites/domains/)
-	- [Site Tokens](/scenarios/sites/tokens/)
-	- [Github (Un-configured)](/scenarios/sites/github/)
-	- [Github (Configure form)](/scenarios/sites/configure-github/)
-	- [Github (Configured)](/scenarios/sites/github-configured/)
-	- [Coming Soon page](/scenarios/sites/coming-soon/)
 	- [Page with top message](/scenarios/sites/top-message/)
-	
+
+	-- page-block: Site Settings
+
+    - [Site Domains](/scenarios/sites/setting/domains/)
+    - [Github (Configure form)](/scenarios/sites/setting/configure-github/)
+    - [Github (Un-configured)](/scenarios/sites/setting/github/)
+    - [Github (Configured)](/scenarios/sites/setting/github-configured/)
+    - [Site Tokens](/scenarios/sites/setting/tokens/)
+
 	-- page-block: Site Editor Pages
 	
 	- [Site Editor With Code Preview](/scenarios/sites/editor/)

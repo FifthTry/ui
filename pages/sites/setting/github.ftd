@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/sites/page as p
+-- import: ui.fifthtry.com/components/sites/setting/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/records/sites as sites-records
@@ -9,7 +9,7 @@
 module site-data: site-data
 ud.user-data user-data:
 sites-records.site-common-data site:
-sites-records.navigation-info nav:
+string dashboard-url:
 sites-records.gh-oidc-data data:
 optional string top-message:
 
@@ -17,7 +17,8 @@ optional string top-message:
 site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
-nav: $page.nav
+dashboard-url: $page.dashboard-url
+current-page: github
 top-message: $page.top-message
     
     -- ds.section-column:

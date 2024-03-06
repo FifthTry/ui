@@ -22,7 +22,7 @@ highlight-text: 2 hours
 - Loved by 3000+ tech-enthusiasts
 
 -- card: Challenges in Today's Website Development
-card-list: $challange-list
+card-list: $challenge-list
 
 -- card: How FifthTry solves this for you
 card-list: $solution-list
@@ -559,7 +559,7 @@ optional string cta-text:
 optional string text:
 optional string cta-link:
 
--- cards list challange-list:
+-- cards list challenge-list:
 
 -- cards: Building Your site
 triangle-icon-1: $assets.files.assets.homepage.triangle-1.svg
@@ -585,7 +585,7 @@ circle-icon-3: $assets.files.assets.homepage.circle-3.svg
 - Unreliable custom solutions
 - Difficulty in team collaboration during updates.
 
--- end: challange-list
+-- end: challenge-list
 
 
 

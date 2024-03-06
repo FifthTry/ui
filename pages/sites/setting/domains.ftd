@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/components/sites/page as p
+-- import: ui.fifthtry.com/components/sites/setting/page as p
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/site-header
 -- import: ui.fifthtry.com/components/sites/site-domain-info
@@ -16,7 +16,7 @@
 module site-data: site-data
 ud.user-data user-data:
 sites-records.site-common-data site:
-sites-records.navigation-info nav:
+string dashboard-url:
 sites-records.domain list domains:
 module add-domain: add-domain
 module delete-domain: delete-domain
@@ -29,7 +29,8 @@ optional string top-message:
 site-data: $page.site-data
 user-data: $page.user-data
 site: $page.site
-nav: $page.nav
+dashboard-url: $page.dashboard-url
+current-page: domains
 top-message: $page.top-message
 
 	-- ds.section-column:
