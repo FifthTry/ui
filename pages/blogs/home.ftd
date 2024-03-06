@@ -22,7 +22,7 @@ inset: $ds.spaces.inset-wide.large
 
 -- blog.blog:
 
--- blog.blog-card: [Launching fifthtry.com](/scenarios/blogs/)
+-- blog.blog-card: [Launching fifthtry.com](/scenarios/blogs/blog-post/)
 date: 1st March 2024
 
 The past three years have been quite a journey for us. With over 400 releases and 450+ stars on GitHub, and our community expanding to 3000+ engineers, creators, and founders, we've moved closer to our mission...
@@ -34,3 +34,9 @@ The past three years have been quite a journey for us. With over 400 releases an
 -- end: p.page
 
 -- end: page
+
+
+
+
+
+

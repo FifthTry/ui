@@ -23,40 +23,6 @@ date: 1st March 2024
 -- ds.row:
 inset: $ds.spaces.inset-wide.large
 
--- ds.container:
-inset: $ds.spaces.inset-square.medium
-background.solid: $ds.colors.background.step-1
-width.fixed.percent: 30
-radius: $ds.radius.medium
-
--- ds.copy-regular: Table of Contents
-color: $ds.colors.text-strong
-
--- ds.column:
-align-content: left
-
--- ds.link: The Growing Complexity
-link: /
-
--- ds.link: The Tempting Modern Website Builders
-link: /
-
--- ds.link: FifthTry's Solution
-link: /
-
--- ds.link: Where are we today?
-link: /
-
--- ds.link: What's Next?
-link: /
-
--- ds.link: Try FifthTry for your website
-link: /
-
--- end: ds.column
-
--- end: ds.container
-
 -- ds.copy-regular:
 
 The past three years have been quite a journey for us. With over [400 releases](https://github.com/fastn-stack/fastn/releases) and [450+ stars on GitHub](https://github.com/fastn-stack/fastn), and our community expanding to [3000+ engineers, creators, and founders](https://discord.com/invite/eNXVBMq4xt), we've moved closer to our mission — helping you build 
@@ -64,18 +30,16 @@ websites faster and better. Today, we are excited to launch our [Hosting Solutio
 
 For those new to FifthTry, let me give you a quick rundown of who we are.
 
+At FifthTry, we set out to tackle the challenges in today's website development. 
+The existing options cater either to seasoned programmers or 
+those averse to coding, leaving a significant segment underserved. **This 
+exclusivity seemed unfair to us.**
+
 -- end: ds.row
 
 -- ds.column:
 inset: $ds.spaces.inset-wide.large
 align-content: left
-
--- ds.copy-regular:
-
-At FifthTry, we set out to tackle the challenges in today's website development. 
-The existing options cater either to seasoned programmers or 
-those averse to coding, leaving a significant segment underserved. **This 
-exclusivity seemed unfair to us.**
 
 -- ds.heading-medium: The Growing Complexity 
 

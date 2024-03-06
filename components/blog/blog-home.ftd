@@ -17,9 +17,6 @@ content: $blog.wrapper
 
 
 
-
-
-
 -- component blog-card:
 caption title:
 body description:
