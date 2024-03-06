@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/components/blog/blog-post as post
 ;; -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 
@@ -13,10 +14,9 @@ user-data: $page.user-data
 ;; site-data: $page.site-data
 ;; top-message: $page.top-message
 
-
 -- ds.section-column:
 
--- blog-info: Launching fifthtry.com
+-- post.blog-info: Launching fifthtry.com
 name: Nandhini Devi
 date: 1st March 2024
 
@@ -204,33 +204,4 @@ We value your feedback and invite you to [join our Discord community](https://di
 
 
 
--- component blog-info:
-caption title:
-string name:
-string date:
 
--- ds.section-column:
-inset: $ds.spaces.inset-tall.zero-medium
-margin: $ds.spaces.vertical-gap.small
-
--- ds.heading-large: $blog-info.title
-color: $ds.colors.text-strong
-
--- ds.row:
-width: hug-content
-
--- ds.copy-large: 
-color: $ds.colors.text
-
-$blog-info.name
-
--- ds.copy-large: 
-color: $ds.colors.text
-
-$blog-info.date
-
--- end: ds.row
-
--- end: ds.section-column
-
--- end: blog-info
