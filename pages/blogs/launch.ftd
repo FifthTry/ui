@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/components/blog/blog-post as post
 ;; -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/pages/blogs/authors as author-bio
 
 
 -- component page:
@@ -151,8 +152,9 @@ solution for your website, give FifthTry a try. [Create your account](https://ww
 
 We value your feedback and invite you to [join our Discord community](https://discord.com/invite/eNXVBMq4xt) to stay in the loop.
 
-
 -- end: ds.column
+
+-- author-bio.author-nandhini:
 
 -- end: ds.section-column
 
