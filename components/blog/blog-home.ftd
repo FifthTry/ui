@@ -21,6 +21,7 @@ content: $blog.wrapper
 caption title:
 body description:
 string date:
+optional string link:
 
 -- ds.container:
 inset: $ds.spaces.inset-square.medium
@@ -38,6 +39,7 @@ $blog-card.date
 
 -- ds.copy-large: 
 color: $ds.colors.text-strong
+link: $blog-card.link
 
 $blog-card.title
 
