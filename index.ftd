@@ -59,6 +59,10 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	- [Site Editor With Code Preview](/scenarios/sites/editor/)
 	- [Site Editor With Image Preview](/scenarios/sites/editor/image-preview/)
 	
+	-- page-block: Featured Template
+
+	- [Templates](/scenarios/featured-template)
+
 	
 	-- page-block: University Scenarios
 	

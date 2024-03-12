@@ -1,0 +1,22 @@
+
+-- record template:
+caption title:
+optional ftd.image-src screenshot:
+string template-url:
+
+
+-- record template-category:
+caption title:
+template list templates:
+
+
+
+-- record template-details:
+optional ftd.image-src screenshot:
+optional string template-name:
+optional body desc:
+optional string updated-on:
+optional string preview-url:
+optional string github-url:
+optional string features:
+optional string pages:

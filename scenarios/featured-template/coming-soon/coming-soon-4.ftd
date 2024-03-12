@@ -1,0 +1,21 @@
+-- import: ui.fifthtry.com/pages/featured-template/t-data
+-- import: ui.fifthtry.com/records/templates-list as template-records
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- t-data.page:
+template-data: $coming-soon
+user-data: $john-doe.jd
+
+-- template-records.template-details coming-soon:
+template-name: Coming Soon 4
+screenshot: $assets.files.assets.templates.coming-soon-4.png
+updated-on: 23 Feb 2024
+preview-url: https://meenukumari28.github.io/coming-soon-4/
+github-url: https://github.com/MeenuKumari28/coming-soon-4
+features: • Light and dark mode • Responsive Design for web and mobile • Colour styles • High quality Images • Multipage website
+pages: • Home page • Content page • Documentation detail page • Contact page • Terms & conditions page
+
+A customizable blog starter including modern designs with dark & light themes.
+Built with Next.js, Tailwind, and MDX.
+
