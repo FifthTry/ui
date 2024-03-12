@@ -9,10 +9,10 @@ user-data: $john-doe.jd
 
 -- template-records.template-details linktree:
 template-name: Linktree 3
-screenshot: $assets.files.assets.templates.linktree-3.png
+screenshot: $assets.files.assets.templates.linktree-3.PNG
 updated-on: 23 Feb 2024
-preview-url: https://meenukumari28.github.io/linktree-template/
-github-url: https://github.com/MeenuKumari28/linktree-template
+preview-url: https://meenukumari28.github.io/linktree-template-3/
+github-url: https://github.com/MeenuKumari28/linktree-template-3
 features: • Light and dark mode • Responsive Design for web and mobile • Colour styles • High quality Images • Multipage website
 pages: • Home page • Content page • Documentation detail page • Contact page • Terms & conditions page
 

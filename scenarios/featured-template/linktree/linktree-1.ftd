@@ -9,7 +9,7 @@ user-data: $john-doe.jd
 
 -- template-records.template-details linktree:
 template-name: Linktree 1
-screenshot: $assets.files.assets.templates.linktree-1.png
+screenshot: $assets.files.assets.templates.linktree-1.PNG
 updated-on: 23 Feb 2024
 preview-url: https://meenukumari28.github.io/linktree-template/
 github-url: https://github.com/MeenuKumari28/linktree-template
