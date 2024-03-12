@@ -1,0 +1,81 @@
+-- import: ui.fifthtry.com/pages/featured-template/template
+-- import: ui.fifthtry.com/records/templates-list as template-records
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- template.page:
+templates: $template-category-list
+user-data: $john-doe.jd
+
+-- template-records.template-category list template-category-list: 
+
+-- template-records.template-category: Linktree
+templates: $linktree-templates
+
+-- template-records.template-category: Coming Soon
+templates: $coming-soon-templates
+
+-- end: template-category-list
+
+
+
+
+
+
+-- template-records.template list linktree-templates:
+
+-- template-records.template: Linktree
+template-url: /scenarios/featured-template/linktree/linktree-1
+screenshot: $assets.files.assets.templates.linktree-1.png
+
+-- template-records.template: Linktree - 2
+template-url: /scenarios/featured-template/linktree/linktree-2
+screenshot: $assets.files.assets.templates.linktree-2.png
+
+-- template-records.template: Linktree - 3
+template-url: /scenarios/featured-template/linktree/linktree-3
+screenshot: $assets.files.assets.templates.linktree-3.png
+
+-- template-records.template: Linktree - 4
+template-url: /scenarios/featured-template/linktree/linktree-4
+screenshot: $assets.files.assets.templates.linktree-4.png
+
+-- end: linktree-templates
+
+
+
+-- template-records.template list coming-soon-templates:
+
+-- template-records.template: Coming Soon 1
+template-url: /scenarios/featured-template/coming-soon/coming-soon-1
+screenshot: $assets.files.assets.templates.coming-soon-1.png
+
+-- template-records.template: Coming Soon 2
+template-url: /scenarios/featured-template/coming-soon/coming-soon-2
+screenshot: $assets.files.assets.templates.coming-soon-2.png
+
+-- template-records.template: Coming Soon 3
+template-url: /scenarios/featured-template/coming-soon/coming-soon-3
+screenshot: $assets.files.assets.templates.coming-soon-3.png
+
+-- template-records.template: Coming Soon 4
+template-url: /scenarios/featured-template/coming-soon/coming-soon-4
+screenshot: $assets.files.assets.templates.coming-soon-4.png
+
+-- template-records.template: Coming Soon 5
+template-url: /scenarios/featured-template/coming-soon/coming-soon-5
+screenshot: $assets.files.assets.templates.coming-soon-5.png
+
+-- template-records.template: Coming Soon 6
+template-url: /scenarios/featured-template/coming-soon/coming-soon-6
+screenshot: $assets.files.assets.templates.coming-soon-6.png
+
+-- template-records.template: Coming Soon 7
+template-url: /scenarios/featured-template/coming-soon/coming-soon-7
+screenshot: $assets.files.assets.templates.coming-soon-7.png
+
+-- template-records.template: Coming Soon 8
+template-url: /scenarios/featured-template/coming-soon/coming-soon-8
+screenshot: $assets.files.assets.templates.coming-soon-8.png
+
+-- end: coming-soon-templates

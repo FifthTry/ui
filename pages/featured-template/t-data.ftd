@@ -1,0 +1,87 @@
+-- import: ui.fifthtry.com/components/featured-template/page as p
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/templates-list as tr
+
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data:
+tr.template-details template-data:
+
+-- p.page:
+site-data: $page.site-data
+user-data: $page.user-data
+template-data: $page.template-data
+
+-- ds.section-column:
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.large
+margin: $ds.spaces.vertical-gap.large
+align-content: top-left
+
+	-- ds.row:
+	align-content: top-left
+	spacing: $ds.spaces.horizontal-gap.large
+	
+		-- ftd.image:
+		src: $page.template-data.screenshot
+		width.fixed.px: 640
+		height.fixed.px: 436
+		fit: cover
+		border-radius.px: 8
+
+		-- ds.column:
+		align-content: top-left
+		spacing: $ds.spaces.vertical-gap.large
+
+		-- ds.column:
+		align-content: top-left
+
+		-- ds.heading-medium: $page.template-data.template-name
+
+		-- ds.copy-regular: 
+
+		$page.template-data.desc
+
+		-- ds.label-text: Updated
+		placement: horizontal
+		value: $page.template-data.updated-on
+
+		-- end: ds.column
+
+		-- ds.icon-button: $page.template-data.preview-url
+		size: small
+		link: $page.template-data.preview-url
+		kind: link
+		icon: $assets.files.assets.templates.link.svg
+
+		-- ds.row:
+
+		-- ds.secondary-button: Preview
+		link: $page.template-data.preview-url
+		width: full
+
+		-- ds.primary-button: Use template
+		link: $page.template-data.github-url
+		width: full
+
+		-- end: ds.row
+
+		-- end: ds.column
+
+	-- end: ds.row
+
+	-- ds.heading-small: Features
+
+	-- ds.copy-large: $page.template-data.features
+
+	-- ds.heading-small: Pages
+
+	-- ds.copy-large: $page.template-data.pages
+
+	-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page
