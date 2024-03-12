@@ -9,7 +9,7 @@ user-data: $john-doe.jd
 
 -- template-records.template-details coming-soon:
 template-name: Coming Soon 8
-screenshot: $assets.files.assets.templates.coming-soon-8.png
+screenshot: $assets.files.assets.templates.coming-soon-8.PNG
 updated-on: 23 Feb 2024
 preview-url: https://meenukumari28.github.io/coming-soon-8/
 github-url: https://github.com/MeenuKumari28/coming-soon-8

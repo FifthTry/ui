@@ -26,19 +26,19 @@ templates: $coming-soon-templates
 
 -- template-records.template: Linktree
 template-url: /scenarios/featured-template/linktree/linktree-1
-screenshot: $assets.files.assets.templates.linktree-1.png
+screenshot: $assets.files.assets.templates.linktree-1.PNG
 
 -- template-records.template: Linktree - 2
 template-url: /scenarios/featured-template/linktree/linktree-2
-screenshot: $assets.files.assets.templates.linktree-2.png
+screenshot: $assets.files.assets.templates.linktree-2.PNG
 
 -- template-records.template: Linktree - 3
 template-url: /scenarios/featured-template/linktree/linktree-3
-screenshot: $assets.files.assets.templates.linktree-3.png
+screenshot: $assets.files.assets.templates.linktree-3.PNG
 
 -- template-records.template: Linktree - 4
 template-url: /scenarios/featured-template/linktree/linktree-4
-screenshot: $assets.files.assets.templates.linktree-4.png
+screenshot: $assets.files.assets.templates.linktree-4.PNG
 
 -- end: linktree-templates
 
@@ -52,30 +52,30 @@ screenshot: $assets.files.assets.templates.coming-soon-1.PNG
 
 -- template-records.template: Coming Soon 2
 template-url: /scenarios/featured-template/coming-soon/coming-soon-2
-screenshot: $assets.files.assets.templates.coming-soon-2.png
+screenshot: $assets.files.assets.templates.coming-soon-2.PNG
 
 -- template-records.template: Coming Soon 3
 template-url: /scenarios/featured-template/coming-soon/coming-soon-3
-screenshot: $assets.files.assets.templates.coming-soon-3.png
+screenshot: $assets.files.assets.templates.coming-soon-3.PNG
 
 -- template-records.template: Coming Soon 4
 template-url: /scenarios/featured-template/coming-soon/coming-soon-4
-screenshot: $assets.files.assets.templates.coming-soon-4.png
+screenshot: $assets.files.assets.templates.coming-soon-4.PNG
 
 -- template-records.template: Coming Soon 5
 template-url: /scenarios/featured-template/coming-soon/coming-soon-5
-screenshot: $assets.files.assets.templates.coming-soon-5.png
+screenshot: $assets.files.assets.templates.coming-soon-5.PNG
 
 -- template-records.template: Coming Soon 6
 template-url: /scenarios/featured-template/coming-soon/coming-soon-6
-screenshot: $assets.files.assets.templates.coming-soon-6.png
+screenshot: $assets.files.assets.templates.coming-soon-6.PNG
 
 -- template-records.template: Coming Soon 7
 template-url: /scenarios/featured-template/coming-soon/coming-soon-7
-screenshot: $assets.files.assets.templates.coming-soon-7.png
+screenshot: $assets.files.assets.templates.coming-soon-7.PNG
 
 -- template-records.template: Coming Soon 8
 template-url: /scenarios/featured-template/coming-soon/coming-soon-8
-screenshot: $assets.files.assets.templates.coming-soon-8.png
+screenshot: $assets.files.assets.templates.coming-soon-8.PNG
 
 -- end: coming-soon-templates
