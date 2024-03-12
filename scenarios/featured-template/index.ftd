@@ -48,7 +48,7 @@ screenshot: $assets.files.assets.templates.linktree-4.png
 
 -- template-records.template: Coming Soon 1
 template-url: /scenarios/featured-template/coming-soon/coming-soon-1
-screenshot: $assets.files.assets.templates.coming-soon-1.png
+screenshot: $assets.files.assets.templates.coming-soon-1.PNG
 
 -- template-records.template: Coming Soon 2
 template-url: /scenarios/featured-template/coming-soon/coming-soon-2
