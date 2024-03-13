@@ -1,3 +1,3 @@
 -- record template-category:
-caption title:
+optional caption title:
 ds.package-info list packages:

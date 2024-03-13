@@ -1,21 +1,35 @@
--- import: ui.fifthtry.com/pages/featured-template/t-data
+-- import: ui.fifthtry.com/pages/featured-templates
 -- import: ui.fifthtry.com/records/templates-list as template-records
+-- import: meenukumari28.github.io/coming-soon-7
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
--- t-data.page:
-template-data: $coming-soon
+-- featured-templates.page:
+packages: $coming-soon-7.package-info
 user-data: $john-doe.jd
+templates: $template-category-list
 
--- template-records.template-details coming-soon:
-template-name: Coming Soon 7
-screenshot: $assets.files.assets.templates.coming-soon-7.PNG
-updated-on: 23 Feb 2024
-preview-url: https://meenukumari28.github.io/coming-soon-7/
-github-url: https://github.com/MeenuKumari28/coming-soon-7
-features: • Light and dark mode • Responsive Design for web and mobile • Colour styles • High quality Images • Multipage website
-pages: • Home page • Content page • Documentation detail page • Contact page • Terms & conditions page
 
-A customizable blog starter including modern designs with dark & light themes.
-Built with Next.js, Tailwind, and MDX.
+-- template-records.template-category list template-category-list: 
 
+-- template-records.template-category:
+packages: $coming-soon-packages
+
+-- end: template-category-list
+
+
+-- ds.package-info list coming-soon-packages:
+
+-- ds.package-info: Coming Soon 1
+template-url: /scenarios/featured-template/coming-soon/coming-soon-1
+screenshot: $assets.files.assets.templates.coming-soon-1.PNG
+
+-- ds.package-info: Coming Soon 2
+template-url: /scenarios/featured-template/coming-soon/coming-soon-2
+screenshot: $assets.files.assets.templates.coming-soon-2.PNG
+
+-- ds.package-info: Coming Soon 8
+template-url: /scenarios/featured-template/coming-soon/coming-soon-8
+screenshot: $assets.files.assets.templates.coming-soon-8.PNG
+
+-- end: coming-soon-packages
