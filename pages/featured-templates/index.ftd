@@ -1,18 +1,19 @@
 -- import: ui.fifthtry.com/components/featured-templates/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
-;;-- import: ui.fifthtry.com/records/templates-list as tr
-
+-- import: ui.fifthtry.com/records/templates-list as templates-records
+-- import: ui.fifthtry.com/components/featured-templates/template-view
 
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
-ds.template-details template-data:
+ds.package-info packages:
+templates-records.template-category list templates:
 
 -- p.page:
 site-data: $page.site-data
 user-data: $page.user-data
-template-data: $page.template-data
+packages: $page.packages
 
 -- ds.section-column:
 inset: $ds.spaces.inset-square.medium
@@ -25,7 +26,7 @@ align-content: top-left
 	spacing: $ds.spaces.horizontal-gap.large
 	
 		-- ftd.image:
-		src: $page.template-data.screenshot
+		src: $page.packages.screenshot
 		width.fixed.px: 640
 		height.fixed.px: 436
 		fit: cover
@@ -38,32 +39,33 @@ align-content: top-left
 		-- ds.column:
 		align-content: top-left
 
-		-- ds.heading-medium: $page.template-data.template-name
+		-- ds.heading-medium: $page.packages.template-name
 
 		-- ds.copy-regular: 
 
-		$page.template-data.desc
+		$page.packages.desc
 
 		-- ds.label-text: Updated
 		placement: horizontal
-		value: $page.template-data.updated-on
+		value: $page.packages.updated-on
 
 		-- end: ds.column
 
-		-- ds.icon-button: $page.template-data.preview-url
+		-- ds.icon-button: $page.packages.preview-url
 		size: small
-		link: $page.template-data.preview-url
+		link: $page.packages.preview-url
 		kind: link
 		icon: $assets.files.assets.templates.link.svg
 
 		-- ds.row:
 
 		-- ds.secondary-button: Preview
-		link: $page.template-data.preview-url
+		link: $page.packages.preview-url
 		width: full
+		open-in-new-tab: true
 
 		-- ds.primary-button: Use template
-		link: $page.template-data.github-url
+		link: $page.packages.github-url
 		width: full
 
 		-- end: ds.row
@@ -78,8 +80,8 @@ align-content: top-left
 	align-content: left
 	spacing: $ds.spaces.vertical-gap.small
 
-	-- ds.copy-large: $feature
-	for: $feature in $page.template-data.features
+	-- ds.copy-regular: $feature
+	for: $feature in $page.packages.features
 
 	-- end: ds.column
 
@@ -89,8 +91,36 @@ align-content: top-left
 	align-content: left
 	spacing: $ds.spaces.vertical-gap.small
 
-	-- ds.copy-large: $page
-	for: $page in $page.template-data.pages
+	-- ds.copy-regular: $page
+	for: $page in $page.packages.pages
+
+	-- end: ds.column
+
+	-- ds.column:
+	align-content: left
+	inset: $ds.spaces.inset-tall.zero-medium
+
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.space-between
+
+	-- ds.heading-small: More template like this
+
+	-- ds.icon-button: View all Templates
+	size: small
+	link: /scenarios/featured-template
+	kind: link
+	icon-position: at-end
+	icon: $assets.files.assets.templates.right.svg
+
+	-- end: ds.row
+
+	-- ds.row:
+
+	-- template-view.grid-view-wrapper:
+	for: $obj in $page.templates
+	category: $obj
+
+	-- end: ds.row
 
 	-- end: ds.column
 

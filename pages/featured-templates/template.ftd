@@ -9,13 +9,13 @@
 module site-data: site-data
 ud.user-data user-data:
 templates-records.template-category list templates:
-;;ds.template-details list template-data:
+ds.package-info packages:
 
 -- p.page:
 site-data: $page.site-data
 user-data: $page.user-data
 templates: $page.templates
-;;template-data: $page.template-data
+packages: $page.packages
 
 -- ds.section-column:
 inset: $ds.spaces.inset-square.medium

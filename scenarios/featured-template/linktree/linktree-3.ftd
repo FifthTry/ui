@@ -1,21 +1,38 @@
--- import: ui.fifthtry.com/pages/featured-template/t-data
+-- import: ui.fifthtry.com/pages/featured-templates
 -- import: ui.fifthtry.com/records/templates-list as template-records
+-- import: meenukumari28.github.io/linktree-template-3
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
--- t-data.page:
-template-data: $linktree
+-- featured-templates.page:
+packages: $linktree-template-3.package-info
 user-data: $john-doe.jd
+templates: $template-category-list
 
--- template-records.template-details linktree:
-template-name: Linktree 3
-screenshot: $assets.files.assets.templates.linktree-3.PNG
-updated-on: 23 Feb 2024
-preview-url: https://meenukumari28.github.io/linktree-template-3/
-github-url: https://github.com/MeenuKumari28/linktree-template-3
-features: • Light and dark mode • Responsive Design for web and mobile • Colour styles • High quality Images • Multipage website
-pages: • Home page • Content page • Documentation detail page • Contact page • Terms & conditions page
 
-A customizable blog starter including modern designs with dark & light themes.
-Built with Next.js, Tailwind, and MDX.
+-- template-records.template-category list template-category-list: 
+
+-- template-records.template-category:
+packages: $linktree-packages
+
+-- end: template-category-list
+
+
+-- ds.package-info list linktree-packages: 
+
+-- ds.package-info: Linktree - 1
+template-url: /scenarios/featured-template/linktree/linktree-1
+screenshot: $assets.files.assets.templates.linktree-1.PNG
+
+-- ds.package-info: Linktree - 2
+template-url: /scenarios/featured-template/linktree/linktree-2
+screenshot: $assets.files.assets.templates.linktree-2.PNG
+
+-- ds.package-info: Linktree - 4
+template-url: /scenarios/featured-template/linktree/linktree-4
+screenshot: $assets.files.assets.templates.linktree-4.PNG
+
+-- end: linktree-packages
+
+
 
