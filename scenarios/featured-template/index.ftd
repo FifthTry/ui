@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/pages/featured-template/template
+-- import: ui.fifthtry.com/pages/featured-templates/template
 -- import: ui.fifthtry.com/records/templates-list as template-records
 -- import: ui.fifthtry.com/scenarios/john-doe
 
@@ -10,19 +10,27 @@ user-data: $john-doe.jd
 -- template-records.template-category list template-category-list: 
 
 -- template-records.template-category: Linktree
-templates: $linktree-templates
+packages: $linktree-packages
 
--- template-records.template-category: Coming Soon
-templates: $coming-soon-templates
+/-- template-records.template-category: Coming Soon
+package-info: $coming-soon-templates
 
 -- end: template-category-list
 
 
 
+-- ds.package-info list linktree-packages: 
+
+-- ds.package-info: one
+template-url: /scenarios/featured-template/linktree/linktree-1
+screenshot: $assets.files.assets.templates.linktree-1.PNG
+
+
+-- end: linktree-packages
 
 
 
--- template-records.template list linktree-templates:
+/-- template-records.template list linktree-templates:
 
 -- template-records.template: Linktree
 template-url: /scenarios/featured-template/linktree/linktree-1
