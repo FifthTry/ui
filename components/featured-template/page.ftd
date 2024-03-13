@@ -8,7 +8,7 @@
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
-template-records.template-details template-data:
+;;template-records.template-details template-data:
 template-records.template-category list templates:
 children children:
 

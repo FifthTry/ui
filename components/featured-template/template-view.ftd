@@ -7,7 +7,7 @@
 template-records.template-category category:
 
 -- grid-view: $grid-view-wrapper.category.title
-templates: $grid-view-wrapper.category.templates
+packages: $grid-view-wrapper.category.packages
 
 -- end: grid-view-wrapper
 
@@ -15,7 +15,7 @@ templates: $grid-view-wrapper.category.templates
 
 -- component grid-view:
 optional caption title:
-template-records.template list templates:
+ds.package-info list packages:
 boolean $hover: false
 optional body body:
 
@@ -42,10 +42,9 @@ align-content: top-left
 		wrap: true
 		
 			-- grid-of-items: $obj.title
-			$loop$: $grid-view.templates as $obj
+			$loop$: $grid-view.packages as $obj
 			template-url: $obj.template-url
 			screenshot: $obj.screenshot
-			
 			
 		-- end: ds.row
 
@@ -58,10 +57,9 @@ align-content: top-left
 		spacing: $ds.spaces.vertical-gap.large
 		
 			-- grid-of-items: $obj.title
-			$loop$: $grid-view.templates as $obj
+			$loop$: $grid-view.packages as $obj
 			template-url: $obj.template-url
 			screenshot: $obj.screenshot
-			
 			
 		-- end: ds.column
 
@@ -72,98 +70,6 @@ align-content: top-left
 -- end: grid-view
 
 
-
-
-
-
-
-
-
-
--- component view-all:
-optional caption title:
-template list template:
-optional body body:
-boolean $hover: false
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px if { ftd.device == "mobile" }: 24
-
-	-- ftd.row:
-	width: fill-container
-	align-content: center
-	margin-top.px if { ftd.device == "mobile" }: 24
-	
-		-- ftd.desktop:
-		
-			-- ftd.text: $view-all.title
-			if: { view-all.title != NULL }
-			role: $inherited.types.heading-medium
-			color: $inherited.colors.accent.primary
-			width: fill-container
-			
-		-- end: ftd.desktop
-
-		-- ftd.mobile:
-		
-			-- ftd.text: $view-all.title
-			if: { view-all.title != NULL }
-			role: $inherited.types.copy-large
-			color: $inherited.colors.text
-			width: fill-container
-			align-self: center
-			
-		-- end: ftd.mobile
-
-	-- end: ftd.row
-
-	-- ftd.text:
-	if: { view-all.body != NULL }
-	role: $inherited.types.copy-regular
-	color: $inherited.colors.text
-	margin-top.px: 16
-	margin-bottom.px if { ftd.device == "mobile" }: 24
-	
-	$view-all.body
-	
-	-- ftd.desktop:
-	
-		-- ftd.row:
-		width: fill-container
-		spacing.fixed.px: 32
-		wrap: true
-		margin-vertical.px: 40
-		
-			-- grid-of-items: $obj.title
-			$loop$: $view-all.template as $obj
-			template-url: $obj.template-url
-			screenshot: $obj.screenshot
-			
-			
-		-- end: ftd.row
-
-	-- end: ftd.desktop
-
-	-- ftd.mobile:
-	
-		-- ftd.column:
-		width: fill-container
-		spacing.fixed.px: 32
-		
-			-- grid-of-items: $obj.title
-			$loop$: $view-all.template as $obj
-			template-url: $obj.template-url
-			screenshot: $obj.screenshot
-			
-			
-		-- end: ftd.column
-
-	-- end: ftd.mobile
-
--- end: ftd.column
-
--- end: view-all
 
 
 

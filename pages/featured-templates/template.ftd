@@ -1,5 +1,5 @@
--- import: ui.fifthtry.com/components/featured-template/page as p
--- import: ui.fifthtry.com/components/featured-template/template-view
+-- import: ui.fifthtry.com/components/featured-templates/page as p
+-- import: ui.fifthtry.com/components/featured-templates/template-view
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/records/templates-list as templates-records
@@ -9,13 +9,13 @@
 module site-data: site-data
 ud.user-data user-data:
 templates-records.template-category list templates:
-templates-records.template-details list template-data:
+;;ds.template-details list template-data:
 
 -- p.page:
 site-data: $page.site-data
 user-data: $page.user-data
 templates: $page.templates
-template-data: $page.template-data
+;;template-data: $page.template-data
 
 -- ds.section-column:
 inset: $ds.spaces.inset-square.medium

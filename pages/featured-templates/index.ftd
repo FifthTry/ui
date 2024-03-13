@@ -1,13 +1,13 @@
--- import: ui.fifthtry.com/components/featured-template/page as p
+-- import: ui.fifthtry.com/components/featured-templates/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/records/templates-list as tr
+;;-- import: ui.fifthtry.com/records/templates-list as tr
 
 
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
-tr.template-details template-data:
+ds.template-details template-data:
 
 -- p.page:
 site-data: $page.site-data
@@ -74,11 +74,25 @@ align-content: top-left
 
 	-- ds.heading-small: Features
 
-	-- ds.copy-large: $page.template-data.features
+	-- ds.column:
+	align-content: left
+	spacing: $ds.spaces.vertical-gap.small
+
+	-- ds.copy-large: $feature
+	for: $feature in $page.template-data.features
+
+	-- end: ds.column
 
 	-- ds.heading-small: Pages
 
-	-- ds.copy-large: $page.template-data.pages
+	-- ds.column:
+	align-content: left
+	spacing: $ds.spaces.vertical-gap.small
+
+	-- ds.copy-large: $page
+	for: $page in $page.template-data.pages
+
+	-- end: ds.column
 
 	-- end: ds.section-column
 
