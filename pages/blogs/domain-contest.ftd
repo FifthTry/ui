@@ -16,9 +16,10 @@ user-data: $page.user-data
 
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.extra-large
+align-content: top-left
 
 -- ds.heading-small: FifthTry Contest
-align: left
+
 
 -- ds.heading-hero: Build and Host Your Website on FifthTry and Win a Free Domain
 
@@ -36,6 +37,7 @@ placement: horizontal
 -- ds.label-text: End Date:
 value: 29th March 2024, 6 pm IST
 placement: horizontal
+align-content: right
 
 -- end: ds.row
 
@@ -72,25 +74,46 @@ shot at winning a free domain for your website.
 -- end: ds.column
 
 -- ds.column:
-
--- ds.heading-medium: How to participate
+shadow: $a
 
 -- ds.container:
 inset: $ds.spaces.inset-square.large
 background.solid: $ds.colors.background.step-2
-width.fixed.percent: 80
+width: fill-container
+radius: $ds.radius.medium
 
--- ds.copy-regular:
+-- ds.column:
 
-1) Sign Up and create your FifthTry account. [Add your domain and configure with GitHub.](https://fastn.com/ft/) (Free for the Beta Version).
-2) Use our [design system package](https://fastn.com/blog/design-system/) or choose a readymade template to build your site
-3) Drop your website and GitHub repo links on our dedicated Discord Thread, #freedomaincontest.
+-- ds.heading-small: How to participate
+color: $ds.colors.text-strong
+
+
+-- ds.copy-large:
+
+1) Sign Up and create your FifthTry account. Click on 'Create New Site' to get started. 
+  [Read Doc.](https://fastn.com/ft/)
+
+2) Use our [design system package](https://fastn.com/blog/design-system/) or choose a readymade template to
+  build your site.
+
+3) Use our editor to edit your website, add new pages, or preview your website in real time across mobile, 
+  desktop, and tablet views.
+
+4) Drop your website link on our dedicated Discord Thread, #freedomaincontest.
 
 **We'll be selecting the top 100 websites to receive a free domain.** Winners will receive a direct message with all the details! 
+
+-- end: ds.column
 
 -- end: ds.container
 
 -- end: ds.column
+
+-- ds.alert: Important
+kind: info
+
+To be eligible, ensure  timely submission, one entry per participant, and hosting the website on fifthtry.com
+
 
 -- end: ds.column
 
@@ -109,3 +132,12 @@ blur.px: 5
 spread.px: 3
 x-offset.px: 4
 y-offset.px: 6
+
+
+
+-- ftd.shadow a:
+color: #5C2860
+blur.px: 5
+spread.px: 3
+x-offset.px: -4
+y-offset.px: -6
