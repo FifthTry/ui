@@ -1,0 +1,117 @@
+-- import: ui.fifthtry.com/components/sites/setting/page as p
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: fastn/processors as pr
+
+;; TODO: add post request func
+
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data:
+sites-records.site-common-data site:
+string dashboard-url:
+optional string top-message:
+private boolean $reveal: true
+
+-- p.page:
+site-data: $page.site-data
+user-data: $page.user-data
+site: $page.site
+current-page: environments
+dashboard-url: $page.dashboard-url
+top-message: $page.top-message
+
+	-- ds.section-column:
+	inset: $ds.spaces.inset-tall.large
+
+    -- ds.primary-button: Reveal Config Vars
+    title if { page.reveal }: Hide Config Vars
+    radius: curved
+    $on-click$: $ftd.toggle($a = $page.reveal)
+
+    -- env-row:
+    if: { page.reveal }
+    env: $env
+    for: $env in $envs
+
+    -- ds.row:
+    if: { page.reveal }
+
+        -- ftd.text-input:
+        type: text
+        ;; $on-input$:
+        height.fixed.px: 32
+        border-radius.px: 4
+        placeholder: KEY
+        background.solid: transparent
+        border-width.px: 1
+        border-color: $inherited.colors.border
+        ;; border-color if { page.signup-action.name-error != NULL }: $inherited.colors.error.border
+        padding.px: 8
+        color: $inherited.colors.text-strong
+        margin-right.px: 8
+
+        -- ftd.text-input:
+        type: text
+        ;; $on-input$:
+        height.fixed.px: 32
+        border-radius.px: 4
+        placeholder: VALUE
+        background.solid: transparent
+        border-width.px: 1
+        border-color: $inherited.colors.border
+        ;; border-color if { page.signup-action.name-error != NULL }: $inherited.colors.error.border
+        padding.px: 8
+        color: $inherited.colors.text-strong
+        margin-right.px: 8
+
+        -- ds.primary-button: Add
+
+    -- end: ds.row
+	
+	-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page
+
+-- sites-records.Environment list envs:
+$processor$: pr.http
+url: http://127.0.0.1:8080/test.json ;; TODO: make this configurable
+
+-- component env-row:
+sites-records.Environment env:
+
+-- ds.row:
+
+-- ftd.text-input:
+type: text
+height.fixed.px: 32
+border-radius.px: 4
+value: $env-row.env.key
+background.solid: transparent
+border-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 8
+color: $inherited.colors.text-strong
+margin-right.px: 8
+
+-- ftd.text-input:
+type: text
+height.fixed.px: 32
+border-radius.px: 4
+value: $env-row.env.value
+background.solid: transparent
+border-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 8
+color: $inherited.colors.text-strong
+margin-right.px: 8
+
+-- ds.primary-button: Save
+
+-- end: ds.row
+
+-- end: env-row
