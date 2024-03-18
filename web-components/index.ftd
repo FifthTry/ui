@@ -10,4 +10,5 @@ ftd.image-src refresh: $assets.files.assets.refresh.svg
 caption filename:
 body $content:
 sr.file-text file:
+optional sr.file openfile:
 js: $assets.files.web-components.code-editor.js

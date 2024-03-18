@@ -84,6 +84,7 @@ top-message: $page.top-message
 
 			-- web-components.code-editor: $page.header-title
 			file: $page.data.current-file.text
+			openfile: $page.open-file.content
 			$content: $page.content
 			if: { page.edit && page.data.current-file.text != NULL }
 
