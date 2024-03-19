@@ -46,15 +46,11 @@ top-message: $page.top-message
 	inner-background.solid: $ds.colors.background.base
 	;; css: [ $assets.files.assets.css.code-editor.css, $assets.files.assets.css.code-preview.css ]
 
-		-- code-preview.code-preview:
-		;; url: $page.data.site-homepage-url
+		/-- code-preview.code-preview:
 		site-base-url: $page.data.site-base-url
         $site-relative-url: *$page.data.site-relative-url
 		if: { page.data.current-file.filetype != "image" && !page.edit }
 
-		/-- web-components.code-preview:
-		url: $page.data.site-relative-url
-		if: { page.data.current-file.filetype != "image" && !page.edit }
 
 		-- file-tree.file-tree:
 		files: $page.data.files
@@ -73,8 +69,8 @@ top-message: $page.top-message
 		    $content: $page.content
 		    file-name: $page.header-title
 		    save-file: $page.save-file
+		    openfile: $page.open-file.content
 		    site-slug: $page.site.site-slug
-
 
             -- browser:
             data: $page.data
@@ -107,6 +103,7 @@ optional string $content:
 string file-name:
 string site-slug:
 module save-file: save-file
+optional sites-records.file openfile:
 
 -- ds.row:
 width: fill-container
@@ -118,7 +115,11 @@ background.solid: $ds.colors.background.base
     width: hug-content
 
         -- ds.primary-button: EDIT
-        if: { file-header.data.current-file.text != NULL && !file-header.edit }
+        if: { file-header.data.current-file.text != NULL && !file-header.edit && file-header.openfile == NULL }
+        $on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
+
+        -- ds.primary-button: EDIT
+        if: { file-header.openfile != NULL && file-header.openfile.text != NULL }
         $on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
 
         -- ds.primary-button: SAVE
