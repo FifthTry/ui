@@ -61,5 +61,6 @@ optional string error:
 string updated-at:
 
 -- record Environment:
+integer id:
 string key:
 string value:
