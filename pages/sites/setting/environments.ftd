@@ -13,7 +13,7 @@ ud.user-data user-data:
 sites-records.site-common-data site:
 string dashboard-url:
 optional string top-message:
-private boolean $reveal: true
+private boolean $reveal: false
 private string $current-key: *$ftd.empty
 private string $current-value: *$ftd.empty
 
