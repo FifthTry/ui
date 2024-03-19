@@ -9,4 +9,3 @@ site-data: scenario-site
 user-data: $john-doe.jd
 site: $site-info.acme-site
 dashboard-url: /scenarios/user/dashboard/
-
