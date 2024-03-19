@@ -1,0 +1,5 @@
+-- import: ui.fifthtry.com/pages/blogs/domain-contest
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+-- domain-contest.page:
+user-data: $john-doe.jd

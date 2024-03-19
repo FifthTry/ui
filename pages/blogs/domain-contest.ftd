@@ -1,0 +1,143 @@
+-- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/components
+;; -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+
+
+-- component page:
+ud.user-data user-data:
+;; module site-data: site-data
+;; optional string top-message:
+
+-- p.page:
+user-data: $page.user-data
+;; site-data: $page.site-data
+;; top-message: $page.top-message
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.extra-large
+align-content: top-left
+
+-- ds.heading-small: FifthTry Contest
+
+
+-- ds.heading-hero: Build and Host Your Website on FifthTry and Win a Free Domain
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.extra-large
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.extra-large
+align-content: center
+
+-- ds.label-text: Start Date:
+value: 15th March 2024, 6 pm IST
+placement: horizontal
+
+-- ds.label-text: End Date:
+value: 29th March 2024, 6 pm IST
+placement: horizontal
+align-content: right
+
+-- end: ds.row
+
+-- ds.column:
+shadow: $n
+
+-- ds.container:
+inset: $ds.spaces.inset-square.large
+background.solid: $ds.colors.background.step-2
+width: fill-container
+radius: $ds.radius.medium
+
+-- ds.column:
+
+-- ds.heading-small: fifthtry.com just got a serious upgrade! 
+color: $ds.colors.text-strong
+align: left
+
+-- ds.copy-large: 
+
+Remember fastn, our 
+open-source programming language for web development? Well, now 
+it's joined by our hosting solution and editor, all live on 
+[fifthtry.com](https://www.fifthtry.com/). And, thanks to our latest [design system package](https://github.com/fastn-community/design-system/), 
+we have added new readymade templates and have made it easier 
+than ever to build custom components from scratch. To share this 
+excitement with you, we're kicking off a contest to give you a 
+shot at winning a free domain for your website.
+
+-- end: ds.column
+
+-- end: ds.container
+
+-- end: ds.column
+
+-- ds.column:
+shadow: $a
+
+-- ds.container:
+inset: $ds.spaces.inset-square.large
+background.solid: $ds.colors.background.step-2
+width: fill-container
+radius: $ds.radius.medium
+
+-- ds.column:
+
+-- ds.heading-small: How to participate
+color: $ds.colors.text-strong
+
+
+-- ds.copy-large:
+
+1) Sign Up and create your FifthTry account. Click on 'Create New Site' to get started. 
+  [Read Doc.](https://fastn.com/ft/)
+
+2) Use our [design system package](https://fastn.com/blog/design-system/) or choose a readymade template to
+  build your site.
+
+3) Use our editor to edit your website, add new pages, or preview your website in real time across mobile, 
+  desktop, and tablet views.
+
+4) Drop your website link on our dedicated Discord Thread, #freedomaincontest.
+
+**We'll be selecting the top 100 websites to receive a free domain.** Winners will receive a direct message with all the details! 
+
+-- end: ds.column
+
+-- end: ds.container
+
+-- end: ds.column
+
+-- ds.alert: Important
+kind: info
+
+To be eligible, ensure  timely submission, one entry per participant, and hosting the website on fifthtry.com
+
+
+-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page
+
+
+
+
+-- ftd.shadow n:
+color: #EC8943
+blur.px: 5
+spread.px: 3
+x-offset.px: 4
+y-offset.px: 6
+
+
+
+-- ftd.shadow a:
+color: #5C2860
+blur.px: 5
+spread.px: 3
+x-offset.px: -4
+y-offset.px: -6
