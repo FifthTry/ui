@@ -57,6 +57,10 @@ class CodeEditor extends HTMLElement {
     codemirrorJs.onload = () => {
       let data = window.ftd.component_data(this);
       let initial_content = fastn_utils.getStaticValue(data.file.get().get('content')).trim();
+      let openFile = data.openfile.get();
+      if (openFile !== null) {
+        initial_content = fastn_utils.getStaticValue(data.openfile.get().get('text').get().get('content'))
+      }
 
       var editor = CodeMirror.fromTextArea(codeEditor, {
         mode: "javascript",
