@@ -15,4 +15,10 @@ string key:
 string value:
 js: $assets.files.assets.functions.js
 
-callAlert("creating env:" + key + " " + value)
+callAlert("creating env: " + key + " " + value)
+
+-- void remove(id):
+integer id:
+js: $assets.files.assets.functions.js
+
+callAlert("deleting env: " + id)
