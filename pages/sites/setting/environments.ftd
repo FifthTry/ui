@@ -3,12 +3,12 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/actions/sites/settings/environment
--- import: fastn/processors as pr
 
 
 -- component page:
 module site-data: site-data
 module action: environment
+sites-records.Environment list envs:
 ud.user-data user-data:
 sites-records.site-common-data site:
 string dashboard-url:
@@ -36,7 +36,7 @@ top-message: $page.top-message
 		-- env-row:
 		action: environment
 		env: $env
-		for: $env in $envs
+		for: $env in $page.envs
 		if: { page.reveal }
 		
 		-- ds.row:
@@ -96,12 +96,6 @@ top-message: $page.top-message
 -- end: p.page
 
 -- end: page
-
--- sites-records.Environment list envs:
-$processor$: pr.http
-url: http://127.0.0.1:8080/test.json ;; TODO: make this configurable
-
-
 
 -- component env-row:
 module action: environment
