@@ -9,3 +9,19 @@ site-data: scenario-site
 user-data: $john-doe.jd
 site: $site-info.acme-site
 dashboard-url: /scenarios/user/dashboard/
+envs: $envs
+
+
+-- sites-records.Environment list envs:
+
+-- sites-records.Environment:
+id: 1
+key: BIN_PATH
+value: /usr/bin/
+
+-- sites-records.Environment:
+id: 2
+key: DATABASE_URL
+value: postgresql://localhost/my-db
+
+-- end: envs
