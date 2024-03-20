@@ -60,7 +60,7 @@ optional file-text text:
 optional string error:
 string updated-at:
 
--- record Environment:
+-- record environment:
 integer id:
 string key:
 string value:
