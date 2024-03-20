@@ -12,14 +12,14 @@ dashboard-url: /scenarios/user/dashboard/
 envs: $envs
 
 
--- sites-records.Environment list envs:
+-- sites-records.environment list envs:
 
--- sites-records.Environment:
+-- sites-records.environment:
 id: 1
 key: BIN_PATH
 value: /usr/bin/
 
--- sites-records.Environment:
+-- sites-records.environment:
 id: 2
 key: DATABASE_URL
 value: postgresql://localhost/my-db

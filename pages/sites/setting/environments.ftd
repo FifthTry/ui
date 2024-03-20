@@ -8,7 +8,7 @@
 -- component page:
 module site-data: site-data
 module action: environment
-sites-records.Environment list envs:
+sites-records.environment list envs:
 ud.user-data user-data:
 sites-records.site-common-data site:
 string dashboard-url:
@@ -99,7 +99,7 @@ top-message: $page.top-message
 
 -- component env-row:
 module action: environment
-sites-records.Environment env:
+sites-records.environment env:
 private string $current-key: *$env-row.env.key
 private string $current-value: *$env-row.env.value
 
