@@ -1,4 +1,7 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/components/sites/editor/browser as editor-browser
+-- import: ui.fifthtry.com/components/sites/editor/edit-ui
+
 -- import: ui.fifthtry.com/components/sites/file-tree
 -- import: ui.fifthtry.com/components/sites/code-preview
 -- import: ui.fifthtry.com/components/sites/file-browser
@@ -47,7 +50,29 @@ current-page: editor
 dashboard-url: $page.dashboard-url
 top-message: $page.top-message
 
-	-- ds.section-row:
+    -- editor-browser.browser:
+    open-file: $page.open-file
+    delete-file: $page.delete-file
+    files: $page.data.files
+    current-file: $page.data.current-file
+    site: $page.site
+    $header-title: $page.header-title
+    $add-file: $page.add-file
+    $edit: $page.edit
+
+
+    -- edit-ui.edit-ui:
+    open-file: $page.open-file
+    save-file: $page.save-file
+    current-file: $page.data.current-file
+    site: $page.site
+    $edit: $page.edit
+    $content: $page.content
+    header-title: $page.header-title
+
+
+
+	/-- ds.section-row:
 	radius: $ds.radius.zero
 	inner-background.solid: $ds.colors.background.base
 
@@ -111,7 +136,7 @@ top-message: $page.top-message
 
 
 
--- component show-error:
+/-- component show-error:
 module open-file: open-file
 module save-file: save-file
 module delete-file: delete-file
@@ -152,7 +177,7 @@ role: $inherited.types.copy-small
 
 
 
--- component file-header:
+/-- component file-header:
 editor-data data:
 boolean $edit: false
 optional string $content:
@@ -197,7 +222,7 @@ background.solid: $ds.colors.background.base
 
 
 
--- component browser:
+/-- component browser:
 editor-data data:
 module open-file: open-file
 string $header-title:
