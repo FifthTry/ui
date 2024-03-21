@@ -67,8 +67,11 @@ boolean $edit: false
 
 -- ds.row:
 width: fill-container
-align-content: right
+spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
+
+    -- ds.copy-regular: $file-header.file-name
+    style: bold
 
 	-- ds.row:
     width: hug-content
