@@ -21,12 +21,10 @@ optional string $content:
 -- ds.section-column:
 radius: $ds.radius.zero
 inner-background.solid: $ds.colors.background.base
-if: { edit-ui.edit && edit-ui.current-file.text != NULL }
 
     -- file-header:
     save-file: $edit-ui.save-file
     current-file: $edit-ui.current-file
-    openfile: $edit-ui.open-file.content
     file-name: $edit-ui.header-title
     site-slug: $edit-ui.site.site-slug
     $content: $edit-ui.content
@@ -59,7 +57,6 @@ if: { edit-ui.edit && edit-ui.current-file.text != NULL }
 -- component file-header:
 module save-file: save-file
 sites-records.file current-file:
-optional sites-records.file openfile:
 string file-name:
 string site-slug:
 optional string $content:

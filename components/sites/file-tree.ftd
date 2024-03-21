@@ -1,13 +1,12 @@
 -- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
--- import: ui.fifthtry.com/actions/sites/editor/create-file
 
 -- component file-tree:
 sr.file-info list files:
 string $header-title: todo
 string site-slug:
 module open-file: open-file
-boolean $add-file: false
+boolean $create: false
 
 -- ds.column:
 width.fixed.px: 200
@@ -18,7 +17,7 @@ align-content: top-left
 inset: $ds.spaces.inset-square.medium
 
 	-- label-with-plus: FILES
-	$add-file: $file-tree.add-file
+	$create: $file-tree.create
 	
 	-- ds.column:
 	align-content: top-left
@@ -116,7 +115,7 @@ spacing: $ds.spaces.vertical-gap.extra-small
 
 -- component label-with-plus:
 caption label:
-boolean $add-file: false
+boolean $create: false
 
 -- ds.row:
 align-content: left
@@ -127,7 +126,7 @@ spacing: $ds.spaces.horizontal-gap.space-between
 
 	-- ds.primary-button: \\+
 	size: small
-    $on-click$: $ftd.set-bool($a=$label-with-plus.add-file, v=true)
+    $on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
 	
 -- end: ds.row
 

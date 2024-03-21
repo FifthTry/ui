@@ -1,6 +1,8 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
--- import: ui.fifthtry.com/components/sites/editor/browser as editor-browser
+
+-- import: ui.fifthtry.com/components/sites/editor/browser
 -- import: ui.fifthtry.com/components/sites/editor/edit-ui
+-- import: ui.fifthtry.com/components/sites/editor/create-file-ui
 
 -- import: ui.fifthtry.com/components/sites/file-tree
 -- import: ui.fifthtry.com/components/sites/code-preview
@@ -40,7 +42,7 @@ string $header-title: *$page.data.current-file.full-name
 optional string top-message:
 boolean $edit: false
 optional string $content:
-boolean $add-file: false
+boolean $create: false
 
 -- p.page:
 site-data: $page.site-data
@@ -50,15 +52,16 @@ current-page: editor
 dashboard-url: $page.dashboard-url
 top-message: $page.top-message
 
-    -- editor-browser.browser:
+    -- browser.browser:
     open-file: $page.open-file
     delete-file: $page.delete-file
     files: $page.data.files
     current-file: $page.data.current-file
     site: $page.site
     $header-title: $page.header-title
-    $add-file: $page.add-file
+    $create: $page.create
     $edit: $page.edit
+    if: { !page.create && !page.edit }
 
 
     -- edit-ui.edit-ui:
@@ -69,7 +72,14 @@ top-message: $page.top-message
     $edit: $page.edit
     $content: $page.content
     header-title: $page.header-title
+    if: { page.edit && page.data.current-file.text != NULL }
 
+
+    -- create-file-ui.create-file-ui:
+    create-file: $page.create-file
+    site: $page.site
+    $create: $page.create
+    if: { page.create }
 
 
 	/-- ds.section-row:
@@ -81,7 +91,7 @@ top-message: $page.top-message
 		open-file: $page.open-file
 		$header-title: $page.header-title
 		site-slug: $page.site.site-slug
-		$add-file: $page.add-file
+		$add-file: $page.create
 
 		-- ds.column:
 		height: fill-container
