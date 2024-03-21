@@ -51,7 +51,8 @@ align-content: top-left
 	-- end: ds.column
 
 	-- ds.heading-small: Features
-
+	if: { !ftd.is_empty(page.packages.features) }
+	
 	-- ds.column:
 	align-content: left
 	spacing: $ds.spaces.vertical-gap.small
@@ -62,6 +63,7 @@ align-content: top-left
 	-- end: ds.column
 
 	-- ds.heading-small: Pages
+	if: { !ftd.is_empty(page.packages.pages) }
 
 	-- ds.column:
 	align-content: left
@@ -135,7 +137,7 @@ value: $page-content.packages.updated-on
 
 -- end: ds.column
 
--- ds.icon-button: $page-content.packages.preview-url
+-- ds.icon-button: $page-content.packages.domain-name
 size: small
 link: $page-content.packages.preview-url
 kind: link
