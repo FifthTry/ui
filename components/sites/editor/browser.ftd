@@ -14,20 +14,19 @@ sites-records.file-info list files:
 sites-records.file current-file:
 sites-records.site-common-data site:
 string $header-title:
-boolean $add-file: false
+boolean $create: false
 boolean $edit: false
 
 -- ds.section-row:
 radius: $ds.radius.zero
 inner-background.solid: $ds.colors.background.base
-if: { !browser.edit }
 
     -- file-tree.file-tree:
     files: $browser.files
     open-file: $browser.open-file
     $header-title: $browser.header-title
     site-slug: $browser.site.site-slug
-    $add-file: $browser.add-file
+    $create: $browser.create
 
     -- ds.column:
     height: fill-container
