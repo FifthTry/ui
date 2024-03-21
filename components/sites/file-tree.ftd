@@ -1,11 +1,13 @@
 -- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
+-- import: ui.fifthtry.com/actions/sites/editor/create-file
 
 -- component file-tree:
 sr.file-info list files:
 string $header-title: todo
 string site-slug:
 module open-file: open-file
+boolean $add-file: false
 
 -- ds.column:
 width.fixed.px: 200
@@ -15,7 +17,8 @@ background.solid: $ds.colors.background.step-1
 align-content: top-left
 inset: $ds.spaces.inset-square.medium
 
-	-- label-with-three-dots: FILES
+	-- label-with-plus: FILES
+	$add-file: $file-tree.add-file
 	
 	-- ds.column:
 	align-content: top-left
@@ -111,24 +114,21 @@ spacing: $ds.spaces.vertical-gap.extra-small
 
 
 
--- component label-with-three-dots:
+-- component label-with-plus:
 caption label:
-private boolean $dots-hovered: false
+boolean $add-file: false
 
 -- ds.row:
-align-content: top-left
+align-content: left
 spacing: $ds.spaces.horizontal-gap.space-between
 
-	-- ds.copy-small: $label-with-three-dots.label
+	-- ds.copy-regular: $label-with-plus.label
 	style: bold
-	
-	-- ftd.image: $assets.files.assets.dots-three.svg
-	width.fixed.px: 20
-	opacity: 0.5
-	opacity if { label-with-three-dots.dots-hovered }: 1
-	$on-mouse-enter$: $ftd.set-bool($a = $label-with-three-dots.dots-hovered, v = true)
-	$on-mouse-leave$: $ftd.set-bool($a = $label-with-three-dots.dots-hovered, v = false)
+
+	-- ds.primary-button: \\+
+	size: small
+    $on-click$: $ftd.set-bool($a=$label-with-plus.add-file, v=true)
 	
 -- end: ds.row
 
--- end: label-with-three-dots
+-- end: label-with-plus
