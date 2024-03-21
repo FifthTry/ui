@@ -67,7 +67,7 @@ background.solid: $ds.colors.background.base
     width: hug-content
 
         -- ds.primary-button: SAVE
-        if: { file-header.content != NULL }
+        if: { file-header.file-name != ftd.empty }
         $on-click$: $file-header.create-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content)
 
         -- ds.primary-button: CANCEL
@@ -79,6 +79,14 @@ background.solid: $ds.colors.background.base
 -- end: ds.row
 
 -- end: file-header
+
+
+
+
+
+
+
+
 
 
 
