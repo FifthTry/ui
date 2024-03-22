@@ -9,6 +9,7 @@ integer $device-selected: 1
 boolean create:
 boolean edit:
 sites-records.file current-file:
+optional sites-records.file openfile:
 
 -- ftd.column:
 
@@ -24,6 +25,7 @@ device-selected: $code-preview.device-selected
 create: $code-preview.create
 edit: $code-preview.edit
 current-file: $code-preview.current-file
+openfile: $code-preview.openfile
 
 -- end: ftd.column
 
@@ -54,7 +56,8 @@ boolean expand: $add-expandable(selected = $expander.device-selected)
 boolean create:
 boolean edit:
 sites-records.file current-file:
-boolean move: $add-mover(create = $mover.create, edit = $mover.edit, current_file = $mover.current-file)
+optional sites-records.file openfile:
+boolean move: $add-mover(create = $mover.create, edit = $mover.edit, current_file = $mover.current-file, openfile = $mover.current-file)
 
 -- ftd.column:
 
@@ -445,11 +448,12 @@ js: $assets.files.assets.js.code-preview.js
 addExpandable(selected)
 
 
--- boolean add-mover(create, edit, current_file):
+-- boolean add-mover(create, edit, current_file, openfile):
 boolean create:
 boolean edit:
 sites-records.file current_file:
+optional sites-records.file openfile:
 js: $assets.files.assets.js.code-preview.js
 
 
-addMover(create, edit, current_file)
+addMover(create, edit, current_file, openfile)

@@ -9,9 +9,9 @@ function addExpandable(device) {
 }
 
 
-function addMover(create, edit, current_file) {
+function addMover(create, edit, current_file, openfile) {
     let component = document.getElementById("preview-container");
-    if (component !== null && !create.get() && !edit.get() && current_file.get().get("filetype").get() !== "image" ) {
+    if (component !== null && !create.get() && !edit.get() && ((openfile.get() !== null && openfile.get().get("filetype").get() !== "image") || (openfile.get() === null && current_file.get().get("filetype").get() !== "image"))) {
         dragElement(component);
         return false;
     }

@@ -27,6 +27,7 @@ inner-background.solid: $ds.colors.background.base
     create: $browser.create
     edit: $browser.edit
     current-file: $browser.data.current-file
+    openfile: $browser.open-file.content
     if: { browser.data.current-file.filetype != "image" }
 
     -- file-tree.file-tree:
