@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/components/sites/file-tree
 -- import: ui.fifthtry.com/components/sites/file-browser
+-- import: ui.fifthtry.com/components/sites/code-preview
 
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 -- import: ui.fifthtry.com/actions/sites/editor/delete-file
@@ -10,19 +11,26 @@
 -- component browser:
 module open-file: open-file
 module delete-file: delete-file
-sites-records.file-info list files:
-sites-records.file current-file:
+sites-records.editor-data data:
 sites-records.site-common-data site:
 string $header-title:
-boolean $create: false
-boolean $edit: false
+boolean $create:
+boolean $edit:
 
 -- ds.section-row:
 radius: $ds.radius.zero
 inner-background.solid: $ds.colors.background.base
 
+    -- code-preview.code-preview:
+    site-base-url: $browser.data.site-base-url
+    $site-relative-url: *$browser.data.site-relative-url
+    create: $browser.create
+    edit: $browser.edit
+    current-file: $browser.data.current-file
+    if: { browser.data.current-file.filetype != "image" }
+
     -- file-tree.file-tree:
-    files: $browser.files
+    files: $browser.data.files
     open-file: $browser.open-file
     $header-title: $browser.header-title
     site-slug: $browser.site.site-slug
@@ -34,7 +42,7 @@ inner-background.solid: $ds.colors.background.base
     width: fill-container
 
         -- file-header:
-        current-file: $browser.current-file
+        current-file: $browser.data.current-file
         openfile: $browser.open-file.content
         $edit: $browser.edit
         file-name: $browser.header-title
@@ -42,7 +50,7 @@ inner-background.solid: $ds.colors.background.base
         delete-file: $browser.delete-file
 
         -- browser-ui:
-        current-file: $browser.current-file
+        current-file: $browser.data.current-file
         open-file: $browser.open-file
         header-title: $browser.header-title
 
