@@ -1,7 +1,14 @@
+-- import: ui.fifthtry.com/records/sites as sites-records
+
+
+
 -- component code-preview:
 string site-base-url:
 string $site-relative-url:
 integer $device-selected: 1
+boolean create:
+boolean edit:
+sites-records.file current-file:
 
 -- ftd.column:
 
@@ -12,6 +19,11 @@ $device-selected: $code-preview.device-selected
 
 -- expander:
 device-selected: $code-preview.device-selected
+
+-- mover:
+create: $code-preview.create
+edit: $code-preview.edit
+current-file: $code-preview.current-file
 
 -- end: ftd.column
 
@@ -31,6 +43,22 @@ boolean expand: $add-expandable(selected = $expander.device-selected)
 
 -- end: expander
 
+
+
+
+
+
+
+
+-- component mover:
+boolean create:
+boolean edit:
+sites-records.file current-file:
+boolean move: $add-mover(create = $mover.create, edit = $mover.edit, current_file = $mover.current-file)
+
+-- ftd.column:
+
+-- end: mover
 
 
 
@@ -415,3 +443,13 @@ js: $assets.files.assets.js.code-preview.js
 
 
 addExpandable(selected)
+
+
+-- boolean add-mover(create, edit, current_file):
+boolean create:
+boolean edit:
+sites-records.file current_file:
+js: $assets.files.assets.js.code-preview.js
+
+
+addMover(create, edit, current_file)
