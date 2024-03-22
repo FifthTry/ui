@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/components/sites/file-tree
 -- import: ui.fifthtry.com/components/sites/file-browser
 -- import: ui.fifthtry.com/components/sites/code-preview
+-- import: ui.fifthtry.com/utils
 
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 -- import: ui.fifthtry.com/actions/sites/editor/delete-file
@@ -45,7 +46,7 @@ inner-background.solid: $ds.colors.background.base
     width: fill-container
 
         -- file-header:
-        current-file: $browser.data.current-file
+        data: $browser.data
         openfile: $browser.open-file.content
         $edit: $browser.edit
         $preview: $browser.preview
@@ -80,7 +81,7 @@ inner-background.solid: $ds.colors.background.base
 
 
 -- component file-header:
-sites-records.file current-file:
+sites-records.editor-data data:
 optional sites-records.file openfile:
 boolean $edit: false
 boolean $preview:
@@ -96,12 +97,51 @@ background.solid: $ds.colors.background.base
 	-- ds.row:
     width: hug-content
 
-        -- ds.primary-button: PREVIEW
-        if: { !file-header.preview && file-header.current-file.filetype != "image" }
-        $on-click$: $ftd.set-bool($a=$file-header.preview, v=true)
+        -- ftd.row:
+        align-self: center
+        margin-top.px: 6
+        if: { file-header.data.current-file.filetype != "image" }
+
+            -- ftd.text: PREVIEW
+            if: { !file-header.preview }
+            $on-click$: $ftd.set-bool($a=$file-header.preview, v=true)
+            background.solid: $ds.colors.cta-primary.base
+            color: $ds.colors.cta-primary.text
+            border-top-left-radius.px: 8
+            border-bottom-left-radius.px: 8
+            padding-vertical.px: 8
+            padding-left.px: 16
+            padding-right.px: 9
+            role: $ds.types.link
+
+            -- ftd.image:
+            if: { !file-header.preview }
+            src: $assets.files.assets.sites.open.svg
+            background.solid: $ds.colors.cta-primary.base
+            border-top-right-radius.px: 8
+            border-bottom-right-radius.px: 8
+            border-left-width.px: 1
+            border-color: white
+            padding-vertical.px: 7
+            padding-left.px: 9
+            padding-right.px: 16
+            link: $utils.full-url(a = $file-header.data.site-base-url, b = $file-header.data.site-relative-url)
+            open-in-new-tab: true
+
+            -- ftd.image:
+            if: { file-header.preview }
+            src: $assets.files.assets.sites.open.svg
+            background.solid: $ds.colors.cta-primary.base
+            border-radius.px: 8
+            padding-vertical.px: 7
+            padding-horizontal.px: 16
+            link: $utils.full-url(a = $file-header.data.site-base-url, b = $file-header.data.site-relative-url)
+            open-in-new-tab: true
+
+        -- end: ftd.row
 
         -- ds.primary-button: EDIT
-        if: { file-header.current-file.text != NULL && !file-header.edit && file-header.openfile == NULL }
+        if: { file-header.data.current-file.text != NULL && !file-header.edit && file-header.openfile == NULL }
         $on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
 
         -- ds.primary-button: EDIT
@@ -109,7 +149,7 @@ background.solid: $ds.colors.background.base
         $on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
 
         -- ds.primary-button: DELETE
-        $on-click$: $file-header.delete-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, updated_at = $file-header.current-file.updated-at)
+        $on-click$: $file-header.delete-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, updated_at = $file-header.data.current-file.updated-at)
 
     -- end: ds.row
 
