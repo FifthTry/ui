@@ -1,11 +1,11 @@
 -- import: ui.fifthtry.com/pages/featured-templates
 -- import: ui.fifthtry.com/records/templates-list as template-records
--- import: meenukumari28.github.io/coming-soon-4
+-- import: fastn-community.github.io/multi-color-mesh-gradient
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
 -- featured-templates.page:
-packages: $coming-soon-4.package-info
+packages: $multi-color-mesh-gradient.package-info
 user-data: $john-doe.jd
 templates: $template-category-list
 
@@ -20,16 +20,16 @@ packages: $coming-soon-packages
 
 -- ds.package-info list coming-soon-packages:
 
--- ds.package-info: Coming Soon 1
+-- ds.package-info: Modern gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-1
-screenshot: $assets.files.assets.templates.coming-soon-1.PNG
+screenshot: $modern-gradient-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 2
+-- ds.package-info: Blue purple mesh gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-2
-screenshot: $assets.files.assets.templates.coming-soon-2.PNG
+screenshot: $blue-purple-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 5
+-- ds.package-info: Grainy gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-5
-screenshot: $assets.files.assets.templates.coming-soon-5.PNG
+screenshot: $grainy-gradient-assets.files.assets.thumbnail.png
 
 -- end: coming-soon-packages

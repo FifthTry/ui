@@ -21,18 +21,30 @@ provided-via: ui.fifthtry.com/ds
 -- fastn.dependency: meenukumari28.github.io/linktree-template-2
 -- fastn.dependency: meenukumari28.github.io/linktree-template-3
 -- fastn.dependency: meenukumari28.github.io/linktree-template-4
--- fastn.dependency: meenukumari28.github.io/coming-soon-1
--- fastn.dependency: meenukumari28.github.io/coming-soon-2
--- fastn.dependency: meenukumari28.github.io/coming-soon-3
--- fastn.dependency: meenukumari28.github.io/coming-soon-4
--- fastn.dependency: meenukumari28.github.io/coming-soon-5
--- fastn.dependency: meenukumari28.github.io/coming-soon-6
--- fastn.dependency: meenukumari28.github.io/coming-soon-7
--- fastn.dependency: meenukumari28.github.io/coming-soon-8
+-- fastn.dependency: fastn-community.github.io/modern-gradient
+-- fastn.dependency: fastn-community.github.io/blue-purple-mesh-gradient
+-- fastn.dependency: fastn-community.github.io/yellow-green-mesh-gradient
+-- fastn.dependency: fastn-community.github.io/multi-color-mesh-gradient
+-- fastn.dependency: fastn-community.github.io/grainy-gradient
+-- fastn.dependency: fastn-community.github.io/blue-abstract-pattern
+-- fastn.dependency: fastn-community.github.io/red-abstract-pattern
+-- fastn.dependency: fastn-community.github.io/ocean-waves
 
 
 -- fastn.auto-import: ui.fifthtry.com/assets
 -- fastn.auto-import: ui.fifthtry.com/ds
+-- fastn.auto-import: meenukumari28.github.io/linktree-template
+-- fastn.auto-import: meenukumari28.github.io/linktree-template-2
+-- fastn.auto-import: meenukumari28.github.io/linktree-template-3
+-- fastn.auto-import: meenukumari28.github.io/linktree-template-4
+-- fastn.auto-import: fastn-community.github.io/modern-gradient/assets as modern-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/blue-purple-mesh-gradient/assets as blue-purple-assets
+-- fastn.auto-import: fastn-community.github.io/yellow-green-mesh-gradient/assets as yellow-green-mesh-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/multi-color-mesh-gradient/assets as multi-color-mesh-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/grainy-gradient/assets as grainy-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/blue-abstract-pattern/assets as blue-abstract-pattern-assets
+-- fastn.auto-import: fastn-community.github.io/red-abstract-pattern/assets as red-abstract-pattern-assets
+-- fastn.auto-import: fastn-community.github.io/ocean-waves/assets as ocean-waves-assets
 
 -- fastn.url-mappings:
 

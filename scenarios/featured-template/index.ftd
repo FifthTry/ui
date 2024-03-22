@@ -48,36 +48,36 @@ screenshot: $assets.files.assets.templates.linktree-4.PNG
 
 -- ds.package-info list coming-soon-packages:
 
--- ds.package-info: Coming Soon 1
+-- ds.package-info: Modern gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-1
-screenshot: $assets.files.assets.templates.coming-soon-1.PNG
+screenshot: $modern-gradient-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 2
+-- ds.package-info: Blue purple mesh gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-2
-screenshot: $assets.files.assets.templates.coming-soon-2.PNG
+screenshot: $blue-purple-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 3
+-- ds.package-info: Yellow green mesh gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-3
-screenshot: $assets.files.assets.templates.coming-soon-3.PNG
+screenshot: $yellow-green-mesh-gradient-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 4
+-- ds.package-info: Multi color mesh gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-4
-screenshot: $assets.files.assets.templates.coming-soon-4.PNG
+screenshot: $multi-color-mesh-gradient-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 5
+-- ds.package-info: Grainy gradient
 template-url: /scenarios/featured-template/coming-soon/coming-soon-5
-screenshot: $assets.files.assets.templates.coming-soon-5.PNG
+screenshot: $grainy-gradient-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 6
-template-url: /scenarios/featured-template/coming-soon/coming-soon-6
-screenshot: $assets.files.assets.templates.coming-soon-6.PNG
+-- ds.package-info: Blue Abstract pattern
+template-url: /scenarios/featured-template/coming-soon/blue-abstract-pattern
+screenshot: $blue-abstract-pattern-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 7
+-- ds.package-info: Red Abstract pattern
 template-url: /scenarios/featured-template/coming-soon/coming-soon-7
-screenshot: $assets.files.assets.templates.coming-soon-7.PNG
+screenshot: $red-abstract-pattern-assets.files.assets.thumbnail.png
 
--- ds.package-info: Coming Soon 8
+-- ds.package-info: Ocean waves
 template-url: /scenarios/featured-template/coming-soon/coming-soon-8
-screenshot: $assets.files.assets.templates.coming-soon-8.PNG
+screenshot: $ocean-waves-assets.files.assets.thumbnail.png
 
 -- end: coming-soon-packages
