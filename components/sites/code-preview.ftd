@@ -1,5 +1,5 @@
 -- import: ui.fifthtry.com/records/sites as sites-records
-
+-- import: ui.fifthtry.com/utils
 
 
 -- component code-preview:
@@ -78,7 +78,7 @@ boolean move: $add-mover(create = $mover.create, edit = $mover.edit, current_fil
 -- component code-preview-helper:
 string site-base-url:
 string $site-relative-url:
-string url: $full-url(a = $code-preview-helper.site-base-url, b = $code-preview-helper.site-relative-url)
+string url: $utils.full-url(a = $code-preview-helper.site-base-url, b = $code-preview-helper.site-relative-url)
 boolean $expand: true
 integer $device-selected:
 boolean $preview:
@@ -431,11 +431,7 @@ width.fixed.px: 10
 
 
 
--- string full-url(a,b):
-string a:
-string b:
 
-a + b
 
 
 
