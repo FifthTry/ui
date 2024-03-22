@@ -1,11 +1,11 @@
 -- import: ui.fifthtry.com/pages/featured-templates
 -- import: ui.fifthtry.com/records/templates-list as template-records
--- import: meenukumari28.github.io/linktree-template-2
+-- import: fastn-community.github.io/minimal-blue
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 
 -- featured-templates.page:
-packages: $linktree-template-2.package-info
+packages: $minimal-blue.package-info
 user-data: $john-doe.jd
 templates: $template-category-list
 
@@ -20,17 +20,17 @@ packages: $linktree-packages
 
 -- ds.package-info list linktree-packages: 
 
--- ds.package-info: Linktree - 1
+-- ds.package-info: Purple gradien
 template-url: /scenarios/featured-template/linktree/linktree-1
-screenshot: $assets.files.assets.templates.linktree-1.PNG
+screenshot: $purple-gradient-assets.files.assets.thumbnail.png
 
--- ds.package-info: Linktree - 3
+-- ds.package-info: Ocean blue
 template-url: /scenarios/featured-template/linktree/linktree-3
-screenshot: $assets.files.assets.templates.linktree-3.PNG
+screenshot: $ocean-blue-assets.files.assets.thumbnail.png
 
--- ds.package-info: Linktree - 4
+-- ds.package-info: Forest green
 template-url: /scenarios/featured-template/linktree/linktree-4
-screenshot: $assets.files.assets.templates.linktree-4.PNG
+screenshot: $forest-green-assets.files.assets.thumbnail.png
 
 -- end: linktree-packages
 

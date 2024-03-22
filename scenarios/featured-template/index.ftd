@@ -26,21 +26,21 @@ packages: $coming-soon-packages
 
 -- ds.package-info list linktree-packages: 
 
--- ds.package-info: Linktree
+-- ds.package-info: Purple gradient
 template-url: /scenarios/featured-template/linktree/linktree-1
-screenshot: $assets.files.assets.templates.linktree-1.PNG
+screenshot: $purple-gradient-assets.files.assets.linktree.png
 
--- ds.package-info: Linktree - 2
+-- ds.package-info: Minimal blue
 template-url: /scenarios/featured-template/linktree/linktree-2
-screenshot: $assets.files.assets.templates.linktree-2.PNG
+screenshot: $minimal-blue-assets.files.assets.linktree.png
 
--- ds.package-info: Linktree - 3
+-- ds.package-info: Ocean blue
 template-url: /scenarios/featured-template/linktree/linktree-3
-screenshot: $assets.files.assets.templates.linktree-3.PNG
+screenshot: $ocean-blue-assets.files.assets.linktree.png
 
--- ds.package-info: Linktree - 4
+-- ds.package-info: Forest green
 template-url: /scenarios/featured-template/linktree/linktree-4
-screenshot: $assets.files.assets.templates.linktree-4.PNG
+screenshot: $forest-green-assets.files.assets.linktree.png
 
 -- end: linktree-packages
 
