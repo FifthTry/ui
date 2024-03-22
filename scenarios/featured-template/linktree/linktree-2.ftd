@@ -22,15 +22,15 @@ packages: $linktree-packages
 
 -- ds.package-info: Purple gradien
 template-url: /scenarios/featured-template/linktree/linktree-1
-screenshot: $purple-gradient-assets.files.assets.thumbnail.png
+screenshot: $purple-gradient-assets.files.assets.linktree.png
 
 -- ds.package-info: Ocean blue
 template-url: /scenarios/featured-template/linktree/linktree-3
-screenshot: $ocean-blue-assets.files.assets.thumbnail.png
+screenshot: $ocean-blue-assets.files.assets.linktree.png
 
 -- ds.package-info: Forest green
 template-url: /scenarios/featured-template/linktree/linktree-4
-screenshot: $forest-green-assets.files.assets.thumbnail.png
+screenshot: $forest-green-assets.files.assets.linktree.png
 
 -- end: linktree-packages
 
