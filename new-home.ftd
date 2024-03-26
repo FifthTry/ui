@@ -3,12 +3,15 @@
 -- import: ui.fifthtry.com/actions/storybook/navigate
 
 
+-- integer $current-slide: 1
+
 -- ds.page: Storybook
-theme-switcher: true
+theme-switcher: false
 fastn-badge: false
 
 -- storybook:
 list-of-files: $toc
+list-of-tab: $sr.tab
 
 -- end: ds.page
 
@@ -16,16 +19,21 @@ list-of-files: $toc
 -- component storybook:
 pr.toc-item list list-of-files:
 module navigate: navigate
+string $src: https://ui.fifthtry.com/
+sr.tabs list list-of-tab:
 boolean $mobile: false
 boolean $desktop: false
 boolean $sidebar: false
 boolean $new-tab: false
 string $copy-text: null
 boolean $toggle: false
+optional integer index:
 
 -- ds.row:
 align-content: top-center
 spacing: $ds.spaces.horizontal-gap.zero
+
+-- ftd.desktop:
 
 -- ds.column:
 width.fixed.percent: 22
@@ -99,7 +107,6 @@ src if { storybook.desktop }: $assets.files.assets.storybook.desktop-active.svg
 $on-click$: $ftd.set-bool($a = $storybook.desktop, v = true)
 $on-click$: $ftd.set-bool($a = $storybook.mobile, v = false)
 
-
 -- ftd.image:
 src: $assets.files.assets.storybook.mobile.svg
 src if { storybook.mobile }: $assets.files.assets.storybook.mobile-active.svg
@@ -161,10 +168,115 @@ $storybook.navigate.active-file-content
 
 -- end: ds.column
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.column:
+height: fill-container
+
+-- ds.column:
+align-content: top-left
+inset: $ds.spaces.inset-square.medium
+border: $ds.borders.bottom.small
+radius: $ds.radius.zero
+border-color: $ds.colors.border-strong
+
+-- ftd.image: 
+src: $assets.files.assets.storybook.logo.svg
+
+-- end: ds.column
+
+-- ds.column:
+if: { $current-slide == 1 }
+align-content: top-left
+height.fixed.px: 510
+inset: $ds.spaces.inset-wide.small
+
+-- render-files:
+for: $obj in $storybook.list-of-files
+folder: $obj
+
+-- end: ds.column
+
+-- ds.column:
+if: { $current-slide == 2 }
+align-content: top-left
+height.fixed.px: 510
+inset: $ds.spaces.inset-wide.small
+
+-- ftd.iframe:
+min-height.fixed.px: 510
+src: $storybook.src
+width: fill-container
+
+-- end: ds.column
+
+-- ds.column:
+if: { $current-slide == 3 }
+align-content: top-left
+height.fixed.px: 510
+inset: $ds.spaces.inset-wide.small
+background.solid: $ds.colors.background.step-1
+
+-- ds.copy-large: Source
+style: bold
+color: $ds.colors.text-strong
+
+-- code:
+
+\-- ds.copy-large: This is code section.
+\-- ds.copy-large: This is code section.
+\-- ds.copy-large: This is code section.
+\-- ds.copy-large: This is code section.
+\-- ds.copy-large: This is code section.
+
+-- end: code
+
+-- end: ds.column
+
+-- ds.row:
+inset: $ds.spaces.inset-wide.large-zero
+spacing: $ds.spaces.horizontal-gap.extra-large
+
+-- tab-content: $obj.title
+for: $obj in $storybook.list-of-tab
+index: $obj.index
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ftd.mobile
+
 -- end: ds.row
 
 -- end: storybook
 
+
+
+
+
+
+
+-- component tab-content:
+caption title:
+integer index: 1
+boolean $active: false
+
+-- ds.row:
+radius: $ds.radius.zero
+$on-click$: $ftd.toggle($a = $tab-content.active)
+$on-click$: $ftd.set-integer($a = $current-slide, v = $tab-content.index)
+border: $ds.borders.bottom.medium
+border-color if { tab-content.index == current-slide }: $ds.colors.accent.primary
+border-color: transparent
+
+-- ds.copy-large: $tab-content.title
+
+-- end: ds.row
+
+-- end: tab-content
 
 
 
@@ -187,7 +299,7 @@ string lang: ftd
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.zero
 radius: $ds.radius.zero
-width: fill-container
+height if { ftd.device == "mobile" }: fill-container
 height.fixed.px: 300
 align-content: top-left
 overflow: scroll 
@@ -215,23 +327,18 @@ overflow: scroll
   padding.px: 6
   border-bottom-right-radius.px: 4
   
-    -- ftd.row:
-    spacing.fixed.px: 16
+    -- ds.row:
     
-      -- ftd.row:
-      spacing.fixed.px: 4
+      -- ds.row:
+      spacing: $ds.spaces.horizontal-gap.extra-small
       
-        -- ftd.text: Lang:
-        role: $inherited.types.fine-print
-        color: $inherited.colors.text
-        
-        -- ftd.text: $code.lang
-        role: $inherited.types.fine-print
-        color: $inherited.colors.text
-        
-      -- end: ftd.row
+        -- ds.fine-print: Lang:
 
-    -- end: ftd.row
+        -- ds.fine-print: $code.lang
+        
+      -- end: ds.row
+
+    -- end: ds.row
 
   -- end: ftd.column
 
@@ -252,13 +359,35 @@ overflow: scroll
 -- component render-files:
 pr.toc-item folder:
 module navigate: navigate
+boolean $open: false
 
 -- ds.column:
 inset: $ds.spaces.inset-square.small
 
-  -- ds.copy-regular: $render-files.folder.title
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ds.row:
+align-content: top-left
+
+-- ftd.image:
+src: $assets.files.assets.storybook.folder.svg
+height.fixed.px: 24
+
+  -- ds.heading-tiny: $render-files.folder.title
+
+  -- end: ds.row
+
+    -- ftd.image:
+src: $assets.files.assets.storybook.up.svg
+src if { !render-files.open }: $assets.files.assets.storybook.down.svg
+$on-click$: $ftd.toggle($a = $render-files.open)
+
+  -- end: ds.row
   
   -- ds.column:
+  if: { render-files.open }
+  align-content: left
   
     -- render-files-children:
     for: $obj in $render-files.folder.children
@@ -287,13 +416,21 @@ module navigate: navigate
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.small
+width: hug-content
+inset: $ds.spaces.inset-wide.medium-zero
 
   -- ds.row:
-  background.solid if {render-files-children.open }: $ds.colors.background.step-2
   inset: $ds.spaces.inset-square.small
+  align-content: top-left
+  border: $ds.borders.left.small
+  border-color: $ds.colors.border-strong
+  radius: $ds.radius.zero
 
     -- ftd.image:
     src: $assets.files.assets.storybook.file.svg
+    height.fixed.px: 24
+
+    -- ds.copy-regular: hello
     
     -- ds.copy-small: $render-files-children.file.title
     $on-click$: $render-files-children.navigate.submit(default_file=/, file=$render-files-children.file.url)
