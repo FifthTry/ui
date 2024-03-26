@@ -1,6 +1,6 @@
 -- import: fastn/processors as pr
 -- import: ui.fifthtry.com/records/storybook as sr
-
+-- import: ui.fifthtry.com/actions/storybook/navigate
 
 
 -- ds.page: Storybook
@@ -8,15 +8,14 @@ theme-switcher: true
 fastn-badge: false
 
 -- storybook:
-list-of-files: $sr.folders
+list-of-files: $toc
 
 -- end: ds.page
 
 
 -- component storybook:
-;;pr.toc-item list list-of-files:
-;;string $src: https://ui.fifthtry.com/
-sr.folders list list-of-files:
+pr.toc-item list list-of-files:
+module navigate: navigate
 boolean $mobile: false
 boolean $desktop: false
 boolean $sidebar: false
@@ -63,6 +62,7 @@ inset: $ds.spaces.inset-wide.small
 -- render-files:
 for: $obj in $storybook.list-of-files
 folder: $obj
+navigate: $storybook.navigate
 
 -- end: ds.column
 
@@ -122,7 +122,7 @@ align-self: center
 -- ftd.iframe:
 min-height.fixed.vh: 60
 min-height.fixed.vh if { storybook.toggle }: 86
-src: $storybook.src
+src: $storybook.navigate.active-file-preview-url
 width: fill-container
 
 -- end: ftd.column
@@ -153,11 +153,7 @@ $on-click$: $ftd.toggle($a = $storybook.toggle)
 -- code:
 if: { !storybook.toggle }
 
-\-- ds.copy-large: This is code section.
-\-- ds.copy-large: This is code section.
-\-- ds.copy-large: This is code section.
-\-- ds.copy-large: This is code section.
-\-- ds.copy-large: This is code section.
+$storybook.navigate.active-file-content
 
 -- end: code
 
@@ -254,7 +250,8 @@ overflow: scroll
 
 
 -- component render-files:
-sr.folders folder:
+pr.toc-item folder:
+module navigate: navigate
 
 -- ds.column:
 inset: $ds.spaces.inset-square.small
@@ -264,8 +261,9 @@ inset: $ds.spaces.inset-square.small
   -- ds.column:
   
     -- render-files-children:
-    for: $obj in $render-files.folder.files
+    for: $obj in $render-files.folder.children
     file: $obj
+    navigate: $render-files.navigate
     
   -- end: ds.column
 
@@ -283,8 +281,9 @@ inset: $ds.spaces.inset-square.small
 
 
 -- component render-files-children:
-sr.file-info file:
+pr.toc-item file:
 boolean $open: false
+module navigate: navigate
 
 -- ds.column:
 spacing: $ds.spaces.vertical-gap.small
@@ -292,20 +291,12 @@ spacing: $ds.spaces.vertical-gap.small
   -- ds.row:
   background.solid if {render-files-children.open }: $ds.colors.background.step-2
   inset: $ds.spaces.inset-square.small
-  
-    -- ds.row:
-    ;;if: { !ftd.is_empty(render-files-children.children) }
-    inset: $ds.spaces.inset-square.small
-    background.solid: $ds.colors.text
-    
-    -- end: ds.row
 
     -- ftd.image:
     src: $assets.files.assets.storybook.file.svg
     
     -- ds.copy-small: $render-files-children.file.title
-    link: $render-files-children.file.link
-    ;;$on-click$: $ftd.set-bool($a)
+    $on-click$: $render-files-children.navigate.submit(default_file=/, file=$render-files-children.file.url)
 
   -- end: ds.row
 
@@ -403,11 +394,11 @@ spacing.fixed.px: 8
 $processor$: pr.toc
 
 - Website Pages: 
-  - Example 1: /
-  - Example 1: /
-  - Example 1: /
-  - Example 1: /
-  - Example 1: /
+  - Example 1: /example-1-path/
+  - Example 2: /example-2-path/
+  - Example 3: /example-3-path/
+  - Example 4: /example-4-path/
+  - Example 5: /example-5-path/
 
 
 
