@@ -1,0 +1,10 @@
+-- optional string $active-file-preview-url: /
+-- optional string $active-file-content: content
+
+;; Implement this later
+-- void submit(default_file, file):
+string default_file:
+optional string file:
+js: $assets.files.assets.functions.js
+
+callAlert("Navigating to file:" + file + ", default file: " + default_file)
