@@ -1,21 +1,21 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_1052_20675)">
-<path d="M2 4.2C2 3.0799 2 2.51984 2.21799 2.09202C2.40973 1.71569 2.71569 1.40973 3.09202 1.21799C3.51984 1 4.0799 1 5.2 1H26.8C27.9201 1 28.4802 1 28.908 1.21799C29.2843 1.40973 29.5903 1.71569 29.782 2.09202C30 2.51984 30 3.0799 30 4.2V25.8C30 26.9201 30 27.4802 29.782 27.908C29.5903 28.2843 29.2843 28.5903 28.908 28.782C28.4802 29 27.9201 29 26.8 29H5.2C4.0799 29 3.51984 29 3.09202 28.782C2.71569 28.5903 2.40973 28.2843 2.21799 27.908C2 27.4802 2 26.9201 2 25.8V4.2Z" fill="#EF8435"/>
-<path d="M9.75 20H22.25C22.9404 20 23.5 19.4404 23.5 18.75V10C23.5 9.30964 22.9404 8.75 22.25 8.75L9.75 8.75C9.05964 8.75 8.5 9.30964 8.5 10L8.5 18.75C8.5 19.4404 9.05964 20 9.75 20Z" stroke="#F7F7F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18.5 22.5H13.5" stroke="#F7F7F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.5 16.875H23.5" stroke="#F7F7F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16 20V22.5" stroke="#F7F7F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_1067_78697)">
+<path d="M2 4.2C2 3.0799 2 2.51984 2.21799 2.09202C2.40973 1.71569 2.71569 1.40973 3.09202 1.21799C3.51984 1 4.0799 1 5.2 1H30.8C31.9201 1 32.4802 1 32.908 1.21799C33.2843 1.40973 33.5903 1.71569 33.782 2.09202C34 2.51984 34 3.0799 34 4.2V29.8C34 30.9201 34 31.4802 33.782 31.908C33.5903 32.2843 33.2843 32.5903 32.908 32.782C32.4802 33 31.9201 33 30.8 33H5.2C4.0799 33 3.51984 33 3.09202 32.782C2.71569 32.5903 2.40973 32.2843 2.21799 31.908C2 31.4802 2 30.9201 2 29.8V4.2Z" fill="#EF8435"/>
+<path d="M10.5 23L25.5 23C26.3284 23 27 22.3284 27 21.5V11C27 10.1716 26.3284 9.5 25.5 9.5L10.5 9.5C9.67157 9.5 9 10.1716 9 11V21.5C9 22.3284 9.67157 23 10.5 23Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 26H15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 19.25H27" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18 23V26" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
-<filter id="filter0_d_1052_20675" x="0" y="0" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_1067_78697" x="0" y="0" width="36" height="36" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1"/>
 <feGaussianBlur stdDeviation="1"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.04 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1052_20675"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1052_20675" result="shape"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1067_78697"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1067_78697" result="shape"/>
 </filter>
 </defs>
 </svg>
