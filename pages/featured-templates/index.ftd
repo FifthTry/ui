@@ -1,0 +1,161 @@
+-- import: ui.fifthtry.com/components/featured-templates/page as p
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/templates-list as templates-records
+-- import: ui.fifthtry.com/components/featured-templates/template-view
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data:
+ds.package-info packages:
+templates-records.template-category list templates:
+
+-- p.page:
+site-data: $page.site-data
+user-data: $page.user-data
+packages: $page.packages
+
+-- ds.section-column:
+inset: $ds.spaces.inset-square.medium
+spacing: $ds.spaces.vertical-gap.large
+margin: $ds.spaces.vertical-gap.large
+align-content: top-left
+
+	-- ds.row:
+	if: { ftd.device != "mobile" }
+	align-content: top-left
+	spacing: $ds.spaces.horizontal-gap.large
+	
+		-- ftd.image:
+		src: $page.packages.screenshot
+		min-width.fixed.percent: 58
+		border-radius.px: 8
+
+		-- page-content:
+		packages: $page.packages
+
+	-- end: ds.row
+
+	-- ds.column:
+	if: { ftd.device == "mobile" }
+	spacing: $ds.spaces.vertical-gap.large
+	
+		-- ftd.image:
+		src: $page.packages.screenshot
+		width: fill-container
+		border-radius.px: 8
+
+		-- page-content:
+		packages: $page.packages
+
+	-- end: ds.column
+
+	-- ds.heading-small: Features
+	if: { !ftd.is_empty(page.packages.features) }
+	
+	-- ds.column:
+	align-content: left
+	spacing: $ds.spaces.vertical-gap.small
+
+	-- ds.copy-regular: $feature
+	for: $feature in $page.packages.features
+
+	-- end: ds.column
+
+	-- ds.heading-small: Pages
+	if: { !ftd.is_empty(page.packages.pages) }
+
+	-- ds.column:
+	align-content: left
+	spacing: $ds.spaces.vertical-gap.small
+
+	-- ds.copy-regular: $page
+	for: $page in $page.packages.pages
+
+	-- end: ds.column
+
+	-- ds.column:
+	align-content: left
+	inset: $ds.spaces.inset-tall.zero-medium
+
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.space-between
+	wrap: true
+
+	-- ds.heading-small: More template like this
+
+	-- ds.icon-button: View all Templates
+	size: small
+	link: /scenarios/featured-template
+	kind: link
+	icon-position: at-end
+	icon: $assets.files.assets.templates.right.svg
+
+	-- end: ds.row
+
+	-- ds.row:
+
+	-- template-view.grid-view-wrapper:
+	for: $obj in $page.templates
+	category: $obj
+
+	-- end: ds.row
+
+	-- end: ds.column
+
+	-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page
+
+
+
+
+
+
+
+-- component page-content:
+ds.package-info packages:
+
+-- ds.column:
+align-content: top-left
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.column:
+align-content: left
+
+-- ds.heading-medium: $page-content.packages.template-name
+
+-- ds.copy-regular: 
+
+$page-content.packages.desc
+
+-- ds.label-text: Updated
+placement: horizontal
+value: $page-content.packages.updated-on
+
+-- end: ds.column
+
+-- ds.icon-button: $page-content.packages.domain-name
+size: small
+link: $page-content.packages.preview-url
+kind: link
+icon: $assets.files.assets.templates.link.svg
+
+-- ds.row:
+
+-- ds.secondary-button: Preview
+link: $page-content.packages.preview-url
+width: full
+open-in-new-tab: true
+
+-- ds.primary-button: Use template
+link: $page-content.packages.github-url
+width: full
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: page-content

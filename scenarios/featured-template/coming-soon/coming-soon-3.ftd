@@ -1,0 +1,35 @@
+-- import: ui.fifthtry.com/pages/featured-templates
+-- import: ui.fifthtry.com/records/templates-list as template-records
+-- import: fastn-community.github.io/yellow-green-mesh-gradient
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- featured-templates.page:
+packages: $yellow-green-mesh-gradient.package-info
+user-data: $john-doe.jd
+templates: $template-category-list
+
+
+-- template-records.template-category list template-category-list: 
+
+-- template-records.template-category:
+packages: $coming-soon-packages
+
+-- end: template-category-list
+
+
+-- ds.package-info list coming-soon-packages:
+
+-- ds.package-info: Modern gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-1
+screenshot: $modern-gradient-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Blue purple mesh gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-2
+screenshot: $blue-purple-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Multi color mesh gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-4
+screenshot: $multi-color-mesh-gradient-assets.files.assets.thumbnail.png
+
+-- end: coming-soon-packages
