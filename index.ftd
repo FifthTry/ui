@@ -1,96 +1,535 @@
--- ds.page: FifthTry UIs
+-- import: fastn/processors as pr
+-- import: ui.fifthtry.com/records/storybook as sr
+-- import: ui.fifthtry.com/actions/storybook/navigate
 
--- ds.section-column:
-align-content: top-left
-inset: $ds.spaces.inset-square.medium
-spacing: $ds.spaces.vertical-gap.medium.gap
 
-	-- ds.copy-regular:
-	
-	These are list of products/websites hosted by FifthTry.
-	
-	-- page-block: Website Pages
-	
-	- [Logged in Home page](/scenarios/logged-in-home/)
-	- [Logged out Home page](/scenarios/logged-out-home/)
-	- [Logged In About page](/scenarios/about/logged-in-about/)
-	- [Logged In Team page](/scenarios/about/logged-in-team/)
-	- [Pricing page](/scenarios/about/pricing/)
-	- [Terms page](/scenarios/about/terms-page/)
-	- [Privacy page](/scenarios/about/privacy-page/)
-	- [Team page](/scenarios/about/team-page/)
-	- [About Us page](/scenarios/about/)
-	- [Blog Homepage](/scenarios/blogs/)
-	- [Blog Post](/scenarios/blogs/blog-post/)
-	- [Editor - Blog Post](/scenarios/blogs/editor/)
-	-- page-block: Auth Pages
-	
-	- [Login page](/scenarios/signin-page/)
-	- [Signup page](/scenarios/signup-page/)
-	- [Forgot Password page](/scenarios/forgot-password/)
-	- [Change Password page](/scenarios/change-password/?code=auth) ;; ?code is required
-	- [Password Recovery page](/scenarios/password-recovery/)
-	
-	-- page-block: Org Pages
-	
-	- [Org dashboard](/scenarios/org/dashboard/)
-	
-	-- page-block: User Pages
-	
-	- [User dashboard](/scenarios/user/dashboard/)
-	- [Create Site](/scenarios/user/create-site/)
-	
-	-- page-block: Site Pages
-	
-	- [Site Info](/scenarios/sites/site-info/)
-	- [Page with top message](/scenarios/sites/top-message/)
+-- integer $current-slide: 1
 
-	-- page-block: Site Settings
+-- ds.page: Storybook
+theme-switcher: false
+fastn-badge: false
 
-    - [Site Domains](/scenarios/sites/setting/domains/)
-    - [Github (Configure form)](/scenarios/sites/setting/configure-github/)
-    - [Github (Un-configured)](/scenarios/sites/setting/github/)
-    - [Github (Configured)](/scenarios/sites/setting/github-configured/)
-    - [Site Tokens](/scenarios/sites/setting/tokens/)
-    - [Environments](/scenarios/sites/setting/environments/)
-
-	-- page-block: Site Editor Pages
-	
-	- [Site Editor With Code Preview](/scenarios/sites/editor/)
-	- [Site Editor With Image Preview](/scenarios/sites/editor/image-preview/)
-	
-	-- page-block: Featured Template
-
-	- [Templates](/scenarios/featured-template)
-
-	
-	-- page-block: University Scenarios
-	
-	- [University Homepage](/scenarios/university/home-page/)
-	- [f4e course](/scenarios/university/f4e-course/)
-	
-	-- page-block: Onboarding Scenarios
-	
-	- [Onboarding Ishaan](/scenarios/cards/onboarding-ishaan/)
-	
--- end: ds.section-column
+-- storybook:
+list-of-files: $toc
+list-of-tab: $sr.tab
 
 -- end: ds.page
 
 
--- component page-block:
-caption title:
-body body:
+-- component storybook:
+pr.toc-item list list-of-files:
+module navigate: navigate
+sr.tabs list list-of-tab:
+boolean $mobile: false
+boolean $desktop: false
+boolean $sidebar: false
+boolean $new-tab: false
+string $copy-text: null
+boolean $toggle: false
+optional integer index:
+
+-- ds.row:
+align-content: top-center
+spacing: $ds.spaces.horizontal-gap.zero
+
+-- ftd.desktop:
+
+-- ds.column:
+width.fixed.percent: 22
+width.fixed.percent if { storybook.sidebar }: 4
+height: fill-container
+color: $ds.colors.text
+background.solid: $ds.colors.background.step-1
+radius: $ds.radius.zero
+align-content: top-center
+
+-- ds.row:
+inset: $ds.spaces.inset-wide.medium
+spacing: $ds.spaces.horizontal-gap.space-between
+border: $ds.borders.bottom.small
+border-color: $ds.colors.border-strong
+radius: $ds.radius.zero
+
+-- ftd.image: 
+src: $assets.files.assets.storybook.logo.svg
+if:{ !storybook.sidebar }
+
+-- ftd.image:
+src: $assets.files.assets.storybook.close.svg
+src if { storybook.sidebar }: $assets.files.assets.storybook.open.svg
+$on-click$: $ftd.toggle($a = $storybook.sidebar)
+height.fixed.px: 34
+
+-- end: ds.row
+
+-- ds.column:
+if: { !storybook.sidebar }
+inset: $ds.spaces.inset-wide.small
+
+-- render-files:
+for: $obj in $storybook.list-of-files
+folder: $obj
+navigate: $storybook.navigate
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- ds.column:
+width.fixed.percent: 78
+height.fixed.px if { !storybook.toggle }: 814
+spacing: $ds.spaces.vertical-gap.zero
+border: $ds.borders.left.small
+border-color: $ds.colors.border-strong
+radius: $ds.radius.zero
+align-content: top-left
+background.solid: $ds.colors.background.step-1
+  
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.small
+border: $ds.borders.bottom.small
+border-color: $ds.colors.border-strong
+radius: $ds.radius.zero
+background.solid: $ds.colors.background.step-1
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.medium
+align-content: top-left
+
+-- ftd.image:
+src: $assets.files.assets.storybook.refresh.svg
+
+-- ftd.image:
+src: $assets.files.assets.storybook.desktop.svg
+src if { storybook.desktop }: $assets.files.assets.storybook.desktop-active.svg
+$on-click$: $ftd.set-bool($a = $storybook.desktop, v = true)
+$on-click$: $ftd.set-bool($a = $storybook.mobile, v = false)
+
+-- ftd.image:
+src: $assets.files.assets.storybook.mobile.svg
+src if { storybook.mobile }: $assets.files.assets.storybook.mobile-active.svg
+$on-click$: $ftd.set-bool($a = $storybook.mobile, v = true)
+$on-click$: $ftd.set-bool($a = $storybook.desktop, v = false)
+
+-- end: ds.row
+
+-- ftd.image:
+src: $assets.files.assets.storybook.new-tab.svg
+
+-- end: ds.row
+
+-- ftd.column:
+width.fixed.percent: 100
+width.fixed.percent if { storybook.desktop }: 100
+width.fixed.percent if { storybook.mobile }: 32
+align-self: center
+
+-- ftd.iframe:
+min-height.fixed.vh: 60
+min-height.fixed.vh if { storybook.toggle }: 86
+src: $storybook.navigate.active-file-preview-url
+width: fill-container
+
+-- end: ftd.column
+
+-- ds.column:
+border: $ds.borders.horizontal.small
+border-color: $inherited.colors.border
+background.solid: $inherited.colors.background.step-1
+radius: $ds.radius.zero
+align-content: bottom-center
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-wide.medium
+border: $ds.borders.vertical.small
+radius: $ds.radius.zero
+border-color: $ds.colors.border-strong
+
+-- ds.copy-regular: Source
+
+-- ftd.image:
+src: $assets.files.assets.storybook.down.svg
+src if { storybook.toggle }: $assets.files.assets.storybook.up.svg
+$on-click$: $ftd.toggle($a = $storybook.toggle)
+
+-- end: ds.row
+
+-- code:
+if: { !storybook.toggle }
+
+$storybook.navigate.active-file-content
+
+-- end: code
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.column:
+height: fill-container
 
 -- ds.column:
 align-content: top-left
-spacing: $ds.spaces.vertical-gap.medium.gap
+inset: $ds.spaces.inset-square.medium
+border: $ds.borders.bottom.small
+radius: $ds.radius.zero
+border-color: $ds.colors.border-strong
 
-	-- ds.heading-medium: $page-block.title
-	
-	-- ds.copy-regular:
-	
-	$page-block.body
-	
+-- ftd.image: 
+src: $assets.files.assets.storybook.logo.svg
+
 -- end: ds.column
--- end: page-block
+
+-- ds.column:
+if: { $current-slide == 1 }
+align-content: top-left
+height.fixed.vh: 89
+inset: $ds.spaces.inset-wide.small
+
+-- render-files:
+for: $obj in $storybook.list-of-files
+folder: $obj
+navigate: $storybook.navigate
+
+-- end: ds.column
+
+-- ds.column:
+if: { $current-slide == 2 }
+align-content: top-left
+height.fixed.vh: 89
+inset: $ds.spaces.inset-wide.small
+
+-- ftd.iframe:
+min-height.fixed.vh: 500
+src: $storybook.navigate.active-file-preview-url
+width: fill-container
+
+-- end: ds.column
+
+-- ds.column:
+if: { $current-slide == 3 }
+align-content: top-left
+height.fixed.vh: 89
+inset: $ds.spaces.inset-square.medium
+radius: $ds.radius.zero
+background.solid: $ds.colors.background.step-1
+
+-- ds.copy-large: Source
+style: bold
+color: $ds.colors.text-strong
+
+-- code:
+
+$storybook.navigate.active-file-content
+
+-- end: code
+
+-- end: ds.column
+
+-- ds.floater:
+bottom: 0
+left: 0
+background.solid: $ds.colors.background.base
+z-index: 99
+inset: $ds.spaces.inset-wide.large
+border: $ds.borders.top.small
+radius: $ds.radius.zero
+border-color: $ds.colors.border-strong
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.extra-large
+
+-- tab-content: $obj.title
+for: $obj in $storybook.list-of-tab
+index: $obj.index
+
+-- end: ds.row
+
+-- end: ds.floater
+
+-- end: ds.column
+
+-- end: ftd.mobile
+
+-- end: ds.row
+
+-- end: storybook
+
+
+
+
+
+
+
+-- component tab-content:
+caption title:
+integer index: 1
+boolean $active: false
+
+-- ds.row:
+radius: $ds.radius.zero
+$on-click$: $ftd.toggle($a = $tab-content.active)
+$on-click$: $ftd.set-integer($a = $current-slide, v = $tab-content.index)
+border: $ds.borders.bottom.medium
+border-color if { tab-content.index == current-slide }: $ds.colors.accent.primary
+border-color: transparent
+
+-- ds.copy-large: $tab-content.title
+
+-- end: ds.row
+
+-- end: tab-content
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component code:
+body body:
+optional string icon:
+string text: $code.body
+string lang: ftd
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.zero
+radius: $ds.radius.zero
+height.fixed.vh if { ftd.device == "mobile" }: 72
+height.fixed.px: 300
+align-content: top-left
+  
+  -- ftd.code:
+  theme: fastn-theme.light
+  theme if { ftd.dark-mode }: fastn-theme.dark
+  text: $code.body
+  lang: $code.lang
+  width: fill-container
+  height: fill-container
+  role: $inherited.types.copy-regular
+  color: $inherited.colors.text
+  background.solid: $inherited.colors.background.step-1
+  overflow-x: auto
+  overflow-y: auto
+  show-line-number: true
+  
+  -- ftd.column:
+  if: { code.lang != NULL }
+  anchor: parent
+  right.px: 12
+  bottom.px: 12
+  z-index: 999
+  padding.px: 6
+  border-bottom-right-radius.px: 4
+  
+    -- ds.row:
+    
+      -- ds.row:
+      spacing: $ds.spaces.horizontal-gap.extra-small
+      
+        -- ds.fine-print: Lang:
+
+        -- ds.fine-print: $code.lang
+        
+      -- end: ds.row
+
+    -- end: ds.row
+
+  -- end: ftd.column
+
+-- end: ds.column
+
+-- end: code
+
+
+
+
+
+
+
+
+
+
+
+-- component render-files:
+pr.toc-item folder:
+module navigate: navigate
+boolean $open: false
+
+-- ds.column:
+inset: $ds.spaces.inset-square.small
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ds.row:
+align-content: top-left
+
+-- ftd.image:
+src: $assets.files.assets.storybook.folder.svg
+height.fixed.px: 24
+
+  -- ds.heading-tiny: $render-files.folder.title
+
+  -- end: ds.row
+
+    -- ftd.image:
+src: $assets.files.assets.storybook.up.svg
+src if { !render-files.open }: $assets.files.assets.storybook.down.svg
+$on-click$: $ftd.toggle($a = $render-files.open)
+
+  -- end: ds.row
+  
+  -- ds.column:
+  if: { render-files.open }
+  align-content: left
+  
+    -- render-files-children:
+    for: $obj in $render-files.folder.children
+    file: $obj
+    navigate: $render-files.navigate
+    
+  -- end: ds.column
+
+-- end: ds.column
+
+-- end: render-files
+
+
+
+
+
+
+
+
+
+
+-- component render-files-children:
+pr.toc-item file:
+module navigate: navigate
+
+  -- ds.row:
+  inset: $ds.spaces.inset-square.small
+  align-content: top-left
+  border: $ds.borders.left.small
+  border-color: $ds.colors.border-strong
+  radius: $ds.radius.zero
+
+    -- ftd.image:
+    src: $assets.files.assets.storybook.file.svg
+    height.fixed.px: 24
+    
+    -- ds.copy-small: $render-files-children.file.title
+    $on-click$: $render-files-children.navigate.submit(default_file=/, file=$render-files-children.file.url)
+
+  -- end: ds.row
+
+-- end: render-files-children
+
+
+
+
+
+
+
+
+
+
+-- component render-files-children-toc:
+caption title:
+string link:
+pr.toc-item list children:
+boolean $open: false
+boolean $active: false
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 8
+
+  -- ftd.row:
+  background.solid if { render-files-children-toc.open || render-files-children-toc.active }: $inherited.colors.background.step-2
+  padding.px: 5
+  border-radius.px:2
+  align-content: center
+  width: fill-container
+  
+    -- ftd.image:
+    src: $assets.files.assets.storybook.file.svg
+    src if { !ftd.is_empty(render-files-children-toc.children) }: $assets.files.assets.storybook.folder.svg
+    width.fixed.px: 12
+    
+    -- ftd.text: $render-files-children-toc.title
+    role: $inherited.types.fine-print
+    color: $inherited.colors.text
+    width: fill-container
+    padding-left.px: 12
+    $on-click$: $ftd.toggle($a = $render-files-children-toc.active)
+    $on-click$: $ftd.toggle($a = $file-1)
+    $on-click$: $ftd.toggle($a = $file-2)
+    
+    -- ftd.column:
+    if: { !ftd.is_empty(render-files-children-toc.children) }
+    align-content: right
+    width: fill-container
+    
+      -- ftd.image:
+      src: $assets.files.assets.storybook.down.svg
+      src if { render-files-children-toc.open }: $assets.files.assets.storybook.up.svg
+      $on-click$: $ftd.toggle($a = $render-files-children-toc.open)
+      width.fixed.px: 12
+      
+    -- end: ftd.column
+
+  -- end: ftd.row
+
+  -- ftd.column:
+  if: { render-files-children-toc.open && !ftd.is_empty(render-files-children-toc.children) }
+  border-left-width.px:1
+  margin-left.px: 12
+  padding-left.px: 8
+  width.fixed.percent: 96
+  border-color: $inherited.colors.border
+  
+    -- render-files-children-toc:
+    $loop$: $render-files-children-toc.children as $obj
+    title: $obj.title
+    link: $obj.url
+    children: $obj.children
+    
+  -- end: ftd.column
+
+-- end: ftd.column
+
+-- end: render-files-children-toc
+
+
+
+
+
+
+
+
+
+
+
+-- pr.toc-item list toc:
+$processor$: pr.toc
+
+- Website Pages: 
+  - Example 1: /example-1-path/
+  - Example 2: /example-2-path/
+  - Example 3: /example-3-path/
+  - Example 4: /example-4-path/
+  - Example 5: /example-5-path/
