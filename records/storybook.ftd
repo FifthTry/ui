@@ -16,6 +16,7 @@ file-info list files:
 -- record file-info:
 caption title:
 string link:
+boolean active: false
 
 -- file-info list file-data:
 
