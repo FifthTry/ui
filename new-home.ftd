@@ -1,5 +1,5 @@
 -- import: fastn/processors as pr
-
+-- import: ui.fifthtry.com/records/storybook as sr
 
 
 
@@ -8,14 +8,15 @@ theme-switcher: true
 fastn-badge: false
 
 -- storybook:
-;;list-of-files: $folders
+list-of-files: $sr.folders
 
 -- end: ds.page
 
 
 -- component storybook:
-pr.toc-item list list-of-files:
-string $src: https://ui.fifthtry.com/
+;;pr.toc-item list list-of-files:
+;;string $src: https://ui.fifthtry.com/
+sr.folders list list-of-files:
 boolean $mobile: false
 boolean $desktop: false
 boolean $sidebar: false
@@ -59,10 +60,9 @@ height.fixed.px: 34
 if: { !storybook.sidebar }
 inset: $ds.spaces.inset-wide.small
 
--- render-files: $obj.title
+-- render-files:
 for: $obj in $storybook.list-of-files
-link: $obj.url
-;;children: $obj.children
+folder: $obj
 
 -- end: ds.column
 
@@ -254,22 +254,18 @@ overflow: scroll
 
 
 -- component render-files:
-caption title:
-string link:
-;;pr.toc-item list children:
+sr.folders folder:
 
 -- ds.column:
 inset: $ds.spaces.inset-square.small
 
-  -- ds.copy-regular: $render-files.title
+  -- ds.copy-regular: $render-files.folder.title
   
-  /-- ds.column:
-  if: { !ftd.is_empty(render-files.children) }
+  -- ds.column:
   
-    -- render-files-children: $obj.title
-    for: $obj in $render-files.children
-    link: $obj.url
-    children: $obj.children
+    -- render-files-children:
+    for: $obj in $render-files.folder.files
+    file: $obj
     
   -- end: ds.column
 
@@ -287,9 +283,7 @@ inset: $ds.spaces.inset-square.small
 
 
 -- component render-files-children:
-caption title:
-string link:
-pr.toc-item list children:
+sr.file-info file:
 boolean $open: false
 
 -- ds.column:
@@ -300,7 +294,7 @@ spacing: $ds.spaces.vertical-gap.small
   inset: $ds.spaces.inset-square.small
   
     -- ds.row:
-    if: { !ftd.is_empty(render-files-children.children) }
+    ;;if: { !ftd.is_empty(render-files-children.children) }
     inset: $ds.spaces.inset-square.small
     background.solid: $ds.colors.text
     
@@ -308,39 +302,12 @@ spacing: $ds.spaces.vertical-gap.small
 
     -- ftd.image:
     src: $assets.files.assets.storybook.file.svg
-    if: { ftd.is_empty(render-files-children.children) }
     
-    -- ds.copy-small: $render-files-children.title
-    
-    -- ds.column:
-    if: { !ftd.is_empty(render-files-children.children) }
-    align-content: right
-    
-      -- ftd.image:
-      src: $assets.files.assets.storybook.down.svg
-      src if {render-files-children.open }: $assets.files.assets.storybook.up.svg
-      $on-click$: $ftd.toggle($a = $render-files-children.open)
-      width.fixed.px: 12
-      
-    -- end: ds.column
+    -- ds.copy-small: $render-files-children.file.title
+    link: $render-files-children.file.link
+    ;;$on-click$: $ftd.set-bool($a)
 
   -- end: ds.row
-
-  -- ds.column:
-  if: { render-files-children.open && !ftd.is_empty(render-files-children.children) }
-  border: $ds.borders.left.small
-  inset: $ds.spaces.inset-wide.medium-zero
-  border-color: $ds.colors.border-strong
-  width.fixed.percent: 93
-  spacing: $ds.spaces.vertical-gap.small
-  
-    /-- render-files-children-toc:
-    $loop$: $render-files-children.children as $obj
-    title: $obj.title
-    link: $obj.url
-    children: $obj.children
-    
-  -- end: ds.column
 
 -- end: ds.column
 
