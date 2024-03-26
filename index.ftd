@@ -1,12 +1,11 @@
 -- import: fastn/processors as pr
 -- import: ui.fifthtry.com/records/storybook as sr
 -- import: ui.fifthtry.com/actions/storybook/navigate
-
+-- import: ui.fifthtry.com/components/dark-mode-toggle
 
 -- integer $current-slide: 1
 
 -- ds.page: Storybook
-theme-switcher: false
 fastn-badge: false
 
 -- storybook:
@@ -76,7 +75,7 @@ navigate: $storybook.navigate
 -- end: ds.column
 
 -- ds.column:
-width.fixed.percent: 78
+width.fixed.percent if { storybook.sidebar }: 78
 height.fixed.px if { !storybook.toggle }: 814
 spacing: $ds.spaces.vertical-gap.zero
 border: $ds.borders.left.small
@@ -98,9 +97,6 @@ spacing: $ds.spaces.horizontal-gap.medium
 align-content: top-left
 
 -- ftd.image:
-src: $assets.files.assets.storybook.refresh.svg
-
--- ftd.image:
 src: $assets.files.assets.storybook.desktop.svg
 src if { storybook.desktop }: $assets.files.assets.storybook.desktop-active.svg
 $on-click$: $ftd.set-bool($a = $storybook.desktop, v = true)
@@ -114,8 +110,10 @@ $on-click$: $ftd.set-bool($a = $storybook.desktop, v = false)
 
 -- end: ds.row
 
--- ftd.image:
+/-- ftd.image:
 src: $assets.files.assets.storybook.new-tab.svg
+
+-- dark-mode-toggle.dark-mode-toggle:
 
 -- end: ds.row
 

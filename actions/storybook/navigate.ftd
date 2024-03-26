@@ -1,4 +1,4 @@
--- optional string $active-file-preview-url: /
+-- optional string $active-file-preview-url: https://ui.fifthtry.com/scenarios/logged-in-home/
 -- optional string $active-file-content: content
 
 ;; Implement this later
