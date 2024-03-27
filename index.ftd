@@ -45,7 +45,7 @@ align-content: top-center
 overflow-y: scroll
 
 -- ds.row:
-inset: $ds.spaces.inset-wide.medium
+inset: $ds.spaces.inset-wide.small
 spacing: $ds.spaces.horizontal-gap.space-between
 border: $ds.borders.bottom.small
 border-color: $ds.colors.border-strong
@@ -139,6 +139,7 @@ background.solid: $inherited.colors.background.step-1
 radius: $ds.radius.zero
 align-content: bottom-center
 overflow-y: scroll
+spacing: $ds.spaces.vertical-gap.zero
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -308,7 +309,7 @@ string lang: ftd
 spacing: $ds.spaces.vertical-gap.zero
 radius: $ds.radius.zero
 height.fixed.vh if { ftd.device == "mobile" }: 72
-height.fixed.px: 167
+height.fixed.px: 183
 align-content: top-left
   
   -- ftd.code:
@@ -401,7 +402,7 @@ $on-click$: $ftd.toggle($a = $render-files.open)
   border: $ds.borders.left.small
   border-color: $ds.colors.border-strong
   radius: $ds.radius.zero
-  spacing: $ds.spaces.vertical-gap.small
+  spacing: $ds.spaces.vertical-gap.zero
   
     -- render-files-children:
     for: $obj in $render-files.folder.children
@@ -432,13 +433,15 @@ module navigate: navigate
   -- ds.row:
   inset: $ds.spaces.inset-square.small
   align-content: top-left
+  spacing: $ds.spaces.horizontal-gap.small
 
     -- ftd.image:
     src: $assets.files.assets.storybook.file.svg
     height.fixed.px: 24
     
-    -- ds.copy-small: $render-files-children.file.title
+    -- ds.copy-regular: $render-files-children.file.title
     $on-click$: $render-files-children.navigate.submit(default_file=/, file=$render-files-children.file.url)
+    color: $ds.colors.text-strong
 
   -- end: ds.row
 

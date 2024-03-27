@@ -1,8 +1,6 @@
 -- component dark-mode-toggle:
 
 -- ds.row:
-border: $ds.borders.uniform.small
-inset: $ds.spaces.inset-square.medium
 height.fixed.px: 24
 width.fixed.px: 24
 
