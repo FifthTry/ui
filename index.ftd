@@ -379,7 +379,8 @@ spacing: $ds.spaces.horizontal-gap.space-between
 align-content: top-left
 
 -- ftd.image:
-src: $assets.files.assets.storybook.folder.svg
+src: $assets.files.assets.storybook.folder-close.svg
+src if { !render-files.open }: $assets.files.assets.storybook.folder.svg
 height.fixed.px: 24
 
   -- ds.heading-tiny: $render-files.folder.title
