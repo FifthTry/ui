@@ -173,7 +173,6 @@ $storybook.navigate.active-file-content
 -- ftd.mobile:
 
 -- ds.column:
-height: fill-container
 
 -- ds.column:
 align-content: top-left
@@ -182,16 +181,28 @@ border: $ds.borders.bottom.small
 radius: $ds.radius.zero
 border-color: $ds.colors.border-strong
 
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+
 -- ftd.image: 
 src: $assets.files.assets.storybook.logo.svg
+
+-- dark-mode-toggle.dark-mode-toggle:
+
+-- end: ds.row
 
 -- end: ds.column
 
 -- ds.column:
+spacing: $ds.spaces.vertical-gap.zero
+align-content: top-center
+
+-- ds.column:
 if: { $current-slide == 1 }
 align-content: top-left
-height.fixed.vh: 89
+height: fill-container
 inset: $ds.spaces.inset-wide.small
+overflow-x: scroll
 
 -- render-files:
 for: $obj in $storybook.list-of-files
@@ -203,7 +214,7 @@ navigate: $storybook.navigate
 -- ds.column:
 if: { $current-slide == 2 }
 align-content: top-left
-height.fixed.vh: 89
+height: fill-container
 inset: $ds.spaces.inset-wide.small
 
 -- ftd.iframe:
@@ -216,7 +227,7 @@ width: fill-container
 -- ds.column:
 if: { $current-slide == 3 }
 align-content: top-left
-height.fixed.vh: 89
+height: fill-container
 inset: $ds.spaces.inset-square.medium
 radius: $ds.radius.zero
 background.solid: $ds.colors.background.step-1
@@ -233,11 +244,14 @@ $storybook.navigate.active-file-content
 
 -- end: ds.column
 
+-- end: ds.column
+
 -- ds.floater:
-bottom: 0
+anchor: window
+sticky: true
+bottom: -2
 left: 0
 background.solid: $ds.colors.background.base
-z-index: 99
 inset: $ds.spaces.inset-wide.large
 border: $ds.borders.top.small
 radius: $ds.radius.zero
