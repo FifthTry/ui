@@ -38,18 +38,18 @@ height.fixed.vh: 100
 width.fixed.percent: 26
 width.fixed.percent if { storybook.sidebar }: 4
 height: fill-container
-color: $ds.colors.text
 background.solid: $ds.colors.background.step-1
 radius: $ds.radius.zero
 align-content: top-center
 overflow-y: scroll
 
 -- ds.row:
-inset: $ds.spaces.inset-wide.small
-spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.small
+spacing if { !storybook.sidebar }: $ds.spaces.horizontal-gap.space-between
 border: $ds.borders.bottom.small
 border-color: $ds.colors.border-strong
 radius: $ds.radius.zero
+align-content: left
 
 -- ftd.image: 
 src: $assets.files.assets.storybook.logo.svg
@@ -455,7 +455,7 @@ module navigate: navigate
     height.fixed.px: 24
     
     -- ds.copy-regular: $render-files-children.file.title
-    $on-click$: $render-files-children.navigate.submit(default_file=/, file=$render-files-children.file.url)
+    $on-click$: $render-files-children.navigate.submit(default_file=/, fileurl=$render-files-children.file.url)
     color: $ds.colors.text-strong
 
   -- end: ds.row
