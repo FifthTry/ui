@@ -30,17 +30,19 @@ optional integer index:
 -- ds.row:
 align-content: top-center
 spacing: $ds.spaces.horizontal-gap.zero
+height.fixed.vh: 100
 
 -- ftd.desktop:
 
 -- ds.column:
-width.fixed.percent: 22
+width.fixed.percent: 26
 width.fixed.percent if { storybook.sidebar }: 4
 height: fill-container
 color: $ds.colors.text
 background.solid: $ds.colors.background.step-1
 radius: $ds.radius.zero
 align-content: top-center
+overflow-y: scroll
 
 -- ds.row:
 inset: $ds.spaces.inset-wide.medium
@@ -76,7 +78,6 @@ navigate: $storybook.navigate
 
 -- ds.column:
 width.fixed.percent if { storybook.sidebar }: 78
-height.fixed.px if { !storybook.toggle }: 814
 spacing: $ds.spaces.vertical-gap.zero
 border: $ds.borders.left.small
 border-color: $ds.colors.border-strong
@@ -86,7 +87,7 @@ background.solid: $ds.colors.background.step-1
   
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.small
+inset: $ds.spaces.inset-wide.medium
 border: $ds.borders.bottom.small
 border-color: $ds.colors.border-strong
 radius: $ds.radius.zero
@@ -137,6 +138,7 @@ border-color: $inherited.colors.border
 background.solid: $inherited.colors.background.step-1
 radius: $ds.radius.zero
 align-content: bottom-center
+overflow-y: scroll
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -306,7 +308,7 @@ string lang: ftd
 spacing: $ds.spaces.vertical-gap.zero
 radius: $ds.radius.zero
 height.fixed.vh if { ftd.device == "mobile" }: 72
-height.fixed.px: 300
+height.fixed.px: 167
 align-content: top-left
   
   -- ftd.code:
@@ -384,21 +386,30 @@ height.fixed.px: 24
   -- end: ds.row
 
     -- ftd.image:
-src: $assets.files.assets.storybook.up.svg
-src if { !render-files.open }: $assets.files.assets.storybook.down.svg
+src: $assets.files.assets.storybook.arrow-up.svg
+src if { !render-files.open }: $assets.files.assets.storybook.arrow-down.svg
 $on-click$: $ftd.toggle($a = $render-files.open)
 
   -- end: ds.row
+
+  -- ds.column:
+  if: { !render-files.open }
+  align-content: left
+  inset: $ds.spaces.inset-wide.small-zero
   
   -- ds.column:
-  if: { render-files.open }
-  align-content: left
+  border: $ds.borders.left.small
+  border-color: $ds.colors.border-strong
+  radius: $ds.radius.zero
+  spacing: $ds.spaces.vertical-gap.small
   
     -- render-files-children:
     for: $obj in $render-files.folder.children
     file: $obj
     navigate: $render-files.navigate
     
+  -- end: ds.column
+
   -- end: ds.column
 
 -- end: ds.column
@@ -421,9 +432,6 @@ module navigate: navigate
   -- ds.row:
   inset: $ds.spaces.inset-square.small
   align-content: top-left
-  border: $ds.borders.left.small
-  border-color: $ds.colors.border-strong
-  radius: $ds.radius.zero
 
     -- ftd.image:
     src: $assets.files.assets.storybook.file.svg
@@ -445,89 +453,61 @@ module navigate: navigate
 
 
 
--- component render-files-children-toc:
-caption title:
-string link:
-pr.toc-item list children:
-boolean $open: false
-boolean $active: false
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 8
-
-  -- ftd.row:
-  background.solid if { render-files-children-toc.open || render-files-children-toc.active }: $inherited.colors.background.step-2
-  padding.px: 5
-  border-radius.px:2
-  align-content: center
-  width: fill-container
-  
-    -- ftd.image:
-    src: $assets.files.assets.storybook.file.svg
-    src if { !ftd.is_empty(render-files-children-toc.children) }: $assets.files.assets.storybook.folder.svg
-    width.fixed.px: 12
-    
-    -- ftd.text: $render-files-children-toc.title
-    role: $inherited.types.fine-print
-    color: $inherited.colors.text
-    width: fill-container
-    padding-left.px: 12
-    $on-click$: $ftd.toggle($a = $render-files-children-toc.active)
-    $on-click$: $ftd.toggle($a = $file-1)
-    $on-click$: $ftd.toggle($a = $file-2)
-    
-    -- ftd.column:
-    if: { !ftd.is_empty(render-files-children-toc.children) }
-    align-content: right
-    width: fill-container
-    
-      -- ftd.image:
-      src: $assets.files.assets.storybook.down.svg
-      src if { render-files-children-toc.open }: $assets.files.assets.storybook.up.svg
-      $on-click$: $ftd.toggle($a = $render-files-children-toc.open)
-      width.fixed.px: 12
-      
-    -- end: ftd.column
-
-  -- end: ftd.row
-
-  -- ftd.column:
-  if: { render-files-children-toc.open && !ftd.is_empty(render-files-children-toc.children) }
-  border-left-width.px:1
-  margin-left.px: 12
-  padding-left.px: 8
-  width.fixed.percent: 96
-  border-color: $inherited.colors.border
-  
-    -- render-files-children-toc:
-    $loop$: $render-files-children-toc.children as $obj
-    title: $obj.title
-    link: $obj.url
-    children: $obj.children
-    
-  -- end: ftd.column
-
--- end: ftd.column
-
--- end: render-files-children-toc
-
-
-
-
-
-
-
-
-
 
 
 -- pr.toc-item list toc:
 $processor$: pr.toc
 
 - Website Pages: 
-  - Example 1: /example-1-path/
-  - Example 2: /example-2-path/
-  - Example 3: /example-3-path/
-  - Example 4: /example-4-path/
-  - Example 5: /example-5-path/
+  - Logged in Home page: /scenarios/logged-in-home/
+  - Logged out Home page: /scenarios/logged-out-home/
+  - Logged In About page: /scenarios/about/logged-in-about/
+  - Logged In Team page: /scenarios/about/logged-in-team/
+  - Pricing page: /scenarios/about/pricing/
+  - Terms page: /scenarios/about/terms-page/
+  - Privacy page: /scenarios/about/privacy-page/
+  - Team page: /scenarios/about/team-page/
+  - About Us page: /scenarios/about/
+  - Blog Homepage: /scenarios/blogs/
+  - Blog Post: /scenarios/blogs/blog-post/
+  - Editor - Blog Post: /scenarios/blogs/editor/
+
+- Auth Pages: 
+  - Login page: /scenarios/signin-page/
+  - Signup page: /scenarios/signup-page/
+  - Forgot Password page: /scenarios/forgot-password/
+  - Change Password page: /scenarios/change-password/?code=auth ;; ?code is required
+  - Password Recovery page: /scenarios/password-recovery/
+
+- Org Pages: 
+  - Org dashboard: /scenarios/org/dashboard/
+
+- User Pages: 
+  - User dashboard: /scenarios/user/dashboard/
+  - Create Site: /scenarios/user/create-site/
+
+- Site Pages:
+  - Site Info: /scenarios/sites/site-info/
+  - Page with top message: /scenarios/sites/top-message/
+
+- Site Settings:
+  - Site Domains: /scenarios/sites/setting/domains/
+  - Github (Configure form): /scenarios/sites/setting/configure-github/
+  - Github (Un-configured): /scenarios/sites/setting/github/
+  - Github (Configured): /scenarios/sites/setting/github-configured/
+  - Site Tokens: /scenarios/sites/setting/tokens/
+  - Environments: /scenarios/sites/setting/environments/
+
+- Site Editor Pages:
+  - Site Editor With Code Preview: /scenarios/sites/editor/
+  - Site Editor With Image Preview: /scenarios/sites/editor/image-preview/
+	
+- Featured Template:
+  - Templates: /scenarios/featured-template
+	
+- University Scenarios:
+  - University Homepage: /scenarios/university/home-page/
+  - f4e course: /scenarios/university/f4e-course/
+	
+- Onboarding Scenarios:
+  - Onboarding Ishaan: /scenarios/cards/onboarding-ishaan/
