@@ -56,7 +56,7 @@ align-content: left
 
 1) Click on the `Create new site +` button to start building your website.
 
-2) On the prompted page, enter your desired website domain name.
+2) On the prompted page, enter your desired website domain name. Example: my-site, read-my-blog, etc. You can give any domain name at this point for your website. 
 
 3) Once you've entered your domain name, hit the `Create site` button. Your site is 
 	now live on [fifthtry.com](https://www.fifthtry.com/)
@@ -65,7 +65,7 @@ align-content: left
 
 -- ds.copy-regular: 
 
-1) Head to the "Editor" tab to begin working on your website.
+1) Head to the `Editor` tab to begin working on your website.
 
 2) Within the editor, you'll find three main options:
 
@@ -75,9 +75,9 @@ align-content: left
 
 
 3) Your site comes pre-equipped with default files, including `index.ftd` and
-	`fastn.ftd`, along with the design system package. Watch the [tutorial](https://fastn.com/blog/design-system/) on how to build websites using our design system package.
+	`fastn.ftd`, along with the design system package. Watch full [tutorial](https://fastn.com/blog/design-system/) on how to build websites using our design system package.
 
-4) Add more files by clicking on the `+` icon next to the files.
+4) You can add more files by clicking on the `+` icon next to the files.
 
 5) Save your progress and preview your work at any point by clciking on 
 	the `Preview` button. You can toggle between different views (desktop, 
