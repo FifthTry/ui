@@ -487,7 +487,7 @@ string folder:
 
   -- ds.row:
   inset: $ds.spaces.inset-square.small
-  align-content: top-left
+  align-content: left
   spacing: $ds.spaces.horizontal-gap.small
   background.solid if { active-sub-title == $render-files-children.file.title }: $ds.colors.background.step-2
   background.solid: $ds.colors.background.step-1
@@ -497,7 +497,7 @@ string folder:
 
     -- ftd.image:
     src: $assets.files.assets.storybook.file.svg
-    height.fixed.px: 24
+    height.fixed.px: 20
     
     -- ds.copy-regular: $render-files-children.file.title
     color: $ds.colors.text-strong
