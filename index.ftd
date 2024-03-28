@@ -133,7 +133,7 @@ align-self: center
 
 -- ftd.iframe:
 min-height.fixed.vh: 60
-min-height.fixed.vh if { storybook.toggle }: 86
+min-height.fixed.vh if { storybook.toggle }: 83
 src: $storybook.navigate.active-file-preview-url
 width: fill-container
 
