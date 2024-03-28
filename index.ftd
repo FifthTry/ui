@@ -254,7 +254,7 @@ height: fill-container
 inset: $ds.spaces.inset-wide.small
 
 -- ftd.iframe:
-min-height.fixed.vh: 500
+min-height.fixed.vh: 100
 src: $storybook.navigate.active-file-preview-url
 width: fill-container
 
