@@ -4,8 +4,8 @@
 -- import: ui.fifthtry.com/components/dark-mode-toggle
 
 -- integer $current-slide: 1
--- optional string $active-title: 
--- optional string $active-sub-title: 
+-- string $active-title: Website Pages
+-- string $active-sub-title: Logged in Home page
 
 -- ds.page: Storybook
 fastn-badge: false
@@ -51,8 +51,8 @@ border-color: $ds.colors.border-strong
 radius: $ds.radius.zero
 
 -- ftd.image: 
+if: { !storybook.sidebar }
 src: $assets.files.assets.storybook.logo.svg
-if:{ !storybook.sidebar }
 
 -- ftd.image:
 src: $assets.files.assets.storybook.close.svg
@@ -108,14 +108,12 @@ $on-click$: $ftd.set-bool($a = $storybook.mobile, v = true)
 $on-click$: $ftd.set-bool($a = $storybook.desktop, v = false)
 
 -- ds.copy-regular: $active-title
-if: { active-title != NULL }
 
 -- ftd.image:
 if: { active-title != NULL }
 src: $assets.files.assets.right.svg
 
 -- ds.copy-regular: $active-sub-title
-if: { active-sub-title != NULL }
 color: $ds.colors.text-strong
 
 -- end: ds.row
@@ -215,14 +213,12 @@ src: $assets.files.assets.storybook.logo.svg
 if: { $current-slide == 2 }
 
 -- ds.copy-regular: $active-title
-if: { active-title != NULL }
 
 -- ftd.image:
 if: { active-title != NULL }
 src: $assets.files.assets.right.svg
 
 -- ds.copy-regular: $active-sub-title
-if: { active-sub-title != NULL }
 color: $ds.colors.text-strong
 
 -- end: ds.row
@@ -420,6 +416,8 @@ boolean $open: false
 
 -- ds.column:
 inset: $ds.spaces.inset-square.small
+spacing: $ds.spaces.vertical-gap.small
+
 
 -- ds.row:
 spacing: $ds.spaces.horizontal-gap.space-between
@@ -442,7 +440,6 @@ height.fixed.px: 20
     src: $assets.files.assets.storybook.arrow-up.svg
     src if { !render-files.open }: $assets.files.assets.storybook.arrow-down.svg
     $on-click$: $ftd.toggle($a = $render-files.open)
-    $on-click$: $ftd.set-string($a = $active-sub-title, v = $render-files.folder.title )
 
   -- end: ds.row
 
@@ -450,11 +447,6 @@ height.fixed.px: 20
   if: { !render-files.open }
   align-content: left
   inset: $ds.spaces.inset-wide.small-zero
-  
-  -- ds.column:
-  border: $ds.borders.left.small
-  border-color: $ds.colors.border-strong
-  radius: $ds.radius.zero
   spacing: $ds.spaces.vertical-gap.zero
   
     -- render-files-children:
@@ -462,8 +454,6 @@ height.fixed.px: 20
     file: $obj
     navigate: $render-files.navigate
     folder: $render-files.folder.title
-    
-  -- end: ds.column
 
   -- end: ds.column
 
@@ -486,9 +476,9 @@ module navigate: navigate
 string folder:
 
   -- ds.row:
-  inset: $ds.spaces.inset-square.small
   align-content: left
   spacing: $ds.spaces.horizontal-gap.small
+  inset: $ds.spaces.inset-wide.small
   background.solid if { active-sub-title == $render-files-children.file.title }: $ds.colors.background.step-2
   background.solid: $ds.colors.background.step-1
   $on-click$: $render-files-children.navigate.submit(default_file=/, fileurl=$render-files-children.file.url)
