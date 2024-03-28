@@ -9,6 +9,7 @@ margin: $ds.spaces.vertical-gap.small
 
 -- ds.heading-large: $blog-info.title
 color: $ds.colors.text-strong
+align: center
 
 -- ds.row:
 width: hug-content

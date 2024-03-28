@@ -1,0 +1,66 @@
+{
+  "files": {
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "A6722EF7196D56DAC4D507B5A6D018B3665460DEA58DE8472B96F4B2A851984A",
+      "size": 519
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "2C372A7AA51EFF6E5BE56E3D2D56DD55D63FBDF58A4D2E279392A02B55DDB960",
+      "size": 1416
+    },
+    "_config.yml": {
+      "name": "_config.yml",
+      "checksum": "A42D91290C93B5F17412C3B346737EA1C796E5D287306758AFE8B20470119D80",
+      "size": 21
+    },
+    "assets/avatar.svg": {
+      "name": "assets/avatar.svg",
+      "checksum": "93FCE2C29D73E4DF8125E3F0DFC750619401617176710B8AD4F7E67C32A3D945",
+      "size": 1125012
+    },
+    "assets/linktree-dark.png": {
+      "name": "assets/linktree-dark.png",
+      "checksum": "6B36B769E7B79B03D9A56106FA1A6741616F8E205E847837075187DDE679F9D3",
+      "size": 288851
+    },
+    "assets/linktree.png": {
+      "name": "assets/linktree.png",
+      "checksum": "7EEF5E1955372E6BF2727164DE6864F057FBDD139C3596CF55EB50AA3EF407EF",
+      "size": 288918
+    },
+    "ds.ftd": {
+      "name": "ds.ftd",
+      "checksum": "8474EDE064FB153A22B0ADEAC5C4480BF25C37F91052DEFE1AC0E55285E4EAAA",
+      "size": 906
+    },
+    "favicon.ico": {
+      "name": "favicon.ico",
+      "checksum": "65056A1D6C6AAE6E3DC4626E29F4BD4B628B17A8E9CC1D3A5E8FE9F6743F306B",
+      "size": 15406
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "97402DCA9E4B2B8B018F1CCAF39096C76DC4B3A119E8F2B533BF84ABF26421E1",
+      "size": 1105
+    },
+    "lib.ftd": {
+      "name": "lib.ftd",
+      "checksum": "E4906FC1B03D4A5AC1985462E75A918A0A60A8A07D44A7FCEABD176059C7E268",
+      "size": 4027
+    },
+    "themecolors.ftd": {
+      "name": "themecolors.ftd",
+      "checksum": "9344206DF67D72E5EB69C8FE779C7D9F2394755C7A28267CAC57415839A91ACA",
+      "size": 6480
+    },
+    "vercel.json": {
+      "name": "vercel.json",
+      "checksum": "0A911690620506F0D47EBA9F49D46DCD57D84C7D6A3BEA93BF0875DD6B374089",
+      "size": 181
+    }
+  },
+  "zip_url": "https://codeload.github.com/fastn-community/forest-green/zip/refs/heads/main",
+  "checksum": "42E6D6C73CD29BFDD89077AD9C448E3B72D9797B90EA4DDDF679EC756990E73B"
+}

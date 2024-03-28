@@ -23,6 +23,9 @@ spacing: $ds.spaces.vertical-gap.medium.gap
 	- [Blog Homepage](/scenarios/blogs/)
 	- [Blog Post](/scenarios/blogs/blog-post/)
 	- [Editor - Blog Post](/scenarios/blogs/editor/)
+	- [Getting Started Tutorial](/scenarios/blogs/getting-started/)
+
+
 	-- page-block: Auth Pages
 	
 	- [Login page](/scenarios/signin-page/)
