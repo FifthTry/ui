@@ -1,7 +1,6 @@
 -- optional string $active-file-preview-url: https://ui.fifthtry.com/scenarios/logged-in-home/
 -- optional string $active-file-content: content
 
-;; Implement this later
 -- void submit(default_file, fileurl):
 string default_file:
 string fileurl:
