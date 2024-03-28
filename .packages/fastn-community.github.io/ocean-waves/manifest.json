@@ -1,0 +1,91 @@
+{
+  "files": {
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "E1BD9ECDD4117C15C96FB7D386DDE695160916E1D033E915703EFC180482580F",
+      "size": 512
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "2C372A7AA51EFF6E5BE56E3D2D56DD55D63FBDF58A4D2E279392A02B55DDB960",
+      "size": 1416
+    },
+    "_config.yml": {
+      "name": "_config.yml",
+      "checksum": "A42D91290C93B5F17412C3B346737EA1C796E5D287306758AFE8B20470119D80",
+      "size": 21
+    },
+    "assets/background.jpg": {
+      "name": "assets/background.jpg",
+      "checksum": "9AF1C651972AAA257627F39F1933041AFE7DC4D2A651A9D37EBBF58689B84F21",
+      "size": 447521
+    },
+    "assets/icon-1.svg": {
+      "name": "assets/icon-1.svg",
+      "checksum": "66206CCE2027BF11F070FD9E20E1833F003270D07C015D671E44D769E6CDF92E",
+      "size": 625
+    },
+    "assets/icon-2.svg": {
+      "name": "assets/icon-2.svg",
+      "checksum": "D978722EF5CC54FA38684FF21B19E2CA4CB22F78602C8211E071D552343E2C58",
+      "size": 1906
+    },
+    "assets/icon-3.svg": {
+      "name": "assets/icon-3.svg",
+      "checksum": "E4F2832D12FB0DA12560D6236D0FAE96C3981F5576DA86D6B5F45C2F0B5EA094",
+      "size": 3148
+    },
+    "assets/icon-4.svg": {
+      "name": "assets/icon-4.svg",
+      "checksum": "0CA883B247DA64112DBB8C2AAC037A32D4EA6432673CF64CC516EA0C359E3F99",
+      "size": 987
+    },
+    "assets/icon-5.svg": {
+      "name": "assets/icon-5.svg",
+      "checksum": "8156F34F21B063B073A2CB6E5007DDC755612A942809289C9054D8DB451BC302",
+      "size": 1412
+    },
+    "assets/icon-6.svg": {
+      "name": "assets/icon-6.svg",
+      "checksum": "B5FF27E4F1637C4281829A4D93097DBE59B2763D62827DA7FCD0D184B758B7E0",
+      "size": 1243
+    },
+    "assets/thumbnail.png": {
+      "name": "assets/thumbnail.png",
+      "checksum": "68D9C889FA1980FC6091DC0E6FE62931D988DAE0E825D890912D0EA16BF2255D",
+      "size": 248658
+    },
+    "ds.ftd": {
+      "name": "ds.ftd",
+      "checksum": "D7ED48275D21B2918E5751B77239921293AB724F96DD2FCFBF0B07B43F35D0E2",
+      "size": 895
+    },
+    "favicon.ico": {
+      "name": "favicon.ico",
+      "checksum": "65056A1D6C6AAE6E3DC4626E29F4BD4B628B17A8E9CC1D3A5E8FE9F6743F306B",
+      "size": 15406
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "78F11F807D5E2F023D8E0973906453EF6509634760D35F82F5D5A028E0AFC397",
+      "size": 809
+    },
+    "lib.ftd": {
+      "name": "lib.ftd",
+      "checksum": "B5C614AEC488F3922EDB9133B06B1DE8E1D5D2F9B1D1F8FBD13DDA4CC1364F78",
+      "size": 2412
+    },
+    "themecolors.ftd": {
+      "name": "themecolors.ftd",
+      "checksum": "CF005D872369C49D74BC28CD80EBB2E8A9AAB1A449E1188CE26194F42BE8C156",
+      "size": 6480
+    },
+    "vercel.json": {
+      "name": "vercel.json",
+      "checksum": "0A911690620506F0D47EBA9F49D46DCD57D84C7D6A3BEA93BF0875DD6B374089",
+      "size": 181
+    }
+  },
+  "zip_url": "https://codeload.github.com/fastn-community/ocean-waves/zip/refs/heads/main",
+  "checksum": "D3A67DEB4072CBD39511A593489129AC35EAB738A533B2FF5CB6875FD59F6943"
+}

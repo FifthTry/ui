@@ -1,0 +1,14 @@
+-- import: fastn
+
+-- fastn.package: fastn-community.github.io/multi-color-mesh-gradient
+favicon: /-/fastn-community.github.io/multi-color-mesh-gradient/favicon.ico
+
+-- fastn.dependency: fastn-community.github.io/inter-typography
+-- fastn.dependency: fastn-community.github.io/lobster-font
+-- fastn.dependency: fastn-community.github.io/design-system
+provided-via: fastn-community.github.io/multi-color-mesh-gradient/ds
+
+-- fastn.auto-import: fastn-community.github.io/multi-color-mesh-gradient/assets
+-- fastn.auto-import: fastn-community.github.io/multi-color-mesh-gradient/ds
+-- fastn.auto-import: fastn-community.github.io/multi-color-mesh-gradient/lib
+-- fastn.auto-import: fastn-community.github.io/multi-color-mesh-gradient/fonts

@@ -1,0 +1,56 @@
+{
+  "files": {
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "FCC3BAB138D0FCDCA0BE372BB77AD757D705DD62204166063CAFA3BF01C6F8CC",
+      "size": 1545
+    },
+    "LICENSE": {
+      "name": "LICENSE",
+      "checksum": "95A9632336410243B2147554EB1C5CC0FCA6C8DBED399E8F787FC84BD22F7C27",
+      "size": 4011
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "02B2834322971BC48C5B13D37379C1B47EF54E4270490F2722EA79CC24DCA74D",
+      "size": 1369
+    },
+    "custom.ftd": {
+      "name": "custom.ftd",
+      "checksum": "D87A8FBE2B76FB5513D264DE6F2F52041AF2FC3C308D811E2FA9A98A2B229EC9",
+      "size": 5626
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "4D4C2976B218B46247F0F66992273E7AFCA33467B23CBAFC0DB160769C473969",
+      "size": 2254
+    },
+    "static/Lobster-400-normal-cyrillic-ext.woff2": {
+      "name": "static/Lobster-400-normal-cyrillic-ext.woff2",
+      "checksum": "92E8917F0EE4A65B587C474DB5A788DA5D58BC94477FABFD9FAFB20F52E2F3B0",
+      "size": 7784
+    },
+    "static/Lobster-400-normal-cyrillic.woff2": {
+      "name": "static/Lobster-400-normal-cyrillic.woff2",
+      "checksum": "9CD6FBB756044A72B122399859573D5159A3CBCABA7EA92281F1248BDFAF4DDD",
+      "size": 17136
+    },
+    "static/Lobster-400-normal-latin-ext.woff2": {
+      "name": "static/Lobster-400-normal-latin-ext.woff2",
+      "checksum": "A8348A493B1780B20B3F2F7765483ECA916A54E66B73E1CD52CA89CDCD6AC643",
+      "size": 12488
+    },
+    "static/Lobster-400-normal-latin.woff2": {
+      "name": "static/Lobster-400-normal-latin.woff2",
+      "checksum": "263F1815A716181A09A7B19087CBBD4A916EF7C7E90D9B78282D3C3B1BF6901D",
+      "size": 16436
+    },
+    "static/Lobster-400-normal-vietnamese.woff2": {
+      "name": "static/Lobster-400-normal-vietnamese.woff2",
+      "checksum": "D14D0829E2C17C7DAA71BCE820D4A69947541EDE6D44A86EC6F10D0220B59A1E",
+      "size": 4724
+    }
+  },
+  "zip_url": "https://codeload.github.com/fastn-community/lobster-font/zip/refs/heads/main",
+  "checksum": "0423422DD8678AE292C6F8A2A4C6D7CCD6BABB98F7D2002122DA00B846A77B05"
+}

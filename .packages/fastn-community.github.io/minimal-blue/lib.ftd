@@ -1,0 +1,176 @@
+-- component linktree:
+caption name:
+body body:
+string social-link-text-1:
+string social-link-url-1:
+string social-link-text-2:
+string social-link-url-2:
+string social-link-text-3:
+string social-link-url-3:
+string social-link-text-4:
+string social-link-url-4:
+ftd.image-src avatar:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+inset: $ds.spaces.inset-square.large
+
+-- ftd.desktop:
+
+-- ds.row:
+radius: $ds.radius.large
+spacing: $ds.spaces.horizontal-gap.space-between
+height.fixed.px: 480
+background.solid: $ds.colors.background.base
+inset: $ds.spaces.inset-wide.large-zero
+
+-- ds.column:
+width.fixed.px if { ftd.device != "mobile" }: 400
+inset: $ds.spaces.inset-wide.large
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.column:
+align-content if { ftd.device != "mobile" }: left
+
+-- ds.heading-large: $linktree.name
+color: $ds.colors.text-strong
+;;style: regular
+
+-- ds.copy-regular: $linktree.body
+align if { ftd.device == "mobile" }: center
+
+-- end: ds.column
+
+-- ds.column:
+
+-- linktree-social-detail:
+social-link-text-1: $linktree.social-link-text-1
+social-link-url-1: $linktree.social-link-url-1
+social-link-text-2: $linktree.social-link-text-2
+social-link-url-2: $linktree.social-link-url-2
+social-link-text-3: $linktree.social-link-text-3
+social-link-url-3: $linktree.social-link-url-3
+social-link-text-4: $linktree.social-link-text-4
+social-link-url-4: $linktree.social-link-url-4
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- ds.column:
+width: hug-content
+border: $ds.borders.left.small
+border-color: $ds.colors.border
+height: fill-container
+radius: $ds.radius.zero
+
+-- end: ds.column
+
+-- ftd.image:
+src: $linktree.avatar
+width.fixed.px: 358
+width.fixed.px if { ftd.device == "mobile" }: 72
+border-radius.px: 100
+
+-- end: ds.row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.column:
+radius: $ds.radius.large
+background.solid: $ds.colors.background.base
+inset: $ds.spaces.inset-square.medium
+
+-- ftd.image:
+src: $linktree.avatar
+width.fixed.px: 120
+border-radius.px: 16
+
+-- ds.column:
+
+-- ds.heading-medium: $linktree.name
+color: $ds.colors.text-strong
+;;style: regular
+
+-- ds.copy-small: $linktree.body
+align: center
+
+-- end: ds.column
+
+-- ds.column:
+border: $ds.borders.top.small
+border-color: $ds.colors.border
+height: fill-container
+radius: $ds.radius.zero
+
+-- end: ds.column
+
+-- ds.column:
+
+-- linktree-social-detail:
+social-link-text-1: $linktree.social-link-text-1
+social-link-url-1: $linktree.social-link-url-1
+social-link-text-2: $linktree.social-link-text-2
+social-link-url-2: $linktree.social-link-url-2
+social-link-text-3: $linktree.social-link-text-3
+social-link-url-3: $linktree.social-link-url-3
+social-link-text-4: $linktree.social-link-text-4
+social-link-url-4: $linktree.social-link-url-4
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: ftd.mobile
+
+-- end: ds.section-column
+
+-- end: linktree
+
+
+
+
+
+
+
+-- component linktree-social-detail:
+string social-link-text-1:
+string social-link-url-1:
+string social-link-text-2:
+string social-link-url-2:
+string social-link-text-3:
+string social-link-url-3:
+string social-link-text-4:
+string social-link-url-4:
+
+-- ds.column:
+width.fixed.px if { ftd.device != "mobile" }: 395
+inset if { ftd.device != "mobile" }: $ds.spaces.inset-wide.large
+align-content: top-center
+-- ds.secondary-button: $linktree-social-detail.social-link-text-1
+link: $linktree-social-detail.social-link-url-1
+rounded: true
+width: full
+
+-- ds.secondary-button: $linktree-social-detail.social-link-text-2
+link: $linktree-social-detail.social-link-url-2
+rounded: true
+width: full
+
+-- ds.secondary-button: $linktree-social-detail.social-link-text-3
+link: $linktree-social-detail.social-link-url-3
+rounded: true
+width: full
+
+-- ds.secondary-button: $linktree-social-detail.social-link-text-4
+link: $linktree-social-detail.social-link-url-4
+rounded: true
+width: full
+
+-- end: ds.column
+
+-- end: linktree-social-detail
+
+

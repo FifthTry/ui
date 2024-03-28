@@ -1,0 +1,157 @@
+-- component coming-soon:
+caption title:
+body body:
+string cta-text:
+string cta-link:
+ftd.image-src logo:
+
+-- ds.column:
+width.fixed.px if { ftd.device != "mobile" }: 574
+spacing: $ds.spaces.vertical-gap.large
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium-zero
+
+-- ftd.image:
+src: $coming-soon.logo
+width.fixed.px: 114
+anchor: parent
+top.px: -190
+
+-- ds.heading-hero: $coming-soon.title
+
+-- ds.copy-regular: $coming-soon.body
+width.fixed.px: 270
+align: center
+
+-- ds.row:
+if: { ftd.device != "mobile" }
+spacing: $ds.spaces.horizontal-gap.small
+
+-- ftd.text-input:
+placeholder: Enter your email
+width.fixed.px: 390
+height.fixed.px: 54
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 48
+background.solid: $inherited.colors.background.base
+shadow: $shadow
+padding.px: 12
+
+-- ds.secondary-button: $coming-soon.cta-text
+link: $coming-soon.cta-link
+size: large
+rounded: true
+
+-- end: ds.row
+
+-- ds.column:
+if: { ftd.device == "mobile" }
+spacing: $ds.spaces.horizontal-gap.small
+inset: $ds.spaces.inset-wide.medium-zero
+
+-- ftd.text-input:
+placeholder: Enter your email
+width: fill-container
+height.fixed.px: 54
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 48
+background.solid: $inherited.colors.background.base
+shadow: $shadow
+padding.px: 12
+
+-- ds.secondary-button: $coming-soon.cta-text
+link: $coming-soon.cta-link
+size: large
+width: full
+rounded: true
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: coming-soon
+
+
+-- component social-icon:
+social list social-list:
+
+-- ds.floater:
+bottom: 38
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.large
+
+-- icon-data:
+for: $obj in $social-icon.social-list
+link: $obj.link
+icon: $obj.icon
+
+-- end: ds.row
+
+-- end: ds.floater
+
+-- end: social-icon
+
+
+
+
+
+
+-- component icon-data:
+ftd.image-src icon:
+string link:
+
+-- ftd.image:
+src: $icon-data.icon
+width.fixed.px: 24
+link: $icon-data.link
+
+-- end: icon-data
+
+
+
+
+
+
+
+-- record social:
+ftd.image-src icon:
+string link:
+
+-- social list icon-lists:
+
+-- social:
+icon: $assets.files.assets.icon-1.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-2.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-3.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-4.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-5.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-6.svg
+link: /
+
+-- end: icon-lists
+
+
+
+-- ftd.shadow shadow:
+color: #0027601F
+blur.px: 70
+spread.px: 0
+x-offset.px: 0
+y-offset.px: 20

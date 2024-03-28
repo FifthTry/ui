@@ -1,0 +1,12 @@
+-- import: fastn
+
+-- fastn.package: fastn-community.github.io/ocean-waves
+favicon: /-/fastn-community.github.io/ocean-waves/favicon.ico
+
+-- fastn.dependency: fastn-community.github.io/inter-typography
+-- fastn.dependency: fastn-community.github.io/design-system
+provided-via: fastn-community.github.io/ocean-waves/ds
+
+-- fastn.auto-import: fastn-community.github.io/ocean-waves/assets
+-- fastn.auto-import: fastn-community.github.io/ocean-waves/ds
+-- fastn.auto-import: fastn-community.github.io/ocean-waves/lib

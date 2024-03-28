@@ -1,0 +1,114 @@
+-- component coming-soon:
+caption title:
+body body:
+string cta-text:
+string cta-link:
+
+-- ds.column:
+width.fixed.px if { ftd.device != "mobile" }: 854
+spacing: $ds.spaces.vertical-gap.large
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium-zero
+
+-- ftd.text: $coming-soon.title
+role: $fonts.heading-large
+color: #FFFFFF
+text-align: center
+
+-- ds.copy-regular: $coming-soon.body
+align: center
+
+-- end: ds.column
+
+-- end: coming-soon
+
+
+
+
+
+
+
+
+
+
+-- component social-icon:
+social list social-list:
+
+-- ds.floater:
+bottom: 38
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.large
+
+-- icon-data:
+for: $obj in $social-icon.social-list
+link: $obj.link
+icon: $obj.icon
+
+-- end: ds.row
+
+-- end: ds.floater
+
+-- end: social-icon
+
+
+
+
+
+
+-- component icon-data:
+ftd.image-src icon:
+string link:
+
+-- ftd.image:
+src: $icon-data.icon
+width.fixed.px: 24
+link: $icon-data.link
+
+-- end: icon-data
+
+
+
+
+
+
+
+-- record social:
+ftd.image-src icon:
+string link:
+
+-- social list icon-lists:
+
+-- social:
+icon: $assets.files.assets.icon-1.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-2.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-3.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-4.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-5.svg
+link: /
+
+-- social:
+icon: $assets.files.assets.icon-6.svg
+link: /
+
+-- end: icon-lists
+
+
+
+-- ftd.shadow shadow:
+color: #0027601F
+blur.px: 70
+spread.px: 0
+x-offset.px: 0
+y-offset.px: 20
