@@ -26,7 +26,7 @@ boolean $desktop: false
 boolean $sidebar: false
 boolean $new-tab: false
 string $copy-text: null
-boolean $toggle: false
+boolean $toggle: true
 optional integer index:
 
 -- ds.row:
@@ -42,6 +42,7 @@ background.solid: $ds.colors.background.step-1
 		height.fixed.vh: 100
 		radius: $ds.radius.zero
 		align-content: top-center
+		spacing: $ds.spaces.vertical-gap.small
 		
 			-- ds.row:
 			inset: $ds.spaces.inset-square.medium
@@ -66,6 +67,7 @@ background.solid: $ds.colors.background.step-1
 			if: { !storybook.sidebar }
 			overflow-y: scroll
 			align-content: top-left
+			spacing: $ds.spaces.vertical-gap.zero
 			
 				-- render-files:
 				for: $obj in $storybook.list-of-files
@@ -78,9 +80,10 @@ background.solid: $ds.colors.background.step-1
 
 		-- ds.column:
 		width.fixed.percent if { storybook.sidebar }: 78
-		spacing: $ds.spaces.vertical-gap.zero
+		spacing: $ds.spaces.vertical-gap.space-between
 		border: $ds.borders.left.small
 		border-color: $ds.colors.border-strong
+		background.solid: $ds.colors.background.base
 		radius: $ds.radius.zero
 		align-content: top-left
 		height.fixed.vh: 100
@@ -91,6 +94,7 @@ background.solid: $ds.colors.background.step-1
 			border: $ds.borders.bottom.small
 			border-color: $ds.colors.border-strong
 			radius: $ds.radius.zero
+			background.solid: $ds.colors.background.step-1
 			
 				-- ds.row:
 				align-content: left
@@ -125,19 +129,18 @@ background.solid: $ds.colors.background.step-1
 				
 			-- end: ds.row
 
-			-- ftd.column:
+			-- ds.column:
 			width.fixed.percent: 100
 			width.fixed.percent if { storybook.desktop }: 100
 			width.fixed.percent if { storybook.mobile }: 32
-			align-self: center
 			
 				-- ftd.iframe:
-				min-height.fixed.vh: 60
-				min-height.fixed.vh if { storybook.toggle }: 83
+				min-height.fixed.vh: 57
+				min-height.fixed.vh if { storybook.toggle }: 83.5
 				src: $storybook.navigate.active-file-preview-url
 				width: fill-container
 				
-			-- end: ftd.column
+			-- end: ds.column
 
 			-- ds.column:
 			border: $ds.borders.horizontal.small
@@ -153,6 +156,7 @@ background.solid: $ds.colors.background.step-1
 				border: $ds.borders.vertical.small
 				radius: $ds.radius.zero
 				border-color: $ds.colors.border-strong
+				background.solid: $ds.colors.background.step-1
 				
 					-- ds.copy-regular: Source
 					
@@ -166,7 +170,14 @@ background.solid: $ds.colors.background.step-1
 				-- code:
 				if: { !storybook.toggle }
 				
-				$storybook.navigate.active-file-content
+				\-- ds.column:
+				background.solid: $ds.colors.background.base
+
+				\-- ds.heading-large: Demo code
+
+				\-- end: ds.column
+
+				;;$storybook.navigate.active-file-content
 				
 				-- end: code
 
@@ -417,7 +428,6 @@ boolean $open: false
 -- ds.column:
 inset: $ds.spaces.inset-square.small
 spacing: $ds.spaces.vertical-gap.small
-
 
 	-- ds.row:
 	spacing: $ds.spaces.horizontal-gap.space-between
