@@ -1,0 +1,12 @@
+-- import: fastn
+
+-- fastn.package: fastn-community.github.io/yellow-green-mesh-gradient
+favicon: /-/fastn-community.github.io/yellow-green-mesh-gradient/favicon.ico
+
+-- fastn.dependency: fastn-community.github.io/inter-typography
+-- fastn.dependency: fastn-community.github.io/design-system
+provided-via: fastn-community.github.io/yellow-green-mesh-gradient/ds
+
+-- fastn.auto-import: fastn-community.github.io/yellow-green-mesh-gradient/assets
+-- fastn.auto-import: fastn-community.github.io/yellow-green-mesh-gradient/ds
+-- fastn.auto-import: fastn-community.github.io/yellow-green-mesh-gradient/lib

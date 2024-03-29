@@ -1,0 +1,20 @@
+-- import: fastn-community.github.io/lobster-font/assets as lobster-assets
+
+
+-- ftd.type heading-large-mobile:
+line-height.px: 134
+size.px: 118
+letter-spacing.px: 0
+weight: 400
+font-family: $lobster-assets.fonts.Lobster
+
+-- ftd.type heading-large-desktop:
+line-height.px: 134
+size.px: 118
+letter-spacing.px: 0
+font-family: $lobster-assets.fonts.Lobster
+weight: 400
+
+-- ftd.responsive-type heading-large:
+desktop: $heading-large-desktop
+mobile: $heading-large-mobile

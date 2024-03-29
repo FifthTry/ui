@@ -1,0 +1,76 @@
+{
+  "files": {
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "5B74F763B56E886CB7C92F3405A955788505FA5E81EFB81711C230745ED181FF",
+      "size": 507
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "2C372A7AA51EFF6E5BE56E3D2D56DD55D63FBDF58A4D2E279392A02B55DDB960",
+      "size": 1416
+    },
+    "_config.yml": {
+      "name": "_config.yml",
+      "checksum": "A42D91290C93B5F17412C3B346737EA1C796E5D287306758AFE8B20470119D80",
+      "size": 21
+    },
+    "assets/avatar.svg": {
+      "name": "assets/avatar.svg",
+      "checksum": "7E9DF76ED84A4B2022100416F53A9252F712663740E06E3A9F042A61E4A9875D",
+      "size": 331314
+    },
+    "assets/background-dark.jpg": {
+      "name": "assets/background-dark.jpg",
+      "checksum": "DAEE3679348833E02B6754D42CAE96C6865276DB5369706EDDB30867DB29545B",
+      "size": 25481
+    },
+    "assets/background.jpg": {
+      "name": "assets/background.jpg",
+      "checksum": "D7389C4BA083AE7EF3BB4410C7B4B38CAFBA516FB81D82CD62A8102CC2C33E9B",
+      "size": 41525
+    },
+    "assets/linktree-dark.png": {
+      "name": "assets/linktree-dark.png",
+      "checksum": "47D147BC7F7CA54DF7CCEB45DE86C3C777757E80392772D00589EFB043B5D3CE",
+      "size": 190857
+    },
+    "assets/linktree.png": {
+      "name": "assets/linktree.png",
+      "checksum": "C9A442EEAEC8C0D775E81006EF5D641E0A58BB4F5B5E5986E8D5425403556F11",
+      "size": 183264
+    },
+    "ds.ftd": {
+      "name": "ds.ftd",
+      "checksum": "D3A921606DF4A1663D7E49FB27F8F46DFFCC5241EFD0A6F9BBE63B0857C586A2",
+      "size": 904
+    },
+    "favicon.ico": {
+      "name": "favicon.ico",
+      "checksum": "65056A1D6C6AAE6E3DC4626E29F4BD4B628B17A8E9CC1D3A5E8FE9F6743F306B",
+      "size": 15406
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "5B8EC3D7E8E829058E80CFF2F792986D7BC16D77A98C9D01CF2BFA281768D6B9",
+      "size": 1151
+    },
+    "lib.ftd": {
+      "name": "lib.ftd",
+      "checksum": "A4B7C6A4BAF5BEF87654590FE76F644669A6665E6FBE9DAC1B1B625F45C0D250",
+      "size": 4152
+    },
+    "themecolors.ftd": {
+      "name": "themecolors.ftd",
+      "checksum": "DDF4DD3EFDF69B464ED3F1ABDF0665C37B46ECCD092DF877BED84C7E9C699ED8",
+      "size": 6480
+    },
+    "vercel.json": {
+      "name": "vercel.json",
+      "checksum": "0A911690620506F0D47EBA9F49D46DCD57D84C7D6A3BEA93BF0875DD6B374089",
+      "size": 181
+    }
+  },
+  "zip_url": "https://codeload.github.com/fastn-community/ocean-blue/zip/refs/heads/main",
+  "checksum": "6B6C7FC886080961C5CF8D91B357CA287AA6063DD7DF95AD8080FD8EA28DF384"
+}
