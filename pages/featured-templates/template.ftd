@@ -17,15 +17,15 @@ user-data: $page.user-data
 templates: $page.templates
 packages: $page.packages
 
--- ds.section-column:
-inset: $ds.spaces.inset-square.medium
-spacing: $ds.spaces.vertical-gap.large
-
--- template-view.grid-view-wrapper:
-for: $obj in $page.templates
-category: $obj
-
--- end: ds.section-column
+	-- ds.section-column:
+	inset: $ds.spaces.inset-square.medium
+	spacing: $ds.spaces.vertical-gap.large
+	
+		-- template-view.grid-view-wrapper:
+		for: $obj in $page.templates
+		category: $obj
+		
+	-- end: ds.section-column
 
 -- end: p.page
 

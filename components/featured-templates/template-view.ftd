@@ -23,16 +23,16 @@ optional body body:
 width: fill-container
 spacing if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.medium
 align-content: top-left
-		
-			-- ds.heading-medium: $grid-view.title
-			if: { grid-view.title != NULL }
-			color: $inherited.colors.accent.primary
 
-			-- ds.copy-regular:
-			if: { grid-view.body != NULL }
-			margin if { ftd.device == "mobile" }: 24
-			
-			$grid-view.body
+	-- ds.heading-medium: $grid-view.title
+	if: { grid-view.title != NULL }
+	color: $inherited.colors.accent.primary
+	
+	-- ds.copy-regular:
+	if: { grid-view.body != NULL }
+	margin if { ftd.device == "mobile" }: 24
+	
+	$grid-view.body
 	
 	-- ftd.desktop:
 	
@@ -94,16 +94,16 @@ border: $ds.borders.uniform.small
 radius: $ds.radius.medium
 link: $grid-of-items.template-url
 overflow: hidden
-	
-		-- ds.floater:
-		inset: $ds.spaces.inset-square.medium
-		bottom: 0
-		bottom if { !grid-of-items.mouse-in && ftd.device != "mobile" }: -90
-		left: 0
-		z-index: 999
-		background.solid: #222222cc
-		radius: $ds.radius.zero
 
+	-- ds.floater:
+	inset: $ds.spaces.inset-square.medium
+	bottom: 0
+	bottom if { !grid-of-items.mouse-in && ftd.device != "mobile" }: -90
+	left: 0
+	z-index: 999
+	background.solid: #222222cc
+	radius: $ds.radius.zero
+	
 		-- ds.row:
 		spacing: $ds.spaces.horizontal-gap.space-between
 		
@@ -113,18 +113,18 @@ overflow: hidden
 			-- ftd.image:
 			src: $assets.files.assets.right-arrow.svg
 			width.fixed.px: 18
-
-		-- end: ds.row
 			
-		-- end: ds.floater
+		-- end: ds.row
 
-		-- ftd.image:
-		if: { $grid-of-items.screenshot != NULL }
-		src: $grid-of-items.screenshot
-		fit: cover
-		width: fill-container
-		height.fixed.px: 224
+	-- end: ds.floater
 
+	-- ftd.image:
+	if: { $grid-of-items.screenshot != NULL }
+	src: $grid-of-items.screenshot
+	fit: cover
+	width: fill-container
+	height.fixed.px: 224
+	
 -- end: ds.column
 
 -- end: grid-of-items

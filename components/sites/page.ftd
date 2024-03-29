@@ -19,8 +19,8 @@ optional string top-message:
 spacing: $ds.spaces.vertical-gap.small.gap
 margin: $ds.spaces.vertical-gap.zero
 
-    -- hm.header-message: $page.top-message
-    if: { $page.top-message }
+	-- hm.header-message: $page.top-message
+	if: { $page.top-message }
 	
 	-- site-header.header:
 	site-data: $page.site-data

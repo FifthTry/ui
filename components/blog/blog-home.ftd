@@ -28,25 +28,25 @@ background.solid: $ds.colors.background.step-2
 width.fixed.percent: 40
 radius: $ds.radius.medium
 
--- ds.column:
-spacing: $ds.spaces.vertical-gap.space-between
-align-content: left
-
--- ds.fine-print:
-
-$blog-card.date
-
--- ds.copy-large: 
-color: $ds.colors.text-strong
-
-$blog-card.title
-
--- ds.copy-regular:
-color: $ds.colors.text
-
-$blog-card.description
-
--- end: ds.column
+	-- ds.column:
+	spacing: $ds.spaces.vertical-gap.space-between
+	align-content: left
+	
+		-- ds.fine-print:
+		
+		$blog-card.date
+		
+		-- ds.copy-large:
+		color: $ds.colors.text-strong
+		
+		$blog-card.title
+		
+		-- ds.copy-regular:
+		color: $ds.colors.text
+		
+		$blog-card.description
+		
+	-- end: ds.column
 
 
 -- end: ds.container

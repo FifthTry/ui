@@ -49,7 +49,7 @@ radius: $ds.radius.zero
 				white-space: nowrap
 				
 				-- ds.copy-regular: $header.site.site-name
-                white-space: nowrap
+				            white-space: nowrap
 				
 			-- end: ds.row
 
@@ -69,12 +69,12 @@ radius: $ds.radius.zero
 				/-- tab-link: Change Requests
 				is-active if { header.current-page == "cr" }: true
 				link: $header.site.cr-url
-
+				
 				-- tab-link: Settings
 				is-active if { header.current-page == "setting" }: true
 				link: $header.site.setting-url
-
-
+				
+				
 				-- avatar.avatar:
 				user-data: $header.user-data
 				

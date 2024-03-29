@@ -18,7 +18,7 @@ top-message: $page.top-message
 	spacing: $ds.spaces.vertical-gap.large
 	inset: $ds.spaces.inset-tall.zero-medium
 	align-content: left
-
+	
 		-- ds.heading-large: TERMS AND CONDITIONS
 		
 		-- ds.copy-regular:

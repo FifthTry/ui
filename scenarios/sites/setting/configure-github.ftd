@@ -17,5 +17,3 @@ repo: ft
 branch: main
 is-configured: true
 configure-url: /scenarios/sites/setting/configure-github/
-
-

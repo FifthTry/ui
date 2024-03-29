@@ -48,7 +48,7 @@ private boolean $accept-tos: false
 				
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.medium
-
+				
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-extra-small
 					align-content: left

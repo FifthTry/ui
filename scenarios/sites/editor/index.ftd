@@ -50,11 +50,11 @@ is-active: false
 
 	-- sr.file-info: index.ftd
 	full-name: folder/index.ftd
-
+	
 	-- sr.file-info: other.txt
 	full-name: folder/other.txt
 	type: source
-
+	
 -- end: sr.file-info.children
 
 -- end: files
