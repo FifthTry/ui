@@ -12,9 +12,6 @@ ud.user-data user-data:
 sites-records.site-common-data site:
 string dashboard-url:
 optional string db-url:
-boolean is-public:
-boolean is-package:
-boolean is-editable:
 module setting-actions: basic
 string $site-name: *$page.site.site-name
 string $site-slug: *$page.site.site-slug
@@ -94,10 +91,10 @@ dashboard-url: $page.dashboard-url
         ;; ------------------------------- is-public -----------------------------------------------
 
         -- ds.heading-medium: Site Visibility: Public
-        if: { page.is-public }
+        if: { page.site.is-public }
 
         -- ds.copy-regular:
-        if: { page.is-public }
+        if: { page.site.is-public }
 
         The site is currently **public**. Anyone on internet can see your website.
 
@@ -106,7 +103,7 @@ dashboard-url: $page.dashboard-url
         button below.
 
         -- ds.danger-button: Make Site Private
-        if: { page.is-public }
+        if: { page.site.is-public }
         width: wide
         radius: curved
         $on-click$: $page.setting-actions.update-privacy(site_slug=$page.site.site-slug, is_public=false)
@@ -114,15 +111,15 @@ dashboard-url: $page.dashboard-url
 
 
         -- ds.heading-medium: Site Visibility: Private
-        if: { !page.is-public }
+        if: { !page.site.is-public }
 
         -- ds.copy-regular:
-        if: { !page.is-public }
+        if: { !page.site.is-public }
 
         The site is currently **private**. Only you and your team can see your website.
 
         -- ds.danger-button: Make Site Public
-        if: { !page.is-public }
+        if: { !page.site.is-public }
         width: wide
         radius: curved
         $on-click$: $page.setting-actions.update-privacy(site_slug=$page.site.site-slug, is_public=true)
@@ -131,10 +128,10 @@ dashboard-url: $page.dashboard-url
         ;; ------------------------------- is-editable -----------------------------------------------
 
         -- ds.heading-medium: Site: Is Editable
-        if: { page.is-editable }
+        if: { page.site.is-editable }
 
         -- ds.copy-regular:
-        if: { page.is-editable }
+        if: { page.site.is-editable }
 
         The site is currently **editable**. This means you can use our online editor to edit your website.
         You have to mark site as non-editable if you want to manage site content on some other platform,
@@ -145,7 +142,7 @@ dashboard-url: $page.dashboard-url
         some other platform.
 
         -- ds.danger-button: Make Site Non Editable
-        if: { page.is-editable }
+        if: { page.site.is-editable }
         width: wide
         radius: curved
         $on-click$: $page.setting-actions.update-editable(site_slug=$page.site.site-slug, is_editable=false)
@@ -153,10 +150,10 @@ dashboard-url: $page.dashboard-url
 
 
         -- ds.heading-medium: Site: Is Not Editable Online
-        if: { !page.is-editable }
+        if: { !page.site.is-editable }
 
         -- ds.copy-regular:
-        if: { !page.is-editable }
+        if: { !page.site.is-editable }
 
         The site is currently **not editable**.
 
@@ -168,7 +165,7 @@ dashboard-url: $page.dashboard-url
         as editable now.
 
         -- ds.danger-button: Make Site Editable
-        if: { !page.is-editable }
+        if: { !page.site.is-editable }
         width: wide
         radius: curved
         $on-click$: $page.setting-actions.update-editable(site_slug=$page.site.site-slug, is_editable=true)
@@ -178,16 +175,16 @@ dashboard-url: $page.dashboard-url
         ;;
         ;; TODO: move this to a separate page, maybe "Developer Settings"
         -- ds.heading-medium: Site: Is A Package
-        if: { page.is-package }
+        if: { page.site.is-package }
 
         -- ds.copy-regular:
-        if: { page.is-package }
+        if: { page.site.is-package }
 
         The site is currently marked **a package**. This means you have built something you want others to
         use. We list all sites that are marked as package on FifthTry's `fastn` Package Registry.
 
         -- ds.danger-button: Mark Site As Not A Package
-        if: { page.is-package }
+        if: { page.site.is-package }
         width: wide
         radius: curved
         $on-click$: $page.setting-actions.mark-package(site_slug=$page.site.site-slug, is_package=false)
@@ -195,10 +192,10 @@ dashboard-url: $page.dashboard-url
 
 
         -- ds.heading-medium: Site: Is Not A Package
-        if: { !page.is-package }
+        if: { !page.site.is-package }
 
         -- ds.copy-regular:
-        if: { !page.is-package }
+        if: { !page.site.is-package }
 
         The site is currently **not a package**.
 
@@ -211,7 +208,7 @@ dashboard-url: $page.dashboard-url
         ignore this.
 
         -- ds.danger-button: Mark Site As A Package
-        if: { !page.is-package }
+        if: { !page.site.is-package }
         width: wide
         radius: curved
         $on-click$: $page.setting-actions.mark-package(site_slug=$page.site.site-slug, is_package=true)

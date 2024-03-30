@@ -33,5 +33,9 @@ cr-list-url: /scenarios/sites/cr-list/
 environments-url: /scenarios/sites/setting/environments/
 updated-on: 14th Feb
 preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
+is-public: true
+is-static: true
+is-package: false
+is-editable: true
 
 -- end: sites

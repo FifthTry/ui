@@ -14,6 +14,10 @@ string domains-url:
 string updated-on:
 ftd.image-src preview-image:
 string environments-url:
+boolean is-public:
+boolean is-static:
+boolean is-package:
+boolean is-editable:
 
 
 
