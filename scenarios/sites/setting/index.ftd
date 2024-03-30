@@ -12,5 +12,5 @@ site: $site-info.acme-site
 dashboard-url: /scenarios/sites/dashboard/
 db-url: postgres://foo.com/db
 is-public: true
-is-package: false
+is-package: true
 is-editable: true
