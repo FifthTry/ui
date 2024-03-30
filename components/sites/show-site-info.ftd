@@ -5,6 +5,7 @@
 caption sites-records.site-common-data site:
 
 -- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
 
 	-- ftd.desktop:
 	
