@@ -3,9 +3,6 @@
 -- import: ui.fifthtry.com/actions/storybook/navigate
 -- import: ui.fifthtry.com/components/dark-mode-toggle
 
--- integer $current-slide: 1
--- string $active-title: Website Pages
--- string $active-sub-title: Logged in Home page
 
 -- ds.page: Storybook
 fastn-badge: false
@@ -15,6 +12,71 @@ list-of-files: $toc
 list-of-tab: $sr.tab
 
 -- end: ds.page
+
+
+-- pr.toc-item list toc:
+$processor$: pr.toc
+
+- Website Pages:
+  - Logged in Home page: /scenarios/logged-in-home/
+  - Logged out Home page: /scenarios/logged-out-home/
+  - Logged In About page: /scenarios/about/logged-in-about/
+  - Logged In Team page: /scenarios/about/logged-in-team/
+  - Pricing page: /scenarios/about/pricing/
+  - Terms page: /scenarios/about/terms-page/
+  - Privacy page: /scenarios/about/privacy-page/
+  - Team page: /scenarios/about/team-page/
+  - About Us page: /scenarios/about/
+  - Blog Homepage: /scenarios/blogs/
+  - Blog Post: /scenarios/blogs/blog-post/
+  - Editor - Blog Post: /scenarios/blogs/editor/
+
+- Auth Pages:
+  - Login page: /scenarios/signin-page/
+  - Signup page: /scenarios/signup-page/
+  - Forgot Password page: /scenarios/forgot-password/
+  - Change Password page: /scenarios/change-password/?code=auth ;; ?code is required
+  - Password Recovery page: /scenarios/password-recovery/
+
+- Org Pages:
+  - Org dashboard: /scenarios/org/dashboard/
+
+- User Pages:
+  - User dashboard: /scenarios/user/dashboard/
+  - Create Site: /scenarios/user/create-site/
+
+- Site Pages:
+  - Site Info: /scenarios/sites/site-info/
+  - Page with top message: /scenarios/sites/top-message/
+
+- Site Settings:
+  - Basic Setting: /scenarios/sites/setting/
+  - Site Domains: /scenarios/sites/setting/domains/
+  - Github (Configure form): /scenarios/sites/setting/configure-github/
+  - Github (Un-configured): /scenarios/sites/setting/github/
+  - Github (Configured): /scenarios/sites/setting/github-configured/
+  - Site Tokens: /scenarios/sites/setting/tokens/
+  - Environments: /scenarios/sites/setting/environments/
+
+- Site Editor Pages:
+  - Site Editor With Code Preview: /scenarios/sites/editor/
+  - Site Editor With Image Preview: /scenarios/sites/editor/image-preview/
+
+- Featured Template:
+  - Templates: /scenarios/featured-template
+
+- University Scenarios:
+  - University Homepage: /scenarios/university/home-page/
+  - f4e course: /scenarios/university/f4e-course/
+
+- Onboarding Scenarios:
+  - Onboarding Ishaan: /scenarios/cards/onboarding-ishaan/
+
+
+
+-- integer $current-slide: 1
+-- string $active-title: Website Pages
+-- string $active-sub-title: Logged in Home page
 
 
 -- component storybook:
@@ -518,59 +580,3 @@ $on-click$: $ftd.set-string($a = $active-title, v= $render-files-children.folder
 
 
 
--- pr.toc-item list toc:
-$processor$: pr.toc
-
-- Website Pages:
-  - Logged in Home page: /scenarios/logged-in-home/
-  - Logged out Home page: /scenarios/logged-out-home/
-  - Logged In About page: /scenarios/about/logged-in-about/
-  - Logged In Team page: /scenarios/about/logged-in-team/
-  - Pricing page: /scenarios/about/pricing/
-  - Terms page: /scenarios/about/terms-page/
-  - Privacy page: /scenarios/about/privacy-page/
-  - Team page: /scenarios/about/team-page/
-  - About Us page: /scenarios/about/
-  - Blog Homepage: /scenarios/blogs/
-  - Blog Post: /scenarios/blogs/blog-post/
-  - Editor - Blog Post: /scenarios/blogs/editor/
-
-- Auth Pages:
-  - Login page: /scenarios/signin-page/
-  - Signup page: /scenarios/signup-page/
-  - Forgot Password page: /scenarios/forgot-password/
-  - Change Password page: /scenarios/change-password/?code=auth ;; ?code is required
-  - Password Recovery page: /scenarios/password-recovery/
-
-- Org Pages:
-  - Org dashboard: /scenarios/org/dashboard/
-
-- User Pages:
-  - User dashboard: /scenarios/user/dashboard/
-  - Create Site: /scenarios/user/create-site/
-
-- Site Pages:
-  - Site Info: /scenarios/sites/site-info/
-  - Page with top message: /scenarios/sites/top-message/
-
-- Site Settings:
-  - Site Domains: /scenarios/sites/setting/domains/
-  - Github (Configure form): /scenarios/sites/setting/configure-github/
-  - Github (Un-configured): /scenarios/sites/setting/github/
-  - Github (Configured): /scenarios/sites/setting/github-configured/
-  - Site Tokens: /scenarios/sites/setting/tokens/
-  - Environments: /scenarios/sites/setting/environments/
-
-- Site Editor Pages:
-  - Site Editor With Code Preview: /scenarios/sites/editor/
-  - Site Editor With Image Preview: /scenarios/sites/editor/image-preview/
-
-- Featured Template:
-  - Templates: /scenarios/featured-template
-
-- University Scenarios:
-  - University Homepage: /scenarios/university/home-page/
-  - f4e course: /scenarios/university/f4e-course/
-
-- Onboarding Scenarios:
-  - Onboarding Ishaan: /scenarios/cards/onboarding-ishaan/

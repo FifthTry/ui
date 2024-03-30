@@ -4,6 +4,9 @@
 -- import: ui.fifthtry.com/components/sites/page as sites-page
 -- import: ui.fifthtry.com/components/sites/header as sites-header
 
+
+
+
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
@@ -38,6 +41,14 @@ current-page: setting
 
 -- end: page
 
+
+
+
+
+
+
+
+
 -- component setting-left-column:
 string current-page:
 sites-records.site-common-data site:
@@ -46,6 +57,10 @@ sites-records.site-common-data site:
 width: hug-content
 inset: $ds.spaces.inset-square.medium
 align-content: top-left
+
+	-- sites-header.tab-link: Basic
+	is-active if { setting-left-column.current-page == "basic" }: true
+	link: $setting-left-column.site.setting-url
 
 	-- sites-header.tab-link: Domains
 	is-active if { setting-left-column.current-page == "domains" }: true

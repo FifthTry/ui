@@ -1,0 +1,148 @@
+-- import: ui.fifthtry.com/components/sites/setting/page as p
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/actions/sites/settings/basic
+-- import: ui.fifthtry.com/utils
+
+-- component page:
+module site-data: site-data
+module action: environment
+ud.user-data user-data:
+sites-records.site-common-data site:
+string dashboard-url:
+optional string db-url:
+boolean is-public:
+boolean is-package:
+boolean is-editable:
+module setting-actions: basic
+string $site-name: *$page.site.site-name
+string $site-slug: *$page.site.site-slug
+
+-- p.page:
+site-data: $page.site-data
+user-data: $page.user-data
+site: $page.site
+current-page: basic
+dashboard-url: $page.dashboard-url
+
+	-- ds.section-column:
+	inset: $ds.spaces.inset-tall.large
+	align-content: left
+
+        -- ds.heading-medium: Site Name
+
+        -- text-input: Site Name
+        default-value: $page.site.site-name
+        $value: $page.site-name
+        $error: $page.setting-actions.rename-error
+
+        -- ds.secondary-button: Rename Site
+        if: { page.site-name == page.site.site-name }
+        width: wide
+        radius: curved
+
+        -- ds.primary-button: Rename Site
+        if: { page.site-name != page.site.site-name }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.rename(site_slug=$page.site.site-slug, new_name=$page.site-name)
+
+
+        -- ds.heading-medium: Site Slug
+
+        -- text-input: Site Slug
+        default-value: $page.site.site-slug
+        $value: $page.site-slug
+        $error: $page.setting-actions.update-slug-error
+
+        -- ds.secondary-button: Update Site Slug
+        if: { page.site-slug == page.site.site-slug }
+        width: wide
+        radius: curved
+
+        -- ds.primary-button: Update Site Slug
+        if: { page.site-slug != page.site.site-slug }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-slug(site_slug=$page.site.site-slug, new_slug=$page.site-slug)
+
+
+
+
+        -- ds.heading-medium: Site Visibility: Public
+        if: { page.is-public }
+
+        -- ds.copy-regular:
+        if: { page.is-public }
+
+        The site is currently **public**. Anyone on internet can see your website.
+
+
+        -- ds.danger-button: Make Site Private
+        if: { page.is-public }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-privacy(site_slug=$page.site.site-slug, is_public=false)
+
+
+
+        -- ds.heading-medium: Site Visibility: Private
+        if: { !page.is-public }
+
+        -- ds.copy-regular:
+        if: { !page.is-public }
+
+        The site is currently **private**. Only you and your team can see your website.
+
+        -- ds.danger-button: Make Site Public
+        if: { !page.is-public }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-privacy(site_slug=$page.site.site-slug, is_public=true)
+
+
+	-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page
+
+
+-- component text-input:
+caption placeholder:
+string default-value:
+string $value: *$text-input.default-value
+optional string $error:
+
+-- ds.column:
+
+    -- ftd.text-input:
+    default-value: $text-input.default-value
+    placeholder: $text-input.placeholder
+    type: text
+    width: fill-container
+    height.fixed.px: 40
+    border-radius.px: 8
+    background.solid: transparent
+    border-width.px: 1
+    border-color: $inherited.colors.border
+    padding.px: 8
+    color: $inherited.colors.text-strong
+    $on-input$: $ftd.set-string($a = $text-input.value, v = $VALUE)
+    $on-input$: $utils.set-null($var = $text-input.error)
+
+    -- show-error: $text-input.error
+
+-- end: ds.column
+
+-- end: text-input
+
+-- component show-error:
+optional caption $error:
+
+    -- ds.copy-small: $show-error.error
+    color: $ds.colors.error.text
+    if: { show-error.error != NULL }
+
+-- end: show-error
