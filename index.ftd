@@ -62,6 +62,9 @@ $processor$: pr.toc
   - Site Editor With Code Preview: /scenarios/sites/editor/
   - Site Editor With Image Preview: /scenarios/sites/editor/image-preview/
 
+- Packages
+  - `fastn` Packages Homepage: /scenarios/packages/
+
 - Featured Template:
   - Templates: /scenarios/featured-template
 

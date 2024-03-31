@@ -12,7 +12,9 @@
 -- string logout-url: /scenarios/logged-out-home/
 
 -- string pricing-url: /scenarios/about/pricing/
--- string team-url: /team/
+-- string team-url: /scenarios/about/team-page/
 -- string terms-url: /scenarios/terms-page/
 -- string privacy-url: /scenarios/privacy-page/
--- string about-url: /about/
+-- string about-url: /scenarios/about/
+
+-- string packages-url: /scenarios/packages/

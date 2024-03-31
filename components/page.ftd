@@ -39,6 +39,7 @@ optional string top-message:
 	-- end: ds.section-column
 
 	-- footer.footer:
+	site-data: $page.site-data
 	if: { !page.hide-footer }
 	
 -- end: ds.page

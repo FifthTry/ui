@@ -1,0 +1,59 @@
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/utils
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/package
+-- import: ui.fifthtry.com/components/header-message as hm
+-- import: ui.fifthtry.com/components/page as common-page
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data:
+package.package list packages:
+optional string query:
+optional string top-message:
+
+-- common-page.page: fastn Packages | FifthTry: Better way To Build Websites
+site-data: $page.site-data
+user-data: $page.user-data
+top-message: $page.top-message
+
+    -- ds.section-column:
+    align-content: left
+
+    -- ds.heading-large: `fastn` Packages
+
+    -- show-package: $package
+    for: package in $page.packages
+
+    -- end: ds.section-column
+
+-- end: common-page.page
+
+-- end: page
+
+
+
+-- component show-package:
+caption package.package package:
+
+-- ds.column:
+radius: $ds.radius.medium
+inset: $ds.spaces.inset-square.large
+border: $ds.borders.uniform.small
+spacing: $ds.spaces.horizontal-gap.large
+background.solid: $ds.colors.background.step-1
+align-content: left
+/link: $show-site-info.site.info-url
+
+-- ds.heading-small: $show-package.package.title
+
+-- ds.copy-regular: $show-package.package.name
+link: $utils.with-https(domain=$show-package.package.name)
+
+-- ds.copy-regular:
+
+$show-package.package.about
+
+-- end: ds.column
+
+-- end: show-package

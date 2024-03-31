@@ -1,0 +1,9 @@
+-- record package:
+caption title:
+optional string license:
+optional ftd.image-src icon: ;; icon of the package
+string name:                 ;; full name of the package, without protocol
+boolean is-app: false        ;; whether the package is an app
+boolean is-system: false     ;; whether the package is a system package
+optional string system:      ;; system this package implements a system package
+body about:                  ;; description of the package
