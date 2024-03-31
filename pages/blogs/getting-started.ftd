@@ -37,6 +37,10 @@ from signing up to publishing your site live on
 inset: $ds.spaces.inset-wide.large
 align-content: left
 
+-- ftd.video: 
+src: https://youtu.be/lh3rRbVBses
+width: fill-container
+
 -- ds.heading-medium: Signing Up and Accessing Your Dashboard
  
 -- ds.copy-regular:
