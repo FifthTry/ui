@@ -7,6 +7,7 @@ string site-base-url:
 string $site-relative-url:
 integer $device-selected: 1
 boolean create:
+boolean upload:
 boolean edit:
 boolean $preview:
 sites-records.file current-file:
@@ -25,6 +26,7 @@ optional sites-records.file openfile:
 	
 	-- mover:
 	create: $code-preview.create
+	upload: $code-preview.upload
 	edit: $code-preview.edit
 	preview: $code-preview.preview
 	current-file: $code-preview.current-file
@@ -57,6 +59,7 @@ boolean expand: $add-expandable(selected = $expander.device-selected)
 
 -- component mover:
 boolean create:
+boolean upload:
 boolean edit:
 boolean preview:
 sites-records.file current-file:

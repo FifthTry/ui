@@ -16,6 +16,7 @@ sites-records.editor-data data:
 sites-records.site-common-data site:
 string $header-title:
 boolean $create:
+boolean $upload:
 boolean $edit:
 boolean $preview: false
 
@@ -27,6 +28,7 @@ inner-background.solid: $ds.colors.background.base
 	site-base-url: $browser.data.site-base-url
 	$site-relative-url: *$browser.data.site-relative-url
 	create: $browser.create
+	upload: $browser.upload
 	edit: $browser.edit
 	$preview: $browser.preview
 	current-file: $browser.data.current-file
@@ -39,6 +41,7 @@ inner-background.solid: $ds.colors.background.base
 	$header-title: $browser.header-title
 	site-slug: $browser.site.site-slug
 	$create: $browser.create
+	$upload: $browser.upload
 	
 	-- ds.column:
 	height: fill-container
