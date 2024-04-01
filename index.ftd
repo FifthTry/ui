@@ -150,7 +150,6 @@ background.solid: $ds.colors.background.step-1
 		border-color: $ds.colors.border-strong
 		background.solid: $ds.colors.background.base
 		radius: $ds.radius.zero
-		align-content: top-left
 		height.fixed.vh: 100
 		
 			-- ds.row:
@@ -187,20 +186,33 @@ background.solid: $ds.colors.background.step-1
 					
 				-- end: ds.row
 
-				-- ftd.image:
-				src: $assets.files.assets.storybook.new-tab.svg
+				-- ds.row:
+				align-content: right
+
+				-- ds.row:
+				height.fixed.px: 32
+				width.fixed.px: 32
+				radius: $ds.radius.small
+				border: $ds.borders.uniform.small
+				background.solid: $ds.colors.background.step-1
 				link: $storybook.navigate.active-file-preview-url
 				open-in-new-tab: true
 
+				-- ftd.image:
+				src: $assets.files.assets.storybook.new-tab.svg
+
+				-- end: ds.row
 				
 				-- dark-mode-toggle.dark-mode-toggle:
 				
 			-- end: ds.row
 
+				-- end: ds.row
+
+
 			-- ds.column:
 			width.fixed.percent: 100
-			width.fixed.percent if { storybook.desktop }: 100
-			width.fixed.percent if { storybook.mobile }: 32
+			width.fixed.percent if { storybook.mobile }: 36
 			
 				-- ftd.iframe:
 				min-height.fixed.vh: 57
