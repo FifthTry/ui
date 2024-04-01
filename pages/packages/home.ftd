@@ -51,6 +51,7 @@ align-content: left
 link: $utils.with-https(domain=$show-package.package.name)
 
 -- ds.copy-regular:
+if: { show-package.package.about != NULL }
 
 $show-package.package.about
 
