@@ -1,0 +1,6 @@
+-- void search(query):
+string query:
+js: $assets.files.assets.functions.js
+
+callAlert("package search: " + query)
+
