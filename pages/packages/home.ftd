@@ -4,6 +4,7 @@
 -- import: ui.fifthtry.com/records/package
 -- import: ui.fifthtry.com/components/header-message as hm
 -- import: ui.fifthtry.com/components/page as common-page
+-- import: ui.fifthtry.com/actions/package-actions
 
 -- component page:
 module site-data: site-data
@@ -21,6 +22,9 @@ top-message: $page.top-message
     align-content: left
 
     -- ds.heading-large: `fastn` Packages
+
+    -- package-search-form:
+    package-actions: package-actions
 
     -- show-package: $package
     for: package in $page.packages
@@ -58,3 +62,40 @@ $show-package.package.about
 -- end: ds.column
 
 -- end: show-package
+
+
+
+
+-- component package-search-form:
+string $query: *$ftd.empty
+module package-actions: package-actions
+
+-- ds.row:
+width: fill-container
+align-content: left
+spacing: $ds.spaces.horizontal-gap.medium
+
+    -- ftd.text-input:
+    width: fill-container
+    color: $ds.colors.text-strong
+    background.solid: $ds.colors.background.step-1
+    padding.px: 8
+    height.fixed.px: 40
+    border-radius.px: 8
+    placeholder: Search for a package
+    $on-input$: $ftd.set-string($a = $package-search-form.query, v = $VALUE)
+    border-width.px: 1
+    border-color: $ds.colors.border
+
+    -- ds.secondary-button: Search
+    if: { $package-search-form.query == ftd.empty }
+    radius: curved
+
+    -- ds.primary-button: Search
+    if: { $package-search-form.query != ftd.empty }
+    radius: curved
+    $on-click$: $package-search-form.package-actions.search(query=$package-search-form.query)
+
+-- end: ds.row
+
+-- end: package-search-form
