@@ -24,6 +24,7 @@ top-message: $page.top-message
     -- ds.heading-large: `fastn` Packages
 
     -- package-search-form:
+    $query: *$page.query
     package-actions: package-actions
 
     -- show-package: $package
@@ -82,6 +83,7 @@ spacing: $ds.spaces.horizontal-gap.medium
     padding.px: 8
     height.fixed.px: 40
     border-radius.px: 8
+    default-value: $package-search-form.query
     placeholder: Search for a package
     $on-input$: $ftd.set-string($a = $package-search-form.query, v = $VALUE)
     border-width.px: 1
