@@ -10,6 +10,7 @@
 module site-data: site-data
 ud.user-data user-data:
 package.package list packages:
+module package-actions: package-actions
 optional string query:
 optional string top-message:
 
@@ -25,7 +26,7 @@ top-message: $page.top-message
 
     -- package-search-form:
     $query: *$page.query
-    package-actions: package-actions
+    package-actions: $page.package-actions
 
     -- show-package: $package
     for: package in $page.packages
