@@ -2,6 +2,8 @@
 -- import: ui.fifthtry.com/utils
 -- import: ui.fifthtry.com/actions/sites/editor/upload-file
 
+-- import: ui.fifthtry.com/web-components
+
 
 
 
@@ -10,7 +12,7 @@
 module upload-file: upload-file
 sites-records.site-common-data site:
 boolean $upload: false
-string $content: *$ftd.empty
+integer list $content:
 string $file-name: *$ftd.empty
 
 -- ds.section-column:
@@ -37,8 +39,9 @@ height.fixed.px: 200
 border-width.px: 1
 align-content: center
 
--- ftd.text-input:
-type: file
+-- web-components.file-upload:
+$content: $upload-file-ui.content
+$file-name: $upload-file-ui.file-name
 
 -- end: ftd.column
 
@@ -67,26 +70,26 @@ module upload-file: upload-file
 string site-slug:
 boolean $upload:
 string $file-name:
-string $content:
+integer list $content:
 
 -- ds.row:
 width: fill-container
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
-	/-- file-name-input:
+	-- file-name-input:
 	$file-full-name: $file-header.file-name
 	
 	-- ds.row:
 	   width: hug-content
 	
 		-- ds.primary-button: SAVE
-		if: { file-header.file-name != ftd.empty }
+		if: { file-header.file-name != ftd.empty && ftd.len(file-header.content) > 0 }
 		$on-click$: $file-header.upload-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content)
 		
 		-- ds.primary-button: CANCEL
 		$on-click$: $ftd.set-bool($a = $file-header.upload, v = false)
-		$on-click$: $ftd.set-string($a = $file-header.content, v = *$ftd.empty)
+		$on-click$: $clear($a = $file-header.content)
 		
 	-- end: ds.row
 
@@ -117,9 +120,17 @@ align-content: left
 	border-width.px: 1
 	placeholder: Enter file name
 	role: $inherited.types.label-large
+	value: $file-name-input.file-full-name
 	$on-input$: $ftd.set-string($a = $file-name-input.file-full-name, v = $VALUE)
 	
 -- end: ds.row
 
 
 -- end: file-name-input
+
+
+
+-- void clear(a):
+integer list $a:
+
+ftd.clear(a);
