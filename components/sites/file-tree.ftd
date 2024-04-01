@@ -7,6 +7,7 @@ string $header-title: todo
 string site-slug:
 module open-file: open-file
 boolean $create: false
+boolean $upload: false
 
 -- ds.column:
 width.fixed.px: 200
@@ -18,6 +19,7 @@ inset: $ds.spaces.inset-square.medium
 
 	-- label-with-plus: FILES
 	$create: $file-tree.create
+	$upload: $file-tree.upload
 	
 	-- ds.column:
 	align-content: top-left
@@ -116,6 +118,10 @@ spacing: $ds.spaces.vertical-gap.extra-small
 -- component label-with-plus:
 caption label:
 boolean $create: false
+boolean $upload: false
+boolean $open: false
+
+-- ds.column:
 
 -- ds.row:
 align-content: left
@@ -126,8 +132,27 @@ spacing: $ds.spaces.horizontal-gap.space-between
 	
 	-- ds.primary-button: \\+
 	size: small
-	   $on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
-	
--- end: ds.row
+	$on-click$: $ftd.toggle($a = $label-with-plus.open)
+
+	-- end: ds.row
+
+	-- ds.floater:
+	top: 38
+	background.solid: $ds.colors.background.step-2
+
+	-- ds.column:
+	if: { label-with-plus.open }
+
+	-- ds.copy-regular: Create file
+	$on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
+
+	-- ds.copy-regular: Upload file
+	$on-click$: $ftd.set-bool($a=$label-with-plus.upload, v=true)
+
+	-- end: ds.column
+
+	-- end: ds.floater
+
+-- end: ds.column
 
 -- end: label-with-plus
