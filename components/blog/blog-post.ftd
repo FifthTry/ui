@@ -7,24 +7,24 @@ string date:
 inset: $ds.spaces.inset-tall.zero-medium
 margin: $ds.spaces.vertical-gap.small
 
--- ds.heading-large: $blog-info.title
-color: $ds.colors.text-strong
-align: center
-
--- ds.row:
-width: hug-content
-
--- ds.copy-large: 
-color: $ds.colors.text
-
-$blog-info.name
-
--- ds.copy-large: 
-color: $ds.colors.text
-
-$blog-info.date
-
--- end: ds.row
+	-- ds.heading-large: $blog-info.title
+	color: $ds.colors.text-strong
+	align: center
+	
+	-- ds.row:
+	width: hug-content
+	
+		-- ds.copy-large:
+		color: $ds.colors.text
+		
+		$blog-info.name
+		
+		-- ds.copy-large:
+		color: $ds.colors.text
+		
+		$blog-info.date
+		
+	-- end: ds.row
 
 -- end: ds.section-column
 

@@ -26,27 +26,27 @@ if: { upload-file-ui.upload }
 	$content: $upload-file-ui.content
 	$upload: $upload-file-ui.upload
 	$file-name: $upload-file-ui.file-name
-
--- ds.column:
-height.fixed.px: 250
-background.solid: $ds.colors.background.step-1
-border: $ds.borders.uniform.small
-
--- ftd.column:
-width.fixed.px: 600
-border-style: dotted
-height.fixed.px: 200
-border-width.px: 1
-align-content: center
-
--- web-components.file-upload:
-$content: $upload-file-ui.content
-$file-name: $upload-file-ui.file-name
-
--- end: ftd.column
-
--- end: ds.column
 	
+	-- ds.column:
+	height.fixed.px: 250
+	background.solid: $ds.colors.background.step-1
+	border: $ds.borders.uniform.small
+	
+		-- ftd.column:
+		width.fixed.px: 600
+		border-style: dotted
+		height.fixed.px: 200
+		border-width.px: 1
+		align-content: center
+		
+			-- web-components.file-upload:
+			$content: $upload-file-ui.content
+			$file-name: $upload-file-ui.file-name
+			
+		-- end: ftd.column
+
+	-- end: ds.column
+
 -- end: ds.section-column
 
 

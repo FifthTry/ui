@@ -15,96 +15,96 @@ user-data: $page.user-data
 ;; site-data: $page.site-data
 ;; top-message: $page.top-message
 
--- ds.section-column:
+	-- ds.section-column:
+	
+		-- post.blog-info: Building and Hosting Your Website on [fifthtry.com](https://www.fifthtry.com/)
+		name: Nandhini Devi
+		date: 28th March 2024
+		
+		-- ds.row:
+		inset: $ds.spaces.inset-wide.medium
+		align-content: left
+		
+			-- ds.copy-regular:
+			
+			In this blog, I'll walk you through the entire process,
+			from signing up to publishing your site live on
+			[fifthtry.com](https://www.fifthtry.com/)
+			
+		-- end: ds.row
 
--- post.blog-info: Building and Hosting Your Website on [fifthtry.com](https://www.fifthtry.com/)
-name: Nandhini Devi
-date: 28th March 2024
-
--- ds.row:
-inset: $ds.spaces.inset-wide.medium
-align-content: left
-
--- ds.copy-regular:
-
-In this blog, I'll walk you through the entire process, 
-from signing up to publishing your site live on 
-[fifthtry.com](https://www.fifthtry.com/)
-
--- end: ds.row
-
--- ds.column:
-inset: $ds.spaces.inset-wide.large
-align-content: left
-
--- ftd.video: 
-src: https://youtu.be/lh3rRbVBses
-width: fill-container
-
--- ds.heading-medium: Signing Up and Accessing Your Dashboard
- 
--- ds.copy-regular:
-
-1) Open your web browser and navigate to [fifthtry.com](https://www.fifthtry.com/)
-
-2) If you're new to Fifthtry, click on the `Sign up` button 
-	to create your account. If you're already a member, simply `Log in` using 
-	your credentials.
-
-3) Upon logging in, you'll land on your personal dashboard, 
-	where you'll view all your sites.
-
--- ds.heading-medium: Building Your Website
-
--- ds.copy-regular:
-
-1) Click on the `Create new site +` button to start building your website.
-
-2) On the prompted page, enter your desired website domain name. Example: my-site, read-my-blog, etc. You can give any domain name at this point for your website. 
-
-3) Once you've entered your domain name, hit the `Create site` button. Your site is 
-	now live on [fifthtry.com](https://www.fifthtry.com/)
-
--- ds.heading-medium: Editing Your Website
-
--- ds.copy-regular: 
-
-1) Head to the `Editor` tab to begin working on your website.
-
-2) Within the editor, you'll find three main options:
-
-   - Preview: View your site.
-   - Edit: Modify files.
-   - Delete: Remove files.
-
-
-3) Your site comes pre-equipped with default files, including `index.ftd` and
-	`fastn.ftd`, along with the design system package. Watch full [tutorial](https://fastn.com/blog/design-system/) on how to build websites using our design system package.
-
-4) You can add more files by clicking on the `+` icon next to the files.
-
-5) Save your progress and preview your work at any point by clciking on 
-	the `Preview` button. You can toggle between different views (desktop, 
-	mobile, tablet) or preview your site in a browser. Any errors will be 
-	highlighted along with the line number.
-
-Your website is now ready and live on [fifthtry.com](https://www.fifthtry.com/)
-
--- ds.heading-medium: Stay Tuned for Updates
-
--- ds.copy-regular:
-
-Remember, we're constantly improving and adding new features to 
-[fifthtry.com](https://www.fifthtry.com/)
-Keep an eye out for exciting updates in the near future!
+		-- ds.column:
+		inset: $ds.spaces.inset-wide.large
+		align-content: left
+		
+			-- ftd.video:
+			src: https://youtu.be/lh3rRbVBses
+			width: fill-container
+			
+			-- ds.heading-medium: Signing Up and Accessing Your Dashboard
+			
+			-- ds.copy-regular:
+			
+			1) Open your web browser and navigate to [fifthtry.com](https://www.fifthtry.com/)
+			
+			2) If you're new to Fifthtry, click on the `Sign up` button
+			 to create your account. If you're already a member, simply `Log in` using
+			 your credentials.
+			
+			3) Upon logging in, you'll land on your personal dashboard,
+			 where you'll view all your sites.
+			
+			-- ds.heading-medium: Building Your Website
+			
+			-- ds.copy-regular:
+			
+			1) Click on the `Create new site +` button to start building your website.
+			
+			2) On the prompted page, enter your desired website domain name. Example: my-site, read-my-blog, etc. You can give any domain name at this point for your website.
+			
+			3) Once you've entered your domain name, hit the `Create site` button. Your site is
+			 now live on [fifthtry.com](https://www.fifthtry.com/)
+			
+			-- ds.heading-medium: Editing Your Website
+			
+			-- ds.copy-regular:
+			
+			1) Head to the `Editor` tab to begin working on your website.
+			
+			2) Within the editor, you'll find three main options:
+			
+			   - Preview: View your site.
+			   - Edit: Modify files.
+			   - Delete: Remove files.
+			
+			
+			3) Your site comes pre-equipped with default files, including `index.ftd` and
+			 `fastn.ftd`, along with the design system package. Watch full [tutorial](https://fastn.com/blog/design-system/) on how to build websites using our design system package.
+			
+			4) You can add more files by clicking on the `+` icon next to the files.
+			
+			5) Save your progress and preview your work at any point by clciking on
+			 the `Preview` button. You can toggle between different views (desktop,
+			 mobile, tablet) or preview your site in a browser. Any errors will be
+			 highlighted along with the line number.
+			
+			Your website is now ready and live on [fifthtry.com](https://www.fifthtry.com/)
+			
+			-- ds.heading-medium: Stay Tuned for Updates
+			
+			-- ds.copy-regular:
+			
+			Remember, we're constantly improving and adding new features to
+			[fifthtry.com](https://www.fifthtry.com/)
+			Keep an eye out for exciting updates in the near future!
+			
+			
+		-- end: ds.column
 
 
--- end: ds.column
-
-
--- author-bio.author-nandhini:
-
--- end: ds.section-column
+		-- author-bio.author-nandhini:
+		
+	-- end: ds.section-column
 
 -- end: p.page
 

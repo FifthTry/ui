@@ -34,20 +34,20 @@ top-message: $page.top-message
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.zero
 	align-content: left
-
-        -- ds.heading-medium: Site Tokens
-
-        -- ds.copy-regular:
-
-        Site Tokens are used to authenticate with the API or when using the `clift` command line tool.
-        You can create new tokens, see all existing tokens and delete tokens from this page.
-
-        Do not share these tokens with untrusted parties. Anyone with access to these tokens can update
-        the content of your site. Also note that update API and `clift` tools can only update your site
-        if you have marked your site as "Not Editable" in the site settings.
-
-        You can learn more about how to use `clift` and the API in the documentation.
-
+	
+		-- ds.heading-medium: Site Tokens
+		
+		-- ds.copy-regular:
+		
+		Site Tokens are used to authenticate with the API or when using the `clift` command line tool.
+		You can create new tokens, see all existing tokens and delete tokens from this page.
+		
+		Do not share these tokens with untrusted parties. Anyone with access to these tokens can update
+		the content of your site. Also note that update API and `clift` tools can only update your site
+		if you have marked your site as "Not Editable" in the site settings.
+		
+		You can learn more about how to use `clift` and the API in the documentation.
+		
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
 		

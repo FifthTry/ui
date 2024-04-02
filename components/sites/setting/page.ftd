@@ -61,7 +61,7 @@ align-content: top-left
 	-- sites-header.tab-link: Basic
 	is-active if { setting-left-column.current-page == "basic" }: true
 	link: $setting-left-column.site.setting-url
-
+	
 	-- sites-header.tab-link: Domains
 	is-active if { setting-left-column.current-page == "domains" }: true
 	link: $setting-left-column.site.domains-url

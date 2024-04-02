@@ -38,21 +38,21 @@ top-message: $page.top-message
 	spacing: $ds.spaces.vertical-gap.large
 	margin: $ds.spaces.vertical-gap.zero
 	align-content: left
-
-        -- ds.heading-medium: Domains
-
-        -- ds.copy-regular:
-
-        You will find the domain names associated with your site here. You can add new domains,
-        delete existing domains, make a domain primary and re-check the domain status.
-
-        If you add a domain here, make sure to update the DNS records of the domain and create two `A`
-        records, point to `75.2.103.169` and `76.223.113.71`. We will verify the DNS records and create SSL
-        certificate of the domain once you have done this. We check your domain from time to time, if you
-        have recently updated the DNS you can click on "Re-Validate Domain".
-
-        If you are facing any issues, write to `support@fifthtry.com`.
-
+	
+		-- ds.heading-medium: Domains
+		
+		-- ds.copy-regular:
+		
+		You will find the domain names associated with your site here. You can add new domains,
+		delete existing domains, make a domain primary and re-check the domain status.
+		
+		If you add a domain here, make sure to update the DNS records of the domain and create two `A`
+		records, point to `75.2.103.169` and `76.223.113.71`. We will verify the DNS records and create SSL
+		certificate of the domain once you have done this. We check your domain from time to time, if you
+		have recently updated the DNS you can click on "Re-Validate Domain".
+		
+		If you are facing any issues, write to `support@fifthtry.com`.
+		
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.small
 		

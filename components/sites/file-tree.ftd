@@ -123,33 +123,33 @@ boolean $open: false
 
 -- ds.column:
 
--- ds.row:
-align-content: left
-spacing: $ds.spaces.horizontal-gap.space-between
-
-	-- ds.copy-regular: $label-with-plus.label
-	style: bold
+	-- ds.row:
+	align-content: left
+	spacing: $ds.spaces.horizontal-gap.space-between
 	
-	-- ds.primary-button: \\+
-	size: small
-	$on-click$: $ftd.toggle($a = $label-with-plus.open)
-
+		-- ds.copy-regular: $label-with-plus.label
+		style: bold
+		
+		-- ds.primary-button: \\+
+		size: small
+		$on-click$: $ftd.toggle($a = $label-with-plus.open)
+		
 	-- end: ds.row
 
 	-- ds.floater:
 	top: 38
 	background.solid: $ds.colors.background.step-2
-
-	-- ds.column:
-	if: { label-with-plus.open }
-
-	-- ds.copy-regular: Create file
-	$on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
-
-	-- ds.copy-regular: Upload file
-	$on-click$: $ftd.set-bool($a=$label-with-plus.upload, v=true)
-
-	-- end: ds.column
+	
+		-- ds.column:
+		if: { label-with-plus.open }
+		
+			-- ds.copy-regular: Create file
+			$on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
+			
+			-- ds.copy-regular: Upload file
+			$on-click$: $ftd.set-bool($a=$label-with-plus.upload, v=true)
+			
+		-- end: ds.column
 
 	-- end: ds.floater
 
