@@ -64,6 +64,7 @@ $processor$: pr.toc
 
 - Packages
   - `fastn` Packages Homepage: /scenarios/packages/
+  - Packages Search With Query: /scenarios/packages/with-query/
 
 - Featured Template:
   - Templates: /scenarios/featured-template

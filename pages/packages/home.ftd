@@ -28,6 +28,17 @@ top-message: $page.top-message
     $query: *$page.query
     package-actions: $page.package-actions
 
+    -- ds.row:
+    if: { page.query != NULL }
+    align-content: left
+
+    -- ds.heading-tiny: $you-searched-for(query=$page.query)
+
+    -- ds.secondary-button: Clear Search
+    $on-click$: $page.package-actions.clear-search()
+
+    -- end: ds.row
+
     -- show-package: $package
     for: package in $page.packages
 
@@ -36,6 +47,13 @@ top-message: $page.top-message
 -- end: common-page.page
 
 -- end: page
+
+
+-- string you-searched-for(query):
+string query:
+
+"You searched for `" + query + "`"
+
 
 
 
@@ -91,11 +109,11 @@ spacing: $ds.spaces.horizontal-gap.medium
     border-color: $ds.colors.border
 
     -- ds.secondary-button: Search
-    if: { $package-search-form.query == ftd.empty }
+    if: { $package-search-form.query == ftd.empty || $package-search-form.query == NULL }
     radius: curved
 
     -- ds.primary-button: Search
-    if: { $package-search-form.query != ftd.empty }
+    if: { $package-search-form.query != ftd.empty && $package-search-form.query != NULL  }
     radius: curved
     $on-click$: $package-search-form.package-actions.search(query=$package-search-form.query)
 

@@ -2,5 +2,10 @@
 string query:
 js: $assets.files.assets.functions.js
 
-callAlert("package search: " + query)
+ftd.navigate("/scenarios/packages/with-query/")
+
+
+-- void clear-search():
+
+ftd.navigate("/scenarios/packages/")
 
