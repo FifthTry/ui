@@ -36,42 +36,11 @@ dashboard-url: $page.dashboard-url
         slug: $page.site.site-slug
         setting-actions: $page.setting-actions
 
-        ;; ------------------------------- is-public -----------------------------------------------
 
-        -- ds.heading-medium: Site Visibility: Public
-        if: { page.site.is-public }
-
-        -- ds.copy-regular:
-        if: { page.site.is-public }
-
-        The site is currently **public**. Anyone on internet can see your website.
-
-        This is usually what you want for most websites. If you plan to use this site only for your
-        company, or for some other private purpose, you can mark the site as private by clicking the
-        button below.
-
-        -- ds.danger-button: Make Site Private
-        if: { page.site.is-public }
-        width: wide
-        radius: curved
-        $on-click$: $page.setting-actions.update-privacy(site_slug=$page.site.site-slug, is_public=false)
-
-
-
-        -- ds.heading-medium: Site Visibility: Private
-        if: { !page.site.is-public }
-
-        -- ds.copy-regular:
-        if: { !page.site.is-public }
-
-        The site is currently **private**. Only you and your team can see your website.
-
-        -- ds.danger-button: Make Site Public
-        if: { !page.site.is-public }
-        width: wide
-        radius: curved
-        $on-click$: $page.setting-actions.update-privacy(site_slug=$page.site.site-slug, is_public=true)
-
+        /-- is-public: ;; hiding because this is not implemented yet
+        slug: $page.site.site-slug
+        is-public: $page.site.is-public
+        setting-actions: $page.setting-actions
 
         ;; ------------------------------- is-editable -----------------------------------------------
 
@@ -251,6 +220,55 @@ align-content: left
 -- end: ds.column
 
 -- end: site-name
+
+
+;; ------------------------------- is-public -----------------------------------------------
+-- component is-public:
+boolean is-public:
+string slug:
+module setting-actions: basic
+
+-- ds.column:
+align-content: left
+
+    -- ds.heading-medium: Site Visibility: Public
+    if: { is-public.is-public }
+
+    -- ds.copy-regular:
+    if: { is-public.is-public }
+
+    The site is currently **public**. Anyone on internet can see your website.
+
+    This is usually what you want for most websites. If you plan to use this site only for your
+    company, or for some other private purpose, you can mark the site as private by clicking the
+    button below.
+
+    -- ds.danger-button: Make Site Private
+    if: { is-public.is-public }
+    width: wide
+    radius: curved
+    $on-click$: $is-public.setting-actions.update-privacy(site_slug=$is-public.slug, is_public=false)
+
+
+
+    -- ds.heading-medium: Site Visibility: Private
+    if: { !is-public.is-public }
+
+    -- ds.copy-regular:
+    if: { !is-public.is-public }
+
+    The site is currently **private**. Only you and your team can see your website.
+
+    -- ds.danger-button: Make Site Public
+    if: { !is-public.is-public }
+    width: wide
+    radius: curved
+    $on-click$: $is-public.setting-actions.update-privacy(site_slug=$is-public.slug, is_public=true)
+
+-- end: ds.column
+-- end: is-public
+
+
 
 
 -- component text-input:
