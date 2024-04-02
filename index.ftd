@@ -3,52 +3,9 @@
 -- import: ui.fifthtry.com/actions/storybook/navigate
 -- import: ui.fifthtry.com/components/dark-mode-toggle
 
-	-- ds.copy-regular:
-	
-	These are list of products/websites hosted by FifthTry.
-	
-	-- page-block: Website Pages
-	
-	- [Logged in Home page](/scenarios/logged-in-home/)
-	- [Logged out Home page](/scenarios/logged-out-home/)
-	- [Logged In About page](/scenarios/about/logged-in-about/)
-	- [Logged In Team page](/scenarios/about/logged-in-team/)
-	- [Pricing page](/scenarios/about/pricing/)
-	- [Terms page](/scenarios/about/terms-page/)
-	- [Privacy page](/scenarios/about/privacy-page/)
-	- [Team page](/scenarios/about/team-page/)
-	- [About Us page](/scenarios/about/)
-	- [Blog Homepage](/scenarios/blogs/)
-	- [Blog Post](/scenarios/blogs/blog-post/)
-	- [Editor - Blog Post](/scenarios/blogs/editor/)
-	- [Getting Started Tutorial](/scenarios/blogs/getting-started/)
-
-
-	-- page-block: Auth Pages
-	
-	- [Login page](/scenarios/signin-page/)
-	- [Signup page](/scenarios/signup-page/)
-	- [Forgot Password page](/scenarios/forgot-password/)
-	- [Change Password page](/scenarios/change-password/?code=auth) ;; ?code is required
-	- [Password Recovery page](/scenarios/password-recovery/)
-	
-	-- page-block: Org Pages
-	
-	- [Org dashboard](/scenarios/org/dashboard/)
-	
-	-- page-block: User Pages
-	
-	- [User dashboard](/scenarios/user/dashboard/)
-	- [Create Site](/scenarios/user/create-site/)
-	
-	-- page-block: Site Pages
-	
-	- [Site Info](/scenarios/sites/site-info/)
-	- [Page with top message](/scenarios/sites/top-message/)
 
 -- ds.page: Storybook
 fastn-badge: false
-
 
 -- storybook:
 list-of-files: $toc
@@ -73,6 +30,7 @@ $processor$: pr.toc
   - Blog Homepage: /scenarios/blogs/
   - Blog Post: /scenarios/blogs/blog-post/
   - Editor - Blog Post: /scenarios/blogs/editor/
+  - Getting Started - Blog Post: /scenarios/blogs/getting-started/
 
 - Auth Pages:
   - Login page: /scenarios/signin-page/
