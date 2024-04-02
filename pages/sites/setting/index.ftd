@@ -31,42 +31,10 @@ dashboard-url: $page.dashboard-url
         original-name: $page.site.site-name
         setting-actions: $page.setting-actions
 
-        ;; ------------------------------- site slug -----------------------------------------------
 
-        -- ds.heading-medium: Site Slug
-
-        -- ds.copy-regular:
-
-        The slug of a site is used to uniquely identify your site on FifthTry. It is used in the URL of
-        your site. If you have setup a custom domain, the slug is not used in the URL, but it is still used
-        in other places, for example if you are using the FifthTry API, or `clift` to manage your site.
-
-        `slug` is a technical term used in web development to refer to a part of the URL, so slug should be
-        lower-cased, and should use `-` to separate words. For example, if your site name is "My Site", the
-        slug should be `my-site`.
-
-        -- text-input: Site Slug
-        default-value: $page.site.site-slug
-        $value: $page.site-slug
-        $error: $page.setting-actions.update-slug-error
-
-        -- ds.copy-regular:
-
-        Please note that if you change the slug, you may have to update your site settings in other places
-        where you have used the slug, for example in your `clift` configuration file.
-
-        -- ds.secondary-button: Update Site Slug
-        if: { page.site-slug == page.site.site-slug }
-        width: wide
-        radius: curved
-
-        -- ds.primary-button: Update Site Slug
-        if: { page.site-slug != page.site.site-slug }
-        width: wide
-        radius: curved
-        $on-click$: $page.setting-actions.update-slug(site_slug=$page.site.site-slug, new_slug=$page.site-slug)
-
-
+        /-- site-slug:  ;; hiding because this is not implemented yet
+        slug: $page.site.site-slug
+        setting-actions: $page.setting-actions
 
         ;; ------------------------------- is-public -----------------------------------------------
 
@@ -198,6 +166,53 @@ dashboard-url: $page.dashboard-url
 -- end: p.page
 
 -- end: page
+
+
+;; ------------------------------- site slug -----------------------------------------------
+-- component site-slug:
+string slug:
+module setting-actions: basic
+string $new-slug: *$site-slug.slug
+
+-- ds.column:
+align-content: left
+
+    -- ds.heading-medium: Site Slug
+
+    -- ds.copy-regular:
+
+    The slug of a site is used to uniquely identify your site on FifthTry. It is used in the URL of
+    your site. If you have setup a custom domain, the slug is not used in the URL, but it is still used
+    in other places, for example if you are using the FifthTry API, or `clift` to manage your site.
+
+    `slug` is a technical term used in web development to refer to a part of the URL, so slug should be
+    lower-cased, and should use `-` to separate words. For example, if your site name is "My Site", the
+    slug should be `my-site`.
+
+    -- text-input: Site Slug
+    default-value: $site-slug.slug
+    $value: $site-slug.new-slug
+    $error: $site-slug.setting-actions.update-slug-error
+
+    -- ds.copy-regular:
+
+    Please note that if you change the slug, you may have to update your site settings in other places
+    where you have used the slug, for example in your `clift` configuration file.
+
+    -- ds.secondary-button: Update Site Slug
+    if: { site-slug.slug == site-slug.new-slug }
+    width: wide
+    radius: curved
+
+    -- ds.primary-button: Update Site Slug
+    if: { site-slug.slug != site-slug.new-slug }
+    width: wide
+    radius: curved
+    $on-click$: $site-slug.setting-actions.update-slug(site_slug=$site-slug.slug, new_slug=$site-slug.new-slug)
+
+-- end: ds.column
+
+-- end: site-slug
 
 
 ;; ------------------------------- site name -----------------------------------------------
