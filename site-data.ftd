@@ -18,5 +18,6 @@
 -- string team-url: /team/
 -- string terms-url: /terms/
 -- string privacy-url: /privacy/
-
 -- string packages-url: /packages/
+-- string blog-launch-url: /scenarios/blogs/blog-post/
+-- string blog-home-url: /blog-home/
