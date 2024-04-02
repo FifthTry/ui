@@ -10,5 +10,3 @@ site: $site-info-scenario.acme-site
 dashboard-url: /scenarios/user/dashboard/
 user-data: $john-doe.jd
 top-message: This message can be passed to every page using the `top-message`. [Links](/) are also supported
-
-

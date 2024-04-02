@@ -1,0 +1,52 @@
+-- optional string $rename-error:
+
+-- void rename(site_slug, new_name):
+string site_slug:
+string new_name:
+js: $assets.files.assets.functions.js
+
+callAlert("renaming site: " + site_slug + ", new_name: " + new_name)
+
+
+
+-- optional string update-slug-error:
+
+-- void update-slug(site_slug, new_slug):
+string site_slug:
+string new_slug:
+js: $assets.files.assets.functions.js
+
+callAlert("update-slug: " + site_slug + ", new_slug: " + new_slug)
+
+
+
+-- optional string update-privacy-error:
+
+-- void update-privacy(site_slug, is_public):
+string site_slug:
+string is_public:
+js: $assets.files.assets.functions.js
+
+callAlert("renaming privacy: " + site_slug + ", is_public: " + is_public)
+
+
+-- optional string update-editable-error:
+
+-- void update-editable(site_slug, is_editable):
+string site_slug:
+string is_editable:
+js: $assets.files.assets.functions.js
+
+callAlert("update-editable: " + site_slug + ", is_editable: " + is_editable)
+
+
+-- optional string mark-package-error:
+
+-- void mark-package(site_slug, is_package):
+string site_slug:
+string is_package:
+js: $assets.files.assets.functions.js
+
+callAlert("mark-package: " + site_slug + ", is_package: " + is_package)
+
+

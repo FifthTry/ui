@@ -12,3 +12,9 @@ body $content:
 optional sr.file-text file:
 optional sr.file openfile:
 js: $assets.files.web-components.code-editor.js
+
+
+-- web-component file-upload:
+integer list $content:
+string $file-name:
+js: $assets.files.web-components.file-upload.js

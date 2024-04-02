@@ -20,16 +20,16 @@ radius: $ds.radius.zero
 inner-background.solid: $ds.colors.background.base
 if: { create-file-ui.create }
 
-    -- file-header:
-    create-file: $create-file-ui.create-file
-    site-slug: $create-file-ui.site.site-slug
-    $content: $create-file-ui.content
-    $create: $create-file-ui.create
-    $file-name: $create-file-ui.file-name
-
-    -- web-components.code-editor: $create-file-ui.file-name
-    $content: $create-file-ui.content
-
+	-- file-header:
+	create-file: $create-file-ui.create-file
+	site-slug: $create-file-ui.site.site-slug
+	$content: $create-file-ui.content
+	$create: $create-file-ui.create
+	$file-name: $create-file-ui.file-name
+	
+	-- web-components.code-editor: $create-file-ui.file-name
+	$content: $create-file-ui.content
+	
 -- end: ds.section-column
 
 
@@ -60,21 +60,21 @@ width: fill-container
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
-    -- file-name-input:
-    $file-full-name: $file-header.file-name
-
+	-- file-name-input:
+	$file-full-name: $file-header.file-name
+	
 	-- ds.row:
-    width: hug-content
-
-        -- ds.primary-button: SAVE
-        if: { file-header.file-name != ftd.empty }
-        $on-click$: $file-header.create-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content)
-
-        -- ds.primary-button: CANCEL
-        $on-click$: $ftd.set-bool($a = $file-header.create, v = false)
-        $on-click$: $ftd.set-string($a = $file-header.content, v = *$ftd.empty)
-
-    -- end: ds.row
+	   width: hug-content
+	
+		-- ds.primary-button: SAVE
+		if: { file-header.file-name != ftd.empty }
+		$on-click$: $file-header.create-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content)
+		
+		-- ds.primary-button: CANCEL
+		$on-click$: $ftd.set-bool($a = $file-header.create, v = false)
+		$on-click$: $ftd.set-string($a = $file-header.content, v = *$ftd.empty)
+		
+	-- end: ds.row
 
 -- end: ds.row
 
@@ -96,17 +96,16 @@ string $file-full-name:
 -- ds.row:
 align-content: left
 
--- ftd.text-input:
-padding-vertical.px: 8
-padding-horizontal.px: 16
-border-radius.px: 8
-border-width.px: 1
-placeholder: Enter file name
-role: $inherited.types.label-large
-$on-input$: $ftd.set-string($a = $file-name-input.file-full-name, v = $VALUE)
-
+	-- ftd.text-input:
+	padding-vertical.px: 8
+	padding-horizontal.px: 16
+	border-radius.px: 8
+	border-width.px: 1
+	placeholder: Enter file name
+	role: $inherited.types.label-large
+	$on-input$: $ftd.set-string($a = $file-name-input.file-full-name, v = $VALUE)
+	
 -- end: ds.row
 
 
 -- end: file-name-input
-

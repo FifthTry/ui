@@ -7,6 +7,7 @@ string site-base-url:
 string $site-relative-url:
 integer $device-selected: 1
 boolean create:
+boolean upload:
 boolean edit:
 boolean $preview:
 sites-records.file current-file:
@@ -14,22 +15,23 @@ optional sites-records.file openfile:
 
 -- ftd.column:
 
--- code-preview-helper:
-site-base-url: $code-preview.site-base-url
-$site-relative-url: $code-preview.site-relative-url
-$device-selected: $code-preview.device-selected
-$preview: $code-preview.preview
-
--- expander:
-device-selected: $code-preview.device-selected
-
--- mover:
-create: $code-preview.create
-edit: $code-preview.edit
-preview: $code-preview.preview
-current-file: $code-preview.current-file
-openfile: $code-preview.openfile
-
+	-- code-preview-helper:
+	site-base-url: $code-preview.site-base-url
+	$site-relative-url: $code-preview.site-relative-url
+	$device-selected: $code-preview.device-selected
+	$preview: $code-preview.preview
+	
+	-- expander:
+	device-selected: $code-preview.device-selected
+	
+	-- mover:
+	create: $code-preview.create
+	upload: $code-preview.upload
+	edit: $code-preview.edit
+	preview: $code-preview.preview
+	current-file: $code-preview.current-file
+	openfile: $code-preview.openfile
+	
 -- end: ftd.column
 
 -- end: code-preview
@@ -57,6 +59,7 @@ boolean expand: $add-expandable(selected = $expander.device-selected)
 
 -- component mover:
 boolean create:
+boolean upload:
 boolean edit:
 boolean preview:
 sites-records.file current-file:
@@ -100,78 +103,78 @@ classes if { code-preview-helper.device-selected == 0 }: desktop
 classes if { code-preview-helper.device-selected == 1 }: mobile
 classes if { code-preview-helper.device-selected == 2 }: tablet
 
-    -- ftd.column:
-    width: fill-container
-    height: fill-container
-
-        -- control-panel:
-        $selected: $code-preview-helper.device-selected
-        $preview: $code-preview-helper.preview
-        devices: $devices
-
-        -- navigation-bar:
-        $site-relative-url: $code-preview-helper.site-relative-url
-        $selected: $code-preview-helper.device-selected
-        if: { code-preview-helper.expand }
-
-        -- ftd.iframe:
-        src: $code-preview-helper.url
-        width: fill-container
-        height: fill-container
-        height.fixed.percent if {code-preview-helper.device-selected == 1}: 85
-        if: { code-preview-helper.expand }
-
-        -- ftd.container:
-        id: corner-rb
-        anchor: parent
-        bottom.px: 0
-        right.px: 0
-        cursor: nwse-resize
-        width.fixed.px: 6
-        height.fixed.px: 6
-        if: { code-preview-helper.device-selected != 1 }
-
-        -- ftd.container:
-        id: corner-lb
-        anchor: parent
-        bottom.px: 0
-        left.px: 0
-        cursor: nesw-resize
-        width.fixed.px: 6
-        height.fixed.px: 6
-        if: { code-preview-helper.device-selected != 1 }
-
-        -- ftd.container:
-        id: corner-l
-        anchor: parent
-        left.px: 0
-        top.px: 0
-        cursor: ew-resize
-        width.fixed.px: 6
-        height.fixed.calc: 100% - 6px
-        if: { code-preview-helper.device-selected != 1 }
-
-        -- ftd.container:
-        id: corner-r
-        anchor: parent
-        right.px: 0
-        top.px: 0
-        cursor: ew-resize
-        width.fixed.px: 6
-        height.fixed.calc: 100% - 6px
-        if: { code-preview-helper.device-selected != 1 }
-
-        -- ftd.container:
-        id: corner-b
-        anchor: parent
-        left.px: 6
-        bottom.px: 0
-        cursor: ns-resize
-        height.fixed.px: 6
-        width.fixed.calc: 100% - 12px
-        if: { code-preview-helper.device-selected != 1 }
-
-    -- end: ftd.column
+	-- ftd.column:
+	width: fill-container
+	height: fill-container
+	
+		-- control-panel:
+		$selected: $code-preview-helper.device-selected
+		$preview: $code-preview-helper.preview
+		devices: $devices
+		
+		-- navigation-bar:
+		$site-relative-url: $code-preview-helper.site-relative-url
+		$selected: $code-preview-helper.device-selected
+		if: { code-preview-helper.expand }
+		
+		-- ftd.iframe:
+		src: $code-preview-helper.url
+		width: fill-container
+		height: fill-container
+		height.fixed.percent if {code-preview-helper.device-selected == 1}: 85
+		if: { code-preview-helper.expand }
+		
+		-- ftd.container:
+		id: corner-rb
+		anchor: parent
+		bottom.px: 0
+		right.px: 0
+		cursor: nwse-resize
+		width.fixed.px: 6
+		height.fixed.px: 6
+		if: { code-preview-helper.device-selected != 1 }
+		
+		-- ftd.container:
+		id: corner-lb
+		anchor: parent
+		bottom.px: 0
+		left.px: 0
+		cursor: nesw-resize
+		width.fixed.px: 6
+		height.fixed.px: 6
+		if: { code-preview-helper.device-selected != 1 }
+		
+		-- ftd.container:
+		id: corner-l
+		anchor: parent
+		left.px: 0
+		top.px: 0
+		cursor: ew-resize
+		width.fixed.px: 6
+		height.fixed.calc: 100% - 6px
+		if: { code-preview-helper.device-selected != 1 }
+		
+		-- ftd.container:
+		id: corner-r
+		anchor: parent
+		right.px: 0
+		top.px: 0
+		cursor: ew-resize
+		width.fixed.px: 6
+		height.fixed.calc: 100% - 6px
+		if: { code-preview-helper.device-selected != 1 }
+		
+		-- ftd.container:
+		id: corner-b
+		anchor: parent
+		left.px: 6
+		bottom.px: 0
+		cursor: ns-resize
+		height.fixed.px: 6
+		width.fixed.calc: 100% - 12px
+		if: { code-preview-helper.device-selected != 1 }
+		
+	-- end: ftd.column
 
 -- end: ftd.column
 
@@ -204,16 +207,16 @@ color if { header.device-selected != 1 }: $ds.colors.cta-primary.text
 $on-mouse-enter$: $ftd.set-bool($a = $header.hover, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $header.hover, v = false)
 
-    -- ftd.text: Preview
-    if: { header.device-selected != 1 }
-
-    -- ftd.text: --
-    if: { header.device-selected != 1 }
-    $on-click$: $ftd.toggle($a = $header.expand)
-
-    -- ftd.text: .
-    if: { header.device-selected == 1 }
-
+	-- ftd.text: Preview
+	if: { header.device-selected != 1 }
+	
+	-- ftd.text: --
+	if: { header.device-selected != 1 }
+	$on-click$: $ftd.toggle($a = $header.expand)
+	
+	-- ftd.text: .
+	if: { header.device-selected == 1 }
+	
 -- end: ftd.row
 
 -- end: header
@@ -234,27 +237,27 @@ integer $selected:
 -- ftd.column:
 width: fill-container
 
--- ftd.container:
-height.fixed.px: 24
-width: fill-container
-
--- ftd.row:
-width: fill-container
-padding.px: 5
-background.solid: $ds.colors.background.step-2
-spacing.fixed.px: 10
-
--- ftd.text-input:
-default-value: $navigation-bar.site-relative-url
-padding-horizontal.px: 10
-padding-vertical.px: 4
-border-width.px: 1
-border-color: $ds.colors.border
-border-radius.px: 16
-align-self: center
-$on-change$: $ftd.set-string($a = $navigation-bar.site-relative-url, v = $VALUE)
-
--- end: ftd.row
+	-- ftd.container:
+	height.fixed.px: 24
+	width: fill-container
+	
+	-- ftd.row:
+	width: fill-container
+	padding.px: 5
+	background.solid: $ds.colors.background.step-2
+	spacing.fixed.px: 10
+	
+		-- ftd.text-input:
+		default-value: $navigation-bar.site-relative-url
+		padding-horizontal.px: 10
+		padding-vertical.px: 4
+		border-width.px: 1
+		border-color: $ds.colors.border
+		border-radius.px: 16
+		align-self: center
+		$on-change$: $ftd.set-string($a = $navigation-bar.site-relative-url, v = $VALUE)
+		
+	-- end: ftd.row
 
 -- end: ftd.column
 
@@ -324,26 +327,26 @@ left.px: -12
 spacing: space-between
 width: fill-container
 
-    -- ftd.row:
-    spacing.fixed.px: 5
-    align-self: center
+	-- ftd.row:
+	spacing.fixed.px: 5
+	align-self: center
+	
+		-- ftd.image:
+		src: $assets.files.assets.move-icon.svg
+		width.fixed.px: 20
+		cursor: move
+		id: header
+		align-self: center
+		
+		-- device-dropdown:
+		$selected: $control-panel.selected
+		devices: $devices
+		
+	-- end: ftd.row
 
-        -- ftd.image:
-        src: $assets.files.assets.move-icon.svg
-        width.fixed.px: 20
-        cursor: move
-        id: header
-        align-self: center
-
-        -- device-dropdown:
-        $selected: $control-panel.selected
-        devices: $devices
-
-    -- end: ftd.row
-
-    -- ds.copy-large: X
-    $on-click$: $ftd.set-bool($a = $control-panel.preview, v = false)
-
+	-- ds.copy-large: X
+	$on-click$: $ftd.set-bool($a = $control-panel.preview, v = false)
+	
 -- end: ftd.row
 
 -- end: control-panel
@@ -361,31 +364,31 @@ boolean $open: false
 align-self: center
 $on-click-outside$: $ftd.set-bool($a = $device-dropdown.open, v = false)
 
--- current-device-dropdown:
-devices: $device-dropdown.devices
-$selected: $device-dropdown.selected
-$open: $device-dropdown.open
-
--- ftd.column:
-anchor: parent
-left.px: 0
-top.px: 25
-border-width.px: 1
-border-color: $ds.colors.border
-background.solid: $ds.colors.background.base
-padding-horizontal.px: 5
-border-radius.px: 5
-width: fill-container
-if: { device-dropdown.open }
-
--- ftd.text: $item.name
-color: $ds.colors.text
-role: $ds.types.copy-small
-for: $item in $device-dropdown.devices
-$on-click$: $ftd.set-integer($a = $device-dropdown.selected, v = $LOOP.COUNTER)
-$on-click$: $ftd.set-bool($a = $device-dropdown.open, v = false)
-
--- end: ftd.column
+	-- current-device-dropdown:
+	devices: $device-dropdown.devices
+	$selected: $device-dropdown.selected
+	$open: $device-dropdown.open
+	
+	-- ftd.column:
+	anchor: parent
+	left.px: 0
+	top.px: 25
+	border-width.px: 1
+	border-color: $ds.colors.border
+	background.solid: $ds.colors.background.base
+	padding-horizontal.px: 5
+	border-radius.px: 5
+	width: fill-container
+	if: { device-dropdown.open }
+	
+		-- ftd.text: $item.name
+		color: $ds.colors.text
+		role: $ds.types.copy-small
+		for: $item in $device-dropdown.devices
+		$on-click$: $ftd.set-integer($a = $device-dropdown.selected, v = $LOOP.COUNTER)
+		$on-click$: $ftd.set-bool($a = $device-dropdown.open, v = false)
+		
+	-- end: ftd.column
 
 
 -- end: ftd.column
@@ -411,18 +414,18 @@ width.fixed.px: 85
 background.solid: $ds.colors.background.base
 $on-click$: $ftd.toggle($a = $current-device-dropdown.open)
 
--- ftd.text: $item.name
-color: $ds.colors.text-strong
-role: $ds.types.copy-small
-align-self: center
-for: $item in $current-device-dropdown.devices
-if: { current-device-dropdown.selected == LOOP.COUNTER }
-
--- ftd.image:
-align-self: center
-src: $assets.files.assets.down-arrow.svg
-width.fixed.px: 10
-
+	-- ftd.text: $item.name
+	color: $ds.colors.text-strong
+	role: $ds.types.copy-small
+	align-self: center
+	for: $item in $current-device-dropdown.devices
+	if: { current-device-dropdown.selected == LOOP.COUNTER }
+	
+	-- ftd.image:
+	align-self: center
+	src: $assets.files.assets.down-arrow.svg
+	width.fixed.px: 10
+	
 -- end: ftd.row
 
 -- end: current-device-dropdown

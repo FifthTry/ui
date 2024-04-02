@@ -10,7 +10,7 @@ user-data: $john-doe.jd
 templates: $template-category-list
 
 
--- template-records.template-category list template-category-list: 
+-- template-records.template-category list template-category-list:
 
 -- template-records.template-category:
 packages: $coming-soon-packages

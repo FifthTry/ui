@@ -10,7 +10,7 @@ user-data: $john-doe.jd
 templates: $template-category-list
 
 
--- template-records.template-category list template-category-list: 
+-- template-records.template-category list template-category-list:
 
 -- template-records.template-category:
 packages: $linktree-packages
@@ -18,7 +18,7 @@ packages: $linktree-packages
 -- end: template-category-list
 
 
--- ds.package-info list linktree-packages: 
+-- ds.package-info list linktree-packages:
 
 -- ds.package-info: Purple gradien
 template-url: /scenarios/featured-template/linktree/linktree-1
@@ -33,6 +33,3 @@ template-url: /scenarios/featured-template/linktree/linktree-4
 screenshot: $forest-green-assets.files.assets.linktree.png
 
 -- end: linktree-packages
-
-
-

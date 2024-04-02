@@ -7,6 +7,7 @@ string $header-title: todo
 string site-slug:
 module open-file: open-file
 boolean $create: false
+boolean $upload: false
 
 -- ds.column:
 width.fixed.px: 200
@@ -18,6 +19,7 @@ inset: $ds.spaces.inset-square.medium
 
 	-- label-with-plus: FILES
 	$create: $file-tree.create
+	$upload: $file-tree.upload
 	
 	-- ds.column:
 	align-content: top-left
@@ -61,22 +63,22 @@ spacing: $ds.spaces.vertical-gap.extra-small
 	align-content: top-left
 	spacing: $ds.spaces.horizontal-gap.extra-small
 	$on-click$: $ftd.toggle($a = $file-view.is-open)
-
+	
 		-- ftd.image: $assets.files.assets.down-arrow.svg
 		if: { ftd.len(file-view.file.children) > 0 && file-view.is-open }
 		width.fixed.px: 10
 		align-self: center
-
+		
 		-- ftd.image: $assets.files.assets.right-arrow.svg
 		if: { ftd.len(file-view.file.children) > 0 && !file-view.is-open }
 		width.fixed.px: 10
 		align-self: center
-
+		
 		-- ftd.image: $assets.files.assets.file.svg
 		if: { ftd.len(file-view.file.children) == 0 }
 		width.fixed.px: 20
 		align-self: center
-
+		
 		-- ftd.text: $file-view.file.base-name
 		if: { ftd.len(file-view.file.children) == 0 }
 		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site_slug = $file-view.site-slug)
@@ -84,14 +86,14 @@ spacing: $ds.spaces.vertical-gap.extra-small
 		role: $ds.types.copy-small
 		color: $ds.colors.text-strong
 		style if { file-view.header-title == file-view.file.full-name }: underline, bold
-
+		
 		-- ftd.text: $file-view.file.base-name
-        if: { ftd.len(file-view.file.children) > 0 }
-        ;; $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
-        role: $ds.types.copy-small
-        color: $ds.colors.text-strong
-        style if { file-view.header-title == file-view.file.full-name }: underline, bold
-        
+		      if: { ftd.len(file-view.file.children) > 0 }
+		      ;; $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
+		      role: $ds.types.copy-small
+		      color: $ds.colors.text-strong
+		      style if { file-view.header-title == file-view.file.full-name }: underline, bold
+		
 	-- end: ds.row
 
 	-- ds.column:
@@ -116,6 +118,10 @@ spacing: $ds.spaces.vertical-gap.extra-small
 -- component label-with-plus:
 caption label:
 boolean $create: false
+boolean $upload: false
+boolean $open: false
+
+-- ds.column:
 
 -- ds.row:
 align-content: left
@@ -123,11 +129,30 @@ spacing: $ds.spaces.horizontal-gap.space-between
 
 	-- ds.copy-regular: $label-with-plus.label
 	style: bold
-
+	
 	-- ds.primary-button: \\+
 	size: small
-    $on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
-	
--- end: ds.row
+	$on-click$: $ftd.toggle($a = $label-with-plus.open)
+
+	-- end: ds.row
+
+	-- ds.floater:
+	top: 38
+	background.solid: $ds.colors.background.step-2
+
+	-- ds.column:
+	if: { label-with-plus.open }
+
+	-- ds.copy-regular: Create file
+	$on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
+
+	-- ds.copy-regular: Upload file
+	$on-click$: $ftd.set-bool($a=$label-with-plus.upload, v=true)
+
+	-- end: ds.column
+
+	-- end: ds.floater
+
+-- end: ds.column
 
 -- end: label-with-plus

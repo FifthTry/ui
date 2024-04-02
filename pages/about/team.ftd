@@ -21,12 +21,12 @@ top-message: $page.top-message
 		-- team: Meet the team
 		
 		We are high on collaboration, low on ego, and take our happy hours seriously.
-
+		
 			-- team-member: Aditya Vikram Singh
 			photo: $assets.files.assets.team.aditya.jpg
 			link: https://www.linkedin.com/in/xypnox/
 			designation: Software Developer
-		
+			
 			-- team-member: Amit Upadhyay
 			photo: $assets.files.assets.team.amitu.jpg
 			link: https://www.linkedin.com/in/amitu/
@@ -46,18 +46,18 @@ top-message: $page.top-message
 			photo: $assets.files.assets.team.meenu.jpeg
 			link: https://github.com/MeenuKumari28
 			designation: Fastn Builder - FTD Dev
-
+			
 			-- team-member: Nandhini Devi
 			photo: $assets.files.assets.team.nandhini-devi.jpg
 			link: https://github.com/nandhinidevie
 			designation: Marketing Consultant
-
+			
 			-- team-member: Rithik Seth
 			photo: $assets.files.assets.team.rithik.jpg
 			link: https://github.com/Heulitig
 			designation: Software Developer
-
-			-- team-member: Siddhant Kumar 
+			
+			-- team-member: Siddhant Kumar
 			photo: $assets.files.assets.team.siddhant.jpeg
 			link: https://www.linkedin.com/in/siddhantcodes/
 			designation: Software Developer Intern

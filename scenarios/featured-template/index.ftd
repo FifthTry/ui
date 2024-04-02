@@ -8,7 +8,7 @@ packages: []
 templates: $template-category-list
 user-data: $john-doe.jd
 
--- template-records.template-category list template-category-list: 
+-- template-records.template-category list template-category-list:
 
 -- template-records.template-category: Linktree
 packages: $linktree-packages
@@ -24,7 +24,7 @@ packages: $coming-soon-packages
 
 
 
--- ds.package-info list linktree-packages: 
+-- ds.package-info list linktree-packages:
 
 -- ds.package-info: Purple gradient
 template-url: /scenarios/featured-template/linktree/linktree-1

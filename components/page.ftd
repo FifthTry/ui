@@ -19,28 +19,29 @@ optional string top-message:
 
 -- ds.page: $page.title
 
--- hm.header-message: $page.top-message
-if: { $page.top-message }
+	-- hm.header-message: $page.top-message
+	if: { $page.top-message }
+	
+	-- header.header:
+	if: { !page.hide-header }
+	site-data: $page.site-data
+	user-data: $page.user-data
+	margin: $page.margin
+	theme-toggle: $page.theme-toggle
+	
+	-- ds.section-column:
+	inset: $ds.spaces.inset-wide.medium
+	inset if { page.hide-header }: $ds.spaces.inset-tall.large
+	content: $page.children
+	flush: $page.flush
+	margin: $ds.spaces.vertical-gap.zero
+	
+	-- end: ds.section-column
 
--- header.header:
-if: { !page.hide-header }
-site-data: $page.site-data
-user-data: $page.user-data
-margin: $page.margin
-theme-toggle: $page.theme-toggle
-
--- ds.section-column:
-inset: $ds.spaces.inset-wide.medium
-inset if { page.hide-header }: $ds.spaces.inset-tall.large
-content: $page.children
-flush: $page.flush
-margin: $ds.spaces.vertical-gap.zero
-
--- end: ds.section-column
-
--- footer.footer:
-if: { !page.hide-footer }
-
+	-- footer.footer:
+	site-data: $page.site-data
+	if: { !page.hide-footer }
+	
 -- end: ds.page
 
 -- end: page

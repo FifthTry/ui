@@ -4,6 +4,9 @@
 -- import: ui.fifthtry.com/components/sites/page as sites-page
 -- import: ui.fifthtry.com/components/sites/header as sites-header
 
+
+
+
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
@@ -21,49 +24,60 @@ site: $page.site
 dashboard-url: $page.dashboard-url
 current-page: setting
 
-    -- ds.section-row:
-    align-content: top-left
-
-        -- setting-left-column:
-        current-page: $page.current-page
-        site: $page.site
-
-        -- ds.column:
-        inset: $ds.spaces.inset-square.zero
-        content: $page.children
-
+	-- ds.section-row:
+	align-content: top-left
+	
+		-- setting-left-column:
+		current-page: $page.current-page
+		site: $page.site
+		
+		-- ds.column:
+		inset: $ds.spaces.inset-square.zero
+		content: $page.children
+		
 	-- end: ds.section-row
 
 -- end: sites-page.page
 
 -- end: page
 
+
+
+
+
+
+
+
+
 -- component setting-left-column:
 string current-page:
 sites-records.site-common-data site:
 
-    -- ds.column:
-    width: hug-content
-    inset: $ds.spaces.inset-square.medium
-    align-content: top-left
+-- ds.column:
+width: hug-content
+inset: $ds.spaces.inset-square.medium
+align-content: top-left
 
-        -- sites-header.tab-link: Domains
-        is-active if { setting-left-column.current-page == "domains" }: true
-        link: $setting-left-column.site.domains-url
+	-- sites-header.tab-link: Basic
+	is-active if { setting-left-column.current-page == "basic" }: true
+	link: $setting-left-column.site.setting-url
 
-        -- sites-header.tab-link: Site Tokens
-        is-active if { setting-left-column.current-page == "tokens" }: true
-        link: $setting-left-column.site.tokens-url
-
-        -- sites-header.tab-link: Github (OIDC)
-        is-active if { setting-left-column.current-page == "github" }: true
-        link: $setting-left-column.site.github-url
-
-        /-- sites-header.tab-link: Environments
-        is-active if { setting-left-column.current-page == "environments" }: true
-        link: $setting-left-column.site.environments-url
-
-    -- end: ds.column
+	-- sites-header.tab-link: Domains
+	is-active if { setting-left-column.current-page == "domains" }: true
+	link: $setting-left-column.site.domains-url
+	
+	-- sites-header.tab-link: Site Tokens
+	is-active if { setting-left-column.current-page == "tokens" }: true
+	link: $setting-left-column.site.tokens-url
+	
+	-- sites-header.tab-link: Github (OIDC)
+	is-active if { setting-left-column.current-page == "github" }: true
+	link: $setting-left-column.site.github-url
+	
+	/-- sites-header.tab-link: Environments
+	is-active if { setting-left-column.current-page == "environments" }: true
+	link: $setting-left-column.site.environments-url
+	
+-- end: ds.column
 
 -- end: setting-left-column
-

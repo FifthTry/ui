@@ -22,20 +22,20 @@ optional string $content:
 radius: $ds.radius.zero
 inner-background.solid: $ds.colors.background.base
 
-    -- file-header:
-    save-file: $edit-ui.save-file
-    current-file: $edit-ui.current-file
-    file-name: $edit-ui.header-title
-    site-slug: $edit-ui.site.site-slug
-    $content: $edit-ui.content
-    $edit: $edit-ui.edit
-
-    -- web-components.code-editor: $edit-ui.header-title
-    file: $edit-ui.current-file.text
-    openfile: $edit-ui.open-file.content
-    $content: $edit-ui.content
-
-
+	-- file-header:
+	save-file: $edit-ui.save-file
+	current-file: $edit-ui.current-file
+	file-name: $edit-ui.header-title
+	site-slug: $edit-ui.site.site-slug
+	$content: $edit-ui.content
+	$edit: $edit-ui.edit
+	
+	-- web-components.code-editor: $edit-ui.header-title
+	file: $edit-ui.current-file.text
+	openfile: $edit-ui.open-file.content
+	$content: $edit-ui.content
+	
+	
 -- end: ds.section-column
 
 
@@ -67,21 +67,21 @@ width: fill-container
 spacing: $ds.spaces.horizontal-gap.space-between
 background.solid: $ds.colors.background.base
 
-    -- ds.copy-regular: $file-header.file-name
-    style: bold
-
+	-- ds.copy-regular: $file-header.file-name
+	style: bold
+	
 	-- ds.row:
-    width: hug-content
-
-        -- ds.primary-button: SAVE
-        if: { file-header.content != NULL }
-        $on-click$: $file-header.save-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content, updated_at = $file-header.current-file.updated-at)
-
-        -- ds.primary-button: CANCEL
-        $on-click$: $ftd.set-bool($a = $file-header.edit, v = false)
-        $on-click$: $utils.set-null($var = $file-header.content)
-
-    -- end: ds.row
+	   width: hug-content
+	
+		-- ds.primary-button: SAVE
+		if: { file-header.content != NULL }
+		$on-click$: $file-header.save-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content, updated_at = $file-header.current-file.updated-at)
+		
+		-- ds.primary-button: CANCEL
+		$on-click$: $ftd.set-bool($a = $file-header.edit, v = false)
+		$on-click$: $utils.set-null($var = $file-header.content)
+		
+	-- end: ds.row
 
 -- end: ds.row
 

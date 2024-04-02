@@ -8,9 +8,9 @@ caption message:
 radius: $ds.radius.zero
 background.solid: $header-message.background-color
 
--- ds.copy-regular: $header-message.message
-color: white
-
+	-- ds.copy-regular: $header-message.message
+	color: white
+	
 -- end: ds.row
 
 -- end: header-message

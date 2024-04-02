@@ -1,0 +1,12 @@
+-- optional string $active-file-preview-url: https://ui.fifthtry.com/scenarios/logged-in-home/
+-- optional string $active-file-content: content
+
+-- void submit(default_file, fileurl):
+string default_file:
+string fileurl:
+string $url: $active-file-preview-url
+js: $assets.files.assets.functions.js
+
+url = fileurl;
+
+;;callAlert("Navigating to file:" + fileurl + ", default file: " + default_file)
