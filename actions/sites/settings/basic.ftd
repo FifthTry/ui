@@ -48,5 +48,3 @@ string is_package:
 js: $assets.files.assets.functions.js
 
 callAlert("mark-package: " + site_slug + ", is_package: " + is_package)
-
-

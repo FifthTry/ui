@@ -9,4 +9,3 @@ site-data: scenario-site
 user-data: $john-doe.jd
 packages: $packages.packages
 query: some query
-

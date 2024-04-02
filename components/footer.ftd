@@ -21,7 +21,7 @@ inset: $ds.spaces.inset-wide.medium
 				-- footer-toc-content:
 				site-data: $footer.site-data
 				-- footer-logo-content:
-
+				
 			-- end: ds.row
 
 			-- ds.row:
@@ -32,7 +32,7 @@ inset: $ds.spaces.inset-wide.medium
 			
 				-- ds.copy-small: © 2024 FifthTry. All rights reserved
 				-- footer-social-content:
-
+				
 			-- end: ds.row
 
 		-- end: ftd.desktop
@@ -44,11 +44,11 @@ inset: $ds.spaces.inset-wide.medium
 			align-content: top-left
 			
 				-- footer-toc-content:
-                site-data: $footer.site-data
+				            site-data: $footer.site-data
 				-- footer-logo-content:
 				-- ds.copy-small: © 2024 FifthTry. All rights reserved
 				-- footer-social-content:
-
+				
 			-- end: ds.column
 
 		-- end: ftd.mobile
@@ -84,28 +84,28 @@ align-content: left
 		-- ds.link: **Pricing**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.pricing-url
-
+		
 		-- ds.link: **Team**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.team-url
-
+		
 		-- ds.link: **About Us**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.about-url
-
+		
 		-- ds.link: **Terms**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.terms-url
-
+		
 		-- ds.link: **Privacy**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.privacy-url
-
+		
 		-- ds.link: **`fastn` Packages**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.packages-url
 		align: center
-
+		
 	-- end: ds.row
 
 -- end: ds.column

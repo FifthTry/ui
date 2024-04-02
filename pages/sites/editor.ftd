@@ -72,7 +72,7 @@ top-message: $page.top-message
 	site: $page.site
 	$create: $page.create
 	if: { page.create }
-
+	
 	-- upload-file-ui.upload-file-ui:
 	upload-file: $page.upload-file
 	site: $page.site
@@ -127,7 +127,7 @@ module upload-file: upload-file
 	if: { show-error.create-file.create-error != NULL }
 	color: red
 	role: $inherited.types.copy-small
-
+	
 	-- ftd.text: $show-error.upload-file.upload-error
 	$on-click-outside$: $utils.set-null($var = $show-error.upload-file.upload-error)
 	if: { show-error.upload-file.upload-error != NULL }
