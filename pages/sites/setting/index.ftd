@@ -13,7 +13,6 @@ sites-records.site-common-data site:
 string dashboard-url:
 optional string db-url:
 module setting-actions: basic
-string $site-name: *$page.site.site-name
 string $site-slug: *$page.site.site-slug
 
 -- p.page:
@@ -27,29 +26,10 @@ dashboard-url: $page.dashboard-url
 	inset: $ds.spaces.inset-tall.large
 	align-content: left
 
-        ;; ------------------------------- site name -----------------------------------------------
-        -- ds.heading-medium: Site Name
-
-        -- ds.copy-regular:
-
-        The name of the site is only used for your reference. It is not used in the URL of your site.
-
-        -- text-input: Site Name
-        default-value: $page.site.site-name
-        $value: $page.site-name
-        $error: $page.setting-actions.rename-error
-
-        -- ds.secondary-button: Rename Site
-        if: { page.site-name == page.site.site-name }
-        width: wide
-        radius: curved
-
-        -- ds.primary-button: Rename Site
-        if: { page.site-name != page.site.site-name }
-        width: wide
-        radius: curved
-        $on-click$: $page.setting-actions.rename(site_slug=$page.site.site-slug, new_name=$page.site-name)
-
+        -- site-name:
+        slug: $page.site.site-slug
+        original-name: $page.site.site-name
+        setting-actions: $page.setting-actions
 
         ;; ------------------------------- site slug -----------------------------------------------
 
@@ -218,6 +198,44 @@ dashboard-url: $page.dashboard-url
 -- end: p.page
 
 -- end: page
+
+
+;; ------------------------------- site name -----------------------------------------------
+
+-- component site-name:
+string original-name:
+string slug:
+module setting-actions: basic
+string $name: *$site-name.original-name
+
+-- ds.column:
+align-content: left
+
+    -- ds.heading-medium: Site Name
+
+    -- ds.copy-regular:
+
+    The name of the site is only used for your reference. It is not used in the URL of your site.
+
+    -- text-input: Site Name
+    default-value: $site-name.original-name
+    $value: $site-name.name
+    $error: $site-name.setting-actions.rename-error
+
+    -- ds.secondary-button: Rename Site
+    if: { site-name.original-name == site-name.name }
+    width: wide
+    radius: curved
+
+    -- ds.primary-button: Rename Site
+    if: { site-name.original-name != site-name.name }
+    width: wide
+    radius: curved
+    $on-click$: $site-name.setting-actions.rename(site_slug=$site-name.slug, new_name=$site-name.name)
+
+-- end: ds.column
+
+-- end: site-name
 
 
 -- component text-input:
