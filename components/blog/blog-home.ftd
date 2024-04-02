@@ -19,6 +19,7 @@ content: $blog.wrapper
 
 -- component blog-card:
 caption title:
+optional string title-url:
 body description:
 string date:
 
@@ -38,6 +39,7 @@ radius: $ds.radius.medium
 		
 		-- ds.copy-large:
 		color: $ds.colors.text-strong
+		link: $blog-card.title-url
 		
 		$blog-card.title
 		

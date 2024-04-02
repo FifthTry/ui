@@ -6,7 +6,7 @@
 
 -- component page:
 ud.user-data user-data:
-;; module site-data: site-data
+module site-data: site-data
 ;; optional string top-message:
 
 -- p.page:
@@ -22,14 +22,16 @@ user-data: $page.user-data
 		
 		-- blog.blog:
 		
-		-- blog.blog-card: [Launching fifthtry.com](/scenarios/blogs/blog-post/)
+		-- blog.blog-card: Launching fifthtry.com
+		title-url: $page.site-data.blog-homepage-url
 		date: 1st March 2024
 		
 		The past three years have been quite a journey for us. With over 400 releases and 450+ stars on GitHub, and our community expanding to 3000+ engineers, creators, and founders, we've moved closer to our mission...
 		
 		-- blog.blog:
 		
-			-- blog.blog-card: [FifthTry Editor](/scenarios/blogs/editor/)
+			-- blog.blog-card: FifthTry Editor
+			title-url: $page.site-data.blog-editor-url
 			date: 22nd March 2024
 			
 			As the demand for remote collaboration grows, the need for
