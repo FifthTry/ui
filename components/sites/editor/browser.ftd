@@ -56,6 +56,7 @@ inner-background.solid: $ds.colors.background.base
 		file-name: $browser.header-title
 		site-slug: $browser.site.site-slug
 		delete-file: $browser.delete-file
+		header-title: $browser.header-title
 		
 		-- browser-ui:
 		current-file: $browser.data.current-file
@@ -91,14 +92,29 @@ boolean $preview:
 string file-name:
 string site-slug:
 module delete-file: delete-file
+string header-title:
 
 -- ds.row:
 width: fill-container
 align-content: right
 background.solid: $ds.colors.background.base
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ds.row:
+width: hug-content
+spacing: $ds.spaces.horizontal-gap.small
+
+-- ftd.image:
+src: $assets.files.assets.file.svg
+width.fixed.px: 20
+
+	   -- ds.copy-regular: $file-header.header-title
+
+	   -- end: ds.row
 
 	-- ds.row:
-	   width: hug-content
+	width: hug-content
+
 	
 		-- ftd.row:
 		align-self: center

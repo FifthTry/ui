@@ -35,7 +35,6 @@ inner-background.solid: $ds.colors.background.base
 	openfile: $edit-ui.open-file.content
 	$content: $edit-ui.content
 	
-	
 -- end: ds.section-column
 
 

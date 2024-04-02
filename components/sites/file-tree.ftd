@@ -10,20 +10,21 @@ boolean $create: false
 boolean $upload: false
 
 -- ds.column:
-width.fixed.px: 200
-height: fill-container
-spacing: $ds.spaces.horizontal-gap.medium
+width.fixed.px: 280
+height.fixed.px: 480
+overflow-y: scroll
+spacing: $ds.spaces.vertical-gap.large
 background.solid: $ds.colors.background.step-1
 align-content: top-left
 inset: $ds.spaces.inset-square.medium
 
-	-- label-with-plus: FILES
+	-- label-with-plus: File Explorer
 	$create: $file-tree.create
 	$upload: $file-tree.upload
 	
 	-- ds.column:
 	align-content: top-left
-	spacing: $ds.spaces.horizontal-gap.extra-small
+	spacing: $ds.spaces.horizontal-gap.small
 	
 		-- file-view: $file
 		for: file in $file-tree.files
@@ -57,7 +58,7 @@ module open-file: open-file
 boolean $is-open: false
 
 -- ds.column:
-spacing: $ds.spaces.vertical-gap.extra-small
+spacing: $ds.spaces.vertical-gap.small
 
 	-- ds.row:
 	align-content: top-left
@@ -69,28 +70,31 @@ spacing: $ds.spaces.vertical-gap.extra-small
 		width.fixed.px: 10
 		align-self: center
 		
-		-- ftd.image: $assets.files.assets.right-arrow.svg
+		-- ftd.image: $assets.files.assets.sites.right-arrow.svg
 		if: { ftd.len(file-view.file.children) > 0 && !file-view.is-open }
 		width.fixed.px: 10
 		align-self: center
 		
-		-- ftd.image: $assets.files.assets.file.svg
+		-- ftd.image: $assets.files.assets.storybook.file.svg
 		if: { ftd.len(file-view.file.children) == 0 }
 		width.fixed.px: 20
 		align-self: center
+
+		-- ftd.image: $assets.files.assets.storybook.folder.svg
+		if: { ftd.len(file-view.file.children) > 0 }
+		width.fixed.px: 20
+		align-self: center
 		
-		-- ftd.text: $file-view.file.base-name
+		-- ds.copy-small: $file-view.file.base-name
 		if: { ftd.len(file-view.file.children) == 0 }
 		$on-click$: $file-view.open-file.submit(name = $file-view.file.full-name, site_slug = $file-view.site-slug)
 		$on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
-		role: $ds.types.copy-small
 		color: $ds.colors.text-strong
 		style if { file-view.header-title == file-view.file.full-name }: underline, bold
 		
-		-- ftd.text: $file-view.file.base-name
+		-- ds.copy-small: $file-view.file.base-name
 		      if: { ftd.len(file-view.file.children) > 0 }
 		      ;; $on-click$: $ftd.set-string($a = $file-view.header-title, v = $file-view.file.full-name)
-		      role: $ds.types.copy-small
 		      color: $ds.colors.text-strong
 		      style if { file-view.header-title == file-view.file.full-name }: underline, bold
 		
@@ -122,32 +126,47 @@ boolean $upload: false
 boolean $open: false
 
 -- ds.column:
-
--- ds.row:
 align-content: left
-spacing: $ds.spaces.horizontal-gap.space-between
+spacing: $ds.spaces.vertical-gap.small
 
 	-- ds.copy-regular: $label-with-plus.label
 	style: bold
 	
-	-- ds.primary-button: \\+
+	/-- ds.icon-button:
+	icon: $assets.files.assets.sites.add.svg
 	size: small
-	$on-click$: $ftd.toggle($a = $label-with-plus.open)
+
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.extra-small
+
+	-- ds.secondary-button: Upload file
+	$on-click$: $ftd.set-bool($a=$label-with-plus.upload, v=true)
+	width: full
 
 	-- end: ds.row
 
+	-- ds.secondary-button: New
+	$on-click$: $ftd.set-bool($a = $label-with-plus.open, v = true)
+	$on-click-outside$: $ftd.set-bool($a = $label-with-plus.open, v = false)
+	width: full
+
 	-- ds.floater:
-	top: 38
-	background.solid: $ds.colors.background.step-2
+	;;if: { label-with-plus.open }
+	top: 0
+	left: 0
 
 	-- ds.column:
 	if: { label-with-plus.open }
+	background.solid: $ds.colors.background.step-2
+	inset: $ds.spaces.inset-square.medium
 
-	-- ds.copy-regular: Create file
+	-- ds.secondary-button: New File
 	$on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
+	width: full
 
-	-- ds.copy-regular: Upload file
-	$on-click$: $ftd.set-bool($a=$label-with-plus.upload, v=true)
+	-- ds.secondary-button: New Folder
+	;;$on-click$: $ftd.set-bool($a=$label-with-plus.create, v=true)
+	width: full
 
 	-- end: ds.column
 
