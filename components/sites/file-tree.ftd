@@ -1,6 +1,8 @@
 -- import: ui.fifthtry.com/records/sites as sr
 -- import: ui.fifthtry.com/actions/sites/editor/open-file
 
+-- boolean $open: true
+
 -- component file-tree:
 sr.file-info list files:
 string $header-title: todo
@@ -11,8 +13,8 @@ boolean $upload: false
 
 -- ds.column:
 width.fixed.px: 280
+width.fixed.px if { !open }: 60
 height.fixed.px: 480
-overflow-y: scroll
 spacing: $ds.spaces.vertical-gap.large
 background.solid: $ds.colors.background.step-1
 align-content: top-left
@@ -23,8 +25,10 @@ inset: $ds.spaces.inset-square.medium
 	$upload: $file-tree.upload
 	
 	-- ds.column:
+	if: { open }
 	align-content: top-left
 	spacing: $ds.spaces.horizontal-gap.small
+	overflow-y: scroll
 	
 		-- file-view: $file
 		for: file in $file-tree.files
@@ -123,40 +127,50 @@ spacing: $ds.spaces.vertical-gap.small
 caption label:
 boolean $create: false
 boolean $upload: false
-boolean $open: false
+boolean $pop-up: false
 
 -- ds.column:
 align-content: left
 spacing: $ds.spaces.vertical-gap.small
 
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.space-between
+
 	-- ds.copy-regular: $label-with-plus.label
+	if: { open }
 	style: bold
+
+	-- ftd.image:
+	src: $assets.files.assets.storybook.close.svg
+	src if { open }: $assets.files.assets.storybook.open.svg
+	$on-click$: $ftd.toggle($a = $open)
+	height.fixed.px: 24
+
+	-- end: ds.row
 	
 	/-- ds.icon-button:
 	icon: $assets.files.assets.sites.add.svg
 	size: small
 
-	-- ds.row:
-	spacing: $ds.spaces.horizontal-gap.extra-small
-
 	-- ds.secondary-button: Upload file
+	if: { open }
 	$on-click$: $ftd.set-bool($a=$label-with-plus.upload, v=true)
 	width: full
 
-	-- end: ds.row
-
 	-- ds.secondary-button: New
-	$on-click$: $ftd.set-bool($a = $label-with-plus.open, v = true)
-	$on-click-outside$: $ftd.set-bool($a = $label-with-plus.open, v = false)
+	if: { open }
+	$on-click$: $ftd.set-bool($a = $label-with-plus.pop-up, v = true)
+	$on-click-outside$: $ftd.set-bool($a = $label-with-plus.pop-up, v = false)
 	width: full
 
 	-- ds.floater:
-	;;if: { label-with-plus.open }
+	;;if: { label-with-plus.pop-up }
+	if: { open }
 	top: 0
 	left: 0
 
 	-- ds.column:
-	if: { label-with-plus.open }
+	if: { label-with-plus.pop-up }
 	background.solid: $ds.colors.background.step-2
 	inset: $ds.spaces.inset-square.medium
 

@@ -16,9 +16,11 @@ integer list $content:
 string $file-name: *$ftd.empty
 
 -- ds.section-column:
+if: { upload-file-ui.upload }
 radius: $ds.radius.zero
 inner-background.solid: $ds.colors.background.base
-if: { upload-file-ui.upload }
+inset: $ds.spaces.inset-tall.zero-small
+spacing: $ds.spaces.vertical-gap.large
 
 	-- file-header:
 	upload-file: $upload-file-ui.upload-file
