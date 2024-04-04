@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/records/storybook as sr
 -- import: ui.fifthtry.com/actions/storybook/navigate
 -- import: ui.fifthtry.com/components/dark-mode-toggle
+-- import: ui.fifthtry.com/web-components
 
 
 -- ds.page: Storybook
@@ -83,6 +84,8 @@ $processor$: pr.toc
 -- string $active-title: Website Pages
 -- string $active-sub-title: Logged in Home page
 
+
+-- web-components.source-updater:
 
 -- component storybook:
 pr.toc-item list list-of-files:
@@ -252,14 +255,8 @@ background.solid: $ds.colors.background.step-1
 				-- code:
 				if: { !storybook.toggle }
 				
-				\-- ds.column:
-				background.solid: $ds.colors.background.base
+				$storybook.navigate.active-file-content
 				
-				\-- ds.heading-large: Demo code
-				
-				\-- end: ds.column
-				
-					;;$storybook.navigate.active-file-content
 				-- end: code
 
 			-- end: ds.column

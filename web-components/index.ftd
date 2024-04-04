@@ -18,3 +18,6 @@ js: $assets.files.web-components.code-editor.js
 integer list $content:
 string $file-name:
 js: $assets.files.web-components.file-upload.js
+
+-- web-component source-updater:
+js: $assets.files.assets.js.update-source.js
