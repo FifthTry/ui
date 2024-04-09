@@ -17,4 +17,7 @@
 -- string privacy-url: /scenarios/privacy-page/
 -- string about-url: /scenarios/about/
 
+-- string blog-homepage-url: /scenarios/blogs/
+-- string blog-editor-url: /scenarios/blogs/editor/
+
 -- string packages-url: /scenarios/packages/
