@@ -1,5 +1,0 @@
--- import: ui.fifthtry.com/pages/blogs/editor
--- import: ui.fifthtry.com/scenarios/john-doe
-
--- editor.page:
-user-data: $john-doe.jd
