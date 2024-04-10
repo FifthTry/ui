@@ -22,23 +22,21 @@ user-data: $page.user-data
 		
 		-- blog.blog:
 		
-		-- blog.blog-card: [Launching fifthtry.com](/scenarios/blogs/blog-post/)
+		-- blog.blog-card: Lorem Ipsum
 		date: 1st March 2024
 		
-		The past three years have been quite a journey for us. With over 400 releases and 450+ stars on GitHub, and our community expanding to 3000+ engineers, creators, and founders, we've moved closer to our mission...
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet. 
 		
 		-- blog.blog:
 		
-			-- blog.blog-card: [FifthTry Editor](/scenarios/blogs/editor/)
-			date: 22nd March 2024
-			
-			As the demand for remote collaboration grows, the need for
-			online editors has never been greater. Online code editors provide a convenient
-			feature for developers to write, review, and debug code directly
-			within a web browser. In this blog, I’m thrilled to introduce
-			you to FifthTry Editor, our latest addition to
-			the [FifthTry platform.]((https://www.fifthtry.com)
-			
+		-- blog.blog-card: Lorem Ipsum
+		date: 1st March 2024
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet. 			
 			
 		-- end: blog.blog
 
