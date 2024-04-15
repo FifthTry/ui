@@ -15,6 +15,8 @@ ud.user-data user-data:
 module site-data: site-data
 boolean $open: false
 string create-site-url:
+optional string create-org-url:
+sites-records.toc-item list orgs:
 
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.medium
@@ -46,12 +48,19 @@ radius: $ds.radius.zero
 		spacing: $ds.spaces.horizontal-gap.large
 		align-content: right
 		;;width.fixed.px: 420
-		
+
+
+		    -- orgs-dropdown:
+		    if: { header.create-org-url != NULL }
+		    create-org-url: $header.create-org-url
+		    orgs: $header.orgs
+
+
 			-- ds.icon-button: Create new site
-			link: $header.create-site-url
-			kind: primary
-			icon-position: at-end
-			icon: $assets.files.assets.sites.add.svg
+            link: $header.create-site-url
+            kind: primary
+            icon-position: at-end
+            icon: $assets.files.assets.sites.add.svg
 			
 			-- avatar.avatar:
 			user-data: $header.user-data
@@ -65,3 +74,85 @@ radius: $ds.radius.zero
 -- end: ds.section-column
 
 -- end: header
+
+
+
+
+
+-- component orgs-dropdown:
+sites-records.toc-item list orgs:
+string create-org-url:
+boolean $open: false
+
+-- ds.column:
+width: hug-content
+$on-click-outside$: $ftd.set-bool($a = $orgs-dropdown.open, v = false)
+
+-- ds.row:
+$on-click$: $ftd.toggle($a = $orgs-dropdown.open)
+
+-- ds.copy-small: Organisations
+
+-- ftd.image:
+src: $assets.files.assets.down-arrow.svg
+width.fixed.px: 10
+if: { orgs-dropdown.open }
+
+-- ftd.image:
+src: $assets.files.assets.right-arrow.svg
+width.fixed.px: 10
+if: { !orgs-dropdown.open }
+
+-- end: ds.row
+
+-- show-org-list:
+orgs: $orgs-dropdown.orgs
+create-org-url: $orgs-dropdown.create-org-url
+if: { orgs-dropdown.open }
+
+-- end: ds.column
+
+-- end: orgs-dropdown
+
+
+
+
+
+
+
+-- component show-org-list:
+sites-records.toc-item list orgs:
+string create-org-url:
+
+-- ftd.column:
+background.solid: $ds.colors.background.step-1
+anchor: parent
+top.px: 25
+right.px: 0
+padding.px: 10
+spacing.fixed.px: 5
+width: hug-content
+border-radius.px: 5
+
+-- ftd.text: $org.title
+link: $org.link
+color: $ds.colors.text
+role: $ds.types.copy-small
+border-bottom-width.px: 1
+border-color: $ds.colors.border
+width: fill-container
+white-space: nowrap
+padding-bottom.px: 5
+for: $org in $show-org-list.orgs
+
+-- ftd.text: \\+ Create
+color: $ds.colors.text
+role: $ds.types.copy-small
+width: fill-container
+white-space: nowrap
+style: extra-bold
+link: $show-org-list.create-org-url
+
+-- end: ftd.column
+
+-- end: show-org-list

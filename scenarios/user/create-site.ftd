@@ -7,3 +7,4 @@ user-data: $john-doe.jd
 site-data: scenario-site
 dashboard-url: /scenarios/user/dashboard/
 create-site-url: /scenarios/user/create-site/
+create-org-url: /scenarios/user/create-org/
