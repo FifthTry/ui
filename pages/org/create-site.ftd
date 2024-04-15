@@ -11,6 +11,7 @@
 ud.user-data user-data:
 module create-site-action: create-site-action
 module site-data: site-data
+string org-slug:
 string dashboard-url:
 string create-site-url:
 optional string create-org-url:
@@ -26,8 +27,8 @@ hide-footer: true
 hide-header: true
 top-message: $page.top-message
 
-	-- create-site.create-site:
-    org-slash-username: $page.user-data.username
+    -- create-site.create-site:
+    org-slash-username: $page.org-slug
     create-site-action: $page.create-site-action
     dashboard-url: $page.dashboard-url
     $current-site-slug: $page.current-site-slug

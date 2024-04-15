@@ -8,3 +8,4 @@ ftd.navigate("/scenarios/packages/with-query/")
 -- void clear-search():
 
 ftd.navigate("/scenarios/packages/")
+

@@ -14,6 +14,7 @@ data: $data
 -- ud.dashboard-data data:
 sites: $sites
 create-site-url: /scenarios/user/create-site/
+create-org-url: /scenarios/user/create-org/
 
 
 -- sites-records.site-common-data list sites:

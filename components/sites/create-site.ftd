@@ -1,0 +1,173 @@
+-- import: ui.fifthtry.com/components/user/page as p
+-- import: ui.fifthtry.com/components/label as l
+-- import: ui.fifthtry.com/actions/create-site-action
+-- import: ui.fifthtry.com/utils as u
+
+
+-- component create-site:
+string org-slash-username:
+module create-site-action: create-site-action
+string dashboard-url:
+string $current-site-slug: *$ftd.empty
+
+-- ds.section-column:
+
+	-- ftd.desktop:
+	
+		-- ds.section-column:
+		inset: $ds.spaces.inset-square.extra-large
+		margin: $ds.spaces.vertical-gap.zero
+		
+			-- ds.column:
+			background.solid: $ds.colors.background.step-1
+			border: $ds.borders.uniform.small
+			inset: $ds.spaces.inset-square.large
+			spacing: $ds.spaces.vertical-gap.large
+			width.fixed.px: 454
+			
+				-- ds.heading-small: Create new site
+				width: hug-content
+				
+				-- ds.column:
+				align-content: top-left
+				spacing: $ds.spaces.vertical-gap.extra-small
+				height.fixed.px: 84
+				
+					-- ds.copy-small: Domain
+					
+					-- ds.row:
+					spacing: $ds.spaces.horizontal-gap.small
+					
+						-- ftd.text-input:
+						placeholder: Enter you domain
+						color: $inherited.colors.text-strong
+						width.fixed.px: 324
+						padding.px: 8
+						border-radius.px: 8
+						border-width.px: 1
+						background.solid: $inherited.colors.background.step-1
+						border-color: $inherited.colors.border
+						;; border-color if { create-site.create-site-action.site-error != NULL }: $inherited.colors.error.border
+						$on-input$: $ftd.set-string($a = $create-site.current-site-slug, v = $VALUE)
+						
+						-- ds.copy-small: .fifthtry.site
+						
+					-- end: ds.row
+
+					-- ds.copy-small: $create-site.create-site-action.site-error
+					if: { create-site.create-site-action.site-error != NULL }
+					color: $ds.colors.error.text
+					
+					-- ds.copy-small: $create-site.create-site-action.manage-site-error
+					if: { create-site.create-site-action.manage-site-error != NULL }
+					color: $ds.colors.error.text
+					
+				-- end: ds.column
+
+				-- ds.row:
+				align-content: left
+				spacing: $ds.spaces.horizontal-gap.small
+				
+					-- ftd.image:
+					src: $assets.files.assets.sites.info.svg
+					
+					-- ds.copy-small: You can add custom domain later
+					
+				-- end: ds.row
+
+				-- ds.row:
+				spacing: $ds.spaces.horizontal-gap.medium
+				
+					-- ds.primary-button: Create Site
+					width: full
+					radius: curved
+					$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, site_slug = $create-site.current-site-slug)
+					
+					-- ds.secondary-button: Cancel
+					width: full
+					radius: curved
+					link: $create-site.dashboard-url
+					
+				-- end: ds.row
+
+			-- end: ds.column
+
+		-- end: ds.section-column
+
+	-- end: ftd.desktop
+
+	-- ftd.mobile:
+	
+		-- ds.column:
+		border: $ds.borders.uniform.small
+		inset: $ds.spaces.inset-square.large
+		spacing: $ds.spaces.vertical-gap.large
+		height.fixed.vh: 100
+		
+			-- ds.heading-small: Create new site
+			width: hug-content
+			
+			-- ds.column:
+			align-content: top-left
+			spacing: $ds.spaces.vertical-gap.extra-small
+			height.fixed.px: 84
+			
+				-- ds.copy-small: Domain
+				
+				-- ds.row:
+				spacing: $ds.spaces.horizontal-gap.small
+				
+					-- ftd.text-input:
+					placeholder: Enter you domain
+					color: $inherited.colors.text-strong
+					width: fill-container
+					padding.px: 8
+					border-radius.px: 8
+					border-width.px: 1
+					background.solid: $inherited.colors.background.step-1
+					border-color: $inherited.colors.border
+					$on-input$: $ftd.set-string($a = $create-site.current-site-slug, v = $VALUE)
+					
+					-- ds.copy-small: .fifthtry.site
+					
+				-- end: ds.row
+
+				-- ds.copy-regular: $create-site.create-site-action.site-error
+				color: $ds.colors.error.text
+				if: { create-site.create-site-action.site-error != NULL }
+				
+			-- end: ds.column
+
+			-- ds.row:
+			align-content: left
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ftd.image:
+				src: $assets.files.assets.sites.info.svg
+				
+				-- ds.copy-small: You can add custom domain later
+				
+			-- end: ds.row
+
+			-- ds.column:
+			spacing: $ds.spaces.vertical-gap.medium
+			
+				-- ds.primary-button: Create Site
+				width: full
+				radius: curved
+				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, site_slug = $create-site.current-site-slug)
+				
+				-- ds.secondary-button: Cancel
+				width: full
+				radius: curved
+				link: $create-site.dashboard-url
+				
+			-- end: ds.column
+
+		-- end: ds.column
+
+	-- end: ftd.mobile
+
+-- end: ds.section-column
+
+-- end: create-site

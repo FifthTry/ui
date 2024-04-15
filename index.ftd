@@ -2,7 +2,6 @@
 -- import: ui.fifthtry.com/records/storybook as sr
 -- import: ui.fifthtry.com/actions/storybook/navigate
 -- import: ui.fifthtry.com/components/dark-mode-toggle
--- import: ui.fifthtry.com/web-components
 
 
 -- ds.page: Storybook
@@ -31,7 +30,6 @@ $processor$: pr.toc
   - Blog Homepage: /scenarios/blogs/
   - Blog Post: /scenarios/blogs/blog-post/
   - Editor - Blog Post: /scenarios/blogs/editor/
-  - Getting Started - Blog Post: /scenarios/blogs/getting-started/
 
 - Auth Pages:
   - Login page: /scenarios/signin-page/
@@ -84,8 +82,6 @@ $processor$: pr.toc
 -- string $active-title: Website Pages
 -- string $active-sub-title: Logged in Home page
 
-
--- web-components.source-updater:
 
 -- component storybook:
 pr.toc-item list list-of-files:
@@ -193,26 +189,26 @@ background.solid: $ds.colors.background.step-1
 
 				-- ds.row:
 				align-content: right
-				
-					-- ds.row:
-					height.fixed.px: 32
-					width.fixed.px: 32
-					radius: $ds.radius.small
-					border: $ds.borders.uniform.small
-					background.solid: $ds.colors.background.step-1
-					link: $storybook.navigate.active-file-preview-url
-					open-in-new-tab: true
-					
-						-- ftd.image:
-						src: $assets.files.assets.storybook.new-tab.svg
-						
-					-- end: ds.row
 
-					-- dark-mode-toggle.dark-mode-toggle:
-					
+				-- ds.row:
+				height.fixed.px: 32
+				width.fixed.px: 32
+				radius: $ds.radius.small
+				border: $ds.borders.uniform.small
+				background.solid: $ds.colors.background.step-1
+				link: $storybook.navigate.active-file-preview-url
+				open-in-new-tab: true
+
+				-- ftd.image:
+				src: $assets.files.assets.storybook.new-tab.svg
+
 				-- end: ds.row
-
+				
+				-- dark-mode-toggle.dark-mode-toggle:
+				
 			-- end: ds.row
+
+				-- end: ds.row
 
 
 			-- ds.column:
@@ -255,7 +251,14 @@ background.solid: $ds.colors.background.step-1
 				-- code:
 				if: { !storybook.toggle }
 				
-				$storybook.navigate.active-file-content
+				\-- ds.column:
+				background.solid: $ds.colors.background.base
+
+				\-- ds.heading-large: Demo code
+
+				\-- end: ds.column
+
+				;;$storybook.navigate.active-file-content
 				
 				-- end: code
 
@@ -584,3 +587,15 @@ $on-click$: $ftd.set-string($a = $active-title, v= $render-files-children.folder
 -- end: ds.row
 
 -- end: render-files-children
+
+
+
+
+
+
+
+
+
+
+
+
