@@ -153,7 +153,8 @@ background.solid: $ds.colors.background.base
 		$on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
 		
 		-- ds.primary-button: DELETE
-		$on-click$: $ftd.toggle($a = $file-header.open)
+		$on-click$: $ftd.set-bool($a = $file-header.open, v = true)
+
 		
 	-- end: ds.row
 
@@ -174,7 +175,7 @@ background.solid: $ds.colors.background.base
 	-- ds.row:
 
 	-- ds.secondary-button: Cancel
-	$on-click$: $ftd.toggle($a = $file-header.open)
+	$on-click$: $ftd.set-bool($a = $file-header.open, v = fasle)
 
 	-- ds.danger-button: Delete
 	$on-click$: $file-header.delete-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, updated_at = $file-header.data.current-file.updated-at)
