@@ -7,6 +7,7 @@ wrap: true
 inset: $ds.spaces.inset-wide.large
 inner-background.solid: $ds.colors.background.step-1
 content: $blog.wrapper
+align-content: top-left
 
 -- end: ds.section-row
 
@@ -21,11 +22,14 @@ content: $blog.wrapper
 caption title:
 body description:
 string date:
+boolean small-width: false
 
 -- ds.container:
 inset: $ds.spaces.inset-square.medium
 background.solid: $ds.colors.background.step-2
-width.fixed.percent: 40
+width.fixed.percent if {blog-card.small-width} : 30 
+width.fixed.percent if {!blog-card.small-width} : 68
+height.fixed.px: 280
 radius: $ds.radius.medium
 
 	-- ds.column:
@@ -50,6 +54,5 @@ radius: $ds.radius.medium
 
 
 -- end: ds.container
-
 
 -- end: blog-card
