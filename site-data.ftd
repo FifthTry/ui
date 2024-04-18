@@ -19,4 +19,6 @@
 -- string terms-url: /terms/
 -- string privacy-url: /privacy/
 
+-- string bloghome-url: /scenarios/blogs/
+
 -- string packages-url: /packages/
