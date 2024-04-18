@@ -91,6 +91,7 @@ boolean $preview:
 string file-name:
 string site-slug:
 module delete-file: delete-file
+boolean $open: false
 
 -- ds.row:
 width: fill-container
@@ -152,9 +153,35 @@ background.solid: $ds.colors.background.base
 		$on-click$: $ftd.set-bool($a=$file-header.edit, v=true)
 		
 		-- ds.primary-button: DELETE
-		$on-click$: $file-header.delete-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, updated_at = $file-header.data.current-file.updated-at)
+		$on-click$: $ftd.toggle($a = $file-header.open)
 		
 	-- end: ds.row
+
+	-- ftd.column:
+	if: { file-header.open }
+	background.solid: $inherited.colors.background.step-2
+	anchor: parent
+	top.px: 0
+	left.px: 204
+	z-index: 999
+	align-content: center
+	align-self: center
+	spacing.fixed.px: 24
+	padding.px: 16
+
+	-- ds.copy-regular: Are You Sure you want to delete this?
+
+	-- ds.row:
+
+	-- ds.secondary-button: Cancel
+	$on-click$: $ftd.toggle($a = $file-header.open)
+
+	-- ds.danger-button: Delete
+	$on-click$: $file-header.delete-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, updated_at = $file-header.data.current-file.updated-at)
+
+	-- end: ds.row
+
+	-- end: ftd.column
 
 -- end: ds.row
 
