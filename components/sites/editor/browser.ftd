@@ -170,12 +170,12 @@ background.solid: $ds.colors.background.base
 	spacing.fixed.px: 24
 	padding.px: 16
 
-	-- ds.copy-regular: Are You Sure you want to delete this?
+	-- ds.copy-regular: Are you sure you want to delete this?
 
 	-- ds.row:
 
 	-- ds.secondary-button: Cancel
-	$on-click$: $ftd.set-bool($a = $file-header.open, v = fasle)
+	$on-click$: $ftd.set-bool($a = $file-header.open, v = false)
 
 	-- ds.danger-button: Delete
 	$on-click$: $file-header.delete-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, updated_at = $file-header.data.current-file.updated-at)
