@@ -76,3 +76,9 @@ file-info list files:
 file current-file:
 string site-base-url:
 string site-relative-url:
+
+
+
+-- record toc-item:
+caption title:
+string link:

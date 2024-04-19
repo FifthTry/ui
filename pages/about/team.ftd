@@ -21,7 +21,7 @@ top-message: $page.top-message
 		-- team: Meet the team
 		
 		We are high on collaboration, low on ego, and take our happy hours seriously.
-		
+			
 			-- team-member: Amit Upadhyay
 			photo: $assets.files.assets.team.amitu.jpg
 			link: https://www.linkedin.com/in/amitu/
