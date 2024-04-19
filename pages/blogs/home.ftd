@@ -51,7 +51,7 @@ user-data: $page.user-data
 		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 	
-	        -- blog.blog-card: Lorem Ipsum
+	    -- blog.blog-card: Lorem Ipsum
 		date: 1st March 2024
 		small-width: true
 		button-name: Read Full Blog
