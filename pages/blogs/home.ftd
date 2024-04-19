@@ -1,0 +1,68 @@
+-- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/components/blog/blog-home as blog
+;; -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+
+
+-- component page:
+ud.user-data user-data:
+;; module site-data: site-data
+;; optional string top-message:
+
+-- p.page:
+user-data: $page.user-data
+;; site-data: $page.site-data
+;; top-message: $page.top-message
+
+
+	-- ds.section-column:
+	inset: $ds.spaces.inset-wide.large
+	
+		-- ds.heading-large: FifthTry Blog
+		
+		-- blog.blog:
+		
+		-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
+		date: 1st March 2024
+		small-width: true
+		button-name: Read Full Blog
+		link: /
+
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Nunc facilisis sem metus, ut accumsan. 
+		
+		-- blog.blog-card: Lorem Ipsum
+		date: 1st March 2024
+		button-name: Read Full Blog
+		link: /
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
+
+		-- blog.blog-card: Lorem Ipsum
+		date: 1st March 2024
+		button-name: Watch Tutorial
+		link: /
+		
+		Lorem ipsum dolor amet, consectetur adipiscing elit. 
+		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	
+	        -- blog.blog-card: Lorem Ipsum
+		date: 1st March 2024
+		small-width: true
+		button-name: Read Full Blog
+		link: /
+
+		Lorem ipsum dolor sit. consectetur adipiscing elit.  
+
+		-- end: blog.blog
+
+	-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page
