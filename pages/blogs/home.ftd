@@ -25,13 +25,16 @@ user-data: $page.user-data
 		-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
 		small-width: true
+		button-name: Read Full Blog
+		link: /
 
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
-		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet. 
+		Nunc facilisis sem metus, ut accumsan. 
 		
 		-- blog.blog-card: Lorem Ipsum
 		date: 1st March 2024
+		button-name: Read Full Blog
+		link: /
 		
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
@@ -40,17 +43,21 @@ user-data: $page.user-data
 
 		-- blog.blog-card: Lorem Ipsum
 		date: 1st March 2024
+		button-name: Watch Tutorial
+		link: /
 		
 		Lorem ipsum dolor amet, consectetur adipiscing elit. 
 		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
 		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 	
-	        -- blog.blog-card: Lorem Ipsum
+	    -- blog.blog-card: Lorem Ipsum
 		date: 1st March 2024
 		small-width: true
+		button-name: Read Full Blog
+		link: /
 
-		Lorem ipsum dolor sit.  
+		Lorem ipsum dolor sit. consectetur adipiscing elit.  
 
 		-- end: blog.blog
 
