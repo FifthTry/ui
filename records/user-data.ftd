@@ -2,7 +2,7 @@
 
 -- record user-data:
 integer notifications:
-string username:
+string identity:
 string name:
 boolean is-logged-in:
 
@@ -12,3 +12,4 @@ sites-records.site-common-data list sites:
 string create-site-url:
 optional string create-org-url:
 sites-records.toc-item list orgs:
+

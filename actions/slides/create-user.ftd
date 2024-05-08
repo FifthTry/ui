@@ -6,10 +6,9 @@
 -- optional string $accept-terms-error:
 
 
--- void submit-values(name, email, username, password, password2, accept_terms):
+-- void submit-values(name, email, password, password2, accept_terms):
 string name:
 string email:
-string username:
 string password:
 string password2:
 boolean accept_terms:
@@ -17,3 +16,4 @@ js: $assets.files.assets.functions.js
 
 callAlert("signup attempt")
 ;; call submit with http options
+

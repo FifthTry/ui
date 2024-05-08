@@ -12,7 +12,6 @@ module site-data: site-data
 module signup-action: create-user
 private string $current-name: *$ftd.empty
 private string $current-email: *$ftd.empty
-private string $current-username: *$ftd.empty
 private string $current-password: *$ftd.empty
 private string $confirm-password: *$ftd.empty
 private boolean $accept-tos: false
@@ -72,33 +71,6 @@ private boolean $accept-tos: false
 						
 						-- ds.copy-small: $page.signup-action.name-error
 						if: { page.signup-action.name-error != NULL }
-						color: $ds.colors.error.text
-						
-					-- end: ds.column
-
-					-- ds.column:
-					spacing: $ds.spaces.vertical-gap.extra-extra-small
-					align-content: left
-					
-						-- ds.copy-small: Username
-						
-						-- ftd.text-input:
-						width: fill-container
-						type: text
-						$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.signup-action.username-error)
-						height.fixed.px: 40
-						border-radius.px: 8
-						placeholder: Enter username
-						background.solid: transparent
-						border-width.px: 1
-						border-color: $inherited.colors.border
-						border-color if { page.signup-action.username-error != NULL }: $inherited.colors.error.border
-						padding.px: 8
-						color: $inherited.colors.text-strong
-						
-						-- ds.copy-small: $page.signup-action.username-error
-						if: { page.signup-action.username-error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -203,7 +175,7 @@ private boolean $accept-tos: false
 					-- end: ds.column
 
 					-- ds.primary-button: Sign up
-					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
+					$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 					width: full
 					radius: curved
 					
@@ -291,33 +263,6 @@ private boolean $accept-tos: false
 					
 					-- ds.copy-small: $page.signup-action.name-error
 					if: { page.signup-action.name-error != NULL }
-					color: $ds.colors.error.text
-					
-				-- end: ds.column
-
-				-- ds.column:
-				spacing: $ds.spaces.vertical-gap.extra-extra-small
-				align-content: left
-				
-					-- ds.copy-small: Username
-					
-					-- ftd.text-input:
-					width: fill-container
-					type: text
-					$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.signup-action.username-error)
-					height.fixed.px: 40
-					border-radius.px: 8
-					placeholder: username
-					background.solid: transparent
-					border-width.px: 1
-					border-color: $inherited.colors.border
-					border-color if { page.signup-action.username-error != NULL }: $inherited.colors.error.border
-					padding.px: 8
-					color: $inherited.colors.text-strong
-					
-					-- ds.copy-small: $page.signup-action.username-error
-					if: { page.signup-action.username-error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -421,7 +366,7 @@ private boolean $accept-tos: false
 				-- end: ds.column
 
 				-- ds.primary-button: Sign up
-				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, username = $page.current-username, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
+				$on-click$: $page.signup-action.submit-values(name = $page.current-name, email = $page.current-email, password = $page.current-password, password2 = $page.confirm-password, accept_terms = $page.accept-tos)
 				width: full
 				radius: curved
 				
@@ -465,3 +410,4 @@ private boolean $accept-tos: false
 -- end: ds.column
 
 -- end: page
+
