@@ -7,8 +7,9 @@
 
 -- ftd.image-src logo: $assets.files.assets.logo.svg
 
--- string sign-in-url: /-/auth/login/
--- string sign-up-url: /-/auth/create-account/
+-- string sign-in-url: /signin/
+-- string sign-up-url: /signup/
+
 -- string github-url: /-/auth/github/
 -- string logout-url: /-/auth/logout/
 -- string forgot-url: /-/auth/forgot/
@@ -22,3 +23,4 @@
 -- string bloghome-url: /blogs/
 
 -- string packages-url: /packages/
+
