@@ -22,8 +22,8 @@ align-content: top-left
 caption title:
 body description:
 string date:
-string button-name:
-string link:
+;; string button-name:
+;; string link:
 boolean small-width: false
 
 -- ds.container:
@@ -40,6 +40,10 @@ radius: $ds.radius.medium
 	;; height: fill-container
 	align-content: left
 	
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.zero
+		align-content: left
+
 		-- ds.fine-print:
 		
 		$blog-card.date
@@ -48,16 +52,17 @@ radius: $ds.radius.medium
 		color: $ds.colors.text-strong
 		
 		$blog-card.title
+
+		-- end: ds.column
 		
 		-- ds.copy-regular:
 		color: $ds.colors.text
 		
 		$blog-card.description
 
-		-- ds.primary-button: $blog-card.button-name
-		link: $blog-card.link
-		size: small
-
+		;; -- ds.primary-button: $blog-card.button-name
+		;; link: $blog-card.link
+		;; size: small
 
 	-- end: ds.column
 

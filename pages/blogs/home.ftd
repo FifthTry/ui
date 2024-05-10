@@ -18,44 +18,36 @@ user-data: $page.user-data
 	-- ds.section-column:
 	inset: $ds.spaces.inset-wide.large
 	
-		-- ds.heading-large: FifthTry Blog
+		-- ds.heading-large: Blog
 		
 		-- blog.blog:
 		
 		-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
 		small-width: true
-		button-name: Read Full Blog
-		link: /
 
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Nunc facilisis sem metus, ut accumsan. 
 		
-		-- blog.blog-card: Lorem Ipsum
+		-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
-		button-name: Read Full Blog
-		link: /
-		
+
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
 		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
 
-		-- blog.blog-card: Lorem Ipsum
+		-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
-		button-name: Watch Tutorial
-		link: /
 		
 		Lorem ipsum dolor amet, consectetur adipiscing elit. 
 		Nunc facilisis sem metus, ut accumsan elit venenatis eu.
 		Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 	
-	    -- blog.blog-card: Lorem Ipsum
+	    -- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
 		small-width: true
-		button-name: Read Full Blog
-		link: /
 
 		Lorem ipsum dolor sit. consectetur adipiscing elit.  
 
