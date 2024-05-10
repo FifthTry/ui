@@ -222,9 +222,6 @@ private string $current-password: *$ftd.empty
 					
 				-- end: ds.column
 
-				-- ds.checkbox: I accept Terms and Conditions
-				size: small
-				
 				-- ds.primary-button: Login
 				$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
 				width: full
@@ -273,3 +270,4 @@ private string $current-password: *$ftd.empty
 -- end: ds.column
 
 -- end: page
+
