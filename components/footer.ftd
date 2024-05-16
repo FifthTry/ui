@@ -101,6 +101,10 @@ align-content: left
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.privacy-url
 
+		-- ds.link: **Blogs**
+		color: $ds.colors.text-strong
+		link: $footer-toc-content.site-data.bloghome-url
+
 		-- ds.link: **`fastn` Packages**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.packages-url

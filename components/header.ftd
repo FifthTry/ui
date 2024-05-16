@@ -39,6 +39,9 @@ inset: $ds.spaces.inset-wide.medium
 				
 				-- ds.copy-regular: $lang.pricing
 				link: $header.site-data.pricing-url
+
+				-- ds.copy-regular: $lang.blog
+				link: $header.site-data.bloghome-url
 				
 				/-- language-switcher.dropdown:
 				
