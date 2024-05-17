@@ -6,8 +6,6 @@
 -- component page:
 module site-data: site-data
 module authenticate-user: authenticate-user
-private string $current-username: *$ftd.empty
-private string $current-password: *$ftd.empty
 
 -- ds.column:
 
@@ -53,20 +51,20 @@ private string $current-password: *$ftd.empty
 						-- ftd.text-input:
 						placeholder: Enter username
 						type: text
-						$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.authenticate-user.username-error)
+						$on-input$: $ftd.set-string($a = $page.authenticate-user.username.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $page.authenticate-user.username.error)
 						width: fill-container
 						height.fixed.px: 40
 						border-radius.px: 8
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.authenticate-user.username-error != NULL }: $inherited.colors.error.border
+						border-color if { page.authenticate-user.username.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.authenticate-user.username-error
-						if: { page.authenticate-user.username-error != NULL }
+						-- ds.copy-small: $page.authenticate-user.username.error
+						if: { page.authenticate-user.username.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -80,26 +78,26 @@ private string $current-password: *$ftd.empty
 						-- ftd.text-input:
 						placeholder: Enter password
 						type: password
-						$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.authenticate-user.password-error)
+						$on-input$: $ftd.set-string($a = $page.authenticate-user.password.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $page.authenticate-user.password.error)
 						width: fill-container
 						height.fixed.px: 40
 						border-radius.px: 8
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.authenticate-user.password-error != NULL }: $inherited.colors.error.border
+						border-color if { page.authenticate-user.password.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.authenticate-user.password-error
-						if: { page.authenticate-user.password-error != NULL }
+						-- ds.copy-small: $page.authenticate-user.password.error
+						if: { page.authenticate-user.password.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
 
 					-- ds.primary-button: Login
-					$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
+					$on-click$: $page.authenticate-user.submit-values(username = $page.authenticate-user.username.value, password = $page.authenticate-user.password.value)
 					width: full
 					radius: curved
 					
@@ -177,20 +175,20 @@ private string $current-password: *$ftd.empty
 					-- ftd.text-input:
 					placeholder: Enter username
 					type: text
-					$on-input$: $ftd.set-string($a = $page.current-username, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.authenticate-user.username-error)
+					$on-input$: $ftd.set-string($a = $page.authenticate-user.username.value, v = $VALUE)
+					               $on-input$: $utils.set-null($var = $page.authenticate-user.username.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.authenticate-user.username-error != NULL }: $inherited.colors.error.border
+					border-color if { page.authenticate-user.username.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.authenticate-user.username-error
-					if: { page.authenticate-user.username-error != NULL }
+					-- ds.copy-small: $page.authenticate-user.username.error
+					if: { page.authenticate-user.username.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -204,26 +202,26 @@ private string $current-password: *$ftd.empty
 					-- ftd.text-input:
 					placeholder: Enter password
 					type: password
-					$on-input$: $ftd.set-string($a = $page.current-password, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.authenticate-user.password-error)
+					$on-input$: $ftd.set-string($a = $page.authenticate-user.password.value, v = $VALUE)
+					               $on-input$: $utils.set-null($var = $page.authenticate-user.password.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.authenticate-user.password-error != NULL }: $inherited.colors.error.border
+					border-color if { page.authenticate-user.password.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.authenticate-user.password-error
-					if: { page.authenticate-user.password-error != NULL }
+					-- ds.copy-small: $page.authenticate-user.password.error
+					if: { page.authenticate-user.password.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
 
 				-- ds.primary-button: Login
-				$on-click$: $page.authenticate-user.submit-values(username = $page.current-username, password = $page.current-password)
+				$on-click$: $page.authenticate-user.submit-values(username = $page.authenticate-user.username, password = $page.authenticate-user.password)
 				width: full
 				radius: curved
 				
@@ -270,4 +268,5 @@ private string $current-password: *$ftd.empty
 -- end: ds.column
 
 -- end: page
+
 

@@ -1,10 +1,16 @@
--- optional string $username-error:
--- optional string $password-error:
+-- ftd.string-field $username: username
+$value: *$ftd.empty
+
+-- ftd.string-field $password: password
+$value: *$ftd.empty
+
+-- ftd.string-field $next: next
+$value: /
 
 -- void submit-values(username, password):
-string username:
-string password:
+ftd.string-field username:
+ftd.string-field password:
+optional ftd.string-field next: $next
 js: $assets.files.assets.functions.js
 
 callAlert("signin attempt")
-;; call submit with http options
