@@ -24,7 +24,7 @@ callAlert("update-slug: " + site_slug + ", new_slug: " + new_slug)
 
 -- void update-privacy(site_slug, is_public):
 string site_slug:
-string is_public:
+boolean is_public:
 js: $assets.files.assets.functions.js
 
 callAlert("renaming privacy: " + site_slug + ", is_public: " + is_public)
@@ -34,7 +34,7 @@ callAlert("renaming privacy: " + site_slug + ", is_public: " + is_public)
 
 -- void update-editable(site_slug, is_editable):
 string site_slug:
-string is_editable:
+boolean is_editable:
 js: $assets.files.assets.functions.js
 
 callAlert("update-editable: " + site_slug + ", is_editable: " + is_editable)
@@ -44,7 +44,7 @@ callAlert("update-editable: " + site_slug + ", is_editable: " + is_editable)
 
 -- void mark-package(site_slug, is_package):
 string site_slug:
-string is_package:
+boolean is_package:
 js: $assets.files.assets.functions.js
 
 callAlert("mark-package: " + site_slug + ", is_package: " + is_package)
