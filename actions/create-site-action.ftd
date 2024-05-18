@@ -1,9 +1,9 @@
--- optional string $site-error:
--- optional string $manage-site-error:
+-- ftd.string-field $site-slug: site-slug
+$value: *$ftd.empty
 
 -- void submit(org_slash_username, site_slug):
 string org_slash_username:
-string site_slug:
+ftd.string-field $site_slug:
 js: $assets.files.assets.functions.js
 
-callAlert("creating site: " + site_slug + ", under org: " + org_slug)
+callAlert("creating site: " + site_slug.value + ", under org: " + org_slash_username)

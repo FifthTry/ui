@@ -8,7 +8,6 @@
 string org-slash-username:
 module create-site-action: create-site-action
 string dashboard-url:
-string $current-site-slug: *$ftd.empty
 
 -- ds.section-column:
 
@@ -47,19 +46,15 @@ string $current-site-slug: *$ftd.empty
 						border-width.px: 1
 						background.solid: $inherited.colors.background.step-1
 						border-color: $inherited.colors.border
-						;; border-color if { create-site.create-site-action.site-error != NULL }: $inherited.colors.error.border
-						$on-input$: $ftd.set-string($a = $create-site.current-site-slug, v = $VALUE)
+						;; border-color if { create-site.create-site-action.site-slug.error != NULL }: $inherited.colors.error.border
+						$on-input$: $ftd.set-string($a = $create-site.create-site-action.site-slug.value, v = $VALUE)
 						
 						-- ds.copy-small: .fifthtry.site
 						
 					-- end: ds.row
 
-					-- ds.copy-small: $create-site.create-site-action.site-error
-					if: { create-site.create-site-action.site-error != NULL }
-					color: $ds.colors.error.text
-					
-					-- ds.copy-small: $create-site.create-site-action.manage-site-error
-					if: { create-site.create-site-action.manage-site-error != NULL }
+					-- ds.copy-small: $create-site.create-site-action.site-slug.error
+					if: { create-site.create-site-action.site-slug.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -81,7 +76,7 @@ string $current-site-slug: *$ftd.empty
 					-- ds.primary-button: Create Site
 					width: full
 					radius: curved
-					$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, site_slug = $create-site.current-site-slug)
+					$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug)
 					
 					-- ds.secondary-button: Cancel
 					width: full
@@ -126,15 +121,15 @@ string $current-site-slug: *$ftd.empty
 					border-width.px: 1
 					background.solid: $inherited.colors.background.step-1
 					border-color: $inherited.colors.border
-					$on-input$: $ftd.set-string($a = $create-site.current-site-slug, v = $VALUE)
+					$on-input$: $ftd.set-string($a = $create-site.create-site-action.site-slug.value, v = $VALUE)
 					
 					-- ds.copy-small: .fifthtry.site
 					
 				-- end: ds.row
 
-				-- ds.copy-regular: $create-site.create-site-action.site-error
+				-- ds.copy-regular: $create-site.create-site-action.site-slug.error
 				color: $ds.colors.error.text
-				if: { create-site.create-site-action.site-error != NULL }
+				if: { create-site.create-site-action.site-slug.error != NULL }
 				
 			-- end: ds.column
 
@@ -155,7 +150,7 @@ string $current-site-slug: *$ftd.empty
 				-- ds.primary-button: Create Site
 				width: full
 				radius: curved
-				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, site_slug = $create-site.current-site-slug)
+				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug.value)
 				
 				-- ds.secondary-button: Cancel
 				width: full
