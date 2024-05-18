@@ -27,7 +27,7 @@ url: /scenarios/sites/editor/
 text: $index-text
 updated-at: 2 hours ago
 ;; filetype: image
-;; url: $assets.files.assets.slides.background.png.light
+;; url: $assets.files.assets.background.png.light
 
 
 -- sr.file-text index-text: ftd

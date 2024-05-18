@@ -71,7 +71,7 @@ padding.px: 8
 	spacing.fixed.px: 8
 	
 	/-- ftd.image:
-	src: $assets.files.assets.slides.setting.svg
+	src: $assets.files.assets.setting.svg
 	width.fixed.px: 24
 	height.fixed.px: 24
 	align-self: center
@@ -89,7 +89,7 @@ padding.px: 8
 	spacing.fixed.px: 8
 	
 		-- ftd.image:
-		src: $assets.files.assets.slides.logout.svg
+		src: $assets.files.assets.logout.svg
 		width.fixed.px: 24
 		height.fixed.px: 24
 		align-self: center

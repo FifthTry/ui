@@ -24,7 +24,7 @@ site-relative-url: $ftd.empty
 -- sr.file current-file: background.png
 filetype: image
 updated-at: 2 hours ago
-url: $assets.files.assets.slides.background.png.light
+url: $assets.files.assets.background.png.light
 
 
 -- sr.file-text index-text: ftd
