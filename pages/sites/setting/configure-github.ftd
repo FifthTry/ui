@@ -8,18 +8,27 @@
 -- import: ui.fifthtry.com/utils
 
 
+
+-- ftd.string-field string-field-with-default(name, default):
+string name:
+string default:
+js: $assets.files.assets.functions.js
+
+string_field_with_default_js(name, default)
+
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
 sites-records.site-common-data site:
 string dashboard-url:
 sites-records.gh-oidc-data data:
-string $github-org: *$page.data.account
-string $github-repo-name: *$page.data.repo
-string $github-repo-branch: *$page.data.branch
 module configure: configure
 module reconfigure: reconfigure
 optional string top-message:
+ftd.string-field $org: $string-field-with-default(name = "org", default = $page.data.account)
+ftd.string-field $repo: $string-field-with-default(name = "repo", default = $page.data.repo)
+ftd.string-field $branch: $string-field-with-default(name = "branch", default = $page.data.branch)
+/$on-init$: $ftd.set_string($page.org.value, $page.data.account)
 
 -- p.page:
 site-data: $page.site-data
@@ -28,6 +37,7 @@ site: $page.site
 current-page: github
 dashboard-url: $page.dashboard-url
 top-message: $page.top-message
+
 
 	-- ds.section-column:
 	inset: $ds.spaces.inset-tall.large
@@ -59,12 +69,12 @@ top-message: $page.top-message
 				border-color: $inherited.colors.border
 				padding.px: 8
 				color: $inherited.colors.text-strong
-				$on-input$: $ftd.set-string($a = $page.github-org, v = $VALUE)
-				$on-input$: $utils.set-null($var = $page.configure.github-org-name-error)
+				$on-input$: $ftd.set-string($a = $page.org.value, v = $VALUE)
+				$on-input$: $utils.set-null($var = $page.org.error)
 				
-				-- ds.copy-small: $page.configure.github-org-name-error
+				-- ds.copy-small: $page.org.error
 				color: $ds.colors.error.text
-				if: { page.configure.github-org-name-error != NULL }
+				if: { page.org.error != NULL }
 				
 			-- end: ds.column
 
@@ -86,12 +96,12 @@ top-message: $page.top-message
 				border-color: $inherited.colors.border
 				padding.px: 8
 				color: $inherited.colors.text-strong
-				$on-input$: $ftd.set-string($a = $page.github-repo-name, v = $VALUE)
-				$on-input$: $utils.set-null($var = $page.configure.github-repo-name-error)
+				$on-input$: $ftd.set-string($a = $page.repo.value, v = $VALUE)
+				$on-input$: $utils.set-null($var = $page.repo.error)
 				
-				-- ds.copy-small: $page.configure.github-repo-name-error
+				-- ds.copy-small: $page.repo.error
 				color: $ds.colors.error.text
-				if: { page.configure.github-repo-name-error != NULL }
+				if: { page.repo.error != NULL }
 				
 			-- end: ds.column
 
@@ -113,12 +123,12 @@ top-message: $page.top-message
 				border-color: $inherited.colors.border
 				padding.px: 8
 				color: $inherited.colors.text-strong
-				$on-input$: $ftd.set-string($a = $page.github-repo-branch, v = $VALUE)
-				$on-input$: $utils.set-null($var = $page.configure.github-repo-branch-error)
+				$on-input$: $ftd.set-string($a = $page.branch.value, v = $VALUE)
+				$on-input$: $utils.set-null($var = $page.branch.error)
 				
-				-- ds.copy-small: $page.configure.github-repo-branch-error
+				-- ds.copy-small: $page.branch.error
 				color: $ds.colors.error.text
-				if: { page.configure.github-repo-branch-error != NULL }
+				if: { page.branch.error != NULL }
 				
 			-- end: ds.column
 
@@ -145,27 +155,19 @@ top-message: $page.top-message
 				if: { page.data.is-configured }
 				width: wide
 				radius: curved
-				$on-click$: $page.reconfigure.submit(site_slug=$page.site.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
+				$on-click$: $page.reconfigure.submit(site_slug=$page.site.site-slug, $org=$page.org, $repo=$page.repo, $branch=$page.branch)
 				
 				-- ds.primary-button: Save
 				if: { !page.data.is-configured }
 				width: wide
 				radius: curved
-				$on-click$: $page.configure.submit(site_slug=$page.site.site-slug, github_org=$page.github-org, github_repo_name=$page.github-repo-name, github_repo_branch=$page.github-repo-branch)
+				$on-click$: $page.configure.submit(site_slug=$page.site.site-slug, $org=$page.org, $repo=$page.repo, $branch=$page.branch)
 				
 			-- end: ds.row
 
 			-- ds.column:
 			align-content: left
-			
-				-- ds.copy-small: $page.reconfigure.manage-site-error
-				if: { page.data.is-configured && page.reconfigure.manage-site-error != NULL }
-				color: $ds.colors.error.text
-				
-				-- ds.copy-small: $page.configure.manage-site-error
-				if: { !page.data.is-configured && page.configure.manage-site-error != NULL }
-				color: $ds.colors.error.text
-				
+
 			-- end: ds.column
 
 		-- end: ds.column

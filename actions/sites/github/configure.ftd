@@ -1,13 +1,17 @@
--- optional string $github-org-name-error:
--- optional string $github-repo-name-error:
--- optional string $github-repo-branch-error:
--- optional string $manage-site-error:
+-- ftd.string-field $org: org
+$value: *$ftd.empty
 
--- void submit(site_slug, github_org, github_repo_name, github_repo_branch):
+-- ftd.string-field $repo: repo
+$value: *$ftd.empty
+
+-- ftd.string-field $branch: branch
+$value: *$ftd.empty
+
+-- void submit(site_slug, org, repo, branch):
 string site_slug:
-string github_org:
-string github_repo_name:
-string github_repo_branch:
+ftd.string-field $org:
+ftd.string-field $repo:
+ftd.string-field $branch:
 js: $assets.files.assets.functions.js
 
 callAlert("Configuring github")
