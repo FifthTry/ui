@@ -1,12 +1,3 @@
--- ftd.string-field $org: org
-$value: *$ftd.empty
-
--- ftd.string-field $repo: repo
-$value: *$ftd.empty
-
--- ftd.string-field $branch: branch
-$value: *$ftd.empty
-
 -- void submit(site_slug, org, repo, branch):
 string site_slug:
 ftd.string-field $org:

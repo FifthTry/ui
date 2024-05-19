@@ -25,9 +25,9 @@ sites-records.gh-oidc-data data:
 module configure: configure
 module reconfigure: reconfigure
 optional string top-message:
-ftd.string-field $org: $string-field-with-default(name = "org", default = $page.data.account)
-ftd.string-field $repo: $string-field-with-default(name = "repo", default = $page.data.repo)
-ftd.string-field $branch: $string-field-with-default(name = "branch", default = $page.data.branch)
+ftd.string-field $org: $string-field-with-default(name = org, default = $page.data.account)
+ftd.string-field $repo: $string-field-with-default(name = repo, default = $page.data.repo)
+ftd.string-field $branch: $string-field-with-default(name = branch, default = $page.data.branch)
 /$on-init$: $ftd.set_string($page.org.value, $page.data.account)
 
 -- p.page:
