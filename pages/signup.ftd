@@ -186,34 +186,34 @@ module signup-action: create-user
 					align-content: left
 					
 						-- ds.checkbox: I accept Terms and Conditions
-						$is-checked: $page.signup-action.accept-terms.value
-						$on-click$: $utils.set-null($var = $page.signup-action.accept-terms.error)
+						$is-checked: $page.signup-action.accept_terms.value
+						$on-click$: $utils.set-null($var = $page.signup-action.accept_terms.error)
 						size: small
-						
-						-- ds.copy-small: $page.signup-action.accept-terms.error
-						if: { page.signup-action.accept-terms.error != NULL }
+
+						-- ds.copy-small: $page.signup-action.accept_terms.error
+						if: { page.signup-action.accept_terms.error != NULL }
 						color: $ds.colors.error.text
-						
+
 					-- end: ds.column
 
 					-- ds.primary-button: Sign up
-					$on-click$: $page.signup-action.submit-values(name = $page.signup-action.name.value, email = $page.signup-action.email.value, username = $page.signup-action.username.value, password = $page.signup-action.password.value, password2 = $page.signup-action.password2.value, accept_terms = $page.signup-action.accept-terms)
+					$on-click$: $page.signup-action.submit-values($name = $page.signup-action.name, $email = $page.signup-action.email, $username = $page.signup-action.username, $password = $page.signup-action.password, $password2 = $page.signup-action.password2, $accept_terms = $page.signup-action.accept_terms, $next = $page.signup-action.next)
 					width: full
 					radius: curved
-					
+
 					-- ds.row:
 					spacing: $ds.spaces.horizontal-gap.extra-small
 					inset: $ds.spaces.inset-square.small
 					wrap: true
-					
+
 						-- ds.copy-regular: $lang.create-account
 						text if { page.site-data.sign-in-url }: $lang.existing-account
 						width: hug-content
-						
+
 						-- ds.link: $lang.sign-in
 						color: $ds.colors.accent.primary
 						link: $page.site-data.sign-in-url
-						
+
 					-- end: ds.row
 
 					/-- ds.column:
@@ -221,15 +221,15 @@ module signup-action: create-user
 					radius: $ds.radius.zero
 					spacing: $ds.spaces.vertical-gap.medium
 					inset: $ds.spaces.inset-tall.zero-small
-					
+
 						-- ds.copy-small: Or Sign up using
-						
+
 						-- ds.icon-button: Continue with Github
 						icon: $assets.files.assets.github-mark-white.svg
 						link: $page.site-data.github-url
 						kind: secondary
 						width: full
-						
+
 					-- end: ds.column
 
 				-- end: ds.column
@@ -241,7 +241,7 @@ module signup-action: create-user
 	-- end: ftd.desktop
 
 	-- ftd.mobile:
-	
+
 		-- ds.column:
 		align-content: center
 		inset: $ds.spaces.inset-wide.large
@@ -249,25 +249,25 @@ module signup-action: create-user
 		spacing: $ds.spaces.vertical-gap.large
 		height.fixed.vh: 100
 		radius: $ds.radius.zero
-		
+
 			-- ftd.image:
 			src: $page.site-data.logo
 			width.fixed.px: 89
 			height.fixed.px: 33
 			fit: cover
-			
+
 			-- ds.heading-small: $lang.sign-up
 			width: hug-content
-			
+
 			-- ds.column:
 			width: hug-content
-			
+
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.copy-small: Name
-					
+
 					-- ftd.text-input:
 					width: fill-container
 					type: text
@@ -282,19 +282,19 @@ module signup-action: create-user
 					border-color if { page.signup-action.name.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
-					
+
 					-- ds.copy-small: $page.signup-action.name.error
 					if: { page.signup-action.name.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.copy-small: Username
-					
+
 					-- ftd.text-input:
 					width: fill-container
 					type: text
@@ -309,19 +309,19 @@ module signup-action: create-user
 					border-color if { page.signup-action.username.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
-					
+
 					-- ds.copy-small: $page.signup-action.username.error
 					if: { page.signup-action.username.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.copy-small: Email
-					
+
 					-- ftd.text-input:
 					placeholder: Enter email
 					type: email
@@ -336,24 +336,24 @@ module signup-action: create-user
 					border-color if { page.signup-action.email.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
-					
+
 					-- ds.copy-small: $page.signup-action.email.error
 					if: { page.signup-action.email.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.copy-small: Password
-					
+
 					-- ftd.text-input:
 					placeholder: Enter password
 					type: password
 					$on-input$: $ftd.set-string($a = $page.signup-action.password.value, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.signup-action.password.error)
+					$on-input$: $utils.set-null($var = $page.signup-action.password.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
@@ -363,19 +363,19 @@ module signup-action: create-user
 					border-color if { page.signup-action.password.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
-					
+
 					-- ds.copy-small: $page.signup-action.password.error
 					if: { page.signup-action.password.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.copy-small: Confirm Password
-					
+
 					-- ftd.text-input:
 					placeholder: Enter password again
 					type: password
@@ -390,11 +390,11 @@ module signup-action: create-user
 					border-color if { page.signup-action.password2.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
-					
+
 					-- ds.copy-small: $page.signup-action.password2.error
 					if: { page.signup-action.password2.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				;; Accept Terms and Conditions checkbox
@@ -402,20 +402,20 @@ module signup-action: create-user
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.checkbox: I accept Terms and Conditions
-					$is-checked: $page.signup-action.accept-terms.value
-					$on-click$: $utils.set-null($var = $page.signup-action.accept-terms.error)
+					$is-checked: $page.signup-action.accept_terms.value
+					$on-click$: $utils.set-null($var = $page.signup-action.accept_terms.error)
 					size: small
-					
-					-- ds.copy-small: $page.signup-action.accept-terms.error
-					if: { page.signup-action.accept-terms.error != NULL }
+
+					-- ds.copy-small: $page.signup-action.accept_terms.error
+					if: { page.signup-action.accept_terms.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				-- ds.primary-button: Sign up
-				$on-click$: $page.signup-action.submit-values(name = $page.signup-action.name, email = $page.signup-action.email, username = $page.signup-action.username, password = $page.signup-action.password, password2 = $page.signup-action.password2, accept_terms = $page.signup-action.accept-terms)
+				$on-click$: $page.signup-action.submit-values($name=$page.signup-action.name, $email=$page.signup-action.email, $username=$page.signup-action.username, $password=$page.signup-action.password, $password2=$page.signup-action.password2, $accept_terms=$page.signup-action.accept_terms, $next=$page.signup-action.next)
 				width: full
 				radius: curved
 				

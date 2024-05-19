@@ -13,22 +13,21 @@ $value: *$ftd.empty
 -- ftd.string-field $password2: password2
 $value: *$ftd.empty
 
--- boolean-field $accept-terms: accept_terms
+-- boolean-field $accept_terms: accept_terms
 value: false
-
 
 -- ftd.string-field $next: next
 $value: /
 
 
--- void submit-values(name, email, username, password, password2, accept-terms):
-ftd.string-field name: $name
-ftd.string-field email: $email
-ftd.string-field username: $username
-ftd.string-field password: $password
-ftd.string-field password2: $password2
-boolean-field accept-terms: $accept-terms
-optional ftd.string-field next: $next
+-- void submit-values(name, email, username, password, password2, accept_terms, next):
+ftd.string-field $name:
+ftd.string-field $email:
+ftd.string-field $username:
+ftd.string-field $password:
+ftd.string-field $password2:
+boolean-field $accept_terms:
+ftd.string-field $next:
 js: $assets.files.assets.functions.js
 
 callAlert("signup attempt")
