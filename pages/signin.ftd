@@ -97,24 +97,24 @@ module authenticate-user: authenticate-user
 					-- end: ds.column
 
 					-- ds.primary-button: Login
-					$on-click$: $page.authenticate-user.submit-values(username = $page.authenticate-user.username.value, password = $page.authenticate-user.password.value)
+					$on-click$: $page.authenticate-user.submit-values($username=$page.authenticate-user.username, $password=$page.authenticate-user.password, $next=$page.authenticate-user.next)
 					width: full
 					radius: curved
-					
+
 					-- ds.row:
 					spacing: $ds.spaces.vertical-gap.small
 					inset: $ds.spaces.inset-square.small
 					wrap: true
-					
+
 						-- ds.copy-regular:
 						text: $lang.create-account
 						width: hug-content
-						
+
 						-- ds.link: $lang.sign-up
 						color: $ds.colors.accent.primary
 						link if { page.site-data.sign-up-url }: $page.site-data.sign-up-url
 						link: /
-						
+
 					-- end: ds.row
 
 					/-- ds.column:
@@ -122,18 +122,18 @@ module authenticate-user: authenticate-user
 					radius: $ds.radius.zero
 					spacing: $ds.spaces.vertical-gap.medium
 					inset: $ds.spaces.inset-tall.zero-small
-					
+
 						-- ds.copy-small: Or log in using
-						
+
 						-- ds.icon-button: Continue with Github
 						icon: $assets.files.assets.github-mark-white.svg
 						link: $page.site-data.github-url
 						kind: secondary
 						width: full
-						
+
 						-- ds.link: I forgot my password
 						link: $page.site-data.forgot-url
-						
+
 					-- end: ds.column
 
 				-- end: ds.column
@@ -145,7 +145,7 @@ module authenticate-user: authenticate-user
 	-- end: ftd.desktop
 
 	-- ftd.mobile:
-	
+
 		-- ds.column:
 		align-content: center
 		inset: $ds.spaces.inset-wide.large
@@ -153,30 +153,30 @@ module authenticate-user: authenticate-user
 		spacing: $ds.spaces.vertical-gap.large
 		height.fixed.vh: 100
 		radius: $ds.radius.zero
-		
+
 			-- ftd.image:
 			src: $page.site-data.logo
 			width.fixed.px: 89
 			height.fixed.px: 33
 			fit: cover
-			
+
 			-- ds.heading-small: $lang.sign-in
 			width: hug-content
-			
+
 			-- ds.column:
 			width: hug-content
-			
+
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.copy-small: Username
-					
+
 					-- ftd.text-input:
 					placeholder: Enter username
 					type: text
 					$on-input$: $ftd.set-string($a = $page.authenticate-user.username.value, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.authenticate-user.username.error)
+					$on-input$: $utils.set-null($var = $page.authenticate-user.username.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
@@ -186,24 +186,24 @@ module authenticate-user: authenticate-user
 					border-color if { page.authenticate-user.username.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
-					
+
 					-- ds.copy-small: $page.authenticate-user.username.error
 					if: { page.authenticate-user.username.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				-- ds.column:
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
-				
+
 					-- ds.copy-small: Password
-					
+
 					-- ftd.text-input:
 					placeholder: Enter password
 					type: password
 					$on-input$: $ftd.set-string($a = $page.authenticate-user.password.value, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.authenticate-user.password.error)
+					$on-input$: $utils.set-null($var = $page.authenticate-user.password.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
@@ -213,15 +213,15 @@ module authenticate-user: authenticate-user
 					border-color if { page.authenticate-user.password.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
-					
+
 					-- ds.copy-small: $page.authenticate-user.password.error
 					if: { page.authenticate-user.password.error != NULL }
 					color: $ds.colors.error.text
-					
+
 				-- end: ds.column
 
 				-- ds.primary-button: Login
-				$on-click$: $page.authenticate-user.submit-values(username = $page.authenticate-user.username, password = $page.authenticate-user.password)
+				$on-click$: $page.authenticate-user.submit-values($username=$page.authenticate-user.username, $password=$page.authenticate-user.password, $next=$page.authenticate-user.next)
 				width: full
 				radius: curved
 				
