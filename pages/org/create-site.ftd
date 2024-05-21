@@ -15,7 +15,6 @@ string org-slug:
 string dashboard-url:
 string create-site-url:
 optional string create-org-url:
-string $current-site-slug: *$ftd.empty
 optional string top-message:
 
 -- p.page:
@@ -31,7 +30,6 @@ top-message: $page.top-message
     org-slash-username: $page.org-slug
     create-site-action: $page.create-site-action
     dashboard-url: $page.dashboard-url
-    $current-site-slug: $page.current-site-slug
 
 -- end: p.page
 
