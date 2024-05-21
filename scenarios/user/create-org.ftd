@@ -1,0 +1,10 @@
+-- import: ui.fifthtry.com/pages/user/create-org
+-- import: ui.fifthtry.com/scenarios/scenario-site
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- create-org.page:
+user-data: $john-doe.jd
+dashboard-url: $scenario-site.homepage
+create-site-url: /scenarios/user/create-site/
+create-org-url: /scenarios/user/create-org/

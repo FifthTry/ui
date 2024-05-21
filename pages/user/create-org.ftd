@@ -13,7 +13,6 @@ module site-data: site-data
 string dashboard-url:
 string create-site-url:
 optional string create-org-url:
-string $current-org-slug: *$ftd.empty
 optional string top-message:
 
 -- p.page:
@@ -60,18 +59,14 @@ top-message: $page.top-message
 						border-width.px: 1
 						background.solid: $inherited.colors.background.step-1
 						border-color: $inherited.colors.border
-						;; border-color if { page.create-org-action.org-error != NULL }: $inherited.colors.error.border
-						$on-input$: $ftd.set-string($a = $page.current-org-slug, v = $VALUE)
+						;; border-color if { page.create-org-action.org-slug.error != NULL }: $inherited.colors.error.border
+						$on-input$: $ftd.set-string($a = $page.create-org-action.org-slug.value, v = $VALUE)
 						
 						
 					-- end: ds.row
 
-					-- ds.copy-small: $page.create-org-action.org-error
-					if: { page.create-org-action.org-error != NULL }
-					color: $ds.colors.error.text
-					
-					-- ds.copy-small: $page.create-org-action.manage-org-error
-					if: { page.create-org-action.manage-org-error != NULL }
+					-- ds.copy-small: $page.create-org-action.org-slug.error
+					if: { page.create-org-action.org-slug.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -93,7 +88,7 @@ top-message: $page.top-message
 					-- ds.primary-button: Create Organisation
 					width: full
 					radius: curved
-					$on-click$: $page.create-org-action.submit(username = $page.user-data.username, org_slug = $page.current-org-slug)
+					$on-click$: $page.create-org-action.submit(username = $page.user-data.username, org_slug = $page.create-org-action.org-slug)
 					
 					-- ds.secondary-button: Cancel
 					width: full
@@ -138,15 +133,15 @@ top-message: $page.top-message
 					border-width.px: 1
 					background.solid: $inherited.colors.background.step-1
 					border-color: $inherited.colors.border
-					$on-input$: $ftd.set-string($a = $page.current-org-slug, v = $VALUE)
+					$on-input$: $ftd.set-string($a = $page.create-org-action.org-slug.value, v = $VALUE)
 					
 					-- ds.copy-small: .fifthtry.site
 					
 				-- end: ds.row
 
-				-- ds.copy-regular: $page.create-org-action.org-error
+				-- ds.copy-regular: $page.create-org-action.org-slug.error
 				color: $ds.colors.error.text
-				if: { page.create-org-action.org-error != NULL }
+				if: { page.create-org-action.org-slug.error != NULL }
 				
 			-- end: ds.column
 
@@ -156,7 +151,7 @@ top-message: $page.top-message
 				-- ds.primary-button: Create Organisation
 				width: full
 				radius: curved
-				$on-click$: $page.create-org-action.submit(username = $page.user-data.username, org_slug = $page.current-org-slug)
+				$on-click$: $page.create-org-action.submit(username = $page.user-data.username, org_slug = $page.create-org-action.org-slug)
 				
 				-- ds.secondary-button: Cancel
 				width: full

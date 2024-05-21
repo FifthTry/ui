@@ -42,6 +42,7 @@ $processor$: pr.toc
 - User Pages:
   - User dashboard: /scenarios/user/dashboard/
   - Create Site: /scenarios/user/create-site/
+  - Create Organisation: /scenarios/user/create-org/
 
 - Site Pages:
   - Site Info: /scenarios/sites/site-info/

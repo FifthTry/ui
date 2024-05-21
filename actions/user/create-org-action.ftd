@@ -1,9 +1,9 @@
--- optional string $org-error:
--- optional string $manage-org-error:
+-- ftd.string-field $org-slug: org-slug
+$value: *$ftd.empty
 
 -- void submit(username, org_slug):
 string username:
-string org_slug:
+ftd.string-field org_slug:
 js: $assets.files.assets.functions.js
 
-callAlert("creating org: " + org_slug + ", under username: " + username)
+callAlert("creating org: " + org_slug.value + ", under username: " + username)
