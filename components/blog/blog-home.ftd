@@ -31,7 +31,7 @@ inset: $ds.spaces.inset-square.medium
 background.solid: $ds.colors.background.step-2
 width.fixed.percent if {blog-card.small-width}: 30 
 width.fixed.percent: 68
-height.fixed.px: 240
+height.fixed.px: 200
 max-height.fixed.px: 240
 radius: $ds.radius.medium
 
