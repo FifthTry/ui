@@ -41,8 +41,9 @@ background.solid: $inherited.colors.background.base
 border-color: $inherited.colors.border
 border-radius.px: 8
 border-width.px: 1
+align-content: center
 anchor: parent
-right.px: 0
+left.px: -116
 top.px: 67
 padding.px: 8
 
