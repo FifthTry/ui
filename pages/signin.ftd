@@ -233,14 +233,14 @@ module authenticate-user: authenticate-user
 					text: $lang.create-account
 					width: hug-content
 					
-					-- ds.link: $lang.sign-in
+					-- ds.link: $lang.sign-up
 					color: $ds.colors.accent.primary
 					link if { page.site-data.sign-up-url }: $page.site-data.sign-up-url
 					link: /
 					
 				-- end: ds.row
 
-				-- ds.column:
+				/-- ds.column:
 				border: $ds.borders.top.small
 				radius: $ds.radius.zero
 				spacing: $ds.spaces.vertical-gap.medium

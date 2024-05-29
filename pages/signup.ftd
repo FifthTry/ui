@@ -53,7 +53,7 @@ module signup-action: create-user
 						width: fill-container
 						type: text
 						$on-input$: $ftd.set-string($a = $page.signup-action.name.value, v = $VALUE)
-						                  $on-input$: $utils.set-null($var = $page.signup-action.name.error)
+						$on-input$: $utils.set-null($var = $page.signup-action.name.error)
 						height.fixed.px: 40
 						border-radius.px: 8
 						placeholder: Enter name
@@ -272,7 +272,7 @@ module signup-action: create-user
 					width: fill-container
 					type: text
 					$on-input$: $ftd.set-string($a = $page.signup-action.name.value, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.signup-action.name.error)
+					$on-input$: $utils.set-null($var = $page.signup-action.name.error)
 					height.fixed.px: 40
 					border-radius.px: 8
 					placeholder: name
@@ -299,7 +299,7 @@ module signup-action: create-user
 					width: fill-container
 					type: text
 					$on-input$: $ftd.set-string($a = $page.signup-action.username.value, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.signup-action.username.error)
+					$on-input$: $utils.set-null($var = $page.signup-action.username.error)
 					height.fixed.px: 40
 					border-radius.px: 8
 					placeholder: username
@@ -326,7 +326,7 @@ module signup-action: create-user
 					placeholder: Enter email
 					type: email
 					$on-input$: $ftd.set-string($a = $page.signup-action.email.value, v = $VALUE)
-					               $on-input$: $utils.set-null($var = $page.signup-action.email.error)
+					$on-input$: $utils.set-null($var = $page.signup-action.email.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
@@ -434,7 +434,7 @@ module signup-action: create-user
 					
 				-- end: ds.row
 
-				-- ds.column:
+				/-- ds.column:
 				border: $ds.borders.top.small
 				radius: $ds.radius.zero
 				spacing: $ds.spaces.vertical-gap.medium
