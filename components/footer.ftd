@@ -101,7 +101,7 @@ align-content: left
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.privacy-url
 
-		-- ds.link: **Blogs**
+		-- ds.link: **Blog**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.bloghome-url
 
