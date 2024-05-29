@@ -216,22 +216,6 @@ module signup-action: create-user
 
 					-- end: ds.row
 
-					/-- ds.column:
-					border: $ds.borders.top.small
-					radius: $ds.radius.zero
-					spacing: $ds.spaces.vertical-gap.medium
-					inset: $ds.spaces.inset-tall.zero-small
-
-						-- ds.copy-small: Or Sign up using
-
-						-- ds.icon-button: Continue with Github
-						icon: $assets.files.assets.github-mark-white.svg
-						link: $page.site-data.github-url
-						kind: secondary
-						width: full
-
-					-- end: ds.column
-
 				-- end: ds.column
 
 			-- end: ds.column
@@ -433,22 +417,6 @@ module signup-action: create-user
 					link: $page.site-data.sign-in-url
 					
 				-- end: ds.row
-
-				/-- ds.column:
-				border: $ds.borders.top.small
-				radius: $ds.radius.zero
-				spacing: $ds.spaces.vertical-gap.medium
-				inset: $ds.spaces.inset-tall.zero-small
-				
-					-- ds.copy-small: Or Sign Up using
-					
-					-- ds.icon-button: Continue with Github
-					icon: $assets.files.assets.github-mark-white.svg
-					link: $page.site-data.github-url
-					kind: secondary
-					width: full
-					
-				-- end: ds.column
 
 			-- end: ds.column
 

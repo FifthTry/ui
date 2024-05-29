@@ -117,25 +117,6 @@ module authenticate-user: authenticate-user
 
 					-- end: ds.row
 
-					/-- ds.column:
-					border: $ds.borders.top.small
-					radius: $ds.radius.zero
-					spacing: $ds.spaces.vertical-gap.medium
-					inset: $ds.spaces.inset-tall.zero-small
-
-						-- ds.copy-small: Or log in using
-
-						-- ds.icon-button: Continue with Github
-						icon: $assets.files.assets.github-mark-white.svg
-						link: $page.site-data.github-url
-						kind: secondary
-						width: full
-
-						-- ds.link: I forgot my password
-						link: $page.site-data.forgot-url
-
-					-- end: ds.column
-
 				-- end: ds.column
 
 			-- end: ds.column
@@ -239,25 +220,6 @@ module authenticate-user: authenticate-user
 					link: /
 					
 				-- end: ds.row
-
-				/-- ds.column:
-				border: $ds.borders.top.small
-				radius: $ds.radius.zero
-				spacing: $ds.spaces.vertical-gap.medium
-				inset: $ds.spaces.inset-tall.zero-small
-				
-					-- ds.copy-small: Or log in using
-					
-					-- ds.icon-button: Continue with Github
-					icon: $assets.files.assets.github-mark-white.svg
-					link: $page.site-data.github-url
-					kind: secondary
-					width: full
-					
-					-- ds.link: I forgot my password
-					link: $page.site-data.forgot-url
-					
-				-- end: ds.column
 
 			-- end: ds.column
 
