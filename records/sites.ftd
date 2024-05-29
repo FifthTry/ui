@@ -14,6 +14,7 @@ string domains-url:
 string updated-on:
 ftd.image-src preview-image:
 string environments-url:
+string zip-download-url:
 boolean is-public:
 boolean is-static:
 boolean is-package:

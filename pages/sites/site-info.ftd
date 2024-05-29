@@ -5,7 +5,7 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/utils
 -- import: ui.fifthtry.com/records/user-data as ud
-
+-- import: ui.fifthtry.com/actions/download-site
 
 
 -- component page:
@@ -87,6 +87,12 @@ top-message: $page.top-message
 					link: $utils.with-https(domain = $page.site.primary-domain)
 					icon-position: at-end
 					width: full
+
+                    -- ds.primary-button: Download (zip)
+                    width: full
+                    radius: curved
+                    download: *$ftd.empty
+                    link: $page.site.zip-download-url
 					
 				-- end: ds.column
 
