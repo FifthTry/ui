@@ -5,7 +5,6 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/utils
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/actions/download-site
 
 
 -- component page:
@@ -43,7 +42,7 @@ top-message: $page.top-message
 				
 				
 				-- ds.column:
-				spacing: $ds.spaces.vertical-gap.large
+				spacing: $ds.spaces.vertical-gap.medium
 				align-content: top-left
 				
 					-- ds.column:
