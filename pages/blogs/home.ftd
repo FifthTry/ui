@@ -24,7 +24,7 @@ user-data: $page.user-data
 		
 		-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
-		small-width: true
+		;; small-width: true
 
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Nunc facilisis sem metus, ut accumsan. 
@@ -47,7 +47,7 @@ user-data: $page.user-data
 	
 	    -- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
-		small-width: true
+		;; small-width: true
 
 		Lorem ipsum dolor sit. consectetur adipiscing elit.  
 
