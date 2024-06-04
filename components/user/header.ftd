@@ -73,6 +73,62 @@ radius: $ds.radius.zero
 
 	-- end: ftd.desktop
 
+-- ftd.mobile:
+
+	-- ds.column:
+	background.solid: $ds.colors.background.base
+	inset: $ds.spaces.inset-square.medium
+	align-content: left
+
+		-- ds.row:
+		align-content: left
+		spacing: $ds.spaces.horizontal-gap.space-between
+		
+		-- ds.row:
+		align-content: left
+
+			-- ftd.image: $header.site-data.logo
+			link: $header.site-data.homepage
+			
+			-- ds.copy-regular: →
+			white-space: nowrap
+			
+			-- ds.copy-regular: My Sites
+			white-space: nowrap
+
+			-- end: ds.row
+
+			-- avatar.avatar:
+			user-data: $header.user-data
+			
+		-- end: ds.row
+
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.space-between
+		align-content: left
+		;;width.fixed.px: 420
+
+
+		    -- orgs-dropdown:
+		    if: { header.create-org-url != NULL }
+		    create-org-url: $header.create-org-url
+		    orgs: $header.orgs
+
+
+			-- ds.icon-button: Create new site
+            link: $header.create-site-url
+            kind: primary
+            icon-position: at-end
+            icon: $assets.files.assets.sites.add.svg
+			
+			
+			
+		-- end: ds.row
+
+	-- end: ds.column
+
+	-- end: ftd.mobile
+
 -- end: ds.section-column
 
 -- end: header
@@ -85,6 +141,11 @@ radius: $ds.radius.zero
 sites-records.toc-item list orgs:
 string create-org-url:
 boolean $open: false
+
+-- ds.column:
+width: hug-content
+
+-- ftd.desktop:
 
 -- ds.column:
 width: hug-content
@@ -110,6 +171,39 @@ if: { orgs-dropdown.open }
 
 -- end: ds.column
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.row:
+align-content: left
+width: hug-content
+$on-click-outside$: $ftd.set-bool($a = $orgs-dropdown.open, v = false)
+
+-- ds.row:
+$on-click$: $ftd.toggle($a = $orgs-dropdown.open)
+spacing: $ds.spaces.horizontal-gap.small
+
+-- ds.copy-small: Organisations
+
+-- ftd.image:
+src: $assets.files.assets.left-arrow.svg
+src if { !orgs-dropdown.open }: $assets.files.assets.right-arrow.svg
+width.fixed.px: 10
+
+-- end: ds.row
+
+-- show-org-list:
+orgs: $orgs-dropdown.orgs
+create-org-url: $orgs-dropdown.create-org-url
+if: { orgs-dropdown.open }
+
+-- end: ds.row
+
+-- end: ftd.mobile
+
+-- end: ds.column
+
 -- end: orgs-dropdown
 
 
@@ -124,10 +218,11 @@ string create-org-url:
 
 -- ftd.column:
 background.solid: $ds.colors.background.step-1
-anchor: parent
-top.px: 30
-right.px: 0
-padding.px: 10
+anchor if { ftd.device != "mobile"}: parent
+top.px if { ftd.device != "mobile"}: 30
+right.px if { ftd.device != "mobile"}: 0
+padding.px if { ftd.device != "mobile"}: 10
+padding.px: 8
 spacing.fixed.px: 5
 width: hug-content
 border-radius.px: 5
