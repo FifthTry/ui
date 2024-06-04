@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/components/dark-mode-toggle
 
 -- component footer:
 module site-data: site-data
@@ -20,6 +21,7 @@ inset: $ds.spaces.inset-wide.medium
 			
 				-- footer-toc-content:
 				site-data: $footer.site-data
+
 				-- footer-logo-content:
 				
 			-- end: ds.row
@@ -31,8 +33,16 @@ inset: $ds.spaces.inset-wide.medium
 			radius: $ds.radius.zero
 			
 				-- ds.copy-small: © 2024 FifthTry. All rights reserved
+
+				-- ds.row:
+				align-content: right
+				width: hug-content
+
 				-- footer-social-content:
+
+				-- dark-mode-toggle.dark-mode-toggle:
 				
+			-- end: ds.row
 			-- end: ds.row
 
 		-- end: ftd.desktop
@@ -48,6 +58,7 @@ inset: $ds.spaces.inset-wide.medium
 				-- footer-logo-content:
 				-- ds.copy-small: © 2024 FifthTry. All rights reserved
 				-- footer-social-content:
+				-- dark-mode-toggle.dark-mode-toggle:
 
 			-- end: ds.column
 
@@ -79,6 +90,7 @@ align-content: left
 	
 	-- ds.row:
 	align-content: left
+	wrap if { ftd.device == "mobile" }: true
 	spacing: $ds.spaces.horizontal-gap.medium
 	
 		-- ds.link: **Pricing**

@@ -2,7 +2,6 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
--- import: ui.fifthtry.com/components/dark-mode-toggle
 -- import: ui.fifthtry.com/records/link
 
 -- component header:
@@ -12,7 +11,6 @@ link.link list links:
 ds.gap margin: $ds.spaces.vertical-gap.zero
 boolean $sidebar: false
 boolean $menu: false
-boolean theme-toggle: true
 
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.zero
@@ -59,9 +57,6 @@ inset: $ds.spaces.inset-wide.medium
 				if: { !header.user-data.is-logged-in }
 				link: $header.site-data.sign-up-url
 				radius: curved
-				
-				-- dark-mode-toggle.dark-mode-toggle:
-				if: {  header.theme-toggle }
 				
 			-- end: ds.row
 
@@ -140,8 +135,6 @@ inset: $ds.spaces.inset-wide.medium
 					if: { header.user-data.is-logged-in }
 					user-data: $header.user-data
 					
-					-- dark-mode-toggle.dark-mode-toggle:
-					if: {  header.theme-toggle }
 					
 				-- end: ds.column
 
