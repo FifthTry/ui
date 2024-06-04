@@ -90,18 +90,14 @@ $on-click-outside$: $ftd.set-bool($a = $orgs-dropdown.open, v = false)
 
 -- ds.row:
 $on-click$: $ftd.toggle($a = $orgs-dropdown.open)
+spacing: $ds.spaces.horizontal-gap.small
 
 -- ds.copy-small: Organisations
 
 -- ftd.image:
 src: $assets.files.assets.down-arrow.svg
+src if { !orgs-dropdown.open }: $assets.files.assets.right-arrow.svg
 width.fixed.px: 10
-if: { orgs-dropdown.open }
-
--- ftd.image:
-src: $assets.files.assets.right-arrow.svg
-width.fixed.px: 10
-if: { !orgs-dropdown.open }
 
 -- end: ds.row
 
@@ -127,7 +123,7 @@ string create-org-url:
 -- ftd.column:
 background.solid: $ds.colors.background.step-1
 anchor: parent
-top.px: 25
+top.px: 30
 right.px: 0
 padding.px: 10
 spacing.fixed.px: 5
