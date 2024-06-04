@@ -23,6 +23,8 @@ margin: $ds.spaces.vertical-gap.medium
 border: $ds.borders.bottom.small
 radius: $ds.radius.zero
 
+-- ftd.desktop:
+
 	-- ds.row:
 	spacing: $ds.spaces.horizontal-gap.space-between
 	background.solid: $ds.colors.background.base
@@ -65,11 +67,11 @@ radius: $ds.radius.zero
 			-- avatar.avatar:
 			user-data: $header.user-data
 			
-			-- dark-mode-toggle.dark-mode-toggle:
-			
 		-- end: ds.row
 
 	-- end: ds.row
+
+	-- end: ftd.desktop
 
 -- end: ds.section-column
 

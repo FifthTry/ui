@@ -2084,8 +2084,8 @@
         },
         "components/button.ftd": {
           "name": "components/button.ftd",
-          "checksum": "FD1F4D3434D6184BDB77A5A739649E827EE353CA03CF93A80D209264950A9AE8",
-          "size": 12417
+          "checksum": "0239D965EF301E5ACDE31F66040B62652297B3A6067EDB77EA323D878E0AE5A4",
+          "size": 12423
         },
         "components/card.ftd": {
           "name": "components/card.ftd",
@@ -2179,8 +2179,8 @@
         },
         "components/icon-button.ftd": {
           "name": "components/icon-button.ftd",
-          "checksum": "A19FF555E3F912E91011C5CBBDBAF7D5C888FFA51CBA7AD96849E48592DF5E71",
-          "size": 10325
+          "checksum": "BC3566957BAA0EF3AA62C41105587E261A65A976A3C62D0FDC4C394C9A96F673",
+          "size": 10331
         },
         "components/icon-card.ftd": {
           "name": "components/icon-card.ftd",
@@ -2388,8 +2388,8 @@
           "size": 78
         }
       },
-      "zip_url": "https://github.com/fastn-community/design-system/archive/5a6ad0bef0d9933b4ed700134792995f44192db1.zip",
-      "checksum": "5923E87E79410F9B875E6BAA13824AF46C7208B5FDB656E33C43A7E8C37E4C20"
+      "zip_url": "https://github.com/fastn-community/design-system/archive/73913221219fd9fa5dc75c0c2b122584e4fa9729.zip",
+      "checksum": "2186E16551F3D27A86C154EC01B88F7C152071C601D24EFEF9796C9EB66FA3C3"
     },
     "fastn-community.github.io/doc-site": {
       "files": {
