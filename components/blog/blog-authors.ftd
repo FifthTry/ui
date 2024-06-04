@@ -6,6 +6,7 @@ string bio-url:
 ftd.image-src photo:
 
 -- ds.section-row:
+margin: $ds.spaces.vertical-gap.zero
 
 	-- ds.container:
 	inset: $ds.spaces.inset-square.large
