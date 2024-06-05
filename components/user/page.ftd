@@ -15,6 +15,8 @@ sites-records.toc-item list orgs:
 children children:
 boolean hide-footer: false
 boolean hide-header: false
+boolean basic-header: false
+boolean basic-footer: false
 optional string top-message:
 
 -- ds.page: FifthTry | Better way To Build Websites
@@ -31,12 +33,21 @@ margin: $ds.spaces.vertical-gap.zero
 	create-site-url: $page.create-site-url
 	create-org-url: $page.create-org-url
 	orgs: $page.orgs
+
+	-- user-header.basic-header:
+	if: { page.basic-header && page.hide-header }
+	site-data: $page.site-data
+	user-data: $page.user-data
 	
 	-- child:
 	for: $child in $page.children
 	
 	-- footer.footer:
 	if: { !page.hide-footer }
+	site-data: $page.site-data
+
+	-- footer.basic-footer:
+	if: { page.basic-header && page.hide-footer }
 	site-data: $page.site-data
 	
 -- end: ds.page

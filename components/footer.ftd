@@ -77,6 +77,27 @@ inset: $ds.spaces.inset-wide.medium
 
 
 
+-- component basic-footer:
+module site-data: site-data
+
+-- ds.section-column:
+inset: $ds.spaces.inset-square.medium
+border: $ds.borders.top.small
+radius: $ds.radius.zero
+
+	-- ds.copy-small: © 2024 FifthTry. All rights reserved
+
+-- end: ds.section-column
+
+-- end: basic-footer
+
+
+
+
+
+
+
+
 -- component footer-toc-content:
 module site-data: site-data
 

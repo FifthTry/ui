@@ -137,6 +137,48 @@ radius: $ds.radius.zero
 
 
 
+
+
+
+-- component basic-header:
+ud.user-data user-data:
+module site-data: site-data
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.medium
+border: $ds.borders.bottom.small
+radius: $ds.radius.zero
+
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.space-between
+	background.solid: $ds.colors.background.base
+	inset: $ds.spaces.inset-square.medium
+	align-content: left
+		
+			-- ftd.image: $basic-header.site-data.logo
+			link: $basic-header.site-data.homepage
+			
+			-- avatar.avatar:
+			user-data: $basic-header.user-data
+			
+		-- end: ds.row
+
+		-- end: ds.section-column
+
+-- end: basic-header
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- component orgs-dropdown:
 sites-records.toc-item list orgs:
 string create-org-url:
