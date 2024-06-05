@@ -93,4 +93,4 @@ top-message: $page.top-message
 -- string github-message(domain):
 string domain:
 
-"You have not yet configured Github for [" + domain + "](///" + domain + ")."
+"You have not yet configured Github."

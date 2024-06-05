@@ -49,7 +49,7 @@ radius: $ds.radius.zero
 				white-space: nowrap
 				
 				-- ds.copy-regular: $header.site.site-name
-				            white-space: nowrap
+				white-space: nowrap
 				
 			-- end: ds.row
 
@@ -86,6 +86,70 @@ radius: $ds.radius.zero
 
 	-- end: ftd.desktop
 
+	-- ftd.mobile:
+	
+		-- ds.column:
+		background.solid: $ds.colors.background.base
+		inset: $ds.spaces.inset-square.medium
+		align-content: left
+		
+			-- ds.row:
+			align-content: left
+			width: hug-content
+			
+				-- ftd.image: $header.site-data.logo
+				link: $header.site-data.homepage
+				
+				-- ds.copy-regular: →
+				white-space: nowrap
+				
+				-- ds.copy-regular: $header.site.account-name
+				link: $header.dashboard-url
+				white-space: nowrap
+				
+				-- ds.copy-regular: →
+				white-space: nowrap
+				
+				-- ds.copy-regular: $header.site.site-name
+				white-space: nowrap
+				
+			-- end: ds.row
+
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.space-between
+			align-content: left
+			;;width.fixed.px: 420
+			
+			-- ds.row:
+			align-content: left
+
+				-- tab-link: About
+				is-active if { header.current-page == "info" }: true
+				link: $header.site.info-url
+				
+				-- tab-link: Editor
+				is-active if { header.current-page == "editor" }: true
+				link: $header.site.editor-url
+				
+				/-- tab-link: Change Requests
+				is-active if { header.current-page == "cr" }: true
+				link: $header.site.cr-url
+				
+				-- tab-link: Settings
+				is-active if { header.current-page == "setting" }: true
+				link: $header.site.setting-url
+
+				-- end: ds.row
+				
+				-- avatar.avatar:
+				user-data: $header.user-data
+				
+			-- end: ds.row
+
+		-- end: ds.column
+
+	-- end: ftd.mobile
+
 -- end: ds.section-column
 
 -- end: header
@@ -103,12 +167,12 @@ boolean is-active: false
 -- ds.row:
 border if { tab-link.is-active }: $ds.borders.bottom.medium
 border-color if { tab-link.is-active }: $ds.colors.accent.primary
-link: $tab-link.link
 width: hug-content
 radius: $ds.radius.zero
 
 	-- ds.copy-regular: $tab-link.text
 	white-space: nowrap
+	link: $tab-link.link
 	
 -- end: ds.row
 
