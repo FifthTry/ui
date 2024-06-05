@@ -30,6 +30,16 @@ js: $assets.files.assets.functions.js
 callAlert("renaming privacy: " + site_slug + ", is_public: " + is_public)
 
 
+-- optional string update-static-error:
+
+-- void update-static(site_slug, is_static):
+string site_slug:
+boolean is_static:
+js: $assets.files.assets.functions.js
+
+callAlert("renaming privacy: " + site_slug + ", is_static: " + is_static)
+
+
 -- optional string update-editable-error:
 
 -- void update-editable(site_slug, is_editable):

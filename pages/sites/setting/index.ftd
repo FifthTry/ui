@@ -41,7 +41,12 @@ dashboard-url: $page.dashboard-url
 		slug: $page.site.site-slug
 		is-public: $page.site.is-public
 		setting-actions: $page.setting-actions
-		
+
+		-- is-static:
+		slug: $page.site.site-slug
+		is-static: $page.site.is-static
+		setting-actions: $page.setting-actions
+
 		;; ------------------------------- is-editable -----------------------------------------------
 		-- ds.heading-medium: Site: Is Editable
 		if: { page.site.is-editable }
@@ -267,6 +272,54 @@ align-content: left
 -- end: ds.column
 -- end: is-public
 
+
+
+;; ------------------------------- is-static -----------------------------------------------
+-- component is-static:
+boolean is-static:
+string slug:
+module setting-actions: basic
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-medium: Site Kind: Static
+	if: { is-static.is-static }
+
+	-- ds.copy-regular:
+	if: { is-static.is-static }
+
+	The site is currently **static**. This means the site is generated once, and then served to everyone.
+
+	Static sites are faster, and more secure, but you can't have dynamic content on static sites. If you
+	plan to use SQL or WASM features of FifthTry, you should mark the site as non-static.
+
+	-- ds.danger-button: Make Site Dynamic
+	if: { is-static.is-static }
+	width: wide
+	radius: curved
+	$on-click$: $is-static.setting-actions.update-static(site_slug=$is-static.slug, is_static=false)
+
+
+
+	-- ds.heading-medium: Site Kind: Dynamic
+	if: { !is-static.is-static }
+
+	-- ds.copy-regular:
+	if: { !is-static.is-static }
+
+	The site is currently **dynamic**. This means the site is generated every time someone visits the site.
+	This is useful if you want to have dynamic content on your site, for example, if you are using FifthTry's
+	SQL feature, or if you are using WASM to generate content on the fly.
+
+	-- ds.danger-button: Make Site Static
+	if: { !is-static.is-static }
+	width: wide
+	radius: curved
+	$on-click$: $is-static.setting-actions.update-static(site_slug=$is-static.slug, is_static=true)
+
+-- end: ds.column
+-- end: is-static
 
 
 
