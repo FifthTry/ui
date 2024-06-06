@@ -28,6 +28,5 @@ preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 environments-url: /scenarios/sites/setting/environments/
 zip-download-url: /
 is-public: true
-is-static: true
 is-package: false
 is-editable: true
