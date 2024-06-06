@@ -73,12 +73,7 @@ top-message: $page.top-message
 
 						-- ds.copy-regular: Primary Domain
 
-						-- ds.icon-button: $page.site.primary-domain
-						icon: $assets.files.assets.sites.link.svg
-						link: $utils.with-https(domain = $page.site.primary-domain)
-						icon-position: at-end
-						kind: tertiary
-						size: small
+						-- ds.copy-small: $page.site.primary-domain
 
 					-- end: ds.column
 
