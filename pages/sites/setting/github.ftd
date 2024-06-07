@@ -51,7 +51,7 @@ top-message: $page.top-message
 			
 				-- ds.copy-large:
 				
-				$github-message(domain = $page.site.primary-domain)
+				You have not yet configured Github.
 				
 				-- ds.primary-button: Configure Now
 				link: $page.data.configure-url
@@ -70,7 +70,7 @@ top-message: $page.top-message
 			
 				-- ds.copy-large:
 				
-				$github-message(domain = $page.site.primary-domain)
+				You have not yet configured Github.
 				
 				-- ds.primary-button: Configure Now
 				link: $page.data.configure-url
@@ -86,11 +86,3 @@ top-message: $page.top-message
 -- end: p.page
 
 -- end: page
-
-
-
-
--- string github-message(domain):
-string domain:
-
-"You have not yet configured Github for [" + domain + "](///" + domain + ")."

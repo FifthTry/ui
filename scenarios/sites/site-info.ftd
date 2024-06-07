@@ -15,7 +15,7 @@ user-data: $john-doe.jd
 account-name: John Doe
 site-name: Acme, Inc
 site-slug: acme
-primary-domain: www.acme.com
+primary-domain: acme.com
 info-url: /scenarios/sites/site-info/
 github-url: /scenarios/sites/setting/github/
 domains-url: /scenarios/sites/setting/domains/

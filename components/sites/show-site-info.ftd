@@ -56,17 +56,12 @@ margin: $ds.spaces.vertical-gap.zero
 					
 				-- end: ds.column
 
-			-- end: ds.column
-
-			-- ds.column:
-			height: fill-container
-			align-content: bottom-right
-			
 				-- ds.icon-button: Visit Site
 				icon: $assets.files.assets.sites.link.svg
 				link: $utils.with-https(domain = $show-site-info.site.primary-domain)
 				icon-position: at-end
 				kind: secondary
+				width: wide
 				
 			-- end: ds.column
 

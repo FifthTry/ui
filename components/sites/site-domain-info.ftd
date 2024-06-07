@@ -291,11 +291,11 @@ margin: $ds.spaces.vertical-gap.zero
 				-- ftd.text: $show-site-domain.delete-domain.domain-error
 				color: red
 				if: { show-site-domain.delete-domain.domain-error != NULL && show-site-domain.delete-domain.manage-site-error == NULL }
-
+				
 				-- ftd.text: $show-site-domain.delete-domain.manage-site-error
 				color: red
 				if: { show-site-domain.delete-domain.manage-site-error != NULL }
-
+				
 				-- ftd.text: $show-site-domain.make-primary-domain.domain-error
 				color: red
 				if: { show-site-domain.make-primary-domain.domain-error != NULL && show-site-domain.make-primary-domain.manage-site-error == NULL }
@@ -303,7 +303,7 @@ margin: $ds.spaces.vertical-gap.zero
 				-- ftd.text: $show-site-domain.make-primary-domain.manage-site-error
 				color: red
 				if: { show-site-domain.make-primary-domain.manage-site-error != NULL }
-
+				
 			-- end: ds.column
 
 		-- end: ds.column
@@ -349,7 +349,7 @@ module add-domain: add-domain
 				border-radius.px: 8
 				placeholder: Enter new domain
 				$on-input$: $ftd.set-string($a = $domain-input.add-domain.domain.value, v = $VALUE)
-                $on-input$: $utils.set-null($var = $domain-input.add-domain.domain.error)
+				            $on-input$: $utils.set-null($var = $domain-input.add-domain.domain.error)
 				border-width.px: 1
 				border-color: $ds.colors.border
 				border-color if { domain-input.add-domain.domain.error != NULL }: $ds.colors.error.border
@@ -369,7 +369,7 @@ module add-domain: add-domain
 			-- ds.copy-small: $domain-input.add-domain.domain.error
 			color: $ds.colors.error.text
 			if: { domain-input.add-domain.domain.error != NULL }
-
+			
 		-- end: ds.column
 
 	-- end: ftd.desktop
@@ -394,11 +394,11 @@ module add-domain: add-domain
 			$on-input$: $utils.set-null($var = $domain-input.add-domain.domain.error)
 			border-width.px: 1
 			border-color: $ds.colors.border
-
+			
 			-- ds.copy-small: $domain-input.add-domain.domain.error
 			color: $ds.colors.error.text
 			if: { domain-input.add-domain.domain.error != NULL }
-
+			
 			-- ds.column:
 			align-content: left
 			

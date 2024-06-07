@@ -30,7 +30,7 @@ boolean small-width: false
 -- ds.container:
 inset: $ds.spaces.inset-square.medium
 background.solid: $ds.colors.background.step-2
-width.fixed.percent if {blog-card.small-width}: 30 
+width.fixed.percent if {blog-card.small-width}: 30
 width.fixed.percent: 68
 height.fixed.px: 160
 max-height.fixed.px: 240
@@ -44,27 +44,26 @@ radius: $ds.radius.medium
 		-- ds.column:
 		spacing: $ds.spaces.vertical-gap.zero
 		align-content: left
-
-		-- ds.fine-print:
 		
-		$blog-card.date
-		
-		-- ds.copy-large:
-		color: $ds.colors.text-strong
-		
-		$blog-card.title
-
+			-- ds.fine-print:
+			
+			$blog-card.date
+			
+			-- ds.copy-large:
+			color: $ds.colors.text-strong
+			
+			$blog-card.title
+			
 		-- end: ds.column
-		
+
 		-- ds.copy-regular:
 		color: $ds.colors.text
 		
 		$blog-card.description
-
+		
 		;; -- ds.primary-button: $blog-card.button-name
 		;; link: $blog-card.link
 		;; size: small
-
 	-- end: ds.column
 
 

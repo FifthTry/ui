@@ -2,7 +2,6 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/components/language-switcher
--- import: ui.fifthtry.com/components/dark-mode-toggle
 -- import: ui.fifthtry.com/records/link
 
 -- component header:
@@ -12,7 +11,6 @@ link.link list links:
 ds.gap margin: $ds.spaces.vertical-gap.zero
 boolean $sidebar: false
 boolean $menu: false
-boolean theme-toggle: true
 
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.zero
@@ -39,7 +37,7 @@ inset: $ds.spaces.inset-wide.medium
 				
 				-- ds.copy-regular: $lang.pricing
 				link: $header.site-data.pricing-url
-
+				
 				-- ds.copy-regular: $lang.blog
 				link: $header.site-data.blog-url
 				
@@ -59,9 +57,6 @@ inset: $ds.spaces.inset-wide.medium
 				if: { !header.user-data.is-logged-in }
 				link: $header.site-data.sign-up-url
 				radius: curved
-				
-				-- dark-mode-toggle.dark-mode-toggle:
-				if: {  header.theme-toggle }
 				
 			-- end: ds.row
 
@@ -116,32 +111,30 @@ inset: $ds.spaces.inset-wide.medium
 					link: $header.site-data.pricing-url
 					
 					/-- language-switcher.dropdown:
-
+					
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.small
 					
-					-- ds.secondary-button: $lang.sign-in
-					if: { !header.user-data.is-logged-in }
-					link: $header.site-data.sign-in-url
-					radius: curved
-					size: large
-					width: full
-					
-					-- ds.primary-button: $lang.sign-up
-					if: { !header.user-data.is-logged-in }
-					link: $header.site-data.sign-up-url
-					radius: curved
-					size: large
-					width: full
-					
+						-- ds.secondary-button: $lang.sign-in
+						if: { !header.user-data.is-logged-in }
+						link: $header.site-data.sign-in-url
+						radius: curved
+						size: large
+						width: full
+						
+						-- ds.primary-button: $lang.sign-up
+						if: { !header.user-data.is-logged-in }
+						link: $header.site-data.sign-up-url
+						radius: curved
+						size: large
+						width: full
+						
 					-- end: ds.column
 
 					-- avatar.avatar:
 					if: { header.user-data.is-logged-in }
 					user-data: $header.user-data
 					
-					-- dark-mode-toggle.dark-mode-toggle:
-					if: {  header.theme-toggle }
 					
 				-- end: ds.column
 

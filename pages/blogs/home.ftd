@@ -21,7 +21,7 @@ user-data: $page.user-data
 		-- ds.heading-large: Blog
 		
 		-- blog.blog:
-		
+
 		-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
 		date: 1st March 2024
 		;; small-width: true
