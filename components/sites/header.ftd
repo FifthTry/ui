@@ -120,27 +120,27 @@ radius: $ds.radius.zero
 			align-content: left
 			;;width.fixed.px: 420
 			
-			-- ds.row:
-			align-content: left
-
-				-- tab-link: About
-				is-active if { header.current-page == "info" }: true
-				link: $header.site.info-url
+				-- ds.row:
+				align-content: left
 				
-				-- tab-link: Editor
-				is-active if { header.current-page == "editor" }: true
-				link: $header.site.editor-url
-				
-				/-- tab-link: Change Requests
-				is-active if { header.current-page == "cr" }: true
-				link: $header.site.cr-url
-				
-				-- tab-link: Settings
-				is-active if { header.current-page == "setting" }: true
-				link: $header.site.setting-url
-
+					-- tab-link: About
+					is-active if { header.current-page == "info" }: true
+					link: $header.site.info-url
+					
+					-- tab-link: Editor
+					is-active if { header.current-page == "editor" }: true
+					link: $header.site.editor-url
+					
+					/-- tab-link: Change Requests
+					is-active if { header.current-page == "cr" }: true
+					link: $header.site.cr-url
+					
+					-- tab-link: Settings
+					is-active if { header.current-page == "setting" }: true
+					link: $header.site.setting-url
+					
 				-- end: ds.row
-				
+
 				-- avatar.avatar:
 				user-data: $header.user-data
 				

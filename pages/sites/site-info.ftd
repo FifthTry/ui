@@ -45,36 +45,36 @@ top-message: $page.top-message
 				spacing: $ds.spaces.vertical-gap.medium
 				spacing if { page.site.zip-download-url == NULL }: $ds.spaces.vertical-gap.large
 				align-content: top-left
-
+				
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-small
 					align-content: top-left
-
-
+					
+					
 						-- ds.copy-regular: Website name
-
+						
 						-- ds.heading-tiny: $page.site.site-name
-
+						
 					-- end: ds.column
 
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-small
 					align-content: left
-
+					
 						-- ds.copy-regular: Last Updated
-
+						
 						-- ds.heading-tiny: $page.site.updated-on
-
+						
 					-- end: ds.column
 
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.extra-small
 					align-content: left
-
+					
 						-- ds.copy-regular: Primary Domain
-
+						
 						-- ds.copy-small: $page.site.primary-domain
-
+						
 					-- end: ds.column
 
 					-- ds.icon-button: Visit Site
@@ -82,13 +82,13 @@ top-message: $page.top-message
 					link: $utils.with-https(domain = $page.site.primary-domain)
 					icon-position: at-end
 					width: full
-
-                    -- ds.primary-button: Download (zip)
-                    if: { page.site.zip-download-url != NULL }
-                    width: full
-                    radius: curved
-                    download: *$ftd.empty
-                    link: $page.site.zip-download-url
+					
+					-- ds.primary-button: Download (zip)
+					if: { page.site.zip-download-url != NULL }
+					width: full
+					radius: curved
+					download: *$ftd.empty
+					link: $page.site.zip-download-url
 					
 				-- end: ds.column
 

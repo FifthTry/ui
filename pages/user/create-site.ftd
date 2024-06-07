@@ -28,10 +28,10 @@ basic-footer: true
 hide-footer: true
 
 	-- create-site.create-site:
-    org-slash-username: $page.user-data.username
-    create-site-action: $page.create-site-action
-    dashboard-url: $page.dashboard-url
-
+	   org-slash-username: $page.user-data.username
+	   create-site-action: $page.create-site-action
+	   dashboard-url: $page.dashboard-url
+	
 -- end: p.page
 
 -- end: page

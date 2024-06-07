@@ -37,7 +37,7 @@ inset: $ds.spaces.inset-wide.medium
 				
 				-- ds.copy-regular: $lang.pricing
 				link: $header.site-data.pricing-url
-
+				
 				-- ds.copy-regular: $lang.blog
 				link: $header.site-data.bloghome-url
 				
@@ -111,24 +111,24 @@ inset: $ds.spaces.inset-wide.medium
 					link: $header.site-data.pricing-url
 					
 					/-- language-switcher.dropdown:
-
+					
 					-- ds.column:
 					spacing: $ds.spaces.vertical-gap.small
 					
-					-- ds.secondary-button: $lang.sign-in
-					if: { !header.user-data.is-logged-in }
-					link: $header.site-data.sign-in-url
-					radius: curved
-					size: large
-					width: full
-					
-					-- ds.primary-button: $lang.sign-up
-					if: { !header.user-data.is-logged-in }
-					link: $header.site-data.sign-up-url
-					radius: curved
-					size: large
-					width: full
-					
+						-- ds.secondary-button: $lang.sign-in
+						if: { !header.user-data.is-logged-in }
+						link: $header.site-data.sign-in-url
+						radius: curved
+						size: large
+						width: full
+						
+						-- ds.primary-button: $lang.sign-up
+						if: { !header.user-data.is-logged-in }
+						link: $header.site-data.sign-up-url
+						radius: curved
+						size: large
+						width: full
+						
 					-- end: ds.column
 
 					-- avatar.avatar:

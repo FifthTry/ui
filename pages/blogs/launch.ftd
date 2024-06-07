@@ -26,16 +26,16 @@ user-data: $page.user-data
 		
 			-- ds.copy-regular:
 			
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Nunc facilisis sem metus, ut accumsan elit venenatis eu. 
-			Proin pulvinar malesuada justo, vitae efficitur nulla tempor 
-			sit amet. Morbi molestie varius eros, sed facilisis mauris 
-			iaculis vitae. In ullamcorper ultricies commodo. 
-
-			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt 
-			in mauris vel, ultrices sodales velit. Nam eget felis nec 
-			neque tempus ornare. Quisque vel erat vel elit dignissim 
-			blandit a at justo. 
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
 			
 		-- end: ds.row
 
@@ -47,52 +47,52 @@ user-data: $page.user-data
 			
 			-- ds.copy-regular:
 			
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Nunc facilisis sem metus, ut accumsan elit venenatis eu. 
-			Proin pulvinar malesuada justo, vitae efficitur nulla tempor 
-			sit amet. Morbi molestie varius eros, sed facilisis mauris 
-			iaculis vitae. In ullamcorper ultricies commodo. 
-
-			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt 
-			in mauris vel, ultrices sodales velit. Nam eget felis nec 
-			neque tempus ornare. Quisque vel erat vel elit dignissim 
-			blandit a at justo. 
-
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Nunc facilisis sem metus, ut accumsan elit venenatis eu. 
-			Proin pulvinar malesuada justo, vitae efficitur nulla tempor 
-			sit amet. Morbi molestie varius eros, sed facilisis mauris 
-			iaculis vitae. In ullamcorper ultricies commodo. 
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
+			
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
 			
 			-- ds.heading-medium: Nulla nisl erat
 			
 			-- ds.copy-regular:
 			
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Nunc facilisis sem metus, ut accumsan elit venenatis eu. 
-			Proin pulvinar malesuada justo, vitae efficitur nulla tempor 
-			sit amet. Morbi molestie varius eros, sed facilisis mauris 
-			iaculis vitae. In ullamcorper ultricies commodo. 
-
-			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt 
-			in mauris vel, ultrices sodales velit. Nam eget felis nec 
-			neque tempus ornare. Quisque vel erat vel elit dignissim 
-			blandit a at justo. 
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
 			
 			-- ds.heading-medium: Morbi molestie varius
 			
 			-- ds.copy-regular:
 			
-			Nulla nisl erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Nunc facilisis sem metus, ut accumsan elit venenatis eu. 
-			Proin pulvinar malesuada justo, vitae efficitur nulla tempor 
-			sit amet. Morbi molestie varius eros, sed facilisis mauris 
-			iaculis vitae. In ullamcorper ultricies commodo. 
-
-			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt 
-			in mauris vel, ultrices sodales velit. Nam eget felis nec 
-			neque tempus ornare. Quisque vel erat vel elit dignissim 
-			blandit a at justo. 
+			Nulla nisl erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
 			
 		-- end: ds.column
 

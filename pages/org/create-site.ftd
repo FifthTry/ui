@@ -26,11 +26,11 @@ hide-footer: true
 hide-header: true
 top-message: $page.top-message
 
-    -- create-site.create-site:
-    org-slash-username: $page.org-slug
-    create-site-action: $page.create-site-action
-    dashboard-url: $page.dashboard-url
-
+	-- create-site.create-site:
+	org-slash-username: $page.org-slug
+	create-site-action: $page.create-site-action
+	dashboard-url: $page.dashboard-url
+	
 -- end: p.page
 
 -- end: page

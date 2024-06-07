@@ -33,7 +33,7 @@ margin: $ds.spaces.vertical-gap.zero
 	create-site-url: $page.create-site-url
 	create-org-url: $page.create-org-url
 	orgs: $page.orgs
-
+	
 	-- user-header.basic-header:
 	if: { page.basic-header && page.hide-header }
 	site-data: $page.site-data
@@ -45,7 +45,7 @@ margin: $ds.spaces.vertical-gap.zero
 	-- footer.footer:
 	if: { !page.hide-footer }
 	site-data: $page.site-data
-
+	
 	-- footer.basic-footer:
 	if: { page.basic-header && page.hide-footer }
 	site-data: $page.site-data

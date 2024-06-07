@@ -62,9 +62,9 @@ margin: $ds.spaces.vertical-gap.zero
 				icon-position: at-end
 				kind: secondary
 				width: wide
-
+				
 			-- end: ds.column
-			
+
 		-- end: ds.row
 
 	-- end: ftd.desktop
