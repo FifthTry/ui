@@ -5,9 +5,10 @@ children wrapper:
 spacing: $ds.spaces.horizontal-gap.medium
 wrap: true
 inset: $ds.spaces.inset-wide.large
-inner-background.solid: $ds.colors.background.step-1
+;; inner-background.solid: $ds.colors.background.step-1
 content: $blog.wrapper
-align-content: top-left
+flush: narrow
+;; align-content: top-left
 
 -- end: ds.section-row
 
@@ -31,7 +32,7 @@ inset: $ds.spaces.inset-square.medium
 background.solid: $ds.colors.background.step-2
 width.fixed.percent if {blog-card.small-width}: 30
 width.fixed.percent: 68
-height.fixed.px: 200
+height.fixed.px: 160
 max-height.fixed.px: 240
 radius: $ds.radius.medium
 

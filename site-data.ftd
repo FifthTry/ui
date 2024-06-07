@@ -20,6 +20,6 @@
 -- string terms-url: /terms/
 -- string privacy-url: /privacy/
 
--- string bloghome-url: /blogs/
+-- string blog-url: /blog/
 
 -- string packages-url: /packages/

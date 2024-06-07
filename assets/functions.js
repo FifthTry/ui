@@ -8,7 +8,7 @@ function get_initials(name) {
 function string_field_with_default_js(name, default_value) {
     let r = fastn.recordInstance();
     r.set("name", name);
-    r.set("value", default_value);
+    r.set("value", fastn_utils.getFlattenStaticValue(default_value));
     r.set("error", null);
     return r;
 }

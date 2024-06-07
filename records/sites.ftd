@@ -16,7 +16,6 @@ ftd.image-src preview-image:
 string environments-url:
 optional string zip-download-url:
 boolean is-public:
-boolean is-static:
 boolean is-package:
 boolean is-editable:
 
