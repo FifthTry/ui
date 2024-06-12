@@ -41,7 +41,7 @@ dashboard-url: $page.dashboard-url
 		slug: $page.site.site-slug
 		is-public: $page.site.is-public
 		setting-actions: $page.setting-actions
-
+		
 		;; ------------------------------- is-editable -----------------------------------------------
 		-- ds.heading-medium: Site: Is Editable
 		if: { page.site.is-editable }

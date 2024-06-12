@@ -4,12 +4,44 @@
 
 
 
+-- component pre-verified-page:
+module site-data: site-data
+module signup-action: create-user
+string code:
+string email:
+
+-- inner-page:
+site-data: $pre-verified-page.site-data
+signup-action: $pre-verified-page.signup-action
+code: $pre-verified-page.code
+$email: $ftd.string-field-with-default(name = $pre-verified-page.signup-action.email.name, default = $pre-verified-page.email)
+is-email-editable: false
+
+-- end: pre-verified-page
 
 
 
 -- component page:
 module site-data: site-data
 module signup-action: create-user
+
+-- inner-page:
+site-data: $page.site-data
+signup-action: $page.signup-action
+$email: $page.signup-action.email
+
+-- end: page
+
+
+
+
+
+-- component inner-page:
+module site-data: site-data
+module signup-action: create-user
+optional string code:
+ftd.string-field $email:
+boolean is-email-editable: true
 
 -- ds.column:
 
@@ -32,7 +64,7 @@ module signup-action: create-user
 			spacing: $ds.spaces.vertical-gap.large
 			
 				-- ftd.image:
-				src: $page.site-data.logo
+				src: $inner-page.site-data.logo
 				width.fixed.px: 89
 				height.fixed.px: 33
 				fit: cover
@@ -52,20 +84,20 @@ module signup-action: create-user
 						-- ftd.text-input:
 						width: fill-container
 						type: text
-						$on-input$: $ftd.set-string($a = $page.signup-action.name.value, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.signup-action.name.error)
+						$on-input$: $ftd.set-string($a = $inner-page.signup-action.name.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $inner-page.signup-action.name.error)
 						height.fixed.px: 40
 						border-radius.px: 8
 						placeholder: Enter name
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.signup-action.name.error != NULL }: $inherited.colors.error.border
+						border-color if { inner-page.signup-action.name.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.signup-action.name.error
-						if: { page.signup-action.name.error != NULL }
+						-- ds.copy-small: $inner-page.signup-action.name.error
+						if: { inner-page.signup-action.name.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -79,20 +111,20 @@ module signup-action: create-user
 						-- ftd.text-input:
 						width: fill-container
 						type: text
-						$on-input$: $ftd.set-string($a = $page.signup-action.username.value, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.signup-action.username.error)
+						$on-input$: $ftd.set-string($a = $inner-page.signup-action.username.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $inner-page.signup-action.username.error)
 						height.fixed.px: 40
 						border-radius.px: 8
 						placeholder: Enter username
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.signup-action.username.error != NULL }: $inherited.colors.error.border
+						border-color if { inner-page.signup-action.username.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.signup-action.username.error
-						if: { page.signup-action.username.error != NULL }
+						-- ds.copy-small: $inner-page.signup-action.username.error
+						if: { inner-page.signup-action.username.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -106,20 +138,22 @@ module signup-action: create-user
 						-- ftd.text-input:
 						placeholder: Enter email
 						type: email
-						$on-input$: $ftd.set-string($a = $page.signup-action.email.value, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.signup-action.email.error)
+						value if { !inner-page.is-email-editable }: $inner-page.email.value
+						enabled: $inner-page.is-email-editable
+						$on-input$: $ftd.set-string($a = $inner-page.email.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $inner-page.email.error)
 						width: fill-container
 						height.fixed.px: 40
 						border-radius.px: 8
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.signup-action.email.error != NULL }: $inherited.colors.error.border
+						border-color if { inner-page.email.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.signup-action.email.error
-						if: { page.signup-action.email.error != NULL }
+						-- ds.copy-small: $inner-page.email.error
+						if: { inner-page.email.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -133,20 +167,20 @@ module signup-action: create-user
 						-- ftd.text-input:
 						placeholder: Enter password
 						type: password
-						$on-input$: $ftd.set-string($a = $page.signup-action.password.value, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.signup-action.password.error)
+						$on-input$: $ftd.set-string($a = $inner-page.signup-action.password.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $inner-page.signup-action.password.error)
 						width: fill-container
 						height.fixed.px: 40
 						border-radius.px: 8
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.signup-action.password.error != NULL }: $inherited.colors.error.border
+						border-color if { inner-page.signup-action.password.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.signup-action.password.error
-						if: { page.signup-action.password.error != NULL }
+						-- ds.copy-small: $inner-page.signup-action.password.error
+						if: { inner-page.signup-action.password.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -161,20 +195,20 @@ module signup-action: create-user
 						-- ftd.text-input:
 						placeholder: Enter password again
 						type: password
-						$on-input$: $ftd.set-string($a = $page.signup-action.password2.value, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.signup-action.password2.error)
+						$on-input$: $ftd.set-string($a = $inner-page.signup-action.password2.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $inner-page.signup-action.password2.error)
 						width: fill-container
 						height.fixed.px: 40
 						border-radius.px: 8
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.signup-action.password2.error != NULL }: $inherited.colors.error.border
+						border-color if { inner-page.signup-action.password2.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.signup-action.password2.error
-						if: { page.signup-action.password2.error != NULL }
+						-- ds.copy-small: $inner-page.signup-action.password2.error
+						if: { inner-page.signup-action.password2.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -186,20 +220,27 @@ module signup-action: create-user
 					align-content: left
 					
 						-- ds.checkbox: I accept Terms and Conditions
-						$is-checked: $page.signup-action.accept_terms.value
-						$on-click$: $utils.set-null($var = $page.signup-action.accept_terms.error)
+						$is-checked: $inner-page.signup-action.accept_terms.value
+						$on-click$: $utils.set-null($var = $inner-page.signup-action.accept_terms.error)
 						size: small
 						
-						-- ds.copy-small: $page.signup-action.accept_terms.error
-						if: { page.signup-action.accept_terms.error != NULL }
+						-- ds.copy-small: $inner-page.signup-action.accept_terms.error
+						if: { inner-page.signup-action.accept_terms.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
 
 					-- ds.primary-button: Sign up
-					$on-click$: $page.signup-action.submit-values($name = $page.signup-action.name, $email = $page.signup-action.email, $username = $page.signup-action.username, $password = $page.signup-action.password, $password2 = $page.signup-action.password2, $accept_terms = $page.signup-action.accept_terms, $next = $page.signup-action.next)
+					if: { inner-page.code == NULL }
+					$on-click$: $inner-page.signup-action.submit-values($name = $inner-page.signup-action.name, $email = $inner-page.email, $username = $inner-page.signup-action.username, $password = $inner-page.signup-action.password, $password2 = $inner-page.signup-action.password2, $accept_terms = $inner-page.signup-action.accept_terms, $next = $inner-page.signup-action.next)
 					width: full
 					radius: curved
+					
+					-- ds.primary-button: Sign up
+					               if: { inner-page.code != NULL }
+					               $on-click$: $inner-page.signup-action.submit-values-with-code($name = $inner-page.signup-action.name, $email = $inner-page.email, $username = $inner-page.signup-action.username, $password = $inner-page.signup-action.password, $password2 = $inner-page.signup-action.password2, $accept_terms = $inner-page.signup-action.accept_terms, $next = $inner-page.signup-action.next, code = $inner-page.code)
+					               width: full
+					               radius: curved
 					
 					-- ds.row:
 					spacing: $ds.spaces.horizontal-gap.extra-small
@@ -207,12 +248,12 @@ module signup-action: create-user
 					wrap: true
 					
 						-- ds.copy-regular: $lang.create-account
-						text if { page.site-data.sign-in-url }: $lang.existing-account
+						text if { inner-page.site-data.sign-in-url }: $lang.existing-account
 						width: hug-content
 						
 						-- ds.link: $lang.sign-in
 						color: $ds.colors.accent.primary
-						link: $page.site-data.sign-in-url
+						link: $inner-page.site-data.sign-in-url
 						
 					-- end: ds.row
 
@@ -235,7 +276,7 @@ module signup-action: create-user
 		radius: $ds.radius.zero
 		
 			-- ftd.image:
-			src: $page.site-data.logo
+			src: $inner-page.site-data.logo
 			width.fixed.px: 89
 			height.fixed.px: 33
 			fit: cover
@@ -255,20 +296,20 @@ module signup-action: create-user
 					-- ftd.text-input:
 					width: fill-container
 					type: text
-					$on-input$: $ftd.set-string($a = $page.signup-action.name.value, v = $VALUE)
-					$on-input$: $utils.set-null($var = $page.signup-action.name.error)
+					$on-input$: $ftd.set-string($a = $inner-page.signup-action.name.value, v = $VALUE)
+					$on-input$: $utils.set-null($var = $inner-page.signup-action.name.error)
 					height.fixed.px: 40
 					border-radius.px: 8
 					placeholder: name
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.signup-action.name.error != NULL }: $inherited.colors.error.border
+					border-color if { inner-page.signup-action.name.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.signup-action.name.error
-					if: { page.signup-action.name.error != NULL }
+					-- ds.copy-small: $inner-page.signup-action.name.error
+					if: { inner-page.signup-action.name.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -282,20 +323,20 @@ module signup-action: create-user
 					-- ftd.text-input:
 					width: fill-container
 					type: text
-					$on-input$: $ftd.set-string($a = $page.signup-action.username.value, v = $VALUE)
-					$on-input$: $utils.set-null($var = $page.signup-action.username.error)
+					$on-input$: $ftd.set-string($a = $inner-page.signup-action.username.value, v = $VALUE)
+					$on-input$: $utils.set-null($var = $inner-page.signup-action.username.error)
 					height.fixed.px: 40
 					border-radius.px: 8
 					placeholder: username
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.signup-action.username.error != NULL }: $inherited.colors.error.border
+					border-color if { inner-page.signup-action.username.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.signup-action.username.error
-					if: { page.signup-action.username.error != NULL }
+					-- ds.copy-small: $inner-page.signup-action.username.error
+					if: { inner-page.signup-action.username.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -309,20 +350,20 @@ module signup-action: create-user
 					-- ftd.text-input:
 					placeholder: Enter email
 					type: email
-					$on-input$: $ftd.set-string($a = $page.signup-action.email.value, v = $VALUE)
-					$on-input$: $utils.set-null($var = $page.signup-action.email.error)
+					$on-input$: $ftd.set-string($a = $inner-page.email.value, v = $VALUE)
+					$on-input$: $utils.set-null($var = $inner-page.email.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.signup-action.email.error != NULL }: $inherited.colors.error.border
+					border-color if { inner-page.email.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.signup-action.email.error
-					if: { page.signup-action.email.error != NULL }
+					-- ds.copy-small: $inner-page.email.error
+					if: { inner-page.email.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -336,20 +377,20 @@ module signup-action: create-user
 					-- ftd.text-input:
 					placeholder: Enter password
 					type: password
-					$on-input$: $ftd.set-string($a = $page.signup-action.password.value, v = $VALUE)
-					$on-input$: $utils.set-null($var = $page.signup-action.password.error)
+					$on-input$: $ftd.set-string($a = $inner-page.signup-action.password.value, v = $VALUE)
+					$on-input$: $utils.set-null($var = $inner-page.signup-action.password.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.signup-action.password.error != NULL }: $inherited.colors.error.border
+					border-color if { inner-page.signup-action.password.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.signup-action.password.error
-					if: { page.signup-action.password.error != NULL }
+					-- ds.copy-small: $inner-page.signup-action.password.error
+					if: { inner-page.signup-action.password.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -363,20 +404,20 @@ module signup-action: create-user
 					-- ftd.text-input:
 					placeholder: Enter password again
 					type: password
-					$on-input$: $ftd.set-string($a = $page.signup-action.password2.value, v = $VALUE)
-					$on-input$: $utils.set-null($var = $page.signup-action.password2.error)
+					$on-input$: $ftd.set-string($a = $inner-page.signup-action.password2.value, v = $VALUE)
+					$on-input$: $utils.set-null($var = $inner-page.signup-action.password2.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.signup-action.password2.error != NULL }: $inherited.colors.error.border
+					border-color if { inner-page.signup-action.password2.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.signup-action.password2.error
-					if: { page.signup-action.password2.error != NULL }
+					-- ds.copy-small: $inner-page.signup-action.password2.error
+					if: { inner-page.signup-action.password2.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -388,20 +429,27 @@ module signup-action: create-user
 				align-content: left
 				
 					-- ds.checkbox: I accept Terms and Conditions
-					$is-checked: $page.signup-action.accept_terms.value
-					$on-click$: $utils.set-null($var = $page.signup-action.accept_terms.error)
+					$is-checked: $inner-page.signup-action.accept_terms.value
+					$on-click$: $utils.set-null($var = $inner-page.signup-action.accept_terms.error)
 					size: small
 					
-					-- ds.copy-small: $page.signup-action.accept_terms.error
-					if: { page.signup-action.accept_terms.error != NULL }
+					-- ds.copy-small: $inner-page.signup-action.accept_terms.error
+					if: { inner-page.signup-action.accept_terms.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
 
 				-- ds.primary-button: Sign up
-				$on-click$: $page.signup-action.submit-values($name=$page.signup-action.name, $email=$page.signup-action.email, $username=$page.signup-action.username, $password=$page.signup-action.password, $password2=$page.signup-action.password2, $accept_terms=$page.signup-action.accept_terms, $next=$page.signup-action.next)
+				if: { inner-page.code == NULL }
+				$on-click$: $inner-page.signup-action.submit-values($name=$inner-page.signup-action.name, $email=$inner-page.email, $username=$inner-page.signup-action.username, $password=$inner-page.signup-action.password, $password2=$inner-page.signup-action.password2, $accept_terms=$inner-page.signup-action.accept_terms, $next=$inner-page.signup-action.next)
 				width: full
 				radius: curved
+				
+				-- ds.primary-button: Sign up
+				            if: { inner-page.code != NULL }
+				            $on-click$: $inner-page.signup-action.submit-values-with-code($name = $inner-page.signup-action.name, $email = $inner-page.email, $username = $inner-page.signup-action.username, $password = $inner-page.signup-action.password, $password2 = $inner-page.signup-action.password2, $accept_terms = $inner-page.signup-action.accept_terms, $next = $inner-page.signup-action.next, code = $inner-page.code)
+				            width: full
+				            radius: curved
 				
 				-- ds.row:
 				spacing: $ds.spaces.horizontal-gap.extra-small
@@ -409,12 +457,12 @@ module signup-action: create-user
 				inset: $ds.spaces.inset-square.medium
 				
 					-- ds.copy-regular: $lang.create-account
-					text if { page.site-data.sign-in-url }: $lang.existing-account
+					text if { inner-page.site-data.sign-in-url }: $lang.existing-account
 					width: hug-content
 					
 					-- ds.link: $lang.sign-in
 					color: $ds.colors.accent.primary
-					link: $page.site-data.sign-in-url
+					link: $inner-page.site-data.sign-in-url
 					
 				-- end: ds.row
 
@@ -426,4 +474,4 @@ module signup-action: create-user
 
 -- end: ds.column
 
--- end: page
+-- end: inner-page

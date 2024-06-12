@@ -20,3 +20,16 @@ js: $assets.files.assets.functions.js
 
 callAlert("signup attempt")
 
+
+-- void submit-values-with-code(name, email, username, password, password2, accept_terms, next, code):
+ftd.string-field $name:
+ftd.string-field $email:
+ftd.string-field $username:
+ftd.string-field $password:
+ftd.string-field $password2:
+ftd.boolean-field $accept_terms:
+ftd.string-field $next:
+string code:
+js: $assets.files.assets.functions.js
+
+callAlert("signup attempt")
