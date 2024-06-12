@@ -1,5 +1,5 @@
 -- ftd.string-field $site-slug: site-slug
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- void submit(org_slash_username, site_slug):
 string org_slash_username:

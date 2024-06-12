@@ -1,23 +1,23 @@
 -- ftd.string-field $name: name
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- ftd.string-field $username: username
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- ftd.string-field $email: email
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- ftd.string-field $password: password
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- ftd.string-field $password2: password2
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- boolean-field $accept_terms: accept_terms
 value: false
 
 -- ftd.string-field $next: next
-$value: /
+value: /
 
 
 -- void submit-values(name, email, username, password, password2, accept_terms, next):

@@ -1,11 +1,11 @@
 -- ftd.string-field $username: username
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- ftd.string-field $password: password
-$value: *$ftd.empty
+value: *$ftd.empty
 
 -- ftd.string-field $next: next
-$value: /
+value: /
 
 -- void submit-values(username, password, next):
 ftd.string-field $username:
