@@ -1,5 +1,4 @@
 -- ftd.string-field $domain: domain
-value: *$ftd.empty
 
 -- void submit(site_slug, domain):
 string site_slug:

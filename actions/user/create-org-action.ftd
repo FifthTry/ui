@@ -1,5 +1,4 @@
 -- ftd.string-field $org-slug: org-slug
-value: *$ftd.empty
 
 -- void submit(username, org_slug):
 string username:

@@ -1,21 +1,9 @@
 -- ftd.string-field $name: name
-value: *$ftd.empty
-
 -- ftd.string-field $username: username
-value: *$ftd.empty
-
 -- ftd.string-field $email: email
-value: *$ftd.empty
-
 -- ftd.string-field $password: password
-value: *$ftd.empty
-
 -- ftd.string-field $password2: password2
-value: *$ftd.empty
-
--- boolean-field $accept_terms: accept_terms
-value: false
-
+-- ftd.boolean-field $accept_terms: accept_terms
 -- ftd.string-field $next: next
 value: /
 
@@ -26,16 +14,9 @@ ftd.string-field $email:
 ftd.string-field $username:
 ftd.string-field $password:
 ftd.string-field $password2:
-boolean-field $accept_terms:
+ftd.boolean-field $accept_terms:
 ftd.string-field $next:
 js: $assets.files.assets.functions.js
 
 callAlert("signup attempt")
 
-
-
-
--- record boolean-field:
-caption name:
-boolean value:
-optional string error:
