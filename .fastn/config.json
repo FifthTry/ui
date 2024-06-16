@@ -2194,8 +2194,8 @@
         },
         "components/input.ftd": {
           "name": "components/input.ftd",
-          "checksum": "4DEFEB857CE513003FE61EC6F4A19557CB52E79623657913B1759972EE48FA2C",
-          "size": 4958
+          "checksum": "AF5650D91ACA4AD8BF4AB11B8AA2298B1727F8A569F022D2530C49F21DFED2E0",
+          "size": 5461
         },
         "components/label-text.ftd": {
           "name": "components/label-text.ftd",
@@ -2209,8 +2209,8 @@
         },
         "components/newsletter.ftd": {
           "name": "components/newsletter.ftd",
-          "checksum": "364BF89FE6833697C5B5E91670B9E1D88BFAE714F27E7EFE506B55CB28DC5F82",
-          "size": 4534
+          "checksum": "7CDF04DA951F3B0DC3B99CEAC17AD69B6A0834C3759D6A94914023F81E62B0A1",
+          "size": 4564
         },
         "components/pagination.ftd": {
           "name": "components/pagination.ftd",
@@ -2259,8 +2259,8 @@
         },
         "components/text-area.ftd": {
           "name": "components/text-area.ftd",
-          "checksum": "CAA970F3BF5088938CB63904A841D4B121AC5C0C117BD94E19037410E5D260F3",
-          "size": 1182
+          "checksum": "7321E9F05A689F79A2031758850184E6950D540D03C13B1B3362EEB84AE2DDAB",
+          "size": 1271
         },
         "components/timeline.ftd": {
           "name": "components/timeline.ftd",
@@ -2272,10 +2272,15 @@
           "checksum": "C01A2D7CBF4470094F7C0FD09285FF8F840BFEF8DD4D9BC604817C5E24C8FBD5",
           "size": 1293
         },
+        "components/toggle-image-link.ftd": {
+          "name": "components/toggle-image-link.ftd",
+          "checksum": "24FDF2AF4DBDA1D18E37D50F860AAF362108807CC97C0BA1E40CBE23D03EF93A",
+          "size": 1211
+        },
         "components/toggle.ftd": {
           "name": "components/toggle.ftd",
-          "checksum": "CFB6D1D3B3D9027DB564BA73DD21AB312036C79CDF2E82EFE5CA304C67B2E54F",
-          "size": 4244
+          "checksum": "CC07AA079505B1CC0D480D92248D6E6F6F0B15A649D85B8660C8A40CA7F1D387",
+          "size": 4208
         },
         "demos/code-snippet.ftd": {
           "name": "demos/code-snippet.ftd",
@@ -2364,8 +2369,8 @@
         },
         "index.ftd": {
           "name": "index.ftd",
-          "checksum": "24B7764A63F712B340FCE9B61D4033F2E706E05245B363FF3EBD405808B3A2FA",
-          "size": 19433
+          "checksum": "C1B8813C4E97D99BCA2D5535B608EA70B5B6A2575AAF008EC328161CF7DD90B1",
+          "size": 19598
         },
         "record.ftd": {
           "name": "record.ftd",
@@ -2388,8 +2393,8 @@
           "size": 78
         }
       },
-      "zip_url": "https://github.com/fastn-community/design-system/archive/f681f6e0eff78df5b8cfbc3e74fb856fd275b8ce.zip",
-      "checksum": "57D19FC898FE79C18F205121D0F731995C62B8B01A3C5DFDA3D39E19CC4E5D79"
+      "zip_url": "https://github.com/fastn-community/design-system/archive/241364e4c046c715a23aae00ab95b2716e1cce5b.zip",
+      "checksum": "CF9F7EF51B2653E8BADBF5689DA474CA290BE1A6868C0B4B12F52ED9FB58B870"
     },
     "fastn-community.github.io/doc-site": {
       "files": {

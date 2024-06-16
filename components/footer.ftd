@@ -40,8 +40,7 @@ inset: $ds.spaces.inset-wide.medium
 				
 					-- footer-social-content:
 					
-					-- dark-mode-toggle.dark-mode-toggle:
-					
+
 				-- end: ds.row
 			-- end: ds.row
 
@@ -54,12 +53,12 @@ inset: $ds.spaces.inset-wide.medium
 			align-content: top-left
 			
 				-- footer-toc-content:
-				            site-data: $footer.site-data
+				site-data: $footer.site-data
+
 				-- footer-logo-content:
 				-- ds.copy-small: © 2024 FifthTry. All rights reserved
 				-- footer-social-content:
-				-- dark-mode-toggle.dark-mode-toggle:
-				
+
 			-- end: ds.column
 
 		-- end: ftd.mobile
@@ -86,7 +85,7 @@ border: $ds.borders.top.small
 radius: $ds.radius.zero
 
 	-- ds.copy-small: © 2024 FifthTry. All rights reserved
-	
+
 -- end: ds.section-column
 
 -- end: basic-footer
@@ -108,41 +107,43 @@ align-content: left
 	-- ftd.image:
 	src: $assets.files.assets.logo.svg
 	width.fixed.px: 90
-	
+
 	-- ds.row:
 	align-content: left
 	wrap if { ftd.device == "mobile" }: true
 	spacing: $ds.spaces.horizontal-gap.medium
-	
+
 		-- ds.link: **Pricing**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.pricing-url
-		
+
 		-- ds.link: **Team**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.team-url
-		
+
 		-- ds.link: **About Us**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.about-url
-		
+
 		-- ds.link: **Terms**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.terms-url
-		
+
 		-- ds.link: **Privacy**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.privacy-url
-		
+
 		-- ds.link: **Blog**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.blog-url
-		
+
 		-- ds.link: **`fastn` Packages**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.packages-url
 		align: center
-		
+
+
+
 	-- end: ds.row
 
 -- end: ds.column
@@ -165,11 +166,11 @@ align-content if { ftd.device == "mobile" }: left
 	height: fill-container
 	width.fixed.px: 243
 	link: https://www.ycombinator.com/companies/fifthtry
-	
+
 	-- ftd.image:
 	src: $assets.files.assets.hostn.svg
 	width.fixed.px: 187
-	
+
 -- end: ds.column
 
 -- end: footer-logo-content
@@ -179,44 +180,33 @@ align-content if { ftd.device == "mobile" }: left
 
 
 -- component footer-social-content:
-boolean $icon-1: false
-boolean $icon-2: false
-boolean $icon-3: false
-boolean $icon-4: false
 
 -- ds.row:
 align-content: right
 width: hug-content
 spacing: $ds.spaces.horizontal-gap.medium
 
-	-- ftd.image:
-	src if { !footer-social-content.icon-1 }: $assets.files.assets.homepage.tweet.svg
-	src: $assets.files.assets.homepage.tweet-h.svg
-	$on-mouse-enter$: $ftd.set-bool($a = $footer-social-content.icon-1, v = true)
-	$on-mouse-leave$: $ftd.set-bool($a = $footer-social-content.icon-1, v = false)
-	link: https://twitter.com/FifthTryHQ
-	
-	-- ftd.image:
-	src if { !footer-social-content.icon-2 }: $assets.files.assets.homepage.linkedin.svg
-	src: $assets.files.assets.homepage.linkedin-h.svg
-	$on-mouse-enter$: $ftd.set-bool($a = $footer-social-content.icon-2, v = true)
-	$on-mouse-leave$: $ftd.set-bool($a = $footer-social-content.icon-2, v = false)
-	link: https://in.linkedin.com/company/fifthtry
-	
-	-- ftd.image:
-	src if { !footer-social-content.icon-3 }: $assets.files.assets.homepage.fb.svg
-	src: $assets.files.assets.homepage.fb-h.svg
-	$on-mouse-enter$: $ftd.set-bool($a = $footer-social-content.icon-3, v = true)
-	$on-mouse-leave$: $ftd.set-bool($a = $footer-social-content.icon-3, v = false)
-	link: https://github.com/FifthTry
-	
-	-- ftd.image:
-	src if { !footer-social-content.icon-4 }: $assets.files.assets.homepage.gh.svg
-	src: $assets.files.assets.homepage.gh-h.svg
-	$on-mouse-enter$: $ftd.set-bool($a = $footer-social-content.icon-4, v = true)
-	$on-mouse-leave$: $ftd.set-bool($a = $footer-social-content.icon-4, v = false)
-	link: https://github.com/FifthTry
-	
+	-- ds.toggle-image-link: https://twitter.com/FifthTryHQ
+	src: $assets.files.assets.homepage.tweet.svg
+	hover-src: $assets.files.assets.homepage.tweet-h.svg
+
+	-- ds.toggle-image-link: https://in.linkedin.com/company/fifthtry
+	src: $assets.files.assets.homepage.linkedin.svg
+	hover-src: $assets.files.assets.homepage.linkedin-h.svg
+
+	-- ds.toggle-image-link: https://github.com/FifthTry
+	src: $assets.files.assets.homepage.fb.svg
+	hover-src: $assets.files.assets.homepage.fb-h.svg
+
+	-- ds.toggle-image-link: https://github.com/FifthTry
+	src: $assets.files.assets.homepage.gh.svg
+	hover-src: $assets.files.assets.homepage.gh-h.svg
+
+    -- dark-mode-toggle.dark-mode-toggle:
+
 -- end: ds.row
 
 -- end: footer-social-content
+
+
+

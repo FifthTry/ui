@@ -2,10 +2,6 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/components/avatar
--- import: ui.fifthtry.com/components/dark-mode-toggle
-
-
-
 
 
 
@@ -77,9 +73,7 @@ radius: $ds.radius.zero
 				
 				-- avatar.avatar:
 				user-data: $header.user-data
-				
-				-- dark-mode-toggle.dark-mode-toggle:
-				
+
 			-- end: ds.row
 
 		-- end: ds.row
