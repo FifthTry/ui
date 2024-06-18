@@ -74,8 +74,8 @@ top-message: $page.top-message
 				
 				-- ds.primary-button: Configure Now
 				link: $page.data.configure-url
-				width: full
 				radius: curved
+				width: full
 				
 			-- end: ds.column
 
