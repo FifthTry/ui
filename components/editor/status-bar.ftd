@@ -6,6 +6,7 @@ height.fixed.px: 36
 background.solid: black
 spacing: space-between
 align-content: center
+padding.px: 10
 
 -- ftd.text: `Copyright © 2021-2024 FifthTry, Inc`
 color: white

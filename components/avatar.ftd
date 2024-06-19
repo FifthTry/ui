@@ -43,8 +43,8 @@ border-radius.px: 8
 border-width.px: 1
 align-content: center
 anchor: parent
-left.px: -116
-top.px: 67
+right.px: 10
+top.px: 60
 padding.px: 8
 
 	-- ftd.column:

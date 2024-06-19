@@ -1,13 +1,17 @@
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/components/avatar
+-- import: ui.fifthtry.com/scenarios/john-doe
 
 -- component top-bar:
 module site-data: site-data
 
 -- ftd.row:
 width.fixed.percent: 100
-height.fixed.px: 36
+height.fixed.px: 45
 background.solid: black
 spacing: space-between
+align-content: center
+padding.px: 10
 
 -- ftd.image:
 src: $top-bar.site-data.logo
@@ -16,5 +20,10 @@ link: $top-bar.site-data.homepage
 -- ftd.text: `FASTN.ftd`
 color: white
 
+-- avatar.avatar:
+user-data: $john-doe.jd
+
 -- end: ftd.row
 -- end: top-bar
+
+
