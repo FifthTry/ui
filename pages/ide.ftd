@@ -1,0 +1,60 @@
+-- import: ui.fifthtry.com/assets
+-- import: ui.fifthtry.com/components/editor/vars
+-- import: ui.fifthtry.com/components/editor/left-gutter
+-- import: ui.fifthtry.com/components/editor/right-gutter
+-- import: ui.fifthtry.com/components/editor/main-editor
+-- import: ui.fifthtry.com/components/editor/top-bar
+
+
+-- component page:
+boolean left-gutter: $vars.left-gutter
+boolean right-gutter: $vars.right-gutter
+
+
+-- ftd.column:
+width.fixed.percent: 100
+height.fixed.percent: 100
+
+-- top-bar.top-bar:
+
+-- ftd.row:
+width.fixed.percent: 100
+height.fixed.percent: 100
+/height.fixed.calc: 100% - 36px
+spacing: space-between
+
+
+-- left-gutter.left-gutter:
+if: { page.left-gutter }
+
+-- main-editor.main-editor:
+
+-- right-gutter.right-gutter:
+if: { page.right-gutter }
+
+-- end: ftd.row
+
+/-- status-bar:
+
+-- end: ftd.column
+
+
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- page:
+
+
+
+
+
+

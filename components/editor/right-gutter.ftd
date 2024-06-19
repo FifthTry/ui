@@ -1,0 +1,24 @@
+-- component right-gutter:
+
+-- ftd.column:
+width.fixed.px: 36
+height.fixed.percent: 100
+background.solid: yellow
+
+
+
+
+
+-- ftd.column: ;; right sidebar panel icons
+height.fixed.px: 100
+width.fixed.percent: 100
+background.solid: red
+
+-- end: ftd.column
+
+
+
+
+-- end: ftd.column
+
+-- end: right-gutter

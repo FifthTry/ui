@@ -1,0 +1,26 @@
+-- component left-gutter:
+
+-- ftd.column:
+width.fixed.px: 36
+height.fixed.percent: 100
+background.solid: yellow
+spacing: space-between
+
+-- ftd.column: ;; left sidebar panel icons
+height.fixed.px: 100
+width.fixed.percent: 100
+background.solid: red
+
+-- end: ftd.column
+
+-- ftd.column: ;; status bar panel icons
+height.fixed.px: 100
+width.fixed.percent: 100
+background.solid: red
+
+-- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: left-gutter

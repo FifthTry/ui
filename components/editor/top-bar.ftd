@@ -1,0 +1,13 @@
+-- component top-bar:
+
+-- ftd.column:
+width.fixed.percent: 100
+height.fixed.px: 36
+background.solid: orange
+align-content: center
+
+-- ftd.text: top-bar
+-- end: ftd.column
+-- end: top-bar
+
+-- page:

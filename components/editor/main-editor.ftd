@@ -1,0 +1,19 @@
+-- component main-editor:
+css: $assets.files.components.editor.editor.css
+
+-- ftd.column:
+height.fixed.percent: 100
+width.fixed.calc: 100% - 72px
+;; background.solid: green
+align-content: center
+
+-- cm-editor:
+
+-- end: ftd.column
+
+-- end: main-editor
+
+
+-- web-component cm-editor:
+js: $assets.files.components.editor.editor-bundle.js
+
