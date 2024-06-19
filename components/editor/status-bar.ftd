@@ -1,0 +1,17 @@
+-- component status-bar:
+
+-- ftd.row:
+width.fixed.percent: 100
+height.fixed.px: 36
+background.solid: black
+spacing: space-between
+align-content: center
+
+-- ftd.text: `Copyright © 2021-2024 FifthTry, Inc`
+color: white
+
+-- ftd.text: `Online`
+color: white
+
+-- end: ftd.row
+-- end: status-bar

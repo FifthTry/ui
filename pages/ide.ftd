@@ -4,6 +4,7 @@
 -- import: ui.fifthtry.com/components/editor/right-gutter
 -- import: ui.fifthtry.com/components/editor/main-editor
 -- import: ui.fifthtry.com/components/editor/top-bar
+-- import: ui.fifthtry.com/components/editor/status-bar
 
 
 -- component page:
@@ -34,7 +35,7 @@ if: { page.right-gutter }
 
 -- end: ftd.row
 
-/-- status-bar:
+-- status-bar.status-bar:
 
 -- end: ftd.column
 

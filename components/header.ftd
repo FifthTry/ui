@@ -25,7 +25,7 @@ inset: $ds.spaces.inset-wide.medium
 		radius: $ds.radius.zero
 		
 			-- ftd.image:
-			src: $site-data.logo
+			src: $header.site-data.logo
 			link: $header.site-data.homepage
 			
 			-- ds.row:

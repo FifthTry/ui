@@ -1,13 +1,20 @@
--- component top-bar:
+-- import: ui.fifthtry.com/site-data
 
--- ftd.column:
+-- component top-bar:
+module site-data: site-data
+
+-- ftd.row:
 width.fixed.percent: 100
 height.fixed.px: 36
-background.solid: orange
-align-content: center
+background.solid: black
+spacing: space-between
 
--- ftd.text: top-bar
--- end: ftd.column
+-- ftd.image:
+src: $top-bar.site-data.logo
+link: $top-bar.site-data.homepage
+
+-- ftd.text: `FASTN.ftd`
+color: white
+
+-- end: ftd.row
 -- end: top-bar
-
--- page:
