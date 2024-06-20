@@ -1,0 +1,43 @@
+-- import: ui.fifthtry.com/components/editor/vars
+
+-- component package:
+data data: $vars.package-data
+
+-- ftd.column:
+width.fixed.px: 300
+height.fixed.percent: 100
+background.solid: purple
+align-content: center
+classes if { !vars.package }: hidden
+
+-- ftd.text: Package
+
+-- end: ftd.column
+
+-- end: package
+
+
+-- record data:
+string name:
+folder list folders:
+file list files:
+
+-- record flags:
+boolean modified: false
+boolean added: false
+boolean deleted: false
+boolean open: false
+boolean conflicted: false
+boolean selected: false
+
+-- record file:
+string name:
+string url:
+flags flags:
+
+-- record folder:
+string name:
+flags flags:
+folder list folders:
+file list files:
+

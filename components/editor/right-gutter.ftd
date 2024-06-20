@@ -1,7 +1,9 @@
+-- import: ui.fifthtry.com/components/editor/vars
+
 -- component right-gutter:
 
 -- ftd.column:
-width.fixed.px: 36
+width.fixed.px: $vars.panel-width
 height.fixed.percent: 100
 background.solid: yellow
 

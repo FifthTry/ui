@@ -5,6 +5,7 @@
 -- import: ui.fifthtry.com/components/editor/main-editor
 -- import: ui.fifthtry.com/components/editor/top-bar
 -- import: ui.fifthtry.com/components/editor/status-bar
+-- import: ui.fifthtry.com/components/editor/panels/package
 -- import: ui.fifthtry.com/components/editor/welcome-screen
 
 
@@ -34,6 +35,8 @@ spacing: space-between
 
 -- left-gutter.left-gutter:
 if: { page.left-gutter }
+
+-- package.package:
 
 -- main-editor.main-editor:
 

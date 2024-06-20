@@ -1,7 +1,9 @@
+-- import: ui.fifthtry.com/components/editor/vars
+
 -- component left-gutter:
 
 -- ftd.column:
-width.fixed.px: 36
+width.fixed.px: $vars.panel-width
 height.fixed.percent: 100
 background.solid: yellow
 spacing: space-between
@@ -10,6 +12,11 @@ spacing: space-between
 height.fixed.px: 100
 width.fixed.percent: 100
 background.solid: red
+align-content: top-center
+padding-top.px: 5
+
+-- ftd.text: P
+style if { vars.package }: bold
 
 -- end: ftd.column
 
