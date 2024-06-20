@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/components/avatar
+-- import: ui.fifthtry.com/components/editor/vars
 -- import: ui.fifthtry.com/scenarios/john-doe
 
 -- record data:
@@ -10,6 +11,7 @@ module site-data: site-data
 data data:
 
 -- ftd.column:
+classes if { vars.screen != "welcome" }: hidden
 width.fixed.percent: 100
 height.fixed.percent: 100
 background.solid: black

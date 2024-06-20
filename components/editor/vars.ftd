@@ -4,4 +4,7 @@
 -- boolean $right-gutter: true
 -- boolean $main-editor: true
 
--- optional welcome-screen.data $welcome-data:
+-- welcome-screen.data $welcome-data:
+message: default message
+
+-- string $screen: welcome
