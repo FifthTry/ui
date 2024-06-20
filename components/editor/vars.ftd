@@ -1,3 +1,7 @@
+-- import: ui.fifthtry.com/components/editor/welcome-screen
+
 -- boolean $left-gutter: true
 -- boolean $right-gutter: true
 -- boolean $main-editor: true
+
+-- optional welcome-screen.data $welcome-data:

@@ -1,11 +1,14 @@
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/site-data
 
+
+
+
+
 -- component avatar:
 ud.user-data user-data:
 module site-data: site-data
 boolean $open: false
-
 
 -- ftd.row:
 spacing.fixed.px: 4
@@ -21,10 +24,10 @@ $on-click-outside$: $ftd.set-boolean($a = $avatar.open, v = false)
 	
 -- end: ftd.row
 
-
-
-
 -- end: avatar
+
+
+
 
 
 
