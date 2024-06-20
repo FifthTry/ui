@@ -15,10 +15,11 @@ padding.px: 10
 
 -- ftd.image:
 src: $top-bar.site-data.logo
-link: $top-bar.site-data.homepage
+ link: /e/ft/
 
 -- ftd.text: `FASTN.ftd`
 color: white
+/e/ft/FASTN.ftd
 
 -- avatar.avatar:
 user-data: $john-doe.jd
