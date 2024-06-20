@@ -3,7 +3,7 @@
 
 -- string homepage: /scenarios/logged-in-home/
 
--- ftd.image-src logo: $assets.files.assets.logo.svg
+-- ftd.image-src logo: $assets.files.assets.fifthtry.png
 
 -- string sign-in-url: /scenarios/signin-page/
 -- string sign-up-url: /scenarios/signup-page/
