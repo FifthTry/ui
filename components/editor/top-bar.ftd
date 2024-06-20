@@ -15,7 +15,7 @@ padding.px: 10
 
 -- ftd.image:
 src: $top-bar.site-data.logo
- link: /e/ft/
+ link: /e/
 
 -- ftd.text: `FASTN.ftd`
 color: white
