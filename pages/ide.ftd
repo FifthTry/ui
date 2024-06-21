@@ -10,11 +10,6 @@
 
 
 -- component page:
-boolean left-gutter: $vars.left-gutter
-boolean right-gutter: $vars.right-gutter
-welcome-screen.data welcome-data: $vars.welcome-data
-string screen: $vars.screen
-
 
 -- ftd.column:
 width.fixed.percent: 100
@@ -22,11 +17,7 @@ height.fixed.percent: 100
 
 -- top-bar.top-bar:
 
--- welcome-screen.welcome-screen:
-data: $page.welcome-data
-
 -- ftd.row:
-classes if { page.screen != "main" }: hidden
 width.fixed.percent: 100
 height.fixed.percent: 100
 /height.fixed.calc: 100% - 36px
@@ -34,14 +25,12 @@ spacing: space-between
 
 
 -- left-gutter.left-gutter:
-if: { page.left-gutter }
 
 -- package.package:
 
 -- main-editor.main-editor:
 
 -- right-gutter.right-gutter:
-if: { page.right-gutter }
 
 -- end: ftd.row
 

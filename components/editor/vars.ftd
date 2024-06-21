@@ -1,21 +1,11 @@
 -- import: ui.fifthtry.com/components/editor/welcome-screen
 -- import: ui.fifthtry.com/components/editor/panels/package
 
--- boolean $left-gutter: true
--- boolean $right-gutter: true
--- boolean $main-editor: true
-
 ;; left panels
 -- boolean $package: true
 
 ;; if any of the left panels are open, this will be true
 -- boolean $left-panel: true
-
--- welcome-screen.data $welcome-data:
-message: default message
-
--- string $screen: main
-
 
 
 -- package.data $package-data:
