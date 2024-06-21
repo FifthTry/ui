@@ -9,6 +9,7 @@ height.fixed.percent: 100
 classes if { !vars.package }: hidden
 
 -- package-name: $package.data.name
+url: $package.data.url
 
 -- show-folder: $folder
 for: folder in $package.data.folders
@@ -73,6 +74,7 @@ selected: true
 
 -- component package-name:
 caption name:
+string url:
 boolean $hover: false
 
 -- ftd.row:
@@ -85,8 +87,13 @@ $on-mouse-enter$: $ftd.set-bool($a=$package-name.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package-name.hover, v=false)
 
     -- ftd.text: $package-name.name
+    link: { package-name.url }
+    color: black
+
     -- ftd.text: `X`
     if: { package-name.hover }
+    link: /e/
+    color: black
 
 -- end: ftd.row
 
