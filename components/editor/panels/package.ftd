@@ -63,6 +63,13 @@ open: false
 conflicted: false
 selected: false
 
+-- flags selected-flags:
+modified: false
+added: false
+deleted: false
+open: true
+conflicted: false
+selected: true
 
 -- component package-name:
 caption name:
@@ -76,9 +83,9 @@ padding-bottom.px: 0
 $on-mouse-enter$: $ftd.set-bool($a=$package-name.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package-name.hover, v=false)
 
--- ftd.text: $package-name.name
--- ftd.text: x
-if: { package-name.hover }
+    -- ftd.text: $package-name.name
+    -- ftd.text: `X`
+    if: { package-name.hover }
 
 -- end: ftd.row
 
@@ -126,8 +133,9 @@ integer level: 0
 -- ftd.row:
 padding.px: 8
 width.fixed.percent: 100
-padding-bottom.px: 0
 padding-left.px: $padding(level=$show-file.level)
+padding-vertical.px: 4
+background.solid if { show-file.f.flags.selected }: #eee
 
 -- ftd.text: $show-file.f.name
 link: $show-file.f.url

@@ -53,6 +53,7 @@ url: /foo/blog/index.ftd
 
 -- package.file: first-post.ftd
 url: /foo/blog/first-post.ftd
+flags: $package.selected-flags
 
 -- end: blog-files
 
