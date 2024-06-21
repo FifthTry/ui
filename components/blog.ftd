@@ -1,0 +1,462 @@
+-- import: ui.fifthtry.com/components/blog/blog-post as post
+-- import: www.fifthtry.com/just-user-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: www.fifthtry.com/blog/authors as author-bio
+-- import: fastn-community.github.io/svg-icons/phosphor as ph
+-- import: fastn-community.github.io/dark-mode-switcher as dms
+-- import: fastn-community.github.io/design-system as ds
+export: borders, button, icon-button, primary-button, secondary-button, circle-text-button, phosphor-icon-button, inline-row, footer-link, copyright-text, page-widths, header-link, page, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, section-column, column, element-radius, radius, row, flush, gap, hv, spaces, border-data, border-bottom, alert, container, text-input, danger-button, checkbox, link-button, floater, copy-to-clipboard-text, copy-to-clipboard-icon, label-text, package-info
+exposing: page-widths
+
+
+-- page-widths widths:
+regular.px: 1140
+narrow.px: 800
+wide.px: 1340
+
+
+
+-- import: fastn-community.github.io/dark-flame-cs
+-- import: fastn-community.github.io/midnight-storm-typography
+
+-- ftd.color-scheme colors: $dark-flame-cs.main
+-- ftd.type-data types: $midnight-storm-typography.types
+
+
+-- component page:
+caption title:
+optional body description:
+string date:
+;;author-bio author:
+optional ftd.image-src banner-image:
+optional ftd.image-src avatar:
+optional string author-name:
+optional body body:
+children wrapper:
+boolean theme-switcher: true
+boolean fastn-badge: true
+
+-- ds.section-column:
+align-content: top-left
+outer-background.solid: $ds.colors.background.base
+
+-- dms.dark-mode-switcher-float:
+if: { page.theme-switcher }
+
+-- ftd.image:
+if: { page.fastn-badge }
+src: $assets.files.assets.blog.powered-by.svg
+anchor: window
+right.px: 0
+bottom.px: 0
+z-index: 99999999999999
+link: https://fastn.com/
+open-in-new-tab: true
+
+-- ftd.image:
+if: { page.banner-image != NULL }
+src: $page.banner-image
+width: fill-container
+height.fixed.px: 220
+fit: cover
+
+-- ds.row:
+align-content: top-left
+spacing: $ds.spaces.horizontal-gap.large
+inset: $ds.spaces.inset-tall.zero-medium
+
+-- ds.column:
+align-content: top-left
+width.fixed.px: 300
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.copy-small: $page.date
+
+-- ds.row:
+align-content: left
+
+-- ds.image:
+if: { page.avatar != NULL }
+src: $page.avatar
+width.fixed.px: 40
+radius: $ds.radius.round
+
+-- ds.heading-small: $page.author-name
+if: { page.author-name != NULL }
+
+-- end: ds.row
+
+-- ds.column:
+align-content: left
+
+-- ds.copy-small: Share
+
+-- ds.row:
+align-content: left
+
+-- ds.image:
+src: $assets.files.assets.blog.linkedin.svg
+width.fixed.px: 24
+
+-- ds.image:
+src: $assets.files.assets.blog.tweet.svg
+width.fixed.px: 24
+
+-- ds.image:
+src: $assets.files.assets.blog.fb.svg
+width.fixed.px: 24
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- ds.column:
+align-content: top-left
+
+-- ds.heading-hero: $page.title
+
+-- ds.copy-regular: $page.body
+if: { page.body != NULL }
+
+-- ds.column:
+content: $page.wrapper
+spacing: $ds.spaces.vertical-gap.large
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- ds.newsletter: Subscription
+cta-text: Subscribe
+cta-link: /
+placeholder: Enter you email...
+input: true
+background.solid: $ds.colors.background.step-1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: ds.section-column
+
+-- end: page
+
+
+
+
+
+
+
+
+-- component video:
+caption youtube:
+optional ftd.resizing width: fill-container
+optional ftd.resizing height:
+
+-- ftd.iframe:
+youtube: $video.youtube
+min-height.fixed.px: 400
+min-width: fill-container
+width: $video.width
+height: $video.height
+margin-vertical.px: 24
+border-radius.px: 8
+
+-- end: video
+
+
+
+
+
+
+
+
+-- component h0:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+-- ds.heading-large: $h0.title
+
+-- ds.copy-regular:
+if: { h0.body != NULL }
+
+$h0.body
+
+-- end: ds.column
+
+-- end: h0
+
+
+
+
+
+
+
+
+
+-- component h1:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+-- ds.heading-large: $h1.title
+color: $ds.colors.shadow
+
+-- ds.copy-regular:
+if: { h1.body != NULL }
+
+$h1.body
+
+-- end: ds.column
+
+-- end: h1
+
+
+
+
+
+
+
+-- component h2:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+-- ds.heading-medium: $h2.title
+
+-- ds.copy-regular:
+if: { h2.body != NULL }
+
+$h2.body
+
+-- end: ds.column
+
+-- end: h2
+
+
+
+
+
+
+
+
+
+-- component quote:
+optional caption title:
+optional body body:
+optional ftd.image-src quote-logo: $assets.files.assets.blog.left-quote-circle-dark.svg
+
+-- ds.row:
+background.solid: $ds.colors.background.step-1
+inset: $ds.spaces.inset-tall.zero-medium
+border: $ds.borders.left.large
+border-color: $ds.colors.shadow
+radius: $ds.radius.medium
+align-content: top-left
+
+-- ftd.image:
+src: $quote.quote-logo
+width: auto
+height.fixed.px: 32
+padding-left.px: 16
+
+-- ds.column:
+align-content: left
+
+-- ds.copy-regular:
+if: { quote.body != NULL }
+
+$quote.body
+
+-- ds.row:
+align-content: left
+
+-- ds.copy-small: ~
+
+-- ds.copy-small: $quote.title
+if: { quote.title != NULL }
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- end: quote
+
+
+
+
+
+
+
+
+
+
+-- component para:
+body body:
+
+-- ds.copy-regular:
+
+$para.body
+
+-- end: para
+
+
+
+
+
+
+
+
+
+-- component code:
+optional caption caption:
+body body:
+optional string icon:
+string text: $code.body
+string lang: ftd
+boolean copy: true
+string $copy-text: null
+boolean $copy-mouse-in: false
+boolean $mouse-in: false
+optional ftd.resizing max-height:
+optional ftd.resizing max-width:
+string clean-code: $ftd.clean-code(a = $code.text, lang = $code.lang)
+boolean line-numbers: false
+
+-- ds.section-column:
+inner-background.solid: $inherited.colors.background.code
+spacing: $ds.spaces.vertical-gap.zero
+radius: $ds.radius.large
+margin: $ds.spaces.vertical-gap.medium
+
+ -- ds.row:
+ if: { code.caption != NULL || code.copy }
+ spacing: $ds.spaces.horizontal-gap.medium
+ inset: $ds.spaces.inset-square.medium
+ width: fill-container
+ border: $ds.borders.bottom.small
+ border-color: $ds.colors.border-strong
+ radius: $ds.radius.zero
+
+   -- ds.row:
+   align-content: left
+
+   -- ds.row:
+   width: hug-content
+   align-content: left
+   spacing: $ds.spaces.horizontal-gap.extra-small
+   color: $ds.colors.shadow
+
+   	-- ph.fill:
+   	if: { code.icon == NULL }
+   	name: circle
+    size: 14
+
+    -- ph.fill:
+    if: { code.icon == NULL }
+   	name: circle
+    size: 14
+
+    -- ph.fill:
+    if: { code.icon == NULL }
+   	name: circle
+    size: 14
+
+    -- end: ds.row
+
+      -- ph.regular: 
+      if: { code.icon != NULL }
+      name: $code.icon
+      size: 18
+
+      -- ds.copy-regular:
+      if: { code.caption != NULL }
+
+      $code.caption
+
+    -- end: ds.row
+		
+		-- ds.row:
+		if: { code.copy }
+		$on-mouse-enter$: $ftd.set-bool($a = $code.mouse-in, v = true)
+		$on-mouse-leave$: $ftd.set-bool($a = $code.mouse-in, v = false)
+		$on-mouse-leave$: $ftd.set-string($a = $code.copy-text, v = null)
+		width: hug-content
+		spacing: $ds.spaces.horizontal-gap.small
+
+		-- ftd.image:
+		if: { code.copy-text == "null" }
+		src: $assets.files.assets.blog.copy.svg
+		src if { code.copy-mouse-in }: $assets.files.assets.blog.copy-hover.svg
+		$on-mouse-enter$: $ftd.set-bool($a = $code.copy-mouse-in, v = true)
+		$on-mouse-leave$: $ftd.set-bool($a = $code.copy-mouse-in, v = false)
+		$on-click$: $ftd.copy-to-clipboard(a = $code.clean-code)
+		$on-click$: $ftd.set-string($a = $code.copy-text, v = Copied!)
+		width.fixed.px: 18
+
+		-- ftd.image:
+		if: { code.copy-text != "null" }
+		src: $assets.files.assets.blog.tick.svg
+		width.fixed.px: 18
+
+		-- ds.copy-regular: $code.copy-text
+		if: { code.copy-text != "null" }
+
+		-- end: ds.row
+
+	-- end: ds.row
+  
+	-- ftd.code:
+	theme: fastn-theme.light
+	theme if { ftd.dark-mode }: fastn-theme.dark
+	text: $code.body
+	lang: $code.lang
+	width: fill-container
+	role: $inherited.types.copy-regular
+	color: $inherited.colors.text
+	background.solid: $inherited.colors.background.code
+	overflow-x: auto
+	overflow-y: auto
+	max-height if { code.max-height != NULL }: $code.max-height
+	max-width if { code.max-width != NULL }: $code.max-width
+	show-line-number if { code.line-numbers }: true
+	
+	-- ftd.column:
+	if: { code.lang != NULL }
+	anchor: parent
+	right.px: 12
+	bottom.px: 12
+	z-index: 999
+	padding.px: 6
+	border-bottom-right-radius.px: 4
+	
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.medium
+		
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ds.fine-print: Lang:
+				
+				-- ds.fine-print: $code.lang
+				
+			-- end: ds.row
+
+		-- end: ds.row
+
+	-- end: ftd.column
+
+-- end: ds.section-column
+
+-- end: code
