@@ -1,5 +1,5 @@
-import {EditorView, basicSetup} from "codemirror"
-import {javascript} from "@codemirror/lang-javascript"
+import {EditorView, basicSetup} from "codemirror";
+import {javascript} from "@codemirror/lang-javascript";
 
 class CMEditor extends HTMLElement {
     constructor() {
@@ -26,3 +26,8 @@ class CMEditor extends HTMLElement {
 }
 
 customElements.define('cm-editor', CMEditor);
+
+window.ide_dispatch_event = function (data) {
+    console.log('ide_dispatch_event', data);
+    window.dispatchEvent(new CustomEvent("ide-event", { detail: data }));
+}

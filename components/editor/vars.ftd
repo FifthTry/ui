@@ -77,3 +77,11 @@ url: /foo/blog/images/first-image.jpg
 
 
 -- integer panel-width: 24
+
+
+
+-- void dispatch-event(data):
+string data:
+
+ide_dispatch_event(data)
+

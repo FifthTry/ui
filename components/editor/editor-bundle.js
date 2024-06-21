@@ -26940,4 +26940,9 @@
 
    customElements.define('cm-editor', CMEditor);
 
+   window.ide_dispatch_event = function (data) {
+       console.log('ide_dispatch_event', data);
+       window.dispatchEvent(new CustomEvent("ide-event", { detail: data }));
+   };
+
 })();

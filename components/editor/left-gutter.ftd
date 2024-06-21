@@ -17,6 +17,7 @@ padding-top.px: 5
 
 -- ftd.text: P
 style if { vars.package }: bold
+$on-click$: $vars.dispatch-event(data=package-panel-toggle)
 
 -- end: ftd.column
 
