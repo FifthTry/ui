@@ -92,7 +92,7 @@ $on-mouse-leave$: $ftd.set-bool($a=$package-name.hover, v=false)
 
     -- ftd.text: `-`
     if: { package-name.hover }
-    link: /e/
+    $on-click$: $vars.dispatch-event(data=package-panel-toggle)
     color: black
 
 -- end: ftd.row
