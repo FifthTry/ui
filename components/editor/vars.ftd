@@ -4,9 +4,6 @@
 ;; left panels
 -- boolean $package: true
 
-;; if any of the left panels are open, this will be true
--- boolean $left-panel: true
-
 
 -- package.data $package-data:
 name: Some Package
