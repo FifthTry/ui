@@ -78,8 +78,9 @@ boolean $hover: false
 -- ftd.row:
 width.fixed.percent: 100
 spacing: space-between
-padding.px: 10
+padding-horizontal.px: 10
 padding-bottom.px: 0
+padding-top.px: 6
 $on-mouse-enter$: $ftd.set-bool($a=$package-name.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package-name.hover, v=false)
 
