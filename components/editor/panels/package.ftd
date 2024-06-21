@@ -6,38 +6,108 @@ data data: $vars.package-data
 -- ftd.column:
 width.fixed.px: 300
 height.fixed.percent: 100
-background.solid: purple
-align-content: center
 classes if { !vars.package }: hidden
 
--- ftd.text: Package
+-- package-name: $package.data.name
+
+-- show-folder: $folder
+for: folder in $package.data.folders
+
+-- show-file: $file
+for: file in $package.data.files
 
 -- end: ftd.column
 
 -- end: package
 
 
+
 -- record data:
 string name:
+string url:
 folder list folders:
 file list files:
 
 -- record flags:
+;; if the file, or file in the folder is modified
 boolean modified: false
+;; if the file, or file in the folder is added
 boolean added: false
+;; if the folder has a child, that is deleted
 boolean deleted: false
+;; if the folder is currently in open state
 boolean open: false
+;; if the file, or file in the folder is deleted
 boolean conflicted: false
+;; if the user has currently selected this in the UI
 boolean selected: false
 
 -- record file:
-string name:
+caption name:
 string url:
-flags flags:
+flags flags: $default-flags
 
 -- record folder:
-string name:
-flags flags:
+caption name:
+string url:
+flags flags: $default-flags
 folder list folders:
 file list files:
+
+
+-- flags default-flags:
+modified: false
+added: false
+deleted: false
+open: false
+conflicted: false
+selected: false
+
+
+-- component package-name:
+caption name:
+
+-- ftd.row:
+width.fixed.percent: 100
+spacing: space-between
+padding.px: 4
+
+-- ftd.text: $package-name.name
+-- ftd.text: x
+
+-- end: ftd.row
+
+-- end: package-name
+
+
+
+-- component show-folder:
+caption folder f:
+integer level: 0
+
+-- ftd.column:
+width.fixed.percent: 100
+
+-- ftd.text: $show-folder.f.name
+
+-- show-folder: $folder
+for: folder in $show-folder.f.folders
+
+-- show-file: $file
+for: file in $show-folder.f.files
+
+-- end: ftd.column
+
+-- end: show-folder
+
+
+
+-- component show-file:
+caption file f:
+integer level: 0
+
+-- ftd.text: $show-file.f.name
+
+-- end: show-file
+
 

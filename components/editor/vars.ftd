@@ -16,9 +16,44 @@ message: default message
 
 -- string $screen: main
 
+
+
 -- package.data $package-data:
 name: Some Package
+url: /foo/
+files: *$files
+folders: *$folders
 
+
+
+-- package.file list files:
+
+-- package.file: FASTN.ftd
+url: /foo/FASTN.ftd
+
+-- package.file: index.ftd
+url: /foo/index.ftd
+
+-- end: files
+
+
+-- package.folder list folders:
+
+-- package.folder: blog
+url: /foo/blog/
+files: *$blog-files
+
+-- end: folders
+
+-- package.file list blog-files:
+
+-- package.file: index.ftd
+url: /foo/blog/index.ftd
+
+-- package.file: first-post.ftd
+url: /foo/blog/first-post.ftd
+
+-- end: blog-files
 
 
 -- integer panel-width: 24
