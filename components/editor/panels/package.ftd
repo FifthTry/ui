@@ -1,10 +1,10 @@
 -- import: ui.fifthtry.com/components/editor/vars
 
 -- component package:
-data data: $vars.package-data
+data $data: $vars.package-data
 
 -- ftd.column:
-width.fixed.px: 300
+width.fixed.px: 240
 height.fixed.percent: 100
 classes if { !vars.package }: hidden
 
@@ -71,7 +71,7 @@ boolean $hover: false
 -- ftd.row:
 width.fixed.percent: 100
 spacing: space-between
-padding.px: 8
+padding.px: 10
 padding-bottom.px: 0
 $on-mouse-enter$: $ftd.set-bool($a=$package-name.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package-name.hover, v=false)
@@ -87,23 +87,29 @@ if: { package-name.hover }
 
 
 -- component show-folder:
-caption folder f:
+caption folder $f:
+integer level: 0
 
 -- ftd.column:
 width.fixed.percent: 100
-padding.px: 8
-padding-bottom.px: 0
 
 -- ftd.text: $show-folder.f.name
+link: $show-folder.f.url
+color: black
+width.fixed.percent: 100
+padding-vertical.px: 4
+padding-left.px: $padding(level=$show-folder.level)
 
 -- ftd.column:
-padding-left.px: 8
+width.fixed.percent: 100
 
     -- show-folder: $folder
     for: folder in $show-folder.f.folders
+    level: $next-level(level=$show-folder.level)
 
     -- show-file: $file
     for: file in $show-folder.f.files
+    level: $next-level(level=$show-folder.level)
 
 -- end: ftd.column
 
@@ -115,12 +121,18 @@ padding-left.px: 8
 
 -- component show-file:
 caption file f:
+integer level: 0
 
 -- ftd.row:
 padding.px: 8
+width.fixed.percent: 100
 padding-bottom.px: 0
+padding-left.px: $padding(level=$show-file.level)
 
 -- ftd.text: $show-file.f.name
+link: $show-file.f.url
+color: black
+width.fixed.percent: 100
 
 -- end: ftd.row
 
@@ -128,3 +140,12 @@ padding-bottom.px: 0
 
 
 
+-- integer next-level(level):
+integer level:
+
+level + 1
+
+-- integer padding(level):
+integer level:
+
+level * 14 + 10

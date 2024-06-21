@@ -42,6 +42,7 @@ url: /foo/index.ftd
 -- package.folder: blog
 url: /foo/blog/
 files: *$blog-files
+folders: $blog-folders
 
 -- end: folders
 
@@ -54,6 +55,24 @@ url: /foo/blog/index.ftd
 url: /foo/blog/first-post.ftd
 
 -- end: blog-files
+
+
+
+-- package.folder list blog-folders:
+
+-- package.folder: images
+url: /foo/blog/images/
+files: *$blog-images
+
+-- end: blog-folders
+
+-- package.file list blog-images:
+
+-- package.file: first-image.jpg
+url: /foo/blog/images/first-image.jpg
+
+-- end: blog-images
+
 
 
 -- integer panel-width: 24

@@ -6,7 +6,7 @@ css: $assets.files.components.editor.editor.css
 -- ftd.column:
 height.fixed.percent: 100
 width.fixed.calc: 100% - 48px
-width.fixed.calc if { vars.left-panel }: 100% - 48px - 300px
+width.fixed.calc if { vars.left-panel }: 100% - 48px - 240px
 ;; background.solid: green
 align-content: center
 
