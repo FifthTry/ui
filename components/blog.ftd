@@ -130,14 +130,15 @@ spacing: $ds.spaces.vertical-gap.large
 
 -- end: ds.row
 
--- ds.newsletter: Subscription
+-- ds.newsletter: FifthTry Newsletter
 cta-text: Subscribe
 cta-link: /
 placeholder: Enter you email...
 input: true
 background.solid: $ds.colors.background.step-1
+colored-text: true
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Once a week we send you the latest news about FifthTry.
 
 -- end: ds.section-column
 
