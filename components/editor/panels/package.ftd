@@ -2,14 +2,18 @@
 
 -- component package:
 data $data: $vars.package-data
+boolean $hover: false
 
 -- ftd.column:
 width.fixed.px: 240
 height.fixed.percent: 100
 classes if { !vars.package }: hidden
+$on-mouse-enter$: $ftd.set-bool($a=$package.hover, v=true)
+$on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
 
 -- package-name: $package.data.name
 url: $package.data.url
+hover: $package.hover
 
 -- show-folder: $folder
 for: folder in $package.data.folders
@@ -75,7 +79,7 @@ selected: true
 -- component package-name:
 caption name:
 string url:
-boolean $hover: false
+boolean hover:
 
 -- ftd.row:
 width.fixed.percent: 100
@@ -83,8 +87,6 @@ spacing: space-between
 padding-horizontal.px: 10
 padding-bottom.px: 0
 padding-top.px: 6
-$on-mouse-enter$: $ftd.set-bool($a=$package-name.hover, v=true)
-$on-mouse-leave$: $ftd.set-bool($a=$package-name.hover, v=false)
 
     -- ftd.text: $package-name.name
     link: { package-name.url }
