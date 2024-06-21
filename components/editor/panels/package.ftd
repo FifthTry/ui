@@ -66,14 +66,19 @@ selected: false
 
 -- component package-name:
 caption name:
+boolean $hover: false
 
 -- ftd.row:
 width.fixed.percent: 100
 spacing: space-between
-padding.px: 4
+padding.px: 8
+padding-bottom.px: 0
+$on-mouse-enter$: $ftd.set-bool($a=$package-name.hover, v=true)
+$on-mouse-leave$: $ftd.set-bool($a=$package-name.hover, v=false)
 
 -- ftd.text: $package-name.name
 -- ftd.text: x
+if: { package-name.hover }
 
 -- end: ftd.row
 
@@ -83,18 +88,24 @@ padding.px: 4
 
 -- component show-folder:
 caption folder f:
-integer level: 0
 
 -- ftd.column:
 width.fixed.percent: 100
+padding.px: 8
+padding-bottom.px: 0
 
 -- ftd.text: $show-folder.f.name
 
--- show-folder: $folder
-for: folder in $show-folder.f.folders
+-- ftd.column:
+padding-left.px: 8
 
--- show-file: $file
-for: file in $show-folder.f.files
+    -- show-folder: $folder
+    for: folder in $show-folder.f.folders
+
+    -- show-file: $file
+    for: file in $show-folder.f.files
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -104,10 +115,16 @@ for: file in $show-folder.f.files
 
 -- component show-file:
 caption file f:
-integer level: 0
+
+-- ftd.row:
+padding.px: 8
+padding-bottom.px: 0
 
 -- ftd.text: $show-file.f.name
 
+-- end: ftd.row
+
 -- end: show-file
+
 
 
