@@ -3,16 +3,15 @@
 -- ftd.row:
 width.fixed.percent: 100
 height.fixed.px: 36
-background.solid: black
+background.solid: #f5f5f5
 spacing: space-between
 align-content: center
 padding.px: 10
+padding-bottom.px: 15
 
 -- ftd.text: `Copyright © 2021-2024 FifthTry, Inc`
-color: white
 
 -- ftd.text: `Online`
-color: white
 
 -- end: ftd.row
 -- end: status-bar

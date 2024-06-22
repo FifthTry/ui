@@ -8,18 +8,18 @@ module site-data: site-data
 -- ftd.row:
 width.fixed.percent: 100
 height.fixed.px: 45
-background.solid: black
+background.solid: #f5f5f5
 spacing: space-between
 align-content: center
 padding.px: 10
 
 -- ftd.image:
-src: $top-bar.site-data.logo
+src: /-/ui.fifthtry.com/assets/fifthtry.png
 link: /e/
 
 -- ftd.text: `FASTN.ftd`
-color: white
 link: /e/ft/FASTN.ftd
+color: black
 
 -- avatar.avatar:
 user-data: $john-doe.jd

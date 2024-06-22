@@ -49,6 +49,7 @@ anchor: parent
 right.px: 10
 top.px: 60
 padding.px: 8
+z-index: 20
 
 	-- ftd.column:
 	width: fill-container
