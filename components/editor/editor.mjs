@@ -14,10 +14,6 @@ class CMEditor extends HTMLElement {
             extensions: [basicSetup, javascript()],
             parent: this,
             doc: "function greet(who) {\n  return 'Hello, ' + who + '!';\n}"
-            // trying to set height to occupy the whole parent, but its not working
-            // contentHeight: 40,
-            // height: "100%",
-            // viewportMargin: Infinity,
         });
     }
 }
