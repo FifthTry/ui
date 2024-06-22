@@ -145,7 +145,7 @@ padding.px: 8
 width.fixed.percent: 100
 padding-left.px: $padding(level=$show-file.level)
 padding-vertical.px: 4
-background.solid if { show-file.f.flags.selected }: #eee
+background.solid if { show-file.f.flags.selected }: #f5f5f5
 
 -- ftd.text: $show-file.f.name
 link: $show-file.f.url
