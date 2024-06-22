@@ -26916,7 +26916,6 @@
 
    class CMEditor extends HTMLElement {
        constructor() {
-           console.log('constructor');
            super();
            this.style.width = "100%";
            this.style.height = "100%";
@@ -26924,8 +26923,6 @@
        }
 
        connectedCallback() {
-           console.log('connectedCallback');
-
            new EditorView({
                extensions: [basicSetup, javascript()],
                parent: this,

@@ -3,7 +3,6 @@ import {javascript} from "@codemirror/lang-javascript";
 
 class CMEditor extends HTMLElement {
     constructor() {
-        console.log('constructor');
         super();
         this.style.width = "100%";
         this.style.height = "100%";
@@ -11,9 +10,7 @@ class CMEditor extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log('connectedCallback');
-
-        let e = new EditorView({
+        new EditorView({
             extensions: [basicSetup, javascript()],
             parent: this,
             doc: "function greet(who) {\n  return 'Hello, ' + who + '!';\n}"
