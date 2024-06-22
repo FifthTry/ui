@@ -26923,7 +26923,7 @@
        }
 
        connectedCallback() {
-           new EditorView({
+           window.ide_cm_editor = new EditorView({
                extensions: [basicSetup, javascript()],
                parent: this,
                doc: "function greet(who) {\n  return 'Hello, ' + who + '!';\n}"
