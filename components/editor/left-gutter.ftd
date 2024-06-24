@@ -10,24 +10,24 @@ spacing: space-between
 border-right-width.px if { !vars.package }: 1
 border-color: #ddd
 
--- ftd.column: ;; left sidebar panel icons
-height.fixed.px: 100
-width.fixed.percent: 100
-align-content: top-center
-padding-top.px: 5
+	-- ftd.column: ;; left sidebar panel icons
+	height.fixed.px: 100
+	width.fixed.percent: 100
+	align-content: top-center
+	padding-top.px: 5
+	
+		-- ftd.text: P
+		style if { vars.package }: bold
+		$on-click$: $vars.dispatch-event(data=package-panel-toggle)
+		$on-click$: $ftd.toggle($a=$vars.package)
+		
+	-- end: ftd.column
 
--- ftd.text: P
-style if { vars.package }: bold
-$on-click$: $vars.dispatch-event(data=package-panel-toggle)
-$on-click$: $ftd.toggle($a=$vars.package)
-
--- end: ftd.column
-
--- ftd.column: ;; status bar panel icons
-height.fixed.px: 100
-width.fixed.percent: 100
-
--- end: ftd.column
+	-- ftd.column: ;; status bar panel icons
+	height.fixed.px: 100
+	width.fixed.percent: 100
+	
+	-- end: ftd.column
 
 
 -- end: ftd.column

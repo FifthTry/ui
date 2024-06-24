@@ -71,4 +71,3 @@ url: /foo/blog/images/first-image.jpg
 string data:
 
 ide_dispatch_event(data)
-

@@ -11,16 +11,16 @@ classes if { !vars.package }: hidden
 $on-mouse-enter$: $ftd.set-bool($a=$package.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
 
--- package-name: $package.data.name
-url: $package.data.url
-hover: $package.hover
-
--- show-folder: $folder
-for: folder in $package.data.folders
-
--- show-file: $file
-for: file in $package.data.files
-
+	-- package-name: $package.data.name
+	url: $package.data.url
+	hover: $package.hover
+	
+	-- show-folder: $folder
+	for: folder in $package.data.folders
+	
+	-- show-file: $file
+	for: file in $package.data.files
+	
 -- end: ftd.column
 
 -- end: package
@@ -88,15 +88,15 @@ padding-horizontal.px: 10
 padding-bottom.px: 0
 padding-top.px: 6
 
-    -- ftd.text: $package-name.name
-    link: { package-name.url }
-    color: black
-
-    -- ftd.text: `-`
-    if: { package-name.hover }
-    $on-click$: $vars.dispatch-event(data=package-panel-toggle)
-    color: black
-
+	-- ftd.text: $package-name.name
+	link: { package-name.url }
+	color: black
+	
+	-- ftd.text: `-`
+	if: { package-name.hover }
+	$on-click$: $vars.dispatch-event(data=package-panel-toggle)
+	color: black
+	
 -- end: ftd.row
 
 -- end: package-name
@@ -110,25 +110,25 @@ integer level: 0
 -- ftd.column:
 width.fixed.percent: 100
 
--- ftd.text: $show-folder.f.name
-link: $show-folder.f.url
-color: black
-width.fixed.percent: 100
-padding-vertical.px: 4
-padding-left.px: $padding(level=$show-folder.level)
-
--- ftd.column:
-width.fixed.percent: 100
-
-    -- show-folder: $folder
-    for: folder in $show-folder.f.folders
-    level: $next-level(level=$show-folder.level)
-
-    -- show-file: $file
-    for: file in $show-folder.f.files
-    level: $next-level(level=$show-folder.level)
-
--- end: ftd.column
+	-- ftd.text: $show-folder.f.name
+	link: $show-folder.f.url
+	color: black
+	width.fixed.percent: 100
+	padding-vertical.px: 4
+	padding-left.px: $padding(level=$show-folder.level)
+	
+	-- ftd.column:
+	width.fixed.percent: 100
+	
+		-- show-folder: $folder
+		for: folder in $show-folder.f.folders
+		level: $next-level(level=$show-folder.level)
+		
+		-- show-file: $file
+		for: file in $show-folder.f.files
+		level: $next-level(level=$show-folder.level)
+		
+	-- end: ftd.column
 
 -- end: ftd.column
 
@@ -147,11 +147,11 @@ padding-left.px: $padding(level=$show-file.level)
 padding-vertical.px: 4
 background.solid if { show-file.f.flags.selected }: #f5f5f5
 
--- ftd.text: $show-file.f.name
-link: $show-file.f.url
-color: black
-width.fixed.percent: 100
-
+	-- ftd.text: $show-file.f.name
+	link: $show-file.f.url
+	color: black
+	width.fixed.percent: 100
+	
 -- end: ftd.row
 
 -- end: show-file

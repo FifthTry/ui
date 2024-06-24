@@ -36,23 +36,23 @@ margin: $ds.spaces.vertical-gap.small
 -- ds.section-row:
 margin: $ds.spaces.vertical-gap.zero
 
--- ds.container:
-inset: $ds.spaces.inset-square.medium
-background.solid: $ds.colors.custom.five
-width.fixed.percent: 70
-;; height.fixed.px: 160
-radius: $ds.radius.medium
-
--- ds.newsletter: FifthTry Newsletter
-;; image: $assets.files.assets.placeholder.jpg
-cta-text: Subscribe
-cta-link: /
-placeholder: Enter your email...
-input: true
-
-Once a week we send you the latest news about FifthTry.
-
--- end: ds.container
+	-- ds.container:
+	inset: $ds.spaces.inset-square.medium
+	background.solid: $ds.colors.custom.five
+	width.fixed.percent: 70
+	;; height.fixed.px: 160
+	radius: $ds.radius.medium
+	
+		-- ds.newsletter: FifthTry Newsletter
+		;; image: $assets.files.assets.placeholder.jpg
+		cta-text: Subscribe
+		cta-link: /
+		placeholder: Enter your email...
+		input: true
+		
+		Once a week we send you the latest news about FifthTry.
+		
+	-- end: ds.container
 
 -- end: ds.section-row
 
@@ -65,23 +65,23 @@ Once a week we send you the latest news about FifthTry.
 -- ds.section-row:
 margin: $ds.spaces.vertical-gap.zero
 
--- ds.container:
-inset: $ds.spaces.inset-square.small
-background.solid: $ds.colors.custom.five
-width.fixed.percent: 50
-height.fixed.percent: 60
-radius: $ds.radius.medium
-
--- ds.newsletter: FifthTry Newsletter
-;; image: $assets.files.assets.placeholder.jpg
-cta-text: Subscribe
-cta-link: /
-placeholder: Enter your email...
-input: true
-
-Once a week we send you the latest news about FifthTry.
-
--- end: ds.container
+	-- ds.container:
+	inset: $ds.spaces.inset-square.small
+	background.solid: $ds.colors.custom.five
+	width.fixed.percent: 50
+	height.fixed.percent: 60
+	radius: $ds.radius.medium
+	
+		-- ds.newsletter: FifthTry Newsletter
+		;; image: $assets.files.assets.placeholder.jpg
+		cta-text: Subscribe
+		cta-link: /
+		placeholder: Enter your email...
+		input: true
+		
+		Once a week we send you the latest news about FifthTry.
+		
+	-- end: ds.container
 
 -- end: ds.section-row
 

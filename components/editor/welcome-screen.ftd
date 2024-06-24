@@ -18,9 +18,7 @@ background.solid: black
 align-content: center
 padding.px: 10
 
--- ds.copy-regular: $welcome-screen.data.message
-
+	-- ds.copy-regular: $welcome-screen.data.message
+	
 -- end: ftd.column
 -- end: welcome-screen
-
-

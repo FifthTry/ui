@@ -13,18 +13,16 @@ spacing: space-between
 align-content: center
 padding.px: 10
 
--- ftd.image:
-src: /-/ui.fifthtry.com/assets/fifthtry.png
-link: /e/
-
--- ftd.text: `FASTN.ftd`
-link: /e/ft/FASTN.ftd
-color: black
-
--- avatar.avatar:
-user-data: $john-doe.jd
-
+	-- ftd.image:
+	src: /-/ui.fifthtry.com/assets/fifthtry.png
+	link: /e/
+	
+	-- ftd.text: `FASTN.ftd`
+	link: /e/ft/FASTN.ftd
+	color: black
+	
+	-- avatar.avatar:
+	user-data: $john-doe.jd
+	
 -- end: ftd.row
 -- end: top-bar
-
-

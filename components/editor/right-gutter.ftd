@@ -11,11 +11,11 @@ background.solid: #f5f5f5
 
 
 
--- ftd.column: ;; right sidebar panel icons
-height.fixed.px: 100
-width.fixed.percent: 100
-
--- end: ftd.column
+	-- ftd.column: ;; right sidebar panel icons
+	height.fixed.px: 100
+	width.fixed.percent: 100
+	
+	-- end: ftd.column
 
 
 

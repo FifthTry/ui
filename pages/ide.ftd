@@ -15,27 +15,27 @@
 width.fixed.percent: 100
 height.fixed.percent: 100
 
--- top-bar.top-bar:
+	-- top-bar.top-bar:
+	
+	-- ftd.row:
+	width.fixed.percent: 100
+	height.fixed.percent: 100
+	/height.fixed.calc: 100% - 36px
+	spacing: space-between
+	
+	
+		-- left-gutter.left-gutter:
+		
+		-- package.package:
+		
+		-- main-editor.main-editor:
+		
+		-- right-gutter.right-gutter:
+		
+	-- end: ftd.row
 
--- ftd.row:
-width.fixed.percent: 100
-height.fixed.percent: 100
-/height.fixed.calc: 100% - 36px
-spacing: space-between
-
-
--- left-gutter.left-gutter:
-
--- package.package:
-
--- main-editor.main-editor:
-
--- right-gutter.right-gutter:
-
--- end: ftd.row
-
--- status-bar.status-bar:
-
+	-- status-bar.status-bar:
+	
 -- end: ftd.column
 
 
@@ -52,9 +52,3 @@ spacing: space-between
 
 
 -- page:
-
-
-
-
-
-

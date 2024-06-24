@@ -9,9 +9,9 @@ align-content: center
 padding.px: 10
 padding-bottom.px: 15
 
--- ftd.text: `Copyright © 2021-2024 FifthTry, Inc`
-
--- ftd.text: `Online`
-
+	-- ftd.text: `Copyright © 2021-2024 FifthTry, Inc`
+	
+	-- ftd.text: `Online`
+	
 -- end: ftd.row
 -- end: status-bar

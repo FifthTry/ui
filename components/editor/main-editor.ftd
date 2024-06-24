@@ -10,8 +10,8 @@ width.fixed.calc if { vars.package }: 100% - 48px - 240px
 ;; background.solid: green
 align-content: center
 
--- cm-editor:
-
+	-- cm-editor:
+	
 -- end: ftd.column
 
 -- end: main-editor
@@ -19,4 +19,3 @@ align-content: center
 
 -- web-component cm-editor:
 js: $assets.files.components.editor.editor-bundle.js
-

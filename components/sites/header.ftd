@@ -73,7 +73,7 @@ radius: $ds.radius.zero
 				
 				-- avatar.avatar:
 				user-data: $header.user-data
-
+				
 			-- end: ds.row
 
 		-- end: ds.row
