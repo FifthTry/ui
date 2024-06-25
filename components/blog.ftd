@@ -30,8 +30,8 @@ module site-data: site-data
 caption title:
 optional body description:
 string date:
-author-data author-info:
-social-data list social-info:
+author-data author:
+social-data list social-info: $social
 optional ftd.image-src banner-image:
 optional body body:
 children wrapper:
@@ -41,113 +41,115 @@ boolean hide-footer: false
 
 -- ds.page: $page.title
 
-	-- ds.section-column:
-	align-content: top-left
-	
-		-- dms.dark-mode-switcher-float:
-		if: { page.theme-switcher }
-		
-		-- ftd.image:
-		if: { page.fastn-badge }
-		src: $assets.files.assets.blog.powered-by.svg
-		anchor: window
-		right.px: 0
-		bottom.px: 0
-		z-index: 99999999999999
-		link: https://fastn.com/
-		open-in-new-tab: true
-		
-		-- ftd.image:
-		if: { page.banner-image != NULL }
-		src: $page.banner-image
-		width: fill-container
-		height.fixed.px: 220
-		fit: cover
-		
-		-- ds.row:
-		align-content: top-left
-		spacing: $ds.spaces.horizontal-gap.large
-		inset: $ds.spaces.inset-tall.zero-medium
-		
-			-- ds.column:
-			align-content: top-left
-			width.fixed.px: 300
-			spacing: $ds.spaces.vertical-gap.large
-			
-				-- ds.copy-small: $page.date
-				
-				-- ds.row:
-				align-content: left
-				
-					-- ds.image:
-					src: $page.author-info.photo
-					width.fixed.px: 40
-					radius: $ds.radius.round
-					
-					-- ds.heading-small: $page.author-info.name
-					
-				-- end: ds.row
+-- ds.section-column:
+align-content: top-left
 
-				-- ds.column:
-				align-content: left
-				
-					-- ds.copy-small: Share
-					
-					-- ds.row:
-					align-content: left
-					
-						-- ftd.image:
-						for: $obj in $page.social-info
-						src: $obj.src
-						link: $obj.link
-						
-					-- end: ds.row
+-- dms.dark-mode-switcher-float:
+if: { page.theme-switcher }
 
-				-- end: ds.column
+-- ftd.image:
+if: { page.fastn-badge }
+src: $assets.files.assets.blog.powered-by.svg
+anchor: window
+right.px: 0
+bottom.px: 0
+z-index: 99999999999999
+link: https://fastn.com/
+open-in-new-tab: true
 
-			-- end: ds.column
+-- ftd.image:
+if: { page.banner-image != NULL }
+src: $page.banner-image
+width: fill-container
+height.fixed.px: 220
+fit: cover
 
-			-- ds.column:
-			align-content: top-left
-			
-				-- ds.heading-hero: $page.title
-				
-				-- ds.copy-regular: $page.body
-				if: { page.body != NULL }
-				
-				-- ds.column:
-				content: $page.wrapper
-				spacing: $ds.spaces.vertical-gap.large
-				
-				-- end: ds.column
+-- ds.row:
+align-content: top-left
+spacing: $ds.spaces.horizontal-gap.large
+inset: $ds.spaces.inset-tall.zero-medium
 
-			-- end: ds.column
+-- ds.column:
+align-content: top-left
+width.fixed.px: 300
+spacing: $ds.spaces.vertical-gap.large
 
-		-- end: ds.row
+-- ds.copy-small: $page.date
 
-		-- author.author: $page.author-info.name
-		photo: $page.author-info.photo
-		profile: $page.author-info.profile
-		bio-url: $page.author-info.bio-url
-		
-		$page.author-info.description
-		
-		-- ds.newsletter: FifthTry Newsletter
-		cta-text: Subscribe
-		cta-link: /
-		placeholder: Enter you email...
-		input: true
-		background.solid: $ds.colors.background.step-1
-		colored-text: true
-		
-		Once a week we send you the latest news about FifthTry.
-		
-	-- end: ds.section-column
+-- ds.row:
+align-content: left
 
-	-- footer.footer:
-	site-data: $page.site-data
-	if: { !page.hide-footer }
-	
+-- ds.image:
+src: $page.author.photo
+width.fixed.px: 40
+radius: $ds.radius.round
+
+-- ds.heading-small: $page.author.name
+
+-- end: ds.row
+
+-- ds.column:
+align-content: left
+
+-- ds.copy-small: Share
+
+-- ds.row:
+align-content: left
+
+-- ftd.image:
+for: $obj in $page.social-info
+src: $obj.src
+link: $obj.link
+width.fixed.px: 20
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- ds.column:
+align-content: top-left
+
+-- ds.heading-hero: $page.title
+color: $ds.colors.shadow
+
+-- ds.copy-regular: $page.body
+if: { page.body != NULL }
+
+-- ds.column:
+content: $page.wrapper
+spacing: $ds.spaces.vertical-gap.large
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- author.author: $page.author.name
+photo: $page.author.photo
+profile: $page.author.profile
+bio-url: $page.author.bio-url
+
+$page.author.description
+
+-- ds.newsletter: FifthTry Newsletter
+cta-text: Subscribe
+cta-link: /
+placeholder: Enter you email...
+input: true
+background.solid: $ds.colors.background.step-1
+colored-text: true
+
+Once a week we send you the latest news about FifthTry.
+
+-- end: ds.section-column
+
+-- footer.footer:
+site-data: $page.site-data
+if: { !page.hide-footer }
+
 -- end: ds.page
 
 -- end: page
@@ -189,13 +191,13 @@ optional body body:
 -- ds.column:
 align-content: left
 
-	-- ds.heading-large: $h0.title
-	
-	-- ds.copy-regular:
-	if: { h0.body != NULL }
-	
-	$h0.body
-	
+-- ds.heading-large: $h0.title
+
+-- ds.copy-regular:
+if: { h0.body != NULL }
+
+$h0.body
+
 -- end: ds.column
 
 -- end: h0
@@ -215,14 +217,14 @@ optional body body:
 -- ds.column:
 align-content: left
 
-	-- ds.heading-large: $h1.title
-	color: $ds.colors.shadow
-	
-	-- ds.copy-regular:
-	if: { h1.body != NULL }
-	
-	$h1.body
-	
+-- ds.heading-medium: $h1.title
+color: $ds.colors.shadow
+
+-- ds.copy-regular:
+if: { h1.body != NULL }
+
+$h1.body
+
 -- end: ds.column
 
 -- end: h1
@@ -240,16 +242,37 @@ optional body body:
 -- ds.column:
 align-content: left
 
-	-- ds.heading-medium: $h2.title
-	
-	-- ds.copy-regular:
-	if: { h2.body != NULL }
-	
-	$h2.body
-	
+-- ds.heading-small: $h2.title
+
+-- ds.copy-regular:
+if: { h2.body != NULL }
+
+$h2.body
+
 -- end: ds.column
 
 -- end: h2
+
+
+
+
+-- component h3:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+-- ds.heading-tiny: $h3.title
+
+-- ds.copy-regular:
+if: { h3.body != NULL }
+
+$h3.body
+
+-- end: ds.column
+
+-- end: h3
 
 
 
@@ -272,31 +295,31 @@ border-color: $ds.colors.shadow
 radius: $ds.radius.medium
 align-content: top-left
 
-	-- ftd.image:
-	src: $quote.quote-logo
-	width: auto
-	height.fixed.px: 32
-	padding-left.px: 16
-	
-	-- ds.column:
-	align-content: left
-	
-		-- ds.copy-regular:
-		if: { quote.body != NULL }
-		
-		$quote.body
-		
-		-- ds.row:
-		align-content: left
-		
-			-- ds.copy-small: ~
-			
-			-- ds.copy-small: $quote.title
-			if: { quote.title != NULL }
-			
-		-- end: ds.row
+-- ftd.image:
+src: $quote.quote-logo
+width: auto
+height.fixed.px: 32
+padding-left.px: 16
 
-	-- end: ds.column
+-- ds.column:
+align-content: left
+
+-- ds.copy-regular:
+if: { quote.body != NULL }
+
+$quote.body
+
+-- ds.row:
+align-content: left
+
+-- ds.copy-small: ~
+
+-- ds.copy-small: $quote.title
+if: { quote.title != NULL }
+
+-- end: ds.row
+
+-- end: ds.column
 
 -- end: ds.row
 
@@ -349,53 +372,53 @@ spacing: $ds.spaces.vertical-gap.zero
 radius: $ds.radius.large
 margin: $ds.spaces.vertical-gap.medium
 
-	-- ds.row:
-	if: { code.caption != NULL || code.copy }
-	spacing: $ds.spaces.horizontal-gap.medium
-	inset: $ds.spaces.inset-square.medium
-	width: fill-container
-	border: $ds.borders.bottom.small
-	border-color: $ds.colors.border-strong
-	radius: $ds.radius.zero
-	
-		-- ds.row:
-		align-content: left
+ -- ds.row:
+ if: { code.caption != NULL || code.copy }
+ spacing: $ds.spaces.horizontal-gap.medium
+ inset: $ds.spaces.inset-square.medium
+ width: fill-container
+ border: $ds.borders.bottom.small
+ border-color: $ds.colors.border-strong
+ radius: $ds.radius.zero
+
+   -- ds.row:
+   align-content: left
+
+   -- ds.row:
+   width: hug-content
+   align-content: left
+   spacing: $ds.spaces.horizontal-gap.extra-small
+   color: $ds.colors.shadow
+
+   	-- ph.fill:
+   	if: { code.icon == NULL }
+   	name: circle
+    size: 14
+
+    -- ph.fill:
+    if: { code.icon == NULL }
+   	name: circle
+    size: 14
+
+    -- ph.fill:
+    if: { code.icon == NULL }
+   	name: circle
+    size: 14
+
+    -- end: ds.row
+
+      -- ph.regular: 
+      if: { code.icon != NULL }
+      name: $code.icon
+      size: 18
+
+      -- ds.copy-regular:
+      if: { code.caption != NULL }
+
+      $code.caption
+
+    -- end: ds.row
 		
-			-- ds.row:
-			width: hug-content
-			align-content: left
-			spacing: $ds.spaces.horizontal-gap.extra-small
-			color: $ds.colors.shadow
-			
-				-- ph.fill:
-				if: { code.icon == NULL }
-				name: circle
-				size: 14
-				
-				-- ph.fill:
-				if: { code.icon == NULL }
-				name: circle
-				size: 14
-				
-				-- ph.fill:
-				if: { code.icon == NULL }
-				name: circle
-				size: 14
-				
-			-- end: ds.row
-
-			-- ph.regular:
-			if: { code.icon != NULL }
-			name: $code.icon
-			size: 18
-			
-			-- ds.copy-regular:
-			if: { code.caption != NULL }
-			
-			$code.caption
-			
-		-- end: ds.row
-
 		-- ds.row:
 		if: { code.copy }
 		$on-mouse-enter$: $ftd.set-bool($a = $code.mouse-in, v = true)
@@ -403,29 +426,29 @@ margin: $ds.spaces.vertical-gap.medium
 		$on-mouse-leave$: $ftd.set-string($a = $code.copy-text, v = null)
 		width: hug-content
 		spacing: $ds.spaces.horizontal-gap.small
-		
-			-- ftd.image:
-			if: { code.copy-text == "null" }
-			src: $assets.files.assets.blog.copy.svg
-			src if { code.copy-mouse-in }: $assets.files.assets.blog.copy-hover.svg
-			$on-mouse-enter$: $ftd.set-bool($a = $code.copy-mouse-in, v = true)
-			$on-mouse-leave$: $ftd.set-bool($a = $code.copy-mouse-in, v = false)
-			$on-click$: $ftd.copy-to-clipboard(a = $code.clean-code)
-			$on-click$: $ftd.set-string($a = $code.copy-text, v = Copied!)
-			width.fixed.px: 18
-			
-			-- ftd.image:
-			if: { code.copy-text != "null" }
-			src: $assets.files.assets.blog.tick.svg
-			width.fixed.px: 18
-			
-			-- ds.copy-regular: $code.copy-text
-			if: { code.copy-text != "null" }
-			
+
+		-- ftd.image:
+		if: { code.copy-text == "null" }
+		src: $assets.files.assets.blog.copy.svg
+		src if { code.copy-mouse-in }: $assets.files.assets.blog.copy-hover.svg
+		$on-mouse-enter$: $ftd.set-bool($a = $code.copy-mouse-in, v = true)
+		$on-mouse-leave$: $ftd.set-bool($a = $code.copy-mouse-in, v = false)
+		$on-click$: $ftd.copy-to-clipboard(a = $code.clean-code)
+		$on-click$: $ftd.set-string($a = $code.copy-text, v = Copied!)
+		width.fixed.px: 18
+
+		-- ftd.image:
+		if: { code.copy-text != "null" }
+		src: $assets.files.assets.blog.tick.svg
+		width.fixed.px: 18
+
+		-- ds.copy-regular: $code.copy-text
+		if: { code.copy-text != "null" }
+
 		-- end: ds.row
 
 	-- end: ds.row
-
+  
 	-- ftd.code:
 	theme: fastn-theme.light
 	theme if { ftd.dark-mode }: fastn-theme.dark
@@ -485,3 +508,20 @@ ftd.image-src photo:
 -- record social-data:
 ftd.image-src src:
 string link:
+
+
+-- social-data list social:
+
+-- social-data:
+src: $assets.files.assets.blog.copy-hover.svg
+link: /
+
+-- social-data:
+src: $assets.files.assets.blog.tweet.svg
+link: /
+
+-- social-data:
+src: $assets.files.assets.blog.linkedin.svg
+link: https://www.linkedin.com/feed/
+
+-- end: social
