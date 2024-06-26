@@ -44,3 +44,15 @@ function linkedin_share_url() {
     let url = window.location.href;
     return `https://www.linkedin.com/shareArticle?url=${url}`;
 }
+
+
+function twitter_share_url() {
+    let url = window.location.href;
+    return `https://twitter.com/share?url=${url}`;
+}
+
+
+function copy_share_url() {
+    let url = window.location.href;
+    return url;
+}

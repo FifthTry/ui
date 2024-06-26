@@ -1,6 +1,5 @@
 -- import: ui.fifthtry.com/components/blog/blog-post as post
 -- import: www.fifthtry.com/just-user-data
--- import: ui.fifthtry.com/components/blog/blog-home as blog
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/components/blog/blog-authors as author
@@ -8,7 +7,7 @@
 -- import: fastn-community.github.io/dark-mode-switcher as dms
 -- import: ui.fifthtry.com/components/footer
 -- import: fastn-community.github.io/design-system as ds
-export: borders, button, icon-button, primary-button, secondary-button, circle-text-button, phosphor-icon-button, inline-row, footer-link, copyright-text, page-widths, header-link, page, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, section-column, column, element-radius, radius, row, flush, gap, hv, spaces, border-data, border-bottom, alert, container, text-input, danger-button, checkbox, link-button, floater, copy-to-clipboard-text, copy-to-clipboard-icon, label-text, package-info
+export: borders, button, icon-button, primary-button, secondary-button, circle-text-button, phosphor-icon-button, inline-row, footer-link, copyright-text, page-widths, header-link, page, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, section-column, column, element-radius, radius, row, flush, gap, hv, spaces, border-data, border-bottom, alert, container, text-input, danger-button, checkbox, link-button, floater, copy-to-clipboard-text, copy-to-clipboard-icon, label-text, package-info, image
 exposing: page-widths
 
 
@@ -97,14 +96,11 @@ align-content: left
 -- ds.row:
 align-content: left
 
--- ftd.image:
-src: $assets.files.assets.blog.copy-hover.svg
-link: $linkedin-share-url()
-width.fixed.px: 24
+-- ds.copy-to-clipboard-icon: $copy-share-url()
 
 -- ftd.image:
 src: $assets.files.assets.blog.tweet.svg
-link: $linkedin-share-url()
+link: $twitter-share-url()
 width.fixed.px: 24
 
 -- ftd.image:
@@ -165,28 +161,22 @@ inset: $ds.spaces.inset-tall.zero-medium
 -- ds.section-row:
 margin: $ds.spaces.vertical-gap.small
 
--- blog.blog-card: [Customize Your Website's Color Scheme](/blog/customize-cs/)
+-- latest-post-card: [Customize Your Website's Color Scheme](/blog/customize-cs/)
 date: 24th April 2024
-small-width: true
-;; button-name: Watch Video Tutorial
-;; link: https://youtu.be/QbVjKCczjSw
+link: /blog/customize-cs/
 
 Your website's color scheme sets the tone for your brand.
 
--- blog.blog-card: [FifthTry Editor](/blog/editor/)
+-- latest-post-card: [FifthTry Editor](/blog/editor/)
 date: 22nd March 2024
-small-width: true
-;; button-name: Read Full Blog
-;; link: /blog/editor/
+link: /blog/editor/
 
 I’m thrilled to introduce you to FifthTry Editor, our latest
 addition to the [FifthTry platform]((https://www.fifthtry.com)
 
--- blog.blog-card: [Build and Host Your Website on fifthtry.com](/blog/getting-started/)
+-- latest-post-card: [Build and Host Your Website on fifthtry.com](/blog/getting-started/)
 date: 28th March 2024
-small-width: true
-;; button-name: Watch Video Tutorial
-;; link: https://youtu.be/lh3rRbVBses
+link: /blog/getting-started/
 
 Full Tutorial: From sign-up to launching your site.
 
@@ -544,6 +534,64 @@ margin: $ds.spaces.vertical-gap.medium
 
 
 
+
+
+-- component latest-post-card:
+caption title:
+body description:
+string date:
+string link:
+
+-- ds.container:
+inset: $ds.spaces.inset-square.medium
+background.solid: $ds.colors.background.step-2
+width.fixed.percent: 30
+width.fixed.percent if { ftd.device != "mobile"}: 68
+height.fixed.px if { ftd.device != "mobile"}: 180
+radius: $ds.radius.medium
+
+-- ds.row:
+
+-- ds.image:
+src: $assets.files.assets.blog.blog.svg
+width.fixed.px: 32
+
+	-- ds.column:
+	align-content: left
+	link: $latest-post-card.link
+	
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.zero
+		align-content: left
+		
+			-- ds.fine-print:
+			
+			$latest-post-card.date
+			
+			-- ds.copy-large:
+			color: $ds.colors.text-strong
+			
+			$latest-post-card.title
+			
+		-- end: ds.column
+
+		-- ds.copy-regular:
+		color: $ds.colors.text
+		
+		$latest-post-card.description
+		
+	-- end: ds.column
+
+	-- end: ds.row
+
+-- end: ds.container
+
+-- end: latest-post-card
+
+
+
+
+
 -- record author-data:
 caption name:
 body description:
@@ -559,3 +607,18 @@ ftd.image-src photo:
 js: $assets.files.assets.functions.js
 
 linkedin_share_url()
+
+
+
+
+-- string twitter-share-url():
+js: $assets.files.assets.functions.js
+
+twitter_share_url()
+
+
+
+-- string copy-share-url():
+js: $assets.files.assets.functions.js
+
+copy_share_url()
