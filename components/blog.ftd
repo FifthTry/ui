@@ -601,6 +601,42 @@ ftd.image-src photo:
 
 
 
+-- author-data nandhini: Nandhini
+photo: $assets.files.assets.team.avatar.jpg
+profile: Marketing Manager
+bio-url: https://www.fifthtry.com/
+
+Cras id congue massa, id aliquet urna. Sed mattis id orci eu
+consectetur. Vivamus lacinia faucibus urna, ut sollicitudin
+lacus consequat id. Fusce varius leo eget orci fringilla,
+ut viverra ante molestie. Proin finibus turpis turpis.
+Nulla sodales, sem ut vehicula blandit, neque risus tempor
+enim, a sodales massa urna nec neque.
+
+
+-- author-data arpita: Arpita Jaiswal
+photo: $assets.files.assets.team.arpita.jpg
+profile: Senior Software Developer
+bio-url: https://github.com/Arpita-Jaiswal
+
+I am building `FifthTry`.
+
+
+-- author-data amitu: Amit Upadhyay
+photo: $assets.files.assets.team.amitu.jpg
+profile: Founder, CEO
+bio-url: https://www.linkedin.com/in/amitu/
+
+Building fifthTry.com
+
+
+-- author-data meenu: Meenu Kumari
+photo: $assets.files.assets.team.meenu.jpeg
+profile: Fastn Builder - FTD Dev
+bio-url: https://github.com/MeenuKumari28
+
+Building fifthtry.com
+
 
 
 -- string linkedin-share-url():
