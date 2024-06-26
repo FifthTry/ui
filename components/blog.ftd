@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/components/blog/blog-post as post
 -- import: www.fifthtry.com/just-user-data
+-- import: ui.fifthtry.com/components/blog/blog-home as blog
 -- import: ui.fifthtry.com/records/user-data as ud
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/components/blog/blog-authors as author
@@ -31,7 +32,6 @@ caption title:
 optional body description:
 string date:
 author-data author:
-social-data list social-info: $social
 optional ftd.image-src banner-image:
 optional body body:
 children wrapper:
@@ -43,6 +43,7 @@ boolean hide-footer: false
 
 -- ds.section-column:
 align-content: top-left
+margin: $ds.spaces.vertical-gap.large
 
 -- dms.dark-mode-switcher-float:
 if: { page.theme-switcher }
@@ -97,10 +98,19 @@ align-content: left
 align-content: left
 
 -- ftd.image:
-for: $obj in $page.social-info
-src: $obj.src
-link: $obj.link
-width.fixed.px: 20
+src: $assets.files.assets.blog.copy-hover.svg
+link: $linkedin-share-url()
+width.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.assets.blog.tweet.svg
+link: $linkedin-share-url()
+width.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.assets.blog.linkedin.svg
+link: $linkedin-share-url()
+width.fixed.px: 24
 
 -- end: ds.row
 
@@ -141,10 +151,48 @@ placeholder: Enter you email...
 input: true
 background.solid: $ds.colors.background.step-1
 colored-text: true
+rounded: true
 
 Once a week we send you the latest news about FifthTry.
 
 -- end: ds.section-column
+
+-- ds.column:
+inset: $ds.spaces.inset-tall.zero-medium
+
+-- ds.heading-medium: Latest blogs
+
+-- ds.section-row:
+margin: $ds.spaces.vertical-gap.small
+
+-- blog.blog-card: [Customize Your Website's Color Scheme](/blog/customize-cs/)
+date: 24th April 2024
+small-width: true
+;; button-name: Watch Video Tutorial
+;; link: https://youtu.be/QbVjKCczjSw
+
+Your website's color scheme sets the tone for your brand.
+
+-- blog.blog-card: [FifthTry Editor](/blog/editor/)
+date: 22nd March 2024
+small-width: true
+;; button-name: Read Full Blog
+;; link: /blog/editor/
+
+I’m thrilled to introduce you to FifthTry Editor, our latest
+addition to the [FifthTry platform]((https://www.fifthtry.com)
+
+-- blog.blog-card: [Build and Host Your Website on fifthtry.com](/blog/getting-started/)
+date: 28th March 2024
+small-width: true
+;; button-name: Watch Video Tutorial
+;; link: https://youtu.be/lh3rRbVBses
+
+Full Tutorial: From sign-up to launching your site.
+
+-- end: ds.section-row
+
+-- end: ds.column
 
 -- footer.footer:
 site-data: $page.site-data
@@ -505,23 +553,9 @@ ftd.image-src photo:
 
 
 
--- record social-data:
-ftd.image-src src:
-string link:
 
 
--- social-data list social:
+-- string linkedin-share-url():
+js: $assets.files.assets.functions.js
 
--- social-data:
-src: $assets.files.assets.blog.copy-hover.svg
-link: /
-
--- social-data:
-src: $assets.files.assets.blog.tweet.svg
-link: /
-
--- social-data:
-src: $assets.files.assets.blog.linkedin.svg
-link: https://www.linkedin.com/feed/
-
--- end: social
+linkedin_share_url()

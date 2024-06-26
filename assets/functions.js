@@ -37,3 +37,10 @@ function set_language(language) {
     createCookie("fastn-lang", language, 365 * 60);
     document.location.reload();
 }
+
+
+
+function linkedin_share_url() {
+    let url = window.location.href;
+    return `https://www.linkedin.com/shareArticle?url=${url}`;
+}
