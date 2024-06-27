@@ -72,7 +72,6 @@ inset: $ds.spaces.inset-tall.zero-medium
 -- ds.column:
 align-content: top-left
 width.fixed.px: 300
-spacing: $ds.spaces.vertical-gap.large
 
 -- ds.copy-small: $page.date
 
@@ -84,7 +83,7 @@ src: $page.author.photo
 width.fixed.px: 40
 radius: $ds.radius.round
 
--- ds.heading-small: $page.author.name
+-- ds.heading-tiny: $page.author.name
 
 -- end: ds.row
 
@@ -547,22 +546,18 @@ inset: $ds.spaces.inset-square.medium
 background.solid: $ds.colors.background.step-2
 width.fixed.percent: 30
 width.fixed.percent if { ftd.device != "mobile"}: 68
-height.fixed.px if { ftd.device != "mobile"}: 180
+height.fixed.px if { ftd.device != "mobile"}: 200
 radius: $ds.radius.medium
 
--- ds.row:
-
--- ds.image:
-src: $assets.files.assets.blog.blog.svg
-width.fixed.px: 32
-
 	-- ds.column:
-	align-content: left
+	align-content: top-left
 	link: $latest-post-card.link
+	spacing: $ds.spaces.vertical-gap.large
 	
 		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.zero
-		align-content: left
+		spacing: $ds.spaces.vertical-gap.small
+		align-content: top-left
+		height.fixed.px: 80
 		
 			-- ds.fine-print:
 			
@@ -575,14 +570,18 @@ width.fixed.px: 32
 			
 		-- end: ds.column
 
+		-- ds.column:
+		align-content: top-left
+		height.fixed.px: 80
+
 		-- ds.copy-regular:
 		color: $ds.colors.text
 		
 		$latest-post-card.description
 		
 	-- end: ds.column
-
-	-- end: ds.row
+	
+	-- end: ds.column
 
 -- end: ds.container
 
