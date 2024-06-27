@@ -26923,14 +26923,28 @@
        }
 
        connectedCallback() {
-           window.ide_cm_editor = new EditorView({
-               extensions: [basicSetup, javascript()],
-               parent: this,
-               doc: "function greet(who) {\n  return 'Hello, ' + who + '!';\n}"
+           let data = window.ftd.component_data(this);
+
+           const initialState = EditorState.create({
+               doc: data.content.get(),
+               extensions: [basicSetup, javascript()]
                // trying to set height to occupy the whole parent, but its not working
                // contentHeight: 40,
                // height: "100%",
                // viewportMargin: Infinity,
+           });
+
+           window.ide_cm_editor = new EditorView({
+               state: initialState,
+               parent: this
+           });
+
+           data.content.on_change(() => {
+               const newState = EditorState.create({
+                   doc: newContent,
+                   extensions: [basicSetup, javascript()] // Reuse existing extensions
+               });
+               window.ide_cm_editor.setState(newState);
            });
        }
    }
