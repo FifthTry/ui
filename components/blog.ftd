@@ -72,20 +72,27 @@ inset: $ds.spaces.inset-tall.zero-medium
 -- ds.column:
 align-content: top-left
 width.fixed.px: 300
+spacing: $ds.spaces.vertical-gap.extra-large
 
--- ds.copy-small: $page.date
+-- ds.column:
+align-content: top-left
+inset: $ds.spaces.inset-tall.zero-small
+
+-- ds.copy-regular: $page.date
 
 -- ds.row:
 align-content: left
 
 -- ds.image:
 src: $page.author.photo
-width.fixed.px: 40
+width.fixed.px: 36
 radius: $ds.radius.round
 
--- ds.heading-tiny: $page.author.name
+-- ds.copy-regular: $page.author.name
 
 -- end: ds.row
+
+-- end: ds.column
 
 -- ds.column:
 align-content: left
@@ -349,8 +356,6 @@ $quote.body
 -- ds.row:
 align-content: left
 
--- ds.copy-small: ~
-
 -- ds.copy-small: $quote.title
 if: { quote.title != NULL }
 
@@ -600,17 +605,18 @@ ftd.image-src photo:
 
 
 
--- author-data nandhini: Nandhini
-photo: $assets.files.assets.team.avatar.jpg
-profile: Marketing Manager
-bio-url: https://www.fifthtry.com/
+-- author-data nandhini: Nandhini Devi
+photo: $assets.files.assets.team.nandhini-devi.jpg
+profile: Freelance Copywriter
+bio-url: https://www.linkedin.com/in/nandhini-devi-elumalai/
 
-Cras id congue massa, id aliquet urna. Sed mattis id orci eu
-consectetur. Vivamus lacinia faucibus urna, ut sollicitudin
-lacus consequat id. Fusce varius leo eget orci fringilla,
-ut viverra ante molestie. Proin finibus turpis turpis.
-Nulla sodales, sem ut vehicula blandit, neque risus tempor
-enim, a sodales massa urna nec neque.
+I'm currently working at FifthTry, handling all things content – blogs,
+docs, homepages, and socials. If you come across "if you can type,
+you can code" – that's my signature move and a nod to my love for fastn
+for making coding simple and fun!
+
+I've got a soft spot for startups in the business of saving the planet,
+and if you're one of them, count me in.
 
 
 -- author-data arpita: Arpita Jaiswal
