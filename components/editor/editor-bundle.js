@@ -26941,7 +26941,7 @@
 
            data.content.on_change(() => {
                const newState = EditorState.create({
-                   doc: newContent,
+                   doc: data.content.get(),
                    extensions: [basicSetup, javascript()] // Reuse existing extensions
                });
                window.ide_cm_editor.setState(newState);
