@@ -6,10 +6,9 @@
 
 
 -- package.data $package-data:
-name: Some Package
-url: /foo/
-files: *$files
-folders: *$folders
+name: Loading...
+url: /
+
 
 
 
