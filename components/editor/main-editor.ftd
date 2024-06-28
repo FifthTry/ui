@@ -1,5 +1,7 @@
 -- import: ui.fifthtry.com/components/editor/vars
 
+
+
 -- component main-editor:
 css: $assets.files.components.editor.editor.css
 
@@ -10,12 +12,21 @@ width.fixed.calc if { vars.package }: 100% - 48px - 240px
 ;; background.solid: green
 align-content: center
 
-	-- cm-editor:
-	
+-- cm-editor:
+$content: $vars.content
+
 -- end: ftd.column
 
 -- end: main-editor
 
 
+
+
+
+
+
+
 -- web-component cm-editor:
 js: $assets.files.components.editor.editor-bundle.js
+string $content:
+
