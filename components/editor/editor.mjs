@@ -1,4 +1,5 @@
-import {EditorView, basicSetup} from "codemirror";
+import codemirror from "codemirror";
+import {EditorState} from "@codemirror/state";
 import {javascript} from "@codemirror/lang-javascript";
 
 class CMEditor extends HTMLElement {
@@ -13,15 +14,11 @@ class CMEditor extends HTMLElement {
         let data = window.ftd.component_data(this);
 
         const initialState = EditorState.create({
-            doc: data.content.get(),
-            extensions: [basicSetup, javascript()]
-            // trying to set height to occupy the whole parent, but its not working
-            // contentHeight: 40,
-            // height: "100%",
-            // viewportMargin: Infinity,
+            doc: data.doc.get(),
+            extensions: [codemirror.basicSetup, javascript()]
         });
 
-        window.ide_cm_editor = new EditorView({
+        window.ide_cm_editor = new codemirror.EditorView({
             state: initialState,
             parent: this
         });
@@ -29,7 +26,7 @@ class CMEditor extends HTMLElement {
         data.content.on_change(() => {
             const newState = EditorState.create({
                 doc: data.content.get(),
-                extensions: [basicSetup, javascript()] // Reuse existing extensions
+                extensions: [codemirror.basicSetup, javascript()] // Reuse existing extensions
             });
             window.ide_cm_editor.setState(newState);
         });
