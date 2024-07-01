@@ -1,12 +1,13 @@
 -- import: ui.fifthtry.com/components/editor/welcome-screen
 -- import: ui.fifthtry.com/components/editor/panels/package
+-- import: ui.fifthtry.com/components/editor/main-editor
 
 ;; left panels
 -- boolean $package: true
 
 
 -- package.data $package-data:
-name: Loading...
+name: LL
 url: /
 
 
@@ -65,8 +66,15 @@ url: /foo/blog/images/first-image.jpg
 -- integer panel-width: 24
 
 
--- string $content: Loading...
+-- main-editor.doc $doc:
+file-name: FASTN.ftd
 
+customElements.define('cm-editor', CMEditor);
+
+window.ide_dispatch_event = function (data) {
+    console.log('ide_dispatch_event', data);
+    window.dispatchEvent(new CustomEvent("ide-event", { detail: data }));
+};
 
 -- void dispatch-event(data):
 string data:

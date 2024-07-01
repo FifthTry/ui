@@ -5,6 +5,7 @@ export default {
     input: "./editor.mjs",
     output: {
         file: "./editor-bundle.js",
+        sourcemap: true,
         format: "iife"
     },
     plugins: [nodeResolve(), terser()]

@@ -13,7 +13,7 @@ width.fixed.calc if { vars.package }: 100% - 48px - 240px
 align-content: center
 
 -- cm-editor:
-$content: $vars.content
+$doc: $vars.doc
 
 -- end: ftd.column
 
@@ -23,10 +23,14 @@ $content: $vars.content
 
 
 
+-- record doc:
+body content:
+string file-name:
 
 
 
 -- web-component cm-editor:
 js: $assets.files.components.editor.editor-bundle.js
-string $content:
+doc $doc: $vars.doc
+;; string $content:
 

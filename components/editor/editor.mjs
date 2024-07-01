@@ -1,4 +1,4 @@
-import codemirror from "codemirror";
+import {EditorView, basicSetup} from "codemirror";
 import {EditorState} from "@codemirror/state";
 import {javascript} from "@codemirror/lang-javascript";
 
@@ -8,27 +8,44 @@ class CMEditor extends HTMLElement {
         this.style.width = "100%";
         this.style.height = "100%";
         this.classList.add('fastn-ignore-global-keyboard');
+        this.currentDocument = "current";
+        this.documents = {};
     }
+
 
     connectedCallback() {
         let data = window.ftd.component_data(this);
+        let self = this;
 
-        const initialState = EditorState.create({
-            doc: data.doc.get(),
-            extensions: [codemirror.basicSetup, javascript()]
+        let content = data.doc.get().get("content").get();
+        this.currentDocument = data.doc.get().get("file-name").get();
+
+        function update(vu) {
+            self.documents[self.currentDocument] = vu.state;
+        }
+
+        let extensions =[basicSetup, javascript(), EditorView.updateListener.of(update)]
+
+        this.documents[this.currentDocument] = EditorState.create({
+            doc: content,
+            extensions: extensions,
         });
 
-        window.ide_cm_editor = new codemirror.EditorView({
-            state: initialState,
+        window.ide_cm_editor = new EditorView({
+            state: this.documents[self.currentDocument],
             parent: this
         });
 
-        data.content.on_change(() => {
-            const newState = EditorState.create({
-                doc: data.content.get(),
-                extensions: [codemirror.basicSetup, javascript()] // Reuse existing extensions
+        data.doc.on_change(() => {
+            let content = data.doc.get().get("content").get();
+            this.currentDocument = data.doc.get().get("file-name").get();
+
+            // TODO: see if this.currentDocument is already in this.documents
+            this.documents[this.currentDocument] = EditorState.create({
+                doc: content,
+                extensions: extensions,
             });
-            window.ide_cm_editor.setState(newState);
+            window.ide_cm_editor.setState(this.documents[this.currentDocument]);
         });
     }
 }
