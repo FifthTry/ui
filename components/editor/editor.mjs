@@ -18,7 +18,7 @@ class CMEditor extends HTMLElement {
         let self = this;
 
         let content = data.doc.get().get("content").get();
-        this.currentDocument = data.doc.get().get("file-name").get();
+        this.currentDocument = data.doc.get().get("file_name").get();
 
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
