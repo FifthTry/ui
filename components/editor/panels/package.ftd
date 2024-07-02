@@ -1,4 +1,8 @@
 -- import: ui.fifthtry.com/components/editor/vars
+-- import: ui.fifthtry.com/assets
+
+
+
 
 -- component package:
 data $data: $vars.package-data
@@ -27,12 +31,24 @@ $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
 
 
 
+
+
+
+
+
+
+
+
 -- record data:
 string name:
 string url:
 string slug:
 folder list folders:
 file list files:
+
+
+
+
 
 -- record flags:
 ;; if the file, or file in the folder is modified
@@ -48,17 +64,32 @@ boolean conflicted: false
 ;; if the user has currently selected this in the UI
 boolean selected: false
 
+
+
+
 -- record file:
 caption name:
 string url:
 flags flags: $default-flags
 
+
+
+
+
 -- record folder:
 caption name:
+string full-name:
 string url:
 flags flags: $default-flags
 folder list folders:
 file list files:
+
+
+
+
+
+
+
 
 
 -- flags default-flags:
@@ -69,6 +100,9 @@ open: false
 conflicted: false
 selected: false
 
+
+
+
 -- flags selected-flags:
 modified: false
 added: false
@@ -76,6 +110,19 @@ deleted: false
 open: true
 conflicted: false
 selected: true
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- component package-name:
 caption name:
@@ -104,6 +151,16 @@ padding-top.px: 6
 
 
 
+
+
+
+
+
+
+
+
+
+
 -- component show-folder:
 caption folder $f:
 integer level: 0
@@ -112,14 +169,17 @@ integer level: 0
 width.fixed.percent: 100
 
 	-- ftd.text: $show-folder.f.name
-	link: $show-folder.f.url
+	;; link: $show-folder.f.url
 	color: black
 	width.fixed.percent: 100
 	padding-vertical.px: 4
 	padding-left.px: $padding(level=$show-folder.level)
+	$on-click$: $vars.toggle-member-in-list(member=$show-folder.f.full-name, $list=$vars.open-folders)
 	
 	-- ftd.column:
 	width.fixed.percent: 100
+	js: $assets.files.components.editor.function.js
+	if: { listContains(show-folder.f.full-name, vars.open-folders) }
 	
 		-- show-folder: $folder
 		for: folder in $show-folder.f.folders
@@ -134,6 +194,18 @@ width.fixed.percent: 100
 -- end: ftd.column
 
 -- end: show-folder
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -159,10 +231,25 @@ background.solid if { show-file.f.flags.selected }: #f5f5f5
 
 
 
+
+
+
+
+
+
+
+
+
+
 -- integer next-level(level):
 integer level:
 
 level + 1
+
+
+
+
+
 
 -- integer padding(level):
 integer level:

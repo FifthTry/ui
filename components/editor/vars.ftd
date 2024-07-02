@@ -1,6 +1,7 @@
 -- import: ui.fifthtry.com/components/editor/welcome-screen
 -- import: ui.fifthtry.com/components/editor/panels/package
 -- import: ui.fifthtry.com/components/editor/main-editor
+-- import: ui.fifthtry.com/assets
 
 ;; left panels
 -- boolean $package: true
@@ -9,6 +10,17 @@
 -- package.data $package-data:
 name: LL
 url: /
+slug: Anonymous
+files: *$files
+folders: *$folders
+
+
+
+
+
+
+
+
 
 
 
@@ -24,14 +36,30 @@ url: /foo/index.ftd
 -- end: files
 
 
+
+
+
+
+
+
+
 -- package.folder list folders:
 
 -- package.folder: blog
+full-name: blog
 url: /foo/blog/
 files: *$blog-files
 folders: $blog-folders
 
 -- end: folders
+
+
+
+
+
+
+
+
 
 -- package.file list blog-files:
 
@@ -46,11 +74,19 @@ flags: $package.selected-flags
 
 
 
+
+
+
+
+
+
+
 -- package.folder list blog-folders:
 
 -- package.folder: images
 url: /foo/blog/images/
 files: *$blog-images
+full-name: blog/images
 
 -- end: blog-folders
 
@@ -63,7 +99,24 @@ url: /foo/blog/images/first-image.jpg
 
 
 
+
+
+
+
+
+
+
+
+
+
 -- integer panel-width: 24
+
+
+
+
+
+
+
 
 
 -- main-editor.doc $doc:
@@ -77,8 +130,54 @@ window.ide_dispatch_event = function (data) {
     window.dispatchEvent(new CustomEvent("ide-event", { detail: data }));
 };
 
+
+
+
+
+
+
+
+
+
+
 -- void dispatch-event(data):
 string data:
 
 ide_dispatch_event(data)
+
+
+
+
+
+
+
+
+
+-- string list $open-folders:
+-- end: $open-folders
+
+
+
+
+
+
+;; full-name of current file
+-- string current-file: FASTN.ftd
+
+
+
+
+
+
+
+
+
+-- void toggle-member-in-list(member, list):
+string member:
+string list $list:
+js: $assets.files.components.editor.function.js
+
+toggleMemberInList(member, list)
+
+
 

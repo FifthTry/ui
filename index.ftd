@@ -73,3 +73,6 @@ $processor$: pr.toc
 
 - Onboarding Scenarios:
   - Onboarding Ishaan: /scenarios/cards/onboarding-ishaan/
+
+- IDE:
+  - ide: /scenarios/ide
