@@ -37,8 +37,8 @@ class CMEditor extends HTMLElement {
         });
 
         data.doc.on_change(() => {
-            let content = data.doc.get().get("content").get();
-            this.currentDocument = data.doc.get().get("file-name").get();
+            let content = fastn_utils.getFlattenStaticValue(data.doc.get().get("content"));
+            this.currentDocument = fastn_utils.getFlattenStaticValue(data.doc.get().get("file_name"));
 
             // TODO: see if this.currentDocument is already in this.documents
             this.documents[this.currentDocument] = EditorState.create({
