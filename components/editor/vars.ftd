@@ -68,6 +68,7 @@ url: /foo/blog/images/first-image.jpg
 
 -- main-editor.doc $doc:
 file-name: FASTN.ftd
+language: ftd
 
 customElements.define('cm-editor', CMEditor);
 

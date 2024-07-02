@@ -26,6 +26,7 @@ $doc: $vars.doc
 -- record doc:
 body content:
 string file-name:
+string language:
 
 
 

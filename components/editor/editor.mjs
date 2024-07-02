@@ -1,6 +1,9 @@
 import {EditorView, basicSetup} from "codemirror";
 import {EditorState} from "@codemirror/state";
 import {javascript} from "@codemirror/lang-javascript";
+import {python} from "@codemirror/lang-python";
+import {markdown} from "@codemirror/lang-markdown";
+import {html} from "@codemirror/lang-html";
 
 class CMEditor extends HTMLElement {
     constructor() {
@@ -17,18 +20,33 @@ class CMEditor extends HTMLElement {
         let data = window.ftd.component_data(this);
         let self = this;
 
-        let content = data.doc.get().get("content").get();
-        this.currentDocument = data.doc.get().get("file_name").get();
+        let content = fastn_utils.getFlattenStaticValue(data.doc.get().get("content"));
+        let language = fastn_utils.getFlattenStaticValue(data.doc.get().get("language"));
+        this.currentDocument = fastn_utils.getFlattenStaticValue(data.doc.get().get("file_name"));
 
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
         }
 
-        let extensions =[basicSetup, javascript(), EditorView.updateListener.of(update)]
+        function get_extensions(language, update) {
+            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(update)];
+            switch (language) {
+                case 'Python':
+                    extensions.push(python());
+                    break;
+                case 'Markdown':
+                    extensions.push(markdown());
+                    break;
+                case 'Html':
+                    extensions.push(html());
+                    break;
+            }
+            return extensions
+        }
 
         this.documents[this.currentDocument] = EditorState.create({
             doc: content,
-            extensions: extensions,
+            extensions: get_extensions(language, update),
         });
 
         window.ide_cm_editor = new EditorView({
@@ -38,12 +56,13 @@ class CMEditor extends HTMLElement {
 
         data.doc.on_change(() => {
             let content = fastn_utils.getFlattenStaticValue(data.doc.get().get("content"));
+            let language = fastn_utils.getFlattenStaticValue(data.doc.get().get("language"));
             this.currentDocument = fastn_utils.getFlattenStaticValue(data.doc.get().get("file_name"));
 
             // TODO: see if this.currentDocument is already in this.documents
             this.documents[this.currentDocument] = EditorState.create({
                 doc: content,
-                extensions: extensions,
+                extensions: get_extensions(language, update),
             });
             window.ide_cm_editor.setState(this.documents[this.currentDocument]);
         });
