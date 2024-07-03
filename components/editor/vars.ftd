@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/components/editor/welcome-screen
+-- import: ui.fifthtry.com/components/editor/top-bar/file-switcher
 -- import: ui.fifthtry.com/components/editor/panels/package
 -- import: ui.fifthtry.com/components/editor/main-editor
 -- import: ui.fifthtry.com/assets
@@ -19,6 +20,17 @@ folders: *$folders
 
 
 
+
+
+-- file-switcher.file list recent-files:
+
+-- file-switcher.file: FASTN.ftd
+package: ui.fifthtry.com
+
+-- file-switcher.file: blog/images/logo.png
+package: ui.fifthtry.com
+
+-- end: recent-files
 
 
 
@@ -175,6 +187,11 @@ ide_dispatch_event(data)
 
 
 
+
+-- string back-ticked(file_name):
+string file_name:
+
+"`" + file_name + "`"
 
 
 -- void toggle-member-in-list(member, list):

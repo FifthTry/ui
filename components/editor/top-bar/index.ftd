@@ -1,4 +1,6 @@
 -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/components/editor/top-bar/file-switcher
+-- import: ui.fifthtry.com/components/editor/top-bar/package-switcher
 -- import: ui.fifthtry.com/components/avatar
 -- import: ui.fifthtry.com/scenarios/john-doe
 
@@ -13,16 +15,29 @@ spacing: space-between
 align-content: center
 padding.px: 10
 
-	-- ftd.image:
-	src: /-/ui.fifthtry.com/assets/fifthtry.png
-	link: /e/
-	
-	-- ftd.text: `FASTN.ftd`
-	link: /e/ft/FASTN.ftd
-	color: black
+    -- ftd.row:
+    spacing.fixed.px: 30
+    align-content: center
+
+        -- ftd.image:
+        src: /-/ui.fifthtry.com/assets/fifthtry.png
+        link: /e/
+
+        -- package-switcher.package-switcher:
+
+	-- end: ftd.row
+
+	-- file-switcher.file-switcher:
 	
 	-- avatar.avatar:
 	user-data: $john-doe.jd
 	
 -- end: ftd.row
 -- end: top-bar
+
+
+
+
+
+
+
