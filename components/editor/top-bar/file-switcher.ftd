@@ -31,15 +31,14 @@ $on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
 if: { popup.open }
 width.fixed.px: 260
 background.solid: #f5f5f5
-border-color: black
+border-color: #ccc
 border-radius.px: 3
 border-width.px: 1
 anchor: parent
 left.px: -7
 top.px: -8
-padding.px: 6
 z-index: 20
-spacing.fixed.px: 5
+;; spacing.fixed.px: 5
 
 
 -- show-file: $file
@@ -55,9 +54,21 @@ for: file in $popup.files
 
 -- component show-file:
 caption file file:
+boolean $hover: false
+
+
+-- ftd.column:
+width.fixed.percent: 100
+padding.px: 4
+background.solid: #f5f5f5
+background.solid if { show-file.hover }: #ccc
+$on-mouse-enter$: $ftd.set-boolean($a = $show-file.hover, v = true)
+$on-mouse-leave$: $ftd.set-boolean($a = $show-file.hover, v = false)
 
 -- ftd.text: $vars.back-ticked(file_name=$show-file.file.name)
 color: black
+
+-- end: ftd.column
 
 -- end: show-file
 
