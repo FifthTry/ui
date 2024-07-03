@@ -160,7 +160,7 @@ url: /foo/blog/images/first-image.jpg
 
 -- boolean $preview-visibility: true
 
--- string $preview-url: /
+-- string $preview-url: https://todayhasbeen.com
 
 
 -- main-editor.doc $doc:
