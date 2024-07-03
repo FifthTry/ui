@@ -28,7 +28,8 @@ file list files:
 
 -- ftd.column:
 $on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
-if: { popup.open }
+classes if { popup.open }: hover-popup-active
+classes: hover-popup
 width.fixed.px: 260
 background.solid: #f5f5f5
 border-color: #ccc
@@ -37,7 +38,6 @@ border-width.px: 1
 anchor: parent
 left.px: -6
 top.px: -6
-z-index: 20
 ;; spacing.fixed.px: 5
 
 

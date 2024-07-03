@@ -8,7 +8,7 @@ package list packages: $vars.recent-packages
 $on-mouse-enter$: $ftd.set-boolean($a = $package-switcher.open, v = true)
 $on-mouse-leave$: $ftd.set-boolean($a = $package-switcher.open, v = false)
 
-    -- ftd.text: $vars.back-ticked(file_name=$vars.package-data.name)
+    -- ftd.text: $vars.package-data.name
     color: black
 
     -- popup:
@@ -29,7 +29,8 @@ package list packages:
 
 -- ftd.column:
 $on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
-if: { popup.open }
+classes if { popup.open }: hover-popup-active
+classes: hover-popup
 width.fixed.px: 260
 background.solid: #f5f5f5
 border-color: #ccc
@@ -38,7 +39,6 @@ border-width.px: 1
 anchor: parent
 left.px: -6
 top.px: -6
-z-index: 20
 ;; spacing.fixed.px: 5
 
 
@@ -72,7 +72,7 @@ link: $show-package.package.url
 border-bottom-width.px: 1
 border-color: #ddd
 
--- ftd.text: $vars.back-ticked(file_name=$show-package.package.name)
+-- ftd.text: $show-package.package.name
 color: black
 
 -- ftd.text: $vars.back-ticked(file_name=$show-package.package.account)
