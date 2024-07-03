@@ -7,9 +7,8 @@ css: $assets.files.components.editor.editor.css
 
 -- ftd.column:
 height.fixed.percent: 100
-width.fixed.calc: 100% - 48px
+classes if { vars.maximize-preview-width }: hidden
 width.fixed.calc if { vars.package }: 100% - 48px - 240px
-;; background.solid: green
 align-content: center
 
 -- cm-editor:

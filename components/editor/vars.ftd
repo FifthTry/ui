@@ -130,8 +130,9 @@ url: /foo/blog/images/first-image.jpg
 
 
 
+-- boolean $maximize-preview-width: false
 
--- boolean $show-preview: true
+-- boolean $preview-visibility: true
 
 -- string $preview-url: /
 
