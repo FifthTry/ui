@@ -6,12 +6,22 @@
 width.fixed.px: $vars.panel-width
 height.fixed.percent: 100
 background.solid: #f5f5f5
+spacing: space-between
+border-right-width.px if { !vars.show-preview }: 1
+border-color: #ddd
+
+
+
+    -- ftd.text: \\-
+    style if { vars.show-preview }: bold
+    role: $ds.types.copy-large
+    align-self: center
+    $on-click$: $ftd.toggle($a=$vars.show-preview)
 
 
 
 
-
-	-- ftd.column: ;; right sidebar panel icons
+	-- ftd.column: ;; status bar panel icons
 	height.fixed.px: 100
 	width.fixed.percent: 100
 	

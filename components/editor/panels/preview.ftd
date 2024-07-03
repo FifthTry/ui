@@ -1,0 +1,21 @@
+-- import: ui.fifthtry.com/components/editor/vars
+
+
+-- component preview:
+string preview-url: $vars.preview-url
+
+-- ftd.column:
+width.fixed.px: 240
+height: fill-container
+classes if { !vars.show-preview }: hidden
+border-left-width.px: 1
+border-color: #ddd
+
+-- ftd.iframe:
+src: $preview.preview-url
+width: fill-container
+height: fill-container
+
+-- end: ftd.column
+
+-- end: preview
