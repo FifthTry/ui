@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/components/editor/welcome-screen
 -- import: ui.fifthtry.com/components/editor/top-bar/file-switcher
+-- import: ui.fifthtry.com/components/editor/top-bar/package-switcher
 -- import: ui.fifthtry.com/components/editor/panels/package
 -- import: ui.fifthtry.com/components/editor/main-editor
 -- import: ui.fifthtry.com/assets
@@ -9,7 +10,7 @@
 
 
 -- package.data $package-data:
-name: LL
+name: FifthTry Main Site
 url: /
 slug: Anonymous
 files: *$files
@@ -18,6 +19,25 @@ folders: *$folders
 
 
 
+
+-- package-switcher.package list recent-packages:
+
+-- package-switcher.package: FifthTry Main Site
+slug: ft
+url: /ide/ft/
+account: fifthtry
+
+-- package-switcher.package: AmitU's Blog
+slug: amitu-com
+url: /ide/amitu-com/
+account: amitu
+
+-- package-switcher.package: Fastn Design System
+slug: design-system
+url: /ide/design-system/
+account: fastn-community
+
+-- end: recent-packages
 
 
 

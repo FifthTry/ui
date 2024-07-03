@@ -16,7 +16,7 @@ align-content: center
 padding.px: 10
 
     -- ftd.row:
-    spacing.fixed.px: 30
+    spacing.fixed.px: 15
     align-content: center
 
         -- ftd.image:
