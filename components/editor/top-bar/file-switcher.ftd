@@ -35,14 +35,17 @@ border-color: #ccc
 border-radius.px: 3
 border-width.px: 1
 anchor: parent
-left.px: -7
-top.px: -8
+left.px: -5
+top.px: -6
 z-index: 20
 ;; spacing.fixed.px: 5
 
 
 -- show-file: $file
-for: file in $popup.files
+for: $file, $idx in $popup.files
+$hover: false
+$hover if { idx == 0 }: true
+
 
 -- end: ftd.column
 
@@ -67,6 +70,7 @@ $on-mouse-leave$: $ftd.set-boolean($a = $show-file.hover, v = false)
 
 -- ftd.text: $vars.back-ticked(file_name=$show-file.file.name)
 color: black
+link: $show-file.file.url
 
 -- end: ftd.column
 
@@ -78,4 +82,7 @@ color: black
 -- record file:
 caption name:               ;; full file name
 string package:             ;; full package name
+string url:
 ;; string file-type:
+
+

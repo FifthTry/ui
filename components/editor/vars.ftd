@@ -26,9 +26,11 @@ folders: *$folders
 
 -- file-switcher.file: FASTN.ftd
 package: ui.fifthtry.com
+url: /ide/ui/FASTN.ftd
 
 -- file-switcher.file: blog/images/logo.png
 package: ui.fifthtry.com
+url: /ide/ui/blog/images/logo.png
 
 -- end: recent-files
 
