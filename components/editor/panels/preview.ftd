@@ -21,8 +21,9 @@ align-content: right
 width: fill-container
 
     -- ftd.row:
-    spacing.fixed.px: 10
-    padding-right.px: 5
+    spacing.fixed.px: 5
+    padding-bottom.px: 2
+    padding-horizontal.px: 5
 
         -- toggle-width:
         $flag: $preview.maximize-preview-width
@@ -56,8 +57,9 @@ id: preview-iframe
 -- component toggle-width:
 boolean $flag: false
 
--- ftd.text: \\+
+-- ftd.text: `+`
 $on-click$: $ftd.toggle($a = $toggle-width.flag)
+color: black
 
 -- end: toggle-width
 
@@ -70,8 +72,9 @@ $on-click$: $ftd.toggle($a = $toggle-width.flag)
 -- component toggle-visibility:
 boolean $flag: false
 
--- ftd.text: \\-
+-- ftd.text: `-`
 $on-click$: $ftd.toggle($a = $toggle-visibility.flag)
+color: black
 
 -- end: toggle-visibility
 
