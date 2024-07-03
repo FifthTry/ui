@@ -5,8 +5,8 @@ boolean $open: false
 file list files: $vars.recent-files
 
 -- ftd.column:
-$on-click$: $ftd.toggle($a = $file-switcher.open)
-$on-click-outside$: $ftd.set-boolean($a = $file-switcher.open, v = false)
+$on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
+$on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
 
     -- ftd.text: $vars.back-ticked(file_name=$vars.doc.file-name)
     color: black
@@ -35,7 +35,7 @@ border-color: #ccc
 border-radius.px: 3
 border-width.px: 1
 anchor: parent
-left.px: -5
+left.px: -6
 top.px: -6
 z-index: 20
 ;; spacing.fixed.px: 5
@@ -62,15 +62,21 @@ boolean $hover: false
 
 -- ftd.column:
 width.fixed.percent: 100
-padding.px: 4
+padding.px: 5
+spacing.fixed.px: 2
 background.solid: #f5f5f5
 background.solid if { show-file.hover }: #ccc
 $on-mouse-enter$: $ftd.set-boolean($a = $show-file.hover, v = true)
 $on-mouse-leave$: $ftd.set-boolean($a = $show-file.hover, v = false)
+link: $show-file.file.url
+border-bottom-width.px: 1
+border-color: #ddd
 
 -- ftd.text: $vars.back-ticked(file_name=$show-file.file.name)
 color: black
-link: $show-file.file.url
+
+-- ftd.text: $vars.back-ticked(file_name=$show-file.file.package)
+color: black
 
 -- end: ftd.column
 

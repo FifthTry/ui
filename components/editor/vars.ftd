@@ -32,6 +32,10 @@ url: /ide/ui/FASTN.ftd
 package: ui.fifthtry.com
 url: /ide/ui/blog/images/logo.png
 
+-- file-switcher.file: blog/index.ftd
+package: ui.fifthtry.com
+url: /ide/ui/blog/index.ftd
+
 -- end: recent-files
 
 
