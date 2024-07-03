@@ -4,14 +4,14 @@
 
 -- component preview:
 string preview-url: $vars.preview-url
-boolean $maximize-preview-width: $vars.maximize-preview-width
-boolean $toggle-visibility-flag: $vars.preview-visibility
+boolean $preview-maximized: $vars.preview-maximized
+boolean $toggle-visibility-flag: $vars.preview-visible
 
 -- ftd.column:
-width.fixed.percent: 30
-width if { vars.maximize-preview-width }: fill-container
+width.fixed.px: 300
+width if { vars.preview-maximized }: fill-container
 height: fill-container
-classes if { !vars.preview-visibility }: hidden
+classes if { !vars.preview-visible }: hidden
 border-left-width.px: 1
 border-color: #ddd
 id: right-panel
@@ -26,7 +26,7 @@ width: fill-container
     padding-horizontal.px: 5
 
         -- toggle-width:
-        $flag: $preview.maximize-preview-width
+        $flag: $preview.preview-maximized
 
         -- toggle-visibility:
         $flag: $preview.toggle-visibility-flag

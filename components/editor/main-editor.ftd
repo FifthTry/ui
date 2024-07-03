@@ -7,8 +7,17 @@ css: $assets.files.components.editor.editor.css
 
 -- ftd.column:
 height.fixed.percent: 100
-classes if { vars.maximize-preview-width }: hidden
-width.fixed.calc if { vars.package }: 100% - 48px - 240px
+classes if { vars.preview-maximized && vars.preview-visible }: hidden
+;; both closed
+width.fixed.calc if { !vars.package && !vars.preview-visible }: 100% - 48px
+;; left open right closed
+width.fixed.calc if { vars.package && !vars.preview-visible }: 100% - 48px - 240px
+;; left open right open preview normal
+width.fixed.calc if { vars.package && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 240px - 300px
+;; left open right open preview maximized: No-op, since this is hidden
+;; left closed right open preview normal
+width.fixed.calc if { !vars.package && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 300px
+;; left closed right open preview maximized: No-op, since this is hidden
 align-content: center
 
 -- cm-editor:
