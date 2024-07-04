@@ -183,10 +183,11 @@ window.ide_dispatch_event = function (data) {
 
 
 
--- void dispatch-event(data):
-string data:
+-- void dispatch-event(name, data):
+string name:
+optional string data:
 
-ide_dispatch_event(data)
+ide_dispatch_event(name, data)
 
 
 

@@ -18,7 +18,7 @@ border-color: #ddd
 	
 		-- ftd.text: P
 		style if { vars.package }: bold
-		$on-click$: $vars.dispatch-event(data=package-panel-toggle)
+		$on-click$: $vars.dispatch-event(name=package-panel-toggle)
 		$on-click$: $ftd.toggle($a=$vars.package)
 		
 	-- end: ftd.column

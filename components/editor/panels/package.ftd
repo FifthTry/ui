@@ -102,7 +102,7 @@ padding-top.px: 6
 
 	-- ftd.text: `-`
 	if: { package-name.hover }
-	$on-click$: $vars.dispatch-event(data=package-panel-toggle)
+	$on-click$: $vars.dispatch-event(name=package-panel-toggle)
 	color: black
 
 -- end: ftd.row

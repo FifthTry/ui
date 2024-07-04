@@ -1,9 +1,10 @@
-import {EditorView, basicSetup} from "codemirror";
-import {EditorState} from "@codemirror/state";
-import {javascript} from "@codemirror/lang-javascript";
-import {python} from "@codemirror/lang-python";
-import {markdown} from "@codemirror/lang-markdown";
-import {html} from "@codemirror/lang-html";
+import { EditorView, basicSetup } from "codemirror";
+import { EditorState } from "@codemirror/state";
+import { javascript } from "@codemirror/lang-javascript";
+import { python } from "@codemirror/lang-python";
+import { markdown } from "@codemirror/lang-markdown";
+import { html } from "@codemirror/lang-html";
+import { debounce } from "./debounce";
 
 class CMEditor extends HTMLElement {
     constructor() {
@@ -26,10 +27,11 @@ class CMEditor extends HTMLElement {
 
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
+            window.ide_dispatch_event("save-unsaved-file", {file_name: self.currentDocument, content: vu.state.doc.toString()});
         }
 
         function get_extensions(language, update) {
-            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(update)];
+            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(debounce(update, 600))];
             switch (language) {
                 case 'Python':
                     extensions.push(python());
@@ -71,7 +73,7 @@ class CMEditor extends HTMLElement {
 
 customElements.define('cm-editor', CMEditor);
 
-window.ide_dispatch_event = function (data) {
+window.ide_dispatch_event = function(name, data) {
     console.log('ide_dispatch_event', data);
-    window.dispatchEvent(new CustomEvent("ide-event", { detail: data }));
+    window.dispatchEvent(new CustomEvent("ide-event", { detail: {name, data} }));
 };
