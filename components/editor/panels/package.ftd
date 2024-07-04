@@ -43,6 +43,7 @@ $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
 string name:
 string url:
 string slug:
+integer updated-at:
 folder list folders:
 file list files:
 
