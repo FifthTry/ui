@@ -1,4 +1,8 @@
 -- import: ui.fifthtry.com/components/editor/vars
+-- import: ui.fifthtry.com/assets
+
+
+
 
 -- component package:
 data $data: $vars.package-data
@@ -27,54 +31,59 @@ $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
 
 
 
+
+
+
+
+
+
+
+
 -- record data:
 string name:
 string url:
+string slug:
+integer updated-at:
 folder list folders:
 file list files:
 
--- record flags:
-;; if the file, or file in the folder is modified
-boolean modified: false
-;; if the file, or file in the folder is added
-boolean added: false
-;; if the folder has a child, that is deleted
-boolean deleted: false
-;; if the folder is currently in open state
-boolean open: false
-;; if the file, or file in the folder is deleted
-boolean conflicted: false
-;; if the user has currently selected this in the UI
-boolean selected: false
+
+
+
+
 
 -- record file:
 caption name:
 string url:
-flags flags: $default-flags
+
+
+
+
 
 -- record folder:
 caption name:
+string full-name:
 string url:
-flags flags: $default-flags
 folder list folders:
 file list files:
 
 
--- flags default-flags:
-modified: false
-added: false
-deleted: false
-open: false
-conflicted: false
-selected: false
 
--- flags selected-flags:
-modified: false
-added: false
-deleted: false
-open: true
-conflicted: false
-selected: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- component package-name:
 caption name:
@@ -91,15 +100,25 @@ padding-top.px: 6
 	-- ftd.text: $package-name.name
 	link: { package-name.url }
 	color: black
-	
+
 	-- ftd.text: `-`
 	if: { package-name.hover }
 	$on-click$: $vars.dispatch-event(data=package-panel-toggle)
 	color: black
-	
+
 -- end: ftd.row
 
 -- end: package-name
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -111,28 +130,42 @@ integer level: 0
 width.fixed.percent: 100
 
 	-- ftd.text: $show-folder.f.name
-	link: $show-folder.f.url
+	;; link: $show-folder.f.url
 	color: black
 	width.fixed.percent: 100
 	padding-vertical.px: 4
 	padding-left.px: $padding(level=$show-folder.level)
-	
+	$on-click$: $vars.toggle-member-in-list(member=$show-folder.f.full-name, $list=$vars.open-folders)
+
 	-- ftd.column:
 	width.fixed.percent: 100
-	
+	if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+
 		-- show-folder: $folder
 		for: folder in $show-folder.f.folders
 		level: $next-level(level=$show-folder.level)
-		
+
 		-- show-file: $file
 		for: file in $show-folder.f.files
 		level: $next-level(level=$show-folder.level)
-		
+
 	-- end: ftd.column
 
 -- end: ftd.column
 
 -- end: show-folder
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -145,7 +178,7 @@ padding.px: 8
 width.fixed.percent: 100
 padding-left.px: $padding(level=$show-file.level)
 padding-vertical.px: 4
-background.solid if { show-file.f.flags.selected }: #f5f5f5
+;; background.solid if { show-file.f.flags.selected }: #f5f5f5
 
 	-- ftd.text: $show-file.f.name
 	link: $show-file.f.url
@@ -158,10 +191,25 @@ background.solid if { show-file.f.flags.selected }: #f5f5f5
 
 
 
+
+
+
+
+
+
+
+
+
+
 -- integer next-level(level):
 integer level:
 
 level + 1
+
+
+
+
+
 
 -- integer padding(level):
 integer level:

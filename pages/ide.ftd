@@ -6,20 +6,21 @@
 -- import: ui.fifthtry.com/components/editor/top-bar
 -- import: ui.fifthtry.com/components/editor/status-bar
 -- import: ui.fifthtry.com/components/editor/panels/package
+-- import: ui.fifthtry.com/components/editor/panels/preview
 -- import: ui.fifthtry.com/components/editor/welcome-screen
 
 
 -- component page:
 
 -- ftd.column:
-width.fixed.percent: 100
-height.fixed.percent: 100
+width: fill-container
+height: fill-container
 
 	-- top-bar.top-bar:
 	
 	-- ftd.row:
-	width.fixed.percent: 100
-	height.fixed.percent: 100
+	width: fill-container
+    height: fill-container
 	/height.fixed.calc: 100% - 36px
 	spacing: space-between
 	
@@ -29,6 +30,8 @@ height.fixed.percent: 100
 		-- package.package:
 		
 		-- main-editor.main-editor:
+
+		-- preview.preview:
 		
 		-- right-gutter.right-gutter:
 		

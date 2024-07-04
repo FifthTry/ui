@@ -40,93 +40,145 @@ boolean hide-footer: false
 
 -- ds.page: $page.title
 
-	-- ds.section-column:
-	align-content: top-left
-	margin: $ds.spaces.vertical-gap.large
-	
-		-- dms.dark-mode-switcher-float:
-		if: { page.theme-switcher }
-		
-		-- ftd.image:
-		if: { page.fastn-badge }
-		src: $assets.files.assets.blog.powered-by.svg
-		anchor: window
-		right.px: 0
-		bottom.px: 0
-		z-index: 99999999999999
-		link: https://fastn.com/
-		open-in-new-tab: true
-		
-		-- ftd.image:
-		if: { page.banner-image != NULL }
-		src: $page.banner-image
-		width: fill-container
-		height.fixed.px: 220
-		fit: cover
-		
-		-- ds.row:
-		align-content: top-left
-		spacing: $ds.spaces.horizontal-gap.large
-		inset: $ds.spaces.inset-tall.zero-medium
-		
-			-- ds.column:
-			align-content: top-left
-			width.fixed.px: 300
-			
-				-- ds.copy-small: $page.date
-				
-				-- ds.row:
-				align-content: left
-				
-					-- ds.image:
-					src: $page.author.photo
-					width.fixed.px: 40
-					radius: $ds.radius.round
-					
-					-- ds.heading-tiny: $page.author.name
-					
-				-- end: ds.row
+-- ds.section-column:
+align-content: top-left
+margin: $ds.spaces.vertical-gap.large
 
-				-- ds.column:
-				align-content: left
-				
-					-- ds.copy-small: Share
-					
-					-- ds.row:
-					align-content: left
-					
-						-- ds.copy-to-clipboard-icon: $copy-share-url()
-						
-						-- ftd.image:
-						src: $assets.files.assets.blog.tweet.svg
-						link: $twitter-share-url()
-						width.fixed.px: 24
-						
-						-- ftd.image:
-						src: $assets.files.assets.blog.linkedin.svg
-						link: $linkedin-share-url()
-						width.fixed.px: 24
-						
-					-- end: ds.row
+-- dms.dark-mode-switcher-float:
+if: { page.theme-switcher }
 
-				-- end: ds.column
+-- ftd.image:
+if: { page.fastn-badge }
+src: $assets.files.assets.blog.powered-by.svg
+anchor: window
+right.px: 0
+bottom.px: 0
+z-index: 99999999999999
+link: https://fastn.com/
+open-in-new-tab: true
 
-			-- end: ds.column
+-- ftd.image:
+if: { page.banner-image != NULL }
+src: $page.banner-image
+width: fill-container
+height.fixed.px: 220
+fit: cover
 
-			-- ds.column:
-			align-content: top-left
-			
-				-- ds.heading-hero: $page.title
-				color: $ds.colors.shadow
-				
-				-- ds.copy-regular: $page.body
-				if: { page.body != NULL }
-				
-				-- ds.column:
-				content: $page.wrapper
-				spacing: $ds.spaces.vertical-gap.large
-				
-				-- end: ds.column
+-- ds.row:
+align-content: top-left
+spacing: $ds.spaces.horizontal-gap.large
+inset: $ds.spaces.inset-tall.zero-medium
+
+-- ds.column:
+align-content: top-left
+width.fixed.px: 300
+spacing: $ds.spaces.vertical-gap.extra-large
+
+-- ds.column:
+align-content: top-left
+inset: $ds.spaces.inset-tall.zero-small
+
+-- ds.copy-regular: $page.date
+
+-- ds.row:
+align-content: left
+
+-- ds.image:
+src: $page.author.photo
+width.fixed.px: 36
+radius: $ds.radius.round
+
+-- ds.copy-regular: $page.author.name
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- ds.column:
+align-content: left
+
+-- ds.copy-small: Share
+
+-- ds.row:
+align-content: left
+
+-- ds.copy-to-clipboard-icon: $copy-share-url()
+
+-- ftd.image:
+src: $assets.files.assets.blog.tweet.svg
+link: $twitter-share-url()
+width.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.assets.blog.linkedin.svg
+link: $linkedin-share-url()
+width.fixed.px: 24
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- ds.column:
+align-content: top-left
+
+-- ds.heading-hero: $page.title
+color: $ds.colors.shadow
+
+-- ds.copy-regular: $page.body
+if: { page.body != NULL }
+
+-- ds.column:
+content: $page.wrapper
+spacing: $ds.spaces.vertical-gap.large
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- author.author: $page.author.name
+photo: $page.author.photo
+profile: $page.author.profile
+bio-url: $page.author.bio-url
+
+$page.author.description
+
+-- ds.newsletter: FifthTry Newsletter
+cta-text: Subscribe
+cta-link: /
+placeholder: Enter you email...
+input: true
+background.solid: $ds.colors.background.step-1
+colored-text: true
+rounded: true
+
+Once a week we send you the latest news about FifthTry.
+
+-- end: ds.section-column
+
+-- ds.column:
+inset: $ds.spaces.inset-tall.zero-medium
+
+-- ds.heading-medium: Latest blogs
+
+-- ds.section-row:
+margin: $ds.spaces.vertical-gap.small
+
+-- latest-post-card: [Customize Your Website's Color Scheme](/blog/customize-cs/)
+date: 24th April 2024
+link: /blog/customize-cs/
+
+Your website's color scheme sets the tone for your brand.
+
+-- latest-post-card: [FifthTry Editor](/blog/editor/)
+date: 22nd March 2024
+link: /blog/editor/
+
+I’m thrilled to introduce you to FifthTry Editor, our latest
+addition to the [FifthTry platform]((https://www.fifthtry.com)
 
 			-- end: ds.column
 
@@ -332,31 +384,29 @@ border-color: $ds.colors.shadow
 radius: $ds.radius.medium
 align-content: top-left
 
-	-- ftd.image:
-	src: $quote.quote-logo
-	width: auto
-	height.fixed.px: 32
-	padding-left.px: 16
-	
-	-- ds.column:
-	align-content: left
-	
-		-- ds.copy-regular:
-		if: { quote.body != NULL }
-		
-		$quote.body
-		
-		-- ds.row:
-		align-content: left
-		
-			-- ds.copy-small: ~
-			
-			-- ds.copy-small: $quote.title
-			if: { quote.title != NULL }
-			
-		-- end: ds.row
+-- ftd.image:
+src: $quote.quote-logo
+width: auto
+height.fixed.px: 32
+padding-left.px: 16
 
-	-- end: ds.column
+-- ds.column:
+align-content: left
+
+-- ds.copy-regular:
+if: { quote.body != NULL }
+
+$quote.body
+
+-- ds.row:
+align-content: left
+
+-- ds.copy-small: $quote.title
+if: { quote.title != NULL }
+
+-- end: ds.row
+
+-- end: ds.column
 
 -- end: ds.row
 
@@ -600,17 +650,18 @@ ftd.image-src photo:
 
 
 
--- author-data nandhini: Nandhini
-photo: $assets.files.assets.team.avatar.jpg
-profile: Marketing Manager
-bio-url: https://www.fifthtry.com/
+-- author-data nandhini: Nandhini Devi
+photo: $assets.files.assets.team.nandhini-devi.jpg
+profile: Freelance Copywriter
+bio-url: https://www.linkedin.com/in/nandhini-devi-elumalai/
 
-Cras id congue massa, id aliquet urna. Sed mattis id orci eu
-consectetur. Vivamus lacinia faucibus urna, ut sollicitudin
-lacus consequat id. Fusce varius leo eget orci fringilla,
-ut viverra ante molestie. Proin finibus turpis turpis.
-Nulla sodales, sem ut vehicula blandit, neque risus tempor
-enim, a sodales massa urna nec neque.
+I'm currently working at FifthTry, handling all things content – blogs,
+docs, homepages, and socials. If you come across "if you can type,
+you can code" – that's my signature move and a nod to my love for fastn
+for making coding simple and fun!
+
+I've got a soft spot for startups in the business of saving the planet,
+and if you're one of them, count me in.
 
 
 -- author-data arpita: Arpita Jaiswal

@@ -1,15 +1,66 @@
 -- import: ui.fifthtry.com/components/editor/welcome-screen
+-- import: ui.fifthtry.com/components/editor/top-bar/file-switcher
+-- import: ui.fifthtry.com/components/editor/top-bar/package-switcher
 -- import: ui.fifthtry.com/components/editor/panels/package
+-- import: ui.fifthtry.com/components/editor/main-editor
+-- import: ui.fifthtry.com/assets
 
 ;; left panels
 -- boolean $package: true
 
 
 -- package.data $package-data:
-name: Some Package
-url: /foo/
+name: FifthTry Main Site
+url: /
+slug: Anonymous
+updated-at: 0
 files: *$files
 folders: *$folders
+
+
+
+
+
+-- package-switcher.package list recent-packages:
+
+-- package-switcher.package: FifthTry Main Site
+slug: ft
+url: /ide/ft/
+account: fifthtry
+
+-- package-switcher.package: AmitU's Blog
+slug: amitu-com
+url: /ide/amitu-com/
+account: amitu
+
+-- package-switcher.package: Fastn Design System
+slug: design-system
+url: /ide/design-system/
+account: fastn-community
+
+-- end: recent-packages
+
+
+
+
+-- file-switcher.file list recent-files:
+
+-- file-switcher.file: FASTN.ftd
+package: ui.fifthtry.com
+url: /ide/ui/FASTN.ftd
+
+-- file-switcher.file: blog/images/logo.png
+package: ui.fifthtry.com
+url: /ide/ui/blog/images/logo.png
+
+-- file-switcher.file: blog/index.ftd
+package: ui.fifthtry.com
+url: /ide/ui/blog/index.ftd
+
+-- end: recent-files
+
+
+
 
 
 
@@ -24,14 +75,30 @@ url: /foo/index.ftd
 -- end: files
 
 
+
+
+
+
+
+
+
 -- package.folder list folders:
 
 -- package.folder: blog
+full-name: blog
 url: /foo/blog/
 files: *$blog-files
 folders: $blog-folders
 
 -- end: folders
+
+
+
+
+
+
+
+
 
 -- package.file list blog-files:
 
@@ -40,9 +107,15 @@ url: /foo/blog/index.ftd
 
 -- package.file: first-post.ftd
 url: /foo/blog/first-post.ftd
-flags: $package.selected-flags
 
 -- end: blog-files
+
+
+
+
+
+
+
 
 
 
@@ -51,6 +124,7 @@ flags: $package.selected-flags
 -- package.folder: images
 url: /foo/blog/images/
 files: *$blog-images
+full-name: blog/images
 
 -- end: blog-folders
 
@@ -63,7 +137,50 @@ url: /foo/blog/images/first-image.jpg
 
 
 
+
+
+
+
+
+
+
+
+
+
 -- integer panel-width: 24
+
+
+
+
+
+
+
+
+-- boolean $preview-maximized: false
+
+-- boolean $preview-visible: true
+
+-- string $preview-url: https://todayhasbeen.com
+
+
+-- main-editor.doc $doc:
+file-name: FASTN.ftd
+language: ftd
+
+customElements.define('cm-editor', CMEditor);
+
+window.ide_dispatch_event = function (data) {
+    console.log('ide_dispatch_event', data);
+    window.dispatchEvent(new CustomEvent("ide-event", { detail: data }));
+};
+
+
+
+
+
+
+
+
 
 
 
@@ -71,3 +188,45 @@ url: /foo/blog/images/first-image.jpg
 string data:
 
 ide_dispatch_event(data)
+
+
+
+
+
+
+
+
+
+-- string list $open-folders:
+-- end: $open-folders
+
+
+
+
+
+
+;; full-name of current file
+-- string current-file: FASTN.ftd
+
+
+
+
+
+
+
+
+-- string back-ticked(file_name):
+string file_name:
+
+"`" + file_name + "`"
+
+
+-- void toggle-member-in-list(member, list):
+string member:
+string list $list:
+js: $assets.files.components.editor.function.js
+
+toggleMemberInList(member, list)
+
+
+

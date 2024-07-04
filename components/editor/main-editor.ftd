@@ -1,21 +1,45 @@
 -- import: ui.fifthtry.com/components/editor/vars
 
+
+
 -- component main-editor:
 css: $assets.files.components.editor.editor.css
 
 -- ftd.column:
 height.fixed.percent: 100
-width.fixed.calc: 100% - 48px
-width.fixed.calc if { vars.package }: 100% - 48px - 240px
-;; background.solid: green
+classes if { vars.preview-maximized && vars.preview-visible }: hidden
+;; both closed
+width.fixed.calc if { !vars.package && !vars.preview-visible }: 100% - 48px
+;; left open right closed
+width.fixed.calc if { vars.package && !vars.preview-visible }: 100% - 48px - 240px
+;; left open right open preview normal
+width.fixed.calc if { vars.package && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 240px - 300px
+;; left open right open preview maximized: No-op, since this is hidden
+;; left closed right open preview normal
+width.fixed.calc if { !vars.package && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 300px
+;; left closed right open preview maximized: No-op, since this is hidden
 align-content: center
 
-	-- cm-editor:
-	
+-- cm-editor:
+$doc: $vars.doc
+
 -- end: ftd.column
 
 -- end: main-editor
 
 
+
+
+
+-- record doc:
+body content:
+string file-name:
+string language:
+
+
+
 -- web-component cm-editor:
 js: $assets.files.components.editor.editor-bundle.js
+doc $doc: $vars.doc
+;; string $content:
+

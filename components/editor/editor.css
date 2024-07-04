@@ -1,3 +1,14 @@
 .cm-focused { outline: none ! important; }
 .cm-editor { height: 100% }
 .hidden { display: none ! important; }
+
+.hover-popup {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.hover-popup-active {
+    opacity: 100%;
+    z-index: 20;
+    transition: opacity 0.4s;
+}

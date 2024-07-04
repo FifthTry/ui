@@ -1,0 +1,127 @@
+-- import: ui.fifthtry.com/components/editor/vars
+-- import: ui.fifthtry.com/assets
+
+
+-- component preview:
+string preview-url: $vars.preview-url
+boolean $preview-maximized: $vars.preview-maximized
+boolean $toggle-visibility-flag: $vars.preview-visible
+
+-- ftd.column:
+width.fixed.px: 300
+width.fixed.calc if { vars.preview-maximized && vars.package }: 100% - 48px - 240px
+width.fixed.calc if { vars.preview-maximized && !vars.package }: 100% - 48px
+height: fill-container
+classes if { !vars.preview-visible }: hidden
+border-left-width.px if { vars.preview-maximized && !vars.package }: 0
+border-left-width.px: 1
+border-color: #ddd
+id: right-panel
+
+-- ftd.column:
+align-content: right
+width: fill-container
+
+    -- ftd.row:
+    spacing.fixed.px: 5
+    padding-bottom.px: 2
+    padding-horizontal.px: 5
+
+        -- toggle-width:
+        $flag: $preview.preview-maximized
+
+        -- toggle-visibility:
+        $flag: $preview.toggle-visibility-flag
+
+    -- end: ftd.row
+
+-- end: ftd.column
+
+
+-- ftd.iframe:
+src: $preview.preview-url
+width: fill-container
+height: fill-container
+id: preview-iframe
+
+-- end: ftd.column
+
+-- end: preview
+
+
+
+
+
+
+
+
+
+-- component toggle-width:
+boolean $flag: false
+
+-- ftd.text: `+`
+$on-click$: $ftd.toggle($a = $toggle-width.flag)
+color: black
+
+-- end: toggle-width
+
+
+
+
+
+
+
+-- component toggle-visibility:
+boolean $flag: false
+
+-- ftd.text: `-`
+$on-click$: $ftd.toggle($a = $toggle-visibility.flag)
+color: black
+
+-- end: toggle-visibility
+
+
+
+
+
+-- component drag-item:
+
+-- ftd.container:
+id: right-drag-handle
+anchor: parent
+left.px: 0
+top.px: 0
+cursor: ew-resize
+width.fixed.px: 6
+height: fill-container
+
+
+-- end: drag-item
+
+
+
+
+
+
+
+
+
+
+
+-- component expander:
+boolean expand: $add-expandable()
+
+-- ftd.column:
+
+-- end: expander
+
+
+
+
+
+
+-- boolean add-expandable():
+js: $assets.files.components.editor.function.js
+
+
+addPreviewExpandable()
