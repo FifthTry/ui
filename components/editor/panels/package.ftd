@@ -138,7 +138,6 @@ width.fixed.percent: 100
 
 	-- ftd.column:
 	width.fixed.percent: 100
-	js: $assets.files.components.editor.function.js
 	if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
 
 		-- show-folder: $folder

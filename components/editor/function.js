@@ -10,12 +10,6 @@ function toggleMemberInList(member, list) {
     }
 }
 
-function listContains(member, list) {
-    return list.getList().some(
-        obj => fastn_utils.getFlattenStaticValue(obj.item) === fastn_utils.getFlattenStaticValue(member)
-    );
-}
-
 
 function addPreviewExpandable() {
     let rightPanel = document.getElementById("right-panel");
