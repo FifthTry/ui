@@ -1,10 +1,12 @@
 import { EditorView, basicSetup } from "codemirror";
 import { EditorState } from "@codemirror/state";
+import { ViewUpdate } from "@codemirror/view";
 import { javascript } from "@codemirror/lang-javascript";
 import { python } from "@codemirror/lang-python";
 import { markdown } from "@codemirror/lang-markdown";
 import { html } from "@codemirror/lang-html";
 import { debounce } from "./debounce";
+
 
 class CMEditor extends HTMLElement {
     constructor() {
@@ -13,6 +15,7 @@ class CMEditor extends HTMLElement {
         this.style.height = "100%";
         this.classList.add('fastn-ignore-global-keyboard');
         this.currentDocument = "current";
+        /** @type {Object<string, EditorState>} */
         this.documents = {};
     }
 
@@ -25,9 +28,14 @@ class CMEditor extends HTMLElement {
         let language = fastn_utils.getFlattenStaticValue(data.doc.get().get("language"));
         this.currentDocument = fastn_utils.getFlattenStaticValue(data.doc.get().get("file_name"));
 
+        /**
+         * @param {ViewUpdate} vu
+         */
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
-            window.ide_dispatch_event("save-unsaved-file", {file_name: self.currentDocument, content: vu.state.doc.toString()});
+            if (vu.docChanged) {
+                window.ide_dispatch_event("save-unsaved-file", {file_name: self.currentDocument, content: vu.state.doc.toString()});
+            }
         }
 
         function get_extensions(language, update) {
