@@ -187,6 +187,11 @@ ide_dispatch_event(name, data)
 
 
 
+-- void clear-opfs():
+
+ide_clear_opfs()
+
+
 
 
 

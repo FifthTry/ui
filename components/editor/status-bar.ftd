@@ -37,7 +37,7 @@ spacing.fixed.px: 15
 ;; todo: show opfs stats (size and count)
 
 -- ftd.text: `delete opfs cache`
-$on-click$: $vars.dispatch-event(name=delete-opfs-cache)
+$on-click$: $vars.clear-opfs()
 
 -- ftd.text: `enable opfs`
 text if { vars.opfs-enabled }: `disable opfs`

@@ -85,3 +85,14 @@ window.ide_dispatch_event = function(name, data) {
     console.log('ide_dispatch_event', data);
     window.dispatchEvent(new CustomEvent("ide-event", { detail: {name, data} }));
 };
+
+window.ide_clear_opfs = async function () {
+    let root = await navigator.storage.getDirectory();
+
+    for await (const key of root.keys()) {
+        console.log("deleting", key);
+        await root.removeEntry(key, {recursive: true});
+    }
+
+    console.log("done deleting");
+}
