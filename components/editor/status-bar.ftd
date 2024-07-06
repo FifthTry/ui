@@ -1,4 +1,7 @@
+-- import: ui.fifthtry.com/components/editor/vars
+
 -- component status-bar:
+boolean $extra-open: false
 
 -- ftd.row:
 width.fixed.percent: 100
@@ -10,8 +13,37 @@ padding.px: 10
 padding-bottom.px: 15
 
 	-- ftd.text: `Copyright © 2021-2024 FifthTry, Inc`
-	
+
+	-- ftd.row:
+    spacing.fixed.px: 15
+
+	-- extras:
+	if: { status-bar.extra-open }
+
 	-- ftd.text: `Online`
+	$on-click$: $ftd.toggle($a = $status-bar.extra-open)
+
+	-- end: ftd.row
 	
 -- end: ftd.row
 -- end: status-bar
+
+
+-- component extras:
+
+-- ftd.row:
+spacing.fixed.px: 15
+
+;; todo: show opfs stats (size and count)
+
+-- ftd.text: `delete opfs cache`
+$on-click$: $vars.dispatch-event(name=delete-opfs-cache)
+
+-- ftd.text: `enable opfs`
+text if { vars.opfs-enabled }: `disable opfs`
+$on-click$: $ftd.toggle($a = $vars.opfs-enabled)
+$on-click$: $vars.dispatch-event(name=opfs-enable-toggle)
+
+-- end: ftd.row
+
+-- end: extras

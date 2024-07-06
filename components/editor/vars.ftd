@@ -8,6 +8,7 @@
 ;; left panels
 -- boolean $package: true
 
+-- boolean $opfs-enabled: true
 
 -- package.data $package-data:
 name: FifthTry Main Site
