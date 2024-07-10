@@ -163,6 +163,8 @@ url: /foo/blog/images/first-image.jpg
 
 -- string $preview-url: https://todayhasbeen.com
 
+-- string $preview-content: <h1>loading...</h1>
+
 
 -- main-editor.doc $doc:
 file-name: FASTN.ftd

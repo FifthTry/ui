@@ -39,7 +39,8 @@ class CMEditor extends HTMLElement {
         }
 
         function get_extensions(language, update) {
-            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(debounce(update, 600))];
+            // TODO: move this debounce inside rust wasm
+            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(debounce(update, 200))];
             switch (language) {
                 case 'Python':
                     extensions.push(python());
