@@ -44,7 +44,7 @@ top.px: -6
 
 
 -- show-file: $file
-for: $file, $idx in $popup.files
+for: $file, $idx in *$popup.files
 $hover: false
 $hover if { idx == 0 }: true
 
