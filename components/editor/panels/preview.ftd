@@ -4,6 +4,7 @@
 
 -- component preview:
 string preview-url: $vars.preview-url
+string preview-content: $vars.preview-content
 boolean $preview-maximized: $vars.preview-maximized
 boolean $toggle-visibility-flag: $vars.preview-visible
 
@@ -39,10 +40,11 @@ width: fill-container
 
 
 -- ftd.iframe:
-src: $preview.preview-url
 width: fill-container
 height: fill-container
 id: preview-iframe
+
+$preview.preview-content
 
 -- end: ftd.column
 
