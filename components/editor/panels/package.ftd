@@ -145,7 +145,7 @@ spacing.fixed.px: 5
         size: 18
         if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
 
-        -- phosphor.light: folder-simple
+        -- phosphor.light: folder
         size: 18
         if: { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
 
@@ -201,7 +201,7 @@ padding-vertical.px: 4
 background.solid if { show-file.f.full-name == vars.current-file }: #f5f5f5
 spacing.fixed.px: 5
 
-    -- phosphor.light: file
+    -- phosphor.light: file-text
     size: 18
 
 	-- ftd.text: $show-file.f.name
