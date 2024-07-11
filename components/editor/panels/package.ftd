@@ -132,25 +132,30 @@ border-color: #f5f5f5
 caption folder $f:
 integer level: 0
 
--- ftd.row:
+-- ftd.column:
 width.fixed.percent: 100
 padding-vertical.px: 4
 padding-left.px: $padding(level=$show-folder.level)
 spacing.fixed.px: 5
 
-    -- phosphor.light: folder-open
-    if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
-    size: 18
+    -- ftd.row:
+    spacing.fixed.px: 5
 
-    -- phosphor.light: folder-simple
-    if: { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
-    size: 18
+        -- phosphor.light: folder-open
+        size: 18
+        if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
 
-	-- ftd.text: $show-folder.f.name
-	;; link: $show-folder.f.url
-	color: black
-	width.fixed.percent: 100
-	$on-click$: $vars.toggle-member-in-list(member=$show-folder.f.full-name, $list=$vars.open-folders)
+        -- phosphor.light: folder-simple
+        size: 18
+        if: { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+
+        -- ftd.text: $show-folder.f.name
+        ;; link: $show-folder.f.url
+        color: black
+        width.fixed.percent: 100
+        $on-click$: $vars.toggle-member-in-list(member=$show-folder.f.full-name, $list=$vars.open-folders)
+
+	-- end: ftd.row
 
 	-- ftd.column:
 	width.fixed.percent: 100
@@ -166,7 +171,7 @@ spacing.fixed.px: 5
 
 	-- end: ftd.column
 
--- end: ftd.row
+-- end: ftd.column
 
 -- end: show-folder
 
@@ -233,4 +238,4 @@ level + 1
 -- integer padding(level):
 integer level:
 
-level * 14 + 10
+level + 10
