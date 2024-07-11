@@ -209,7 +209,7 @@ ide_clear_opfs()
 
 
 ;; full-name of current file
--- string current-file: FASTN.ftd
+-- string $current-file: FASTN.ftd
 
 
 
