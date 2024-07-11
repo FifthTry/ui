@@ -1,6 +1,6 @@
 -- import: ui.fifthtry.com/components/editor/vars
 -- import: ui.fifthtry.com/assets
-
+-- import: fastn-community.github.io/svg-icons/fa
 
 
 
@@ -127,15 +127,24 @@ padding-top.px: 6
 caption folder $f:
 integer level: 0
 
--- ftd.column:
+-- ftd.row:
 width.fixed.percent: 100
+padding-vertical.px: 4
+padding-left.px: $padding(level=$show-folder.level)
+spacing.fixed.px: 5
+
+    -- fa.regular: folder-open
+    if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+    size: 20
+
+    -- fa.regular: folder
+    if: { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+    size: 20
 
 	-- ftd.text: $show-folder.f.name
 	;; link: $show-folder.f.url
 	color: black
 	width.fixed.percent: 100
-	padding-vertical.px: 4
-	padding-left.px: $padding(level=$show-folder.level)
 	$on-click$: $vars.toggle-member-in-list(member=$show-folder.f.full-name, $list=$vars.open-folders)
 
 	-- ftd.column:
@@ -152,7 +161,7 @@ width.fixed.percent: 100
 
 	-- end: ftd.column
 
--- end: ftd.column
+-- end: ftd.row
 
 -- end: show-folder
 
@@ -180,6 +189,10 @@ width.fixed.percent: 100
 padding-left.px: $padding(level=$show-file.level)
 padding-vertical.px: 4
 background.solid if { show-file.f.full-name == vars.current-file }: #f5f5f5
+spacing.fixed.px: 5
+
+    -- fa.regular: file
+    size: 14
 
 	-- ftd.text: $show-file.f.name
 	link: $show-file.f.url
