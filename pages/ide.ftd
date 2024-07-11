@@ -20,8 +20,7 @@ height: fill-container
 	
 	-- ftd.row:
 	width: fill-container
-    height: fill-container
-	/height.fixed.calc: 100% - 36px
+	height.fixed.calc: 100% - 45px - 35px ;; 45px is top-bar height, 35px is status-bar height
 	spacing: space-between
 	
 	
