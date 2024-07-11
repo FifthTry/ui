@@ -32,6 +32,18 @@ provided-via: ui.fifthtry.com/ds
 
 -- fastn.auto-import: ui.fifthtry.com/assets
 -- fastn.auto-import: ui.fifthtry.com/ds
+-- fastn.auto-import: fastn-community.github.io/purple-gradient/assets as purple-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/minimal-blue/assets as minimal-blue-assets
+-- fastn.auto-import: fastn-community.github.io/ocean-blue/assets as ocean-blue-assets
+-- fastn.auto-import: fastn-community.github.io/forest-green/assets as forest-green-assets
+-- fastn.auto-import: fastn-community.github.io/modern-gradient/assets as modern-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/blue-purple-mesh-gradient/assets as blue-purple-assets
+-- fastn.auto-import: fastn-community.github.io/yellow-green-mesh-gradient/assets as yellow-green-mesh-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/multi-color-mesh-gradient/assets as multi-color-mesh-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/grainy-gradient/assets as grainy-gradient-assets
+-- fastn.auto-import: fastn-community.github.io/blue-abstract-pattern/assets as blue-abstract-pattern-assets
+-- fastn.auto-import: fastn-community.github.io/red-abstract-pattern/assets as red-abstract-pattern-assets
+-- fastn.auto-import: fastn-community.github.io/ocean-waves/assets as ocean-waves-assets
 
 -- fastn.url-mappings:
 
