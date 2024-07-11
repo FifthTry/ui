@@ -17,7 +17,18 @@ provided-via: ui.fifthtry.com/ds
 -- fastn.dependency: fastn-community.github.io/dark-flame-cs
 -- fastn.dependency: fastn-community.github.io/svg-icons
 -- fastn.dependency: fastn-community.github.io/code-block
-
+-- fastn.dependency: fastn-community.github.io/purple-gradient
+-- fastn.dependency: fastn-community.github.io/minimal-blue
+-- fastn.dependency: fastn-community.github.io/ocean-blue
+-- fastn.dependency: fastn-community.github.io/forest-green
+-- fastn.dependency: fastn-community.github.io/modern-gradient
+-- fastn.dependency: fastn-community.github.io/blue-purple-mesh-gradient
+-- fastn.dependency: fastn-community.github.io/yellow-green-mesh-gradient
+-- fastn.dependency: fastn-community.github.io/multi-color-mesh-gradient
+-- fastn.dependency: fastn-community.github.io/grainy-gradient
+-- fastn.dependency: fastn-community.github.io/blue-abstract-pattern
+-- fastn.dependency: fastn-community.github.io/red-abstract-pattern
+-- fastn.dependency: fastn-community.github.io/ocean-waves
 
 -- fastn.auto-import: ui.fifthtry.com/assets
 -- fastn.auto-import: ui.fifthtry.com/ds
