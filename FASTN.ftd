@@ -16,6 +16,7 @@ provided-via: ui.fifthtry.com/ds
 -- fastn.dependency: fastn-community.github.io/midnight-storm-typography
 -- fastn.dependency: fastn-community.github.io/dark-flame-cs
 -- fastn.dependency: fastn-community.github.io/svg-icons
+-- fastn.dependency: fastn-community.github.io/code-block
 
 
 -- fastn.auto-import: ui.fifthtry.com/assets
