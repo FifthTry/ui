@@ -29,6 +29,7 @@ package list packages:
 
 -- ftd.column:
 $on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
+$on-click$: $ftd.set-boolean($a = $popup.open, v = false)
 if: { popup.open }
 width.fixed.px: 260
 background.solid: #f5f5f5
