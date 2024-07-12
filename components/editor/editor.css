@@ -12,3 +12,20 @@
     z-index: 20;
     transition: opacity 0.4s;
 }
+
+.folder > .folder-children {
+    display: none;
+}
+
+.folder-open > .folder-children {
+    display: block;
+}
+
+.folder-icon {
+    background-size: 100% 100% ! important;
+    background: url(http://raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-light.svg) no-repeat;
+}
+
+.folder-open > div > .folder-icon {
+    background: url(http://raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-open-light.svg) no-repeat;
+}

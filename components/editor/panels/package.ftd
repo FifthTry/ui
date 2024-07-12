@@ -134,16 +134,16 @@ width.fixed.percent: 100
 padding-vertical.px: 2
 padding-left.px: $padding(level=$show-folder.level)
 spacing.fixed.px: 2
+classes: folder, folder-open
+id: $show-folder.f.full-name
 
     -- ftd.row:
+    align-content: center
 
-        -- phosphor.light: folder-open
-        size: 18
-        if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
-
-        -- phosphor.light: folder
-        size: 18
-        if: { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+        -- ftd.column:
+        width.fixed.px: 24
+        height.fixed.px: 20
+        classes: folder-icon
 
         -- ftd.text: $vars.back-ticked(file_name=$show-folder.f.name)
         ;; link: $show-folder.f.url
@@ -155,8 +155,7 @@ spacing.fixed.px: 2
 
 	-- ftd.column:
 	width.fixed.percent: 100
-	if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
-	/classes if { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }: hidden
+	classes: folder-children
 
 		-- show-folder: $folder
 		for: folder in $show-folder.f.folders
