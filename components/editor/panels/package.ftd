@@ -155,7 +155,8 @@ spacing.fixed.px: 2
 
 	-- ftd.column:
 	width.fixed.percent: 100
-	classes if { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }: hidden
+	if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+	/classes if { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }: hidden
 
 		-- show-folder: $folder
 		for: folder in $show-folder.f.folders
