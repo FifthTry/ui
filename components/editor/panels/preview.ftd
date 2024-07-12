@@ -120,7 +120,7 @@ boolean $flag: false
 boolean hover:
 
 -- ftd.column:
-color if { !toggle-visibility.hover }: white
+if: { toggle-visibility.hover }
 $on-click$: $ftd.toggle($a = $toggle-visibility.flag)
 
     -- phosphor.light: arrow-right
