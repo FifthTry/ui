@@ -67,6 +67,7 @@ string full-name:
 string url:
 folder list folders:
 file list files:
+boolean open: false
 
 
 
@@ -136,24 +137,23 @@ spacing.fixed.px: 2
 
         -- phosphor.light: folder-open
         size: 18
-        if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+        if: { show-folder.f.open }
 
         -- phosphor.light: folder
         size: 18
-        if: { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
+        if: { !show-folder.f.open }
 
         -- ftd.text: $vars.back-ticked(file_name=$show-folder.f.name)
         ;; link: $show-folder.f.url
         color: black
         width.fixed.percent: 100
-        $on-click$: $vars.toggle-member-in-list(member=$show-folder.f.full-name, $list=$vars.open-folders)
+        $on-click$: $ftd.toggle($a=$show-folder.f.open)
 
 	-- end: ftd.row
 
 	-- ftd.column:
 	width.fixed.percent: 100
-	if: { ftd.list_contains(vars.open-folders, show-folder.f.full-name) }
-	/classes if { !ftd.list_contains(vars.open-folders, show-folder.f.full-name) }: hidden
+    if: { show-folder.f.open }
 
 		-- show-folder: $folder
 		for: folder in $show-folder.f.folders
@@ -195,68 +195,6 @@ background.solid if { show-file.f.full-name == vars.current-file }: #f5f5f5
 -- end: ftd.row
 
 -- end: show-file
-
-
--- component show-folder-css:
-caption folder $f:
-integer level: 0
-
--- ftd.column:
-width.fixed.percent: 100
-padding-top.px: 2
-padding-left.px: $padding(level=$show-folder-css.level)
-spacing.fixed.px: 2
-classes: folder, folder-open
-id: $show-folder-css.f.full-name
-
-    -- ftd.text: $show-folder-css.f.name
-    classes: folder-name
-
-    -- show-folder-css-css: $folder
-    for: folder in $show-folder-css.f.folders
-    level: $next-level(level=$show-folder-css.level)
-
-    -- show-file-css: $file
-    for: file in $show-folder-css.f.files
-    level: $next-level(level=$show-folder-css.level)
-
--- end: ftd.column
-
--- end: show-folder-css
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- component show-file-css:
-caption file f:
-integer level: 0
-
--- ftd.row:
-width.fixed.percent: 100
-padding-left.px: $padding(level=$show-file-css.level)
-padding-vertical.px: 2
-background.solid if { show-file-css.f.full-name == vars.current-file }: #f5f5f5
-classes: folder-file
-
-	-- ftd.text: $show-file-css.f.name
-	link: $show-file-css.f.url
-	color: black
-	width.fixed.percent: 100
-	
--- end: ftd.row
-
--- end: show-file-css
 
 
 
