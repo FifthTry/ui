@@ -13,6 +13,7 @@ height.fixed.percent: 100
 classes if { !vars.package }: hidden
 $on-mouse-enter$: $ftd.set-bool($a=$package.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
+overflow-y: auto
 
 	-- package-name: $package.data.name
 	url: $package.data.url
