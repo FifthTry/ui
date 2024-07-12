@@ -134,38 +134,19 @@ width.fixed.percent: 100
 padding-vertical.px: 2
 padding-left.px: $padding(level=$show-folder.level)
 spacing.fixed.px: 2
-classes: folder, folder-open
+classes: folder
 id: $show-folder.f.full-name
 
-    -- ftd.row:
-    align-content: center
+    -- ftd.text: $show-folder.f.name
+    classes: folder-name
 
-        -- ftd.column:
-        width.fixed.px: 24
-        height.fixed.px: 20
-        classes: folder-icon
+    -- show-folder: $folder
+    for: folder in $show-folder.f.folders
+    level: $next-level(level=$show-folder.level)
 
-        -- ftd.text: $vars.back-ticked(file_name=$show-folder.f.name)
-        ;; link: $show-folder.f.url
-        color: black
-        width.fixed.percent: 100
-        $on-click$: $vars.toggle-member-in-list(member=$show-folder.f.full-name, $list=$vars.open-folders)
-
-	-- end: ftd.row
-
-	-- ftd.column:
-	width.fixed.percent: 100
-	classes: folder-children
-
-		-- show-folder: $folder
-		for: folder in $show-folder.f.folders
-		level: $next-level(level=$show-folder.level)
-
-		-- show-file: $file
-		for: file in $show-folder.f.files
-		level: $next-level(level=$show-folder.level)
-
-	-- end: ftd.column
+    -- show-file: $file
+    for: file in $show-folder.f.files
+    level: $next-level(level=$show-folder.level)
 
 -- end: ftd.column
 
@@ -195,11 +176,12 @@ width.fixed.percent: 100
 padding-left.px: $padding(level=$show-file.level)
 padding-vertical.px: 2
 background.solid if { show-file.f.full-name == vars.current-file }: #f5f5f5
+classes: folder-file
 
     -- phosphor.light: file-text
     size: 18
 
-	-- ftd.text: $vars.back-ticked(file_name=$show-file.f.name)
+	-- ftd.text: $show-file.f.name
 	link: $show-file.f.url
 	color: black
 	width.fixed.percent: 100
