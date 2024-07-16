@@ -78,7 +78,8 @@ class CMEditor extends HTMLElement {
 
 
         const syncToWorkspace = debounce((file_name, content) => {
-            window.ide_dispatch_event("save-unsaved-file", { file_name, content });
+            const filepath = ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file");
+            window.ide_dispatch_event("save-unsaved-file", { file_path: filepath, content });
         }, 600);
     }
 }
