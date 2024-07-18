@@ -39,7 +39,7 @@ spacing.fixed.px: 15
 -- ftd.text: `delete opfs cache`
 $on-click$: $vars.clear-opfs()
 
--- ftd.text: `enable opfs`
+/-- ftd.text: `enable opfs`  ;; disabling this as it does not work yet
 text if { vars.opfs-enabled }: `disable opfs`
 $on-click$: $ftd.toggle($a = $vars.opfs-enabled)
 $on-click$: $vars.dispatch-event(name=opfs-enable-toggle)

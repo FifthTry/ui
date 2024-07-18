@@ -30,7 +30,6 @@ provided-via: ui.fifthtry.com/ds
 -- fastn.dependency: fastn-community.github.io/red-abstract-pattern
 -- fastn.dependency: fastn-community.github.io/ocean-waves
 
-
 -- fastn.auto-import: ui.fifthtry.com/assets
 -- fastn.auto-import: ui.fifthtry.com/ds
 -- fastn.auto-import: fastn-community.github.io/purple-gradient/assets as purple-gradient-assets

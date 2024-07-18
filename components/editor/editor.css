@@ -12,3 +12,50 @@
     z-index: 20;
     transition: opacity 0.4s;
 }
+
+.folder {
+    font-family: monospace;
+}
+
+.folder > .folder {
+    display: none;
+}
+
+.folder > .folder-file {
+    display: none;
+}
+
+.folder-open > .folder {
+    display: block;
+}
+
+.folder-open > .folder-file {
+    display: flex;
+}
+
+.folder-file > a {
+    font-family: monospace;
+    padding-left: 20px;
+    background-position: 0 0;
+    background: url(http://raw.githubusercontent.com/phosphor-icons/core/main/raw/light/file-text-light.svg) no-repeat;
+    background-size: 18px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.folder-name + .folder-file {
+    padding-top: 5px;
+}
+
+.folder-name {
+    padding-left: 20px;
+    background-position: 0 0;
+    background: url(http://raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-light.svg) no-repeat;
+    background-size: 18px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.folder-open > div > .folder-icon {
+    background: url(http://raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-open-light.svg) no-repeat;
+}

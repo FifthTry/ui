@@ -28,6 +28,7 @@ file list files:
 
 -- ftd.column:
 $on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
+$on-click$: $ftd.set-boolean($a = $popup.open, v = false)
 /classes if { popup.open }: hover-popup-active
 /classes: hover-popup
 if: { popup.open }
@@ -44,7 +45,7 @@ top.px: -6
 
 
 -- show-file: $file
-for: $file, $idx in $popup.files
+for: $file, $idx in *$popup.files
 $hover: false
 $hover if { idx == 0 }: true
 

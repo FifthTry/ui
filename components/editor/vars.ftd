@@ -148,7 +148,7 @@ url: /foo/blog/images/first-image.jpg
 
 
 
--- integer panel-width: 24
+-- integer panel-width: 32
 
 
 
@@ -162,6 +162,8 @@ url: /foo/blog/images/first-image.jpg
 -- boolean $preview-visible: true
 
 -- string $preview-url: https://todayhasbeen.com
+
+-- string $preview-content: <h1>loading...</h1>
 
 
 -- main-editor.doc $doc:
@@ -207,7 +209,7 @@ ide_clear_opfs()
 
 
 ;; full-name of current file
--- string current-file: FASTN.ftd
+-- string $current-file: FASTN.ftd
 
 
 

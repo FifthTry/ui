@@ -33,13 +33,12 @@ class CMEditor extends HTMLElement {
          */
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
-            if (vu.docChanged) {
-                window.ide_dispatch_event("save-unsaved-file", {file_name: self.currentDocument, content: vu.state.doc.toString()});
-            }
+            syncToWorkspace(self.currentDocument, vu.state.doc.toString());
         }
 
         function get_extensions(language, update) {
-            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(debounce(update, 600))];
+            // TODO: move this debounce inside rust wasm
+            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(update)];
             switch (language) {
                 case 'Python':
                     extensions.push(python());
@@ -76,6 +75,11 @@ class CMEditor extends HTMLElement {
             });
             window.ide_cm_editor.setState(this.documents[this.currentDocument]);
         });
+
+
+        const syncToWorkspace = debounce((file_name, content) => {
+            window.ide_dispatch_event("save-unsaved-file", { file_name, content });
+        }, 600);
     }
 }
 

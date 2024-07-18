@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/components/editor/vars
+-- import: fastn-community.github.io/svg-icons/phosphor
 
 -- component left-gutter:
 
@@ -15,12 +16,27 @@ border-color: #ddd
 	width.fixed.percent: 100
 	align-content: top-center
 	padding-top.px: 5
-	
-		-- ftd.text: P
-		style if { vars.package }: bold
-		$on-click$: $vars.dispatch-event(name=package-panel-toggle)
-		$on-click$: $ftd.toggle($a=$vars.package)
-		
+
+        -- ftd.column:
+        classes if { !vars.package }: hidden
+
+            -- phosphor.fill: package
+            $on-click$: $vars.dispatch-event(name=package-panel-toggle)
+            $on-click$: $ftd.toggle($a=$vars.package)
+            size: 20
+
+        -- end: ftd.column
+
+        -- ftd.column:
+        classes if { vars.package }: hidden
+
+            -- phosphor.thin: package
+            $on-click$: $vars.dispatch-event(name=package-panel-toggle)
+            $on-click$: $ftd.toggle($a=$vars.package)
+            size: 20
+
+        -- end: ftd.column
+
 	-- end: ftd.column
 
 	-- ftd.column: ;; status bar panel icons

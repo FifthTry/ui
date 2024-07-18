@@ -1,11 +1,14 @@
 -- import: ui.fifthtry.com/components/editor/vars
 -- import: ui.fifthtry.com/assets
+-- import: fastn-community.github.io/svg-icons/phosphor
 
 
 -- component preview:
 string preview-url: $vars.preview-url
+string preview-content: $vars.preview-content
 boolean $preview-maximized: $vars.preview-maximized
 boolean $toggle-visibility-flag: $vars.preview-visible
+boolean $hover: false
 
 -- ftd.column:
 width.fixed.px: 300
@@ -17,32 +20,20 @@ border-left-width.px if { vars.preview-maximized && !vars.package }: 0
 border-left-width.px: 1
 border-color: #ddd
 id: right-panel
+$on-mouse-enter$: $ftd.set-bool($a=$preview.hover, v=true)
+$on-mouse-leave$: $ftd.set-bool($a=$preview.hover, v=false)
 
--- ftd.column:
-align-content: right
-width: fill-container
-
-    -- ftd.row:
-    spacing.fixed.px: 5
-    padding-bottom.px: 2
-    padding-horizontal.px: 5
-
-        -- toggle-width:
-        $flag: $preview.preview-maximized
-
-        -- toggle-visibility:
-        $flag: $preview.toggle-visibility-flag
-
-    -- end: ftd.row
-
--- end: ftd.column
-
+-- preview-header:
+hover: $preview.hover
+$preview-maximized: $preview.preview-maximized
+$toggle-visibility-flag: $preview.toggle-visibility-flag
 
 -- ftd.iframe:
-src: $preview.preview-url
 width: fill-container
 height: fill-container
 id: preview-iframe
+
+$preview.preview-content
 
 -- end: ftd.column
 
@@ -52,16 +43,69 @@ id: preview-iframe
 
 
 
+-- component preview-header:
+boolean $preview-maximized: $vars.preview-maximized
+boolean $toggle-visibility-flag: $vars.preview-visible
+boolean hover:
 
+-- ftd.row:
+align-content: right
+width: fill-container
+spacing: space-between
+border-bottom-width.px: 3
+border-color: #f5f5f5
+padding-horizontal.px: 10
+padding-vertical.px: 6
+
+
+    -- ftd.text: Preview
+
+    -- ftd.row:
+    spacing.fixed.px: 5
+    align-content: center
+
+        -- toggle-width:
+        hover: $preview-header.hover
+        $flag: $preview-header.preview-maximized
+
+        -- toggle-visibility:
+        hover: $preview-header.hover
+        $flag: $preview-header.toggle-visibility-flag
+
+    -- end: ftd.row
+
+-- end: ftd.row
+
+-- end: preview-header
 
 
 
 -- component toggle-width:
 boolean $flag: false
+boolean hover:
 
--- ftd.text: `+`
+-- ftd.column:
+classes if { !toggle-width.hover }: hidden
 $on-click$: $ftd.toggle($a = $toggle-width.flag)
-color: black
+
+    -- ftd.column:
+    classes if { toggle-width.flag }: hidden
+
+        -- phosphor.light: arrows-out
+        size: 14
+
+    -- end: ftd.column
+
+
+    -- ftd.column:
+    classes if { !toggle-width.flag }: hidden
+
+        -- phosphor.light: arrows-in
+        size: 14
+
+    -- end: ftd.column
+
+-- end: ftd.column
 
 -- end: toggle-width
 
@@ -73,10 +117,16 @@ color: black
 
 -- component toggle-visibility:
 boolean $flag: false
+boolean hover:
 
--- ftd.text: `-`
+-- ftd.column:
+if: { toggle-visibility.hover }
 $on-click$: $ftd.toggle($a = $toggle-visibility.flag)
-color: black
+
+    -- phosphor.light: arrow-right
+    size: 14
+
+-- end: ftd.column
 
 -- end: toggle-visibility
 
