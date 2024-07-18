@@ -158,37 +158,6 @@ user-data: $page.user-data
 		
 	-- end: ds.section-column
 
-	-- ds.column:
-	inset: $ds.spaces.inset-tall.zero-medium
-	
-		-- ds.heading-medium: Latest blogs
-		
-		-- ds.section-row:
-		margin: $ds.spaces.vertical-gap.small
-		
-			-- latest-post-card: [Customize Your Website's Color Scheme](/blog/customize-cs/)
-			date: 24th April 2024
-			link: /blog/customize-cs/
-			
-			Your website's color scheme sets the tone for your brand.
-			
-			-- latest-post-card: [FifthTry Editor](/blog/editor/)
-			date: 22nd March 2024
-			link: /blog/editor/
-			
-			I’m thrilled to introduce you to FifthTry Editor, our latest
-			addition to the [FifthTry platform]((https://www.fifthtry.com)
-			
-			-- latest-post-card: [Build and Host Your Website on fifthtry.com](/blog/getting-started/)
-			date: 28th March 2024
-			link: /blog/getting-started/
-			
-			Full Tutorial: From sign-up to launching your site.
-			
-		-- end: ds.section-row
-
-	-- end: ds.column
-
 	-- footer.footer:
 	site-data: $page.site-data
 	if: { !page.hide-footer }
@@ -543,58 +512,6 @@ margin: $ds.spaces.vertical-gap.medium
 
 
 
-
--- component latest-post-card:
-caption title:
-body description:
-string date:
-string link:
-
--- ds.container:
-inset: $ds.spaces.inset-square.medium
-background.solid: $ds.colors.background.step-2
-width.fixed.percent: 30
-width.fixed.percent if { ftd.device != "mobile"}: 68
-height.fixed.px if { ftd.device != "mobile"}: 200
-radius: $ds.radius.medium
-
-	-- ds.column:
-	align-content: top-left
-	link: $latest-post-card.link
-	spacing: $ds.spaces.vertical-gap.large
-	
-		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.small
-		align-content: top-left
-		height.fixed.px: 80
-		
-			-- ds.fine-print:
-			
-			$latest-post-card.date
-			
-			-- ds.copy-large:
-			color: $ds.colors.text-strong
-			
-			$latest-post-card.title
-			
-		-- end: ds.column
-
-		-- ds.column:
-		align-content: top-left
-		height.fixed.px: 80
-		
-			-- ds.copy-regular:
-			color: $ds.colors.text
-			
-			$latest-post-card.description
-			
-		-- end: ds.column
-
-	-- end: ds.column
-
--- end: ds.container
-
--- end: latest-post-card
 
 
 
