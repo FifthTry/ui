@@ -2,6 +2,7 @@
 // for it.
 
 import * as preact from "preact";
+import * as hooks from "preact/hooks";
 
 const FROZEN = "ftd_is_frozen_now";
 
@@ -15,9 +16,9 @@ export function render(ctor, props, ftd_root) {
         // we are re-initializing the same node. we should not do this.
         throw new Error(`ftd is already initialized on ${node.id}`);
     }
-    ftd_root.fastn_globals = {};
+    ftd_root.ftd_globals = {FROZEN: false};
     preact.render(preact.h(ctor, {...props, ["ftd_root"]: ftd_root}), ftd_root);
-    ftd_root.fastn_globals[FROZEN] = true;
+    ftd_root.ftd_globals[FROZEN] = true;
 }
 
 export const set_value = (ftd_root_id, key, value) => {
@@ -42,21 +43,27 @@ export class FastnTik {
 
     constructor(value, ftd_root, global_key) {
         [this.#value, this.#setter] = hooks.useState(value);
-        if (global_key !== undefined) {
-            if (!ftd_root || ftd_root.ftd_internals === undefined) {
-                console.log(ftd_root);
-                throw new Error("ftd is not initialized on this node");
-            }
 
-            // todo: we cannot do the following as the ctor is called multiple
-            //       times. what we want is in one invocation we do not want to
-            //       re-assign but not across invocations.
-            // if (ftd_root.ftd_globals[global_key] !== undefined) {
-            //     throw new Error(`global key ${global_key} already exists`);
-            // }
+        if (global_key === undefined) return;
 
-            ftd_root.ftd_globals[global_key] = this;
+        if (!ftd_root || ftd_root.ftd_globals === undefined) {
+            console.log(ftd_root);
+            throw new Error("ftd is not initialized on this node");
         }
+
+        let ftd_globals = ftd_root.ftd_globals;
+        if (ftd_globals[FROZEN]) {
+            // the key must already be present in the globals
+            if (ftd_globals[global_key] === undefined) {
+                throw new Error(`global_key ${global_key} not found`);
+            }
+        } else {
+            // the key must not be present in the globals
+            if (ftd_globals[global_key] !== undefined) {
+                throw new Error(`global_key ${global_key} already exists`);
+            }
+        }
+        ftd_globals[global_key] = this;
     }
 
     get() {
