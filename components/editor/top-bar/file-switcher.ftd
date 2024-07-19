@@ -8,7 +8,7 @@ file list files: $vars.recent-files
 $on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
 $on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
 
-    -- ftd.text: $vars.back-ticked(file_name=$vars.doc.file-name)
+    -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
     color: black
 
     -- popup:
