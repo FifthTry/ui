@@ -7,6 +7,7 @@
 -- import: ui.fifthtry.com/components/blog/blog-authors as author
 -- import: fastn-community.github.io/svg-icons/phosphor as ph
 -- import: fastn-community.github.io/dark-mode-switcher as dms
+-- import: fastn-community.github.io/design-system/record as r
 -- import: ui.fifthtry.com/components/footer
 -- import: fastn-community.github.io/design-system as ds
 export: borders, button, icon-button, primary-button, secondary-button, circle-text-button, phosphor-icon-button, inline-row, footer-link, copyright-text, page-widths, header-link, page, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, section-column, column, element-radius, radius, row, flush, gap, hv, spaces, border-data, border-bottom, alert, container, text-input, danger-button, checkbox, link-button, floater, copy-to-clipboard-text, copy-to-clipboard-icon, label-text, package-info, image
@@ -666,9 +667,6 @@ radius: $ds.radius.zero
 -- end: ds.row
 
 -- end: hero
-
-
-
 
 
 
@@ -1634,3 +1632,22 @@ option: Our Team
 option: FAQ
 
 -- end: dropdown-list-two
+
+
+-- component sample-hero:
+
+-- ds.hero: Hero component title
+image: $assets.files.assets.placeholder.jpg
+background.solid: $ds.colors.background.step-2
+cta-text: Button
+cta-link: /
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Quisque molestie ante in luctus
+rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Quisque molestie ante in luctus rutrum.
+
+
+-- end: sample-hero
+
