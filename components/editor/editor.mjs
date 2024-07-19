@@ -19,7 +19,6 @@ class CMEditor extends HTMLElement {
         this.documents = {};
     }
 
-
     connectedCallback() {
         let data = window.ftd.component_data(this);
         let self = this;
@@ -100,3 +99,20 @@ window.ide_clear_opfs = async function () {
 
     console.log("done deleting");
 }
+
+window.ide_update_ftd_var = function (name, value) {
+    if (name === "ui.fifthtry.com/components/editor/vars#preview-content") {
+        console.log('ide_update_ftd_var', name, "<html omitted>");
+    } else {
+        console.log('ide_update_ftd_var', name, JSON.parse(value));
+    }
+
+    ftd.set_value(name, JSON.parse(value));
+}
+
+window.ide_get_ftd_var = function (name) {
+    const value = ftd.get_value(name);
+    console.log('ide_get_ftd_var', name, value);
+    return JSON.stringify(value);
+}
+
