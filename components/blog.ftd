@@ -9,6 +9,7 @@
 -- import: fastn-community.github.io/dark-mode-switcher as dms
 -- import: fastn-community.github.io/design-system/record as r
 -- import: ui.fifthtry.com/components/footer
+-- import: fastn-community.github.io/design-system/record as r
 -- import: fastn-community.github.io/design-system as ds
 export: borders, button, icon-button, primary-button, secondary-button, circle-text-button, phosphor-icon-button, inline-row, footer-link, copyright-text, page-widths, header-link, page, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, section-column, column, element-radius, radius, row, flush, gap, hv, spaces, border-data, border-bottom, alert, container, text-input, danger-button, checkbox, link-button, floater, copy-to-clipboard-text, copy-to-clipboard-icon, label-text, package-info, image
 exposing: page-widths
@@ -158,10 +159,6 @@ user-data: $page.user-data
 		Once a week we send you the latest news about FifthTry.
 		
 	-- end: ds.section-column
-
-	-- footer.footer:
-	site-data: $page.site-data
-	if: { !page.hide-footer }
 	
 -- end: p.page
 
@@ -352,10 +349,15 @@ align-content: top-left
 -- component para:
 body body:
 
+-- ds.column:
+align-content: left
+
 -- ds.copy-regular:
 align: left
 
 $para.body
+
+-- end: ds.column
 
 -- end: para
 
@@ -513,6 +515,58 @@ margin: $ds.spaces.vertical-gap.medium
 
 
 
+
+-- component latest-post-card:
+caption title:
+body description:
+string date:
+string link:
+
+-- ds.container:
+inset: $ds.spaces.inset-square.medium
+background.solid: $ds.colors.background.step-2
+width.fixed.percent: 30
+width.fixed.percent if { ftd.device != "mobile"}: 68
+height.fixed.px if { ftd.device != "mobile"}: 200
+radius: $ds.radius.medium
+
+	-- ds.column:
+	align-content: top-left
+	link: $latest-post-card.link
+	spacing: $ds.spaces.vertical-gap.large
+	
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.small
+		align-content: top-left
+		height.fixed.px: 80
+		
+			-- ds.fine-print:
+			
+			$latest-post-card.date
+			
+			-- ds.copy-large:
+			color: $ds.colors.text-strong
+			
+			$latest-post-card.title
+			
+		-- end: ds.column
+
+		-- ds.column:
+		align-content: top-left
+		height.fixed.px: 80
+		
+			-- ds.copy-regular:
+			color: $ds.colors.text
+			
+			$latest-post-card.description
+			
+		-- end: ds.column
+
+	-- end: ds.column
+
+-- end: ds.container
+
+-- end: latest-post-card
 
 
 
@@ -761,14 +815,11 @@ inset: $ds.spaces.inset-square.medium
 
 -- component center-alignment-wrong:
 
--- ds.section-column:
-margin: $ds.spaces.vertical-gap.zero
+-- ds.column:
 inset: $ds.spaces.inset-wide.large
 spacing: $ds.spaces.vertical-gap.large
-outer-background.solid: $ds.colors.background.step-2
+background.solid: $ds.colors.background.step-2
 
-	;; -- ds.row:
-	;; spacing: $ds.spaces.horizontal-gap.zero
 	-- ds.column:
 	align-content: left
 	
@@ -790,9 +841,17 @@ outer-background.solid: $ds.colors.background.step-2
 		
 	-- end: ds.column
 
--- end: ds.section-column
+-- end: ds.column
 
 -- end: center-alignment-wrong
+
+
+
+
+
+
+
+
 
 -- component center-alignment-right:
 
@@ -809,6 +868,9 @@ outer-background.solid: $ds.colors.background.step-2
 		src: $assets.files.assets.right.png
 		width.fixed.px: 24
 		
+		-- ds.column:
+		width.fixed.px: 500
+
 		-- ds.hero: Hero component title
 		image: $assets.files.assets.placeholder.jpg
 		;; background.solid: $ds.colors.background.step-2
@@ -821,6 +883,7 @@ outer-background.solid: $ds.colors.background.step-2
 		rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 		Quisque molestie ante in luctus rutrum.
 		
+	-- end: ds.column
 	-- end: ds.column
 
 -- end: ds.section-column
@@ -845,7 +908,7 @@ inset: $ds.spaces.inset-square.small
 radius: $ds.radius.zero
 
 	-- ds.column:
-	width.fixed.px if { wca.image != NULL }: 500
+	;;width.fixed.px if { wca.image != NULL }: 500
 	align-content: left
 	
 		-- ds.heading-large: $wca.title
