@@ -1,14 +1,14 @@
+-- import: ui.fifthtry.com/components/blog as blog
+
 -- component blog:
 children wrapper:
 
 -- ds.section-row:
 spacing: $ds.spaces.horizontal-gap.medium
 wrap: true
-inset: $ds.spaces.inset-wide.large
 ;; inner-background.solid: $ds.colors.background.step-1
 content: $blog.wrapper
-flush: narrow
-;; align-content: top-left
+align-content: top-left
 
 -- end: ds.section-row
 
@@ -19,54 +19,104 @@ flush: narrow
 
 
 
+
+
+
+-- component hero-blog:
+caption title:
+body body:
+ftd.image-src image:
+string date:
+
+-- ds.section-row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.extra-large
+inset: $ds.spaces.inset-square.medium
+inner-background.solid: $ds.colors.background.step-1
+margin: $ds.spaces.vertical-gap.extra-large
+
+-- ds.column:
+align-content: left
+
+-- ds.heading-large: $hero-blog.title
+color: $ds.colors.text-strong
+
+-- ds.copy-regular:
+color: $ds.colors.text
+
+$hero-blog.body
+
+-- ds.fine-print: $hero-blog.date
+
+-- end: ds.column
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.small
+width: hug-content
+
+-- ftd.image:
+src: $hero-blog.image
+width.fixed.px: 260
+height.fixed.px: 260
+fit: cover
+
+-- end: ds.column
+
+-- end: ds.section-row
+
+-- end: hero-blog
+
+
+
+
+
+
+
+
+
 -- component blog-card:
 caption title:
 body description:
 string date:
+ftd.image-src image:
 ;; string button-name:
 ;; string link:
 boolean small-width: false
 
--- ds.container:
-inset: $ds.spaces.inset-square.medium
-background.solid: $ds.colors.background.step-2
-width.fixed.percent if {blog-card.small-width}: 30
-width.fixed.percent if { ftd.device != "mobile"}: 68
-height.fixed.px if { ftd.device != "mobile"}: 160
-max-height.fixed.px if { ftd.device != "mobile"}: 240
-radius: $ds.radius.medium
+-- ds.section-row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.extra-large
+margin: $ds.spaces.vertical-gap.extra-large
 
-	-- ds.column:
-	;; spacing: $ds.spaces.vertical-gap.space-between
-	;; height: fill-container
-	align-content: left
-	
-		-- ds.column:
-		spacing: $ds.spaces.vertical-gap.zero
-		align-content: left
-		
-			-- ds.fine-print:
-			
-			$blog-card.date
-			
-			-- ds.copy-large:
-			color: $ds.colors.text-strong
-			
-			$blog-card.title
-			
-		-- end: ds.column
+-- ds.column:
+align-content: left
 
-		-- ds.copy-regular:
-		color: $ds.colors.text
-		
-		$blog-card.description
-		
-		;; -- ds.primary-button: $blog-card.button-name
-		;; link: $blog-card.link
-		;; size: small
-	-- end: ds.column
+-- ds.copy-large:
+color: $ds.colors.text-strong
 
+$blog-card.title
 
--- end: ds.container
+-- ds.copy-regular:
+color: $ds.colors.text
+
+$blog-card.description
+
+-- ds.fine-print: $blog-card.date
+
+-- end: ds.column
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.small
+width: hug-content
+
+-- ftd.image:
+src: $blog-card.image
+width.fixed.px: 160
+height.fixed.px: 160
+border-radius.px: 8
+
+-- end: ds.column
+
+-- end: ds.section-row
 
 -- end: blog-card
