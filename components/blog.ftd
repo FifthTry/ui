@@ -1699,6 +1699,9 @@ option: FAQ
 
 -- component sample-hero:
 
+-- ds.column:
+width.fixed.px: 500
+
 -- ds.hero: Hero component title
 image: $assets.files.assets.placeholder.jpg
 background.solid: $ds.colors.background.step-2
@@ -1711,6 +1714,7 @@ consectetur adipiscing elit. Quisque molestie ante in luctus
 rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Quisque molestie ante in luctus rutrum.
 
+-- end: ds.column
 
 -- end: sample-hero
 
