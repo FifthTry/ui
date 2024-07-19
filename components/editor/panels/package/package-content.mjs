@@ -1,4 +1,4 @@
-import * as ftd2 from "../../../ftd2";
+import * as ftd2 from "../../ftd2";
 
 export function initialize_package_ui() {
     console.log("initialize_package_ui");

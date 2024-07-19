@@ -1,29 +1,49 @@
+// once we get this file working properly, we will create a npm package
+// for it.
+
+import * as preact from "preact";
+
 // till now ftd took over the entire document window. now we are going
 // to only take over the `node`. earlier we stored global data in a
 // window.ftd.globals or something, now we are going to store it on the
 // node itself. this way we can have multiple ftd instances on the same
 // page. the get and set functions will have to pass the id of the node.
 export function initialise(node, ctor, props) {
+    if (node.fastn_globals !== undefined) {
+        // we are re-initializing the same node. we should not do this.
+        throw new Error(`ftd is already initialized on ${node.id}`);
+    }
+    node.fastn_globals = {};
     preact.render(preact.h(ctor, props), node);
 }
 
 export const set_value = (id, key, value) => {
     let node = document.getElementById(id);
+    if (node.ftd_globals === undefined) {
+        throw new Error(`ftd is already initialized on ${id}`);
+    }
     node.ftd_globals[key].set(value);
 }
 
 export const get_value = (id, key) => {
     let node = document.getElementById(id);
+    if (node.ftd_globals === undefined) {
+        throw new Error(`ftd is already initialized on ${id}`);
+    }
     return node.ftd_globals[key].get();
 }
 
-class FastnTik {
+export class FastnTik {
     #value
     #setter
 
     constructor(value, node, global_key) {
         [this.#value, this.#setter] = hooks.useState(value);
         if (global_key !== undefined) {
+            if (!node || node.ftd_internals === undefined) {
+                console.log(node);
+                throw new Error("ftd is not initialized on this node");
+            }
             window.ftd_internals.globals[global_key] = this;
         }
     }
@@ -124,7 +144,12 @@ class FastnTik {
     }
 }
 
-class FastnTok {
+// should we export it?
+//
+// we do not people to create instances of this class directly, so
+// if we do not export, it would ensure that, but would that have
+// any unintended consequences?
+export class FastnTok {
     #tik
     #idx
     #value
