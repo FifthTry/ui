@@ -71,6 +71,8 @@ user-data: $page.user-data
 		width: fill-container
 		height.fixed.px: 220
 		fit: cover
+
+		-- ftd.desktop:
 		
 		-- ds.row:
 		align-content: top-left
@@ -139,6 +141,80 @@ user-data: $page.user-data
 			-- end: ds.column
 
 		-- end: ds.row
+
+		-- end: ftd.desktop
+
+		-- ftd.mobile:
+		
+		-- ds.column:
+		align-content: top-left
+		spacing: $ds.spaces.vertical-gap.large
+		inset: $ds.spaces.inset-tall.zero-medium
+		
+			-- ds.column:
+			align-content: top-left
+			width.fixed.px: 300
+			
+				-- ds.copy-small: $page.date
+				
+				-- ds.row:
+				align-content: left
+				
+					-- ds.image:
+					src: $page.author.photo
+					width.fixed.px: 40
+					radius: $ds.radius.round
+					
+					-- ds.heading-tiny: $page.author.name
+					
+				-- end: ds.row
+
+				-- ds.column:
+				align-content: left
+				
+					-- ds.copy-small: Share
+					
+					-- ds.row:
+					align-content: left
+					
+						-- ds.copy-to-clipboard-icon: $copy-share-url()
+						
+						-- ftd.image:
+						src: $assets.files.assets.blog.tweet.svg
+						link: $twitter-share-url()
+						width.fixed.px: 24
+						
+						-- ftd.image:
+						src: $assets.files.assets.blog.linkedin.svg
+						link: $linkedin-share-url()
+						width.fixed.px: 24
+						
+					-- end: ds.row
+
+				-- end: ds.column
+
+			-- end: ds.column
+
+			-- ds.column:
+			align-content: top-left
+			
+				-- ds.heading-hero: $page.title
+				color: $ds.colors.shadow
+				
+				-- ds.copy-regular: $page.body
+				if: { page.body != NULL }
+				
+				-- ds.column:
+				content: $page.wrapper
+				spacing: $ds.spaces.vertical-gap.large
+				
+				-- end: ds.column
+
+			-- end: ds.column
+
+		-- end: ds.column
+
+		-- end: ftd.mobile
 
 		-- author.author: $page.author.name
 		photo: $page.author.photo
