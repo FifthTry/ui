@@ -1,11 +1,12 @@
-import { EditorView, basicSetup } from "codemirror";
-import { EditorState } from "@codemirror/state";
-import { ViewUpdate } from "@codemirror/view";
-import { javascript } from "@codemirror/lang-javascript";
-import { python } from "@codemirror/lang-python";
-import { markdown } from "@codemirror/lang-markdown";
-import { html } from "@codemirror/lang-html";
-import { debounce } from "./debounce";
+import {EditorView, basicSetup} from "codemirror";
+import {EditorState} from "@codemirror/state";
+import {ViewUpdate} from "@codemirror/view";
+import {javascript} from "@codemirror/lang-javascript";
+import {python} from "@codemirror/lang-python";
+import {markdown} from "@codemirror/lang-markdown";
+import {html} from "@codemirror/lang-html";
+import {debounce} from "./debounce";
+import {update_package_content, initialize_package_ui} from "./panels/package/package-content";
 
 
 class CMEditor extends HTMLElement {
@@ -20,6 +21,27 @@ class CMEditor extends HTMLElement {
     }
 
     connectedCallback() {
+        initialize_package_ui();
+        update_package_content(
+            [{
+                name: "blog",
+                open: false,
+                folders: [{
+                    name: "images",
+                    open: false,
+                    folders: [],
+                    files: [
+                        {open: false, name: "first-image.jpg"},
+                    ],
+                }],
+                files: [
+                    {open: false, name: "index.ftd"},
+                    {open: false, name: "first-post.ftd"},
+                ],
+            }],
+            [{open: true, name: "FASTN.ftd"}, {open: false, name: "index.ftd"}],
+        );
+
         let data = window.ftd.component_data(this);
         let self = this;
 
@@ -78,16 +100,16 @@ class CMEditor extends HTMLElement {
 
         const syncToWorkspace = debounce((file_name, content) => {
             const filepath = ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file");
-            window.ide_dispatch_event("save-unsaved-file", { file_path: filepath, content });
+            window.ide_dispatch_event("save-unsaved-file", {file_path: filepath, content});
         }, 600);
     }
 }
 
 customElements.define('cm-editor', CMEditor);
 
-window.ide_dispatch_event = function(name, data) {
+window.ide_dispatch_event = function (name, data) {
     console.log('ide_dispatch_event', data);
-    window.dispatchEvent(new CustomEvent("ide-event", { detail: {name, data} }));
+    window.dispatchEvent(new CustomEvent("ide-event", {detail: {name, data}}));
 };
 
 window.ide_clear_opfs = async function () {
@@ -102,13 +124,19 @@ window.ide_clear_opfs = async function () {
 }
 
 window.ide_update_ftd_var = function (name, value) {
+    value = JSON.parse(value);
+    console.log('ide_update_ftd_var', name, value);
+    if (name === "ui.fifthtry.com/components/editor/vars#package-data") {
+        update_package_content(value.folders, value.files)
+    }
+
     if (name === "ui.fifthtry.com/components/editor/vars#preview-content") {
         console.log('ide_update_ftd_var', name, "<html omitted>");
     } else {
-        console.log('ide_update_ftd_var', name, JSON.parse(value));
+        console.log('ide_update_ftd_var', name, value);
     }
 
-    ftd.set_value(name, JSON.parse(value));
+    ftd.set_value(name, value);
 }
 
 window.ide_get_ftd_var = function (name) {

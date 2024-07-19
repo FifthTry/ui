@@ -9,4 +9,5 @@ export default {
         format: "iife"
     },
     plugins: [nodeResolve(), terser()]
+    // plugins: [nodeResolve()]
 }

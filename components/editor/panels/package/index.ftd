@@ -1,0 +1,116 @@
+-- import: ui.fifthtry.com/components/editor/vars
+-- import: ui.fifthtry.com/assets
+-- import: fastn-community.github.io/svg-icons/phosphor
+
+
+-- component package:
+data $data: $vars.package-data
+boolean $hover: false
+
+-- ftd.column:
+width.fixed.px: 240
+height.fixed.percent: 100
+classes if { !vars.package }: hidden
+$on-mouse-enter$: $ftd.set-bool($a=$package.hover, v=true)
+$on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
+overflow-y: auto
+
+	-- package-name: $package.data.name
+	url: $package.data.url
+	hover: $package.hover
+	
+    -- ftd.column:
+    id: package-content-placeholder
+    width.fixed.percent: 100
+
+    -- end: ftd.column
+
+-- end: ftd.column
+
+-- end: package
+
+
+
+
+
+
+
+
+
+
+
+-- record data:
+string name:
+string url:
+string slug:
+integer updated-at:
+folder list folders:
+file list files:
+
+
+
+
+
+
+-- record file:
+caption name:
+string full-name: $file.name
+string url:
+boolean open: false
+
+
+
+
+
+-- record folder:
+caption name:
+string full-name:
+string url:
+folder list folders:
+file list files:
+boolean open: false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component package-name:
+caption name:
+string url:
+boolean hover:
+
+-- ftd.row:
+width.fixed.percent: 100
+spacing: space-between
+padding-horizontal.px: 10
+padding-vertical.px: 6
+border-bottom-width.px: 3
+border-color: #f5f5f5
+
+	-- ftd.text: $package-name.name
+	link: { package-name.url }
+	color: black
+
+    -- phosphor.light: arrow-left
+    if: { package-name.hover }
+    $on-click$: $vars.dispatch-event(name=package-panel-toggle)
+    $on-click$: $ftd.toggle($a=$vars.package)
+    size: 14
+
+-- end: ftd.row
+
+-- end: package-name

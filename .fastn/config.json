@@ -2219,8 +2219,8 @@
         },
         "components/person-card.ftd": {
           "name": "components/person-card.ftd",
-          "checksum": "544E5FBAEA81D2C7AD9F0D843B20A247C322DFA13A57902199E4659907315FCB",
-          "size": 4042
+          "checksum": "38F0FBE3482B275DEBF6904336107C4C3B630C61D92776F20DE6E36040433E9C",
+          "size": 4137
         },
         "components/pricing.ftd": {
           "name": "components/pricing.ftd",
@@ -2398,8 +2398,8 @@
           "size": 78
         }
       },
-      "zip_url": "https://github.com/fastn-community/design-system/archive/432342f9e6ac0e4a7160ea807008c3ee2af09c27.zip",
-      "checksum": "8E7D5B7682E06341D4FC48F4E3BFF09ED9EEA4C367B65726C89D54690967F2EB"
+      "zip_url": "https://github.com/fastn-community/design-system/archive/3df8d18f4daafb75470004cad132e8cc2e56e9f9.zip",
+      "checksum": "F49230B8546D32754AF56D66E884317DACE9B9A1261F11FB648551AB5F8CDA06"
     },
     "fastn-community.github.io/doc-site": {
       "files": {
@@ -6690,8 +6690,8 @@
         },
         "fa.ftd": {
           "name": "fa.ftd",
-          "checksum": "4F92F4DFA5180E73B4994B3AFC52235F0BAFE8B583280BA57CF970DF9877FB0C",
-          "size": 642
+          "checksum": "3C7F0AFC9A80E7800151D9409972DAD04B15A7F4BCE84C5EE3B1381EEFEA4CF9",
+          "size": 626
         },
         "favicon.ico": {
           "name": "favicon.ico",
@@ -6700,8 +6700,8 @@
         },
         "helper.ftd": {
           "name": "helper.ftd",
-          "checksum": "E29C7A610BD1FFD8C9EAE2E2EFB30567A72A6FE8700FED75A2D4690872256E90",
-          "size": 664
+          "checksum": "9B2629B625F04E44C8F32307A4B5209D1753C0BF95957F16471EF84D233DA43D",
+          "size": 321
         },
         "helper.js": {
           "name": "helper.js",
@@ -6715,8 +6715,8 @@
         },
         "phosphor.ftd": {
           "name": "phosphor.ftd",
-          "checksum": "3CEE6FB02DDB89854CC93F7D1167584C9B0A489BFB0F295A192591CC9587184A",
-          "size": 1607
+          "checksum": "11150737ED22E29E47F86DEB17C4C2BBD543260A3C554A6113A4EF92F9314045",
+          "size": 1557
         },
         "web-component.js": {
           "name": "web-component.js",
@@ -6724,8 +6724,8 @@
           "size": 3370
         }
       },
-      "zip_url": "https://github.com/fastn-community/svg-icons/archive/d7cdba61ed63630d42e4f2085c7e3efae49505e3.zip",
-      "checksum": "A6D06993E909AA3E3C96CF7B9F65C7A4E53E120C345C75DD4E8981DC070B81E6"
+      "zip_url": "https://github.com/fastn-community/svg-icons/archive/f13d37a96d875335e55c8d9c3e082f8384c6c760.zip",
+      "checksum": "EE0A1749B2C676CB21947A79E9B2E2F9C6CBB939D95948CDC7723507B8EBBF4A"
     },
     "fastn-community.github.io/typography": {
       "files": {
