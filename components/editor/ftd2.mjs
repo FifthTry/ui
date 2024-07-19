@@ -75,13 +75,24 @@ export class FastnTik {
     }
 
     set(new_value) {
+        console.log("set called", this.#value, new_value)
         this.set_key([], new_value)
+    }
+
+    notify_preact() {
+        // if we do not clone the object, the setter doesn't trigger re-render.
+        if (!!structuredClone) {
+            this.#setter(structuredClone(this.#value));
+        } else {
+            this.#setter(JSON.parse(JSON.stringify(this.#value)));
+        }
     }
 
     set_key(key, new_value) {
         if (key.length === 0) {
-            this.#setter(new_value);
-            return;
+            console.log("set_key called", this.#value, key, new_value);
+            this.#value = new_value;
+            return this.notify_preact();
         }
 
         let f = this.#value;
@@ -93,13 +104,8 @@ export class FastnTik {
 
         f[key[i]] = new_value; // the last element
 
-        // if we do not clone the object, the setter doesn't trigger re-render.
-        if (!!structuredClone) {
-            this.#setter(structuredClone(this.#value));
-        } else {
-            this.#setter(JSON.parse(JSON.stringify(this.#value)));
-        }
-
+        console.log("set_key called", this.#value, key, new_value);
+        this.notify_preact()
 
         // earlier we had a ctx tracking based approach, where we also passed
         // a ctx object. the ctx was created in the main().

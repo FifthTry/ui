@@ -2,33 +2,51 @@ import * as ftd2 from "../../ftd2";
 import * as preact from "preact";
 
 const ROOT_ID = "package-content-placeholder";
-const ROOT_DATA_KEY = "data";
+const ROOT_DATA_KEY = "outer-folder";
 
 export function initialize_package_ui() {
     console.log("initialize_package_ui");
     let ftd_root = document.getElementById(ROOT_ID);
     ftd2.render(
-        show_package_content, {folders: [], files: [], ftd_root}, ftd_root
+        show_package_content, {
+            folders: [
+                {
+                    name: "m-blog",
+                    open: false,
+                    folders: [{
+                        name: "m-images",
+                        open: false,
+                        folders: [],
+                        files: [
+                            {open: false, name: "m-first-image.jpg"},
+                        ],
+                    }],
+                    files: [
+                        {open: false, name: "m-index.ftd"},
+                        {open: false, name: "m-first-post.ftd"},
+                    ],
+                }
+            ],
+            files: [
+                {open: true, name: "m-FASTN.ftd"},
+                {open: false, name: "m-index.ftd"}
+            ],
+            ftd_root
+        }, ftd_root
     );
 }
 
 export function update_package_content({folders, files}) {
-    console.log("show_package_content", folders, files);
+    console.log("update_package_content", folders, files);
     ftd2.set_value(ROOT_ID, ROOT_DATA_KEY, {folders, files})
 }
 
 function show_package_content({folders, files, ftd_root}) {
-    let data = new ftd2.FastnTik({folders, files}, ftd_root, ROOT_DATA_KEY);
-    preact.h(
-        show_folder, {
-            folder: {
-                folders: data.index("folders"),
-                files: data.index("files"),
-                name: "root"
-            },
-            show_name: false
-        }
+    console.log("show_package_content", folders, files);
+    let folder = new ftd2.FastnTik(
+        {folders, files, name: "root", open: true,}, ftd_root, ROOT_DATA_KEY
     );
+    return preact.h(show_folder, {folder, show_name: false, level: 0});
 }
 
 const padding = (level) => `${level + 10}px`;
@@ -52,6 +70,9 @@ const show_folder = ({folder, level, show_name}) => {
     // this is okay to do because level is not a mutable variable.
     // all mutable variables should be created using Tik, and updated
     // using the set method.
+
+    console.log("show_folder", folder, level, show_name);
+
     if (!level) level = 0;
     let open = folder.index("open");
 
