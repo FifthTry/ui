@@ -7,12 +7,13 @@ import * as hooks from "preact/hooks";
 const FROZEN = "ftd_is_frozen_now";
 
 // till now ftd took over the entire document window. now we are going
-// to only take over the `node`. earlier we stored global data in a
-// window.ftd.globals or something, now we are going to store it on the
-// node itself. this way we can have multiple ftd instances on the same
-// page. the get and set functions will have to pass the id of the node.
+// to only take over the `ftd_root` node. earlier we stored global data
+// in a window.ftd.globals or something, now we are going to store it
+// on the node itself. this way we can have multiple ftd instances on
+// the same page. the get and set functions will have to pass the id of
+// the node.
 export function render(ctor, props, ftd_root) {
-    if (ftd_root.fastn_globals !== undefined) {
+    if (ftd_root.ftd_globals !== undefined) {
         // we are re-initializing the same node. we should not do this.
         throw new Error(`ftd is already initialized on ${node.id}`);
     }
