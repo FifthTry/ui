@@ -22,25 +22,6 @@ class CMEditor extends HTMLElement {
 
     connectedCallback() {
         initialize_package_ui();
-        update_package_content(
-            [{
-                name: "blog",
-                open: false,
-                folders: [{
-                    name: "images",
-                    open: false,
-                    folders: [],
-                    files: [
-                        {open: false, name: "first-image.jpg"},
-                    ],
-                }],
-                files: [
-                    {open: false, name: "index.ftd"},
-                    {open: false, name: "first-post.ftd"},
-                ],
-            }],
-            [{open: true, name: "FASTN.ftd"}, {open: false, name: "index.ftd"}],
-        );
 
         let data = window.ftd.component_data(this);
         let self = this;

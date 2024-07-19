@@ -18,18 +18,18 @@ export function initialize_package_ui() {
                         open: false,
                         folders: [],
                         files: [
-                            {open: false, name: "m-first-image.jpg"},
+                            {open: false, name: "m-first-image.jpg", url: "/"},
                         ],
                     }],
                     files: [
-                        {open: false, name: "m-index.ftd"},
-                        {open: false, name: "m-first-post.ftd"},
+                        {open: false, name: "m-index.ftd", url: "/"},
+                        {open: false, name: "m-first-post.ftd", url: "/"},
                     ],
                 }
             ],
             files: [
-                {open: true, name: "m-FASTN.ftd"},
-                {open: false, name: "m-index.ftd"}
+                {open: true, name: "m-FASTN.ftd", url: "/"},
+                {open: false, name: "m-index.ftd", url: "/"}
             ],
             ftd_root
         }, ftd_root
@@ -64,7 +64,11 @@ const show_file = ({file, level}) => {
                 "background": file.get().open ? "#f5f5f5" : "auto",
             }
         },
-        file.get().name
+        preact.h(
+            "a", {
+                style: { color: "black" },
+                href: file.get().url
+        }, file.get().name)
     )
 }
 
@@ -89,6 +93,7 @@ const show_folder = ({folder, level, hide_name}) => {
                 "padding-left": padding(level),
                 gap: "2px",
                 width: "100%",
+                "font-family": "monospace",
             }
         },
         preact.h(
