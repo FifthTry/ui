@@ -78,7 +78,7 @@ fit: cover
 caption title:
 body description:
 string date:
-ftd.image-src image:
+optional ftd.image-src image:
 ;; string button-name:
 ;; string link:
 boolean small-width: false
@@ -110,6 +110,7 @@ spacing: $ds.spaces.vertical-gap.small
 width: hug-content
 
 -- ftd.image:
+if: { blog-card.image != NULL }
 src: $blog-card.image
 width.fixed.px: 160
 height.fixed.px: 160
