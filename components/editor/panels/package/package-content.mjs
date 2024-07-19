@@ -1,20 +1,24 @@
 import * as ftd2 from "../../ftd2";
 import * as preact from "preact";
 
+const ROOT_ID = "package-content-placeholder";
+const ROOT_DATA_KEY = "data";
+
 export function initialize_package_ui() {
     console.log("initialize_package_ui");
-    let ftd_root = document.getElementById("package-content-placeholder");
+    let ftd_root = document.getElementById(ROOT_ID);
     ftd2.render(
         show_package_content, {folders: [], files: [], ftd_root}, ftd_root
     );
 }
 
-export function update_package_content(folders, files) {
+export function update_package_content({folders, files}) {
     console.log("show_package_content", folders, files);
+    ftd2.set_value(ROOT_ID, ROOT_DATA_KEY, {folders, files})
 }
 
 function show_package_content({folders, files, ftd_root}) {
-    let data = new ftd2.FastnTik({folders, files}, ftd_root, "data");
+    let data = new ftd2.FastnTik({folders, files}, ftd_root, ROOT_DATA_KEY);
     preact.h(
         show_folder, {
             folder: {
