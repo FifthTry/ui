@@ -10,6 +10,7 @@
 -- string github-url: /-/auth/github/
 -- string forgot-url: /-/auth/forgot/
 -- string logout-url: /scenarios/logged-out-home/
+-- string demo-day-url: /demo-day/
 
 -- string pricing-url: /scenarios/about/pricing/
 -- string team-url: /scenarios/about/team-page/

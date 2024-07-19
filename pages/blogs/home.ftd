@@ -1,5 +1,6 @@
 -- import: ui.fifthtry.com/components/page as p
 -- import: ui.fifthtry.com/components/blog/blog-home as blog
+-- import: ui.fifthtry.com/components/blog as b
 ;; -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
 
@@ -19,35 +20,54 @@ user-data: $page.user-data
 	inset: $ds.spaces.inset-wide.large
 	
 		-- ds.heading-large: Blog
+
+		-- blog.hero-blog: Building a Release App in FASTN Using SQL - Tutorial
+		link: https://www.fifthtry.com/
+		date: 19th June 2024
+		image: $assets.files.assets.placeholder.jpg
+		author: $b.nandhini
+		
+		In this tutorial, you will be creating a [release app](https://github.com/FifthTry/release-app) to manage and publish
+		software versions similar to [GitHub's release feature.](https://github.com/fastn-stack/fastn/releases)
 		
 		-- blog.blog:
+
+		-- ds.heading-medium: Latest Blog
 		
-			-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
+			-- blog.blog-card: Lorem Ipsum
+			link: https://www.fifthtry.com/
 			date: 1st March 2024
+			
 			;; small-width: true
 			
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			Nunc facilisis sem metus, ut accumsan.
 			
-			-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
+			-- blog.blog-card: Lorem Ipsum
+			link: https://www.fifthtry.com/
 			date: 1st March 2024
+			
 			
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
 			Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			
-			-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
+			-- blog.blog-card: Lorem Ipsum
+			link: https://www.fifthtry.com/
 			date: 1st March 2024
+			
 			
 			Lorem ipsum dolor amet, consectetur adipiscing elit.
 			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
 			Proin pulvinar malesuada justo, vitae efficitur nulla tempor sit amet.
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			
-			-- blog.blog-card: [Lorem Ipsum](https://www.fifthtry.com/)
+			-- blog.blog-card: Lorem Ipsum
+			link: https://www.fifthtry.com/
 			date: 1st March 2024
 			;; small-width: true
+			
 			
 			Lorem ipsum dolor sit. consectetur adipiscing elit.
 			
