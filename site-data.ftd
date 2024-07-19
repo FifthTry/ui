@@ -22,4 +22,6 @@
 
 -- string blog-url: /blog/
 
+-- string demo-day-url: /demo-day/
+
 -- string packages-url: /packages/

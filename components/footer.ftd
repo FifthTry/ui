@@ -136,6 +136,10 @@ align-content: left
 		-- ds.link: **Blog**
 		color: $ds.colors.text-strong
 		link: $footer-toc-content.site-data.blog-url
+
+		-- ds.link: **Demo Day**
+		color: $ds.colors.text-strong
+		link: $footer-toc-content.site-data.demo-day-url
 		
 		-- ds.link: **`fastn` Packages**
 		color: $ds.colors.text-strong
