@@ -213,7 +213,9 @@ ide_clear_opfs()
 
 
 
-
+;; Use this to render a save button only when there's some changes to the
+;; current file. Set from rust code.
+-- boolean $show-save-button: false
 
 
 
