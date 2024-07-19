@@ -3,48 +3,59 @@
 
 import * as preact from "preact";
 
+const FROZEN = "ftd_is_frozen_now";
+
 // till now ftd took over the entire document window. now we are going
 // to only take over the `node`. earlier we stored global data in a
 // window.ftd.globals or something, now we are going to store it on the
 // node itself. this way we can have multiple ftd instances on the same
 // page. the get and set functions will have to pass the id of the node.
-export function initialise(node, ctor, props) {
-    if (node.fastn_globals !== undefined) {
+export function render(ctor, props, ftd_root) {
+    if (ftd_root.fastn_globals !== undefined) {
         // we are re-initializing the same node. we should not do this.
         throw new Error(`ftd is already initialized on ${node.id}`);
     }
-    node.fastn_globals = {};
-    preact.render(preact.h(ctor, props), node);
+    ftd_root.fastn_globals = {};
+    preact.render(preact.h(ctor, {...props, ["ftd_root"]: ftd_root}), ftd_root);
+    ftd_root.fastn_globals[FROZEN] = true;
 }
 
-export const set_value = (id, key, value) => {
-    let node = document.getElementById(id);
-    if (node.ftd_globals === undefined) {
-        throw new Error(`ftd is already initialized on ${id}`);
+export const set_value = (ftd_root_id, key, value) => {
+    let ftd_root = document.getElementById(ftd_root_id);
+    if (ftd_root.ftd_globals === undefined) {
+        throw new Error(`ftd is already initialized on ${ftd_root_id}`);
     }
-    node.ftd_globals[key].set(value);
+    ftd_root.ftd_globals[key].set(value);
 }
 
-export const get_value = (id, key) => {
-    let node = document.getElementById(id);
-    if (node.ftd_globals === undefined) {
-        throw new Error(`ftd is already initialized on ${id}`);
+export const get_value = (ftd_root_id, key) => {
+    let ftd_root = document.getElementById(ftd_root_id);
+    if (ftd_root.ftd_globals === undefined) {
+        throw new Error(`ftd is already initialized on ${ftd_root_id}`);
     }
-    return node.ftd_globals[key].get();
+    return ftd_root.ftd_globals[key].get();
 }
 
 export class FastnTik {
     #value
     #setter
 
-    constructor(value, node, global_key) {
+    constructor(value, ftd_root, global_key) {
         [this.#value, this.#setter] = hooks.useState(value);
         if (global_key !== undefined) {
-            if (!node || node.ftd_internals === undefined) {
-                console.log(node);
+            if (!ftd_root || ftd_root.ftd_internals === undefined) {
+                console.log(ftd_root);
                 throw new Error("ftd is not initialized on this node");
             }
-            window.ftd_internals.globals[global_key] = this;
+
+            // todo: we cannot do the following as the ctor is called multiple
+            //       times. what we want is in one invocation we do not want to
+            //       re-assign but not across invocations.
+            // if (ftd_root.ftd_globals[global_key] !== undefined) {
+            //     throw new Error(`global key ${global_key} already exists`);
+            // }
+
+            ftd_root.ftd_globals[global_key] = this;
         }
     }
 
@@ -149,7 +160,7 @@ export class FastnTik {
 // we do not people to create instances of this class directly, so
 // if we do not export, it would ensure that, but would that have
 // any unintended consequences?
-export class FastnTok {
+class FastnTok {
     #tik
     #idx
     #value

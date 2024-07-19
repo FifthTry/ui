@@ -23,6 +23,8 @@ overflow-y: auto
     id: package-content-placeholder
     width.fixed.percent: 100
 
+    -- end: ftd.column
+
 -- end: ftd.column
 
 -- end: package
