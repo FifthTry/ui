@@ -20,6 +20,11 @@ padding-bottom.px: 15
 	-- extras:
 	if: { status-bar.extra-open }
 
+    -- ds.primary-button: Save
+    if: { vars.show-save-button }
+    $on-click$: trigger-save()
+
+
 	-- ftd.text: `Online`
 	$on-click$: $ftd.toggle($a = $status-bar.extra-open)
 
@@ -47,3 +52,8 @@ $on-click$: $vars.dispatch-event(name=opfs-enable-toggle)
 -- end: ftd.row
 
 -- end: extras
+
+-- void trigger-save():
+js: $assets.files.components.editor.function.js
+
+trigger_save_event()

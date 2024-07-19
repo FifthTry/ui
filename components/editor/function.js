@@ -66,7 +66,6 @@ function addPreviewExpandable() {
     });
 }
 
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     addPreviewExpandable();
-// });
+function trigger_save_event() {
+    window.ide_dispatch_event("save-current-file");
+}
