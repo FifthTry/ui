@@ -224,12 +224,4 @@ string file_name:
 "`" + file_name + "`"
 
 
--- void toggle-member-in-list(member, list):
-string member:
-string list $list:
-js: $assets.files.components.editor.function.js
-
-toggleMemberInList(member, list)
-
-
 
