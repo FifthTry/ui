@@ -36,7 +36,7 @@ export function initialize_package_ui() {
     );
 }
 
-export function update_package_content({folders, files}) {
+export function update_package_content(folders, files) {
     console.log("update_package_content", folders, files);
     ftd2.set_value(ROOT_ID, ROOT_DATA_KEY, {folders, files, name: "root", open: true});
 }

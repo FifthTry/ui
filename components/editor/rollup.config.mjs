@@ -8,6 +8,6 @@ export default {
         sourcemap: true,
         format: "iife"
     },
-    // plugins: [nodeResolve(), terser()]
-    plugins: [nodeResolve()]
+    plugins: [nodeResolve(), terser()]
+    // plugins: [nodeResolve()]
 }
