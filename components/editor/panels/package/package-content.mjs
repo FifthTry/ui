@@ -38,15 +38,16 @@ export function initialize_package_ui() {
 
 export function update_package_content({folders, files}) {
     console.log("update_package_content", folders, files);
-    ftd2.set_value(ROOT_ID, ROOT_DATA_KEY, {folders, files})
+    ftd2.set_value(ROOT_ID, ROOT_DATA_KEY, {folders, files, name: "root", open: true});
 }
 
 function show_package_content({folders, files, ftd_root}) {
-    console.log("show_package_content", folders, files);
+    console.log("show_package_content111", folders, files);
     let folder = new ftd2.FastnTik(
-        {folders, files, name: "root", open: true,}, ftd_root, ROOT_DATA_KEY
+        {folders, files, name: "root", open: true}, ftd_root, ROOT_DATA_KEY
     );
-    return preact.h(show_folder, {folder, show_name: false, level: 0});
+    console.log("folder", folder, folder.get());
+    return preact.h(show_folder, {folder, hide_name: true, level: 0});
 }
 
 const padding = (level) => `${level + 10}px`;
@@ -58,6 +59,7 @@ const show_file = ({file, level}) => {
                 "padding-top": "2px",
                 "padding-bottom": "2px",
                 "padding-left": padding(level),
+                width: "100%",
                 gap: "2px",
                 "background": file.get().open ? "#f5f5f5" : "auto",
             }
@@ -66,15 +68,18 @@ const show_file = ({file, level}) => {
     )
 }
 
-const show_folder = ({folder, level, show_name}) => {
+const show_folder = ({folder, level, hide_name}) => {
     // this is okay to do because level is not a mutable variable.
     // all mutable variables should be created using Tik, and updated
     // using the set method.
 
-    console.log("show_folder", folder, level, show_name);
+    console.log("show_folder", folder, folder.get(), level, hide_name);
 
     if (!level) level = 0;
     let open = folder.index("open");
+
+    console.log(folder.get().name);
+    console.log(folder.index("folders").get());
 
     return preact.h(
         "div", {
@@ -83,12 +88,13 @@ const show_folder = ({folder, level, show_name}) => {
                 "padding-bottom": "2px",
                 "padding-left": padding(level),
                 gap: "2px",
+                width: "100%",
             }
         },
         preact.h(
             "div", null,
-            show_name ? preact.h(
-                "div", {style: {display: "flex", "flex-direction": "row", gap: "5px"}},
+            hide_name ? null : preact.h(
+                "div", {style: {display: "flex", "flex-direction": "row", gap: "5px", width: "100%"}},
                 open.get() ? preact.h("div", null, "+") : preact.h("div", null, "/"),
                 preact.h("div",
                     {
@@ -97,7 +103,7 @@ const show_folder = ({folder, level, show_name}) => {
                     },
                     folder.get().name
                 ),
-            ) : null,
+            ),
             open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
                 level: level + 1

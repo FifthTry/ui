@@ -44,7 +44,7 @@ class CMEditor extends HTMLElement {
             files: [
                 {open: true, name: "FASTN.ftd"},
                 {open: false, name: "index.ftd"}
-            ]
+            ],
         });
 
         let data = window.ftd.component_data(this);
