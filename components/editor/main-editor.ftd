@@ -19,6 +19,7 @@ width.fixed.calc if { vars.package && vars.preview-visible && !vars.preview-maxi
 width.fixed.calc if { !vars.package && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 300px
 ;; left closed right open preview maximized: No-op, since this is hidden
 align-content: center
+overflow-x: scroll
 
 -- ftd.column:
 ;; we use class to hide this instead of using the `if: ` because if
