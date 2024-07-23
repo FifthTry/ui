@@ -9,6 +9,7 @@ $on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
 $on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
 
     -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
+    color if { ftd.list_contains(vars.modified-files, vars.current-file) }: blue
     color: black
 
     -- popup:
@@ -76,6 +77,7 @@ border-bottom-width.px: 1
 border-color: #ddd
 
 -- ftd.text: $vars.back-ticked(file_name=$show-file.file.name)
+color if { ftd.list_contains(vars.modified-files, show-file.file.name) }: blue
 color: black
 
 -- ftd.text: $vars.back-ticked(file_name=$show-file.file.package)

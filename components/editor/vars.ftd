@@ -217,6 +217,9 @@ ide_clear_opfs()
 
 
 
+;; full name of files that are modified
+-- string list $modified-files:
+-- end: $modified-files
 
 -- string back-ticked(file_name):
 string file_name:
