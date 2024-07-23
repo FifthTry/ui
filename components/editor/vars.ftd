@@ -206,7 +206,7 @@ ide_clear_opfs()
 
 
 
-
+-- boolean $main-content-loading: true
 
 ;; full-name of current file
 -- string $current-file: FASTN.ftd

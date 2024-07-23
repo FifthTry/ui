@@ -6,7 +6,7 @@
 css: $assets.files.components.editor.editor.css
 
 -- ftd.column:
-height.fixed.percent: 100
+height: fill-container
 classes if { vars.preview-maximized && vars.preview-visible }: hidden
 ;; both closed
 width.fixed.calc if { !vars.package && !vars.preview-visible }: 100% - 48px
@@ -20,8 +20,27 @@ width.fixed.calc if { !vars.package && vars.preview-visible && !vars.preview-max
 ;; left closed right open preview maximized: No-op, since this is hidden
 align-content: center
 
+-- ftd.column:
+classes if { vars.main-content-loading }: hidden
+height: fill-container
+width: fill-container
+
 -- cm-editor:
 $doc: $vars.doc
+
+-- end: ftd.column
+
+-- ftd.column:
+height: fill-container
+width: fill-container
+if: { vars.main-content-loading }
+align-content: center
+border-left-width.px: 3
+border-color:  #f5f5f5
+
+-- ftd.text: loading
+
+-- end: ftd.column
 
 -- end: ftd.column
 

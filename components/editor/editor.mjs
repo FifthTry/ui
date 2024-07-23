@@ -35,7 +35,9 @@ class CMEditor extends HTMLElement {
          */
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
-            syncToWorkspace(self.currentDocument, vu.state.doc.toString());
+            if (vu.docChanged()) {
+                syncToWorkspace(ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"), vu.state.doc.toString());
+            }
         }
 
         function get_extensions(language, update) {
@@ -79,9 +81,8 @@ class CMEditor extends HTMLElement {
         });
 
 
-        const syncToWorkspace = debounce((file_name, content) => {
-            const filepath = ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file");
-            window.ide_dispatch_event("save-unsaved-file", {file_path: filepath, content});
+        const syncToWorkspace = debounce((file_path, content) => {
+            window.ide_dispatch_event("save-unsaved-file", {file_path, content});
         }, 600);
     }
 }
