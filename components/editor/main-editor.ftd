@@ -21,6 +21,8 @@ width.fixed.calc if { !vars.package && vars.preview-visible && !vars.preview-max
 align-content: center
 
 -- ftd.column:
+;; we use class to hide this instead of using the `if: ` because if
+;; deletes the dom node, and that will lose editor state
 classes if { vars.main-content-loading }: hidden
 height: fill-container
 width: fill-container
@@ -31,9 +33,10 @@ $doc: $vars.doc
 -- end: ftd.column
 
 -- ftd.column:
+;; we use if here because its okay to delete this dom node
+if: { vars.main-content-loading }
 height: fill-container
 width: fill-container
-if: { vars.main-content-loading }
 align-content: center
 border-left-width.px: 3
 border-color:  #f5f5f5
