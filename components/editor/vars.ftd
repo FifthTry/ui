@@ -10,14 +10,7 @@
 
 -- boolean $opfs-enabled: true
 
--- package.data $package-data:
-name: FifthTry Main Site
-url: /
-slug: Anonymous
-updated-at: 0
-files: *$files
-folders: *$folders
-
+-- optional package.data $package-data:
 
 
 

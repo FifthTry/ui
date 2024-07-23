@@ -9,35 +9,7 @@ const MODIFIED_FILES = "modified-files";
 export function initialize_package_ui() {
     console.log("initialize_package_ui");
     let ftd_root = document.getElementById(ROOT_ID);
-    ftd2.render(
-        show_package_content, {
-            folders: [
-                {
-                    name: "m-blog",
-                    open: false,
-                    full_name: "m-blog",
-                    folders: [{
-                        name: "m-images",
-                        full_name: "m-images",
-                        open: false,
-                        folders: [],
-                        files: [
-                            {name: "m-first-image.jpg", url: "/", full_name: "m-first-image.jpg"},
-                        ],
-                    }],
-                    files: [
-                        {name: "m-index.ftd", url: "/", full_name: "m-index.ftd"},
-                        {name: "m-first-post.ftd", url: "/", full_name: "m-first-post.ftd"},
-                    ],
-                }
-            ],
-            files: [
-                {name: "m-FASTN.ftd", url: "/", full_name: "m-FASTN.ftd"},
-                {name: "m-index.ftd", url: "/", full_name: "m-index.ftd"},
-            ],
-            ftd_root
-        }, ftd_root
-    );
+    ftd2.render(show_package_content, {folders: [], files: [], ftd_root}, ftd_root);
 }
 
 export function update_package_content(folders, files) {
