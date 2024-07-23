@@ -34,7 +34,7 @@ overflow-y: auto
 
     -- ftd.column:
     id: package-content-placeholder
-    classes if { package.data != NULL }: hidden
+    classes if { package.data == NULL }: hidden
     width.fixed.percent: 100
 
     -- end: ftd.column
