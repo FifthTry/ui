@@ -35,7 +35,7 @@ class CMEditor extends HTMLElement {
          */
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
-            if (vu.docChanged()) {
+            if (vu.docChanged) {
                 syncToWorkspace(ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"), vu.state.doc.toString());
             }
         }
