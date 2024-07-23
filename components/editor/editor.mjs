@@ -6,7 +6,7 @@ import {python} from "@codemirror/lang-python";
 import {markdown} from "@codemirror/lang-markdown";
 import {html} from "@codemirror/lang-html";
 import {debounce} from "./debounce";
-import {update_package_content, initialize_package_ui} from "./panels/package/package-content";
+import {update_package_content, initialize_package_ui, update_current_file} from "./panels/package/package-content";
 
 
 class CMEditor extends HTMLElement {
@@ -109,9 +109,11 @@ window.ide_update_ftd_var = function (name, value) {
     value = JSON.parse(value);
     console.log('ide_update_ftd_var', name, value);
     if (name === "ui.fifthtry.com/components/editor/vars#package-data") {
-        update_package_content(value.folders, value.files)
+        update_package_content(value.folders, value.files);
     }
-
+    if (name === "ui.fifthtry.com/components/editor/vars#current-file") {
+        update_current_file(value);
+    }
     if (name === "ui.fifthtry.com/components/editor/vars#preview-content") {
         console.log('ide_update_ftd_var', name, "<html omitted>");
     } else {

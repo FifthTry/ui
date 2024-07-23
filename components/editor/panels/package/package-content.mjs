@@ -3,6 +3,7 @@ import * as preact from "preact";
 
 const ROOT_ID = "package-content-placeholder";
 const ROOT_DATA_KEY = "outer-folder";
+const CURRENT_FILE_KEY = "current-file";
 
 export function initialize_package_ui() {
     console.log("initialize_package_ui");
@@ -13,23 +14,25 @@ export function initialize_package_ui() {
                 {
                     name: "m-blog",
                     open: false,
+                    full_name: "m-blog",
                     folders: [{
                         name: "m-images",
+                        full_name: "m-images",
                         open: false,
                         folders: [],
                         files: [
-                            {open: false, name: "m-first-image.jpg", url: "/"},
+                            {name: "m-first-image.jpg", url: "/", full_name: "m-first-image.jpg"},
                         ],
                     }],
                     files: [
-                        {open: false, name: "m-index.ftd", url: "/"},
-                        {open: false, name: "m-first-post.ftd", url: "/"},
+                        {name: "m-index.ftd", url: "/", full_name: "m-index.ftd"},
+                        {name: "m-first-post.ftd", url: "/", full_name: "m-first-post.ftd"},
                     ],
                 }
             ],
             files: [
-                {open: true, name: "m-FASTN.ftd", url: "/"},
-                {open: false, name: "m-index.ftd", url: "/"}
+                {name: "m-FASTN.ftd", url: "/", full_name: "m-FASTN.ftd"},
+                {name: "m-index.ftd", url: "/", full_name: "m-index.ftd"},
             ],
             ftd_root
         }, ftd_root
@@ -41,18 +44,24 @@ export function update_package_content(folders, files) {
     ftd2.set_value(ROOT_ID, ROOT_DATA_KEY, {folders, files, name: "root", open: true});
 }
 
+export function update_current_file(current_file) {
+    console.log("update_current_file", current_file);
+    ftd2.set_value(ROOT_ID, CURRENT_FILE_KEY, current_file);
+}
+
 function show_package_content({folders, files, ftd_root}) {
-    console.log("show_package_content111", folders, files);
     let folder = new ftd2.FastnTik(
         {folders, files, name: "root", open: true}, ftd_root, ROOT_DATA_KEY
     );
-    console.log("folder", folder, folder.get());
-    return preact.h(show_folder, {folder, hide_name: true, level: 0});
+    let current_file = new ftd2.FastnTik(null, ftd_root, CURRENT_FILE_KEY).get();
+    return preact.h(show_folder, {folder, hide_name: true, level: 0, current_file});
 }
 
 const padding = (level) => `${level + 10}px`;
 
-const show_file = ({file, level}) => {
+const show_file = ({file, level, current_file}) => {
+    console.log("show_file", file.get(), level, current_file);
+
     return preact.h(
         "div", {
             style: {
@@ -61,7 +70,7 @@ const show_file = ({file, level}) => {
                 "padding-left": padding(level),
                 width: "100%",
                 gap: "2px",
-                "background": file.get().open ? "#f5f5f5" : "auto",
+                "background": file.get().full_name === current_file ? "#f5f5f5" : "white",
             }
         },
         preact.h(
@@ -72,7 +81,7 @@ const show_file = ({file, level}) => {
     )
 }
 
-const show_folder = ({folder, level, hide_name}) => {
+const show_folder = ({folder, level, hide_name, current_file}) => {
     // this is okay to do because level is not a mutable variable.
     // all mutable variables should be created using Tik, and updated
     // using the set method.
@@ -111,10 +120,12 @@ const show_folder = ({folder, level, hide_name}) => {
             ),
             open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
-                level: level + 1
+                level: level + 1,
+                current_file,
             })).concat(folder.index("files").map((f) => preact.h(show_file, {
                 file: f,
-                level: level + 1
+                level: level + 1,
+                current_file,
             }))) : [],
         ),
     );
