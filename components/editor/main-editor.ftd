@@ -23,7 +23,7 @@ align-content: center
 -- ftd.column:
 ;; we use class to hide this instead of using the `if: ` because if
 ;; deletes the dom node, and that will lose editor state
-classes if { vars.main-content-loading }: hidden
+classes if { vars.current-file == NULL }: hidden
 height: fill-container
 width: fill-container
 
@@ -34,7 +34,7 @@ $doc: $vars.doc
 
 -- ftd.column:
 ;; we use if here because its okay to delete this dom node
-if: { vars.main-content-loading }
+if: { vars.current-file == NULL }
 height: fill-container
 width: fill-container
 align-content: center
