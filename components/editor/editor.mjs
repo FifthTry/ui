@@ -133,7 +133,6 @@ window.ide_clear_opfs = async function () {
 
 window.ide_update_ftd_var = function (name, value) {
     value = JSON.parse(value);
-    console.log('ide_update_ftd_var', name, value);
     if (name === "ui.fifthtry.com/components/editor/vars#package-data") {
         update_package_content(value.folders, value.files);
     }
