@@ -1,12 +1,18 @@
 import {EditorView, basicSetup} from "codemirror";
 import {EditorState} from "@codemirror/state";
-import {ViewUpdate} from "@codemirror/view";
+import {ViewUpdate, keymap} from "@codemirror/view";
 import {javascript} from "@codemirror/lang-javascript";
 import {python} from "@codemirror/lang-python";
 import {markdown} from "@codemirror/lang-markdown";
 import {html} from "@codemirror/lang-html";
+import {indentWithTab} from "@codemirror/commands";
 import {debounce} from "./debounce";
-import {update_package_content, initialize_package_ui, update_current_file, update_modified_files} from "./panels/package/package-content";
+import {
+    update_package_content,
+    initialize_package_ui,
+    update_current_file,
+    update_modified_files
+} from "./panels/package/package-content";
 
 
 class CMEditor extends HTMLElement {
@@ -18,6 +24,13 @@ class CMEditor extends HTMLElement {
         this.currentDocument = "current";
         /** @type {Object<string, EditorState>} */
         this.documents = {};
+    }
+
+    saveCurrentFile() {
+        saveUnsavedFile(
+            ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"),
+            this.documents[this.currentDocument].doc.toString()
+        );
     }
 
     connectedCallback() {
@@ -36,14 +49,28 @@ class CMEditor extends HTMLElement {
         function update(vu) {
             self.documents[self.currentDocument] = vu.state;
             if (vu.docChanged) {
-                syncToWorkspace(ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"), vu.state.doc.toString());
+                self.saveCurrentFile();
             }
         }
 
         function get_extensions(language, update) {
-            // TODO: move this debounce inside rust wasm
-            let extensions = [basicSetup, javascript(), EditorView.updateListener.of(update)];
+            let extensions = [
+                basicSetup,
+                keymap.of([
+                    indentWithTab,
+                    {
+                        win: "Ctrl-S",
+                        linux: "Ctrl-S",
+                        mac: "Cmd-S",
+                        run() { trigger_save_event(); return true }
+                    }
+                ]),
+                EditorView.updateListener.of(update),
+            ];
             switch (language) {
+                case 'JavaScript':
+                    extensions.push(javascript());
+                    break;
                 case 'Python':
                     extensions.push(python());
                     break;
@@ -79,13 +106,12 @@ class CMEditor extends HTMLElement {
             });
             window.ide_cm_editor.setState(this.documents[this.currentDocument]);
         });
-
-
-        const syncToWorkspace = debounce((file_path, content) => {
-            window.ide_dispatch_event("save-unsaved-file", {file_path, content});
-        }, 600);
     }
 }
+
+const saveUnsavedFile = debounce((file_path, content) => {
+    window.ide_dispatch_event("save-unsaved-file", {file_path, content});
+}, 600);
 
 customElements.define('cm-editor', CMEditor);
 
