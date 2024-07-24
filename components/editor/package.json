@@ -7,6 +7,7 @@
     "@codemirror/lang-python": "^6.1.6",
     "@codemirror/state": "^6.4.1",
     "@codemirror/view": "^6.28.6",
+    "@replit/codemirror-indentation-markers": "^6.5.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "codemirror": "^6.0.1",
     "preact": "^10.22.1",

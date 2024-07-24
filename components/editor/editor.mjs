@@ -13,7 +13,7 @@ import {
     update_current_file,
     update_modified_files
 } from "./panels/package/package-content";
-
+import {indentationMarkers} from '@replit/codemirror-indentation-markers';
 
 class CMEditor extends HTMLElement {
     constructor() {
@@ -56,13 +56,17 @@ class CMEditor extends HTMLElement {
         function get_extensions(language, update) {
             let extensions = [
                 basicSetup,
+                indentationMarkers(),
                 keymap.of([
                     indentWithTab,
                     {
                         win: "Ctrl-s",
                         linux: "Ctrl-s",
                         mac: "Cmd-s",
-                        run() { trigger_save_event(); return true }
+                        run() {
+                            trigger_save_event();
+                            return true
+                        }
                     }
                 ]),
                 EditorView.updateListener.of(update),
