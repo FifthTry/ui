@@ -59,9 +59,9 @@ class CMEditor extends HTMLElement {
                 keymap.of([
                     indentWithTab,
                     {
-                        win: "Ctrl-S",
-                        linux: "Ctrl-S",
-                        mac: "Cmd-S",
+                        win: "Ctrl-s",
+                        linux: "Ctrl-s",
+                        mac: "Cmd-s",
                         run() { trigger_save_event(); return true }
                     }
                 ]),
