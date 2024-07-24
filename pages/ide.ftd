@@ -27,11 +27,9 @@ height: fill-container
 	
 		-- left-gutter.left-gutter:
 		
+        ;; only one of the below is visible (toggled through css `hidden` class)
 		-- package.package:
-        if: { vars.left-active-pannel == "package" }
-
         -- staging.staging:
-        if: { vars.left-active-pannel == "staging" }
 		
 		-- main-editor.main-editor:
 

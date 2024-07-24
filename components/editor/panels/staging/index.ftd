@@ -1,5 +1,12 @@
+-- import: ui.fifthtry.com/components/editor/vars
+
 -- component staging:
 
+-- ftd.column:
+classes if { vars.left-active-pannel != "staging" }: hidden
+
 -- ftd.text: Loading...
+
+-- end: ftd.column
 
 -- end: staging

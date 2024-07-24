@@ -10,6 +10,7 @@ boolean $hover: false
 -- ftd.column:
 width.fixed.px: 240
 height.fixed.percent: 100
+classes if { vars.left-active-pannel != "package" }: hidden
 $on-mouse-enter$: $ftd.set-bool($a=$package.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
 overflow-y: auto
