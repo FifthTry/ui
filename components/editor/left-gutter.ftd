@@ -8,7 +8,7 @@ width.fixed.px: $vars.panel-width
 height.fixed.percent: 100
 background.solid: #f5f5f5
 spacing: space-between
-border-right-width.px if { !vars.package }: 1
+border-right-width.px if { !vars.left-active-pannel != "" }: 1
 border-color: #ddd
 
 	-- ftd.column: ;; left sidebar panel icons
@@ -17,22 +17,46 @@ border-color: #ddd
 	align-content: top-center
 	padding-top.px: 5
 
+        ;; package icon (thin and fill variants)
         -- ftd.column:
-        classes if { !vars.package }: hidden
+        classes if { vars.left-active-pannel != "package" }: hidden
 
             -- phosphor.fill: package
             $on-click$: $vars.dispatch-event(name=package-panel-toggle)
-            $on-click$: $ftd.toggle($a=$vars.package)
+            $on-click$: $ftd.set-string($a=$vars.left-active-pannel, v=$ftd.empty)
             size: 20
 
         -- end: ftd.column
 
         -- ftd.column:
-        classes if { vars.package }: hidden
+        classes if { vars.left-active-pannel == "package" }: hidden
 
             -- phosphor.thin: package
             $on-click$: $vars.dispatch-event(name=package-panel-toggle)
-            $on-click$: $ftd.toggle($a=$vars.package)
+            $on-click$: $ftd.set-string($a=$vars.left-active-pannel, v=package)
+            size: 20
+
+        -- end: ftd.column
+
+        ;; staging icon (thin and fill variants)
+        -- ftd.column:
+        padding-top.px: 4
+        classes if { vars.left-active-pannel != "staging" }: hidden
+
+            -- phosphor.fill: git-commit
+            $on-click$: $vars.dispatch-event(name=package-panel-toggle)
+            $on-click$: $ftd.set-string($a=$vars.left-active-pannel, v=$ftd.empty)
+            size: 20
+
+        -- end: ftd.column
+
+        -- ftd.column:
+        padding-top.px: 4
+        classes if { vars.left-active-pannel == "staging" }: hidden
+
+            -- phosphor.thin: git-commit
+            $on-click$: $vars.dispatch-event(name=package-panel-toggle)
+            $on-click$: $ftd.set-string($a=$vars.left-active-pannel, v=staging)
             size: 20
 
         -- end: ftd.column

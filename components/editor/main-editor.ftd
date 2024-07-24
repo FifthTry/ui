@@ -9,14 +9,14 @@ css: $assets.files.components.editor.editor.css
 height: fill-container
 classes if { vars.preview-maximized && vars.preview-visible }: hidden
 ;; both closed
-width.fixed.calc if { !vars.package && !vars.preview-visible }: 100% - 48px
+width.fixed.calc if { vars.left-active-pannel == "" && !vars.preview-visible }: 100% - 48px
 ;; left open right closed
-width.fixed.calc if { vars.package && !vars.preview-visible }: 100% - 48px - 240px
+width.fixed.calc if { vars.left-active-pannel != "" && !vars.preview-visible }: 100% - 48px - 240px
 ;; left open right open preview normal
-width.fixed.calc if { vars.package && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 240px - 300px
+width.fixed.calc if { vars.left-active-pannel != "" && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 240px - 300px
 ;; left open right open preview maximized: No-op, since this is hidden
 ;; left closed right open preview normal
-width.fixed.calc if { !vars.package && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 300px
+width.fixed.calc if { vars.left-active-pannel == "" && vars.preview-visible && !vars.preview-maximized }: 100% - 48px - 300px
 ;; left closed right open preview maximized: No-op, since this is hidden
 align-content: center
 overflow-x: scroll

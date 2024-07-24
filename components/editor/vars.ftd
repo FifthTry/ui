@@ -6,7 +6,10 @@
 -- import: ui.fifthtry.com/assets
 
 ;; left panels
--- boolean $package: true
+;; possible values: package | staging | ""
+;; empty string means all left panels are collapsed
+-- string $left-active-pannel: package
+
 
 -- boolean $opfs-enabled: true
 

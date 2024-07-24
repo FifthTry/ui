@@ -6,6 +6,7 @@
 -- import: ui.fifthtry.com/components/editor/top-bar
 -- import: ui.fifthtry.com/components/editor/status-bar
 -- import: ui.fifthtry.com/components/editor/panels/package
+-- import: ui.fifthtry.com/components/editor/panels/staging
 -- import: ui.fifthtry.com/components/editor/panels/preview
 -- import: ui.fifthtry.com/components/editor/welcome-screen
 
@@ -27,6 +28,10 @@ height: fill-container
 		-- left-gutter.left-gutter:
 		
 		-- package.package:
+        if: { vars.left-active-pannel == "package" }
+
+        -- staging.staging:
+        if: { vars.left-active-pannel == "staging" }
 		
 		-- main-editor.main-editor:
 

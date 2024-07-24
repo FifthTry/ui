@@ -12,11 +12,11 @@ boolean $hover: false
 
 -- ftd.column:
 width.fixed.px: 300
-width.fixed.calc if { vars.preview-maximized && vars.package }: 100% - 48px - 240px
-width.fixed.calc if { vars.preview-maximized && !vars.package }: 100% - 48px
+width.fixed.calc if { vars.preview-maximized && vars.left-active-pannel != "" }: 100% - 48px - 240px
+width.fixed.calc if { vars.preview-maximized && vars.left-active-pannel == "" }: 100% - 48px
 height: fill-container
 classes if { !vars.preview-visible }: hidden
-border-left-width.px if { vars.preview-maximized && !vars.package }: 0
+border-left-width.px if { vars.preview-maximized && vars.left-active-pannel == "" }: 0
 border-left-width.px: 1
 border-color: #ddd
 id: right-panel
