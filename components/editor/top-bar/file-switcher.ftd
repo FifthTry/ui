@@ -8,13 +8,18 @@ file list files: $vars.recent-files
 $on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
 $on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
 
-    -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
-    color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
-    color: black
+    -- ftd.column:
+    if: { vars.current-file != NULL }
 
-    -- popup:
-    $open: $file-switcher.open
-    files: $file-switcher.files
+        -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
+        color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
+        color: black
+
+        -- popup:
+        $open: $file-switcher.open
+        files: $file-switcher.files
+
+    -- end: ftd.column
 
 -- end: ftd.column
 
@@ -32,23 +37,27 @@ $on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
 $on-click$: $ftd.set-boolean($a = $popup.open, v = false)
 /classes if { popup.open }: hover-popup-active
 /classes: hover-popup
-if: { popup.open }
 z-index: 10
 width.fixed.px: 260
-background.solid: #f5f5f5
-border-color: #ccc
-border-radius.px: 3
-border-width.px: 1
 anchor: parent
 left.px: -6
 top.px: -6
 ;; spacing.fixed.px: 5
 
+    -- ftd.column:
+    width: fill-container
+    background.solid: #f5f5f5
+    border-color: #ccc
+    border-radius.px: 3
+    border-width.px: 1
+    if: { popup.open }
 
--- show-file: $file
-for: $file, $idx in *$popup.files
-$hover: false
-$hover if { idx == 0 }: true
+        -- show-file: $file
+        for: $file, $idx in *$popup.files
+        $hover: false
+        $hover if { idx == 0 }: true
+
+    -- end: ftd.column
 
 
 -- end: ftd.column

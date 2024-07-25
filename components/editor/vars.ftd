@@ -200,7 +200,7 @@ ide_clear_opfs()
 
 
 ;; full-name of current file
--- string $current-file: Untitled
+-- optional string $current-file:
 
 
 
