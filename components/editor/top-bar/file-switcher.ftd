@@ -7,7 +7,6 @@ file list files: $vars.recent-files
 -- ftd.column:
 $on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
 $on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
-if: { vars.current-file != NULL }
 
     -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
     color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
