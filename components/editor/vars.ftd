@@ -8,6 +8,8 @@
 ;; left panels
 -- boolean $package: true
 
+-- boolean $only-show-modified-files: false
+
 -- boolean $opfs-enabled: true
 
 -- optional package.data $package-data:

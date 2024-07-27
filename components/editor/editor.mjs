@@ -11,7 +11,8 @@ import {
     update_package_content,
     initialize_package_ui,
     update_current_file,
-    update_modified_files
+    update_modified_files,
+    update_only_show_modified_files,
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
 
@@ -153,6 +154,13 @@ window.ide_update_ftd_var = function (name, value) {
     }
 
     ftd.set_value(name, value);
+}
+
+window.ide_toggle_only_show_modified_files = () => {
+    let name = "ui.fifthtry.com/components/editor/vars#only-show-modified-files";
+    let current = ftd.get_value(name);
+    ftd.set_value(name, !current);
+    update_only_show_modified_files(!current);
 }
 
 window.ide_get_ftd_var = function (name) {
