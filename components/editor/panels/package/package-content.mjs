@@ -44,7 +44,7 @@ function show_package_content({folders, files, ftd_root}) {
     );
 }
 
-const padding = (level) => `${level * 18}px`;
+const padding = (level) => `${(level - 1) * 18 + 8}px`;
 
 const show_file = ({file, level, current_file, modified_files, only_modified_files}) => {
     let full_name = file.get().full_name;
