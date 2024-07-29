@@ -121,7 +121,7 @@ border-color: #f5f5f5
 align-content: center
 
 	-- ftd.text: $package-name.name
-	link: { package-name.url }
+	link: $package-name.url
 	color: black
 
     -- ftd.row:
