@@ -145,6 +145,10 @@ window.ide_update_ftd_var = function (name, value) {
         update_current_file(value);
     }
     if (name === "ui.fifthtry.com/components/editor/vars#modified-files") {
+        if (value.length === 0) {
+            update_only_show_modified_files(false);
+            ftd.set_value("ui.fifthtry.com/components/editor/vars#only-show-modified-files", false);
+        }
         update_modified_files(value);
     }
     if (name === "ui.fifthtry.com/components/editor/vars#preview-content") {
