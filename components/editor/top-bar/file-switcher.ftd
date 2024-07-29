@@ -1,27 +1,38 @@
 -- import: ui.fifthtry.com/components/editor/vars
+-- import: fastn-community.github.io/svg-icons/phosphor
 
 -- component file-switcher:
 boolean $open: false
 file list files: $vars.recent-files
 
--- ftd.column:
-$on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
-$on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
+-- ftd.row:
+/spacing.fixed.px: 5
+
+    -- phosphor.thin: floppy-disk
+    if: { vars.show-save-button && !file-switcher.open }
+    $on-click$: trigger-save()
+    size: 20
 
     -- ftd.column:
-    if: { vars.current-file != NULL }
+    $on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
+    $on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
 
-        -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
-        color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
-        color: black
+        -- ftd.column:
+        if: { vars.current-file != NULL }
 
-        -- popup:
-        $open: $file-switcher.open
-        files: $file-switcher.files
+            -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
+            color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
+            color: black
+
+            -- popup:
+            $open: $file-switcher.open
+            files: $file-switcher.files
+
+        -- end: ftd.column
 
     -- end: ftd.column
 
--- end: ftd.column
+-- end: ftd.row
 
 -- end: file-switcher
 
@@ -104,5 +115,14 @@ caption name:               ;; full file name
 string package:             ;; full package name
 string url:
 ;; string file-type:
+
+
+
+-- void trigger-save():
+js: $assets.files.components.editor.function.js
+
+trigger_save_event()
+
+
 
 
