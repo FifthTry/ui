@@ -144,8 +144,8 @@ const show_folder = ({
                 preact.h("img",
                     {
                         src: open.get() ?
-                            "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-light.svg"
-                            : "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-open-light.svg",
+                            "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-open-light.svg"
+                            : "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-light.svg",
                         style: {
                             width: "16px",
                             height: "16px",
