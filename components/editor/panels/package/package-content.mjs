@@ -44,7 +44,7 @@ function show_package_content({folders, files, ftd_root}) {
     );
 }
 
-const padding = (level) => `${level * 10}px`;
+const padding = (level) => `${level * 18}px`;
 
 const show_file = ({file, level, current_file, modified_files, only_modified_files}) => {
     let full_name = file.get().full_name;
@@ -121,7 +121,6 @@ const show_folder = ({
             style: {
                 "padding-top": "2px",
                 "padding-bottom": "2px",
-                "padding-left": padding(level),
                 gap: "2px",
                 width: "100%",
                 "font-family": "monospace",
@@ -139,6 +138,7 @@ const show_folder = ({
                         gap: "5px",
                         width: "100%",
                         cursor: "pointer",
+                        "padding-left": padding(level),
                     }
                 },
                 preact.h("img",
