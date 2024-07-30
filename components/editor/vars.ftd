@@ -15,7 +15,8 @@
 -- optional package.data $package-data:
 
 
-
+-- boolean $new-file-dialog: false
+-- ftd.string-field $new-file-name: *$ftd.empty
 
 -- package-switcher.package list recent-packages:
 

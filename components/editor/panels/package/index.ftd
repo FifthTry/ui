@@ -124,6 +124,9 @@ align-content: center
 	link: $package-name.url
 	color: black
 
+    -- new-file-dialog:
+    if: { vars.new-file-dialog }
+
     -- ftd.row:
     spacing.fixed.px: 10
 
@@ -138,12 +141,90 @@ align-content: center
         $on-click$: $toggle-only-show-modified-files()
         size: 14
 
+        -- phosphor.light: plus
+        $on-click$: $ftd.toggle($a=$vars.new-file-dialog)
+        size: 14
+
+
     -- end: ftd.row
 
 -- end: ftd.row
 
 -- end: package-name
 
+
+
+-- component new-file-dialog:
+
+-- ftd.column:  ;; the dialog modal
+anchor: window
+width.fixed.px: 450
+border-radius.px: 8
+left.calc: 50% - 225px
+top.calc: 50% - 150px
+z-index: 20
+background.solid: white
+border-width.px: 4
+border-color: #f5f5f5
+
+    -- ftd.row: ;; header
+    width: fill-container
+    background.solid: #f5f5f5
+    padding.px: 10
+    spacing: space-between
+    border-top-left-radius.px: 8
+    border-top-right-radius.px: 8
+
+        -- ftd.text: Add File
+
+        -- ftd.text: NOT YET WORKING
+        color: red
+
+        -- phosphor.light: x
+        size: 14
+        $on-click$: $ftd.toggle($a=$vars.new-file-dialog)
+
+    -- end: ftd.row
+
+    -- ftd.row:
+    padding-horizontal.px: 10
+    padding-top.px: 10
+    width: fill-container
+    spacing.fixed.px: 6
+    align-content: left
+
+        -- ftd.text: Name:
+
+        -- ftd.text-input:
+        default-value: $vars.new-file-name.value
+        type: text
+        placeholder: filename.ftd
+        width: fill-container
+        padding.px: 8
+        height.fixed.px: 40
+        $on-input$: $ftd.set-string($a = $vars.new-file-name.value, v = $VALUE)
+
+        -- ftd.text: Create
+        $on-click$: $ftd.set-string($a = $vars.new-file-name.error, v = Ooops! Not yet working)
+
+    -- end: ftd.row
+
+    -- ftd.row:
+    if: { vars.new-file-name.error != NULL }
+    padding-horizontal.px: 10
+    padding-bottom.px: 10
+    align-content: center
+    width: fill-container
+
+    -- ftd.text: $vars.new-file-name.error
+    color: red
+
+    -- end: ftd.row
+
+
+-- end: ftd.column
+
+-- end: new-file-dialog
 
 -- component clear-only-modified-files:
 

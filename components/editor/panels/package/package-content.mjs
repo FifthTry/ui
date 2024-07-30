@@ -65,6 +65,7 @@ const show_file = ({file, level, current_file, modified_files, only_modified_fil
                 flexDirection: "row",
                 width: "100%",
                 gap: "3px",
+                background: full_name === current_file ? "#f5f5f5" : "white",
             },
             href: file.get().url
         }, preact.h("img",
@@ -94,7 +95,6 @@ const show_folder = ({
     // using the set method.
 
     if (!level) level = 0;
-    let open = folder.index("open");
 
     let full_name = parent_full_name === "" ? folder.get().name : `${parent_full_name}${folder.get().name}`;
     if (full_name === "root") {
@@ -102,6 +102,11 @@ const show_folder = ({
     } else {
         full_name = `${full_name}/`;
     }
+
+    // top level folder should be open by default and others closed
+    console.log(folder.get(), current_file, full_name);
+    let open = new ftd2.FastnTik(false);
+    let o = open.get() || (current_file ? current_file.indexOf(full_name) === 0 : full_name === "");
 
     if (only_modified_files) {
         let contains_a_modified_file = false;
@@ -143,7 +148,7 @@ const show_folder = ({
                 },
                 preact.h("img",
                     {
-                        src: open.get() ?
+                        src: o ?
                             "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-open-light.svg"
                             : "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-light.svg",
                         style: {
@@ -154,7 +159,7 @@ const show_folder = ({
                 ),
                 folder.get().name,
             ),
-            open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
+            o ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
                 level: level + 1,
                 current_file,
