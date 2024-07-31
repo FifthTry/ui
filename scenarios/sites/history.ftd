@@ -1,14 +1,59 @@
--- import: ui.fifthtry.com/pages/sites/site-info
+-- import: ui.fifthtry.com/pages/sites/history
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
 
 
--- site-info.page:
+-- history.page:
 site-data: scenario-site
 site: $acme-site
 dashboard-url: /scenarios/user/dashboard/
 user-data: $john-doe.jd
+data: $data
+
+
+
+-- sites-records.history-output data:
+changes: $changes
+next: /scenarios/sites/history/
+
+
+
+
+-- sites-records.history-change list changes:
+
+
+-- sites-records.history-change:
+document: FASTN.ftd
+at: 2024-07-10 11:01:26.763445126 UTC
+action: updated
+content: Hello
+editor-name: john doe
+language: ftd
+url: /scenarios/sites/single-doc-history/
+
+-- sites-records.history-change:
+document: index.ftd
+at: 2024-07-10 11:01:26.763445126 UTC
+action: updated
+content: Hello
+editor-name: john doe
+language: ftd
+url: /scenarios/sites/single-doc-history/
+
+-- sites-records.history-change:
+document: a.ftd
+at: 2024-07-10 11:01:26.763445126 UTC
+action: updated
+content: Hello
+editor-name: john doe
+language: ftd
+url: /scenarios/sites/single-doc-history/
+
+
+
+-- end: changes
+
 
 
 -- sites-records.site-common-data acme-site:

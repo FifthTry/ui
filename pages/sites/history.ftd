@@ -1,0 +1,131 @@
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/components/sites/page as sites-page
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+
+
+
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data:
+sites-records.site-common-data site:
+string dashboard-url:
+optional string top-message:
+caption sites-records.history-output data:
+
+-- sites-page.page:
+site-data: site-data
+user-data: $page.user-data
+site: $page.site
+dashboard-url: $page.dashboard-url
+current-page: history
+
+-- diff-ui: $page.data
+
+-- end: sites-page.page
+
+-- end: page
+
+
+
+-- component diff-ui:
+caption sites-records.history-output data:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+padding.px: 50
+
+    -- changes-ui:
+    changes: $diff-ui.data.changes
+
+-- end: ftd.column
+
+-- end: diff-ui
+
+
+
+
+
+-- component changes-ui:
+sites-records.history-change list changes:
+
+
+-- ftd.column:
+spacing.fixed.px: 20
+width.fixed.px: 800
+
+    -- ds.heading-large: History
+
+    -- ds.row:
+    spacing: $ds.spaces.horizontal-gap.space-between
+
+        -- ds.heading-small: $doc
+        if: { doc != NULL }
+
+        -- ds.copy-regular: Viewing history of single document. Click here to view all.
+        link: $data.site.history-url
+        if: { doc != NULL }
+
+    -- end: ds.row
+
+    -- change-ui: $obj
+    for: $obj in $changes-ui.changes
+
+    -- ftd.text: Next
+    link: $data.page.next
+    align-self: end
+    if: { data.page.next != NULL}
+
+-- end: ftd.column
+
+-- end: changes-ui
+
+
+
+
+
+
+
+-- component change-ui:
+caption sites-records.history-change change:
+
+-- ftd.column:
+background.solid: #eee
+spacing.fixed.px: 5
+link: $change-ui.change.url
+width: fill-container
+padding.px: 20
+
+    -- ftd.row:
+    width: fill-container
+    spacing: space-between
+
+    -- ftd.text: $change-ui.change.document
+    -- ftd.text: $change-ui.change.at
+    -- ftd.text: $change-ui.change.action
+
+    -- end: ftd.row
+
+    /-- ftd.code:
+    max-height.fixed.px: 200
+    width: fill-container
+    if: { doc != NULL }
+    lang: $change-ui.change.language
+
+    $change-ui.change.content
+
+    -- ftd.code:
+    max-height.fixed.px: 200
+    width: fill-container
+    lang: diff
+    if: { change-ui.change.diff != NULL }
+
+    $change-ui.change.diff
+
+
+-- end: ftd.column
+
+
+-- end: change-ui
