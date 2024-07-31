@@ -14,7 +14,6 @@ string dashboard-url:
 optional string top-message:
 caption sites-records.history-output data:
 optional string document:
-optional string next:
 
 -- sites-page.page:
 site-data: site-data
@@ -25,7 +24,6 @@ current-page: history
 
 -- diff-ui: $page.data
 document: $page.document
-next: $page.next
 site: $page.site
 
 -- end: sites-page.page
@@ -37,7 +35,6 @@ site: $page.site
 -- component diff-ui:
 caption sites-records.history-output data:
 optional string document:
-optional string next:
 sites-records.site-common-data site:
 
 -- ftd.column:
@@ -48,7 +45,7 @@ padding.px: 50
     -- changes-ui:
     changes: $diff-ui.data.changes
     document: $diff-ui.document
-    next: $diff-ui.next
+    next: $diff-ui.data.next
     site: $diff-ui.site
 
 -- end: ftd.column
