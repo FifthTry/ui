@@ -8,12 +8,15 @@
 ;; left panels
 -- boolean $package: true
 
+-- boolean $only-show-modified-files: false
+
 -- boolean $opfs-enabled: true
 
 -- optional package.data $package-data:
 
 
-
+-- boolean $command-k: false
+-- ftd.string-field $command-k-input: *$ftd.empty
 
 -- package-switcher.package list recent-packages:
 
@@ -220,4 +223,9 @@ string file_name:
 "`" + file_name + "`"
 
 
+
+-- void open-command-k(cmd):
+string cmd:
+
+ide_open_command_k(cmd)
 

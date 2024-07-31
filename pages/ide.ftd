@@ -4,7 +4,9 @@
 -- import: ui.fifthtry.com/components/editor/right-gutter
 -- import: ui.fifthtry.com/components/editor/main-editor
 -- import: ui.fifthtry.com/components/editor/top-bar
+-- import: ui.fifthtry.com/components/editor/vars
 -- import: ui.fifthtry.com/components/editor/status-bar
+-- import: ui.fifthtry.com/components/editor/command-k
 -- import: ui.fifthtry.com/components/editor/panels/package
 -- import: ui.fifthtry.com/components/editor/panels/preview
 -- import: ui.fifthtry.com/components/editor/welcome-screen
@@ -15,6 +17,7 @@
 -- ftd.column:
 width: fill-container
 height: fill-container
+$on-global-key[cmd-k]$: $ftd.toggle($a = $vars.command-k)
 
 	-- top-bar.top-bar:
 	
@@ -23,7 +26,10 @@ height: fill-container
 	height.fixed.calc: 100% - 45px - 35px ;; 45px is top-bar height, 35px is status-bar height
 	spacing: space-between
 	
-	
+
+	    -- command-k.popup:
+	    if: { vars.command-k }
+
 		-- left-gutter.left-gutter:
 		
 		-- package.package:

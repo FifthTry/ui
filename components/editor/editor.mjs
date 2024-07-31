@@ -11,7 +11,8 @@ import {
     update_package_content,
     initialize_package_ui,
     update_current_file,
-    update_modified_files
+    update_modified_files,
+    update_only_show_modified_files,
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
 
@@ -144,6 +145,10 @@ window.ide_update_ftd_var = function (name, value) {
         update_current_file(value);
     }
     if (name === "ui.fifthtry.com/components/editor/vars#modified-files") {
+        if (value.length === 0) {
+            update_only_show_modified_files(false);
+            ftd.set_value("ui.fifthtry.com/components/editor/vars#only-show-modified-files", false);
+        }
         update_modified_files(value);
     }
     if (name === "ui.fifthtry.com/components/editor/vars#preview-content") {
@@ -155,9 +160,22 @@ window.ide_update_ftd_var = function (name, value) {
     ftd.set_value(name, value);
 }
 
+window.ide_toggle_only_show_modified_files = () => {
+    let name = "ui.fifthtry.com/components/editor/vars#only-show-modified-files";
+    let current = ftd.get_value(name);
+    ftd.set_value(name, !current);
+    update_only_show_modified_files(!current);
+}
+
 window.ide_get_ftd_var = function (name) {
     const value = ftd.get_value(name);
     console.log('ide_get_ftd_var', name, value);
     return JSON.stringify(value);
 }
 
+window.ide_open_command_k = (cmd) => {
+    ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", true);
+    ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k",
+        {"name": "command-k", "value": cmd, "error": null}
+    );
+}

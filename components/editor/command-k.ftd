@@ -1,0 +1,74 @@
+-- import: ui.fifthtry.com/components/editor/vars
+-- import: fastn-community.github.io/svg-icons/phosphor
+
+-- component popup:
+
+-- ftd.column:  ;; the dialog modal
+anchor: window
+width.fixed.px: 450
+border-radius.px: 8
+left.calc: 50% - 225px
+top.calc: 50% - 150px
+z-index: 20
+background.solid: white
+border-width.px: 4
+border-color: #f5f5f5
+
+    -- ftd.row: ;; header
+    width: fill-container
+    background.solid: #f5f5f5
+    padding.px: 10
+    spacing: space-between
+    border-top-left-radius.px: 8
+    border-top-right-radius.px: 8
+
+        -- ftd.text: Add File
+
+        -- ftd.text: NOT YET WORKING
+        color: red
+
+        -- phosphor.light: x
+        size: 14
+        $on-click$: $ftd.toggle($a=$vars.command-k)
+
+    -- end: ftd.row
+
+    -- ftd.row:
+    padding-horizontal.px: 10
+    padding-top.px: 10
+    width: fill-container
+    spacing.fixed.px: 6
+    align-content: left
+
+        -- ftd.text: Name:
+
+        -- ftd.text-input:
+        default-value: $vars.command-k-input.value
+        type: text
+        placeholder: filename.ftd
+        width: fill-container
+        padding.px: 8
+        height.fixed.px: 40
+        $on-input$: $ftd.set-string($a = $vars.command-k-input.value, v = $VALUE)
+
+        -- ftd.text: Create
+        $on-click$: $ftd.set-string($a = $vars.command-k-input.error, v = Ooops! Not yet working)
+
+    -- end: ftd.row
+
+    -- ftd.row:
+    if: { vars.command-k-input.error != NULL }
+    padding-horizontal.px: 10
+    padding-bottom.px: 10
+    align-content: center
+    width: fill-container
+
+    -- ftd.text: $vars.command-k-input.error
+    color: red
+
+    -- end: ftd.row
+
+
+-- end: ftd.column
+
+-- end: popup
