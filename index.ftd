@@ -60,6 +60,10 @@ $processor$: pr.toc
   - Site Editor With Code Preview: /scenarios/sites/editor/
   - Site Editor With Image Preview: /scenarios/sites/editor/image-preview/
 
+- Site History Pages:
+  - Site History: /scenarios/sites/history/
+  - Document History: /scenarios/sites/history-document/
+
 - Packages
   - `fastn` Packages Homepage: /scenarios/packages/
   - Packages Search With Query: /scenarios/packages/with-query/

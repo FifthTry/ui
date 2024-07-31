@@ -98,7 +98,7 @@ string link:
 string document:
 string at:
 string action: ;; created, updated, deleted
-optional string diff:
+optional body diff:
 string content:
 string editor-name:
 string language:

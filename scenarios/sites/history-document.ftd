@@ -10,6 +10,8 @@ site: $acme-site
 dashboard-url: /scenarios/user/dashboard/
 user-data: $john-doe.jd
 data: $data
+document: FASTN.ftd
+next: /scenarios/sites/history/
 
 
 
@@ -30,25 +32,58 @@ action: updated
 content: Hello
 editor-name: john doe
 language: ftd
-url: /scenarios/sites/history-document/
+
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+-ftd.color border-color: $inherited.colors.border-strong
++ftd.color border-color: $inherited.colors.border-strong
+
+
+ \-- ds.code:
 
 -- sites-records.history-change:
-document: index.ftd
+document: FASTN.ftd
 at: 2024-07-10 11:01:26.763445126 UTC
 action: updated
 content: Hello
 editor-name: john doe
 language: ftd
-url: /scenarios/sites/history-document/
+
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+-ftd.color border-color: $inherited.colors.border-strong
++ftd.color border-color: $inherited.colors.border-strong
+
+
+ \-- ds.code:
 
 -- sites-records.history-change:
-document: a.ftd
+document: FASTN.ftd
 at: 2024-07-10 11:01:26.763445126 UTC
 action: updated
 content: Hello
 editor-name: john doe
 language: ftd
-url: /scenarios/sites/history-document/
+
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+-ftd.color border-color: $inherited.colors.border-strong
++ftd.color border-color: $inherited.colors.border-strong
+
+
+ \-- ds.code:
 
 
 
