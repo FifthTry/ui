@@ -5,6 +5,7 @@ string site-name:
 string site-slug:
 string primary-domain:
 string info-url:
+string history-url:
 string editor-url:
 string tokens-url:
 string github-url:

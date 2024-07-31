@@ -65,7 +65,12 @@ radius: $ds.radius.zero
 				/-- tab-link: Change Requests
 				is-active if { header.current-page == "cr" }: true
 				link: $header.site.cr-url
-				
+
+				-- tab-link: History
+                is-active if { header.current-page == "history" }: true
+                link: $header.site.history-url
+
+
 				-- tab-link: Settings
 				is-active if { header.current-page == "setting" }: true
 				link: $header.site.setting-url
