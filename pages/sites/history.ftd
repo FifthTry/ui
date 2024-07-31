@@ -75,14 +75,18 @@ width.fixed.px: 800
         -- ds.heading-small: $changes-ui.document
         if: { changes-ui.document != NULL }
 
-        -- ds.copy-regular: Viewing history of single document. Click here to view all.
+        -- ds.copy-regular:
         link: $changes-ui.site.history-url
+        width.fixed.px: 300
         if: { changes-ui.document != NULL }
+
+        Viewing history of single document. Click here to view entire site history.
 
     -- end: ds.row
 
     -- change-ui: $obj
     for: $obj in $changes-ui.changes
+    document: $changes-ui.document
 
     -- ftd.row:
     align-self: end
@@ -105,10 +109,11 @@ width.fixed.px: 800
 
 -- component change-ui:
 caption sites-records.history-change change:
+optional string document:
 
 -- ftd.column:
 background.solid: $ds.colors.background.step-2
-spacing.fixed.px: 5
+spacing.fixed.px: 10
 link: $change-ui.change.url
 width: fill-container
 padding.px: 20
@@ -119,15 +124,15 @@ border-radius.px: 5
     spacing: space-between
 
     -- ds.copy-regular: $change-ui.change.document
-    -- ds.copy-regular: $change-ui.change.at
+    -- ds.fine-print: $change-ui.change.at
     /-- ds.copy-regular: $change-ui.change.action
 
     -- end: ftd.row
 
-    /-- ftd.code:
+    -- ftd.code:
+    if: { change-ui.change.diff == NULL && change-ui.document != NULL }
     max-height.fixed.px: 200
     width: fill-container
-    if: { doc != NULL }
     lang: $change-ui.change.language
 
     $change-ui.change.content
