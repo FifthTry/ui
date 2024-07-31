@@ -15,8 +15,8 @@
 -- optional package.data $package-data:
 
 
--- boolean $new-file-dialog: false
--- ftd.string-field $new-file-name: *$ftd.empty
+-- boolean $command-k: false
+-- ftd.string-field $command-k-input: *$ftd.empty
 
 -- package-switcher.package list recent-packages:
 
@@ -223,4 +223,9 @@ string file_name:
 "`" + file_name + "`"
 
 
+
+-- void open-command-k(cmd):
+string cmd:
+
+ide_open_command_k(cmd)
 

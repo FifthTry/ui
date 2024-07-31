@@ -173,3 +173,9 @@ window.ide_get_ftd_var = function (name) {
     return JSON.stringify(value);
 }
 
+window.ide_open_command_k = (cmd) => {
+    ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", true);
+    ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k",
+        {"name": "command-k", "value": cmd, "error": null}
+    );
+}
