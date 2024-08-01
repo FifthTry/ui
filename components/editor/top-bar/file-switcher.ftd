@@ -11,6 +11,7 @@ file list files: $vars.recent-files
     -- phosphor.thin: floppy-disk
     if: { vars.show-save-button && !file-switcher.open }
     $on-click$: trigger-save()
+    /$on-click$: trigger-save(file=$vars.current-file)
     size: 20
 
     -- ftd.column:
@@ -122,6 +123,17 @@ string url:
 js: $assets.files.components.editor.function.js
 
 trigger_save_event()
+
+
+/-- void trigger-save(file):
+js: $assets.files.components.editor.function.js
+string file:
+
+ide_open_command_k("push " + file)
+
+
+
+
 
 
 

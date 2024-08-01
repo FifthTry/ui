@@ -22,7 +22,7 @@ border-color: #f5f5f5
     border-top-left-radius.px: 8
     border-top-right-radius.px: 8
 
-        -- ftd.text: Add File
+        -- ftd.text: Run Command (Ctrl-K or Cmd-K)
 
         -- ftd.text: NOT YET WORKING
         color: red
@@ -40,10 +40,10 @@ border-color: #f5f5f5
     spacing.fixed.px: 6
     align-content: left
 
-        -- ftd.text: Name:
+        -- ftd.text: Command:
 
         -- ftd.text-input:
-        default-value: $vars.command-k-input.value
+        value: $vars.command-k-input.value
         type: text
         placeholder: filename.ftd
         width: fill-container
@@ -51,7 +51,7 @@ border-color: #f5f5f5
         height.fixed.px: 40
         $on-input$: $ftd.set-string($a = $vars.command-k-input.value, v = $VALUE)
 
-        -- ftd.text: Create
+        -- ftd.text: Execute
         $on-click$: $ftd.set-string($a = $vars.command-k-input.error, v = Ooops! Not yet working)
 
     -- end: ftd.row

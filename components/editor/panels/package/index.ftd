@@ -139,7 +139,7 @@ align-content: center
         size: 14
 
         -- phosphor.light: plus
-        $on-click$: $vars.open-command-k(cmd="new-file")
+        $on-click$: $vars.open-command-k(cmd=new-file)
         size: 14
 
 
