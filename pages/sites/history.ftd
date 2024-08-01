@@ -124,6 +124,7 @@ border-radius.px: 5
     spacing: space-between
 
     -- ds.copy-regular: $change-ui.change.document
+    -- ds.fine-print: $change-ui.change.editor-name
     -- ds.fine-print: $change-ui.change.at
     /-- ds.copy-regular: $change-ui.change.action
 
