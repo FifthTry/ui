@@ -97,8 +97,9 @@ string link:
 -- record history-change:
 string document:
 string at:
-string action: ;; created, updated, deleted
+optional string action: ;; created, updated, deleted
 optional body diff:
+optional string diff-with-main:
 string content:
 string editor-name:
 string language:
