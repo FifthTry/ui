@@ -26,6 +26,47 @@ export function update_modified_files(modified_files) {
 
 export function update_current_file(current_file) {
     ftd2.set_value(ROOT_ID, CURRENT_FILE, current_file);
+    let p = ftd2.get_value(ROOT_ID, ROOT_DATA);
+
+    if (current_file == null) {
+        console.log("current_file is null");
+        return;
+    }
+
+    while (true) {
+        let [folder_name, rest] = first_folder_and_rest(current_file);
+        console.log(folder_name, rest);
+        if (folder_name === null) {
+            break;
+        }
+        let folder = find_folder(p.folders, folder_name);
+        console.log(folder);
+        if (folder === null) {
+            // should not happen:
+            throw new Error(`folder ${folder_name} not found`);
+        }
+        folder.open = true;
+        current_file = rest;
+        p = folder;
+    }
+}
+
+function first_folder_and_rest(path) {
+    let index = path.indexOf("/");
+    if (index === -1) {
+        return [null, path];
+    }
+    return [path.slice(0, index), path.slice(index + 1)];
+}
+
+
+function find_folder(folders, name) {
+    for (let i = 0; i < folders.length; i++) {
+        if (folders[i].name === name) {
+            return folders[i];
+        }
+    }
+    return null;
 }
 
 function show_package_content({folders, files, ftd_root}) {
@@ -105,8 +146,7 @@ const show_folder = ({
 
     // top level folder should be open by default and others closed
     console.log(folder.get(), current_file, full_name);
-    let open = new ftd2.FastnTik(false);
-    let o = open.get() || (current_file ? current_file.indexOf(full_name) === 0 : full_name === "");
+    let open = folder.index("open");
 
     if (only_modified_files) {
         let contains_a_modified_file = false;
@@ -148,7 +188,7 @@ const show_folder = ({
                 },
                 preact.h("img",
                     {
-                        src: o ?
+                        src: open.get() ?
                             "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-open-light.svg"
                             : "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-light.svg",
                         style: {
@@ -159,7 +199,7 @@ const show_folder = ({
                 ),
                 folder.get().name,
             ),
-            o ? folder.index("folders").map((f) => preact.h(show_folder, {
+            open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
                 level: level + 1,
                 current_file,
