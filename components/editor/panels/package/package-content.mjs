@@ -84,12 +84,15 @@ function show_package_content({folders, files, ftd_root}) {
         {folders, files, name: "root", open: true}, ftd_root, ROOT_DATA
     );
     let current_file = new ftd2.FastnTik(null, ftd_root, CURRENT_FILE).get();
+    let added_files = new ftd2.FastnTik([], ftd_root, ADDED_FILES).get();
     let modified_files = new ftd2.FastnTik([], ftd_root, MODIFIED_FILES).get();
+    let deleted_files = new ftd2.FastnTik([], ftd_root, DELETED_FILES).get();
     let only_modified_files = new ftd2.FastnTik(false, ftd_root, ONLY_MODIFIED_FILES).get();
     return preact.h(
         show_folder, {
             folder, hide_name: true, level: 0,
             current_file, modified_files, only_modified_files,
+            added_files, deleted_files,
             parent_full_name: "",
         }
     );
@@ -97,9 +100,11 @@ function show_package_content({folders, files, ftd_root}) {
 
 const padding = (level) => `${(level - 1) * 18 + 8}px`;
 
-const show_file = ({file, level, current_file, modified_files, only_modified_files}) => {
-    let full_name = file.get().full_name;
-    let is_modified = modified_files.indexOf(full_name) >= 0;
+const show_file = ({
+                       file, level, current_file, added_files, deleted_files,
+                       modified_files, only_modified_files
+                   }) => {
+    let is_modified = modified_files.indexOf(file.full_name) >= 0;
 
     if (only_modified_files && !is_modified) {
         return null;
@@ -116,9 +121,9 @@ const show_file = ({file, level, current_file, modified_files, only_modified_fil
                 flexDirection: "row",
                 width: "100%",
                 gap: "3px",
-                background: full_name === current_file ? "#f5f5f5" : "white",
+                background: file.full_name === current_file ? "#f5f5f5" : "white",
             },
-            href: file.get().url
+            href: file.url
         }, preact.h("img",
             {
                 src: "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/file-text-light.svg",
@@ -128,7 +133,7 @@ const show_file = ({file, level, current_file, modified_files, only_modified_fil
                 },
             }
         ),
-        file.get().name
+        file.name
     )
 }
 
@@ -139,6 +144,8 @@ const show_folder = ({
                          hide_name,
                          current_file,
                          modified_files,
+                         added_files,
+                         deleted_files,
                          only_modified_files
                      }) => {
     // this is okay to do because level is not a mutable variable.
@@ -155,7 +162,6 @@ const show_folder = ({
     }
 
     // top level folder should be open by default and others closed
-    console.log(folder.get(), current_file, full_name);
     let open = folder.index("open");
 
     if (only_modified_files) {
@@ -215,12 +221,14 @@ const show_folder = ({
                 current_file,
                 modified_files,
                 only_modified_files,
+                added_files, deleted_files,
                 parent_full_name: full_name,
             })).concat(folder.index("files").map((f) => preact.h(show_file, {
-                file: f,
+                file: f.get(),
                 level: level + 1,
                 current_file,
                 modified_files,
+                added_files, deleted_files,
                 only_modified_files,
             }))) : [],
         ),
