@@ -1,21 +1,22 @@
--- import: ui.fifthtry.com/pages/sites/history
+-- import: ui.fifthtry.com/pages/history/single-change
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
 
 
--- history.page:
+-- single-change.page:
 site-data: scenario-site
 site: $acme-site
 dashboard-url: /scenarios/user/dashboard/
 user-data: $john-doe.jd
 data: $data
+document: FASTN.ftd
 
 
 
 -- sites-records.history-output data:
 changes: $changes
-next: /scenarios/sites/history/
+next: /scenarios/history/
 
 
 
@@ -30,29 +31,43 @@ action: updated
 content: Hello
 editor-name: john doe
 language: ftd
-url: /scenarios/sites/history-document/
+diff-with-latest: $diff-with-latest
 
--- sites-records.history-change:
-document: index.ftd
-at: 2024-07-10 11:01:26.763445126 UTC
-action: updated
-content: Hello
-editor-name: john doe
-language: ftd
-url: /scenarios/sites/history-document/
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+-ftd.color border-color: $inherited.colors.border-strong
++ftd.color border-color: $inherited.colors.border-strong
 
--- sites-records.history-change:
-document: a.ftd
-at: 2024-07-10 11:01:26.763445126 UTC
-action: updated
-content: Hello
-editor-name: john doe
-language: ftd
-url: /scenarios/sites/history-document/
+
+ \-- ds.code:
 
 
 
 -- end: changes
+
+
+
+
+
+-- string diff-with-latest:
+
+
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
++string title: This is the latest
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+ ftd.color border-color: $inherited.colors.border-strong
+
+
+ \-- ds.code:
+
 
 
 
@@ -62,7 +77,7 @@ site-name: Acme, Inc
 site-slug: acme
 primary-domain: acme.com
 info-url: /scenarios/sites/site-info/
-history-url: /scenarios/sites/history/
+history-url: /scenarios/history/
 github-url: /scenarios/sites/setting/github/
 domains-url: /scenarios/sites/setting/domains/
 editor-url: /scenarios/sites/editor/

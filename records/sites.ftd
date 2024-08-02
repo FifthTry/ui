@@ -99,7 +99,7 @@ string document:
 string at:
 optional string action: ;; created, updated, deleted
 optional body diff:
-optional string diff-with-main:
+optional string diff-with-latest:
 string content:
 string editor-name:
 string language:

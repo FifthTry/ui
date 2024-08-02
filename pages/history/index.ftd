@@ -125,22 +125,23 @@ border-radius.px: 5
 
     -- ds.copy-regular: $change-ui.change.document
     -- ds.fine-print: $change-ui.change.editor-name
+    /-- ds.fine-print: $change-ui.change.action
+    if: { change-ui.document != NULL }
+
     -- ds.fine-print: $change-ui.change.at
     /-- ds.copy-regular: $change-ui.change.action
 
     -- end: ftd.row
 
-    -- ftd.code:
+    -- ds.code:
     if: { change-ui.change.diff == NULL && change-ui.document != NULL }
     max-height.fixed.px: 200
-    width: fill-container
     lang: $change-ui.change.language
 
     $change-ui.change.content
 
-    -- ftd.code:
+    -- ds.code:
     max-height.fixed.px: 200
-    width: fill-container
     lang: diff
     if: { change-ui.change.diff != NULL }
 

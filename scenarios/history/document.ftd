@@ -1,4 +1,4 @@
--- import: ui.fifthtry.com/pages/sites/history
+-- import: ui.fifthtry.com/pages/history
 -- import: ui.fifthtry.com/records/sites as sites-records
 -- import: ui.fifthtry.com/scenarios/john-doe
 -- import: ui.fifthtry.com/scenarios/scenario-site
@@ -16,7 +16,7 @@ document: FASTN.ftd
 
 -- sites-records.history-output data:
 changes: $changes
-next: /scenarios/sites/history/
+next: /scenarios/history/
 
 
 
@@ -31,6 +31,7 @@ action: updated
 content: Hello
 editor-name: john doe
 language: ftd
+url: /scenarios/history/single/
 
 \--- original
 \+++ modified
@@ -51,6 +52,7 @@ action: updated
 content: Hello
 editor-name: john doe
 language: ftd
+url: /scenarios/history/single/
 
 \--- original
 \+++ modified
@@ -71,6 +73,7 @@ action: updated
 content: Hello
 editor-name: john doe
 language: ftd
+url: /scenarios/history/single/
 
 \--- original
 \+++ modified
@@ -96,7 +99,7 @@ site-name: Acme, Inc
 site-slug: acme
 primary-domain: acme.com
 info-url: /scenarios/sites/site-info/
-history-url: /scenarios/sites/history/
+history-url: /scenarios/history/
 github-url: /scenarios/sites/setting/github/
 domains-url: /scenarios/sites/setting/domains/
 editor-url: /scenarios/sites/editor/
