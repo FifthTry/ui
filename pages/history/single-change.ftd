@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/components/sites/page as sites-page
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
+-- import: fastn-community.github.io/svg-icons/phosphor
 
 
 
@@ -69,24 +70,10 @@ width.fixed.px: 800
 
     -- ds.heading-large: History
 
-    -- ds.row:
-    spacing: $ds.spaces.horizontal-gap.space-between
-
-        -- ds.heading-small: $changes-ui.document
-        if: { changes-ui.document != NULL }
-
-        -- ds.copy-regular:
-        link: $changes-ui.site.history-url
-        width.fixed.px: 300
-        if: { changes-ui.document != NULL }
-
-        Viewing history of single document. Click here to view entire site history.
-
-    -- end: ds.row
-
     -- change-ui: $obj
     for: $obj in $changes-ui.changes
     document: $changes-ui.document
+    site: $changes-ui.site
 
     -- ftd.row:
     align-self: end
@@ -110,61 +97,129 @@ width.fixed.px: 800
 -- component change-ui:
 caption sites-records.history-change change:
 optional string document:
+sites-records.site-common-data site:
 
--- ftd.column:
-background.solid: $ds.colors.background.step-2
-spacing.fixed.px: 10
-link: $change-ui.change.url
-width: fill-container
-padding.px: 20
-border-radius.px: 5
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.large
 
-    -- ftd.row:
+    -- ds.row:
+    spacing: $ds.spaces.horizontal-gap.space-between
+
+        -- ftd.column:
+        spacing.fixed.px: 10
+        color: $ds.colors.text-strong
+
+            -- ds.heading-small: $change-ui.document
+            if: { change-ui.document != NULL }
+
+            -- ftd.integer: $change-ui.change.at
+            role: $ds.types.heading-tiny
+
+        -- end: ftd.column
+
+        -- ds.copy-regular:
+        link: $change-ui.site.history-url
+        width.fixed.px: 300
+        if: { change-ui.document != NULL }
+
+        Click here to view entire site history.
+
+    -- end: ds.row
+
+    -- ftd.column:
+    background.solid: $ds.colors.background.step-2
+    spacing.fixed.px: 10
+    link: $change-ui.change.url
     width: fill-container
-    spacing: space-between
+    padding.px: 20
+    border-radius.px: 5
 
-    -- ds.copy-regular: $change-ui.change.document
-    -- ds.fine-print: $change-ui.change.editor-name
-    -- ds.fine-print: $change-ui.change.action
-    if: { change-ui.change.action != NULL }
+        -- ftd.row:
+        width: fill-container
+        spacing: space-between
+        align-content: center
 
-    -- ds.fine-print: $change-ui.change.at
+            -- ftd.row:
+            spacing.fixed.px: 5
+            align-content: center
 
+                -- phosphor.thin: pencil
+                size: 18
+                if: { change-ui.change.action != NULL && change-ui.change.action == "updated" }
 
-    -- end: ftd.row
+                -- phosphor.thin: file-plus
+                size: 18
+                if: { change-ui.change.action != NULL && change-ui.change.action == "created" }
 
-    -- ds.fine-print: Content
-    if: { change-ui.change.content != "" }
+                -- phosphor.thin: trash
+                size: 18
+                if: { change-ui.change.action != NULL && change-ui.change.action == "deleted" }
 
-    -- ds.code:
-    if: { change-ui.change.content != "" }
-    max-height.fixed.px: 200
-    lang: $change-ui.change.language
+                -- ds.copy-regular: $change-ui.change.document
 
-    $change-ui.change.content
-
-    -- ds.fine-print: Diff with previous version
-    if: { change-ui.change.diff != NULL }
-
-    -- ds.code:
-    max-height.fixed.px: 200
-    lang: diff
-    if: { change-ui.change.diff != NULL }
-
-    $change-ui.change.diff
-
-    -- ds.fine-print: Diff with latest version
-    if: { change-ui.change.diff-with-latest != NULL }
-
-    -- ds.code:
-    if: { change-ui.change.diff-with-latest != NULL }
-    max-height.fixed.px: 200
-    lang: diff
-
-    $change-ui.change.diff-with-latest
+            -- end: ftd.row
 
 
--- end: ftd.column
+            -- ftd.row:
+            spacing.fixed.px: 5
+            align-content: center
+            color: $ds.colors.text
+            role: $ds.types.fine-print
+
+                -- ds.fine-print: $with-comma(name = $change-ui.change.editor-name)
+                -- display-time: $change-ui.change.at
+
+            -- end: ftd.row
+
+        -- end: ftd.row
+
+        -- ds.fine-print: Content
+        if: { change-ui.change.content != "" }
+
+        -- ds.code:
+        if: { change-ui.change.content != "" }
+        max-height.fixed.px: 200
+        lang: $change-ui.change.language
+
+        $change-ui.change.content
+
+        -- ds.fine-print: Diff with previous version
+        if: { change-ui.change.diff != NULL }
+
+        -- ds.code:
+        max-height.fixed.px: 200
+        lang: diff
+        if: { change-ui.change.diff != NULL }
+
+        $change-ui.change.diff
+
+        -- ds.fine-print: Diff with latest version
+        if: { change-ui.change.diff-with-latest != NULL }
+
+        -- ds.code:
+        if: { change-ui.change.diff-with-latest != NULL }
+        max-height.fixed.px: 200
+        lang: diff
+
+        $change-ui.change.diff-with-latest
+
+
+    -- end: ftd.column
+
+-- end: ds.column
 
 
 -- end: change-ui
+
+
+
+-- web-component display-time:
+caption integer timestamp:
+js: $assets.files.web-components.display-time.js
+
+
+
+-- string with-comma(name):
+string name:
+
+name + ","

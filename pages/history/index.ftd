@@ -2,6 +2,7 @@
 -- import: ui.fifthtry.com/components/sites/page as sites-page
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
+-- import: fastn-community.github.io/svg-icons/phosphor
 
 
 
@@ -122,14 +123,44 @@ border-radius.px: 5
     -- ftd.row:
     width: fill-container
     spacing: space-between
+    align-content: center
 
-    -- ds.copy-regular: $change-ui.change.document
-    -- ds.fine-print: $change-ui.change.editor-name
-    /-- ds.fine-print: $change-ui.change.action
-    if: { change-ui.document != NULL }
 
-    -- ds.fine-print: $change-ui.change.at
-    /-- ds.copy-regular: $change-ui.change.action
+        -- ftd.row:
+        spacing.fixed.px: 5
+        align-content: center
+        color: $ds.colors.text
+        role: $ds.types.copy-regular
+
+            -- phosphor.thin: pencil
+            size: 18
+            if: { change-ui.change.action != NULL && change-ui.change.action == "updated" }
+
+            -- phosphor.thin: file-plus
+            size: 18
+            if: { change-ui.change.action != NULL && change-ui.change.action == "created" }
+
+            -- phosphor.thin: trash
+            size: 18
+            if: { change-ui.change.action != NULL && change-ui.change.action == "deleted" }
+
+            -- ds.copy-regular: $change-ui.change.document
+            -- ds.copy-regular: at
+            -- ftd.integer: $change-ui.change.at
+
+        -- end: ftd.row
+
+
+        -- ftd.row:
+        spacing.fixed.px: 5
+        align-content: center
+        color: $ds.colors.text
+        role: $ds.types.fine-print
+
+            -- ds.fine-print: $with-comma(name = $change-ui.change.editor-name)
+            -- display-time: $change-ui.change.at
+
+        -- end: ftd.row
 
     -- end: ftd.row
 
@@ -152,3 +183,21 @@ border-radius.px: 5
 
 
 -- end: change-ui
+
+
+
+
+
+
+-- web-component display-time:
+caption integer timestamp:
+js: $assets.files.web-components.display-time.js
+
+
+
+
+
+-- string with-comma(name):
+string name:
+
+name + ","
