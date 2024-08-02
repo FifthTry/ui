@@ -136,28 +136,45 @@ window.ide_clear_opfs = async function () {
     console.log("done deleting");
 }
 
+function v(name) {
+    return `ui.fifthtry.com/components/editor/vars#${name[0]}`;
+}
+
+const VAR_PACKAGE_DATA = v`package-data`;
+const VAR_CURRENT_FILE = v`current-file`;
+const VAR_ADDED_FILES = v`added-files`;
+const VAR_MODIFIED_FILES = v`modified-files`;
+const VAR_DELETED_FILES = v`deleted-files`;
+const VAR_ONLY_MODIFIED_FILES = v`only-show-modified-files`;
+const VAR_PREVIEW_CONTENT = v`preview-content`;
+
 window.ide_update_ftd_var = function (name, value) {
     value = JSON.parse(value);
-    if (name === "ui.fifthtry.com/components/editor/vars#package-data") {
-        update_package_content(value.folders, value.files);
-    }
-    if (name === "ui.fifthtry.com/components/editor/vars#current-file") {
-        update_current_file(value);
-    }
-    if (name === "ui.fifthtry.com/components/editor/vars#modified-files") {
-        if (value.length === 0) {
-            update_only_show_modified_files(false);
-            ftd.set_value("ui.fifthtry.com/components/editor/vars#only-show-modified-files", false);
-        }
-        update_modified_files(value);
-    }
-    if (name === "ui.fifthtry.com/components/editor/vars#preview-content") {
+
+    if (name === VAR_PACKAGE_DATA) update_package_content(value.folders, value.files);
+    if (name === VAR_CURRENT_FILE) update_current_file(value);
+    if (name === VAR_ADDED_FILES) update_added_files(value);
+    if (name === VAR_MODIFIED_FILES) update_modified_files(value);
+    if (name === VAR_DELETED_FILES) update_deleted_files(value);
+
+    if (name === VAR_PREVIEW_CONTENT) {
         console.log('ide_update_ftd_var', name, "<html omitted>");
     } else {
         console.log('ide_update_ftd_var', name, value);
     }
 
     ftd.set_value(name, value);
+    const g = ftd.get_value;
+
+    if (
+        g(VAR_ONLY_MODIFIED_FILES)
+        && g(VAR_MODIFIED_FILES).length === 0
+        && g(VAR_DELETED_FILES).length === 0
+        && g(VAR_ADDED_FILES).length === 0
+    ) {
+        ftd.set_value(VAR_ONLY_MODIFIED_FILES, false);
+        update_only_show_modified_files(false);
+    }
 }
 
 window.ide_toggle_only_show_modified_files = () => {

@@ -4,7 +4,9 @@ import * as preact from "preact";
 const ROOT_ID = "package-content-placeholder";
 const ROOT_DATA = "outer-folder";
 const CURRENT_FILE = "current-file";
+const ADDED_FILES = "added-files";
 const MODIFIED_FILES = "modified-files";
+const DELETED_FILES = "deleted-files";
 const ONLY_MODIFIED_FILES = "only-modified-files";
 
 export function initialize_package_ui() {
@@ -20,8 +22,16 @@ export function update_only_show_modified_files(value) {
     ftd2.set_value(ROOT_ID, ONLY_MODIFIED_FILES, value);
 }
 
-export function update_modified_files(modified_files) {
-    ftd2.set_value(ROOT_ID, MODIFIED_FILES, modified_files);
+export function update_added_files(files) {
+    ftd2.set_value(ROOT_ID, ADDED_FILES, files);
+}
+
+export function update_modified_files(files) {
+    ftd2.set_value(ROOT_ID, MODIFIED_FILES, files);
+}
+
+export function update_deleted_files(files) {
+    ftd2.set_value(ROOT_ID, DELETED_FILES, files);
 }
 
 export function update_current_file(current_file) {
