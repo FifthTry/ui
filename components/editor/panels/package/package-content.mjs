@@ -104,6 +104,10 @@ const show_file = ({
                        file, level, current_file, added_files, deleted_files,
                        modified_files, only_modified_files
                    }) => {
+    // file.full-name: to be compared with modified and deleted
+    // file.name: to be shown in ui
+    // file.url: as click target
+    // file.language: to pick the file icon
     let is_modified = modified_files.indexOf(file.full_name) >= 0;
 
     if (only_modified_files && !is_modified) {

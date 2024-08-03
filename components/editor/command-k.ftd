@@ -36,35 +36,12 @@ border-color: #f5f5f5
     -- ftd.row:
     padding-horizontal.px: 10
     padding-top.px: 10
+    padding-bottom.px: 10
     width: fill-container
     spacing.fixed.px: 6
     align-content: left
 
-        -- ftd.text: Command:
-
-        -- ftd.text-input:
-        value: $vars.command-k-input.value
-        type: text
-        placeholder: filename.ftd
-        width: fill-container
-        padding.px: 8
-        height.fixed.px: 40
-        $on-input$: $ftd.set-string($a = $vars.command-k-input.value, v = $VALUE)
-
-        -- ftd.text: Execute
-        $on-click$: $ftd.set-string($a = $vars.command-k-input.error, v = Ooops! Not yet working)
-
-    -- end: ftd.row
-
-    -- ftd.row:
-    if: { vars.command-k-input.error != NULL }
-    padding-horizontal.px: 10
-    padding-bottom.px: 10
-    align-content: center
-    width: fill-container
-
-    -- ftd.text: $vars.command-k-input.error
-    color: red
+        -- command-editor:
 
     -- end: ftd.row
 
@@ -72,3 +49,6 @@ border-color: #f5f5f5
 -- end: ftd.column
 
 -- end: popup
+
+-- web-component command-editor:
+js: $assets.files.components.editor.editor-bundle.js

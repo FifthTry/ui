@@ -15,8 +15,7 @@
 -- optional package.data $package-data:
 
 
--- boolean $command-k: false
--- ftd.string-field $command-k-input: *$ftd.empty
+-- boolean $command-k: true
 
 -- package-switcher.package list recent-packages:
 

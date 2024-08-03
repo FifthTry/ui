@@ -15,6 +15,8 @@ import {
     update_only_show_modified_files,
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
+import {CommandEditor} from "./command-editor";
+
 
 class CMEditor extends HTMLElement {
     constructor() {
@@ -58,12 +60,11 @@ class CMEditor extends HTMLElement {
             let extensions = [
                 basicSetup,
                 indentationMarkers(),
+                EditorState.tabSize.of(4),
                 keymap.of([
                     indentWithTab,
                     {
-                        win: "Ctrl-s",
-                        linux: "Ctrl-s",
-                        mac: "Cmd-s",
+                        key: "Mod-s",
                         run() {
                             trigger_save_event();
                             return true
@@ -119,6 +120,7 @@ const saveUnsavedFile = debounce((file_path, content) => {
 }, 600);
 
 customElements.define('cm-editor', CMEditor);
+customElements.define('command-editor', CommandEditor);
 
 window.ide_dispatch_event = function (name, data) {
     console.log('ide_dispatch_event', data);
