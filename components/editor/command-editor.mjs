@@ -1,6 +1,6 @@
 import {EditorView, minimalSetup} from "codemirror";
 import {keymap} from "@codemirror/view";
-import {defaultKeymap} from "@codemirror/commands";
+import {insertNewlineAndIndent} from "@codemirror/commands";
 
 export class CommandEditor extends HTMLElement {
     constructor() {
@@ -19,10 +19,14 @@ export class CommandEditor extends HTMLElement {
             extensions: [
                 keymap.of([
                     {
+                        key: "Alt-Enter",
+                        run: insertNewlineAndIndent
+                    },
+                    {
                         key: "Enter",
                         run() {
                             console.log("enter pressed");
-                            return true
+                            return true;
                         }
                     }
                 ]),
