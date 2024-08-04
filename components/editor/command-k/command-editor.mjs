@@ -17,11 +17,8 @@ export class CommandEditor extends HTMLElement {
         console.log("CommandEditor connectedCallback");
         this.editor = new EditorView({
             extensions: [
+                enterIs(["Alt-Enter", "Cmd-Enter", "Ctrl-Enter", "Shift-Enter"]),
                 keymap.of([
-                    enterIs("Alt-Enter"),
-                    enterIs("Cmd-Enter"),
-                    enterIs("Ctrl-Enter"),
-                    enterIs("Shift-Enter"),
                     escapeKey(),
                     {
                         key: "Enter",
@@ -40,7 +37,6 @@ export class CommandEditor extends HTMLElement {
     }
 }
 
-
 function escapeKey() {
     return {key: "Escape", run() {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
@@ -48,6 +44,8 @@ function escapeKey() {
     }};
 }
 
-function enterIs (key) {
-    return {key, run: insertNewlineAndIndent};
+function enterIs (keys) {
+    return keys.map((key) => {
+        return keymap.of({key, run: insertNewlineAndIndent});
+    });
 }
