@@ -23,13 +23,15 @@ export class CommandEditor extends HTMLElement {
 }
 
 function escapeKey() {
-    return {key: "Escape", run() {
-        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
-        return false;
-    }};
+    return {
+        key: "Escape", run() {
+            ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
+            return false;
+        }
+    };
 }
 
-function enterIs (keys) {
+function enterIs(keys) {
     return keys.map((key) => {
         return keymap.of([{key, run: insertNewlineAndIndent}]);
     });
@@ -57,11 +59,15 @@ function get_extensions() {
                 run() {
                     console.log("enter pressed");
                     let tree = p.parse(window.command_editor.state.doc.toString());
-                    tree.iterate({
-                        enter: (node) => {
-                            console.log(node.type, window.command_editor.state.doc.sliceString(node.from, node.to));
-                        }
-                    })
+                    if (!!window.ide_parse_command) {
+                        window.ide_parse_command(window.command_editor.state.doc, tree);
+                    } else {
+                        tree.iterate({
+                            enter: (node) => {
+                                console.log(node.type, window.command_editor.state.doc.sliceString(node.from, node.to));
+                            }
+                        })
+                    }
                     return true;
                 }
             }
