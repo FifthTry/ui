@@ -1,7 +1,7 @@
 import {EditorView, minimalSetup} from "codemirror";
 import {keymap} from "@codemirror/view";
 import {insertNewlineAndIndent} from "@codemirror/commands";
-import {example} from "./language";
+import {example, p} from "./language";
 
 export class CommandEditor extends HTMLElement {
     constructor() {
@@ -56,6 +56,12 @@ function get_extensions() {
                 key: "Enter",
                 run() {
                     console.log("enter pressed");
+                    let tree = p.parse(window.command_editor.state.doc.toString());
+                    tree.iterate({
+                        enter: (node) => {
+                            console.log(node.type, window.command_editor.state.doc.sliceString(node.from, node.to));
+                        }
+                    })
                     return true;
                 }
             }

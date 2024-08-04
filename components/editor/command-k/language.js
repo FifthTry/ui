@@ -6,7 +6,7 @@ export const EXAMPLELanguage = LRLanguage.define({
     parser: parser.configure({
         props: [
             styleTags({
-                Identifier: t.literal,
+                FileName: t.literal,
                 AddFile: t.keyword,
                 LineComment: t.lineComment,
             })
@@ -20,3 +20,5 @@ export const EXAMPLELanguage = LRLanguage.define({
 export function example() {
     return new LanguageSupport(EXAMPLELanguage)
 }
+
+export let p = parser;
