@@ -2,7 +2,6 @@ import {EditorView, minimalSetup} from "codemirror";
 import {keymap} from "@codemirror/view";
 import {insertNewlineAndIndent} from "@codemirror/commands";
 import {example} from "./language";
-import {EditorState} from "@codemirror/state";
 
 export class CommandEditor extends HTMLElement {
     constructor() {
@@ -13,7 +12,6 @@ export class CommandEditor extends HTMLElement {
     }
 
     connectedCallback() {
-        // let self = this;
         console.log("CommandEditor connectedCallback");
         window.command_editor = new EditorView({
             extensions: get_extensions(),
@@ -46,6 +44,7 @@ window.ide_open_command_k = (cmd) => {
             insert: cmd
         }
     });
+    window.command_editor.focus();
 }
 
 function get_extensions() {

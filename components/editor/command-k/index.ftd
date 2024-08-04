@@ -34,7 +34,7 @@ border-color: #f5f5f5
 
     -- end: ftd.row
 
-    -- ftd.row:
+    -- ftd.column:
     padding-horizontal.px: 10
     padding-top.px: 10
     padding-bottom.px: 10
@@ -43,9 +43,10 @@ border-color: #f5f5f5
     align-content: left
 
         -- command-editor:
-        $content: $vars.command-k-input
+        -- ftd.text: $vars.command-k-help
 
-    -- end: ftd.row
+
+    -- end: ftd.column
 
 
 -- end: ftd.column
@@ -54,4 +55,3 @@ border-color: #f5f5f5
 
 -- web-component command-editor:
 js: $assets.files.components.editor.editor-bundle.js
-string $content: $vars.command-k-input
