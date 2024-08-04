@@ -15,7 +15,7 @@ import {
     update_only_show_modified_files,
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
-import {CommandEditor} from "./command-editor";
+import {CommandEditor} from "./command-k/command-editor";
 
 
 class CMEditor extends HTMLElement {

@@ -18,10 +18,11 @@ export class CommandEditor extends HTMLElement {
         this.editor = new EditorView({
             extensions: [
                 keymap.of([
-                    {
-                        key: "Alt-Enter",
-                        run: insertNewlineAndIndent
-                    },
+                    enterIs("Alt-Enter"),
+                    enterIs("Cmd-Enter"),
+                    enterIs("Ctrl-Enter"),
+                    enterIs("Shift-Enter"),
+                    escapeKey(),
                     {
                         key: "Enter",
                         run() {
@@ -34,7 +35,19 @@ export class CommandEditor extends HTMLElement {
             ],
             parent: this,
         });
+
+        this.editor.focus();
     }
 }
 
 
+function escapeKey() {
+    return {key: "Escape", run() {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
+        return false;
+    }};
+}
+
+function enterIs (key) {
+    return {key, run: insertNewlineAndIndent};
+}
