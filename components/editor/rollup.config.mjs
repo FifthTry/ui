@@ -1,5 +1,6 @@
 import {nodeResolve} from "@rollup/plugin-node-resolve";
 import terser from '@rollup/plugin-terser';
+import {lezer} from "@lezer/generator/rollup"
 
 export default {
     input: "./editor.mjs",
@@ -8,6 +9,6 @@ export default {
         sourcemap: true,
         format: "iife"
     },
-    plugins: [nodeResolve(), terser()]
-    // plugins: [nodeResolve()]
+    plugins: [lezer(), nodeResolve(), terser()]
+    // plugins: [lezer(), nodeResolve()]
 }

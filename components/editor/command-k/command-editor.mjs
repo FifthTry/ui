@@ -1,6 +1,7 @@
 import {EditorView, minimalSetup} from "codemirror";
 import {keymap} from "@codemirror/view";
 import {insertNewlineAndIndent} from "@codemirror/commands";
+import {example} from "./language";
 
 export class CommandEditor extends HTMLElement {
     constructor() {
@@ -29,6 +30,7 @@ export class CommandEditor extends HTMLElement {
                     }
                 ]),
                 minimalSetup,
+                example(),
             ],
             parent: this,
         });
