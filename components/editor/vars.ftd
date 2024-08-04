@@ -16,6 +16,7 @@
 
 
 -- boolean $command-k: true
+-- string $command-k-input: asd
 
 -- package-switcher.package list recent-packages:
 

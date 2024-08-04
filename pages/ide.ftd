@@ -28,7 +28,6 @@ $on-global-key[cmd-k]$: $ftd.toggle($a = $vars.command-k)
 	
 
 	    -- command-k.popup:
-	    if: { vars.command-k }
 
 		-- left-gutter.left-gutter:
 		
