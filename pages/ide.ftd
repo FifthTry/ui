@@ -17,7 +17,6 @@
 -- ftd.column:
 width: fill-container
 height: fill-container
-$on-global-key[cmd-k]$: $ftd.toggle($a = $vars.command-k)
 
 	-- top-bar.top-bar:
 	
