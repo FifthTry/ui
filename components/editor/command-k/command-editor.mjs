@@ -84,5 +84,6 @@ document.addEventListener("keydown", (e) => {
         console.log("command-k pressed");
         e.preventDefault();
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", true);
+        window.command_editor.focus();
     }
 });
