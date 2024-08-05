@@ -1,7 +1,7 @@
 import {EditorView, minimalSetup} from "codemirror";
 import {keymap} from "@codemirror/view";
 import {insertNewlineAndIndent} from "@codemirror/commands";
-import {example, p} from "./language";
+import {repl, repl_parser} from "./language";
 
 export class CommandEditor extends HTMLElement {
     constructor() {
@@ -56,7 +56,7 @@ function get_extensions() {
                 run() {
                     console.log("enter pressed");
                     // instead of parsing can we get it from the editor state?
-                    let tree = p.parse(window.command_editor.state.doc.toString());
+                    let tree = repl_parser.parse(window.command_editor.state.doc.toString());
                     if (!!window.ide_parse_command) {
                         window.ide_parse_command(window.command_editor.state.doc, tree);
                     } else {
@@ -71,7 +71,7 @@ function get_extensions() {
             }
         ]),
         minimalSetup,
-        example(),
+        repl(),
     ];
 }
 
