@@ -44,6 +44,10 @@ border-color: #f5f5f5
 
         -- command-editor:
         -- ftd.text: $vars.command-k-help
+        if: { vars.command-k-help != NULL }
+
+        -- ftd.text: $vars.command-k-error
+        if: { vars.command-k-error != NULL }
 
 
     -- end: ftd.column

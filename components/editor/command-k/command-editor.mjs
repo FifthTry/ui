@@ -50,29 +50,35 @@ window.ide_open_command_k = (cmd) => {
 function get_extensions() {
     return [
         enterIs(["Alt-Enter", "Cmd-Enter", "Ctrl-Enter", "Shift-Enter"]),
-        keymap.of([
-            {
-                key: "Enter",
-                run() {
-                    console.log("enter pressed");
-                    // instead of parsing can we get it from the editor state?
-                    let tree = repl_parser.parse(window.command_editor.state.doc.toString());
-                    if (!!window.ide_parse_command) {
-                        window.ide_parse_command(window.command_editor.state.doc, tree);
-                    } else {
-                        tree.iterate({
-                            enter: (node) => {
-                                console.log(node.type, window.command_editor.state.doc.sliceString(node.from, node.to));
-                            }
-                        })
-                    }
-                    return true;
-                }
-            }
-        ]),
+        keymap.of([{key: "Enter", run: run_parser}]),
         minimalSetup,
         repl(),
     ];
+}
+
+
+function run_parser() {
+    console.log("enter pressed");
+    // instead of parsing can we get it from the editor state?
+    let tree;
+    try {
+        tree = repl_parser
+            .configure({strict: true})
+            .parse(window.command_editor.state.doc.toString());
+    } catch (e) {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-error", e.toString());
+        return true;
+    }
+    if (!!window.ide_parse_command) {
+        window.ide_parse_command(window.command_editor.state.doc, tree);
+    } else {
+        tree.iterate({
+            enter: (node) => {
+                console.log(node.type, window.command_editor.state.doc.sliceString(node.from, node.to));
+            }
+        })
+    }
+    return true;
 }
 
 document.addEventListener("keydown", (e) => {
