@@ -53,7 +53,32 @@ function get_extensions() {
         keymap.of([{key: "Enter", run: run_parser}]),
         minimalSetup,
         repl(),
+        EditorView.updateListener.of(update),
     ];
+}
+
+function update(vu) {
+    if (!vu.docChanged) return;
+    ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-error", null);
+
+    // update help based on partial parse
+    let doc = window.command_editor.state.doc.toString().trim();
+
+    if (doc.indexOf("add-file") === 0) {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "add-file");
+    } else if (doc.indexOf("save-file") === 0) {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "save-file");
+    } else {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "available-commands");
+    }
+
+    let tree = repl_parser.parse(doc);
+    console.log(tree);
+    tree.iterate({
+        enter: (node) => {
+            console.log(node.type, window.command_editor.state.doc.sliceString(node.from, node.to));
+        }
+    })
 }
 
 

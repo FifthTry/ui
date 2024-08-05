@@ -16,7 +16,7 @@
 
 
 -- boolean $command-k: true
--- optional string $command-k-help: Type `help` to see all commands
+-- string $command-k-help: available-commands
 -- optional string $command-k-error:
 
 -- package-switcher.package list recent-packages:

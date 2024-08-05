@@ -43,12 +43,18 @@ border-color: #f5f5f5
     align-content: left
 
         -- command-editor:
-        -- ftd.text: $vars.command-k-help
-        if: { vars.command-k-help != NULL }
+
+        -- show-available-commands:
+        if: { vars.command-k-help == "available-commands" }
+
+        -- show-add-file-help:
+        if: { vars.command-k-help == "add-file" }
+
+        -- show-save-file-help:
+        if: { vars.command-k-help == "save-file" }
 
         -- ftd.text: $vars.command-k-error
         if: { vars.command-k-error != NULL }
-
 
     -- end: ftd.column
 
@@ -59,3 +65,76 @@ border-color: #f5f5f5
 
 -- web-component command-editor:
 js: $assets.files.components.editor.editor-bundle.js
+
+
+-- component show-add-file-help:
+
+-- ftd.column:
+
+-- ftd.text: Add File
+
+-- ftd.text:
+
+Use this command to create a new file. Syntax:
+
+-- ftd.code:
+lang: sh
+
+add-file <file-name>
+
+-- ftd.text: Example
+
+-- ftd.code:
+lang: sh
+
+add-file foo.ftd
+
+-- end: ftd.column
+
+-- end: show-add-file-help
+
+
+
+-- component show-save-file-help:
+
+-- ftd.column:
+
+-- ftd.text: Save File
+
+-- ftd.text:
+
+Use this command to create a save a file. Syntax:
+
+-- ftd.code:
+lang: sh
+
+save-file <file-name>
+
+-- ftd.text: Example
+
+-- ftd.code:
+lang: sh
+
+save-file foo.ftd
+
+-- end: ftd.column
+
+-- end: show-save-file-help
+
+
+
+-- component show-available-commands:
+
+-- ftd.column:
+
+-- ftd.text: Available commands
+
+-- ftd.text: `add-file` (crate a new file)
+$on-click$: $vars.open-command-k(cmd=add-file)
+
+-- ftd.text: `save-file`
+$on-click$: $vars.open-command-k(cmd=save-file)
+
+-- end: ftd.column
+
+-- end: show-available-commands

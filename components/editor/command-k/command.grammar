@@ -3,10 +3,10 @@
 }
 
 
-@skip { space | LineComment }
+@skip { LineComment }
 
 AddFile {
-    "add-file" FileName
+    "add-file" " "+ FileName
 }
 
 
@@ -19,7 +19,7 @@ FileName {
   identifier { $[a-zA-Z0-9_]+ }
   // QuotedString { '"' (!["\\] | "\\" _)* '"' }
   LineComment { ";; " ![\n]* }
-  space { $[ \t\n\r]+ }
+  // space { $[ \t\n\r]+ }
 }
 
 @detectDelim
