@@ -22,11 +22,18 @@ border-color: #f5f5f5
     spacing: space-between
     border-top-left-radius.px: 8
     border-top-right-radius.px: 8
+    align-content: center
 
-        -- ftd.text: Run Command (Ctrl-K or Cmd-K)
+        -- ftd.row:
+        align-content: center
+        spacing.fixed.px: 5
 
-        -- ftd.text: NOT YET WORKING
-        color: red
+            -- phosphor.thin: terminal-window
+            size: 16
+
+            -- ftd.text: Run Command (Ctrl-K or Cmd-K)
+
+        -- end: ftd.row
 
         -- phosphor.light: x
         size: 14
@@ -35,9 +42,7 @@ border-color: #f5f5f5
     -- end: ftd.row
 
     -- ftd.column:
-    padding-horizontal.px: 10
-    padding-top.px: 10
-    padding-bottom.px: 10
+    padding.px: 10
     width: fill-container
     spacing.fixed.px: 6
     align-content: left
@@ -70,8 +75,11 @@ js: $assets.files.components.editor.editor-bundle.js
 -- component show-add-file-help:
 
 -- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
 
--- ftd.text: Add File
+-- help-header: Add File
 
 -- ftd.text:
 
@@ -79,6 +87,7 @@ Use this command to create a new file. Syntax:
 
 -- ftd.code:
 lang: sh
+width: fill-container
 
 add-file <file-name>
 
@@ -86,6 +95,7 @@ add-file <file-name>
 
 -- ftd.code:
 lang: sh
+width: fill-container
 
 add-file foo.ftd
 
@@ -98,14 +108,19 @@ add-file foo.ftd
 -- component show-save-file-help:
 
 -- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
 
--- ftd.text: Save File
+-- help-header: Save File
+
 
 -- ftd.text:
 
 Use this command to create a save a file. Syntax:
 
 -- ftd.code:
+width: fill-container
 lang: sh
 
 save-file <file-name>
@@ -113,6 +128,7 @@ save-file <file-name>
 -- ftd.text: Example
 
 -- ftd.code:
+width: fill-container
 lang: sh
 
 save-file foo.ftd
@@ -126,6 +142,9 @@ save-file foo.ftd
 -- component show-available-commands:
 
 -- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
 
 -- ftd.text: Available commands
 
@@ -138,3 +157,18 @@ $on-click$: $vars.open-command-k(cmd=save-file)
 -- end: ftd.column
 
 -- end: show-available-commands
+
+-- component help-header:
+caption title:
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+
+-- ftd.text: $help-header.title
+-- ftd.text: Back To Help
+$on-click$: $ftd.set-string($a=$vars.command-k-help, v=available-commands)
+
+-- end: ftd.row
+
+-- end: help-header

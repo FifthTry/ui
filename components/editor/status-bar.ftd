@@ -1,4 +1,5 @@
 -- import: ui.fifthtry.com/components/editor/vars
+-- import: fastn-community.github.io/svg-icons/phosphor
 
 -- component status-bar:
 boolean $extra-open: false
@@ -17,11 +18,16 @@ padding-bottom.px: 15
 	-- ftd.row:
     spacing.fixed.px: 15
 
-	-- extras:
-	if: { status-bar.extra-open }
 
-	-- ftd.text: `Online`
-	$on-click$: $ftd.toggle($a = $status-bar.extra-open)
+        -- phosphor.thin: terminal-window
+        $on-click$: $ftd.set-boolean($a = $vars.command-k, v = true)
+        /size: 18
+
+        -- extras:
+        if: { status-bar.extra-open }
+
+        -- ftd.text: `Online`
+        $on-click$: $ftd.toggle($a = $status-bar.extra-open)
 
 	-- end: ftd.row
 	
