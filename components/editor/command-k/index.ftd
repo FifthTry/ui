@@ -31,7 +31,7 @@ border-color: #f5f5f5
             -- phosphor.thin: terminal-window
             size: 16
 
-            -- ftd.text: Run Command (Ctrl-K or Cmd-K)
+            -- ftd.text: Run Command (`Ctrl-K` or `Cmd-K`)
 
         -- end: ftd.row
 
@@ -57,6 +57,9 @@ border-color: #f5f5f5
 
         -- show-save-file-help:
         if: { vars.command-k-help == "save-file" }
+
+        -- show-clear-opfs-help:
+        if: { vars.command-k-help == "clear-opfs" }
 
         -- ftd.text: $vars.command-k-error
         if: { vars.command-k-error != NULL }
@@ -157,6 +160,37 @@ $on-click$: $vars.open-command-k(cmd=save-file)
 -- end: ftd.column
 
 -- end: show-available-commands
+
+
+
+
+-- component show-clear-opfs-help:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- help-header: Clear OPFS
+
+-- ftd.text:
+
+FifthTry IDE stores a bunch of stuff in `OPFS` (Origin-Private File System). Use
+this command to clear the cache. You will lose unsaved data if you use this
+command. This should be only used for debugging purposes.
+
+-- ftd.code:
+width: fill-container
+lang: sh
+
+clear-opfs
+
+-- end: ftd.column
+
+-- end: show-clear-opfs-help
+
+
+
 
 -- component help-header:
 caption title:

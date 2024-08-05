@@ -2,7 +2,6 @@
 -- import: fastn-community.github.io/svg-icons/phosphor
 
 -- component status-bar:
-boolean $extra-open: false
 
 -- ftd.row:
 width.fixed.percent: 100
@@ -19,38 +18,14 @@ padding-bottom.px: 15
     spacing.fixed.px: 5
     align-content: center
 
-        -- extras:
-        if: { status-bar.extra-open }
-
         -- phosphor.thin: terminal-window
         $on-click$: $ftd.set-boolean($a = $vars.command-k, v = true)
         size: 20
 
         -- ftd.text: `Online`
-        $on-click$: $ftd.toggle($a = $status-bar.extra-open)
 
 	-- end: ftd.row
 
 -- end: ftd.row
 -- end: status-bar
-
-
--- component extras:
-
--- ftd.row:
-spacing.fixed.px: 15
-
-;; todo: show opfs stats (size and count)
-
--- ftd.text: `delete opfs cache`
-$on-click$: $vars.clear-opfs()
-
-/-- ftd.text: `enable opfs`  ;; disabling this as it does not work yet
-text if { vars.opfs-enabled }: `disable opfs`
-$on-click$: $ftd.toggle($a = $vars.opfs-enabled)
-$on-click$: $vars.dispatch-event(name=opfs-enable-toggle)
-
--- end: ftd.row
-
--- end: extras
 

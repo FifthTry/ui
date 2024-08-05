@@ -1,5 +1,5 @@
 @top command {
-    AddFile
+    AddFile | ClearOPFS
 }
 
 
@@ -9,6 +9,9 @@ AddFile {
     "add-file" " "+ FileName
 }
 
+ClearOPFS {
+    "clear-opfs"
+}
 
 FileName {
     identifier '.' identifier
