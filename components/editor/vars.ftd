@@ -15,7 +15,7 @@
 -- optional package.data $package-data:
 
 
--- boolean $command-k: true
+-- boolean $command-k: false
 -- string $command-k-help: available-commands
 -- optional string $command-k-error:
 
