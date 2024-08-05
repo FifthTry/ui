@@ -166,7 +166,9 @@ width: fill-container
 spacing: space-between
 
 -- ftd.text: $help-header.title
--- ftd.text: Back To Help
+
+-- phosphor.thin: question
+size: 18
 $on-click$: $ftd.set-string($a=$vars.command-k-help, v=available-commands)
 
 -- end: ftd.row

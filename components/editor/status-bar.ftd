@@ -16,21 +16,21 @@ padding-bottom.px: 15
 	-- ftd.text: `©2024 FifthTry`
 
 	-- ftd.row:
-    spacing.fixed.px: 15
-
-
-        -- phosphor.thin: terminal-window
-        $on-click$: $ftd.set-boolean($a = $vars.command-k, v = true)
-        /size: 18
+    spacing.fixed.px: 5
+    align-content: center
 
         -- extras:
         if: { status-bar.extra-open }
+
+        -- phosphor.thin: terminal-window
+        $on-click$: $ftd.set-boolean($a = $vars.command-k, v = true)
+        size: 20
 
         -- ftd.text: `Online`
         $on-click$: $ftd.toggle($a = $status-bar.extra-open)
 
 	-- end: ftd.row
-	
+
 -- end: ftd.row
 -- end: status-bar
 
