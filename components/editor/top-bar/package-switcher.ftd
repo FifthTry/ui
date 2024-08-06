@@ -82,7 +82,7 @@ border-color: #ddd
 -- ftd.text: $show-package.package.name
 color: black
 
--- ftd.text: $vars.back-ticked(file_name=$show-package.package.account)
+-- ftd.text: $vars.back-ticked(t=$show-package.package.account)
 color: black
 
 -- end: ftd.column

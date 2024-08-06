@@ -55,8 +55,8 @@ border-color: #f5f5f5
         -- show-add-file-help:
         if: { vars.command-k-help == "add-file" }
 
-        -- show-save-file-help:
-        if: { vars.command-k-help == "save-file" }
+        -- show-push-file-help:
+        if: { vars.command-k-help == "push-file" }
 
         -- show-clear-opfs-help:
         if: { vars.command-k-help == "clear-opfs" }
@@ -108,25 +108,27 @@ add-file foo.ftd
 
 
 
--- component show-save-file-help:
+-- component show-push-file-help:
 
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 5
 padding.px: 5
 
--- help-header: Save File
+-- help-header: Push File
+shortcut: Ctrl-S
 
 
 -- ftd.text:
 
-Use this command to create a save a file. Syntax:
+Push the file to the server. When you modify a file, it is not saved to the
+server. Use this command to save the file to the server. Syntax:
 
 -- ftd.code:
 width: fill-container
 lang: sh
 
-save-file <file-name>
+push-file <file-name>
 
 -- ftd.text: Example
 
@@ -134,11 +136,11 @@ save-file <file-name>
 width: fill-container
 lang: sh
 
-save-file foo.ftd
+push-file foo.ftd
 
 -- end: ftd.column
 
--- end: show-save-file-help
+-- end: show-push-file-help
 
 
 
@@ -152,10 +154,10 @@ padding.px: 5
 -- ftd.text: Available commands
 
 -- ftd.text: `add-file` (crate a new file)
-$on-click$: $vars.open-command-k(cmd=add-file)
+$on-click$: $vars.open-command-k-with-space(cmd=add-file)
 
--- ftd.text: `save-file`
-$on-click$: $vars.open-command-k(cmd=save-file)
+-- ftd.text: `push-file`
+$on-click$: $vars.open-command-k-with-space(cmd=push-file)
 
 -- end: ftd.column
 
@@ -194,12 +196,20 @@ clear-opfs
 
 -- component help-header:
 caption title:
+optional string shortcut:
 
 -- ftd.row:
 width: fill-container
 spacing: space-between
 
--- ftd.text: $help-header.title
+-- ftd.row:
+spacing.fixed.px: 5
+
+    -- ftd.text: $help-header.title
+    -- ftd.text: $vars.back-ticked(t=$help-header.shortcut)
+    if: { help-header.shortcut != NULL }
+
+-- end: ftd.row
 
 -- phosphor.thin: question
 size: 18

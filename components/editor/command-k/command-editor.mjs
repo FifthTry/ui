@@ -66,8 +66,8 @@ function update(vu) {
 
     if (doc.indexOf("add-file") === 0) {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "add-file");
-    } else if (doc.indexOf("save-file") === 0) {
-        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "save-file");
+    } else if (doc.indexOf("push-file") === 0) {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "push-file");
     } else if (doc.indexOf("clear-opfs") === 0) {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "clear-opfs");
     } else {
@@ -108,15 +108,14 @@ function run_parser() {
     return true;
 }
 
-document.addEventListener("keypress", (e) => {
-    console.log(e, e.key, e.metaKey, e.ctrlKey);
+document.addEventListener("keydown", (e) => {
+    console.log("asd", e, e.key, e.metaKey, e.ctrlKey);
+
     if (e.key === "Escape") {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
     } else if (e.key === "s" && (e.metaKey || e.ctrlKey)) {
         ide_open_command_k("push-file " + ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"));
         e.preventDefault();
-        e.stopPropagation();
-        return false;
     } else if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         console.log("command-k pressed");
         e.preventDefault();

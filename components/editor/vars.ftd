@@ -220,10 +220,10 @@ ide_dispatch_event(name, data)
 -- string list $deleted-files:
 -- end: $deleted-files
 
--- string back-ticked(file_name):
-string file_name:
+-- string back-ticked(t):
+string t:
 
-"`" + file_name + "`"
+"`" + t + "`"
 
 
 

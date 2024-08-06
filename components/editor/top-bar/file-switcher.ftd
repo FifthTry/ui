@@ -20,7 +20,7 @@ file list files: $vars.recent-files
         -- ftd.column:
         if: { vars.current-file != NULL }
 
-            -- ftd.text: $vars.back-ticked(file_name=$vars.current-file)
+            -- ftd.text: $vars.back-ticked(t=$vars.current-file)
             color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
             color: black
 
@@ -96,11 +96,11 @@ link: $show-file.file.url
 border-bottom-width.px: 1
 border-color: #ddd
 
--- ftd.text: $vars.back-ticked(file_name=$show-file.file.name)
+-- ftd.text: $vars.back-ticked(t=$show-file.file.name)
 color if { ftd.list_contains(vars.modified-files, show-file.file.name) }: #1866f0
 color: black
 
--- ftd.text: $vars.back-ticked(file_name=$show-file.file.package)
+-- ftd.text: $vars.back-ticked(t=$show-file.file.package)
 color: black
 
 -- end: ftd.column
