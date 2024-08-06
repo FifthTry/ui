@@ -13,6 +13,7 @@ import {
     update_current_file,
     update_modified_files,
     update_only_show_modified_files,
+    update_deleted_files,
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
 import {CommandEditor} from "./command-k/command-editor";
