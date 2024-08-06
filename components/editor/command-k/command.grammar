@@ -18,9 +18,12 @@ ClearOPFS {
 }
 
 FileName {
-    identifier '.' identifier
+    folder? identifier '.' identifier
 }
 
+folder {
+    (identifier '/')+
+}
 
 @tokens {
   identifier { $[a-zA-Z0-9_]+ }
