@@ -232,3 +232,8 @@ string cmd:
 
 ide_open_command_k(cmd)
 
+
+-- void open-command-k-with-space(cmd):
+string cmd:
+
+ide_open_command_k(cmd + " ")

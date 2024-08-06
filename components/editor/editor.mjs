@@ -61,16 +61,7 @@ class CMEditor extends HTMLElement {
                 basicSetup,
                 indentationMarkers(),
                 EditorState.tabSize.of(4),
-                keymap.of([
-                    indentWithTab,
-                    {
-                        key: "Mod-s",
-                        run() {
-                            trigger_save_event();
-                            return true
-                        }
-                    }
-                ]),
+                keymap.of([indentWithTab,]),
                 EditorView.updateListener.of(update),
             ];
             switch (language) {

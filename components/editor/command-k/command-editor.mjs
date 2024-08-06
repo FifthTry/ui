@@ -28,12 +28,12 @@ function enterIs(keys) {
     });
 }
 
-window.ide_open_command_k = (cmd) => {
-    if (cmd.length) {
-        // we intentionally add a space at the end so that the user can start typing
-        cmd = cmd + " ";
-    }
+window.ide_open_command_k_s = (cmd) => {
+    // we do this because we want to add a space at the end so that the user can start typing
+    ide_open_command_k(cmd + " ")
+}
 
+window.ide_open_command_k = (cmd) => {
     ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", true);
     window.command_editor.dispatch({
         changes: {
@@ -108,12 +108,16 @@ function run_parser() {
     return true;
 }
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keypress", (e) => {
     console.log(e, e.key, e.metaKey, e.ctrlKey);
     if (e.key === "Escape") {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
-    }
-    if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+    } else if (e.key === "s" && (e.metaKey || e.ctrlKey)) {
+        ide_open_command_k("push-file " + ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"));
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    } else if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         console.log("command-k pressed");
         e.preventDefault();
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", true);
