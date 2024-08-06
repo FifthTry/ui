@@ -14,7 +14,8 @@ export const ReplLanguage = LRLanguage.define({
         ]
     }),
     languageData: {
-        commentTokens: {line: ";; "}
+        autocomplete: (c) => window.ide_autocomplete_command_prompt(c),
+        commentTokens: {line: ";;"}
     }
 })
 
