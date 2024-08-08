@@ -71,21 +71,20 @@ border-color: #f5f5f5
         -- show-available-commands:
         if: { vars.command-k-help == "available-commands" }
 
-        -- show-add-file-help:
+        -- show-add-file-help: true
         if: { vars.command-k-help == "add-file" }
 
-        -- show-delete-file-help:
+        -- show-delete-file-help: true
         if: { vars.command-k-help == "delete-file" }
 
-        -- show-push-file-help:
+        -- show-push-file-help: true
         if: { vars.command-k-help == "push-file" }
 
-        -- show-clear-opfs-help:
+        -- show-clear-opfs-help: true
         if: { vars.command-k-help == "clear-opfs" }
 
         -- ftd.text: $vars.command-k-error
         if: { vars.command-k-error != NULL }
-        padding-left.px: 5
 
     -- end: ftd.column
 
@@ -94,11 +93,51 @@ border-color: #f5f5f5
 
 -- end: popup
 
+
+
+
+
+
+
+
 -- web-component command-editor:
 js: $assets.files.components.editor.editor-bundle.js
 
 
+
+
+
+
+-- component show-available-commands:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- ftd.text: Available commands
+
+-- ftd.text: `add-file` (create a new file)
+$on-click$: $vars.open-command-k-with-space(cmd=add-file)
+
+-- ftd.text: `delete-file` (delete existing file)
+$on-click$: $vars.open-command-k-with-space(cmd=delete-file)
+
+-- ftd.text: `push-file` (save file to server)
+$on-click$: $vars.open-command-k-with-space(cmd=push-file)
+
+-- end: ftd.column
+
+-- end: show-available-commands
+
+
+
+
+
+
+
 -- component show-add-file-help:
+caption boolean show-question: false
 
 -- ftd.column:
 width: fill-container
@@ -106,6 +145,7 @@ spacing.fixed.px: 5
 padding.px: 5
 
 -- help-header: Add File
+show-question: $show-add-file-help.show-question
 
 -- ftd.text:
 
@@ -129,7 +169,15 @@ add-file foo.ftd
 
 -- end: show-add-file-help
 
+
+
+
+
+
+
+
 -- component show-delete-file-help:
+caption boolean show-question: false
 
 -- ftd.column:
 width: fill-container
@@ -137,6 +185,7 @@ spacing.fixed.px: 5
 padding.px: 5
 
 -- help-header: Delete File
+show-question: $show-delete-file-help.show-question
 
 -- ftd.text:
 
@@ -162,7 +211,13 @@ delete-file foo.ftd
 
 
 
+
+
+
+
+
 -- component show-push-file-help:
+caption boolean show-question: false
 
 -- ftd.column:
 width: fill-container
@@ -171,12 +226,12 @@ padding.px: 5
 
 -- help-header: Push File
 shortcut: Ctrl-S
-
+show-question: $show-push-file-help.show-question
 
 -- ftd.text:
 
-Push the file to the server. When you modify a file, it is not saved to the
-server. Use this command to save the file to the server. Syntax:
+;; intentionally not wrapping to work around an issue in autocomplete window
+Push the file to the server. When you modify a file, it is not saved to the server. Use this command to save the file to the server. Syntax:
 
 -- ftd.code:
 width: fill-container
@@ -198,32 +253,14 @@ push-file foo.ftd
 
 
 
--- component show-available-commands:
 
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 5
-padding.px: 5
 
--- ftd.text: Available commands
-
--- ftd.text: `add-file` (create a new file)
-$on-click$: $vars.open-command-k-with-space(cmd=add-file)
-
--- ftd.text: `delete-file` (delete existing file)
-$on-click$: $vars.open-command-k-with-space(cmd=delete-file)
-
--- ftd.text: `push-file`
-$on-click$: $vars.open-command-k-with-space(cmd=push-file)
-
--- end: ftd.column
-
--- end: show-available-commands
 
 
 
 
 -- component show-clear-opfs-help:
+caption boolean show-question: false
 
 -- ftd.column:
 width: fill-container
@@ -231,12 +268,11 @@ spacing.fixed.px: 5
 padding.px: 5
 
 -- help-header: Clear OPFS
+show-question: $show-clear-opfs-help.show-question
 
 -- ftd.text:
 
-FifthTry IDE stores a bunch of stuff in `OPFS` (Origin-Private File System). Use
-this command to clear the cache. You will lose unsaved data if you use this
-command. This should be only used for debugging purposes.
+FifthTry IDE stores a bunch of stuff in `OPFS` (Origin-Private File System). Use this command to clear the cache. You will lose unsaved data if you use this command. This should be only used for debugging purposes.
 
 -- ftd.code:
 width: fill-container
@@ -251,9 +287,15 @@ clear-opfs
 
 
 
+
+
+
+
+
 -- component help-header:
 caption title:
 optional string shortcut:
+caption boolean show-question: false
 
 -- ftd.row:
 width: fill-container
@@ -269,6 +311,7 @@ spacing.fixed.px: 5
 -- end: ftd.row
 
 -- phosphor.thin: question
+if: { help-header.show-question }
 size: 18
 $on-click$: $ftd.set-string($a=$vars.command-k-help, v=available-commands)
 
