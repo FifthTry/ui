@@ -69,6 +69,7 @@ function update(vu) {
             .configure({strict: true})
             .parse(window.command_editor.state.doc.toString());
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-valid", true);
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-error", "Press `Enter` to execute command.");
     } catch (e) {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-valid", false);
     }
