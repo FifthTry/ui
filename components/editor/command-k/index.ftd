@@ -85,6 +85,7 @@ border-color: #f5f5f5
 
         -- ftd.text: $vars.command-k-error
         if: { vars.command-k-error != NULL }
+        padding-left.px: 5
 
     -- end: ftd.column
 
