@@ -4,9 +4,7 @@ import * as preact from "preact";
 const ROOT_ID = "package-content-placeholder";
 const ROOT_DATA = "outer-folder";
 const CURRENT_FILE = "current-file";
-const ADDED_FILES = "added-files";
 const MODIFIED_FILES = "modified-files";
-const DELETED_FILES = "deleted-files";
 const ONLY_MODIFIED_FILES = "only-modified-files";
 
 export function initialize_package_ui() {
@@ -22,16 +20,8 @@ export function update_only_show_modified_files(value) {
     ftd2.set_value(ROOT_ID, ONLY_MODIFIED_FILES, value);
 }
 
-export function update_added_files(files) {
-    ftd2.set_value(ROOT_ID, ADDED_FILES, files);
-}
-
 export function update_modified_files(files) {
     ftd2.set_value(ROOT_ID, MODIFIED_FILES, files);
-}
-
-export function update_deleted_files(files) {
-    ftd2.set_value(ROOT_ID, DELETED_FILES, files);
 }
 
 export function update_current_file(current_file) {
@@ -84,15 +74,12 @@ function show_package_content({folders, files, ftd_root}) {
         {folders, files, name: "root", open: true}, ftd_root, ROOT_DATA
     );
     let current_file = new ftd2.FastnTik(null, ftd_root, CURRENT_FILE).get();
-    let added_files = new ftd2.FastnTik([], ftd_root, ADDED_FILES).get();
     let modified_files = new ftd2.FastnTik([], ftd_root, MODIFIED_FILES).get();
-    let deleted_files = new ftd2.FastnTik([], ftd_root, DELETED_FILES).get();
     let only_modified_files = new ftd2.FastnTik(false, ftd_root, ONLY_MODIFIED_FILES).get();
     return preact.h(
         show_folder, {
             folder, hide_name: true, level: 0,
             current_file, modified_files, only_modified_files,
-            added_files, deleted_files,
             parent_full_name: "",
         }
     );
@@ -100,10 +87,32 @@ function show_package_content({folders, files, ftd_root}) {
 
 const padding = (level) => `${(level - 1) * 18 + 8}px`;
 
+const file_color = (file, is_modified) => {
+    if (is_modified) {
+        return "blue";
+    }
+
+    switch (file.status) {
+        case "Normal":
+            return "black";
+        case "Deleted":
+            return "red";
+        case "New":
+            return "green";
+        default:
+            return "black";
+    }
+}
+
 const show_file = ({
-                       file, level, current_file, added_files, deleted_files,
-                       modified_files, only_modified_files
-                   }) => {
+    file,
+    level,
+    current_file,
+    added_files,
+    deleted_files,
+    modified_files,
+    only_modified_files,
+}) => {
     // file.full-name: to be compared with modified and deleted
     // file.name: to be shown in ui
     // file.url: as click target
@@ -120,7 +129,7 @@ const show_file = ({
                 "padding-top": "2px",
                 "padding-bottom": "2px",
                 "padding-left": padding(level),
-                color: is_modified ? "blue" : "black",
+                color: file_color(file, is_modified),
                 display: "flex",
                 flexDirection: "row",
                 width: "100%",
@@ -142,16 +151,16 @@ const show_file = ({
 }
 
 const show_folder = ({
-                         folder,
-                         parent_full_name,
-                         level,
-                         hide_name,
-                         current_file,
-                         modified_files,
-                         added_files,
-                         deleted_files,
-                         only_modified_files
-                     }) => {
+    folder,
+    parent_full_name,
+    level,
+    hide_name,
+    current_file,
+    modified_files,
+    added_files,
+    deleted_files,
+    only_modified_files,
+}) => {
     // this is okay to do because level is not a mutable variable.
     // all mutable variables should be created using Tik, and updated
     // using the set method.
@@ -204,6 +213,7 @@ const show_folder = ({
                         width: "100%",
                         cursor: "pointer",
                         "padding-left": padding(level),
+                        color: folder.get().modified ? "blue" : "black",
                     }
                 },
                 preact.h("img",
