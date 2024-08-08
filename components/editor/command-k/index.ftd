@@ -55,6 +55,9 @@ border-color: #f5f5f5
         -- show-add-file-help:
         if: { vars.command-k-help == "add-file" }
 
+        -- show-delete-file-help:
+        if: { vars.command-k-help == "delete-file" }
+
         -- show-push-file-help:
         if: { vars.command-k-help == "push-file" }
 
@@ -106,6 +109,37 @@ add-file foo.ftd
 
 -- end: show-add-file-help
 
+-- component show-delete-file-help:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- help-header: Delete File
+
+-- ftd.text:
+
+Use this command to delete a file. Syntax:
+
+-- ftd.code:
+lang: sh
+width: fill-container
+
+delete-file <file-name>
+
+-- ftd.text: Example
+
+-- ftd.code:
+lang: sh
+width: fill-container
+
+delete-file foo.ftd
+
+-- end: ftd.column
+
+-- end: show-delete-file-help
+
 
 
 -- component show-push-file-help:
@@ -153,8 +187,11 @@ padding.px: 5
 
 -- ftd.text: Available commands
 
--- ftd.text: `add-file` (crate a new file)
+-- ftd.text: `add-file` (create a new file)
 $on-click$: $vars.open-command-k-with-space(cmd=add-file)
+
+-- ftd.text: `delete-file` (delete existing file)
+$on-click$: $vars.open-command-k-with-space(cmd=delete-file)
 
 -- ftd.text: `push-file`
 $on-click$: $vars.open-command-k-with-space(cmd=push-file)

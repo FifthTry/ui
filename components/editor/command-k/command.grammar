@@ -1,5 +1,5 @@
 @top command {
-    AddFile | ClearOPFS | PushFile
+    AddFile | ClearOPFS | PushFile | DeleteFile
 }
 
 
@@ -7,6 +7,10 @@
 
 AddFile {
     "add-file" " "+ FileName
+}
+
+DeleteFile {
+    "delete-file" " "+ FileName
 }
 
 PushFile {

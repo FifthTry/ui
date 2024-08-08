@@ -8,6 +8,7 @@ export const ReplLanguage = LRLanguage.define({
             styleTags({
                 FileName: t.literal,
                 AddFile: t.keyword,
+                DeleteFile: t.keyword,
                 PushFile: t.keyword,
                 LineComment: t.lineComment,
             })
