@@ -64,6 +64,15 @@ function update(vu) {
     // update help based on partial parse
     let doc = window.command_editor.state.doc.toString().trim();
 
+    try {
+        repl_parser
+            .configure({strict: true})
+            .parse(window.command_editor.state.doc.toString());
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-valid", true);
+    } catch (e) {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-valid", false);
+    }
+
     if (doc.indexOf("add-file") === 0) {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "add-file");
     } else if (doc.indexOf("push-file") === 0) {
@@ -94,6 +103,8 @@ function run_parser() {
     }
     return true;
 }
+
+window.ide_run_command_parser = run_parser;
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {

@@ -47,7 +47,26 @@ border-color: #f5f5f5
     spacing.fixed.px: 6
     align-content: left
 
-        -- command-editor:
+        -- ftd.row:
+        width: fill-container
+        spacing.fixed.px: 5
+        align-content: bottom-left
+
+            -- command-editor:
+
+            -- ftd.text: Run
+            border-width.px: 1
+            border-color: #ccc
+            border-radius.px: 4
+            padding-vertical.px: 2
+            padding-horizontal.px: 5
+            background.solid if { vars.command-k-valid }: lightgreen
+            ;; a dull color to indicate command is not valid yet
+            color if { vars.command-k-valid }: black
+            color: #ccc
+            $on-click$: $vars.run-command()
+
+        -- end: ftd.row
 
         -- show-available-commands:
         if: { vars.command-k-help == "available-commands" }

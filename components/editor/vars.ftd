@@ -17,6 +17,7 @@
 
 -- boolean $command-k: false
 -- string $command-k-help: available-commands
+-- boolean $command-k-valid: false
 -- optional string $command-k-error:
 
 -- package-switcher.package list recent-packages:
@@ -237,3 +238,8 @@ ide_open_command_k(cmd)
 string cmd:
 
 ide_open_command_k(cmd + " ")
+
+
+-- void run-command():
+
+ide_run_command_parser()
