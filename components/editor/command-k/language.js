@@ -3,6 +3,7 @@ import {LRLanguage, LanguageSupport} from "@codemirror/language"
 import {styleTags, tags as t} from "@lezer/highlight"
 
 export const ReplLanguage = LRLanguage.define({
+    name: "fifthtry_ide_repl",
     parser: parser.configure({
         props: [
             styleTags({
@@ -21,7 +22,7 @@ export const ReplLanguage = LRLanguage.define({
 })
 
 export function repl() {
-    return new LanguageSupport(ReplLanguage)
+    return new LanguageSupport(ReplLanguage, [])
 }
 
 export const repl_parser = parser;
