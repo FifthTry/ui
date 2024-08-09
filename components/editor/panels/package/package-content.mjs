@@ -88,10 +88,6 @@ function show_package_content({folders, files, ftd_root}) {
 const padding = (level) => `${(level - 1) * 18 + 8}px`;
 
 const file_color = (file, is_modified) => {
-    if (is_modified) {
-        return "blue";
-    }
-
     switch (file.status) {
         case "Normal":
             return "black";
@@ -100,7 +96,7 @@ const file_color = (file, is_modified) => {
         case "New":
             return "green";
         default:
-            return "black";
+            return is_modified ? "blue" : "black";
     }
 }
 
@@ -117,7 +113,8 @@ const show_file = ({
     // file.name: to be shown in ui
     // file.url: as click target
     // file.language: to pick the file icon
-    let is_modified = modified_files.indexOf(file.full_name) >= 0;
+    let is_modified = modified_files.indexOf(file.full_name) >= 0
+        || ["Deleted", "New"].includes(file.status);
 
     if (only_modified_files && !is_modified) {
         return null;
@@ -185,6 +182,7 @@ const show_folder = ({
                 break
             }
         }
+        contains_a_modified_file |= folder.get().modified;
         if (!contains_a_modified_file) {
             return null;
         }
