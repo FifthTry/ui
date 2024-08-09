@@ -13,7 +13,6 @@ import {
     update_current_file,
     update_modified_files,
     update_only_show_modified_files,
-    update_deleted_files,
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
 import {CommandEditor} from "./command-k/command-editor";
@@ -125,9 +124,7 @@ function v(name) {
 
 const VAR_PACKAGE_DATA = v`package-data`;
 const VAR_CURRENT_FILE = v`current-file`;
-const VAR_ADDED_FILES = v`added-files`;
 const VAR_MODIFIED_FILES = v`modified-files`;
-const VAR_DELETED_FILES = v`deleted-files`;
 const VAR_ONLY_MODIFIED_FILES = v`only-show-modified-files`;
 const VAR_PREVIEW_CONTENT = v`preview-content`;
 
@@ -136,9 +133,7 @@ window.ide_update_ftd_var = function (name, value) {
 
     if (name === VAR_PACKAGE_DATA) update_package_content(value.folders, value.files);
     if (name === VAR_CURRENT_FILE) update_current_file(value);
-    if (name === VAR_ADDED_FILES) update_added_files(value);
     if (name === VAR_MODIFIED_FILES) update_modified_files(value);
-    if (name === VAR_DELETED_FILES) update_deleted_files(value);
 
     if (name === VAR_PREVIEW_CONTENT) {
         console.log('ide_update_ftd_var', name, "<html omitted>");
