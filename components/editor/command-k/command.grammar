@@ -30,7 +30,7 @@ folder {
 }
 
 @tokens {
-  identifier { $[a-zA-Z0-9_]+ }
+  identifier { $[a-zA-Z0-9_\-]+ }
   // QuotedString { '"' (!["\\] | "\\" _)* '"' }
   LineComment { ";; " ![\n]* }
   // space { $[ \t\n\r]+ }
