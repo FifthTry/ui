@@ -122,10 +122,10 @@ padding.px: 5
 $on-click$: $vars.open-command-k-with-space(cmd=add-file)
 
 -- ftd.text: `delete-file` (delete existing file)
-$on-click$: $vars.open-command-k-with-space(cmd=delete-file)
+$on-click$: $vars.open-command-k-with-current-file(cmd=delete-file)
 
 -- ftd.text: `push-file` (save file to server)
-$on-click$: $vars.open-command-k-with-space(cmd=push-file)
+$on-click$: $vars.open-command-k-with-current-file(cmd=push-file)
 
 -- end: ftd.column
 

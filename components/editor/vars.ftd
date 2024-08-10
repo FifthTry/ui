@@ -239,6 +239,11 @@ string cmd:
 
 ide_open_command_k(cmd + " ")
 
+-- void open-command-k-with-current-file(cmd):
+string cmd:
+string file: $current-file
+
+ide_open_command_k(cmd + " " + file)
 
 -- void run-command():
 
