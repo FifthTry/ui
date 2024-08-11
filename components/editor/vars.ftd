@@ -20,6 +20,10 @@
 -- boolean $command-k-valid: false
 -- optional string $command-k-error:
 
+-- string $context-menu-visible: hidden
+-- integer $context-menu-left: 0
+-- integer $context-menu-top: 0
+
 -- package-switcher.package list recent-packages:
 
 -- package-switcher.package: FifthTry Main Site

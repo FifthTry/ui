@@ -14,6 +14,8 @@ classes if { !vars.package }: hidden
 $on-mouse-enter$: $ftd.set-bool($a=$package.hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
 
+    -- context-menu:
+
     -- ftd.column:
     ;; we use if here because its okay to delete this dom node
     if: { package.data == NULL }
@@ -101,8 +103,49 @@ boolean open: false
 
 
 
+-- component context-menu:
+
+-- ftd.column:
+
+-- file-context-menu:
+if: { vars.context-menu-visible == "file" }
+
+-- folder-context-menu:
+if: { vars.context-menu-visible == "folder" }
+
+-- end: ftd.column
+
+-- end: context-menu
 
 
+
+
+
+
+-- component file-context-menu:
+
+-- ftd.column:
+anchor: window
+left.px: $vars.context-menu-left
+top.px: $vars.context-menu-top
+$on-click-outside$: $ftd.set-string($a = $vars.context-menu-visible, v = hidden)
+z-index: 100
+
+-- ftd.text: File Context Menu
+
+-- end: ftd.column
+
+-- end: file-context-menu
+
+
+
+
+
+-- component folder-context-menu:
+
+-- ftd.text: Folder Context Menu
+
+-- end: folder-context-menu
 
 
 

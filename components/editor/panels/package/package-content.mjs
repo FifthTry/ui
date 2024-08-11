@@ -100,14 +100,19 @@ const file_color = (file, is_modified) => {
     }
 }
 
-function triple_dot_icon(open) {
+function triple_dot_icon(open, isFile) {
     if (!open.get()) return null;
     return hover_icon(
         "dots-three-circle-vertical", {
             right: "5px",
             onClick: (e) => {
                 let pos = e.target.getBoundingClientRect();
-                console.log(pos);
+                ftd.set_value(
+                    "ui.fifthtry.com/components/editor/vars#context-menu-visible",
+                    isFile ? "file" : "folder"
+                );
+                ftd.set_value("ui.fifthtry.com/components/editor/vars#context-menu-left", pos.left + 16);
+                ftd.set_value("ui.fifthtry.com/components/editor/vars#context-menu-top", pos.top + 16);
                 e.preventDefault();
                 e.stopPropagation();
                 return false;
@@ -131,6 +136,7 @@ function hover_icon(name, {right, onClick}) {
 
 function icon(name, {variant, right, onClick, ...extra_props}) {
     variant = variant || "light";
+
     let style = {
         width: "16px",
         height: "16px",
@@ -201,7 +207,7 @@ const show_file = ({
         },
         icon("file-text", {}),
         file.name,
-        triple_dot_icon(triple_dot),
+        triple_dot_icon(triple_dot, true),
     )
 }
 
@@ -277,7 +283,7 @@ const show_folder = ({
                 },
                 icon(open.get() ? "folder-open" : "folder", {}),
                 folder.get().name,
-                triple_dot_icon(triple_dot),
+                triple_dot_icon(triple_dot, false),
             ),
             open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
