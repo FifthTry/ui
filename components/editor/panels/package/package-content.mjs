@@ -100,7 +100,20 @@ const file_color = (file, is_modified) => {
     }
 }
 
-function light_icon(name, {right}) {
+function hover_icon(name, {right, click}) {
+    let hover = new ftd2.FastnTik(false);
+    return icon(
+        name, {
+            right, click,
+            variant: hover.get() ? "regular" : "thin",
+            onmouseenter: () => hover.set(true),
+            onmouseleave: () => hover.set(false),
+        }
+    );
+}
+
+function icon(name, {variant, right, click, ...extra_props}) {
+    variant = variant || "light";
     let style = {
         width: "16px",
         height: "16px",
@@ -112,12 +125,22 @@ function light_icon(name, {right}) {
         style.position = "absolute";
     }
 
-    return preact.h("img",
-        {
-            src: `//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/${name}-light.svg`,
-            style,
-        }
-    )
+    let props = {
+        src: (
+            variant === "regular" ?
+                `//raw.githubusercontent.com/phosphor-icons/core/main/raw/regular/${name}.svg`
+                : `//raw.githubusercontent.com/phosphor-icons/core/main/raw/${variant}/${name}-${variant}.svg`
+        ),
+        style: {...style, ...extra_props.style},
+        ...extra_props,
+    };
+
+    if (!!click) {
+        props.onClick = click;
+        props.style.cursor = "pointer";
+    }
+
+    return preact.h("img", props)
 }
 
 const show_file = ({
@@ -158,9 +181,9 @@ const show_file = ({
             onmouseleave: () => triple_dot.set(false),
             href: file.url,
         },
-        light_icon("file-text", {}),
+        icon("file-text", {}),
         file.name,
-        triple_dot.get() ? light_icon("dots-three-circle-vertical", {right: "5px"}) : null,
+        triple_dot.get() ? hover_icon("dots-three-circle-vertical", {right: "5px"}) : null,
     )
 }
 
@@ -234,9 +257,9 @@ const show_folder = ({
                         position: "relative",
                     }
                 },
-                light_icon(open.get() ? "folder-open" : "folder", {}),
+                icon(open.get() ? "folder-open" : "folder", {}),
                 folder.get().name,
-                triple_dot.get() ? light_icon("dots-three-circle-vertical", {right: "5px"}) : null,
+                triple_dot.get() ? hover_icon("dots-three-circle-vertical", {right: "5px"}) : null,
             ),
             open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
