@@ -100,14 +100,22 @@ const file_color = (file, is_modified) => {
     }
 }
 
-function light_icon(name) {
+function light_icon(name, {right}) {
+    let style = {
+        width: "16px",
+        height: "16px",
+        right: right ? right : "auto",
+    };
+
+    if (!!right) {
+        style.right = right;
+        style.position = "absolute";
+    }
+
     return preact.h("img",
         {
             src: `//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/${name}-light.svg`,
-            style: {
-                width: "16px",
-                height: "16px",
-            },
+            style,
         }
     )
 }
@@ -130,6 +138,8 @@ const show_file = ({
         return null;
     }
 
+    let triple_dot = new ftd2.FastnTik(false);
+
     return preact.h(
         "a", {
             style: {
@@ -142,11 +152,15 @@ const show_file = ({
                 width: "100%",
                 gap: "3px",
                 background: file.full_name === current_file ? "#f5f5f5" : "white",
+                position: "relative",
             },
-            href: file.url
+            onmouseenter: () => triple_dot.set(true),
+            onmouseleave: () => triple_dot.set(false),
+            href: file.url,
         },
-        light_icon("file-text"),
-        file.name
+        light_icon("file-text", {}),
+        file.name,
+        triple_dot.get() ? light_icon("dots-three-circle-vertical", {right: "5px"}) : null,
     )
 }
 
@@ -189,6 +203,8 @@ const show_folder = ({
         }
     }
 
+    let triple_dot = new ftd2.FastnTik(false);
+
     return preact.h(
         "div", {
             style: {
@@ -205,6 +221,8 @@ const show_folder = ({
             hide_name ? null : preact.h(
                 "div", {
                     onClick: () => open.set(!open.get()),
+                    onmouseenter: () => triple_dot.set(true),
+                    onmouseleave: () => triple_dot.set(false),
                     style: {
                         display: "flex",
                         "flex-direction": "row",
@@ -213,10 +231,12 @@ const show_folder = ({
                         cursor: "pointer",
                         "padding-left": padding(level),
                         color: folder.get().modified ? "blue" : "black",
+                        position: "relative",
                     }
                 },
-                light_icon(open.get() ? "folder-open" : "folder"),
+                light_icon(open.get() ? "folder-open" : "folder", {}),
                 folder.get().name,
+                triple_dot.get() ? light_icon("dots-three-circle-vertical", {right: "5px"}) : null,
             ),
             open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
