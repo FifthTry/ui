@@ -100,15 +100,25 @@ const file_color = (file, is_modified) => {
     }
 }
 
+function light_icon(name) {
+    return preact.h("img",
+        {
+            src: `//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/${name}-light.svg`,
+            style: {
+                width: "16px",
+                height: "16px",
+            },
+        }
+    )
+}
+
 const show_file = ({
-    file,
-    level,
-    current_file,
-    added_files,
-    deleted_files,
-    modified_files,
-    only_modified_files,
-}) => {
+                       file,
+                       level,
+                       current_file,
+                       modified_files,
+                       only_modified_files,
+                   }) => {
     // file.full-name: to be compared with modified and deleted
     // file.name: to be shown in ui
     // file.url: as click target
@@ -134,30 +144,21 @@ const show_file = ({
                 background: file.full_name === current_file ? "#f5f5f5" : "white",
             },
             href: file.url
-        }, preact.h("img",
-            {
-                src: "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/file-text-light.svg",
-                style: {
-                    width: "16px",
-                    height: "16px",
-                },
-            }
-        ),
+        },
+        light_icon("file-text"),
         file.name
     )
 }
 
 const show_folder = ({
-    folder,
-    parent_full_name,
-    level,
-    hide_name,
-    current_file,
-    modified_files,
-    added_files,
-    deleted_files,
-    only_modified_files,
-}) => {
+                         folder,
+                         parent_full_name,
+                         level,
+                         hide_name,
+                         current_file,
+                         modified_files,
+                         only_modified_files,
+                     }) => {
     // this is okay to do because level is not a mutable variable.
     // all mutable variables should be created using Tik, and updated
     // using the set method.
@@ -214,17 +215,7 @@ const show_folder = ({
                         color: folder.get().modified ? "blue" : "black",
                     }
                 },
-                preact.h("img",
-                    {
-                        src: open.get() ?
-                            "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-open-light.svg"
-                            : "//raw.githubusercontent.com/phosphor-icons/core/main/raw/light/folder-light.svg",
-                        style: {
-                            width: "16px",
-                            height: "16px",
-                        },
-                    }
-                ),
+                light_icon(open.get() ? "folder-open" : "folder"),
                 folder.get().name,
             ),
             open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
@@ -233,14 +224,12 @@ const show_folder = ({
                 current_file,
                 modified_files,
                 only_modified_files,
-                added_files, deleted_files,
                 parent_full_name: full_name,
             })).concat(folder.index("files").map((f) => preact.h(show_file, {
                 file: f.get(),
                 level: level + 1,
                 current_file,
                 modified_files,
-                added_files, deleted_files,
                 only_modified_files,
             }))) : [],
         ),
