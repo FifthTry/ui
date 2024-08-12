@@ -24,7 +24,7 @@ jobs:
           # To deploy the website using Custom Domain, use the below command and comment
           # out the above command when deploying through GitHub Pages 
           # fastn build --base=/
-          fastn build --base=/$CI_REPOSITORY_NAME/ --zip-url=https://codeload.github.com/fifthtry/ui/zip/refs/heads/main
+          fastn build --base=/ --zip-url=https://codeload.github.com/fifthtry/ui/zip/refs/heads/main
       - name: copy CNAME if found
         run: '(test -f CNAME && cp CNAME .build) || echo "CNAME does not exist, skipping step"'
       - name: Deploy to GitHub Pages
