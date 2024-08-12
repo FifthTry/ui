@@ -1,5 +1,10 @@
 {
   "files": {
+    "CNAME": {
+      "name": "CNAME",
+      "checksum": "418FC648371938688D5676415EAADD227795E116D60C650017D6E3C5748A7FAF",
+      "size": 16
+    },
     "FASTN.ftd": {
       "name": "FASTN.ftd",
       "checksum": "AE9C757C4915EC7548038B266804C29199430EB63E021D1075E70D5FADFE0B02",
@@ -1887,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "1608D52EFA11694744C88E3C92AD426EC7276701B59762FF09F2AE66E56EEE67"
+  "checksum": "DB5297794B136AA5358A28D57D9A410ABB9DD1CB038F5E122C6593F1606DCF3C"
 }
