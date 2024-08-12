@@ -1,0 +1,11 @@
+-- import: ui.fifthtry.com/pages/packages/home
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
+-- import: ui.fifthtry.com/scenarios/packages
+
+
+-- home.page:
+site-data: scenario-site
+user-data: $john-doe.jd
+packages: $packages.packages
+query: some query

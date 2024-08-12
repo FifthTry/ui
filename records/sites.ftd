@@ -1,0 +1,112 @@
+;; every site related page has this common data
+-- record site-common-data:
+string account-name:
+string site-name:
+string site-slug:
+string primary-domain:
+string info-url:
+string history-url:
+string editor-url:
+string tokens-url:
+string github-url:
+string setting-url:
+string cr-list-url:
+string domains-url:
+string updated-on:
+ftd.image-src preview-image:
+string environments-url:
+optional string zip-download-url:
+boolean is-public:
+boolean is-package:
+boolean is-editable:
+
+
+
+-- record gh-oidc-data:
+string account:
+string repo:
+string branch:
+boolean is-configured:
+string configure-url:
+
+
+-- record domain:
+caption domain:
+boolean is-primary: false
+string status:  ;; verified | pending | failed
+
+-- record token:
+integer id:
+body about:
+caption token:
+boolean can-read:
+boolean can-write:
+string created-at:
+optional string last-used-at:
+
+;; base-name and full-name start without slash, eg `index.ftd` or `foo/bar.ftd`
+-- record file-info:
+caption base-name: ;; to be shown in UI (only the file name part, with extension)
+string full-name: $file-info.base-name ;; to be used in actions (eg rename file etc)
+boolean is-active: false
+string filetype:  ftd ;; folder, FASTN, FTD, Image, Video, Text, Markdown, Source
+file-info list children:
+
+-- record file-text:
+caption lang: ftd ;; compatible with ftd.code.lang
+body content: ;; not present in case of binary files
+
+-- record file:
+caption base-name:
+string full-name: $file.base-name
+string filetype: ftd ;; folder, FASTN, FTD, Image, Video, Text, Markdown, Source
+string url:
+optional file-text text:
+optional string error:
+string updated-at:
+
+-- record environment:
+integer id:
+string key:
+string value:
+
+
+
+-- record editor-data:
+file-info list files:
+file current-file:
+string site-base-url:
+string site-relative-url:
+
+
+
+-- record toc-item:
+caption title:
+string link:
+
+
+
+
+
+
+
+
+
+
+;; history records
+-- record history-change:
+string document:
+integer at:
+optional string action: ;; created, updated, deleted
+optional body diff:
+optional string diff-with-latest:
+string content:
+string editor-name:
+string language:
+optional string url: ;; This is present when document is not provided
+
+
+;; history records
+-- record history-output:
+history-change list changes:
+optional string next:

@@ -1,0 +1,84 @@
+-- import: ui.fifthtry.com/pages/featured-templates/template
+-- import: ui.fifthtry.com/records/templates-list as template-records
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- template.page:
+packages: []
+templates: $template-category-list
+user-data: $john-doe.jd
+
+-- template-records.template-category list template-category-list:
+
+-- template-records.template-category: Linktree
+packages: $linktree-packages
+
+-- template-records.template-category: Coming Soon
+packages: $coming-soon-packages
+
+-- end: template-category-list
+
+
+
+
+
+
+
+-- ds.package-info list linktree-packages:
+
+-- ds.package-info: Purple gradient
+template-url: /scenarios/featured-template/linktree/linktree-1
+screenshot: $purple-gradient-assets.files.assets.linktree.png
+
+-- ds.package-info: Minimal blue
+template-url: /scenarios/featured-template/linktree/linktree-2
+screenshot: $minimal-blue-assets.files.assets.linktree.png
+
+-- ds.package-info: Ocean blue
+template-url: /scenarios/featured-template/linktree/linktree-3
+screenshot: $ocean-blue-assets.files.assets.linktree.png
+
+-- ds.package-info: Forest green
+template-url: /scenarios/featured-template/linktree/linktree-4
+screenshot: $forest-green-assets.files.assets.linktree.png
+
+-- end: linktree-packages
+
+
+
+
+-- ds.package-info list coming-soon-packages:
+
+-- ds.package-info: Modern gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-1
+screenshot: $modern-gradient-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Blue purple mesh gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-2
+screenshot: $blue-purple-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Yellow green mesh gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-3
+screenshot: $yellow-green-mesh-gradient-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Multi color mesh gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-4
+screenshot: $multi-color-mesh-gradient-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Grainy gradient
+template-url: /scenarios/featured-template/coming-soon/coming-soon-5
+screenshot: $grainy-gradient-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Blue Abstract pattern
+template-url: /scenarios/featured-template/coming-soon/blue-abstract-pattern
+screenshot: $blue-abstract-pattern-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Red Abstract pattern
+template-url: /scenarios/featured-template/coming-soon/coming-soon-7
+screenshot: $red-abstract-pattern-assets.files.assets.thumbnail.png
+
+-- ds.package-info: Ocean waves
+template-url: /scenarios/featured-template/coming-soon/coming-soon-8
+screenshot: $ocean-waves-assets.files.assets.thumbnail.png
+
+-- end: coming-soon-packages

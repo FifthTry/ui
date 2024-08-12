@@ -1,0 +1,38 @@
+-- import: ui.fifthtry.com/components/editor/vars
+-- import: fastn-community.github.io/svg-icons/phosphor
+
+-- component right-gutter:
+
+-- ftd.column:
+width.fixed.px: $vars.panel-width
+height.fixed.percent: 100
+background.solid: #f5f5f5
+spacing: space-between
+border-right-width.px if { !vars.preview-visible }: 1
+border-color: #ddd
+align-content: center
+padding-top.px: 5
+
+    -- ftd.column:
+    classes if { !vars.preview-visible }: hidden
+
+        -- phosphor.fill: eye
+        $on-click$: $ftd.toggle($a=$vars.preview-visible)
+        size: 20
+
+    -- end: ftd.column
+
+    -- ftd.column:
+    classes if { vars.preview-visible }: hidden
+
+        -- phosphor.thin: eye
+        $on-click$: $ftd.toggle($a=$vars.preview-visible)
+        size: 20
+
+    -- end: ftd.column
+
+
+
+-- end: ftd.column
+
+-- end: right-gutter

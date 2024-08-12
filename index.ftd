@@ -1,13 +1,83 @@
--- import: ui.fifthtry.com/ds
+-- import: fastn/processors as pr
+-- import: ui.fifthtry.com/actions/storybook/navigate
 
--- ds.page: FifthTry UIs
 
-These are list of products/websites hosted by FifthTry.
+-- ds.page: Storybook
+fastn-badge: false
 
--- ds.h1: Slides Scenarios
-
-- [Login page](/slides/scenarios/login-page/)
-- [Logged in templates](/slides/scenarios/logged-in-templates/)
-- [team dashboard](/slides/scenarios/team-dashboard/)
+-- ds.storybook:
+list-of-files: $toc
+navigate: navigate
 
 -- end: ds.page
+
+
+
+
+-- pr.toc-item list toc:
+$processor$: pr.toc
+
+- Website Pages:
+  - Logged in Home page: /scenarios/logged-in-home/
+  - Logged out Home page: /scenarios/logged-out-home/
+  - Logged In About page: /scenarios/about/logged-in-about/
+  - Logged In Team page: /scenarios/about/logged-in-team/
+  - Pricing page: /scenarios/about/pricing/
+  - Terms page: /scenarios/about/terms-page/
+  - Privacy page: /scenarios/about/privacy-page/
+  - Blog Homepage: /scenarios/blogs/
+  - Blog Post: /scenarios/blogs/blog-post/
+
+- Auth Pages:
+  - Login page: /scenarios/signin-page/
+  - Signup page: /scenarios/signup-page/
+  - Forgot Password page: /scenarios/forgot-password/
+  - Change Password page: /scenarios/change-password/?code=auth ;; ?code is required
+  - Password Recovery page: /scenarios/password-recovery/
+
+- Org Pages:
+  - Org dashboard: /scenarios/org/dashboard/
+
+- User Pages:
+  - User dashboard: /scenarios/user/dashboard/
+  - Create Site: /scenarios/user/create-site/
+  - Create Organisation: /scenarios/user/create-org/
+
+- Site Pages:
+  - Site Info: /scenarios/sites/site-info/
+  - Page with top message: /scenarios/sites/top-message/
+
+- Site Settings:
+  - Basic Setting: /scenarios/sites/setting/
+  - Site Domains: /scenarios/sites/setting/domains/
+  - Github (Configure form): /scenarios/sites/setting/configure-github/
+  - Github (Un-configured): /scenarios/sites/setting/github/
+  - Github (Configured): /scenarios/sites/setting/github-configured/
+  - Site Tokens: /scenarios/sites/setting/tokens/
+  - Environments: /scenarios/sites/setting/environments/
+
+- Site Editor Pages:
+  - Site Editor With Code Preview: /scenarios/sites/editor/
+  - Site Editor With Image Preview: /scenarios/sites/editor/image-preview/
+
+- Site History Pages:
+  - Site History: /scenarios/history/
+  - Document History: /scenarios/history/document/
+  - Document Single History: /scenarios/history/single/
+
+- Packages
+  - `fastn` Packages Homepage: /scenarios/packages/
+  - Packages Search With Query: /scenarios/packages/with-query/
+
+- Featured Template:
+  - Templates: /scenarios/featured-template
+
+- University Scenarios:
+  - University Homepage: /scenarios/university/home-page/
+  - f4e course: /scenarios/university/f4e-course/
+
+- Onboarding Scenarios:
+  - Onboarding Ishaan: /scenarios/cards/onboarding-ishaan/
+
+- IDE:
+  - ide: /scenarios/ide

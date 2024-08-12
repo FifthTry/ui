@@ -1,0 +1,134 @@
+-- import: ui.fifthtry.com/components/editor/vars
+-- import: fastn-community.github.io/svg-icons/phosphor
+
+-- component file-switcher:
+boolean $open: false
+file list files: $vars.recent-files
+
+-- ftd.row:
+/spacing.fixed.px: 5
+
+    -- phosphor.thin: floppy-disk
+    if: { vars.show-save-button && !file-switcher.open }
+    $on-click$: trigger-save(file=$vars.current-file)
+    size: 20
+
+    -- ftd.column:
+    $on-mouse-enter$: $ftd.set-boolean($a = $file-switcher.open, v = true)
+    $on-mouse-leave$: $ftd.set-boolean($a = $file-switcher.open, v = false)
+
+        -- ftd.column:
+        if: { vars.current-file != NULL }
+
+            -- ftd.text: $vars.back-ticked(t=$vars.current-file)
+            color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
+            color: black
+
+            -- popup:
+            $open: $file-switcher.open
+            files: $file-switcher.files
+
+        -- end: ftd.column
+
+    -- end: ftd.column
+
+-- end: ftd.row
+
+-- end: file-switcher
+
+
+
+
+-- component popup:
+boolean $open:
+file list files:
+
+-- ftd.column:
+$on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
+$on-click$: $ftd.set-boolean($a = $popup.open, v = false)
+/classes if { popup.open }: hover-popup-active
+/classes: hover-popup
+z-index: 10
+width.fixed.px: 260
+anchor: parent
+left.px: -6
+top.px: -6
+;; spacing.fixed.px: 5
+
+    -- ftd.column:
+    width: fill-container
+    background.solid: #f5f5f5
+    border-color: #ccc
+    border-radius.px: 3
+    border-width.px: 1
+    if: { popup.open }
+
+        -- show-file: $file
+        for: $file, $idx in *$popup.files
+        $hover: false
+        $hover if { idx == 0 }: true
+
+    -- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: popup
+
+
+
+
+
+-- component show-file:
+caption file file:
+boolean $hover: false
+
+
+-- ftd.column:
+width.fixed.percent: 100
+padding.px: 5
+spacing.fixed.px: 2
+background.solid: #f5f5f5
+background.solid if { show-file.hover }: #ccc
+$on-mouse-enter$: $ftd.set-boolean($a = $show-file.hover, v = true)
+$on-mouse-leave$: $ftd.set-boolean($a = $show-file.hover, v = false)
+link: $show-file.file.url
+border-bottom-width.px: 1
+border-color: #ddd
+
+-- ftd.text: $vars.back-ticked(t=$show-file.file.name)
+color if { ftd.list_contains(vars.modified-files, show-file.file.name) }: #1866f0
+color: black
+
+-- ftd.text: $vars.back-ticked(t=$show-file.file.package)
+color: black
+
+-- end: ftd.column
+
+-- end: show-file
+
+
+
+
+-- record file:
+caption name:               ;; full file name
+string package:             ;; full package name
+string url:
+;; string file-type:
+
+
+
+
+-- void trigger-save(file):
+js: $assets.files.components.editor.function.js
+string file:
+
+ide_open_command_k("push-file " + file)
+
+
+
+
+
+
+
+

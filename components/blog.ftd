@@ -1,0 +1,1796 @@
+-- import: ui.fifthtry.com/components/blog/blog-post as post
+-- import: www.fifthtry.com/just-user-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/components/blog/blog-authors as author
+-- import: fastn-community.github.io/svg-icons/phosphor as ph
+-- import: fastn-community.github.io/dark-mode-switcher as dms
+-- import: fastn-community.github.io/design-system/record as r
+-- import: ui.fifthtry.com/components/footer
+-- import: fastn-community.github.io/design-system/record as r
+-- import: fastn-community.github.io/design-system as ds
+export: borders, button, icon-button, primary-button, secondary-button, circle-text-button, phosphor-icon-button, inline-row, footer-link, copyright-text, page-widths, header-link, page, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, section-column, column, element-radius, radius, row, flush, gap, hv, spaces, border-data, border-bottom, alert, container, text-input, danger-button, checkbox, link-button, floater, copy-to-clipboard-text, copy-to-clipboard-icon, label-text, package-info, image
+exposing: page-widths
+
+
+-- page-widths widths:
+regular.px: 1140
+narrow.px: 800
+wide.px: 1340
+
+
+
+-- import: fastn-community.github.io/dark-flame-cs
+-- import: fastn-community.github.io/midnight-storm-typography
+
+-- ftd.color-scheme colors: $dark-flame-cs.main
+-- ftd.type-data types: $midnight-storm-typography.types
+
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data: $john-doe.jd
+caption title:
+optional body description:
+string date:
+author-data author:
+optional ftd.image-src banner-image:
+optional body body:
+children wrapper:
+boolean theme-switcher: true
+boolean fastn-badge: true
+boolean hide-footer: false
+
+-- ds.page: $page.title
+
+-- p.page:
+user-data: $page.user-data
+
+	-- ds.section-column:
+	align-content: top-left
+	margin: $ds.spaces.vertical-gap.large
+	
+		-- dms.dark-mode-switcher-float:
+		if: { page.theme-switcher }
+		
+		-- ftd.image:
+		if: { page.fastn-badge }
+		src: $assets.files.assets.blog.powered-by.svg
+		anchor: window
+		right.px: 0
+		bottom.px: 0
+		z-index: 99999999999999
+		link: https://fastn.com/
+		open-in-new-tab: true
+		
+		-- ftd.image:
+		if: { page.banner-image != NULL }
+		src: $page.banner-image
+		width: fill-container
+		height.fixed.px: 220
+		fit: cover
+
+		-- ftd.desktop:
+		
+		-- ds.row:
+		align-content: top-left
+		spacing: $ds.spaces.horizontal-gap.large
+		inset: $ds.spaces.inset-tall.zero-medium
+		
+			-- ds.column:
+			align-content: top-left
+			width.fixed.px: 300
+			
+				-- ds.copy-small: $page.date
+				
+				-- ds.row:
+				align-content: left
+				
+					-- ds.image:
+					src: $page.author.photo
+					width.fixed.px: 40
+					radius: $ds.radius.round
+					
+					-- ds.heading-tiny: $page.author.name
+					
+				-- end: ds.row
+
+				-- ds.column:
+				align-content: left
+				
+					-- ds.copy-small: Share
+					
+					-- ds.row:
+					align-content: left
+					
+						-- ds.copy-to-clipboard-icon: $copy-share-url()
+						
+						-- ftd.image:
+						src: $assets.files.assets.blog.tweet.svg
+						link: $twitter-share-url()
+						width.fixed.px: 24
+						
+						-- ftd.image:
+						src: $assets.files.assets.blog.linkedin.svg
+						link: $linkedin-share-url()
+						width.fixed.px: 24
+						
+					-- end: ds.row
+
+				-- end: ds.column
+
+			-- end: ds.column
+
+			-- ds.column:
+			align-content: top-left
+			
+				-- ds.heading-hero: $page.title
+				color: $ds.colors.shadow
+				
+				-- ds.copy-regular: $page.body
+				if: { page.body != NULL }
+				
+				-- ds.column:
+				content: $page.wrapper
+				spacing: $ds.spaces.vertical-gap.large
+				
+				-- end: ds.column
+
+			-- end: ds.column
+
+		-- end: ds.row
+
+		-- end: ftd.desktop
+
+		-- ftd.mobile:
+		
+		-- ds.column:
+		align-content: top-left
+		spacing: $ds.spaces.vertical-gap.large
+		inset: $ds.spaces.inset-tall.zero-medium
+		
+			-- ds.column:
+			align-content: top-left
+			width.fixed.px: 300
+			
+				-- ds.copy-small: $page.date
+				
+				-- ds.row:
+				align-content: left
+				
+					-- ds.image:
+					src: $page.author.photo
+					width.fixed.px: 40
+					radius: $ds.radius.round
+					
+					-- ds.heading-tiny: $page.author.name
+					
+				-- end: ds.row
+
+				-- ds.column:
+				align-content: left
+				
+					-- ds.copy-small: Share
+					
+					-- ds.row:
+					align-content: left
+					
+						-- ds.copy-to-clipboard-icon: $copy-share-url()
+						
+						-- ftd.image:
+						src: $assets.files.assets.blog.tweet.svg
+						link: $twitter-share-url()
+						width.fixed.px: 24
+						
+						-- ftd.image:
+						src: $assets.files.assets.blog.linkedin.svg
+						link: $linkedin-share-url()
+						width.fixed.px: 24
+						
+					-- end: ds.row
+
+				-- end: ds.column
+
+			-- end: ds.column
+
+			-- ds.column:
+			align-content: top-left
+			
+				-- ds.heading-hero: $page.title
+				color: $ds.colors.shadow
+				
+				-- ds.copy-regular: $page.body
+				if: { page.body != NULL }
+				
+				-- ds.column:
+				content: $page.wrapper
+				spacing: $ds.spaces.vertical-gap.large
+				
+				-- end: ds.column
+
+			-- end: ds.column
+
+		-- end: ds.column
+
+		-- end: ftd.mobile
+
+		-- author.author: $page.author.name
+		photo: $page.author.photo
+		profile: $page.author.profile
+		bio-url: $page.author.bio-url
+		
+		$page.author.description
+		
+		-- ds.newsletter: FifthTry Newsletter
+		cta-text: Subscribe
+		cta-link: /
+		placeholder: Enter you email...
+		input: true
+		background.solid: $ds.colors.background.step-1
+		colored-text: true
+		rounded: true
+		
+		Once a week we send you the latest news about FifthTry.
+		
+	-- end: ds.section-column
+	
+-- end: p.page
+
+-- end: ds.page
+
+-- end: page
+
+
+
+
+
+
+
+
+-- component video:
+caption youtube:
+optional ftd.resizing width: fill-container
+optional ftd.resizing height:
+
+-- ftd.iframe:
+youtube: $video.youtube
+min-height.fixed.px: 400
+min-width: fill-container
+width: $video.width
+height: $video.height
+margin-vertical.px: 24
+border-radius.px: 8
+
+-- end: video
+
+
+
+
+
+
+
+
+-- component h0:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-large: $h0.title
+	
+	-- ds.copy-regular:
+	if: { h0.body != NULL }
+	
+	$h0.body
+	
+-- end: ds.column
+
+-- end: h0
+
+
+
+
+
+
+
+
+
+-- component h1:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-medium: $h1.title
+	color: $ds.colors.shadow
+	
+	-- ds.copy-regular:
+	if: { h1.body != NULL }
+	
+	$h1.body
+	
+-- end: ds.column
+
+-- end: h1
+
+
+
+
+
+
+
+-- component h2:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-small: $h2.title
+	
+	-- ds.copy-regular:
+	if: { h2.body != NULL }
+	
+	$h2.body
+	
+-- end: ds.column
+
+-- end: h2
+
+
+
+
+-- component h3:
+caption title:
+optional body body:
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-tiny: $h3.title
+	
+	-- ds.copy-regular:
+	if: { h3.body != NULL }
+	
+	$h3.body
+	
+-- end: ds.column
+
+-- end: h3
+
+
+
+
+
+
+
+
+
+-- component quote:
+optional caption title:
+optional body body:
+optional ftd.image-src quote-logo: $assets.files.assets.blog.left-quote-circle-dark.svg
+
+-- ds.row:
+background.solid: $ds.colors.background.step-1
+inset: $ds.spaces.inset-tall.zero-medium
+border: $ds.borders.left.large
+border-color: $ds.colors.shadow
+radius: $ds.radius.medium
+align-content: top-left
+
+	-- ftd.image:
+	src: $quote.quote-logo
+	width: auto
+	height.fixed.px: 32
+	padding-left.px: 16
+	
+	-- ds.column:
+	align-content: left
+	
+		-- ds.copy-regular:
+		if: { quote.body != NULL }
+		
+		$quote.body
+		
+		-- ds.row:
+		align-content: left
+		
+			-- ds.copy-small: ~
+			
+			-- ds.copy-small: $quote.title
+			if: { quote.title != NULL }
+			
+		-- end: ds.row
+
+	-- end: ds.column
+
+-- end: ds.row
+
+-- end: quote
+
+
+
+
+
+
+
+
+
+
+-- component para:
+body body:
+
+-- ds.column:
+align-content: left
+
+-- ds.copy-regular:
+align: left
+
+$para.body
+
+-- end: ds.column
+
+-- end: para
+
+
+
+
+
+
+
+
+
+-- component code:
+optional caption caption:
+body body:
+optional string icon:
+string text: $code.body
+string lang: ftd
+boolean copy: true
+string $copy-text: null
+boolean $copy-mouse-in: false
+boolean $mouse-in: false
+optional ftd.resizing max-height:
+optional ftd.resizing max-width:
+string clean-code: $ftd.clean-code(a = $code.text, lang = $code.lang)
+boolean line-numbers: false
+
+-- ds.section-column:
+inner-background.solid: $inherited.colors.background.code
+spacing: $ds.spaces.vertical-gap.zero
+radius: $ds.radius.large
+margin: $ds.spaces.vertical-gap.medium
+
+	-- ds.row:
+	if: { code.caption != NULL || code.copy }
+	spacing: $ds.spaces.horizontal-gap.medium
+	inset: $ds.spaces.inset-square.medium
+	width: fill-container
+	border: $ds.borders.bottom.small
+	border-color: $ds.colors.border-strong
+	radius: $ds.radius.zero
+	
+		-- ds.row:
+		align-content: left
+		
+			-- ds.row:
+			width: hug-content
+			align-content: left
+			spacing: $ds.spaces.horizontal-gap.extra-small
+			color: $ds.colors.shadow
+			
+				-- ph.fill:
+				if: { code.icon == NULL }
+				name: circle
+				size: 14
+				
+				-- ph.fill:
+				if: { code.icon == NULL }
+				name: circle
+				size: 14
+				
+				-- ph.fill:
+				if: { code.icon == NULL }
+				name: circle
+				size: 14
+				
+			-- end: ds.row
+
+			-- ph.regular:
+			if: { code.icon != NULL }
+			name: $code.icon
+			size: 18
+			
+			-- ds.copy-regular:
+			if: { code.caption != NULL }
+			
+			$code.caption
+			
+		-- end: ds.row
+
+		-- ds.row:
+		if: { code.copy }
+		$on-mouse-enter$: $ftd.set-bool($a = $code.mouse-in, v = true)
+		$on-mouse-leave$: $ftd.set-bool($a = $code.mouse-in, v = false)
+		$on-mouse-leave$: $ftd.set-string($a = $code.copy-text, v = null)
+		width: hug-content
+		spacing: $ds.spaces.horizontal-gap.small
+		
+			-- ftd.image:
+			if: { code.copy-text == "null" }
+			src: $assets.files.assets.blog.copy.svg
+			src if { code.copy-mouse-in }: $assets.files.assets.blog.copy-hover.svg
+			$on-mouse-enter$: $ftd.set-bool($a = $code.copy-mouse-in, v = true)
+			$on-mouse-leave$: $ftd.set-bool($a = $code.copy-mouse-in, v = false)
+			$on-click$: $ftd.copy-to-clipboard(a = $code.clean-code)
+			$on-click$: $ftd.set-string($a = $code.copy-text, v = Copied!)
+			width.fixed.px: 18
+			
+			-- ftd.image:
+			if: { code.copy-text != "null" }
+			src: $assets.files.assets.blog.tick.svg
+			width.fixed.px: 18
+			
+			-- ds.copy-regular: $code.copy-text
+			if: { code.copy-text != "null" }
+			
+		-- end: ds.row
+
+	-- end: ds.row
+
+	-- ftd.code:
+	theme: fastn-theme.light
+	theme if { ftd.dark-mode }: fastn-theme.dark
+	text: $code.body
+	lang: $code.lang
+	width: fill-container
+	role: $inherited.types.copy-regular
+	color: $inherited.colors.text
+	background.solid: $inherited.colors.background.code
+	overflow-x: auto
+	overflow-y: auto
+	max-height if { code.max-height != NULL }: $code.max-height
+	max-width if { code.max-width != NULL }: $code.max-width
+	show-line-number if { code.line-numbers }: true
+	
+	-- ftd.column:
+	if: { code.lang != NULL }
+	anchor: parent
+	right.px: 12
+	bottom.px: 12
+	z-index: 999
+	padding.px: 6
+	border-bottom-right-radius.px: 4
+	
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.medium
+		
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ds.fine-print: Lang:
+				
+				-- ds.fine-print: $code.lang
+				
+			-- end: ds.row
+
+		-- end: ds.row
+
+	-- end: ftd.column
+
+-- end: ds.section-column
+
+-- end: code
+
+
+
+
+
+
+-- component latest-post-card:
+caption title:
+body description:
+string date:
+string link:
+
+-- ds.container:
+inset: $ds.spaces.inset-square.medium
+background.solid: $ds.colors.background.step-2
+width.fixed.percent: 30
+width.fixed.percent if { ftd.device != "mobile"}: 68
+height.fixed.px if { ftd.device != "mobile"}: 200
+radius: $ds.radius.medium
+
+	-- ds.column:
+	align-content: top-left
+	link: $latest-post-card.link
+	spacing: $ds.spaces.vertical-gap.large
+	
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.small
+		align-content: top-left
+		height.fixed.px: 80
+		
+			-- ds.fine-print:
+			
+			$latest-post-card.date
+			
+			-- ds.copy-large:
+			color: $ds.colors.text-strong
+			
+			$latest-post-card.title
+			
+		-- end: ds.column
+
+		-- ds.column:
+		align-content: top-left
+		height.fixed.px: 80
+		
+			-- ds.copy-regular:
+			color: $ds.colors.text
+			
+			$latest-post-card.description
+			
+		-- end: ds.column
+
+	-- end: ds.column
+
+-- end: ds.container
+
+-- end: latest-post-card
+
+
+
+
+
+-- record author-data:
+caption name:
+body description:
+string profile:
+string bio-url:
+ftd.image-src photo:
+
+
+
+-- author-data nandhini: Nandhini
+photo: $assets.files.assets.team.nandhini-devi.jpg
+profile: Freelance Copywriter
+bio-url: https://www.linkedin.com/in/nandhini-devi-elumalai/
+
+I'm currently working at FifthTry, handling all things content – blogs,
+docs, homepages, and socials. If you come across "if you can type,
+you can code" – that's my signature move and a nod to my love for fastn
+for making coding simple and fun!
+
+I've got a soft spot for startups in the business of saving the planet,
+and if you're one of them, count me in.
+
+
+-- author-data arpita: Arpita Jaiswal
+photo: $assets.files.assets.team.arpita.jpg
+profile: Senior Software Developer
+bio-url: https://github.com/Arpita-Jaiswal
+
+I am building `FifthTry`.
+
+
+-- author-data amitu: Amit Upadhyay
+photo: $assets.files.assets.team.amitu.jpg
+profile: Founder, CEO
+bio-url: https://www.linkedin.com/in/amitu/
+
+Building fifthTry.com
+
+
+-- author-data meenu: Meenu Kumari
+photo: $assets.files.assets.team.meenu.jpeg
+profile: Fastn Builder - FTD Dev
+bio-url: https://github.com/MeenuKumari28
+
+Building fifthtry.com
+
+
+
+-- string linkedin-share-url():
+js: $assets.files.assets.functions.js
+
+linkedin_share_url()
+
+
+
+
+-- string twitter-share-url():
+js: $assets.files.assets.functions.js
+
+twitter_share_url()
+
+
+
+-- string copy-share-url():
+js: $assets.files.assets.functions.js
+
+copy_share_url()
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component inset-example:
+
+-- ds.column:
+align-content: left
+
+	-- ds.copy-regular:
+	
+	**Example use of `inset-wide`**
+	
+	-- ds.primary-button: Button
+	link: /
+	size: large
+	
+	-- ds.copy-regular:
+	
+	**Example use of `inset-tall`**
+	
+	-- inset-tall:
+	
+	-- ds.copy-regular:
+	
+	**Example use of `inset-square`**
+	
+	-- inset-square:
+	
+-- end: ds.column
+
+-- end: inset-example
+
+
+
+
+
+
+
+
+-- component hero:
+caption title:
+body body:
+ftd.image-src image:
+string cta-text:
+string cta-link:
+ftd.background background:
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+background: $hero.background
+inset: $ds.spaces.inset-square.medium
+radius: $ds.radius.zero
+
+	-- ds.column:
+	align-content: left
+	
+		-- ds.heading-large: $hero.title
+		
+		-- ds.copy-regular: $hero.body
+		
+		-- ds.primary-button: $hero.cta-text
+		link: $hero.cta-link
+		
+	-- end: ds.column
+
+	-- ftd.image:
+	src: $hero.image
+	width.fixed.percent: 45
+	
+-- end: ds.row
+
+-- end: hero
+
+
+
+-- component alignment:
+
+-- ds.section-row:
+margin: $ds.spaces.vertical-gap.zero
+inset: $ds.spaces.inset-wide.large
+
+	;; -- ds.row:
+	;; spacing: $ds.spaces.horizontal-gap.zero
+	-- ds.column:
+	
+		-- ftd.image:
+		src: $assets.files.assets.wrong.png
+		width.fixed.px: 24
+		
+		-- wrong-align: Card component title
+		image: $assets.files.assets.placeholder.jpg
+		cta-text: Button
+		cta-link: /
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+	-- end: ds.column
+
+	-- ds.column:
+	
+		-- ftd.image:
+		src: $assets.files.assets.right.png
+		width.fixed.px: 24
+		
+		-- ds.card: Card component title
+		image: $assets.files.assets.placeholder.jpg
+		cta-text: Button
+		cta-link: /
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+	-- end: ds.column
+
+	;; -- end: ds.row
+
+-- end: ds.section-row
+
+-- end: alignment
+
+
+
+
+-- component wrong-align:
+caption title:
+body body:
+optional ftd.image-src image:
+optional string cta-text:
+optional string cta-link:
+
+-- ds.container:
+border: $ds.borders.uniform.small
+radius: $ds.radius.small
+inset: $ds.spaces.inset-square.medium
+
+	-- ds.column:
+	align-content: left
+	
+		-- ftd.image:
+		src: $wrong-align.image
+		width: fill-container
+		border-radius.px: $ds.radius.uniform.small
+		
+		-- ds.heading-tiny: $wrong-align.title
+		
+		-- ds.copy-small: $wrong-align.body
+		align: center
+		
+		-- ds.primary-button: $wrong-align.cta-text
+		if: { wrong-align.cta-text != NULL }
+		link: $wrong-align.cta-link
+		width: full
+		
+	-- end: ds.column
+
+-- end: ds.container
+
+-- end: wrong-align
+
+
+
+
+
+-- component center-alignment-wrong:
+
+-- ds.column:
+inset: $ds.spaces.inset-wide.large
+spacing: $ds.spaces.vertical-gap.large
+background.solid: $ds.colors.background.step-2
+
+	-- ds.column:
+	align-content: left
+	
+		-- ftd.image:
+		src: $assets.files.assets.wrong.png
+		width.fixed.px: 24
+		
+		-- wca: Hero component title
+		image: $assets.files.assets.placeholder.jpg
+		;; background.solid: $ds.colors.background.step-2
+		cta-text: Button
+		cta-link: /
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+		molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
+		consectetur adipiscing elit. Quisque molestie ante in luctus
+		rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+	-- end: ds.column
+
+-- end: ds.column
+
+-- end: center-alignment-wrong
+
+
+
+
+
+
+
+
+
+-- component center-alignment-right:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+inset: $ds.spaces.inset-wide.large
+spacing: $ds.spaces.vertical-gap.large
+outer-background.solid: $ds.colors.background.step-2
+
+	-- ds.column:
+	align-content: left
+	
+		-- ftd.image:
+		src: $assets.files.assets.right.png
+		width.fixed.px: 24
+		
+		-- ds.column:
+		width.fixed.px: 500
+
+		-- ds.hero: Hero component title
+		image: $assets.files.assets.placeholder.jpg
+		;; background.solid: $ds.colors.background.step-2
+		cta-text: Button
+		cta-link: /
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+		molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
+		consectetur adipiscing elit. Quisque molestie ante in luctus
+		rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+	-- end: ds.column
+	-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: center-alignment-right
+
+
+
+
+-- component wca:
+caption title:
+body body:
+optional ftd.image-src image:
+optional string cta-text:
+optional string cta-link:
+optional ftd.background background:
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+background: $wca.background
+inset: $ds.spaces.inset-square.small
+radius: $ds.radius.zero
+
+	-- ds.column:
+	;;width.fixed.px if { wca.image != NULL }: 500
+	align-content: left
+	
+		-- ds.heading-large: $wca.title
+		
+		-- ds.copy-regular: $wca.body
+		align: center
+		
+		-- ds.primary-button: $wca.cta-text
+		if: { wca.cta-text != NULL }
+		link: $wca.cta-link
+		
+	-- end: ds.column
+
+	-- ftd.image:
+	if: { wca.image != NULL }
+	src: $wca.image
+	width.fixed.px: 460
+	
+-- end: ds.row
+
+-- end: wca
+
+
+
+
+
+
+
+
+
+-- component inset-tall:
+-- ds.section-column:
+inset: $ds.spaces.inset-tall.large
+outer-background.solid: $ds.colors.background.step-2
+margin: $ds.spaces.vertical-gap.zero
+
+	-- ds.container:
+	margin-vertical: $ds.spaces.vertical-gap.zero
+	
+		-- ds.copy-regular:
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum. Lorem ipsum dolor sitat,
+		consectetur adipiscing elit. Quisque molestie ante in luctus rutrum.
+		
+		
+	-- end: ds.container
+-- end: ds.section-column
+-- end: inset-tall
+
+
+-- component inset-square:
+-- ds.column:
+inset: $ds.spaces.inset-square.large
+background.solid: $ds.colors.background.step-2
+width.fixed.percent: 50
+
+	-- ftd.image:
+	src: $assets.files.assets.placeholder.jpg
+	link: /
+	width: fill-container
+	
+-- end: ds.column
+-- end: inset-square
+
+
+
+
+
+-- component align-example:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+spacing: $ds.spaces.vertical-gap.medium
+
+	-- ds.row:
+	align-content: center
+	
+	
+		-- ds.code:
+		
+		\-- component align-left:
+		
+		\-- ds.container:
+		border: $ds.borders.uniform.small
+		radius: $ds.radius.small
+		inset: $ds.spaces.inset-square.medium
+		
+		\-- ds.column:
+		align-content: left ;; <hl>
+		
+		\-- ds.heading-tiny: Card component title
+		
+		\-- ds.copy-small:
+		
+		Lorem ipsum dolor sit amet,
+		consectetur adipiscing elit.
+		Quisque molestie ante in
+		luctus rutrum.
+		
+		\-- end: ds.column
+		
+		\-- end: ds.container
+		\-- end: align-left
+		
+		-- end: ds.code
+
+		-- align-left:
+		
+	-- end: ds.row
+
+
+	-- ds.row:
+	align-content: center
+	
+		-- ds.code:
+		
+		\-- component align-center:
+		
+		\-- ds.container:
+		border: $ds.borders.uniform.small
+		radius: $ds.radius.small
+		inset: $ds.spaces.inset-square.medium
+		
+		\-- ds.column:
+		align-content: center ;; <hl>
+		
+		\-- ds.heading-tiny: Card component title
+		
+		\-- ds.copy-small:
+		
+		Lorem ipsum dolor sit amet,
+		consectetur adipiscing elit.
+		Quisque molestie ante in
+		luctus rutrum
+		
+		\-- end: ds.column
+		
+		\-- end: ds.container
+		\-- end: align-left
+		
+		-- end: ds.code
+
+		-- align-center:
+		
+	-- end: ds.row
+
+	-- ds.row:
+	align-content: center
+	
+		-- ds.code:
+		
+		\-- component align-right:
+		
+		\-- ds.container:
+		border: $ds.borders.uniform.small
+		radius: $ds.radius.small
+		inset: $ds.spaces.inset-square.medium
+		
+		\-- ds.column:
+		align-content: right ;; <hl>
+		
+		\-- ds.heading-tiny: Card component title
+		
+		\-- ds.copy-small:
+		
+		Lorem ipsum dolor sit amet,
+		consectetur adipiscing elit.
+		Quisque molestie ante in
+		luctus rutrum
+		
+		\-- end: ds.column
+		
+		\-- end: ds.container
+		\-- end: align-left
+		
+		-- end: ds.code
+
+		-- align-right:
+		
+	-- end: ds.row
+
+-- end: ds.section-column
+-- end: align-example
+
+
+
+
+-- component align-left:
+
+-- ds.container:
+border: $ds.borders.uniform.small
+radius: $ds.radius.small
+inset: $ds.spaces.inset-square.medium
+
+	-- ds.column:
+	align-content: left
+	
+		-- ds.heading-tiny: Card component title
+		
+		-- ds.copy-small:
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie
+		ante in luctus rutrum.
+		
+	-- end: ds.column
+
+-- end: ds.container
+-- end: align-left
+
+
+
+
+-- component align-center:
+-- ds.container:
+border: $ds.borders.uniform.small
+radius: $ds.radius.small
+inset: $ds.spaces.inset-square.medium
+
+	-- ds.column:
+	align-content: center
+	
+		-- ds.heading-tiny: Card component title
+		
+		-- ds.copy-small:
+		align: center
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie
+		ante in luctus rutrum.
+		
+	-- end: ds.column
+
+-- end: ds.container
+-- end: align-center
+
+
+
+
+-- component align-right:
+-- ds.container:
+border: $ds.borders.uniform.small
+radius: $ds.radius.small
+inset: $ds.spaces.inset-square.medium
+
+	-- ds.column:
+	align-content: right
+	
+		-- ds.heading-tiny: Card component title
+		
+		-- ds.copy-small:
+		align: right
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie
+		ante in luctus rutrum.
+		
+	-- end: ds.column
+
+-- end: ds.container
+-- end: align-right
+
+
+
+
+-- component header:
+
+-- ds.column:
+align-content: left
+
+	-- ftd.image:
+	src: $assets.files.assets.wrong.png
+	width.fixed.px: 24
+	
+	-- header-bad:
+	
+	-- ftd.image:
+	src: $assets.files.assets.right.png
+	width.fixed.px: 24
+	
+	-- header-good:
+	
+-- end: ds.column
+
+-- end: header
+
+
+
+
+
+
+-- component header-bad:
+
+-- ds.section-row:
+inset: $ds.spaces.inset-wide.large
+outer-background.solid: $ds.colors.background.step-2
+spacing: $ds.spaces.horizontal-gap.space-between
+margin: $ds.spaces.vertical-gap.zero
+
+	-- ftd.image:
+	src: https://talknotes.io/_ipx/w_150&q_80/images/brand/logo-color.svg
+	width.fixed.percent: 10
+	
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.medium
+	width: fill-container
+	
+		-- ds.header-link: Try it
+		link: /
+		
+		-- ds.header-link: How it works
+		link: /
+		
+		-- ds.header-link: Use cases
+		link: /
+		
+		-- ds.header-link: Pricing
+		link: /
+		
+		-- ds.header-link: FAQ
+		link: /
+		
+		-- ds.header-link: About Us
+		link: /
+		
+		-- ds.header-link: Our Team
+		link: /
+		
+	-- end: ds.row
+
+	-- ds.row:
+	width: hug-content
+	
+		-- ds.primary-button: Login
+		link: /
+		
+	-- end: ds.row
+
+-- end: ds.section-row
+
+-- end: header-bad
+
+
+
+
+-- component header-good:
+;; optional boolean $open: false
+
+-- ds.section-row:
+inset: $ds.spaces.inset-wide.large
+outer-background.solid: $ds.colors.background.step-2
+spacing: $ds.spaces.horizontal-gap.space-between
+margin: $ds.spaces.vertical-gap.zero
+
+	-- ds.row:
+	;; spacing: $ds.spaces.vertical-gap.space-between
+	align-content: left
+	
+		-- ftd.image:
+		src: https://talknotes.io/_ipx/w_150&q_80/images/brand/logo-color.svg
+		width.fixed.percent: 28
+		
+		
+	-- end: ds.row
+
+	-- ds.row:
+	width: hug-content
+	
+		-- ds.header-dropdown: Learn
+		dropdown-item: $dropdown-list
+		
+		-- ds.header-dropdown: About
+		dropdown-item: $dropdown-list-two
+		
+		-- ds.header-link: Pricing
+		link: /
+		
+	-- end: ds.row
+
+	-- ds.row:
+	align-content: right
+	
+		-- ds.primary-button: Login
+		link: /
+		
+	-- end: ds.row
+
+-- end: ds.section-row
+
+-- end: header-good
+
+
+
+
+-- component ws-do:
+
+-- ds.column:
+align-content: left
+
+	-- ftd.image:
+	src: $assets.files.assets.right.png
+	width.fixed.px: 24
+	
+	-- ds.band: Band component title
+	background.solid: $ds.colors.background.step-1
+	
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+	molestie ante in luctus rutrum.
+	
+-- end: ds.column
+
+-- end: ws-do
+
+
+
+
+-- component ws-dont:
+
+-- ds.column:
+align-content: left
+
+	-- ftd.image:
+	src: $assets.files.assets.wrong.png
+	width.fixed.px: 24
+	
+	-- band-one: Band component title
+	background.solid: $ds.colors.background.step-1
+	
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+	molestie ante in luctus rutrum.
+	
+-- end: ds.column
+
+-- end: ws-dont
+
+-- component band-one:
+optional caption title:
+optional body body:
+optional ftd.background background:
+;; band-one-size size: small
+ftd.align align-content: center
+
+-- ds.column:
+background: $band-one.background
+radius: $ds.radius.zero
+;; inset if { band-one.size == small }: $ds.spaces.inset-tall.small
+;; inset if { band-one.size == medium }: $ds.spaces.inset-tall.medium
+;; inset if { band-one.size == large }: $ds.spaces.inset-tall.large
+align-content: $band-one.align-content
+spacing: $ds.spaces.vertical-gap.zero
+
+	-- ds.heading-large: $band-one.title
+	if: { band-one.title != NULL }
+	
+	-- ds.copy-regular: $band-one.body
+	if: { band-one.body != NULL }
+	
+-- end: ds.column
+
+-- end: band-one
+
+
+
+
+
+
+
+-- component form-dont:
+
+-- ds.column:
+align-content: left
+
+	-- ftd.image:
+	src: $assets.files.assets.wrong.png
+	width.fixed.px: 24
+	
+	-- ds.container:
+	width.fixed.percent: 60
+	background.solid: $ds.colors.background.step-2
+	border: $ds.borders.uniform.small
+	radius: $ds.radius.small
+	inset: $ds.spaces.inset-square.medium
+	
+		-- ds.text-input: Name
+		size: small
+		
+		-- ds.text-input: Designation
+		size: small
+		
+		-- ds.text-input: Email
+		size: small
+		
+	-- end: ds.container
+
+-- end: ds.column
+
+-- end: form-dont
+
+
+
+
+-- component form-do:
+
+-- ds.column:
+align-content: left
+
+	-- ftd.image:
+	src: $assets.files.assets.right.png
+	width.fixed.px: 24
+	
+	-- ds.container:
+	width.fixed.percent: 60
+	background.solid: $ds.colors.background.step-2
+	border: $ds.borders.uniform.small
+	radius: $ds.radius.small
+	inset: $ds.spaces.inset-square.medium
+	
+		-- ds.column:
+		spacing: $ds.spaces.vertical-gap.medium
+		
+			-- ds.text-input: Name
+			size: small
+			
+			-- ds.text-input: Designation
+			size: small
+			
+			-- ds.text-input: Email
+			size: small
+			
+		-- end: ds.column
+
+	-- end: ds.container
+
+-- end: ds.column
+
+-- end: form-do
+
+
+
+
+
+-- component spacing-example:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+
+	-- ds.row:
+	width: fill-container
+	
+		-- ds.code:
+		
+		\-- component spacing-vg-z:
+		
+		\-- ds.section-column:
+		inset: $ds.spaces.inset-wide.medium
+		
+		\-- ds.column:
+		align-content: left
+		spacing: $ds.spaces.vertical-gap.zero ;; <hl>
+		
+		\-- ds.heading-large: Lorem ipsum dolor sit
+		
+		\-- ds.copy-regular:
+		
+		Amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+		\-- end: ds.column
+		
+		\-- end: ds.section-column
+		
+		\-- end: spacing-vg-z
+		
+		-- end: ds.code
+
+		-- spacing-vg-z:
+		
+	-- end: ds.row
+
+	-- ds.row:
+	
+		-- ds.code:
+		
+		\-- component spacing-vg-l:
+		
+		\-- ds.section-column:
+		inset: $ds.spaces.inset-wide.medium
+		
+		\-- ds.column:
+		align-content: left
+		spacing: $ds.spaces.vertical-gap.large ;; <hl>
+		
+		\-- ds.heading-large: Lorem ipsum dolor sit
+		
+		\-- ds.copy-regular:
+		
+		Amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+		\-- end: ds.column
+		
+		\-- end: ds.section-column
+		
+		\-- end: spacing-vg-l
+		
+		-- end: ds.code
+
+		-- spacing-vg-l:
+		
+	-- end: ds.row
+
+-- end: ds.section-column
+
+-- end: spacing-example
+
+
+
+
+-- component spacing-vg-z:
+
+-- ds.section-column:
+inset: $ds.spaces.inset-wide.medium
+outer-background.solid: $ds.colors.background.step-2
+margin: $ds.spaces.vertical-gap.zero
+
+	-- ds.column:
+	align-content: left
+	spacing: $ds.spaces.vertical-gap.zero
+	
+		-- ds.copy-large:
+		
+		Lorem ipsum dolor sit
+		
+		-- ds.copy-regular:
+		
+		Amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+	-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: spacing-vg-z
+
+-- component spacing-vg-l:
+
+-- ds.section-column:
+inset: $ds.spaces.inset-wide.medium
+outer-background.solid: $ds.colors.background.step-2
+margin: $ds.spaces.vertical-gap.zero
+
+	-- ds.column:
+	align-content: left
+	spacing: $ds.spaces.vertical-gap.large
+	
+		-- ds.copy-large:
+		
+		Lorem ipsum dolor sit
+		
+		-- ds.copy-regular:
+		
+		Amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+	-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: spacing-vg-l
+
+
+
+
+-- component heirarchy:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+
+	-- example-h:
+	
+	-- center-alignment-right:
+	
+-- end: ds.section-column
+
+-- end: heirarchy
+
+-- component example-h:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+inset: $ds.spaces.inset-wide.large
+spacing: $ds.spaces.vertical-gap.large
+outer-background.solid: $ds.colors.background.step-2
+
+	-- ds.column:
+	align-content: left
+	
+		-- ftd.image:
+		src: $assets.files.assets.wrong.png
+		width.fixed.px: 24
+		
+		-- hero-wrong: **Hero component title**
+		image: $assets.files.assets.placeholder.jpg
+		background.solid: $ds.colors.background.step-2
+		cta-text: Button
+		cta-link: /
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+		molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
+		consectetur adipiscing elit. Quisque molestie ante in luctus
+		rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Quisque molestie ante in luctus rutrum.
+		
+	-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: example-h
+
+
+
+
+-- component hero-wrong:
+caption title:
+body body:
+ftd.image-src image:
+string cta-text:
+string cta-link:
+ftd.background background:
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+background: $hero-wrong.background
+inset: $ds.spaces.inset-square.medium
+radius: $ds.radius.zero
+
+	-- ds.column:
+	align-content: left
+	
+		-- ds.copy-regular: $hero-wrong.title
+		
+		-- ds.copy-regular: $hero-wrong.body
+		
+		-- ds.tertiary-button: $hero-wrong.cta-text
+		link: $hero-wrong.cta-link
+		
+	-- end: ds.column
+
+	-- ftd.image:
+	src: $hero-wrong.image
+	width.fixed.percent: 35
+	
+-- end: ds.row
+
+-- end: hero-wrong
+
+
+
+
+
+
+
+
+-- r.dropdown list dropdown-list:
+
+-- r.dropdown: Try it
+option: Try it
+
+-- r.dropdown: How it Works
+option: How it Works
+
+-- r.dropdown: Use Cases
+option: Use Cases
+
+-- end: dropdown-list
+
+-- r.dropdown list dropdown-list-two:
+
+-- r.dropdown: About Us
+option: About Us
+
+-- r.dropdown: Our Team
+option: Our Team
+
+-- r.dropdown: FAQ
+option: FAQ
+
+-- end: dropdown-list-two
+
+
+-- component sample-hero:
+
+-- ds.column:
+width.fixed.px: 500
+
+-- ds.hero: Hero component title
+image: $assets.files.assets.placeholder.jpg
+background.solid: $ds.colors.background.step-2
+cta-text: Button
+cta-link: /
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+molestie ante in luctus rutrum. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Quisque molestie ante in luctus
+rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Quisque molestie ante in luctus rutrum.
+
+-- end: ds.column
+
+-- end: sample-hero
+

@@ -1,0 +1,203 @@
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/components/sites/page as sites-page
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: fastn-community.github.io/svg-icons/phosphor
+
+
+
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data:
+sites-records.site-common-data site:
+string dashboard-url:
+optional string top-message:
+caption sites-records.history-output data:
+optional string document:
+
+-- sites-page.page:
+site-data: site-data
+user-data: $page.user-data
+site: $page.site
+dashboard-url: $page.dashboard-url
+current-page: history
+
+-- diff-ui: $page.data
+document: $page.document
+site: $page.site
+
+-- end: sites-page.page
+
+-- end: page
+
+
+
+-- component diff-ui:
+caption sites-records.history-output data:
+optional string document:
+sites-records.site-common-data site:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+padding.px: 50
+
+    -- changes-ui:
+    changes: $diff-ui.data.changes
+    document: $diff-ui.document
+    next: $diff-ui.data.next
+    site: $diff-ui.site
+
+-- end: ftd.column
+
+-- end: diff-ui
+
+
+
+
+
+-- component changes-ui:
+sites-records.history-change list changes:
+optional string document:
+optional string next:
+sites-records.site-common-data site:
+
+
+-- ftd.column:
+spacing.fixed.px: 20
+width.fixed.px: 800
+
+    -- ds.heading-large: History
+
+    -- ds.row:
+    spacing: $ds.spaces.horizontal-gap.space-between
+
+        -- ds.heading-small: $changes-ui.document
+        if: { changes-ui.document != NULL }
+
+        -- ds.copy-regular:
+        link: $changes-ui.site.history-url
+        width.fixed.px: 300
+        if: { changes-ui.document != NULL }
+
+        Viewing history of single document. Click here to view entire site history.
+
+    -- end: ds.row
+
+    -- change-ui: $obj
+    for: $obj in $changes-ui.changes
+    document: $changes-ui.document
+
+    -- ftd.row:
+    align-self: end
+
+    -- ds.primary-button: Next
+    link: $changes-ui.next
+    if: { changes-ui.next != NULL }
+
+    -- end: ftd.row
+
+-- end: ftd.column
+
+-- end: changes-ui
+
+
+
+
+
+
+
+-- component change-ui:
+caption sites-records.history-change change:
+optional string document:
+
+-- ftd.column:
+background.solid: $ds.colors.background.step-2
+spacing.fixed.px: 10
+link: $change-ui.change.url
+width: fill-container
+padding.px: 20
+border-radius.px: 5
+
+    -- ftd.row:
+    width: fill-container
+    spacing: space-between
+    align-content: center
+
+
+        -- ftd.row:
+        spacing.fixed.px: 5
+        align-content: center
+        color: $ds.colors.text
+        role: $ds.types.copy-regular
+
+            -- phosphor.thin: pencil
+            size: 18
+            if: { change-ui.change.action != NULL && change-ui.change.action == "updated" }
+
+            -- phosphor.thin: file-plus
+            size: 18
+            if: { change-ui.change.action != NULL && change-ui.change.action == "created" }
+
+            -- phosphor.thin: trash
+            size: 18
+            if: { change-ui.change.action != NULL && change-ui.change.action == "deleted" }
+
+            -- ds.copy-regular: $change-ui.change.document
+            -- ds.copy-regular: at
+            -- ftd.integer: $change-ui.change.at
+
+        -- end: ftd.row
+
+
+        -- ftd.row:
+        spacing.fixed.px: 5
+        align-content: center
+        color: $ds.colors.text
+        role: $ds.types.fine-print
+
+            -- ds.fine-print: $with-comma(name = $change-ui.change.editor-name)
+            -- display-time: $change-ui.change.at
+
+        -- end: ftd.row
+
+    -- end: ftd.row
+
+    -- ds.code:
+    if: { change-ui.change.diff == NULL && change-ui.document != NULL }
+    max-height.fixed.px: 200
+    lang: $change-ui.change.language
+
+    $change-ui.change.content
+
+    -- ds.code:
+    max-height.fixed.px: 200
+    lang: diff
+    if: { change-ui.change.diff != NULL }
+
+    $change-ui.change.diff
+
+
+-- end: ftd.column
+
+
+-- end: change-ui
+
+
+
+
+
+
+-- web-component display-time:
+caption integer timestamp:
+js: $assets.files.web-components.display-time.js
+
+
+
+
+
+-- string with-comma(name):
+string name:
+
+name + ","

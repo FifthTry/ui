@@ -1,0 +1,309 @@
+-- import: ui.fifthtry.com/components/sites/setting/page as p
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/actions/sites/settings/basic
+-- import: ui.fifthtry.com/utils
+
+-- component page:
+module site-data: site-data
+module action: environment
+ud.user-data user-data:
+sites-records.site-common-data site:
+string dashboard-url:
+optional string db-url:
+module setting-actions: basic
+string $site-slug: *$page.site.site-slug
+
+-- p.page:
+site-data: $page.site-data
+user-data: $page.user-data
+site: $page.site
+current-page: basic
+dashboard-url: $page.dashboard-url
+
+	-- ds.section-column:
+	inset: $ds.spaces.inset-tall.large
+	align-content: left
+	
+		-- site-name:
+		slug: $page.site.site-slug
+		original-name: $page.site.site-name
+		setting-actions: $page.setting-actions
+		
+		
+		/-- site-slug:  ;; hiding because this is not implemented yet
+		slug: $page.site.site-slug
+		setting-actions: $page.setting-actions
+		
+		
+		/-- is-public: ;; hiding because this is not implemented yet
+		slug: $page.site.site-slug
+		is-public: $page.site.is-public
+		setting-actions: $page.setting-actions
+		
+		;; ------------------------------- is-editable -----------------------------------------------
+		-- ds.heading-medium: Site: Is Editable
+		if: { page.site.is-editable }
+		
+		-- ds.copy-regular:
+		if: { page.site.is-editable }
+		
+		The site is currently **editable**. This means you can use our online editor to edit your website.
+		You have to mark site as non-editable if you want to manage site content on some other platform,
+		e.g., Github, Dropbox etc, and are planning to use `clift` to update the content of the website.
+		
+		Editing the site on our platform and via another place at the same time can cause issue, so we
+		recommend to mark the site as non-editable if you are planning to manage the site content via
+		some other platform.
+		
+		-- ds.danger-button: Make Site Non Editable
+		if: { page.site.is-editable }
+		width: wide
+		radius: curved
+		$on-click$: $page.setting-actions.update-editable(site_slug=$page.site.site-slug, is_editable=false)
+		
+		
+		
+		-- ds.heading-medium: Site: Is Not Editable Online
+		if: { !page.site.is-editable }
+		
+		-- ds.copy-regular:
+		if: { !page.site.is-editable }
+		
+		The site is currently **not editable**.
+		
+		By default sites on FifthTry are **editable**, but you, or someone in your team, marked this site as
+		non-editable. You would mark the site as non-editable if you plan to manage the site content on some
+		other platform like Github, Dropbox etc.
+		
+		If you have changed your mind, and want to edit the site on FifthTry.com only, you can mark the site
+		as editable now.
+		
+		-- ds.danger-button: Make Site Editable
+		if: { !page.site.is-editable }
+		width: wide
+		radius: curved
+		$on-click$: $page.setting-actions.update-editable(site_slug=$page.site.site-slug, is_editable=true)
+		
+		
+		;; ------------------------------- is-package -----------------------------------------------
+		;;
+		;; TODO: move this to a separate page, maybe "Developer Settings"
+		-- ds.heading-medium: Site: Is A Package
+		if: { page.site.is-package }
+		
+		-- ds.copy-regular:
+		if: { page.site.is-package }
+		
+		The site is currently marked **a package**. This means you have built something you want others to
+		use. We list all sites that are marked as package on FifthTry's `fastn` Package Registry.
+		
+		-- ds.danger-button: Mark Site As Not A Package
+		if: { page.site.is-package }
+		width: wide
+		radius: curved
+		$on-click$: $page.setting-actions.mark-package(site_slug=$page.site.site-slug, is_package=false)
+		
+		
+		
+		-- ds.heading-medium: Site: Is Not A Package
+		if: { !page.site.is-package }
+		
+		-- ds.copy-regular:
+		if: { !page.site.is-package }
+		
+		The site is currently **not a package**.
+		
+		If you plan to distribute this site as a re-usable package, you can mark the site as a package. Doing
+		so will let others use this site as a dependency in their own sites. We will also start listing this
+		site in FifthTry's `fastn` Package Registry.
+		
+		You should only concern with this if you are a developers and have built something you want others
+		to use. If you are building a website for your company, or for some other private purpose, you can
+		ignore this.
+		
+		-- ds.danger-button: Mark Site As A Package
+		if: { !page.site.is-package }
+		width: wide
+		radius: curved
+		$on-click$: $page.setting-actions.mark-package(site_slug=$page.site.site-slug, is_package=true)
+		
+	-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page
+
+
+;; ------------------------------- site slug -----------------------------------------------
+-- component site-slug:
+string slug:
+module setting-actions: basic
+string $new-slug: *$site-slug.slug
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-medium: Site Slug
+	
+	-- ds.copy-regular:
+	
+	The slug of a site is used to uniquely identify your site on FifthTry. It is used in the URL of
+	your site. If you have setup a custom domain, the slug is not used in the URL, but it is still used
+	in other places, for example if you are using the FifthTry API, or `clift` to manage your site.
+	
+	`slug` is a technical term used in web development to refer to a part of the URL, so slug should be
+	lower-cased, and should use `-` to separate words. For example, if your site name is "My Site", the
+	slug should be `my-site`.
+	
+	-- text-input: Site Slug
+	default-value: $site-slug.slug
+	$value: $site-slug.new-slug
+	$error: $site-slug.setting-actions.update-slug-error
+	
+	-- ds.copy-regular:
+	
+	Please note that if you change the slug, you may have to update your site settings in other places
+	where you have used the slug, for example in your `clift` configuration file.
+	
+	-- ds.secondary-button: Update Site Slug
+	if: { site-slug.slug == site-slug.new-slug }
+	width: wide
+	radius: curved
+	
+	-- ds.primary-button: Update Site Slug
+	if: { site-slug.slug != site-slug.new-slug }
+	width: wide
+	radius: curved
+	$on-click$: $site-slug.setting-actions.update-slug(site_slug=$site-slug.slug, new_slug=$site-slug.new-slug)
+	
+-- end: ds.column
+
+-- end: site-slug
+
+
+;; ------------------------------- site name -----------------------------------------------
+
+-- component site-name:
+string original-name:
+string slug:
+module setting-actions: basic
+string $name: *$site-name.original-name
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-medium: Site Name
+	
+	-- ds.copy-regular:
+	
+	The name of the site is only used for your reference. It is not used in the URL of your site.
+	
+	-- text-input: Site Name
+	default-value: $site-name.original-name
+	$value: $site-name.name
+	$error: $site-name.setting-actions.rename-error
+	
+	-- ds.secondary-button: Rename Site
+	if: { site-name.original-name == site-name.name }
+	width: wide
+	radius: curved
+	
+	-- ds.primary-button: Rename Site
+	if: { site-name.original-name != site-name.name }
+	width: wide
+	radius: curved
+	$on-click$: $site-name.setting-actions.rename(site_slug=$site-name.slug, new_name=$site-name.name)
+	
+-- end: ds.column
+
+-- end: site-name
+
+
+;; ------------------------------- is-public -----------------------------------------------
+-- component is-public:
+boolean is-public:
+string slug:
+module setting-actions: basic
+
+-- ds.column:
+align-content: left
+
+	-- ds.heading-medium: Site Visibility: Public
+	if: { is-public.is-public }
+	
+	-- ds.copy-regular:
+	if: { is-public.is-public }
+	
+	The site is currently **public**. Anyone on internet can see your website.
+	
+	This is usually what you want for most websites. If you plan to use this site only for your
+	company, or for some other private purpose, you can mark the site as private by clicking the
+	button below.
+	
+	-- ds.danger-button: Make Site Private
+	if: { is-public.is-public }
+	width: wide
+	radius: curved
+	$on-click$: $is-public.setting-actions.update-privacy(site_slug=$is-public.slug, is_public=false)
+	
+	
+	
+	-- ds.heading-medium: Site Visibility: Private
+	if: { !is-public.is-public }
+	
+	-- ds.copy-regular:
+	if: { !is-public.is-public }
+	
+	The site is currently **private**. Only you and your team can see your website.
+	
+	-- ds.danger-button: Make Site Public
+	if: { !is-public.is-public }
+	width: wide
+	radius: curved
+	$on-click$: $is-public.setting-actions.update-privacy(site_slug=$is-public.slug, is_public=true)
+	
+-- end: ds.column
+-- end: is-public
+
+
+
+
+-- component text-input:
+caption placeholder:
+string default-value:
+string $value: *$text-input.default-value
+optional string $error:
+
+-- ds.column:
+
+	-- ftd.text-input:
+	default-value: $text-input.default-value
+	placeholder: $text-input.placeholder
+	type: text
+	width: fill-container
+	height.fixed.px: 40
+	border-radius.px: 8
+	background.solid: transparent
+	border-width.px: 1
+	border-color: $inherited.colors.border
+	padding.px: 8
+	color: $inherited.colors.text-strong
+	$on-input$: $ftd.set-string($a = $text-input.value, v = $VALUE)
+	$on-input$: $utils.set-null($var = $text-input.error)
+	
+	-- show-error: $text-input.error
+	
+-- end: ds.column
+
+-- end: text-input
+
+-- component show-error:
+optional caption $error:
+
+-- ds.copy-small: $show-error.error
+color: $ds.colors.error.text
+if: { show-error.error != NULL }
+
+-- end: show-error

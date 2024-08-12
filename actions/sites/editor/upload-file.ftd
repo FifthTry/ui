@@ -1,0 +1,10 @@
+-- optional string $upload-error:
+
+-- void submit(site_slug, file_name, content, updated_at):
+string site_slug:
+string file_name:
+integer list content:
+js: $assets.files.assets.functions.js
+
+callAlert("upload file name: " + file_name + " site: " + site_slug + " content: " + content)
+;; call submit with http options

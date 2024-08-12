@@ -1,0 +1,35 @@
+-- import: ui.fifthtry.com/pages/featured-templates
+-- import: ui.fifthtry.com/records/templates-list as template-records
+-- import: fastn-community.github.io/purple-gradient
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- featured-templates.page:
+packages: $purple-gradient.package-info
+user-data: $john-doe.jd
+templates: $template-category-list
+
+
+-- template-records.template-category list template-category-list:
+
+-- template-records.template-category:
+packages: $linktree-packages
+
+-- end: template-category-list
+
+
+-- ds.package-info list linktree-packages:
+
+-- ds.package-info: Minimal blue
+template-url: /scenarios/featured-template/linktree/linktree-2
+screenshot: $minimal-blue-assets.files.assets.linktree.png
+
+-- ds.package-info: Ocean blue
+template-url: /scenarios/featured-template/linktree/linktree-3
+screenshot: $ocean-blue-assets.files.assets.linktree.png
+
+-- ds.package-info: Forest green
+template-url: /scenarios/featured-template/linktree/linktree-4
+screenshot: $forest-green-assets.files.assets.linktree.png
+
+-- end: linktree-packages

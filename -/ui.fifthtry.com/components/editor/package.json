@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "prepare": "lezer-generator command-k/command.grammar -o command-k/parser.js"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.17.0",
+    "@codemirror/commands": "^6.6.0",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/lang-markdown": "^6.2.5",
+    "@codemirror/lang-python": "^6.1.6",
+    "@codemirror/language": "^6.10.2",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.28.6",
+    "@lezer/generator": "^1.7.1",
+    "@lezer/highlight": "^1.2.0",
+    "@lezer/lr": "^1.4.2",
+    "@replit/codemirror-indentation-markers": "^6.5.3",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "codemirror": "^6.0.1",
+    "preact": "^10.22.1",
+    "rollup": "^4.18.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4"
+  }
+}

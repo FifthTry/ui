@@ -1,0 +1,39 @@
+@top command {
+    AddFile | ClearOPFS | PushFile | DeleteFile
+}
+
+
+@skip { LineComment }
+
+AddFile {
+    "add-file" " "+ FileName
+}
+
+DeleteFile {
+    "delete-file" " "+ FileName
+}
+
+PushFile {
+    "push-file" " "+ FileName
+}
+
+ClearOPFS {
+    "clear-opfs"
+}
+
+FileName {
+    folder? identifier '.' identifier
+}
+
+folder {
+    (identifier '/')+
+}
+
+@tokens {
+  identifier { $[a-zA-Z0-9_\-]+ }
+  // QuotedString { '"' (!["\\] | "\\" _)* '"' }
+  LineComment { ";;" ![\n]* }
+  // space { $[ \t\n\r]+ }
+}
+
+@detectDelim

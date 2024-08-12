@@ -1,4 +1,0 @@
--- boolean is-logged-in: false
--- string name: $ftd.empty
--- string email: $ftd.empty
--- string username: $ftd.empty

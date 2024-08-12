@@ -1,0 +1,115 @@
+-- import: ui.fifthtry.com/pages/history
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
+
+
+-- history.page:
+site-data: scenario-site
+site: $acme-site
+dashboard-url: /scenarios/user/dashboard/
+user-data: $john-doe.jd
+data: $data
+document: FASTN.ftd
+
+
+
+-- sites-records.history-output data:
+changes: $changes
+next: /scenarios/history/
+
+
+
+
+-- sites-records.history-change list changes:
+
+
+-- sites-records.history-change:
+document: FASTN.ftd
+at: 1722585406566000000
+action: updated
+content: Hello
+editor-name: john doe
+language: ftd
+url: /scenarios/history/single/
+
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+-ftd.color border-color: $inherited.colors.border-strong
++ftd.color border-color: $inherited.colors.border-strong
+
+
+ \-- ds.code:
+
+-- sites-records.history-change:
+document: FASTN.ftd
+at: 1722585406566000000
+action: updated
+content: Hello
+editor-name: john doe
+language: ftd
+url: /scenarios/history/single/
+
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+-ftd.color border-color: $inherited.colors.border-strong
++ftd.color border-color: $inherited.colors.border-strong
+
+
+ \-- ds.code:
+
+-- sites-records.history-change:
+document: FASTN.ftd
+at: 1722585406566000000
+action: updated
+content: Hello
+editor-name: john doe
+language: ftd
+url: /scenarios/history/single/
+
+\--- original
+\+++ modified
+@@ -199,7 +199,7 @@
+ optional string link:
+ ftd.color text-color: $inherited.colors.text-strong
+ ftd.color bg-color: $inherited.colors.background.base
+-ftd.color border-color: $inherited.colors.border-strong
++ftd.color border-color: $inherited.colors.border-strong
+
+
+ \-- ds.code:
+
+
+
+-- end: changes
+
+
+
+-- sites-records.site-common-data acme-site:
+account-name: John Doe
+site-name: Acme, Inc
+site-slug: acme
+primary-domain: acme.com
+info-url: /scenarios/sites/site-info/
+history-url: /scenarios/history/
+github-url: /scenarios/sites/setting/github/
+domains-url: /scenarios/sites/setting/domains/
+editor-url: /scenarios/sites/editor/
+setting-url: /scenarios/sites/setting/
+cr-list-url: /scenarios/sites/cr-list/
+tokens-url: /scenarios/sites/setting/tokens/
+updated-on: 14th Feb
+preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
+environments-url: /scenarios/sites/setting/environments/
+zip-download-url: /
+is-public: true
+is-package: false
+is-editable: true

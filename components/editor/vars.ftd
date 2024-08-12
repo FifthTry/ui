@@ -1,0 +1,254 @@
+-- import: ui.fifthtry.com/components/editor/welcome-screen
+-- import: ui.fifthtry.com/components/editor/top-bar/file-switcher
+-- import: ui.fifthtry.com/components/editor/top-bar/package-switcher
+-- import: ui.fifthtry.com/components/editor/panels/package
+-- import: ui.fifthtry.com/components/editor/main-editor
+-- import: ui.fifthtry.com/assets
+
+;; left panels
+-- boolean $package: true
+
+-- boolean $only-show-modified-files: false
+
+-- boolean $opfs-enabled: true
+
+-- optional package.data $package-data:
+
+
+-- boolean $command-k: false
+-- string $command-k-help: available-commands
+-- boolean $command-k-valid: false
+-- optional string $command-k-error:
+
+-- string $context-menu-visible: hidden
+-- integer $context-menu-left: 0
+-- integer $context-menu-top: 0
+
+-- package-switcher.package list recent-packages:
+
+-- package-switcher.package: FifthTry Main Site
+slug: ft
+url: /ide/ft/
+account: fifthtry
+
+-- package-switcher.package: AmitU's Blog
+slug: amitu-com
+url: /ide/amitu-com/
+account: amitu
+
+-- package-switcher.package: Fastn Design System
+slug: design-system
+url: /ide/design-system/
+account: fastn-community
+
+-- end: recent-packages
+
+
+
+
+-- file-switcher.file list recent-files:
+
+-- file-switcher.file: FASTN.ftd
+package: ui.fifthtry.com
+url: /ide/ui/FASTN.ftd
+
+-- file-switcher.file: blog/images/logo.png
+package: ui.fifthtry.com
+url: /ide/ui/blog/images/logo.png
+
+-- file-switcher.file: blog/index.ftd
+package: ui.fifthtry.com
+url: /ide/ui/blog/index.ftd
+
+-- end: recent-files
+
+
+
+
+
+
+-- package.file list files:
+
+-- package.file: FASTN.ftd
+url: /foo/FASTN.ftd
+
+-- package.file: index.ftd
+url: /foo/index.ftd
+
+-- end: files
+
+
+
+
+
+
+
+
+
+-- package.folder list folders:
+
+-- package.folder: blog
+full-name: blog
+url: /foo/blog/
+files: *$blog-files
+folders: $blog-folders
+
+-- end: folders
+
+
+
+
+
+
+
+
+
+-- package.file list blog-files:
+
+-- package.file: index.ftd
+url: /foo/blog/index.ftd
+
+-- package.file: first-post.ftd
+url: /foo/blog/first-post.ftd
+
+-- end: blog-files
+
+
+
+
+
+
+
+
+
+
+-- package.folder list blog-folders:
+
+-- package.folder: images
+url: /foo/blog/images/
+files: *$blog-images
+full-name: blog/images
+
+-- end: blog-folders
+
+-- package.file list blog-images:
+
+-- package.file: first-image.jpg
+url: /foo/blog/images/first-image.jpg
+
+-- end: blog-images
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- integer panel-width: 32
+
+
+
+
+
+
+
+
+-- boolean $preview-maximized: false
+
+-- boolean $preview-visible: true
+
+-- string $preview-url: https://todayhasbeen.com
+
+-- string $preview-content: <h1>loading...</h1>
+
+
+-- main-editor.doc $doc:
+file-name: FASTN.ftd
+language: ftd
+
+loading...
+
+
+
+
+
+
+
+
+
+
+-- void dispatch-event(name, data):
+string name:
+optional string data:
+
+ide_dispatch_event(name, data)
+
+
+
+
+
+
+
+
+-- string list $open-folders:
+-- end: $open-folders
+
+
+
+
+;; full-name of current file
+-- optional string $current-file:
+
+
+
+;; Use this to render a save button only when there's some changes to the
+;; current file. Set from rust code.
+-- boolean $show-save-button: false
+
+
+
+;; full name of files that are added
+-- string list $added-files:
+-- end: $added-files
+
+;; full name of files that are modified
+-- string list $modified-files:
+-- end: $modified-files
+
+;; full name of files that are deleted
+-- string list $deleted-files:
+-- end: $deleted-files
+
+-- string back-ticked(t):
+string t:
+
+"`" + t + "`"
+
+
+
+-- void open-command-k(cmd):
+string cmd:
+
+ide_open_command_k(cmd)
+
+
+-- void open-command-k-with-space(cmd):
+string cmd:
+
+ide_open_command_k(cmd + " ")
+
+-- void open-command-k-with-current-file(cmd):
+string cmd:
+string file: $current-file
+
+ide_open_command_k(cmd + " " + file)
+
+-- void run-command():
+
+ide_run_command_parser()

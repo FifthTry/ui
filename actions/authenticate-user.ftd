@@ -1,0 +1,12 @@
+-- ftd.string-field $username: username
+-- ftd.string-field $password: password
+-- ftd.string-field $next: next
+value: /
+
+-- void submit-values(username, password, next):
+ftd.string-field $username:
+ftd.string-field $password:
+ftd.string-field $next:
+js: $assets.files.assets.functions.js
+
+callAlert("signin attempt")

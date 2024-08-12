@@ -1,0 +1,204 @@
+-- import: ui.fifthtry.com/components/blog as b
+
+-- component blog:
+children wrapper:
+
+-- ds.section-row:
+spacing: $ds.spaces.horizontal-gap.medium
+wrap: true
+;; inner-background.solid: $ds.colors.background.step-1
+content: $blog.wrapper
+align-content: top-left
+
+-- end: ds.section-row
+
+-- end: blog
+
+
+
+
+
+
+
+
+
+-- component hero-blog:
+caption title:
+body body:
+ftd.image-src image:
+string date:
+b.author-data author:
+string link:
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.zero
+
+-- ftd.desktop:
+
+-- ds.section-row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.extra-large
+inset: $ds.spaces.inset-square.medium
+inner-background.solid: $ds.colors.background.step-1
+margin: $ds.spaces.vertical-gap.extra-large
+link: $hero-blog.link
+
+-- ds.column:
+align-content: left
+
+-- ds.fine-print: $hero-blog.date
+
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.extra-small
+
+-- ds.heading-medium: $hero-blog.title
+color: $ds.colors.text-strong
+
+-- ds.copy-regular:
+color: $ds.colors.text
+
+$hero-blog.body
+
+-- end: ds.column
+
+-- ds.row:
+align-content: left
+
+-- ftd.image:
+src: $hero-blog.author.photo
+width.fixed.px: 44
+border-radius.px: 100
+
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.extra-small
+
+-- ds.heading-tiny: $hero-blog.author.name
+color: $ds.colors.text-strong
+
+-- ds.copy-regular: $hero-blog.author.profile
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- end: ds.column
+
+-- ds.column:
+spacing: $ds.spaces.vertical-gap.small
+width: hug-content
+
+-- ftd.image:
+src: $hero-blog.image
+width.fixed.px: 360
+height.fixed.px: 300
+fit: cover
+border-radius.px: 8
+
+-- end: ds.column
+
+-- end: ds.section-row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.section-column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.medium
+inset: $ds.spaces.inset-square.medium
+inner-background.solid: $ds.colors.background.step-1
+margin: $ds.spaces.vertical-gap.extra-large
+link: $hero-blog.link
+
+-- ds.fine-print: $hero-blog.date
+
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.extra-small
+
+-- ds.heading-medium: $hero-blog.title
+color: $ds.colors.text-strong
+
+-- ds.copy-regular:
+color: $ds.colors.text
+
+$hero-blog.body
+
+-- end: ds.column
+
+-- ds.row:
+align-content: left
+
+-- ftd.image:
+src: $hero-blog.author.photo
+width.fixed.px: 44
+border-radius.px: 100
+
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.extra-small
+
+-- ds.heading-tiny: $hero-blog.author.name
+color: $ds.colors.text-strong
+
+-- ds.copy-regular: $hero-blog.author.profile
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- ftd.image:
+src: $hero-blog.image
+width: fill-container
+fit: cover
+border-radius.px: 8
+
+-- end: ds.section-column
+
+-- end: ftd.mobile
+
+-- end: ds.column
+
+-- end: hero-blog
+
+
+
+
+
+
+
+
+
+-- component blog-card:
+caption title:
+body description:
+string date:
+;; string button-name:
+string link:
+boolean small-width: false
+
+-- ds.section-column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.medium
+margin: $ds.spaces.vertical-gap.large
+border: $ds.borders.uniform.small
+inset: $ds.spaces.inset-square.medium
+link: $blog-card.link
+
+-- ds.copy-large:
+color: $ds.colors.text-strong
+
+$blog-card.title
+
+-- ds.copy-regular:
+color: $ds.colors.text
+
+$blog-card.description
+
+-- ds.fine-print: $blog-card.date
+
+-- end: ds.section-column
+
+-- end: blog-card

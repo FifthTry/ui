@@ -1,0 +1,31 @@
+-- import: ui.fifthtry.com/site-data  ;; this is global site data for FifthTry.com
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/components/footer
+-- import: ui.fifthtry.com/components/header
+-- import: ui.fifthtry.com/records/templates-list as template-records
+
+
+-- component page:
+module site-data: site-data
+ud.user-data user-data:
+ds.package-info packages:
+template-records.template-category list templates:
+children children:
+
+-- ds.page: FifthTry | Better way To Build Websites
+spacing: $ds.spaces.vertical-gap.small.gap
+margin: $ds.spaces.vertical-gap.zero
+
+	-- header.header:
+	site-data: $page.site-data
+	user-data: $page.user-data
+	
+	-- child:
+	for: $child in $page.children
+	
+	-- footer.footer:
+	site-data: $page.site-data
+	
+-- end: ds.page
+
+-- end: page

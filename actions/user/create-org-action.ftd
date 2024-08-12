@@ -1,0 +1,8 @@
+-- ftd.string-field $org-slug: org-slug
+
+-- void submit(username, org_slug):
+string username:
+ftd.string-field org_slug:
+js: $assets.files.assets.functions.js
+
+callAlert("creating org: " + org_slug.value + ", under username: " + username)

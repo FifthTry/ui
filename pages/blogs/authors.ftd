@@ -1,0 +1,17 @@
+-- import: ui.fifthtry.com/components/blog/blog-authors as author
+
+-- component author-john-doe:
+
+-- author.author: John Doe
+photo: $assets.files.assets.team.avatar.jpg
+profile: Marketing Manager
+bio-url: https://www.fifthtry.com/
+
+Cras id congue massa, id aliquet urna. Sed mattis id orci eu
+consectetur. Vivamus lacinia faucibus urna, ut sollicitudin
+lacus consequat id. Fusce varius leo eget orci fringilla,
+ut viverra ante molestie. Proin finibus turpis turpis.
+Nulla sodales, sem ut vehicula blandit, neque risus tempor
+enim, a sodales massa urna nec neque.
+
+-- end: author-john-doe

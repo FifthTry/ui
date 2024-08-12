@@ -1,0 +1,324 @@
+-- import: ui.fifthtry.com/components/editor/vars
+-- import: fastn-community.github.io/svg-icons/phosphor
+
+-- component popup:
+
+-- ftd.column:  ;; the dialog modal
+classes if { !vars.command-k }: hidden
+anchor: window
+width.fixed.px: 450
+border-radius.px: 8
+left.calc: max(50% - 225px, 100px)
+top.calc: max(50% - 150px, 100px)
+z-index: 20
+background.solid: white
+border-width.px: 4
+border-color: #f5f5f5
+
+    -- ftd.row: ;; header
+    width: fill-container
+    background.solid: #f5f5f5
+    padding.px: 10
+    spacing: space-between
+    border-top-left-radius.px: 8
+    border-top-right-radius.px: 8
+    align-content: center
+
+        -- ftd.row:
+        align-content: center
+        spacing.fixed.px: 5
+
+            -- phosphor.thin: terminal-window
+            size: 16
+
+            -- ftd.text: Run Command (`Ctrl-K` or `Cmd-K`)
+
+        -- end: ftd.row
+
+        -- phosphor.light: x
+        size: 14
+        $on-click$: $ftd.toggle($a=$vars.command-k)
+
+    -- end: ftd.row
+
+    -- ftd.column:
+    padding.px: 10
+    width: fill-container
+    spacing.fixed.px: 6
+    align-content: left
+
+        -- ftd.row:
+        width: fill-container
+        spacing.fixed.px: 5
+        align-content: bottom-left
+
+            -- command-editor:
+
+            -- ftd.text: Run
+            border-width.px: 1
+            border-color: #ccc
+            border-radius.px: 4
+            padding-vertical.px: 2
+            padding-horizontal.px: 5
+            background.solid if { vars.command-k-valid }: lightgreen
+            ;; a dull color to indicate command is not valid yet
+            color if { vars.command-k-valid }: black
+            color: #ccc
+            $on-click$: $vars.run-command()
+
+        -- end: ftd.row
+
+        -- show-available-commands:
+        if: { vars.command-k-help == "available-commands" }
+
+        -- show-add-file-help: true
+        if: { vars.command-k-help == "add-file" }
+
+        -- show-delete-file-help: true
+        if: { vars.command-k-help == "delete-file" }
+
+        -- show-push-file-help: true
+        if: { vars.command-k-help == "push-file" }
+
+        -- show-clear-opfs-help: true
+        if: { vars.command-k-help == "clear-opfs" }
+
+        -- ftd.text: $vars.command-k-error
+        if: { vars.command-k-error != NULL }
+        padding-left.px: 5
+
+    -- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: popup
+
+
+
+
+
+
+
+
+-- web-component command-editor:
+js: $assets.files.components.editor.editor-bundle.js
+
+
+
+
+
+
+-- component show-available-commands:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- ftd.text: Available commands
+
+-- ftd.text: `add-file` (create a new file)
+$on-click$: $vars.open-command-k-with-space(cmd=add-file)
+
+-- ftd.text: `delete-file` (delete existing file)
+$on-click$: $vars.open-command-k-with-current-file(cmd=delete-file)
+
+-- ftd.text: `push-file` (save file to server)
+$on-click$: $vars.open-command-k-with-current-file(cmd=push-file)
+
+-- end: ftd.column
+
+-- end: show-available-commands
+
+
+
+
+
+
+
+-- component show-add-file-help:
+caption boolean show-question: false
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- help-header: Add File
+show-question: $show-add-file-help.show-question
+
+-- ftd.text:
+
+Use this command to create a new file. Syntax:
+
+-- ftd.code:
+lang: sh
+width: fill-container
+
+add-file <file-name>
+
+-- ftd.text: Example
+
+-- ftd.code:
+lang: sh
+width: fill-container
+
+add-file foo.ftd
+
+-- end: ftd.column
+
+-- end: show-add-file-help
+
+
+
+
+
+
+
+
+-- component show-delete-file-help:
+caption boolean show-question: false
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- help-header: Delete File
+show-question: $show-delete-file-help.show-question
+
+-- ftd.text:
+
+Use this command to delete a file. Syntax:
+
+-- ftd.code:
+lang: sh
+width: fill-container
+
+delete-file <file-name>
+
+-- ftd.text: Example
+
+-- ftd.code:
+lang: sh
+width: fill-container
+
+delete-file foo.ftd
+
+-- end: ftd.column
+
+-- end: show-delete-file-help
+
+
+
+
+
+
+
+
+-- component show-push-file-help:
+caption boolean show-question: false
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- help-header: Push File
+shortcut: Ctrl-S
+show-question: $show-push-file-help.show-question
+
+-- ftd.text:
+
+;; intentionally not wrapping to work around an issue in autocomplete window
+Push the file to the server. When you modify a file, it is not saved to the
+server. Use this command to save the file to the server. Syntax:
+
+-- ftd.code:
+width: fill-container
+lang: sh
+
+push-file <file-name>
+
+-- ftd.text: Example
+
+-- ftd.code:
+width: fill-container
+lang: sh
+
+push-file foo.ftd
+
+-- end: ftd.column
+
+-- end: show-push-file-help
+
+
+
+
+
+
+
+
+
+-- component show-clear-opfs-help:
+caption boolean show-question: false
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- help-header: Clear OPFS
+show-question: $show-clear-opfs-help.show-question
+
+-- ftd.text:
+
+FifthTry IDE stores a bunch of stuff in `OPFS` (Origin-Private File System).
+Use this command to clear the cache. You will lose unsaved data if you use
+this command. This should be only used for debugging purposes.
+
+-- ftd.code:
+width: fill-container
+lang: sh
+
+clear-opfs
+
+-- end: ftd.column
+
+-- end: show-clear-opfs-help
+
+
+
+
+
+
+
+
+
+-- component help-header:
+caption title:
+optional string shortcut:
+boolean show-question: false
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+
+-- ftd.row:
+spacing.fixed.px: 5
+
+    -- ftd.text: $help-header.title
+    -- ftd.text: $vars.back-ticked(t=$help-header.shortcut)
+    if: { help-header.shortcut != NULL }
+
+-- end: ftd.row
+
+-- phosphor.thin: question
+if: { help-header.show-question }
+size: 18
+$on-click$: $ftd.set-string($a=$vars.command-k-help, v=available-commands)
+
+-- end: ftd.row
+
+-- end: help-header

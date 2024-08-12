@@ -1,0 +1,105 @@
+-- import: ui.fifthtry.com/components/page as p
+-- import: ui.fifthtry.com/components/blog/blog-post as post
+;; -- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/pages/blogs/authors as author-bio
+
+
+-- component page:
+ud.user-data user-data:
+;; module site-data: site-data
+;; optional string top-message:
+
+-- p.page:
+user-data: $page.user-data
+;; site-data: $page.site-data
+;; top-message: $page.top-message
+
+	-- ds.section-column:
+	
+		-- post.blog-info: Lorem Ipsum
+		name: John Doe
+		date: 1st March 2024
+		
+		-- ds.row:
+		inset: $ds.spaces.inset-wide.large
+		
+			-- ds.copy-regular:
+			
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
+			
+		-- end: ds.row
+
+		-- ds.column:
+		inset: $ds.spaces.inset-wide.large
+		align-content: left
+		
+			-- ds.heading-medium: Suspendisse eu cursus lacus
+			
+			-- ds.copy-regular:
+			
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
+			
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			-- ds.heading-medium: Nulla nisl erat
+			
+			-- ds.copy-regular:
+			
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
+			
+			-- ds.heading-medium: Morbi molestie varius
+			
+			-- ds.copy-regular:
+			
+			Nulla nisl erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Nunc facilisis sem metus, ut accumsan elit venenatis eu.
+			Proin pulvinar malesuada justo, vitae efficitur nulla tempor
+			sit amet. Morbi molestie varius eros, sed facilisis mauris
+			iaculis vitae. In ullamcorper ultricies commodo.
+			
+			Suspendisse eu cursus lacus. Nulla nisl erat, tincidunt
+			in mauris vel, ultrices sodales velit. Nam eget felis nec
+			neque tempus ornare. Quisque vel erat vel elit dignissim
+			blandit a at justo.
+			
+		-- end: ds.column
+
+		-- author-bio.author-john-doe:
+		
+	-- end: ds.section-column
+
+-- end: p.page
+
+-- end: page

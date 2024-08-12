@@ -1,0 +1,43 @@
+-- import: ui.fifthtry.com/pages/packages/home
+-- import: ui.fifthtry.com/records/package
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/scenarios/scenario-site
+
+
+-- home.page:
+site-data: scenario-site
+user-data: $john-doe.jd
+packages: $packages
+
+
+-- package.package list packages:
+
+-- package.package: Design System
+name: design-system.fifthtry.site
+is-system: true
+
+This is the design system used by most fastn packages.
+
+-- package.package: spellcraft: Beautiful Documentation Theme
+name: spellcraft.fifthtry.site
+system: doc-site.fifthtry.site
+
+This is the design system used by most fastn packages.
+
+
+-- package.package: doc-site: Documentation Site
+name: doc-site.fifthtry.site
+is-system: true
+
+Base system for documentation sites.
+
+-- package.package: svg-icons - Use SVG Icons
+name: svg-icons.fifthtry.site
+
+-- package.package: Doc Site Comments App
+is-app: true
+name: doc-site-comments.fifthtry.site
+
+Use this package with your doc-site to add comments to your documentation site.
+
+-- end: packages

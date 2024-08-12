@@ -1,0 +1,8 @@
+-- void submit(site_slug, org, repo, branch):
+string site_slug:
+ftd.string-field $org:
+ftd.string-field $repo:
+ftd.string-field $branch:
+js: $assets.files.assets.functions.js
+
+callAlert("Configuring github")

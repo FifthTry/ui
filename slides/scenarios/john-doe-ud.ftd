@@ -1,4 +1,0 @@
--- boolean is-logged-in: true
--- string name: John Doe
--- string email: john-doe@abc.com
--- string username: john-doe

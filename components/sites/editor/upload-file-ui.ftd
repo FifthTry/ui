@@ -1,0 +1,136 @@
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/utils
+-- import: ui.fifthtry.com/actions/sites/editor/upload-file
+
+-- import: ui.fifthtry.com/web-components
+
+
+
+
+
+-- component upload-file-ui:
+module upload-file: upload-file
+sites-records.site-common-data site:
+boolean $upload: false
+integer list $content:
+string $file-name: *$ftd.empty
+
+-- ds.section-column:
+radius: $ds.radius.zero
+inner-background.solid: $ds.colors.background.base
+if: { upload-file-ui.upload }
+
+	-- file-header:
+	upload-file: $upload-file-ui.upload-file
+	site-slug: $upload-file-ui.site.site-slug
+	$content: $upload-file-ui.content
+	$upload: $upload-file-ui.upload
+	$file-name: $upload-file-ui.file-name
+	
+	-- ds.column:
+	height.fixed.px: 250
+	background.solid: $ds.colors.background.step-1
+	border: $ds.borders.uniform.small
+	
+		-- ftd.column:
+		width.fixed.px: 600
+		border-style: dotted
+		height.fixed.px: 200
+		border-width.px: 1
+		align-content: center
+		
+			-- web-components.file-upload:
+			$content: $upload-file-ui.content
+			$file-name: $upload-file-ui.file-name
+			
+		-- end: ftd.column
+
+	-- end: ds.column
+
+-- end: ds.section-column
+
+
+-- end: upload-file-ui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component file-header:
+module upload-file: upload-file
+string site-slug:
+boolean $upload:
+string $file-name:
+integer list $content:
+
+-- ds.row:
+width: fill-container
+spacing: $ds.spaces.horizontal-gap.space-between
+background.solid: $ds.colors.background.base
+
+	-- file-name-input:
+	$file-full-name: $file-header.file-name
+	
+	-- ds.row:
+	   width: hug-content
+	
+		-- ds.primary-button: SAVE
+		if: { file-header.file-name != ftd.empty && ftd.len(file-header.content) > 0 }
+		$on-click$: $file-header.upload-file.submit(site_slug = $file-header.site-slug, file_name = $file-header.file-name, content = $file-header.content)
+		
+		-- ds.primary-button: CANCEL
+		$on-click$: $ftd.set-bool($a = $file-header.upload, v = false)
+		$on-click$: $clear($a = $file-header.content)
+		
+	-- end: ds.row
+
+-- end: ds.row
+
+-- end: file-header
+
+
+
+
+
+
+
+
+
+
+
+-- component file-name-input:
+string $file-full-name:
+
+-- ds.row:
+align-content: left
+
+	-- ftd.text-input:
+	padding-vertical.px: 8
+	padding-horizontal.px: 16
+	border-radius.px: 8
+	border-width.px: 1
+	placeholder: Enter file name
+	role: $inherited.types.label-large
+	value: $file-name-input.file-full-name
+	$on-input$: $ftd.set-string($a = $file-name-input.file-full-name, v = $VALUE)
+	
+-- end: ds.row
+
+
+-- end: file-name-input
+
+
+
+-- void clear(a):
+integer list $a:
+
+ftd.clear(a);

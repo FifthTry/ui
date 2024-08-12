@@ -1,0 +1,293 @@
+-- import: ui.fifthtry.com/records/sites as sites-records
+-- import: ui.fifthtry.com/site-data
+-- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/components/avatar
+-- import: ui.fifthtry.com/components/dark-mode-toggle
+
+
+
+
+
+
+
+-- component header:
+ud.user-data user-data:
+module site-data: site-data
+boolean $open: false
+string create-site-url:
+optional string create-org-url:
+sites-records.toc-item list orgs:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.medium
+border: $ds.borders.bottom.small
+radius: $ds.radius.zero
+
+	-- ftd.desktop:
+	
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.space-between
+		background.solid: $ds.colors.background.base
+		inset: $ds.spaces.inset-square.medium
+		
+			-- ds.row:
+			align-content: left
+			width: hug-content
+			spacing: $ds.spaces.horizontal-gap.medium
+			
+				-- ftd.image: $header.site-data.logo
+				link: $header.site-data.homepage
+				
+				-- ds.copy-regular: →
+				white-space: nowrap
+				
+				-- ds.copy-regular: My Sites
+				white-space: nowrap
+				
+			-- end: ds.row
+
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.large
+			align-content: right
+			;;width.fixed.px: 420
+			
+			
+				-- orgs-dropdown:
+				if: { header.create-org-url != NULL }
+				create-org-url: $header.create-org-url
+				orgs: $header.orgs
+				
+				
+				-- ds.icon-button: Create new site
+				         link: $header.create-site-url
+				         kind: primary
+				         icon-position: at-end
+				         icon: $assets.files.assets.sites.add.svg
+				
+				-- avatar.avatar:
+				user-data: $header.user-data
+				
+			-- end: ds.row
+
+		-- end: ds.row
+
+	-- end: ftd.desktop
+
+	-- ftd.mobile:
+	
+		-- ds.column:
+		background.solid: $ds.colors.background.base
+		inset: $ds.spaces.inset-square.medium
+		align-content: left
+		
+			-- ds.row:
+			align-content: left
+			spacing: $ds.spaces.horizontal-gap.space-between
+			
+				-- ds.row:
+				align-content: left
+				
+					-- ftd.image: $header.site-data.logo
+					link: $header.site-data.homepage
+					
+					-- ds.copy-regular: →
+					white-space: nowrap
+					
+					-- ds.copy-regular: My Sites
+					white-space: nowrap
+					
+				-- end: ds.row
+
+				-- avatar.avatar:
+				user-data: $header.user-data
+				
+			-- end: ds.row
+
+			-- ds.row:
+			spacing: $ds.spaces.horizontal-gap.space-between
+			align-content: left
+			;;width.fixed.px: 420
+			
+			
+				-- orgs-dropdown:
+				if: { header.create-org-url != NULL }
+				create-org-url: $header.create-org-url
+				orgs: $header.orgs
+				
+				
+				-- ds.icon-button: Create new site
+				         link: $header.create-site-url
+				         kind: primary
+				         icon-position: at-end
+				         icon: $assets.files.assets.sites.add.svg
+				
+				
+				
+			-- end: ds.row
+
+		-- end: ds.column
+
+	-- end: ftd.mobile
+
+-- end: ds.section-column
+
+-- end: header
+
+
+
+
+
+
+
+
+-- component basic-header:
+ud.user-data user-data:
+module site-data: site-data
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.medium
+border: $ds.borders.bottom.small
+radius: $ds.radius.zero
+
+	-- ds.row:
+	spacing: $ds.spaces.horizontal-gap.space-between
+	background.solid: $ds.colors.background.base
+	inset: $ds.spaces.inset-square.medium
+	align-content: left
+	
+		-- ftd.image: $basic-header.site-data.logo
+		link: $basic-header.site-data.homepage
+		
+		-- avatar.avatar:
+		user-data: $basic-header.user-data
+		
+	-- end: ds.row
+
+-- end: ds.section-column
+
+-- end: basic-header
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component orgs-dropdown:
+sites-records.toc-item list orgs:
+string create-org-url:
+boolean $open: false
+
+-- ds.column:
+width: hug-content
+
+	-- ftd.desktop:
+	
+		-- ds.column:
+		width: hug-content
+		$on-click-outside$: $ftd.set-bool($a = $orgs-dropdown.open, v = false)
+		
+			-- ds.row:
+			$on-click$: $ftd.toggle($a = $orgs-dropdown.open)
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ds.copy-small: Organisations
+				
+				-- ftd.image:
+				src: $assets.files.assets.down-arrow.svg
+				src if { !orgs-dropdown.open }: $assets.files.assets.right-arrow.svg
+				width.fixed.px: 10
+				
+			-- end: ds.row
+
+			-- show-org-list:
+			orgs: $orgs-dropdown.orgs
+			create-org-url: $orgs-dropdown.create-org-url
+			if: { orgs-dropdown.open }
+			
+		-- end: ds.column
+
+	-- end: ftd.desktop
+
+	-- ftd.mobile:
+	
+		-- ds.row:
+		align-content: left
+		width: hug-content
+		$on-click-outside$: $ftd.set-bool($a = $orgs-dropdown.open, v = false)
+		
+			-- ds.row:
+			$on-click$: $ftd.toggle($a = $orgs-dropdown.open)
+			spacing: $ds.spaces.horizontal-gap.small
+			
+				-- ds.copy-small: Organisations
+				
+				-- ftd.image:
+				src: $assets.files.assets.left-arrow.svg
+				src if { !orgs-dropdown.open }: $assets.files.assets.right-arrow.svg
+				width.fixed.px: 10
+				
+			-- end: ds.row
+
+			-- show-org-list:
+			orgs: $orgs-dropdown.orgs
+			create-org-url: $orgs-dropdown.create-org-url
+			if: { orgs-dropdown.open }
+			
+		-- end: ds.row
+
+	-- end: ftd.mobile
+
+-- end: ds.column
+
+-- end: orgs-dropdown
+
+
+
+
+
+
+
+-- component show-org-list:
+sites-records.toc-item list orgs:
+string create-org-url:
+
+-- ftd.column:
+background.solid: $ds.colors.background.step-1
+anchor if { ftd.device != "mobile"}: parent
+top.px if { ftd.device != "mobile"}: 30
+right.px if { ftd.device != "mobile"}: 0
+padding.px if { ftd.device != "mobile"}: 10
+padding.px: 8
+spacing.fixed.px: 5
+width: hug-content
+border-radius.px: 5
+
+	-- ftd.text: $org.title
+	link: $org.link
+	color: $ds.colors.text
+	role: $ds.types.copy-small
+	border-bottom-width.px: 1
+	border-color: $ds.colors.border
+	width: fill-container
+	white-space: nowrap
+	padding-bottom.px: 5
+	for: $org in $show-org-list.orgs
+	
+	-- ftd.text: \\+ Create
+	color: $ds.colors.text
+	role: $ds.types.copy-small
+	width: fill-container
+	white-space: nowrap
+	style: extra-bold
+	link: $show-org-list.create-org-url
+	
+-- end: ftd.column
+
+-- end: show-org-list

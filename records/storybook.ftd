@@ -1,0 +1,33 @@
+-- record folders:
+caption title:
+file-info list files:
+
+-- folders list folder-list:
+
+-- folders: Website Pages
+files: $file-data
+
+-- folders: Auth Pages
+
+-- end: folder-list
+
+
+
+
+-- record file-info:
+caption title:
+string link:
+boolean active: false
+
+-- file-info list file-data:
+
+-- file-info: Logged in Home page
+link: /scenarios/logged-in-home/
+
+-- file-info: Logged in Home page
+link: /scenarios/logged-in-home/
+
+-- file-info: Logged in Home page
+link: /scenarios/logged-in-home/
+
+-- end: file-data

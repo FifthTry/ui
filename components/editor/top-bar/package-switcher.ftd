@@ -1,0 +1,101 @@
+-- import: ui.fifthtry.com/components/editor/vars
+
+-- component package-switcher:
+boolean $open: false
+package list packages: $vars.recent-packages
+
+-- ftd.column:
+$on-mouse-enter$: $ftd.set-boolean($a = $package-switcher.open, v = true)
+$on-mouse-leave$: $ftd.set-boolean($a = $package-switcher.open, v = false)
+
+    -- ftd.text: $vars.package-data.name
+    color: black
+    if: { vars.package-data != NULL }
+
+    -- popup:
+    $open: $package-switcher.open
+    $open if { vars.package-data == NULL }: true
+    packages: $package-switcher.packages
+
+-- end: ftd.column
+
+-- end: package-switcher
+
+
+
+
+
+-- component popup:
+boolean $open:
+package list packages:
+
+-- ftd.column:
+$on-global-key[esc]$: $ftd.set-boolean($a = $popup.open, v = false)
+$on-click$: $ftd.set-boolean($a = $popup.open, v = false)
+width.fixed.px: 260
+anchor: parent
+left.px: -6
+top.px: -6
+z-index: 10
+;; spacing.fixed.px: 5
+
+    -- ftd.column:
+    if: { popup.open }
+    width: fill-container
+    background.solid: #f5f5f5
+    border-color: #ccc
+    border-radius.px: 3
+    border-width.px: 1
+
+        -- show-package: $package
+        for: $package, $idx in $popup.packages
+        $hover: false
+        $hover if { idx == 0 }: true
+
+    -- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: popup
+
+
+
+
+-- component show-package:
+caption package package:
+boolean $hover: false
+
+
+-- ftd.column:
+width.fixed.percent: 100
+padding.px: 5
+spacing.fixed.px: 2
+background.solid: #f5f5f5
+background.solid if { show-package.hover }: #ccc
+$on-mouse-enter$: $ftd.set-boolean($a = $show-package.hover, v = true)
+$on-mouse-leave$: $ftd.set-boolean($a = $show-package.hover, v = false)
+link: $show-package.package.url
+border-bottom-width.px: 1
+border-color: #ddd
+
+-- ftd.text: $show-package.package.name
+color: black
+
+-- ftd.text: $vars.back-ticked(t=$show-package.package.account)
+color: black
+
+-- end: ftd.column
+
+-- end: show-package
+
+
+
+
+-- record package:
+caption name:               ;; ft_site.name
+string slug:                ;; package slug
+string account:             ;; owner account slug
+string url:
+;; string file-type:
+
