@@ -1082,8 +1082,8 @@
     },
     "components/editor/command-k/command-editor.mjs": {
       "name": "components/editor/command-k/command-editor.mjs",
-      "checksum": "DB55B3A5CF0B9D5149CA8BB4A1ED45D6F8CBD5EABF3B24FA356C625289175A6F",
-      "size": 4264
+      "checksum": "B76FCEA4C71A9C95CFD56BE3FD14D3E6212659B786C4E05A9A90D3CC5F1FE8CB",
+      "size": 4655
     },
     "components/editor/command-k/command.grammar": {
       "name": "components/editor/command-k/command.grammar",
@@ -1107,13 +1107,13 @@
     },
     "components/editor/editor-bundle.js": {
       "name": "components/editor/editor-bundle.js",
-      "checksum": "EC23F759D8009D8C9140C92FAC3C0170D61A7437A689C261100A0C0C87FC4C11",
-      "size": 653977
+      "checksum": "1260EC0E5AC38E9FB30D71706C59DAB45A249ABB5BE98DABF56C194A5EC305AD",
+      "size": 654654
     },
     "components/editor/editor-bundle.js.map": {
       "name": "components/editor/editor-bundle.js.map",
-      "checksum": "BCED9FA9FCA9B851308CB6D743CE248C5651F8FB39893889F042B23A6291F977",
-      "size": 2399930
+      "checksum": "7D32699FD2D0C14DB8D0A61161957E9A58F1FF2A0E1BFB2A11EB41CA01F64C9A",
+      "size": 2401968
     },
     "components/editor/editor.css": {
       "name": "components/editor/editor.css",
@@ -1122,13 +1122,13 @@
     },
     "components/editor/editor.mjs": {
       "name": "components/editor/editor.mjs",
-      "checksum": "AFD8775800B5305A7DD34A87377DDE3E5CF42509636335D5D48C410174F27CE0",
-      "size": 5821
+      "checksum": "83D45A9A58E3CD00CFE36D7A1CACCCBF6282EFFB1301BC09BCF7AE8303DBCE96",
+      "size": 5976
     },
     "components/editor/ftd2.mjs": {
       "name": "components/editor/ftd2.mjs",
-      "checksum": "EB5FA754A6A1460C08BBDA4387CD6A5615FE819B29AE0363D609F59DA8D9D0C1",
-      "size": 8165
+      "checksum": "A0FA61ADCDB2010A81809D5A2865F3078059A5F334E102E0B1B428A31C1CDA9A",
+      "size": 7967
     },
     "components/editor/function.js": {
       "name": "components/editor/function.js",
@@ -1157,13 +1157,13 @@
     },
     "components/editor/panels/package/index.ftd": {
       "name": "components/editor/panels/package/index.ftd",
-      "checksum": "47FAE43AC333654C5AE20B8A9B98920FDAF0368C1620B8276B5C8C70D6CAAC9C",
-      "size": 3691
+      "checksum": "899178CFFE017428A5C1081955D96DA5374E897CB49B377396DEAC6EDA6C0F08",
+      "size": 3959
     },
     "components/editor/panels/package/package-content.mjs": {
       "name": "components/editor/panels/package/package-content.mjs",
-      "checksum": "6191B08608CBB47F568FD122ABA2C43AFA608F44D0DBE62486259B7CEB81FC58",
-      "size": 9413
+      "checksum": "BD5B2D55B6C6DEB6E089D9208BE87CFEA1BCBD6B10ACE98FD1102C694508545D",
+      "size": 10487
     },
     "components/editor/panels/preview.ftd": {
       "name": "components/editor/panels/preview.ftd",
@@ -1202,8 +1202,8 @@
     },
     "components/editor/vars.ftd": {
       "name": "components/editor/vars.ftd",
-      "checksum": "20FF10A87FDF393BF0F3128B22F6E7ACE5F1EEAED4749BBC39EA7B038B92A34F",
-      "size": 3606
+      "checksum": "87CBE77F033F71873C3C4A56450CF66AB0D60DD590E75522D618D4F064525BCD",
+      "size": 3870
     },
     "components/featured-templates/page.ftd": {
       "name": "components/featured-templates/page.ftd",
@@ -1892,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "DB5297794B136AA5358A28D57D9A410ABB9DD1CB038F5E122C6593F1606DCF3C"
+  "checksum": "640DD644785755D73B7F0CDE6185EEC0FE12839C231E26B512A8785C0CFC1040"
 }

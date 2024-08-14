@@ -20,6 +20,7 @@
 -- boolean $command-k-valid: false
 -- optional string $command-k-error:
 
+-- string $context-menu-path: yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 -- string $context-menu-visible: hidden
 -- integer $context-menu-left: 0
 -- integer $context-menu-top: 0
@@ -249,6 +250,17 @@ string file: $current-file
 
 ide_open_command_k(cmd + " " + file)
 
+
+-- void open-command-k-with-current-folder(cmd):
+string cmd:
+string folder: $context-menu-path
+
+ide_open_command_k(cmd + " " + folder)
+
 -- void run-command():
 
 ide_run_command_parser()
+
+-- void clear-context-menu():
+
+ide_clear_context_menu()

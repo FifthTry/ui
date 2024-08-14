@@ -122,6 +122,8 @@ if: { vars.context-menu-visible == "folder" }
 
 
 
+
+
 -- component cm:
 children c:
 
@@ -129,7 +131,7 @@ children c:
 anchor: window
 left.px: $vars.context-menu-left
 top.px: $vars.context-menu-top
-$on-click-outside$: $ftd.set-string($a = $vars.context-menu-visible, v = hidden)
+$on-click-outside$: $vars.clear-context-menu()
 z-index: 100
 children: $cm.c
 background.solid: white
@@ -140,11 +142,23 @@ border-color: #f5f5f5
 
 -- end: cm
 
+
+
+
+
+
 -- component file-context-menu:
 
 -- cm:
 
--- ftd.text: File Context Menu
+-- ftd.text: Push
+if: { ftd.list_contains(vars.modified-files, vars.context-menu-path) }
+$on-click$: $vars.open-command-k-with-current-file(cmd=push-file)
+
+-- ftd.text: Delete
+$on-click$: $vars.open-command-k-with-current-file(cmd=delete-file)
+
+;; -- ftd.text: Rename
 
 -- end: cm
 
@@ -154,11 +168,14 @@ border-color: #f5f5f5
 
 
 
+
+
 -- component folder-context-menu:
 
 -- cm:
 
--- ftd.text: Folder Context Menu
+-- ftd.text: Add File
+$on-click$: $vars.open-command-k-with-current-folder(cmd=add-file)
 
 -- end: cm
 

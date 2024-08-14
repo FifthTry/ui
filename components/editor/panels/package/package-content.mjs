@@ -4,6 +4,7 @@ import * as preact from "preact";
 const ROOT_ID = "package-content-placeholder";
 const ROOT_DATA = "outer-folder";
 const CURRENT_FILE = "current-file";
+const CONTEXT_MENU_PATH = "context-menu-path";
 const MODIFIED_FILES = "modified-files";
 const ONLY_MODIFIED_FILES = "only-modified-files";
 
@@ -22,6 +23,11 @@ export function update_only_show_modified_files(value) {
 
 export function update_modified_files(files) {
     ftd2.set_value(ROOT_ID, MODIFIED_FILES, files);
+}
+
+export function update_context_menu_path(context_menu_path) {
+    console.log("update_context_menu_path", context_menu_path);
+    ftd2.set_value(ROOT_ID, CONTEXT_MENU_PATH, context_menu_path);
 }
 
 export function update_current_file(current_file) {
@@ -74,12 +80,13 @@ function show_package_content({folders, files, ftd_root}) {
         {folders, files, name: "root", open: true}, ftd_root, ROOT_DATA
     );
     let current_file = new ftd2.FastnTik(null, ftd_root, CURRENT_FILE).get();
+    let context_menu_path = new ftd2.FastnTik("", ftd_root, CONTEXT_MENU_PATH).get();
     let modified_files = new ftd2.FastnTik([], ftd_root, MODIFIED_FILES).get();
     let only_modified_files = new ftd2.FastnTik(false, ftd_root, ONLY_MODIFIED_FILES).get();
     return preact.h(
         show_folder, {
             folder, hide_name: true, level: 0,
-            current_file, modified_files, only_modified_files,
+            current_file, context_menu_path, modified_files, only_modified_files,
             parent_full_name: "",
         }
     );
@@ -100,7 +107,7 @@ const file_color = (file, is_modified) => {
     }
 }
 
-function triple_dot_icon(open, isFile) {
+function triple_dot_icon(open, isFile, fullPath) {
     if (!open.get()) return null;
     return hover_icon(
         "dots-three-circle-vertical", {
@@ -113,6 +120,9 @@ function triple_dot_icon(open, isFile) {
                 );
                 ftd.set_value("ui.fifthtry.com/components/editor/vars#context-menu-left", pos.left + 16);
                 ftd.set_value("ui.fifthtry.com/components/editor/vars#context-menu-top", pos.top + 16);
+                console.log("ui.fifthtry.com/components/editor/vars#context-menu-path", fullPath);
+                ftd.set_value("ui.fifthtry.com/components/editor/vars#context-menu-path", fullPath);
+                update_context_menu_path(fullPath);
                 e.preventDefault();
                 e.stopPropagation();
                 return false;
@@ -171,6 +181,7 @@ const show_file = ({
                        file,
                        level,
                        current_file,
+                       context_menu_path,
                        modified_files,
                        only_modified_files,
                    }) => {
@@ -187,6 +198,13 @@ const show_file = ({
 
     let triple_dot = new ftd2.FastnTik(false);
 
+    let background = "white";
+    if (file.full_name === context_menu_path) {
+        background = "#f5f5f5";
+    } else if (file.full_name === current_file && context_menu_path === "") {
+        background = "#f0f0f0";
+    }
+
     return preact.h(
         "a", {
             style: {
@@ -198,7 +216,7 @@ const show_file = ({
                 flexDirection: "row",
                 width: "100%",
                 gap: "3px",
-                background: file.full_name === current_file ? "#f5f5f5" : "white",
+                background,
                 position: "relative",
             },
             onmouseenter: () => triple_dot.set(true),
@@ -207,7 +225,7 @@ const show_file = ({
         },
         icon("file-text", {}),
         file.name,
-        triple_dot_icon(triple_dot, true),
+        triple_dot_icon(triple_dot, true, file.full_name),
     )
 }
 
@@ -217,6 +235,7 @@ const show_folder = ({
                          level,
                          hide_name,
                          current_file,
+                         context_menu_path,
                          modified_files,
                          only_modified_files,
                      }) => {
@@ -261,6 +280,7 @@ const show_folder = ({
                 width: "100%",
                 "font-family": "monospace",
                 fontSize: "12px",
+                background: folder.get().full_name === context_menu_path ? "#f5f5f5" : "white",
             }
         },
         preact.h(
@@ -283,12 +303,13 @@ const show_folder = ({
                 },
                 icon(open.get() ? "folder-open" : "folder", {}),
                 folder.get().name,
-                triple_dot_icon(triple_dot, false),
+                triple_dot_icon(triple_dot, false, folder.get().full_name),
             ),
             open.get() ? folder.index("folders").map((f) => preact.h(show_folder, {
                 folder: f,
                 level: level + 1,
                 current_file,
+                context_menu_path,
                 modified_files,
                 only_modified_files,
                 parent_full_name: full_name,
@@ -296,6 +317,7 @@ const show_folder = ({
                 file: f.get(),
                 level: level + 1,
                 current_file,
+                context_menu_path,
                 modified_files,
                 only_modified_files,
             }))) : [],

@@ -3,6 +3,7 @@ import {keymap} from "@codemirror/view";
 import {insertNewlineAndIndent} from "@codemirror/commands";
 import {repl, repl_parser} from "./language";
 import {autocompletion, completionKeymap} from '@codemirror/autocomplete';
+import {update_context_menu_path} from "../panels/package/package-content";
 
 export class CommandEditor extends HTMLElement {
     constructor() {
@@ -44,6 +45,7 @@ window.ide_open_command_k = (cmd) => {
         selection: {anchor: cmd.length, head: cmd.length}
     });
     window.command_editor.focus();
+    ide_clear_context_menu();
 }
 
 function get_extensions() {
@@ -110,6 +112,7 @@ window.ide_run_command_parser = run_parser;
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
+        ide_clear_context_menu();
     } else if (e.key === "s" && (e.metaKey || e.ctrlKey)) {
         ide_open_command_k("push-file " + ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"));
         e.preventDefault();
@@ -119,3 +122,9 @@ document.addEventListener("keydown", (e) => {
         window.command_editor.focus();
     }
 });
+
+window.ide_clear_context_menu = () => {
+    ftd.set_value("ui.fifthtry.com/components/editor/vars#context-menu-path", "");
+    ftd.set_value("ui.fifthtry.com/components/editor/vars#context-menu-visible", "hidden");
+    update_context_menu_path("");
+}
