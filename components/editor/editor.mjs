@@ -12,6 +12,7 @@ import {
     initialize_package_ui,
     update_current_file,
     update_modified_files,
+    update_context_menu_path,
     update_only_show_modified_files,
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
@@ -124,6 +125,7 @@ function v(name) {
 
 const VAR_PACKAGE_DATA = v`package-data`;
 const VAR_CURRENT_FILE = v`current-file`;
+const VAR_CONTEXT_MENU_PATH = v`context-menu-path`;
 const VAR_MODIFIED_FILES = v`modified-files`;
 const VAR_ONLY_MODIFIED_FILES = v`only-show-modified-files`;
 const VAR_PREVIEW_CONTENT = v`preview-content`;
@@ -134,6 +136,7 @@ window.ide_update_ftd_var = function (name, value) {
     if (name === VAR_PACKAGE_DATA) update_package_content(value.folders, value.files);
     if (name === VAR_CURRENT_FILE) update_current_file(value);
     if (name === VAR_MODIFIED_FILES) update_modified_files(value);
+    if (name === VAR_CONTEXT_MENU_PATH) update_context_menu_path(value);
 
     if (name === VAR_PREVIEW_CONTENT) {
         console.log('ide_update_ftd_var', name, "<html omitted>");

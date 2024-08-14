@@ -75,7 +75,6 @@ export class FastnTik {
     }
 
     set(new_value) {
-        console.log("set called", this.#value, new_value)
         this.set_key([], new_value)
     }
 
@@ -90,7 +89,6 @@ export class FastnTik {
 
     set_key(key, new_value) {
         if (key.length === 0) {
-            console.log("set_key called", this.#value, key, new_value);
             this.#value = new_value;
             return this.notify_preact();
         }
@@ -104,7 +102,6 @@ export class FastnTik {
 
         f[key[i]] = new_value; // the last element
 
-        console.log("set_key called", this.#value, key, new_value);
         this.notify_preact()
 
         // earlier we had a ctx tracking based approach, where we also passed
