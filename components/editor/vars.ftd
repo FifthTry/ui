@@ -251,11 +251,11 @@ string file: $current-file
 ide_open_command_k(cmd + " " + file)
 
 
--- void open-command-k-with-current-folder(cmd):
+-- void open-command-k-with-context-item(cmd):
 string cmd:
-string folder: $context-menu-path
+string ctx: $context-menu-path
 
-ide_open_command_k(cmd + " " + folder)
+ide_open_command_k(cmd + " " + ctx)
 
 -- void run-command():
 

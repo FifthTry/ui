@@ -10,6 +10,7 @@ const ONLY_MODIFIED_FILES = "only-modified-files";
 
 export function initialize_package_ui() {
     let ftd_root = document.getElementById(ROOT_ID);
+    ftd_root.addEventListener("scroll", window.ide_clear_context_menu);
     ftd2.render(show_package_content, {folders: [], files: [], ftd_root}, ftd_root);
 }
 
@@ -324,3 +325,6 @@ const show_folder = ({
         ),
     );
 }
+
+
+

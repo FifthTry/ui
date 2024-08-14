@@ -23,7 +23,7 @@ $on-mouse-leave$: $ftd.set-bool($a=$package.hover, v=false)
     width: fill-container
     align-content: center
 
-    -- ftd.text: loading
+        -- ftd.text: loading
 
     -- end: ftd.column
 
@@ -107,11 +107,11 @@ boolean open: false
 
 -- ftd.column:
 
--- file-context-menu:
-if: { vars.context-menu-visible == "file" }
+    -- file-context-menu:
+    if: { vars.context-menu-visible == "file" }
 
--- folder-context-menu:
-if: { vars.context-menu-visible == "folder" }
+    -- folder-context-menu:
+    if: { vars.context-menu-visible == "folder" }
 
 -- end: ftd.column
 
@@ -144,6 +144,21 @@ border-color: #f5f5f5
 
 
 
+-- component cm-item:
+caption title:
+string cmd:
+boolean $hover: false
+
+-- ftd.text: $cm-item.title
+width: fill-container
+padding.px: 4
+border-width.px: 1
+background.solid if { cm-item.hover }: #f5f5f5
+$on-click$: $vars.open-command-k-with-context-item(cmd=$cm-item.cmd)
+$on-mouse-enter$: $ftd.set-bool($a = $cm-item.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $cm-item.hover, v = false)
+
+-- end: cm-item
 
 
 
@@ -151,14 +166,16 @@ border-color: #f5f5f5
 
 -- cm:
 
--- ftd.text: Push
-if: { ftd.list_contains(vars.modified-files, vars.context-menu-path) }
-$on-click$: $vars.open-command-k-with-current-file(cmd=push-file)
+    ;; this is hidden because its causing a crash
+    /-- cm-item: Push
+    if: { ftd.list_contains(vars.modified-files, vars.context-menu-path) }
+    cmd: push-file
 
--- ftd.text: Delete
-$on-click$: $vars.open-command-k-with-current-file(cmd=delete-file)
+    -- cm-item: Delete
+    cmd: delete-file
 
-;; -- ftd.text: Rename
+    ;; -- cm-item: Rename / Move
+    ;; -- ftd.text: View History
 
 -- end: cm
 
@@ -174,12 +191,16 @@ $on-click$: $vars.open-command-k-with-current-file(cmd=delete-file)
 
 -- cm:
 
--- ftd.text: Add File
-$on-click$: $vars.open-command-k-with-current-folder(cmd=add-file)
+    -- cm-item: Add File
+    cmd: add-file
+
+    ;; -- cm-item: View History
 
 -- end: cm
 
 -- end: folder-context-menu
+
+
 
 
 
