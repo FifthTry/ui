@@ -117,6 +117,17 @@ module authenticate-user: authenticate-user
 						
 					-- end: ds.row
 
+					-- ds.row:
+					spacing: $ds.spaces.horizontal-gap.extra-small
+					inset: $ds.spaces.inset-square.small
+					wrap: true
+					
+						-- ds.link: $lang.forgot-password
+						color: $ds.colors.accent.primary
+						link: $page.site-data.forgot-password-url
+						
+					-- end: ds.row
+
 				-- end: ds.column
 
 			-- end: ds.column
@@ -220,6 +231,17 @@ module authenticate-user: authenticate-user
 					link: /
 					
 				-- end: ds.row
+
+                -- ds.row:
+                spacing: $ds.spaces.horizontal-gap.extra-small
+                align-content: center
+                inset: $ds.spaces.inset-square.medium
+
+                    -- ds.link: $lang.forgot-password
+                    color: $ds.colors.accent.primary
+                    link: $page.site-data.forgot-password-url
+
+                -- end: ds.row
 
 			-- end: ds.column
 

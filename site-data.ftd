@@ -1,5 +1,5 @@
 ;; this file contains the default values for the site, this should reflect
-;; the values we want to use in production. For scenarios there is a different
+;; the values we want to use in production. For scenarios there is a differentsite-data
 ;; file: scenarios/scenario-site.ftd.
 
 
@@ -9,6 +9,7 @@
 
 -- string sign-in-url: /signin/
 -- string sign-up-url: /signup/
+-- string forgot-password-url: /forgot-password/
 
 -- string github-url: /-/auth/github/
 -- string logout-url: /-/auth/logout/

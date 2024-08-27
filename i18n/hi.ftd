@@ -6,6 +6,8 @@
 
 -- string existing-account: पहले से एक खाता मौजूद है?
 
+-- string forgot-password: मैं अपना पासवर्ड भूल गया
+
 -- string checkbox-info: मुझे याद रखो
 
 -- string signin-type: साइन अप करें
