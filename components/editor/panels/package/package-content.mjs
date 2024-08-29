@@ -84,6 +84,10 @@ function show_package_content({folders, files, ftd_root}) {
     let context_menu_path = new ftd2.FastnTik("", ftd_root, CONTEXT_MENU_PATH).get();
     let modified_files = new ftd2.FastnTik([], ftd_root, MODIFIED_FILES).get();
     let only_modified_files = new ftd2.FastnTik(false, ftd_root, ONLY_MODIFIED_FILES).get();
+
+    // saves open file state on every render
+    window.dispatchEvent(new CustomEvent("ide-event", {detail: {name: "save-file-tree", data: folder.get()}}));
+
     return preact.h(
         show_folder, {
             folder, hide_name: true, level: 0,
