@@ -6,6 +6,7 @@
 -- ftd.image-src logo: $assets.files.assets.fifthtry.png
 
 -- string sign-in-url: /scenarios/signin-page/
+-- string forgot-password-url: /scenarios/forgot-password/
 -- string sign-up-url: /scenarios/signup-page/
 -- string github-url: /-/auth/github/
 -- string forgot-url: /-/auth/forgot/

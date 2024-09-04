@@ -22,8 +22,8 @@
     },
     "actions/authenticate-user.ftd": {
       "name": "actions/authenticate-user.ftd",
-      "checksum": "63DEDA3F3442466158F13F00C057AB6C35B96F34951B9D1C76EC49A82934F9E8",
-      "size": 318
+      "checksum": "0395C6B41263A8D712540A2E0BF922AB12C2B23AB12671870EF1ADE09BCAD0D0",
+      "size": 354
     },
     "actions/create-site-action.ftd": {
       "name": "actions/create-site-action.ftd",
@@ -137,13 +137,13 @@
     },
     "actions/user/recover-password.ftd": {
       "name": "actions/user/recover-password.ftd",
-      "checksum": "48FE84031B5DCDAF4FCBDEB4053DF3132BB560C11BA4EFB8D5F3417CC7944138",
-      "size": 208
+      "checksum": "2A3F6F54F46C50409005647B34AA79A6342558D38290601A279BCB26D97DA6AD",
+      "size": 527
     },
     "actions/user/set-password.ftd": {
       "name": "actions/user/set-password.ftd",
-      "checksum": "9B1ADFB8A008BF8F6BCF81EF38F817F9CDED82BDAC9A67AB875AEF49E2952E04",
-      "size": 320
+      "checksum": "32994FBE92D1D8F900DFA5F762B8E90786E0859F747C5E9EDB18CDB498F9C0E7",
+      "size": 382
     },
     "assets/auto-mode-dark.svg": {
       "name": "assets/auto-mode-dark.svg",
@@ -1342,13 +1342,13 @@
     },
     "i18n/en.ftd": {
       "name": "i18n/en.ftd",
-      "checksum": "9B7A1E74D71069ABAECAA065B949CFF3F1DF82895FBCB4528AA9155DBBD326B8",
-      "size": 790
+      "checksum": "D1631ED0F30CF17F087A83A20F8A8FCD0197056829CA9CE05212C98D09E10254",
+      "size": 839
     },
     "i18n/hi.ftd": {
       "name": "i18n/hi.ftd",
-      "checksum": "9ECD3A0BDFE8A38ECCDEA4C1A2A8A030189FE88B0D1994F7B6A134481B9B1EE4",
-      "size": 1216
+      "checksum": "A54A8DEEBFE346166590F7E7A55E8AE43BCE5ADC762940916A84E3F73AAAEF9B",
+      "size": 1309
     },
     "index.ftd": {
       "name": "index.ftd",
@@ -1402,8 +1402,8 @@
     },
     "pages/change-password.ftd": {
       "name": "pages/change-password.ftd",
-      "checksum": "EC75A6BD8B6F2B2606AF3EF3900AB8A9348668822E1B6C728E36488B1129F331",
-      "size": 5498
+      "checksum": "9DEA585DB841FBF6DB7B7CA1697627B91FD121D0013DB51AA259BC9192A39014",
+      "size": 5876
     },
     "pages/db/index.ftd": {
       "name": "pages/db/index.ftd",
@@ -1422,8 +1422,8 @@
     },
     "pages/forgot-password.ftd": {
       "name": "pages/forgot-password.ftd",
-      "checksum": "AA272D21F3002458546BF48F4031830F461346390F23227502F069A323AA0CAA",
-      "size": 4370
+      "checksum": "3D09A334A980176887C6239D2848997F1AEDEA567C6735109B462B3B050EF803",
+      "size": 4605
     },
     "pages/history/index.ftd": {
       "name": "pages/history/index.ftd",
@@ -1462,13 +1462,13 @@
     },
     "pages/password-recovery.ftd": {
       "name": "pages/password-recovery.ftd",
-      "checksum": "06BB2752D5CE342AB2CE50556A4667EB80DE7C5080E7FE6667D0555FD5B63AC3",
-      "size": 2077
+      "checksum": "D8394821594EEB2AD5A8DD1248A87798A7D6F04034CE62D62CE3653F5E699ABD",
+      "size": 1932
     },
     "pages/signin.ftd": {
       "name": "pages/signin.ftd",
-      "checksum": "E033EEFDBD2AB59DDB9108B2CD1E60BA0B861E2E9FE4F7E6E133AEBD0A8C5214",
-      "size": 6588
+      "checksum": "84B5FDA4C626FB4296353DCCE1742C54E0E3D6E72651F176C15BE437458C8044",
+      "size": 7454
     },
     "pages/signup.ftd": {
       "name": "pages/signup.ftd",
@@ -1632,8 +1632,8 @@
     },
     "scenarios/change-password.ftd": {
       "name": "scenarios/change-password.ftd",
-      "checksum": "E40F0832E1FD72C39B7B07E4A1DCA16A71E618847BD4D5596E74EA27CAFB6782",
-      "size": 152
+      "checksum": "6535038FB92C8A08A875F54754686D163B9B1C1E7E590A0B690D01883AA7F1B7",
+      "size": 207
     },
     "scenarios/featured-template/coming-soon/coming-soon-1.ftd": {
       "name": "scenarios/featured-template/coming-soon/coming-soon-1.ftd",
@@ -1757,13 +1757,13 @@
     },
     "scenarios/password-recovery.ftd": {
       "name": "scenarios/password-recovery.ftd",
-      "checksum": "45025D18F64AC8619E9224F7EBA6EEFD050F8277E96C9C1439C27411836C376A",
-      "size": 225
+      "checksum": "20055B9B1FCA90D0E267E92B4814D5B5C465612096C4D3ECEA266830A40ECE47",
+      "size": 245
     },
     "scenarios/scenario-site.ftd": {
       "name": "scenarios/scenario-site.ftd",
-      "checksum": "99B83E4F110F8374F3FF565DBC9378C265E8DE6B25A0B289B7A6D6DDD205AFD1",
-      "size": 841
+      "checksum": "86F1CD3A0AF26028F428FDFD18BD5A6D405A389E3C8179ECC1B554D17D768ECC",
+      "size": 900
     },
     "scenarios/signin-page.ftd": {
       "name": "scenarios/signin-page.ftd",
@@ -1857,8 +1857,8 @@
     },
     "site-data.ftd": {
       "name": "site-data.ftd",
-      "checksum": "FD540B4DFF16AEF4E6FBE597A3F98F78961817894FCFFADD1195BB6951416AF3",
-      "size": 706
+      "checksum": "C0053C84F06F04136154EAB9DA625E4B86423555249B6E5F4F1C7E80E5A04642",
+      "size": 755
     },
     "utils.ftd": {
       "name": "utils.ftd",
@@ -1892,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "92B2DF91162315BA9A991EF0C47127CC520A12F5F8C18B087CF700615E08C088"
+  "checksum": "54072997F8ED72F1C889A6860BF05C133A2509B9A130DFE034ADD37BB4BACFD1"
 }

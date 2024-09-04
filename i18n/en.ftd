@@ -6,6 +6,8 @@
 
 -- string existing-account: Already have an account?
 
+-- string forgot-password: I forgot my password
+
 -- string checkbox-info: Remember me
 
 -- string signin-type: Sign up

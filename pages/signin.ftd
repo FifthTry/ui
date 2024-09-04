@@ -46,25 +46,25 @@ module authenticate-user: authenticate-user
 					spacing: $ds.spaces.vertical-gap.extra-extra-small
 					align-content: left
 					
-						-- ds.copy-small: Username
+						-- ds.copy-small: Username or email address
 						
 						-- ftd.text-input:
-						placeholder: Enter username
+						placeholder: Enter username or email address
 						type: text
-						$on-input$: $ftd.set-string($a = $page.authenticate-user.username.value, v = $VALUE)
-						$on-input$: $utils.set-null($var = $page.authenticate-user.username.error)
+						$on-input$: $ftd.set-string($a = $page.authenticate-user.username-or-email.value, v = $VALUE)
+						$on-input$: $utils.set-null($var = $page.authenticate-user.username-or-email.error)
 						width: fill-container
 						height.fixed.px: 40
 						border-radius.px: 8
 						background.solid: transparent
 						border-width.px: 1
 						border-color: $inherited.colors.border
-						border-color if { page.authenticate-user.username.error != NULL }: $inherited.colors.error.border
+						border-color if { page.authenticate-user.username-or-email.error != NULL }: $inherited.colors.error.border
 						padding.px: 8
 						color: $inherited.colors.text-strong
 						
-						-- ds.copy-small: $page.authenticate-user.username.error
-						if: { page.authenticate-user.username.error != NULL }
+						-- ds.copy-small: $page.authenticate-user.username-or-email.error
+						if: { page.authenticate-user.username-or-email.error != NULL }
 						color: $ds.colors.error.text
 						
 					-- end: ds.column
@@ -97,7 +97,7 @@ module authenticate-user: authenticate-user
 					-- end: ds.column
 
 					-- ds.primary-button: Login
-					$on-click$: $page.authenticate-user.submit-values($username=$page.authenticate-user.username, $password=$page.authenticate-user.password, $next=$page.authenticate-user.next)
+					$on-click$: $page.authenticate-user.submit-values($username_or_email=$page.authenticate-user.username-or-email, $password=$page.authenticate-user.password, $next=$page.authenticate-user.next)
 					width: full
 					radius: curved
 					
@@ -114,6 +114,17 @@ module authenticate-user: authenticate-user
 						color: $ds.colors.accent.primary
 						link if { page.site-data.sign-up-url }: $page.site-data.sign-up-url
 						link: /
+						
+					-- end: ds.row
+
+					-- ds.row:
+					spacing: $ds.spaces.horizontal-gap.extra-small
+					inset: $ds.spaces.inset-square.small
+					wrap: true
+					
+						-- ds.link: $lang.forgot-password
+						color: $ds.colors.accent.primary
+						link: $page.site-data.forgot-password-url
 						
 					-- end: ds.row
 
@@ -151,25 +162,25 @@ module authenticate-user: authenticate-user
 				spacing: $ds.spaces.vertical-gap.extra-extra-small
 				align-content: left
 				
-					-- ds.copy-small: Username
+					-- ds.copy-small: Username or email address
 					
 					-- ftd.text-input:
-					placeholder: Enter username
+					placeholder: Enter username or email address
 					type: text
-					$on-input$: $ftd.set-string($a = $page.authenticate-user.username.value, v = $VALUE)
-					$on-input$: $utils.set-null($var = $page.authenticate-user.username.error)
+					$on-input$: $ftd.set-string($a = $page.authenticate-user.username-or-email.value, v = $VALUE)
+					$on-input$: $utils.set-null($var = $page.authenticate-user.username-or-email.error)
 					width: fill-container
 					height.fixed.px: 40
 					border-radius.px: 8
 					background.solid: transparent
 					border-width.px: 1
 					border-color: $inherited.colors.border
-					border-color if { page.authenticate-user.username.error != NULL }: $inherited.colors.error.border
+					border-color if { page.authenticate-user.username-or-email.error != NULL }: $inherited.colors.error.border
 					padding.px: 8
 					color: $inherited.colors.text-strong
 					
-					-- ds.copy-small: $page.authenticate-user.username.error
-					if: { page.authenticate-user.username.error != NULL }
+					-- ds.copy-small: $page.authenticate-user.username-or-email.error
+					if: { page.authenticate-user.username-or-email.error != NULL }
 					color: $ds.colors.error.text
 					
 				-- end: ds.column
@@ -202,7 +213,7 @@ module authenticate-user: authenticate-user
 				-- end: ds.column
 
 				-- ds.primary-button: Login
-				$on-click$: $page.authenticate-user.submit-values($username=$page.authenticate-user.username, $password=$page.authenticate-user.password, $next=$page.authenticate-user.next)
+				$on-click$: $page.authenticate-user.submit-values($username_or_email=$page.authenticate-user.username-or-email, $password=$page.authenticate-user.password, $next=$page.authenticate-user.next)
 				width: full
 				radius: curved
 				
@@ -220,6 +231,17 @@ module authenticate-user: authenticate-user
 					link: /
 					
 				-- end: ds.row
+
+                -- ds.row:
+                spacing: $ds.spaces.horizontal-gap.extra-small
+                align-content: center
+                inset: $ds.spaces.inset-square.medium
+
+                    -- ds.link: $lang.forgot-password
+                    color: $ds.colors.accent.primary
+                    link: $page.site-data.forgot-password-url
+
+                -- end: ds.row
 
 			-- end: ds.column
 

@@ -9,6 +9,7 @@
 
 -- string sign-in-url: /signin/
 -- string sign-up-url: /signup/
+-- string forgot-password-url: /forgot-password/
 
 -- string github-url: /-/auth/github/
 -- string logout-url: /-/auth/logout/
