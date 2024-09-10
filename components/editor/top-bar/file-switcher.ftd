@@ -22,6 +22,7 @@ file list files: $vars.recent-files
 
             -- ftd.text: $vars.back-ticked(t=$vars.current-file)
             color if { ftd.list_contains(vars.modified-files, vars.current-file) }: #1866f0
+            color if { ftd.list_contains(vars.new-files, vars.current-file) }: green
             color: black
 
             -- popup:
@@ -98,6 +99,7 @@ border-color: #ddd
 
 -- ftd.text: $vars.back-ticked(t=$show-file.file.name)
 color if { ftd.list_contains(vars.modified-files, show-file.file.name) }: #1866f0
+color if { ftd.list_contains(vars.new-files, show-file.file.name) }: green
 color: black
 
 -- ftd.text: $vars.back-ticked(t=$show-file.file.package)

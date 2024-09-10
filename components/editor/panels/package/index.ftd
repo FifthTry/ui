@@ -232,7 +232,7 @@ align-content: center
         size: 14
 
         -- phosphor.light: git-commit
-        if: { ftd.len(vars.modified-files) > 0 }
+        if: { ftd.len(vars.modified-files) > 0 || ftd.len(vars.new-files) > 0 }
         $on-click$: $toggle-only-show-modified-files()
         size: 14
 
