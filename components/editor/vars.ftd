@@ -219,10 +219,6 @@ ide_dispatch_event(name, data)
 -- string list $modified-files:
 -- end: $modified-files
 
-;; full name of files that are deleted
--- string list $deleted-files:
--- end: $deleted-files
-
 -- string back-ticked(t):
 string t:
 
