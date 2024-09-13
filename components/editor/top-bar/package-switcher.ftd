@@ -4,20 +4,40 @@
 boolean $open: false
 package list packages: $vars.recent-packages
 
--- ftd.column:
-$on-mouse-enter$: $ftd.set-boolean($a = $package-switcher.open, v = true)
-$on-mouse-leave$: $ftd.set-boolean($a = $package-switcher.open, v = false)
+-- ftd.row:
+spacing.fixed.px: 15
 
-    -- ftd.text: $vars.package-data.name
+    -- ftd.column:
+    $on-mouse-enter$: $ftd.set-boolean($a = $package-switcher.open, v = true)
+    $on-mouse-leave$: $ftd.set-boolean($a = $package-switcher.open, v = false)
+
+        -- ftd.text: $vars.package-data.name
+        color: black
+        if: { vars.package-data != NULL }
+
+        -- popup:
+        $open: $package-switcher.open
+        $open if { vars.package-data == NULL }: true
+        packages: $package-switcher.packages
+
+    -- end: ftd.column
+
+    -- ftd.text: About
+    link: $vars.package-data.about-url
     color: black
     if: { vars.package-data != NULL }
 
-    -- popup:
-    $open: $package-switcher.open
-    $open if { vars.package-data == NULL }: true
-    packages: $package-switcher.packages
+    -- ftd.text: History
+    link: $vars.package-data.history-url
+    color: black
+    if: { vars.package-data != NULL }
 
--- end: ftd.column
+    -- ftd.text: Settings
+    link: $vars.package-data.settings-url
+    color: black
+    if: { vars.package-data != NULL }
+
+-- end: ftd.row
 
 -- end: package-switcher
 
