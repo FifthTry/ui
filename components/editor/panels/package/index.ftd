@@ -63,6 +63,10 @@ ide_toggle_only_show_modified_files()
 string name:
 string url:
 string slug:
+string domain:
+string about-url:
+string history-url:
+string settings-url:
 integer updated-at:
 folder list folders:
 file list files:
