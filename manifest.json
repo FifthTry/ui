@@ -1107,13 +1107,13 @@
     },
     "components/editor/editor-bundle.js": {
       "name": "components/editor/editor-bundle.js",
-      "checksum": "5A6B866F9EF06EAD2A25502CB321AA24B68D2F7512BD98670CBC8A079125A277",
-      "size": 654810
+      "checksum": "EB0318A68DFB6312BD90FCE1AA9611EB6785BEA62D3BEE0E2BCA7F9A31452859",
+      "size": 654837
     },
     "components/editor/editor-bundle.js.map": {
       "name": "components/editor/editor-bundle.js.map",
-      "checksum": "BCCA7283071B459DC3AD00EC0D7ADA0808D47A070C5915664A7D2C6ADC7D8F58",
-      "size": 2402484
+      "checksum": "97E22790F503F546250A6EA91FE9897D872BFD54122766189FEBA6AF800A2941",
+      "size": 2402490
     },
     "components/editor/editor.css": {
       "name": "components/editor/editor.css",
@@ -1157,13 +1157,13 @@
     },
     "components/editor/panels/package/index.ftd": {
       "name": "components/editor/panels/package/index.ftd",
-      "checksum": "A4B2B61568F94ABC0FD62DB07C23B9986DEA7F94DA32027177256FF3C0CC3DA4",
-      "size": 4467
+      "checksum": "D356990EB74CDADD6EF775A390F4AF419C048614E99E111F6853A21379D1D277",
+      "size": 4499
     },
     "components/editor/panels/package/package-content.mjs": {
       "name": "components/editor/panels/package/package-content.mjs",
-      "checksum": "9D67E5592C568186218CB38063166872C0093B564C826A10E101551F1AD1FD12",
-      "size": 10721
+      "checksum": "A8BBB305B2A53D1857971AA591F6A33CC8B3D2504BBD142DB66C136B7D3B2BFB",
+      "size": 11019
     },
     "components/editor/panels/preview.ftd": {
       "name": "components/editor/panels/preview.ftd",
@@ -1187,8 +1187,8 @@
     },
     "components/editor/top-bar/file-switcher.ftd": {
       "name": "components/editor/top-bar/file-switcher.ftd",
-      "checksum": "645B875BB6D4F06C21C18C5B87B32006FBE1D02EFB224859DAA30BA58DAA58EC",
-      "size": 2696
+      "checksum": "995ED514CEABDCAD12651100AAB859F08E40620ECE72C56C9B401D4B260AB686",
+      "size": 2856
     },
     "components/editor/top-bar/index.ftd": {
       "name": "components/editor/top-bar/index.ftd",
@@ -1202,8 +1202,8 @@
     },
     "components/editor/vars.ftd": {
       "name": "components/editor/vars.ftd",
-      "checksum": "79336C1229C0613F58C214AEBC86D3FB317EB4F9BD2C7D99940875A9B30576DF",
-      "size": 3812
+      "checksum": "3808CDC1AEC1AA4539524B191A29A63868080B8A27CBDD4FBD0BE9D8360F1D04",
+      "size": 3784
     },
     "components/featured-templates/page.ftd": {
       "name": "components/featured-templates/page.ftd",
@@ -1892,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "1005B832A988687F7879D12A19A49142F6784F495CD6544B31989987EC19FC18"
+  "checksum": "C0594DA1ADB81F88030157B23E699C800BD5299EFEF7A61E26DB4AB227EFC436"
 }

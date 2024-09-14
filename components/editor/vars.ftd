@@ -211,17 +211,15 @@ ide_dispatch_event(name, data)
 
 
 
-;; full name of files that are added
--- string list $added-files:
--- end: $added-files
-
-;; full name of files that are modified
+;; full name of modified files
 -- string list $modified-files:
 -- end: $modified-files
 
-;; full name of files that are deleted
--- string list $deleted-files:
--- end: $deleted-files
+;; full name of new files
+;; only used to show the file in green in the top-bar
+;; package-content uses file.status
+-- string list $new-files:
+-- end: $new-files
 
 -- string back-ticked(t):
 string t:

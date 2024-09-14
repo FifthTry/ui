@@ -99,7 +99,10 @@ function show_package_content({folders, files, ftd_root}) {
 
 const padding = (level) => `${(level - 1) * 18 + 8}px`;
 
-const file_color = (file, is_modified) => {
+const file_color = (file, is_a_modified_file) => {
+    // is_modified client side info should override server's file.status
+    if (is_a_modified_file) return "blue";
+
     switch (file.status) {
         case "Normal":
             return "black";
@@ -107,8 +110,10 @@ const file_color = (file, is_modified) => {
             return "red";
         case "New":
             return "green";
-        default:
-            return is_modified ? "blue" : "black";
+        default: {
+            console.error("unreachable state. File status must be in [Normal, Deleted, New]");
+            return "black";
+        }
     }
 }
 
@@ -194,8 +199,10 @@ const show_file = ({
     // file.name: to be shown in ui
     // file.url: as click target
     // file.language: to pick the file icon
-    let is_modified = modified_files.indexOf(file.full_name) >= 0
-        || ["Deleted", "New"].includes(file.status);
+    let is_a_modified_file = modified_files.indexOf(file.full_name) >= 0;
+
+    // Deleted and New are modifications
+    let is_modified = is_a_modified_file || ["Deleted", "New"].includes(file.status);
 
     if (only_modified_files && !is_modified) {
         return null;
@@ -216,7 +223,7 @@ const show_file = ({
                 "padding-top": "2px",
                 "padding-bottom": "2px",
                 "padding-left": padding(level),
-                color: file_color(file, is_modified),
+                color: file_color(file, is_a_modified_file),
                 display: "flex",
                 flexDirection: "row",
                 width: "100%",
