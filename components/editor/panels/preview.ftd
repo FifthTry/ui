@@ -56,7 +56,21 @@ padding-horizontal.px: 10
 padding-vertical.px: 6
 
 
-    -- ftd.text: Preview
+    -- ftd.row:
+    spacing.fixed.px: 7
+    align-content: center
+
+        -- phosphor.light: seal-check
+        if: { vars.preview-upto-date }
+        size: 14
+
+        -- phosphor.light: seal
+        if: { !vars.preview-upto-date }
+        size: 14
+
+        -- ftd.text: Preview
+
+    -- end: ftd.row
 
     -- ftd.row:
     spacing.fixed.px: 5
