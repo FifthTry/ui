@@ -160,6 +160,8 @@ url: /foo/blog/images/first-image.jpg
 
 
 
+-- boolean $preview-upto-date: true
+
 -- boolean $preview-maximized: false
 
 -- boolean $preview-visible: true

@@ -291,6 +291,34 @@ clear-opfs
 
 
 
+-- component show-update-preview-help:
+caption boolean show-question: false
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 5
+padding.px: 5
+
+-- help-header: Update Preview
+show-question: $show-update-preview-help.show-question
+
+-- ftd.text:
+
+You can update the preview by using this command. When you type we don't
+auto update the preview due to performance reason. You can use this command
+to update the preview.
+
+-- ftd.code:
+width: fill-container
+lang: sh
+
+update-preview
+
+-- end: ftd.column
+
+-- end: show-update-preview-help
+
+
 
 
 

@@ -1,5 +1,5 @@
 @top command {
-    AddFile | ClearOPFS | PushFile | DeleteFile
+    AddFile | ClearOPFS | PushFile | DeleteFile | UpdatePreview
 }
 
 
@@ -19,6 +19,10 @@ PushFile {
 
 ClearOPFS {
     "clear-opfs"
+}
+
+UpdatePreview {
+    "update-preview"
 }
 
 FileName {
