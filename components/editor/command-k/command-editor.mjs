@@ -84,6 +84,8 @@ function update(vu) {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "delete-file");
     } else if (doc.indexOf("clear-opfs") === 0) {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "clear-opfs");
+    } else if (doc.indexOf("update-preview") === 0) {
+        ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "update-preview");
     } else {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k-help", "available-commands");
     }
