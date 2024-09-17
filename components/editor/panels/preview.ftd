@@ -66,6 +66,7 @@ padding-vertical.px: 6
 
         -- phosphor.light: seal
         if: { !vars.preview-upto-date }
+        $on-click$: vars.dispatch-event(name=update-preview)
         size: 14
 
         -- ftd.text: Preview
