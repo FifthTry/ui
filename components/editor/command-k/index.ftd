@@ -83,6 +83,9 @@ border-color: #f5f5f5
         -- show-clear-opfs-help: true
         if: { vars.command-k-help == "clear-opfs" }
 
+        -- show-update-preview-help: true
+        if: { vars.command-k-help == "update-preview" }
+
         -- ftd.text: $vars.command-k-error
         if: { vars.command-k-error != NULL }
         padding-left.px: 5
@@ -126,6 +129,9 @@ $on-click$: $vars.open-command-k-with-current-file(cmd=delete-file)
 
 -- ftd.text: `push-file` (save file to server)
 $on-click$: $vars.open-command-k-with-current-file(cmd=push-file)
+
+-- ftd.text: `update-preview` (Update the preview panel)
+$on-click$: $vars.open-command-k-with-current-file(cmd=update-preview)
 
 -- end: ftd.column
 
@@ -305,7 +311,7 @@ show-question: $show-update-preview-help.show-question
 -- ftd.text:
 
 You can update the preview by using this command. When you type we don't
-auto update the preview due to performance reason. You can use this command
+auto update the preview due to performance reasons. You can use this command
 to update the preview.
 
 -- ftd.code:
