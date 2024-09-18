@@ -19,6 +19,9 @@ optional string zip-download-url:
 boolean is-public:
 boolean is-package:
 boolean is-editable:
+boolean help-requested:
+boolean public-history:
+boolean public-source:
 
 
 

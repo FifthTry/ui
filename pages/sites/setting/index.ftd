@@ -85,8 +85,114 @@ dashboard-url: $page.dashboard-url
 		width: wide
 		radius: curved
 		$on-click$: $page.setting-actions.update-editable(site_slug=$page.site.site-slug, is_editable=true)
-		
-		
+
+
+		;; ------------------------------- help-requested -----------------------------------------------
+        -- ds.heading-medium: Site: Help Requested Enabled
+        if: { page.site.help-requested }
+
+        -- ds.copy-regular:
+        if: { page.site.help-requested }
+
+        By default sites on FifthTry disables **help requested** but you, or someone in your team, enabled help-requested
+        on this site. This means that you have given permission to FifthTry staff members to view the history of this
+        site, view the source of this site and can edit the content of the site.
+
+        -- ds.danger-button: Disable Help Requested
+        if: { page.site.help-requested }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-help-requested(site_slug=$page.site.site-slug, help_requested=false)
+
+
+
+        -- ds.heading-medium: Site: Help Requested Disabled
+        if: { !page.site.help-requested }
+
+        -- ds.copy-regular:
+        if: { !page.site.help-requested }
+
+        The site disabled **help requested**. You would enable help-requested to the site if you plan to give permission
+        to FifthTry staff members to view the history of this site, view the source of this site and can edit the
+        content of the site.
+
+
+        -- ds.danger-button: Enable Help Requested
+        if: { !page.site.help-requested }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-help-requested(site_slug=$page.site.site-slug, help_requested=true)
+
+        ;; ------------------------------- public-history -----------------------------------------------
+        -- ds.heading-medium: Site: Public History Enabled
+        if: { page.site.public-history }
+
+        -- ds.copy-regular:
+        if: { page.site.public-history }
+
+        By default sites on FifthTry disables **public history** but you, or someone in your team, enabled public-history
+        on this site. This means that you have given permission to everyone to view the history of this site.
+
+        -- ds.danger-button: Disable Public History
+        if: { page.site.public-history }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-public-history(site_slug=$page.site.site-slug, public_history=false)
+
+
+
+        -- ds.heading-medium: Site: Public History Disabled
+        if: { !page.site.public-history }
+
+        -- ds.copy-regular:
+        if: { !page.site.public-history }
+
+        The site disabled **public history**. You would enable public-history to the site if you plan to give permission
+        to everyone to view the history of this site.
+
+
+        -- ds.danger-button: Enable Public History
+        if: { !page.site.public-history }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-public-history(site_slug=$page.site.site-slug, public_history=true)
+
+
+        ;; ------------------------------- public-source -----------------------------------------------
+        -- ds.heading-medium: Site: Public Source Enabled
+        if: { page.site.public-source }
+
+        -- ds.copy-regular:
+        if: { page.site.public-source }
+
+        By default sites on FifthTry disables **public source** but you, or someone in your team, enabled public-source
+        on this site. This means that you have given permission to everyone to view the source of this site but they
+        cannot edit the content of the site.
+
+        -- ds.danger-button: Disable Public Source
+        if: { page.site.public-source }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-public-source(site_slug=$page.site.site-slug, public_source=false)
+
+
+
+        -- ds.heading-medium: Site: Public Source Disabled
+        if: { !page.site.public-source }
+
+        -- ds.copy-regular:
+        if: { !page.site.public-source }
+
+        The site disabled **public source**. You would enable public-source to the site if you plan to give permission
+        to everyone to view the source of this site but they cannot edit the content of the site.
+
+
+        -- ds.danger-button: Enable Public Source
+        if: { !page.site.public-source }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-public-source(site_slug=$page.site.site-slug, public_source=true)
+
 		;; ------------------------------- is-package -----------------------------------------------
 		;;
 		;; TODO: move this to a separate page, maybe "Developer Settings"
