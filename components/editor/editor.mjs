@@ -19,6 +19,8 @@ import {indentationMarkers} from '@replit/codemirror-indentation-markers';
 import {CommandEditor} from "./command-k/command-editor";
 
 
+const SAVE_MODIFICATION_WAIT_TIME = 1000;
+
 class CMEditor extends HTMLElement {
     constructor() {
         super();
@@ -109,7 +111,7 @@ class CMEditor extends HTMLElement {
 
 const saveUnsavedFile = debounce((file_path, content) => {
     window.ide_dispatch_event("save-unsaved-file", {file_path, content});
-}, 600);
+}, SAVE_MODIFICATION_WAIT_TIME);
 
 customElements.define('cm-editor', CMEditor);
 customElements.define('command-editor', CommandEditor);
