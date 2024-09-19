@@ -123,43 +123,8 @@ dashboard-url: $page.dashboard-url
         radius: curved
         $on-click$: $page.setting-actions.update-help-requested(site_slug=$page.site.site-slug, help_requested=true)
 
-        ;; ------------------------------- public-history -----------------------------------------------
-        -- ds.heading-medium: Site: Public History Enabled
-        if: { page.site.public-history }
-
-        -- ds.copy-regular:
-        if: { page.site.public-history }
-
-        By default sites on FifthTry disables **public history** but you, or someone in your team, enabled public-history
-        on this site. This means that you have given permission to everyone to view the history of this site.
-
-        -- ds.danger-button: Disable Public History
-        if: { page.site.public-history }
-        width: wide
-        radius: curved
-        $on-click$: $page.setting-actions.update-public-history(site_slug=$page.site.site-slug, public_history=false)
-
-
-
-        -- ds.heading-medium: Site: Public History Disabled
-        if: { !page.site.public-history }
-
-        -- ds.copy-regular:
-        if: { !page.site.public-history }
-
-        The site disabled **public history**. You would enable public-history to the site if you plan to give permission
-        to everyone to view the history of this site.
-
-
-        -- ds.danger-button: Enable Public History
-        if: { !page.site.public-history }
-        width: wide
-        radius: curved
-        $on-click$: $page.setting-actions.update-public-history(site_slug=$page.site.site-slug, public_history=true)
-
-
         ;; ------------------------------- public-source -----------------------------------------------
-        -- ds.heading-medium: Site: Public Source Enabled
+        -- ds.heading-medium: Source Is Visible To The World
         if: { page.site.public-source }
 
         -- ds.copy-regular:
@@ -169,7 +134,7 @@ dashboard-url: $page.dashboard-url
         on this site. This means that you have given permission to everyone to view the source of this site but they
         cannot edit the content of the site.
 
-        -- ds.danger-button: Disable Public Source
+        -- ds.danger-button: Make Source Private
         if: { page.site.public-source }
         width: wide
         radius: curved
@@ -177,7 +142,7 @@ dashboard-url: $page.dashboard-url
 
 
 
-        -- ds.heading-medium: Site: Public Source Disabled
+        -- ds.heading-medium: Source Is Private
         if: { !page.site.public-source }
 
         -- ds.copy-regular:
@@ -187,11 +152,57 @@ dashboard-url: $page.dashboard-url
         to everyone to view the source of this site but they cannot edit the content of the site.
 
 
-        -- ds.danger-button: Enable Public Source
+        -- ds.danger-button: Make Source Public
         if: { !page.site.public-source }
         width: wide
         radius: curved
         $on-click$: $page.setting-actions.update-public-source(site_slug=$page.site.site-slug, public_source=true)
+
+
+
+        ;; ------------------------------- public-history -----------------------------------------------
+        -- ds.heading-medium: History Is Visible To The World
+        if: { page.site.public-history && page.site.public-source }
+
+        -- ds.copy-regular:
+        if: { page.site.public-history && page.site.public-source }
+
+        By default sites on FifthTry disables **public history** but you, or someone in your team, enabled public-history
+        on this site. This means that you have given permission to everyone to view the history of this site.
+
+        -- ds.heading-medium: History Will Be Visible To The World If Source Becomes Public
+        if: { page.site.public-history && !page.site.public-source }
+
+        -- ds.copy-regular:
+        if: { page.site.public-history && !page.site.public-source }
+
+        By default sites on FifthTry disables **public history** but you, or someone in your team, enabled public-history
+        on this site. This means that you have given permission to everyone to view the history of this site as soon as
+        you enable public-source. Currently public-source is disabled, so public-history is also disabled.
+
+        -- ds.danger-button: Make History Private
+        if: { page.site.public-history }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-public-history(site_slug=$page.site.site-slug, public_history=false)
+
+
+
+        -- ds.heading-medium: History Is Private
+        if: { !page.site.public-history && page.site.public-source }
+
+        -- ds.copy-regular:
+        if: { !page.site.public-history && page.site.public-source }
+
+        The site disabled **public history**. You would enable public-history to the site if you plan to give permission
+        to everyone to view the history of this site.
+
+
+        -- ds.danger-button: Make History Public
+        if: { !page.site.public-history && page.site.public-source }
+        width: wide
+        radius: curved
+        $on-click$: $page.setting-actions.update-public-history(site_slug=$page.site.site-slug, public_history=true)
 
 		;; ------------------------------- is-package -----------------------------------------------
 		;;
