@@ -30,6 +30,7 @@ js: $assets.files.assets.functions.js
 callAlert("renaming privacy: " + site_slug + ", is_public: " + is_public)
 
 
+
 -- optional string update-editable-error:
 
 -- void update-editable(site_slug, is_editable):
@@ -38,6 +39,41 @@ boolean is_editable:
 js: $assets.files.assets.functions.js
 
 callAlert("update-editable: " + site_slug + ", is_editable: " + is_editable)
+
+
+
+-- optional string update-help-requested-error:
+
+-- void update-help-requested(site_slug, help_requested):
+string site_slug:
+boolean help_requested:
+js: $assets.files.assets.functions.js
+
+callAlert("update-help-requested: " + site_slug + ", help_requested: " + help_requested)
+
+
+
+
+-- optional string update-public-history-error:
+
+-- void update-public-history(site_slug, public_history):
+string site_slug:
+boolean public_history:
+js: $assets.files.assets.functions.js
+
+callAlert("update-public-history: " + site_slug + ", public_history: " + public_history)
+
+
+
+-- optional string update-public-source-error:
+
+-- void update-public-source(site_slug, public_source):
+string site_slug:
+boolean public_source:
+js: $assets.files.assets.functions.js
+
+callAlert("update-public-source: " + site_slug + ", public_source: " + public_source)
+
 
 
 -- optional string mark-package-error:

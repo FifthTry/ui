@@ -39,5 +39,8 @@ preview-image: /-/ui.fifthtry.com/assets/sites/placeholder-preview.svg
 is-public: true
 is-package: false
 is-editable: true
+help-requested: false
+public-history: false
+public-source: false
 
 -- end: sites

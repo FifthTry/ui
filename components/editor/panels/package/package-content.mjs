@@ -110,8 +110,10 @@ const file_color = (file, is_a_modified_file) => {
             return "red";
         case "New":
             return "green";
+        case "Modified":
+            return "blue";
         default: {
-            console.error("unreachable state. File status must be in [Normal, Deleted, New]");
+            console.error("unreachable state. File status must be in [Normal, Deleted, New, Modified]");
             return "black";
         }
     }

@@ -91,3 +91,6 @@ zip-download-url: /
 is-public: true
 is-package: false
 is-editable: true
+help-requested: false
+public-history: false
+public-source: false
