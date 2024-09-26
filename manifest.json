@@ -1092,8 +1092,8 @@
     },
     "components/editor/command-k/index.ftd": {
       "name": "components/editor/command-k/index.ftd",
-      "checksum": "E332C7AF255E06AFF6349E8BBE7CB34E2B457EE713DA1E98CA4EC95084B2A63E",
-      "size": 6518
+      "checksum": "924C35CADA9DD32B5FF975B96004E1896895EBB0403F16E536F9622A2F1E0262",
+      "size": 6500
     },
     "components/editor/command-k/language.js": {
       "name": "components/editor/command-k/language.js",
@@ -1892,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "B5E99831004602ECBD98444A975F98391980838DA248960F8058BB50165DF693"
+  "checksum": "D1177C189768CD9486586B9471D7C9EB5AC5955959F2E1B728201CE1A9750584"
 }
