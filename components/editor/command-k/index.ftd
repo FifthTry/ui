@@ -131,7 +131,7 @@ $on-click$: $vars.open-command-k-with-current-file(cmd=delete-file)
 $on-click$: $vars.open-command-k-with-current-file(cmd=push-file)
 
 -- ftd.text: `update-preview` (Update the preview panel)
-$on-click$: $vars.open-command-k-with-current-file(cmd=update-preview)
+$on-click$: $vars.open-command-k(cmd=update-preview)
 
 -- end: ftd.column
 
