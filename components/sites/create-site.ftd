@@ -150,7 +150,7 @@ string dashboard-url:
 				-- ds.primary-button: Create Site
 				width: full
 				radius: curved
-				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug.value)
+				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug)
 				
 				-- ds.secondary-button: Cancel
 				width: full
