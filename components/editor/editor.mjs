@@ -17,6 +17,7 @@ import {
 } from "./panels/package/package-content";
 import {indentationMarkers} from '@replit/codemirror-indentation-markers';
 import {CommandEditor} from "./command-k/command-editor";
+import {ftd} from "./ftd/language";
 
 
 const SAVE_MODIFICATION_WAIT_TIME = 1000;
@@ -68,6 +69,9 @@ class CMEditor extends HTMLElement {
                 EditorView.updateListener.of(update),
             ];
             switch (language) {
+                case 'ftd':
+                    extensions.push(ftd());
+                    break;
                 case 'JavaScript':
                     extensions.push(javascript());
                     break;
