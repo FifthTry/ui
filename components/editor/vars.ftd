@@ -173,7 +173,7 @@ url: /foo/blog/images/first-image.jpg
 file-name: FASTN.ftd
 language: ftd
 
-loading...
+\-- import: hello
 
 
 
@@ -204,7 +204,7 @@ ide_dispatch_event(name, data)
 
 
 ;; full-name of current file
--- optional string $current-file:
+-- optional string $current-file: sfd
 
 
 

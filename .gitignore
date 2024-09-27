@@ -3,3 +3,7 @@
 .idea
 .packages
 node_modules
+components/editor/command-k/parser.js
+components/editor/command-k/parser.terms.js
+components/editor/ftd/ftd-parser.js
+components/editor/ftd/ftd-parser.terms.js

@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "prepare": "lezer-generator command-k/command.grammar -o command-k/parser.js"
+    "prepare": "lezer-generator command-k/command.grammar -o command-k/parser.js",
+    "build-parser": "lezer-generator ftd/ftd.grammar -o ftd/ftd-parser"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.17.0",
@@ -18,10 +19,11 @@
     "@replit/codemirror-indentation-markers": "^6.5.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "codemirror": "^6.0.1",
-    "preact": "^10.22.1",
-    "rollup": "^4.18.0"
+    "preact": "^10.22.1"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4"
+    "@codemirror/highlight": "^0.19.8",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.22.5"
   }
 }
