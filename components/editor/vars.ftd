@@ -166,7 +166,8 @@ url: /foo/blog/images/first-image.jpg
 
 -- boolean $preview-visible: true
 
--- string $preview-url: https://todayhasbeen.com
+;; edit the content here: https://www.fifthtry.com/ide/editor-preview/index.ftd
+-- string $preview-url: https://editor-preview.fifthtry.site/
 
 -- main-editor.doc $doc:
 file-name: FASTN.ftd
