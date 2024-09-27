@@ -32,13 +32,13 @@ string dashboard-url:
 				spacing: $ds.spaces.vertical-gap.extra-small
 				height.fixed.px: 84
 				
-					-- ds.copy-small: Domain
+					-- ds.copy-small: Subdomain
 					
 					-- ds.row:
 					spacing: $ds.spaces.horizontal-gap.small
 					
 						-- ftd.text-input:
-						placeholder: Enter you domain
+						placeholder: Enter you subdomain
 						color: $inherited.colors.text-strong
 						width.fixed.px: 324
 						padding.px: 8
@@ -107,13 +107,13 @@ string dashboard-url:
 			spacing: $ds.spaces.vertical-gap.extra-small
 			height.fixed.px: 84
 			
-				-- ds.copy-small: Domain
+				-- ds.copy-small: Subdomain
 				
 				-- ds.row:
 				spacing: $ds.spaces.horizontal-gap.small
 				
 					-- ftd.text-input:
-					placeholder: Enter you domain
+					placeholder: Enter you subdomain
 					color: $inherited.colors.text-strong
 					width: fill-container
 					padding.px: 8
