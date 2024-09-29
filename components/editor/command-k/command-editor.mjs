@@ -115,8 +115,15 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         ftd.set_value("ui.fifthtry.com/components/editor/vars#command-k", false);
         ide_clear_context_menu();
+    } else if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
+        ide_open_command_k("update-preview");
+        // if shift is pressed, execute the command
+        if (e.shiftKey) run_parser();
+        e.preventDefault();
     } else if (e.key === "s" && (e.metaKey || e.ctrlKey)) {
         ide_open_command_k("push-file " + ftd.get_value("ui.fifthtry.com/components/editor/vars#current-file"));
+        // if shift is pressed, execute the command
+        if (e.shiftKey) run_parser();
         e.preventDefault();
     } else if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
