@@ -1082,8 +1082,8 @@
     },
     "components/editor/command-k/command-editor.mjs": {
       "name": "components/editor/command-k/command-editor.mjs",
-      "checksum": "4AAB0433F797EA5933A2E40F1E43A3536FCA8480C234AF04082474283D4AE578",
-      "size": 4810
+      "checksum": "7AB7AA7595FC9E218B4789B7A84C32607BC5090A1E556D50D7F853768FF4BE9C",
+      "size": 5128
     },
     "components/editor/command-k/command.grammar": {
       "name": "components/editor/command-k/command.grammar",
@@ -1107,13 +1107,13 @@
     },
     "components/editor/editor-bundle.js": {
       "name": "components/editor/editor-bundle.js",
-      "checksum": "CC3BF5526D69080963EBC035A037AC9A0E748CBEF025D4473B5278232C20DEB2",
-      "size": 655615
+      "checksum": "D7FE9291550A686E445CC6207B3EAC830E922FB0285B7D6BE695BC2E5342FEFF",
+      "size": 655747
     },
     "components/editor/editor-bundle.js.map": {
       "name": "components/editor/editor-bundle.js.map",
-      "checksum": "8AEC797108150725A3A6F800BC8CF1BEA6891E3995E19BE54AC85400CAE70059",
-      "size": 2403398
+      "checksum": "D9851F3947C7D48FFF84521A64557BF600D52A29E1C47A59FE1B2ED3718D8808",
+      "size": 2403858
     },
     "components/editor/editor.css": {
       "name": "components/editor/editor.css",
@@ -1892,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "63795D063B6DB99239B19F8302D5ABF23EAEB123D1DD413567A9FB198B055ED2"
+  "checksum": "D7B8C6855310D705E81264CB846D35E0981C3BF8F07355ADA38802151C74AC61"
 }
