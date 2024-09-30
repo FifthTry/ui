@@ -9,7 +9,15 @@ const ftdLanguage = LRLanguage.define({
         // Basic tokenizer for FTD import grammar
         props: [
             styleTags({
-                Name: t.literal
+                KeywordComponent: t.literal,
+                KeywordRecord: t.literal,
+                SectionType: t.typeName,
+                SectionName: t.keyword,
+                SectionCaption: t.string,
+                Comment: t.comment,
+                HeaderType: t.meta,
+                HeaderName: t.number,
+                HeaderValue: t.string,
             })
         ]
     }),

@@ -1,12 +1,73 @@
-@top ImportCommand { "--" "import" ":" Name }
+@top Section {
+  SectionDefinition HeaderDefinition*
+  Comment*
+}
 
-Name {
-    identifier
+
+
+
+HeaderDefinition {
+  HeaderType? HeaderName ":" HeaderValue?
+}
+
+
+HeaderType {
+  identifier
+}
+
+HeaderName {
+  identifier
+}
+
+HeaderValue {
+  noNewLine+
+}
+
+
+
+SectionDefinition {
+  "--" SectionType? SectionName ":" SectionCaption?
+}
+
+SectionType {
+  KeywordComponent | KeywordRecord | identifier
+}
+
+SectionName {
+  identifier
+}
+
+SectionCaption {
+  noNewLine+
+}
+
+Comment {
+  InlineComment | BlockComment | HeaderComment
+}
+
+InlineComment {
+  ";;" noNewLine*
+}
+
+BlockComment {
+  "/--" identifier "/--"
+}
+
+HeaderComment {
+  "/" identifier ":" noNewLine*
 }
 
 @tokens {
-  identifier { $[a-zA-Z0-9_\-]+ }
-  // QuotedString { '"' (!["\\] | "\\" _)* '"' }
-  LineComment { ";;" ![\n]* }
-  // space { $[ \t\n\r]+ }
+    identifierChar { @asciiLetter | $[_$\u{a1}-\u{10ffff}] }
+
+    word { identifierChar (identifierChar | @digit)* }
+
+    identifier { word }
+
+    noNewLine { $[^\n] }
+
+    KeywordComponent { "component" }
+    KeywordRecord { "record" }
+
+    @precedence { KeywordComponent, KeywordRecord, identifier }
 }
