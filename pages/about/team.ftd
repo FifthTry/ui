@@ -42,10 +42,10 @@ top-message: $page.top-message
 			link: https://github.com/nandhinidevie
 			designation: Marketing Consultant
 			
-			-- team-member: Rithik Seth
-			photo: $assets.files.assets.team.rithik.jpg
+			-- team-member: Rutuja Kapate
+			photo: $assets.files.assets.team.rutuja.jpg
 			link: https://github.com/Heulitig
-			designation: Software Developer
+			designation: Software Developer Intern
 			
 			-- team-member: Siddhant Kumar
 			photo: $assets.files.assets.team.siddhant.jpeg
