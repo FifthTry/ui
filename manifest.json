@@ -980,15 +980,15 @@
       "checksum": "8CE51F099FCDE20B4F810E3D4B6DE2EDDF08A47F051B935F694C90AC1FD24E91",
       "size": 32573
     },
-    "assets/team/rithik-dark.jpg": {
-      "name": "assets/team/rithik-dark.jpg",
-      "checksum": "D018D7C3FA19DA407C3FDB60E4CF0B363FBDCC945D872ED01FA6A10B89A2EE64",
-      "size": 1392349
+    "assets/team/rutuja-dark.jpg": {
+      "name": "assets/team/rutuja-dark.jpg",
+      "checksum": "46F834AF020130D245938F9D1124527989225542CF59E41D190DA503D8BB1E5F",
+      "size": 123213
     },
-    "assets/team/rithik.jpg": {
-      "name": "assets/team/rithik.jpg",
-      "checksum": "D018D7C3FA19DA407C3FDB60E4CF0B363FBDCC945D872ED01FA6A10B89A2EE64",
-      "size": 1392349
+    "assets/team/rutuja.jpg": {
+      "name": "assets/team/rutuja.jpg",
+      "checksum": "46F834AF020130D245938F9D1124527989225542CF59E41D190DA503D8BB1E5F",
+      "size": 123213
     },
     "assets/team/siddhant-dark.jpeg": {
       "name": "assets/team/siddhant-dark.jpeg",
@@ -1372,8 +1372,8 @@
     },
     "pages/about/team.ftd": {
       "name": "pages/about/team.ftd",
-      "checksum": "9396ACF44E631E30E66A622C6738EA8D5A71F7AF1F54DF2BD11738725FE6A677",
-      "size": 2476
+      "checksum": "BDFB15EA57E9199B3EECA08D51DA635E80977E3A09F308B9D2C592D12B54E324",
+      "size": 2485
     },
     "pages/about/terms.ftd": {
       "name": "pages/about/terms.ftd",
@@ -1892,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "D7B8C6855310D705E81264CB846D35E0981C3BF8F07355ADA38802151C74AC61"
+  "checksum": "1AC24DCD3A249B3F640405846189C78DFD00F9A9E9A18CD9BAB568785A245A6D"
 }
