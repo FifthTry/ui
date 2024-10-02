@@ -1462,8 +1462,8 @@
     },
     "pages/password-recovery.ftd": {
       "name": "pages/password-recovery.ftd",
-      "checksum": "D8394821594EEB2AD5A8DD1248A87798A7D6F04034CE62D62CE3653F5E699ABD",
-      "size": 1932
+      "checksum": "97E367BB50CD6D418248BF97195E6731A4FBFB604156DBDB0BF7457939BBE298",
+      "size": 1941
     },
     "pages/signin.ftd": {
       "name": "pages/signin.ftd",
@@ -1757,8 +1757,8 @@
     },
     "scenarios/password-recovery.ftd": {
       "name": "scenarios/password-recovery.ftd",
-      "checksum": "20055B9B1FCA90D0E267E92B4814D5B5C465612096C4D3ECEA266830A40ECE47",
-      "size": 245
+      "checksum": "45025D18F64AC8619E9224F7EBA6EEFD050F8277E96C9C1439C27411836C376A",
+      "size": 225
     },
     "scenarios/scenario-site.ftd": {
       "name": "scenarios/scenario-site.ftd",
@@ -1892,5 +1892,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "1AC24DCD3A249B3F640405846189C78DFD00F9A9E9A18CD9BAB568785A245A6D"
+  "checksum": "59DCC50FE15DEAF06AD5E5849C421C5556897D1507E3375C30DF593BA3C198E0"
 }
