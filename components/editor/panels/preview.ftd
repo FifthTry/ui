@@ -77,6 +77,10 @@ padding-vertical.px: 6
     spacing.fixed.px: 5
     align-content: center
 
+        -- preview-url:
+        hover: $preview-header.hover
+        $show-panel: $preview-header.toggle-visibility-flag
+
         -- toggle-width:
         hover: $preview-header.hover
         $flag: $preview-header.preview-maximized
@@ -91,7 +95,23 @@ padding-vertical.px: 6
 
 -- end: preview-header
 
+-- component preview-url:
+boolean hover:
+boolean $show-panel:
 
+    -- ftd.column:
+    classes if { !preview-url.hover }: hidden
+    ;; hide the preview panel since the user is relying on an external browser tab
+    $on-click$: $ftd.toggle($a = $preview-url.show-panel)
+    link: $vars.preview-url
+    open-in-new-tab: true
+
+        -- phosphor.light: arrow-square-out
+        size: 14
+
+    -- end: ftd.column
+
+-- end: preview-url
 
 -- component toggle-width:
 boolean $flag: false
