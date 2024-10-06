@@ -1,5 +1,6 @@
 import * as ftd2 from "../../ftd2";
 import * as preact from "preact";
+import { useEffect } from "preact/hooks";
 
 const ROOT_ID = "package-content-placeholder";
 const ROOT_DATA = "outer-folder";
@@ -85,8 +86,10 @@ function show_package_content({folders, files, ftd_root}) {
     let modified_files = new ftd2.FastnTik([], ftd_root, MODIFIED_FILES).get();
     let only_modified_files = new ftd2.FastnTik(false, ftd_root, ONLY_MODIFIED_FILES).get();
 
-    // saves open file state on every render
-    window.dispatchEvent(new CustomEvent("ide-event", {detail: {name: "save-file-tree", data: folder.get()}}));
+    useEffect(() => {
+        // saves open file state on every render
+        window.dispatchEvent(new CustomEvent("ide-event", {detail: {name: "save-file-tree", data: folder.get()}}));
+    }, [folder.get()]);
 
     return preact.h(
         show_folder, {
