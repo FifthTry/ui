@@ -30,7 +30,6 @@ string dashboard-url:
 				-- ds.column:
 				align-content: top-left
 				spacing: $ds.spaces.vertical-gap.extra-small
-				height.fixed.px: 84
 				
 					-- ds.copy-small: Subdomain
 					
@@ -60,6 +59,15 @@ string dashboard-url:
 					
 				-- end: ds.column
 
+                -- ds.column:
+                align-content: top-left
+
+                -- ds.checkbox: Make site public so that others can view source of your site
+                $is-checked: $create-site.create-site-action.public-source.value
+                size: small
+
+                -- end: ds.column
+
 				-- ds.row:
 				align-content: left
 				spacing: $ds.spaces.horizontal-gap.small
@@ -77,7 +85,7 @@ string dashboard-url:
 					-- ds.primary-button: Create Site
 					width: full
 					radius: curved
-					$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug)
+					$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source)
 					
 					-- ds.secondary-button: Cancel
 					width: full
@@ -135,6 +143,16 @@ string dashboard-url:
 				
 			-- end: ds.column
 
+            -- ds.column:
+            align-content: top-left
+
+            -- ds.checkbox: Make site public so that others can view source of your site
+            $is-checked: $create-site.create-site-action.public-source.value
+            size: small
+
+            -- end: ds.column
+
+
 			-- ds.row:
 			align-content: left
 			spacing: $ds.spaces.horizontal-gap.small
@@ -152,7 +170,7 @@ string dashboard-url:
 				-- ds.primary-button: Create Site
 				width: full
 				radius: curved
-				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug)
+				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source)
 				
 				-- ds.secondary-button: Cancel
 				width: full
