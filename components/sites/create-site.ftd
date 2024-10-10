@@ -37,7 +37,7 @@ string dashboard-url:
 					spacing: $ds.spaces.horizontal-gap.small
 					
 						-- ftd.text-input:
-                        value: $create-site.create-site-action.site-slug.value
+						                  value: $create-site.create-site-action.site-slug.value
 						placeholder: Enter you subdomain
 						color: $inherited.colors.text-strong
 						width.fixed.px: 324
@@ -59,14 +59,14 @@ string dashboard-url:
 					
 				-- end: ds.column
 
-                -- ds.column:
-                align-content: top-left
-
-                -- ds.checkbox: Make site public so that others can view source of your site
-                $is-checked: $create-site.create-site-action.public-source.value
-                size: small
-
-                -- end: ds.column
+				-- ds.column:
+				align-content: top-left
+				
+					-- ds.checkbox: Make site public so that others can view source of your site
+					$is-checked: $create-site.create-site-action.public-source.value
+					size: small
+					
+				-- end: ds.column
 
 				-- ds.row:
 				align-content: left
@@ -122,7 +122,7 @@ string dashboard-url:
 				spacing: $ds.spaces.horizontal-gap.small
 				
 					-- ftd.text-input:
-                    value: $create-site.create-site-action.site-slug.value
+					               value: $create-site.create-site-action.site-slug.value
 					placeholder: Enter you subdomain
 					color: $inherited.colors.text-strong
 					width: fill-container
@@ -143,14 +143,14 @@ string dashboard-url:
 				
 			-- end: ds.column
 
-            -- ds.column:
-            align-content: top-left
-
-            -- ds.checkbox: Make site public so that others can view source of your site
-            $is-checked: $create-site.create-site-action.public-source.value
-            size: small
-
-            -- end: ds.column
+			-- ds.column:
+			align-content: top-left
+			
+				-- ds.checkbox: Make site public so that others can view source of your site
+				$is-checked: $create-site.create-site-action.public-source.value
+				size: small
+				
+			-- end: ds.column
 
 
 			-- ds.row:
