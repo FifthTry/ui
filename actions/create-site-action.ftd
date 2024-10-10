@@ -1,4 +1,5 @@
 -- ftd.string-field $site-slug: site-slug
+value: sweet-candy-4342
 
 -- void submit(org_slash_username, site_slug):
 string org_slash_username:
