@@ -27,8 +27,8 @@
     },
     "actions/create-site-action.ftd": {
       "name": "actions/create-site-action.ftd",
-      "checksum": "1B31FBD5621996AB5943EC62C8762B4D8C208266FD1B9EDCA01695F1D7043278",
-      "size": 271
+      "checksum": "2C61657B69DCB4F5BA2E812EC178D1D2BE3F910FF4401EE4190B92E22E271C5C",
+      "size": 445
     },
     "actions/create-user.ftd": {
       "name": "actions/create-user.ftd",
@@ -129,11 +129,6 @@
       "name": "actions/user/create-org-action.ftd",
       "checksum": "4513E8F9813FB53D29666A43EFFF5A5DC2AB87B89B602B1E39269F20EC4D8D91",
       "size": 239
-    },
-    "actions/user/create-site-action.ftd": {
-      "name": "actions/user/create-site-action.ftd",
-      "checksum": "EB5674E7CB5689C7BE5D4CA3F6596A631A871C8ACDB639585F7ACDFFE40EE28C",
-      "size": 263
     },
     "actions/user/recover-password.ftd": {
       "name": "actions/user/recover-password.ftd",
@@ -1252,8 +1247,8 @@
     },
     "components/sites/create-site.ftd": {
       "name": "components/sites/create-site.ftd",
-      "checksum": "4479697D34325AD0B97E476B6473E716080FE5424E973CD0EB6A2DE3562F2A19",
-      "size": 4444
+      "checksum": "D41C2AA7FFB6D597B0277C6DCF1B0D8AFC8599E7B54F0364A576261587DE58A5",
+      "size": 5173
     },
     "components/sites/editor/browser.ftd": {
       "name": "components/sites/editor/browser.ftd",
@@ -1892,5 +1887,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "3D72E038643ADE642AF1DFCDB8910E2848792DEC2E9C9A67212C011E23E5C025"
+  "checksum": "4DF1C72F35F26BAF70AFFB68C2AD63200AAEAF2B4EEE72D8AB3533983981D72B"
 }

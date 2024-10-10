@@ -1,8 +1,13 @@
 -- ftd.string-field $site-slug: site-slug
+value: sweet-candy-4342
 
--- void submit(org_slash_username, site_slug):
+-- ftd.boolean-field $public-source: public-source
+value: true
+
+-- void submit(org_slash_username, site_slug, public_source):
 string org_slash_username:
 ftd.string-field $site_slug:
+ftd.boolean-field public_source:
 js: $assets.files.assets.functions.js
 
-callAlert("creating site: " + site_slug.value + ", under org: " + org_slash_username)
+callAlert("creating site: " + site_slug.value + ", under org: " + org_slash_username + " is public: ", public_source.value)
