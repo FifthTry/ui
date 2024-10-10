@@ -38,6 +38,7 @@ string dashboard-url:
 					spacing: $ds.spaces.horizontal-gap.small
 					
 						-- ftd.text-input:
+                        value: $create-site.create-site-action.site-slug.value
 						placeholder: Enter you subdomain
 						color: $inherited.colors.text-strong
 						width.fixed.px: 324
@@ -113,6 +114,7 @@ string dashboard-url:
 				spacing: $ds.spaces.horizontal-gap.small
 				
 					-- ftd.text-input:
+                    value: $create-site.create-site-action.site-slug.value
 					placeholder: Enter you subdomain
 					color: $inherited.colors.text-strong
 					width: fill-container
