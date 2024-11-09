@@ -113,3 +113,10 @@ optional string url: ;; This is present when document is not provided
 -- record history-output:
 history-change list changes:
 optional string next:
+
+;; Sample site info
+;; Used in /create-site/ page to show the template that will be used
+-- record sample-site-data:
+ftd.integer-field id:
+string title:
+string ide-link:

@@ -2,12 +2,15 @@
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/actions/create-site-action
 -- import: ui.fifthtry.com/utils as u
+-- import: ui.fifthtry.com/records/sites as site-records
 
 
 -- component create-site:
 string org-slash-username:
 module create-site-action: create-site-action
 string dashboard-url:
+optional site-records.sample-site-data sample-site:
+
 
 -- ds.section-column:
 
@@ -59,6 +62,24 @@ string dashboard-url:
 					
 				-- end: ds.column
 
+				-- ds.row:
+				align-content: left
+				spacing: $ds.spaces.horizontal-gap.small
+                if: { create-site.sample-site }
+				
+					-- ds.copy-small: $use-template-text(title=$create-site.sample-site.title, link=$create-site.sample-site.ide-link)
+					
+				-- end: ds.row
+
+				-- ds.row:
+				align-content: left
+				spacing: $ds.spaces.horizontal-gap.small
+                if: { !create-site.sample-site }
+				
+                    -- ds.copy-small: This site will be created using a Blog template. Browse [community templates](/templates/) for more.
+					
+				-- end: ds.row
+
 				-- ds.column:
 				align-content: top-left
 				
@@ -82,7 +103,14 @@ string dashboard-url:
 				-- ds.row:
 				spacing: $ds.spaces.horizontal-gap.medium
 				
+					-- ds.primary-button: Create Site With Template
+                    if: { create-site.sample-site }
+					width: full
+					radius: curved
+					$on-click$: $create-site.create-site-action.submit-with-templ(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source, sample_site_id = $create-site.sample-site.id)
+
 					-- ds.primary-button: Create Site
+                    if: { !create-site.sample-site }
 					width: full
 					radius: curved
 					$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source)
@@ -170,7 +198,7 @@ string dashboard-url:
 				-- ds.primary-button: Create Site
 				width: full
 				radius: curved
-				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source)
+				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source, sample_site_id = $create-site.sample-site.id)
 				
 				-- ds.secondary-button: Cancel
 				width: full
@@ -186,3 +214,10 @@ string dashboard-url:
 -- end: ds.section-column
 
 -- end: create-site
+
+-- string use-template-text(title, link):
+string title:
+string link:
+
+
+"This site will be created using [" + title + "](" + link + ")"
