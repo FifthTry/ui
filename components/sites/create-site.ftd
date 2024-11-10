@@ -171,8 +171,27 @@ optional site-records.sample-site-data sample-site:
 				
 			-- end: ds.column
 
+            -- ds.column:
+            align-content: left
+            spacing: $ds.spaces.horizontal-gap.small
+            if: { create-site.sample-site }
+
+                -- ds.copy-small: $use-template-text(title=$create-site.sample-site.title, link=$create-site.sample-site.ide-link)
+
+            -- end: ds.column
+
+            -- ds.column:
+            align-content: left
+            spacing: $ds.spaces.horizontal-gap.small
+            if: { !create-site.sample-site }
+
+                -- ds.copy-small: This site will be created using a Blog template. Browse [community templates](/templates/) for more.
+
+            -- end: ds.column
+
 			-- ds.column:
 			align-content: top-left
+            spacing: $ds.spaces.horizontal-gap.small
 			
 				-- ds.checkbox: Make site public so that others can view source of your site
 				$is-checked: $create-site.create-site-action.public-source.value
@@ -194,12 +213,19 @@ optional site-records.sample-site-data sample-site:
 
 			-- ds.column:
 			spacing: $ds.spaces.vertical-gap.medium
-			
-				-- ds.primary-button: Create Site
-				width: full
-				radius: curved
-				$on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source, sample_site_id = $create-site.sample-site.id)
-				
+
+                -- ds.primary-button: Create Site With Template
+                if: { create-site.sample-site }
+                width: full
+                radius: curved
+                $on-click$: $create-site.create-site-action.submit-with-templ(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source, sample_site_id = $create-site.sample-site.id)
+
+                -- ds.primary-button: Create Site
+                if: { !create-site.sample-site }
+                width: full
+                radius: curved
+                $on-click$: $create-site.create-site-action.submit(org_slash_username = $create-site.org-slash-username, $site_slug = $create-site.create-site-action.site-slug, public_source = $create-site.create-site-action.public-source)
+					
 				-- ds.secondary-button: Cancel
 				width: full
 				radius: curved
@@ -220,4 +246,4 @@ string title:
 string link:
 
 
-"This site will be created using [" + title + "](" + link + ")"
+"This site will be created using [" + title + "](" + link + ")."
