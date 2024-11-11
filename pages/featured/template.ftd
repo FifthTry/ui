@@ -67,60 +67,38 @@ boolean $mouse-in: false
 
 -- ds.column:
 width: hug-content
-$on-mouse-enter$: $ftd.set-bool($a = $grid-of-items.mouse-in, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $grid-of-items.mouse-in, v = false)
 border: $ds.borders.uniform.small
 spacing: $ds.spaces.vertical-gap.zero
 
-/-- ftd.iframe:
-width.fixed.px: 354
-height.fixed.px: 224
-border-top-left-radius.px: 8
-border-top-right-radius.px: 8
-src: $grid-of-items.preview-url
-
 -- ftd.image:
 src: $grid-of-items.preview-img
-width.fixed.px: 354
+width.fixed.px: 356
 height.fixed.px: 224
 border-top-left-radius.px: 8
 border-top-right-radius.px: 8
 
-	-- ftd.column:
-	if: { grid-of-items.mouse-in }
-	padding.px: 15
-	width: fill-container	
-	bottom.px: 0
-	bottom.px if { !grid-of-items.mouse-in && ftd.device != "mobile" }: -90
-	left.px: 0
-	border-bottom-left-radius.px: 8
-	border-bottom-right-radius.px: 8
-	z-index: 999
-	background.solid: $ds.colors.shadow
-	anchor: parent
-	
-		-- ds.row:
-		spacing: $ds.spaces.horizontal-gap.space-between
-		link: $grid-of-items.preview-url
-		
-			-- ds.copy-small: Use Template
-			color: $ds.colors.text-strong
-			
-			-- ftd.image:
-			src: $assets.files.assets.right-arrow.svg
-			width.fixed.px: 18
-			
-		-- end: ds.row
+-- ds.column:
+border: $ds.borders.top.small
+border-color: $ds.colors.border
+radius: $ds.radius.zero
+inset: $ds.spaces.inset-square.medium
 
-	-- end: ftd.column
+-- ds.copy-regular: 
+text: $grid-of-items.title
 
-	-- ds.column:
-	border: $ds.borders.top.small
-	radius: $ds.radius.zero
-	inset: $ds.spaces.inset-tall.zero-small
+-- ds.row:
 
-	-- ds.copy-regular: 
-	text: $grid-of-items.title
+-- ds.primary-button: Use Template
+link: $grid-of-items.preview-url
+width: full
+open-in-new-tab: true
+
+-- ds.secondary-button: Preview
+width: full
+link: $grid-of-items.preview-url
+open-in-new-tab: true
+
+-- end: ds.row
 	
 -- end: ds.column
 
