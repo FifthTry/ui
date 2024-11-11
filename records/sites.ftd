@@ -120,3 +120,4 @@ optional string next:
 integer id:
 string title:
 string preview-url:
+ftd.image-src preview-img:
