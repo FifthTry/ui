@@ -34,4 +34,10 @@ preview-url: https://simple-blog-template.fifthtry.site/
 preview-img: $assets.files.assets.templates.simple-blog-temp.png
 id: 4
 
+-- template-record.template: 
+title: Resume Template
+preview-url: https://resume-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.resume.png
+id: 5
+
 -- end: template-category-list
