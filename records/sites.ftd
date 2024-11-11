@@ -113,3 +113,10 @@ optional string url: ;; This is present when document is not provided
 -- record history-output:
 history-change list changes:
 optional string next:
+
+
+;; template records
+-- record template:
+integer id:
+string title:
+string preview-url:

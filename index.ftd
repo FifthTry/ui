@@ -72,6 +72,9 @@ $processor$: pr.toc
 - Featured Template:
   - Templates: /scenarios/featured-template
 
+- Featured:
+  - Template: /scenarios/featured
+
 - University Scenarios:
   - University Homepage: /scenarios/university/home-page/
   - f4e course: /scenarios/university/f4e-course/

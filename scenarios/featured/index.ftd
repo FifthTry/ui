@@ -1,0 +1,33 @@
+-- import: ui.fifthtry.com/pages/featured
+-- import: ui.fifthtry.com/records/sites as template-record
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- featured.page:
+templates: $template-category-list
+user-data: $john-doe.jd
+
+
+-- template-record.template list template-category-list:
+
+-- template-record.template: 
+title: Blog Template
+preview-url: https://blog.fifthtry.site/
+id: 1
+
+-- template-record.template: 
+title: Simple Website Template
+preview-url: https://simple-website-template.fifthtry.site/
+id: 2
+
+-- template-record.template: 
+title: Website Template
+preview-url: https://website-template.fifthtry.site/
+id: 3
+
+-- template-record.template: 
+title: Simple Blog Template
+preview-url: https://simple-blog-template.fifthtry.site/
+id: 4
+
+-- end: template-category-list

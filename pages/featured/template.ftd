@@ -1,0 +1,125 @@
+-- import: ui.fifthtry.com/records/sites as template-record
+
+
+
+-- component grid-view:
+template-record.template list category:
+
+-- ds.column:
+width: fill-container
+spacing if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.medium
+align-content: top-left
+	
+	-- ftd.desktop:
+	
+		-- ds.row:
+		align-content: left
+		spacing: $ds.spaces.horizontal-gap.medium
+		wrap: true
+		
+			-- grid-of-items:
+			for: $obj in $grid-view.category
+			title: $obj.title
+			preview-url: $obj.preview-url
+			id: $obj.id
+			
+		-- end: ds.row
+
+	-- end: ftd.desktop
+
+	-- ftd.mobile:
+	
+		-- ds.column:
+		align-content: left
+		spacing: $ds.spaces.vertical-gap.large
+		
+			-- grid-of-items: 
+			for: $obj in $grid-view.category
+			title: $obj.title
+			preview-url: $obj.preview-url
+			id: $obj.id
+			
+		-- end: ds.column
+
+	-- end: ftd.mobile
+
+-- end: ds.column
+
+-- end: grid-view
+
+
+
+
+
+
+
+
+
+
+-- component grid-of-items:
+string title:
+string preview-url:
+integer id:
+boolean $mouse-in: false
+
+-- ds.column:
+width: hug-content
+$on-mouse-enter$: $ftd.set-bool($a = $grid-of-items.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $grid-of-items.mouse-in, v = false)
+border: $ds.borders.uniform.small
+spacing: $ds.spaces.vertical-gap.zero
+
+-- ftd.iframe:
+width.fixed.px: 354
+height.fixed.px: 224
+border-top-left-radius.px: 8
+border-top-right-radius.px: 8
+src: $grid-of-items.preview-url
+
+	-- ftd.column:
+	if: { grid-of-items.mouse-in }
+	padding.px: 15
+	width: fill-container	
+	bottom.px: 0
+	bottom.px if { !grid-of-items.mouse-in && ftd.device != "mobile" }: -90
+	left.px: 0
+	border-bottom-left-radius.px: 8
+	border-bottom-right-radius.px: 8
+	z-index: 999
+	background.solid: $ds.colors.shadow
+	anchor: parent
+	
+		-- ds.row:
+		spacing: $ds.spaces.horizontal-gap.space-between
+		link: $grid-of-items.preview-url
+		
+			-- ds.copy-small: Use Template
+			color: $ds.colors.text-strong
+			
+			-- ftd.image:
+			src: $assets.files.assets.right-arrow.svg
+			width.fixed.px: 18
+			
+		-- end: ds.row
+
+	-- end: ftd.column
+
+	-- ds.column:
+	border: $ds.borders.top.small
+	radius: $ds.radius.zero
+	inset: $ds.spaces.inset-tall.zero-small
+
+	-- ds.copy-regular: 
+	text: $grid-of-items.title
+	
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: grid-of-items
+
+
+
+-- ftd.color overlay-bg:
+light: #00000066
+dark:  #00000066
