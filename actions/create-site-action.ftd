@@ -10,4 +10,14 @@ ftd.string-field $site_slug:
 ftd.boolean-field public_source:
 js: $assets.files.assets.functions.js
 
-callAlert("creating site: " + site_slug.value + ", under org: " + org_slash_username + " is public: ", public_source.value)
+callAlert("creating site: " + site_slug.value + ", under org: " + org_slash_username + " is public: " + public_source.value)
+
+
+-- void submit-with-templ(org_slash_username, site_slug, public_source, sample_site_id):
+string org_slash_username:
+ftd.string-field $site_slug:
+ftd.boolean-field public_source:
+ftd.integer-field sample_site_id:
+js: $assets.files.assets.functions.js
+
+callAlert("creating site with templ: " + site_slug.value + ", under org: " + org_slash_username + " is public: " + public_source.value + " sample site: " + sample_site_id.value)

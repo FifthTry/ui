@@ -1,4 +1,9 @@
 -- import: ui.fifthtry.com/records/sites as template-record
+-- import: fastn/processors as pr
+
+;; org-slug
+-- optional string r:
+$processor$: pr.request-data
 
 
 
@@ -22,7 +27,7 @@ align-content: top-left
 			title: $obj.title
 			preview-url: $obj.preview-url
 			preview-img: $obj.preview-img
-			id: $obj.id
+			slug: $obj.slug
 			
 		-- end: ds.row
 
@@ -39,7 +44,7 @@ align-content: top-left
 			title: $obj.title
 			preview-url: $obj.preview-url
 			preview-img: $obj.preview-img
-			id: $obj.id
+			slug: $obj.slug
 			
 		-- end: ds.column
 
@@ -62,7 +67,7 @@ align-content: top-left
 string title:
 string preview-url:
 ftd.image-src preview-img:
-integer id:
+string slug:
 boolean $mouse-in: false
 
 -- ds.column:
@@ -89,14 +94,13 @@ text: $grid-of-items.title
 -- ds.row:
 
 -- ds.primary-button: Use Template
-link: $grid-of-items.preview-url
+link if { r }: $create-site-with-org-link(slug = $grid-of-items.slug, org = $r)
+link if { !r }: $create-site-link(slug = $grid-of-items.slug)
 width: full
-open-in-new-tab: true
 
 -- ds.secondary-button: Preview
 width: full
 link: $grid-of-items.preview-url
-open-in-new-tab: true
 
 -- end: ds.row
 	
@@ -111,3 +115,14 @@ open-in-new-tab: true
 -- ftd.color overlay-bg:
 light: #00000066
 dark:  #00000066
+
+-- string create-site-with-org-link(slug, org):
+string slug:
+string org:
+
+"/o/" + org + "/create-site/?t=" + slug
+
+-- string create-site-link(slug):
+string slug:
+
+"/create-site/?t=" + slug
