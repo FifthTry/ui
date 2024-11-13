@@ -1,0 +1,113 @@
+-- import: ui.fifthtry.com/records/sites as template-record
+
+
+
+-- component grid-view:
+template-record.template list category:
+
+-- ds.column:
+width: fill-container
+spacing if { ftd.device == "mobile" }: $ds.spaces.vertical-gap.medium
+align-content: top-left
+	
+	-- ftd.desktop:
+	
+		-- ds.row:
+		align-content: left
+		spacing: $ds.spaces.horizontal-gap.medium
+		wrap: true
+		
+			-- grid-of-items:
+			for: $obj in $grid-view.category
+			title: $obj.title
+			preview-url: $obj.preview-url
+			preview-img: $obj.preview-img
+			id: $obj.id
+			
+		-- end: ds.row
+
+	-- end: ftd.desktop
+
+	-- ftd.mobile:
+	
+		-- ds.column:
+		align-content: left
+		spacing: $ds.spaces.vertical-gap.large
+		
+			-- grid-of-items: 
+			for: $obj in $grid-view.category
+			title: $obj.title
+			preview-url: $obj.preview-url
+			preview-img: $obj.preview-img
+			id: $obj.id
+			
+		-- end: ds.column
+
+	-- end: ftd.mobile
+
+-- end: ds.column
+
+-- end: grid-view
+
+
+
+
+
+
+
+
+
+
+-- component grid-of-items:
+string title:
+string preview-url:
+ftd.image-src preview-img:
+integer id:
+boolean $mouse-in: false
+
+-- ds.column:
+width: hug-content
+border: $ds.borders.uniform.small
+spacing: $ds.spaces.vertical-gap.zero
+
+-- ftd.image:
+src: $grid-of-items.preview-img
+width.fixed.px: 356
+height.fixed.px: 224
+border-top-left-radius.px: 8
+border-top-right-radius.px: 8
+
+-- ds.column:
+border: $ds.borders.top.small
+border-color: $ds.colors.border
+radius: $ds.radius.zero
+inset: $ds.spaces.inset-square.medium
+
+-- ds.copy-regular: 
+text: $grid-of-items.title
+
+-- ds.row:
+
+-- ds.primary-button: Use Template
+link: $grid-of-items.preview-url
+width: full
+open-in-new-tab: true
+
+-- ds.secondary-button: Preview
+width: full
+link: $grid-of-items.preview-url
+open-in-new-tab: true
+
+-- end: ds.row
+	
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: grid-of-items
+
+
+
+-- ftd.color overlay-bg:
+light: #00000066
+dark:  #00000066

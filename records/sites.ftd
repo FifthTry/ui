@@ -120,3 +120,10 @@ optional string next:
 ftd.integer-field id:
 string title:
 string ide-link:
+
+;; template records
+-- record template:
+integer id:
+string title:
+string preview-url:
+ftd.image-src preview-img:

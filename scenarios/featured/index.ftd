@@ -1,0 +1,43 @@
+-- import: ui.fifthtry.com/pages/featured
+-- import: ui.fifthtry.com/records/sites as template-record
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- featured.page:
+templates: $template-category-list
+user-data: $john-doe.jd
+
+
+-- template-record.template list template-category-list:
+
+-- template-record.template: 
+title: Blog Template
+preview-url: https://blog.fifthtry.site/
+preview-img: $assets.files.assets.templates.blog-temp.png
+id: 1
+
+-- template-record.template: 
+title: Simple Website Template
+preview-url: https://simple-website-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.simple-ws-temp.png
+id: 2
+
+-- template-record.template: 
+title: Website Template
+preview-url: https://website-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.ws-temp.png
+id: 3
+
+-- template-record.template: 
+title: Simple Blog Template
+preview-url: https://simple-blog-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.simple-blog-temp.png
+id: 4
+
+-- template-record.template: 
+title: Resume Template
+preview-url: https://resume-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.resume.png
+id: 5
+
+-- end: template-category-list
