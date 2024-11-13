@@ -30,7 +30,7 @@ basic-footer: true
 hide-footer: true
 
 	-- create-site.create-site:
-	   org-slash-username: $page.user-data.username
+	   org-slug: $ftd.empty
 	   create-site-action: $page.create-site-action
 	   dashboard-url: $page.dashboard-url
        sample-site: $page.sample-site

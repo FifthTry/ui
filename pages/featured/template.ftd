@@ -1,4 +1,9 @@
 -- import: ui.fifthtry.com/records/sites as template-record
+-- import: fastn/processors as pr
+
+;; org-slug
+-- optional string r:
+$processor$: pr.request-data
 
 
 
@@ -89,7 +94,8 @@ text: $grid-of-items.title
 -- ds.row:
 
 -- ds.primary-button: Use Template
-link: $create-site-link(l = $grid-of-items.slug)
+link if { r }: $create-site-with-org-link(slug = $grid-of-items.slug, org = $r)
+link if { !r }: $create-site-link(slug = $grid-of-items.slug)
 width: full
 
 -- ds.secondary-button: Preview
@@ -110,7 +116,13 @@ link: $grid-of-items.preview-url
 light: #00000066
 dark:  #00000066
 
--- string create-site-link(l):
-string l:
+-- string create-site-with-org-link(slug, org):
+string slug:
+string org:
 
-"/create-site/?t=" + l
+"/o/" + org + "/create-site/?t=" + slug
+
+-- string create-site-link(slug):
+string slug:
+
+"/create-site/?t=" + slug
