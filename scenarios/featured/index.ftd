@@ -1,0 +1,6 @@
+-- import: ui.fifthtry.com/pages/featured
+-- import: ui.fifthtry.com/scenarios/john-doe
+
+
+-- featured.page:
+user-data: $john-doe.jd

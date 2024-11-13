@@ -27,8 +27,8 @@
     },
     "actions/create-site-action.ftd": {
       "name": "actions/create-site-action.ftd",
-      "checksum": "2C61657B69DCB4F5BA2E812EC178D1D2BE3F910FF4401EE4190B92E22E271C5C",
-      "size": 445
+      "checksum": "DC2ECF1F1EACE7CAFB79D8ECC945A78F24C460F235481A3ADD4F3C58CADF2658",
+      "size": 877
     },
     "actions/create-user.ftd": {
       "name": "actions/create-user.ftd",
@@ -995,15 +995,40 @@
       "checksum": "5101861BAF8BCFCDF9D6CE2C66623B97ACBAD02632DB6276B8E7928B1148827A",
       "size": 43399
     },
+    "assets/templates/blog-temp.png": {
+      "name": "assets/templates/blog-temp.png",
+      "checksum": "1204DA72F443C9F65D3EA514397E9C5F95AEEBA433AE230B1F65A7D4F9018ACC",
+      "size": 59819
+    },
     "assets/templates/link.svg": {
       "name": "assets/templates/link.svg",
       "checksum": "C29D6A72ABC6B87F4192B7DC1E8754BD93465E71749BC64D45D630725B927E2B",
       "size": 1532
     },
+    "assets/templates/resume.png": {
+      "name": "assets/templates/resume.png",
+      "checksum": "8DE8F405169CCFFC879C2B8F74038D4F06F70800E794FDD96594446195A3F417",
+      "size": 70306
+    },
     "assets/templates/right.svg": {
       "name": "assets/templates/right.svg",
       "checksum": "5B86FBB2CF6E62438CD378D890395F96E1E300B702C2E45F091EC183F9571BED",
       "size": 442
+    },
+    "assets/templates/simple-blog-temp.png": {
+      "name": "assets/templates/simple-blog-temp.png",
+      "checksum": "F607BB417B516264BE5A43BE458A907E4AA929BB77841C35CE5C5252139686C7",
+      "size": 316186
+    },
+    "assets/templates/simple-ws-temp.png": {
+      "name": "assets/templates/simple-ws-temp.png",
+      "checksum": "79F51003DB34F9BDE19DF943BF62A74C8CFCDAAC5FCA9701565D4515A1794118",
+      "size": 330234
+    },
+    "assets/templates/ws-temp.png": {
+      "name": "assets/templates/ws-temp.png",
+      "checksum": "979FFFAC3B2D13EFE074C5409B318CCD3E3A4200577374C18FAF0A09F9FFA017",
+      "size": 342578
     },
     "assets/wrong.png": {
       "name": "assets/wrong.png",
@@ -1210,6 +1235,11 @@
       "checksum": "A465059D693E1DFF679093A407CC73511EF9B35CF368D64C424FFF777325E683",
       "size": 2584
     },
+    "components/featured/page.ftd": {
+      "name": "components/featured/page.ftd",
+      "checksum": "2A7E2B4FA142DEA059420732F4843BD310BDAAA7B61A7B957235AE4472C17715",
+      "size": 721
+    },
     "components/footer.ftd": {
       "name": "components/footer.ftd",
       "checksum": "A9E8CD7270D224E17B9343B8C30D851C62511522B057D6613F4BA8F6E632BD20",
@@ -1247,8 +1277,8 @@
     },
     "components/sites/create-site.ftd": {
       "name": "components/sites/create-site.ftd",
-      "checksum": "D41C2AA7FFB6D597B0277C6DCF1B0D8AFC8599E7B54F0364A576261587DE58A5",
-      "size": 5173
+      "checksum": "C7405355B4EDAC3EFFCCFB4D532F3E90A7D7315A38E5B101AB0B81ADD08A1F69",
+      "size": 8242
     },
     "components/sites/editor/browser.ftd": {
       "name": "components/sites/editor/browser.ftd",
@@ -1347,8 +1377,8 @@
     },
     "index.ftd": {
       "name": "index.ftd",
-      "checksum": "01ABA7D3DF4CC832449770905564F89EE08072493CF5476D57793B33B9539B3A",
-      "size": 2534
+      "checksum": "391255B1CB8E5AA93083F17FAB0D150847A86B04C3BFFD70A5BF1A037B47AB94",
+      "size": 2581
     },
     "pages/about/index.ftd": {
       "name": "pages/about/index.ftd",
@@ -1415,6 +1445,16 @@
       "checksum": "67AC7A85691E7FEBE21B460DA7C8A9FA3A9410E390A053820666B5A3825263B8",
       "size": 817
     },
+    "pages/featured/index.ftd": {
+      "name": "pages/featured/index.ftd",
+      "checksum": "CFFA1A0DC2E7F5BD4B28E6A39D5251CF9B01E04E6FA9E5FF56A3DCF0B67C533D",
+      "size": 1777
+    },
+    "pages/featured/template.ftd": {
+      "name": "pages/featured/template.ftd",
+      "checksum": "7F10D53FB06429749C9AE8D30C1CDC1FDF82B51E58566FA094727A632DEC26AC",
+      "size": 2214
+    },
     "pages/forgot-password.ftd": {
       "name": "pages/forgot-password.ftd",
       "checksum": "3D09A334A980176887C6239D2848997F1AEDEA567C6735109B462B3B050EF803",
@@ -1442,8 +1482,8 @@
     },
     "pages/org/create-site.ftd": {
       "name": "pages/org/create-site.ftd",
-      "checksum": "9957051ADA15FA7B459D35F66078DF1E92E61F52EA2F8FB94C59418B9B6B9B3D",
-      "size": 969
+      "checksum": "29EE359B7C5107015BF3F0B550CB71BCF28C30080E7A43A62293990F406D24BD",
+      "size": 1103
     },
     "pages/org/dashboard.ftd": {
       "name": "pages/org/dashboard.ftd",
@@ -1537,8 +1577,8 @@
     },
     "pages/user/create-site.ftd": {
       "name": "pages/user/create-site.ftd",
-      "checksum": "85CC98CFD40A68295A91B03183BA54057EA9EC066155839C305073F342D6F930",
-      "size": 1009
+      "checksum": "9D47EE88337E508CED20AF72513454A23C0874EDB47044852AFB014C96B594C0",
+      "size": 1132
     },
     "pages/user/dashboard.ftd": {
       "name": "pages/user/dashboard.ftd",
@@ -1557,8 +1597,8 @@
     },
     "records/sites.ftd": {
       "name": "records/sites.ftd",
-      "checksum": "A2991492C775FC14DA9E600798DFB7C8B35019DB76D4E7868BA78CAD81D55F60",
-      "size": 2313
+      "checksum": "88C3DE9E1F80B39131ED337CCE346E0675D7CAA967062D7D96C9A45CB39740CF",
+      "size": 2599
     },
     "records/storybook.ftd": {
       "name": "records/storybook.ftd",
@@ -1694,6 +1734,11 @@
       "name": "scenarios/featured-template/linktree/linktree-4.ftd",
       "checksum": "2F64B266B8EE818240B791E0E0C8C395207B61F4AAFC52D939F5DCC9EF9FF4AD",
       "size": 1055
+    },
+    "scenarios/featured/index.ftd": {
+      "name": "scenarios/featured/index.ftd",
+      "checksum": "D42D2D40E609879CE14CD43743A1106D2B5E6957BE15A04E3B538E746802A648",
+      "size": 132
     },
     "scenarios/forgot-password.ftd": {
       "name": "scenarios/forgot-password.ftd",
@@ -1887,5 +1932,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "4DF1C72F35F26BAF70AFFB68C2AD63200AAEAF2B4EEE72D8AB3533983981D72B"
+  "checksum": "1A43AC92701339AADC50790C2A7B55F3619712CFACDBF3E3F2FA8BDC23AA6F70"
 }

@@ -3,6 +3,7 @@
 -- import: ui.fifthtry.com/components/label as l
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
+-- import: ui.fifthtry.com/records/sites as site-records
 -- import: ui.fifthtry.com/actions/create-site-action
 -- import: ui.fifthtry.com/utils as u
 
@@ -16,6 +17,7 @@ string dashboard-url:
 string create-site-url:
 optional string create-org-url:
 optional string top-message:
+optional site-records.sample-site-data sample-site:
 
 -- p.page:
 site-data: $page.site-data
@@ -27,9 +29,10 @@ hide-header: true
 top-message: $page.top-message
 
 	-- create-site.create-site:
-	org-slash-username: $page.org-slug
+	org-slug: $page.org-slug
 	create-site-action: $page.create-site-action
 	dashboard-url: $page.dashboard-url
+    sample-site: $page.sample-site
 	
 -- end: p.page
 
