@@ -76,7 +76,7 @@ optional site-records.sample-site-data sample-site:
 				spacing: $ds.spaces.horizontal-gap.small
                 if: { !create-site.sample-site }
 				
-                    -- ds.copy-small: This site will be created using a Blog template. Browse [community templates](/templates/) for more.
+                    -- ds.copy-small: This site will be created using a Blog template. Browse [community templates](/featured/) for more.
 					
 				-- end: ds.row
 
@@ -185,7 +185,7 @@ optional site-records.sample-site-data sample-site:
             spacing: $ds.spaces.horizontal-gap.small
             if: { !create-site.sample-site }
 
-                -- ds.copy-small: This site will be created using a Blog template. Browse [community templates](/templates/) for more.
+                -- ds.copy-small: This site will be created using a Blog template. Browse [community templates](/featured/) for more.
 
             -- end: ds.column
 

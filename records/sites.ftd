@@ -123,7 +123,7 @@ string ide-link:
 
 ;; template records
 -- record template:
-integer id:
+string slug:
 string title:
 string preview-url:
 ftd.image-src preview-img:

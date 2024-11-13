@@ -1,13 +1,47 @@
 -- import: ui.fifthtry.com/components/featured/page as p
 -- import: ui.fifthtry.com/site-data
 -- import: ui.fifthtry.com/records/user-data as ud
--- import: ui.fifthtry.com/records/sites as templates-record
+-- import: ui.fifthtry.com/records/sites as site-records
 -- import: ui.fifthtry.com/pages/featured/template
+
+-- site-records.template list templates:
+
+-- site-records.template: 
+title: Blog Template
+preview-url: https://blog.fifthtry.site/
+preview-img: $assets.files.assets.templates.blog-temp.png
+slug: blog
+
+-- site-records.template: 
+title: Simple Website Template
+preview-url: https://simple-website-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.simple-ws-temp.png
+slug: simple-website-template
+
+-- site-records.template: 
+title: Website Template
+preview-url: https://website-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.ws-temp.png
+slug: website-template
+
+-- site-records.template: 
+title: Simple Blog Template
+preview-url: https://simple-blog-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.simple-blog-temp.png
+slug: simple-blog-template
+
+-- site-records.template: 
+title: Resume Template
+preview-url: https://resume-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.resume.png
+slug: resume-template
+
+-- end: templates
 
 -- component page:
 module site-data: site-data
 ud.user-data user-data:
-templates-record.template list templates:
+site-records.template list templates: $templates
 
 -- p.page:
 site-data: $page.site-data
