@@ -10,15 +10,19 @@
 -- import: ui.fifthtry.com/components/editor/panels/package
 -- import: ui.fifthtry.com/components/editor/panels/preview
 -- import: ui.fifthtry.com/components/editor/welcome-screen
+-- import: ui.fifthtry.com/records/user-data as ud
+
 
 
 -- component page:
+ud.user-data user-data:
 
 -- ftd.column:
 width: fill-container
 height: fill-container
 
 	-- top-bar.top-bar:
+    user-data: $page.user-data
 	
 	-- ftd.row:
 	width: fill-container

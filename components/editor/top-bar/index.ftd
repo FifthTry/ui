@@ -2,10 +2,11 @@
 -- import: ui.fifthtry.com/components/editor/top-bar/file-switcher
 -- import: ui.fifthtry.com/components/editor/top-bar/package-switcher
 -- import: ui.fifthtry.com/components/avatar
--- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/records/user-data as ud
 
 -- component top-bar:
 module site-data: site-data
+ud.user-data user-data:
 
 -- ftd.row:
 width.fixed.percent: 100
@@ -30,7 +31,13 @@ padding.px: 10
 	-- file-switcher.file-switcher:
 	
 	-- avatar.avatar:
-	user-data: $john-doe.jd
+    if: { top-bar.user-data.is-logged-in }
+    user-data: $top-bar.user-data
+
+    -- ds.primary-button: $lang.sign-in
+    if: { !top-bar.user-data.is-logged-in }
+    link: $top-bar.site-data.sign-in-url
+    radius: curved
 	
 -- end: ftd.row
 -- end: top-bar
