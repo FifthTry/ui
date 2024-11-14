@@ -1212,8 +1212,8 @@
     },
     "components/editor/top-bar/index.ftd": {
       "name": "components/editor/top-bar/index.ftd",
-      "checksum": "7E25326CC441DC8B3AA26E4961233AACC94ECC1C3EC27C025B4BEB0CE6E67094",
-      "size": 807
+      "checksum": "FAF8B24AA6BCFB7E916D1D00C673B8EC2777BFDBB87B3539C9FC406755C53B48",
+      "size": 1033
     },
     "components/editor/top-bar/package-switcher.ftd": {
       "name": "components/editor/top-bar/package-switcher.ftd",
@@ -1477,8 +1477,8 @@
     },
     "pages/ide.ftd": {
       "name": "pages/ide.ftd",
-      "checksum": "783EFF4FDD6C3D5C110A6733ADFC3BA989B1AC24CA8A95D375CD489B6AAF4636",
-      "size": 1187
+      "checksum": "2ECA1CBF2764B9023879697897BBE37F26D24CDC78D4C7D344F8452BB80144C8",
+      "size": 1275
     },
     "pages/org/create-site.ftd": {
       "name": "pages/org/create-site.ftd",
@@ -1762,8 +1762,8 @@
     },
     "scenarios/ide.ftd": {
       "name": "scenarios/ide.ftd",
-      "checksum": "229C5F7C85FC48F22FB294CAE7B41DA356565F249E9CC3338C7AD17725BE37BC",
-      "size": 51
+      "checksum": "C372F19002C518AB3B925EC65BAAA66CF3463A23E076B5EEB1E05AEC1721CEA8",
+      "size": 121
     },
     "scenarios/john-doe.ftd": {
       "name": "scenarios/john-doe.ftd",
@@ -1932,5 +1932,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "1A43AC92701339AADC50790C2A7B55F3619712CFACDBF3E3F2FA8BDC23AA6F70"
+  "checksum": "C5BB975FB1B6DC8FE64CF66A9B25EF8A6AAF4B0966853374DAD90D80E8C5260D"
 }
