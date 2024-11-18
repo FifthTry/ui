@@ -32,7 +32,7 @@ slug: simple-blog-template
 
 -- site-records.template: 
 title: Resume Template
-preview-url: https://resume-template.fifthtry.site/
+preview-url: https://resume.fifthtry.site/
 preview-img: $assets.files.assets.templates.resume.png
 slug: resume-template
 
