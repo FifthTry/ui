@@ -1,0 +1,68 @@
+-- import: ui.fifthtry.com/pages/demo-day
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/records/demo-day as dd
+
+
+
+
+-- demo-day.page:
+user-data: $john-doe.jd
+latest-video-list: $video-data
+months-list: $months-list
+
+
+
+-- dd.demo-day-video list video-data:
+
+-- dd.demo-day-video: Demo day video update #12
+youtube: S465goV853U
+author-name: Meenu Kumari
+author-avatar: $assets.files.assets.team.meenu.jpeg
+
+This video contain the work i did this week.
+This video contain the work i did this week.
+This video contain the work i did this week.
+
+-- dd.demo-day-video: Demo day video update #12
+youtube: S465goV853U
+author-name: Meenu Kumari
+author-avatar: $assets.files.assets.team.meenu.jpeg
+
+This video contain the work i did this week.
+This video contain the work i did this week.
+This video contain the work i did this week.
+
+-- dd.demo-day-video: Demo day video update #12
+youtube: S465goV853U
+author-name: Meenu Kumari
+author-avatar: $assets.files.assets.team.meenu.jpeg
+
+This video contain the work i did this week.
+This video contain the work i did this week.
+This video contain the work i did this week.
+
+-- end: video-data
+
+
+
+
+-- dd.months list months-list:
+
+-- dd.months: Nov
+date: $nov-dates
+
+-- end: months-list
+
+
+-- dd.all-date list nov-dates:
+
+-- dd.all-date: 1st Nov
+link: /
+
+-- dd.all-date: 8th Nov 
+link: /
+
+-- dd.all-date: 15th Nov 
+link: /
+
+-- end: nov-dates

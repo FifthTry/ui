@@ -1,0 +1,18 @@
+-- record demo-day-video:
+caption title:
+body desc:
+string youtube:
+string author-name:
+ftd.image-src author-avatar:
+
+
+
+-- record months:
+caption title:
+all-date list date:
+
+
+
+-- record all-date:
+caption title:
+string link:
