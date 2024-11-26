@@ -20,30 +20,27 @@ ud.user-data user-data:
 dd.demo-day-video list latest-video-list:
 dd.months list months-list:
 
+-- ds.page: Latest Demo Day - Nov 22 2024
+theme-switcher: true
+
 -- ds.section-column:
 inset: $ds.spaces.inset-square.medium
 spacing: $ds.spaces.vertical-gap.large
 margin: $ds.spaces.vertical-gap.large
 align-content: top-left
 
--- p.page: Latest Demo Day Video Update
+-- p.page: Latest Demo Day - Nov 22 2024
 latest-video-list: $page.latest-video-list
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
 
-FifthTry has a tradition of weekly Demo Days on Fridays. We 
-follow a `demo-day-driven development` approach, where everyone 
-at FifthTry showcases their weekly progress. As an 
-`open-source` company, we build open-source products and aim to 
-make our decision-making process public as well. This event 
-is open to everyone, and you can find the meeting links 
-in our [`Discord community`](https://discord.gg/fastn-stack-793929082483769345). 
-Under the Latest Demo Days, you can 
-find a summary of each team member's contributions from 
-every Friday.
+FifthTry has a tradition of weekly Demo Days on Fridays. We follow a `demo-day-driven development` approach, where everyone at FifthTry showcases their weekly progress. As an `open-source` company, we build open-source products and aim to make our decision-making process public as well. This event is open to everyone, and you can find the meeting links in our [`Discord community`](https://discord.gg fastn-stack-793929082483769345). Under the Latest Demo Days, you can find a summary of each team member's contributions from every Friday.
 
--- p.month-update: Checkout More videos
+-- p.month-update: 2024
 months-list: $page.months-list
 
 -- end: ds.section-column
+
+-- end: ds.page
 
 -- end: page
 

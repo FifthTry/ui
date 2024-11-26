@@ -3,17 +3,47 @@
 -- component page:
 caption title:
 optional body body:
+optional string desc:
+boolean $open: false
 dd.demo-day-video list latest-video-list:
 
 -- ds.section-column:
 margin: $ds.spaces.vertical-gap.zero
 align-content: top-left
 
+-- ds.row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+
 -- ds.heading-large: $page.title
 color: $ds.colors.shadow
 
+-- ftd.image:
+src: $assets.files.assets.info.svg
+$on-click$: $ftd.toggle($a = $page.open)
+width.fixed.px: 24
+
+-- ftd.column:
+if: {  page.open }
+;;width.fixed.px: 662
+width: fill-container
+padding.px: 24
+anchor: parent
+right.px: 0
+background.solid: $ds.colors.background.step-1
+top.px: 70
+border-radius.px: 8
+;;shadow: $s
+
 -- ds.copy-regular: $page.body
 if: { page.body != NULL }
+
+-- end: ftd.column
+
+-- end: ds.row
+
+-- ds.copy-regular: $page.desc
+if: { page.desc != NULL }
 
 -- ds.row:
 align-content: left
@@ -37,6 +67,10 @@ author-avatar: $obj.author-avatar
 
 
 
+
+
+
+
 -- component latest-videos:
 caption title:
 body desc:
@@ -44,46 +78,49 @@ string youtube:
 string author-name:
 ftd.image-src author-avatar:
 
--- ds.column:
-width.fixed.px: 430
+-- ds.row:
 align-content: left
-spacing: $ds.spaces.vertical-gap.zero
+spacing: $ds.spaces.horizontal-gap.large
 background.solid: $ds.colors.background.step-2
+inset: $ds.spaces.inset-square.medium
 
 -- ftd.iframe:
 youtube: $latest-videos.youtube
-width: fill-container
+width.fixed.px: 500
 border-radius.px: 8
-height.fixed.px: 200
+height.fixed.px: 300
 
 -- ds.column:
-inset: $ds.spaces.inset-wide.medium
-align-content: left
+align-content: top-left
 
 -- ds.heading-medium: $latest-videos.title
 
 -- ds.copy-regular: $latest-videos.desc
 
--- ds.row: 
+-- ftd.row: 
 align-content: left
+spacing.fixed.px: 12
 
 -- ftd.image:
 src: $latest-videos.author-avatar
-width.fixed.px: 50
-height.fixed.px: 50
+width.fixed.px: 32
+height.fixed.px: 32
 border-radius.percent: 100
-fit: cover
+fit: contain
+background.solid: $ds.colors.background.base
 
--- ds.heading-tiny: $latest-videos.author-name
+-- ds.copy-small: $latest-videos.author-name
 color: $ds.colors.info.text
+
+-- end: ftd.row
+
+-- end: ds.column
 
 -- end: ds.row
 
--- end: ds.column
-
--- end: ds.column
-
 -- end: latest-videos
+
+
 
 
 
@@ -106,16 +143,16 @@ color: $ds.colors.shadow
 -- ds.copy-regular: $month-update.body
 if: { month-update.body != NULL }
 
--- ds.row:
+-- ds.column:
 align-content: left
-wrap: true
-spacing: $ds.spaces.horizontal-gap.large
+spacing: $ds.spaces.vertical-gap.large
 
 -- months-info: $obj.title
 for: $obj in $month-update.months-list
 date: $obj.date
+body: $obj.body
 
--- end: ds.row
+-- end: ds.column
 
 -- end: ds.section-column
 
@@ -125,38 +162,26 @@ date: $obj.date
 
 -- component months-info:
 caption title:
-boolean $open: false
+optional body body:
 dd.all-date list date:
 
 -- ds.column:
-border: $ds.borders.uniform.small
 align-content: left
-inset: $ds.spaces.inset-wide.medium
-
--- ds.row:
-$on-click$: $ftd.toggle($a = $months-info.open)
-align-content: left
-spacing: $ds.spaces.horizontal-gap.space-between
 
 -- ds.copy-large: $months-info.title
+color: $ds.colors.text-strong
 
--- ftd.image:
-src: $assets.files.assets.right-arrow.svg
-src if { months-info.open }: $assets.files.assets.down-arrow.svg
-width.fixed.px: 18
+-- ds.copy-regular: $months-info.body
+if: { months-info.body != NULL }
 
--- end: ds.row
-
--- ds.row:
-if: { months-info.open }
+-- ds.column:
 align-content: left
-wrap: true
 
 -- date-content: $obj.title
 for: $obj in $months-info.date
 link: $obj.link
 
--- end: ds.row
+-- end: ds.column
 
 -- end: ds.column
 
@@ -170,14 +195,7 @@ link: $obj.link
 caption title:
 string link:
 
--- ds.column:
-width.fixed.px: 120
-background.solid: $ds.colors.background.step-1
-inset: $ds.spaces.inset-wide.small
-
 -- ds.copy-regular: $date-content.title
 link: $date-content.link
-
--- end: ds.column
 
 -- end: date-content
