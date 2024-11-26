@@ -9,6 +9,7 @@ ftd.image-src author-avatar:
 
 -- record months:
 caption title:
+optional body body:
 all-date list date:
 
 
