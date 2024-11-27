@@ -1,0 +1,82 @@
+-- import: ui.fifthtry.com/pages/demo-day
+-- import: ui.fifthtry.com/scenarios/john-doe
+-- import: ui.fifthtry.com/records/demo-day as dd
+
+
+
+
+-- demo-day.page:
+user-data: $john-doe.jd
+latest-video-list: $video-data
+months-list: $months-list
+
+
+
+-- dd.demo-day-video list video-data:
+
+-- dd.demo-day-video: Demo day video update #12
+youtube: S465goV853U
+author-name: Meenu Kumari
+author-avatar: $assets.files.assets.team.meenu.jpeg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+sunt in culpa qui officia deserunt mollit anim id est laborum
+
+-- dd.demo-day-video: Demo day video update #12
+youtube: S465goV853U
+author-name: Meenu Kumari
+author-avatar: $assets.files.assets.team.meenu.jpeg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+sunt in culpa qui officia deserunt mollit anim id est laborum
+
+-- dd.demo-day-video: Demo day video update #12
+youtube: S465goV853U
+author-name: Meenu Kumari
+author-avatar: $assets.files.assets.team.meenu.jpeg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+sunt in culpa qui officia deserunt mollit anim id est laborum
+
+-- end: video-data
+
+
+
+
+-- dd.months list months-list:
+
+-- dd.months: Nov
+date: $nov-dates
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.
+
+-- end: months-list
+
+
+-- dd.all-date list nov-dates:
+
+-- dd.all-date: - 1st Nov
+link: /
+
+-- dd.all-date: - 8th Nov 
+link: /
+
+-- dd.all-date: - 15th Nov 
+link: /
+
+-- end: nov-dates

@@ -7,10 +7,10 @@
 -- site-records.template list templates:
 
 -- site-records.template: 
-title: Blog Template
-preview-url: https://blog.fifthtry.site/
-preview-img: $assets.files.assets.templates.blog-temp.png
-slug: blog
+title: Blank Template
+preview-url: https://blank-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.blank.png
+slug: blank-template
 
 -- site-records.template: 
 title: Simple Website Template
@@ -35,6 +35,12 @@ title: Resume Template
 preview-url: https://resume.fifthtry.site/
 preview-img: $assets.files.assets.templates.resume.png
 slug: resume-template
+
+-- site-records.template: 
+title: Simple Resume Template
+preview-url: https://simple-resume-template.fifthtry.site/
+preview-img: $assets.files.assets.templates.simple-resume.png
+slug: simple-resume-template
 
 -- end: templates
 

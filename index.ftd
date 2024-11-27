@@ -27,6 +27,7 @@ $processor$: pr.toc
   - Privacy page: /scenarios/about/privacy-page/
   - Blog Homepage: /scenarios/blogs/
   - Blog Post: /scenarios/blogs/blog-post/
+  - Demo Day: /scenarios/demo-day/
 
 - Auth Pages:
   - Login page: /scenarios/signin-page/

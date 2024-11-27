@@ -1,0 +1,201 @@
+-- import: ui.fifthtry.com/records/demo-day as dd
+
+-- component page:
+caption title:
+optional body body:
+optional string desc:
+boolean $open: false
+dd.demo-day-video list latest-video-list:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+align-content: top-left
+
+-- ds.row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+
+-- ds.heading-large: $page.title
+color: $ds.colors.shadow
+
+-- ftd.image:
+src: $assets.files.assets.info.svg
+$on-click$: $ftd.toggle($a = $page.open)
+width.fixed.px: 24
+
+-- ftd.column:
+if: {  page.open }
+;;width.fixed.px: 662
+width: fill-container
+padding.px: 24
+anchor: parent
+right.px: 0
+background.solid: $ds.colors.background.step-1
+top.px: 70
+border-radius.px: 8
+;;shadow: $s
+
+-- ds.copy-regular: $page.body
+if: { page.body != NULL }
+
+-- end: ftd.column
+
+-- end: ds.row
+
+-- ds.copy-regular: $page.desc
+if: { page.desc != NULL }
+
+-- ds.row:
+align-content: left
+wrap: true
+spacing: $ds.spaces.horizontal-gap.large
+inset: $ds.spaces.inset-tall.zero-small
+
+-- latest-videos: $obj.title
+for: $obj in $page.latest-video-list
+desc: $obj.desc
+youtube: $obj.youtube
+author-name: $obj.author-name
+author-avatar: $obj.author-avatar
+
+-- end: ds.row
+
+-- end: ds.section-column
+
+-- end: page
+
+
+
+
+
+
+
+
+-- component latest-videos:
+caption title:
+body desc:
+string youtube:
+string author-name:
+ftd.image-src author-avatar:
+
+-- ds.row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.large
+background.solid: $ds.colors.background.step-2
+inset: $ds.spaces.inset-square.medium
+
+-- ftd.iframe:
+youtube: $latest-videos.youtube
+width.fixed.px: 500
+border-radius.px: 8
+height.fixed.px: 300
+
+-- ds.column:
+align-content: top-left
+
+-- ds.heading-medium: $latest-videos.title
+
+-- ds.copy-regular: $latest-videos.desc
+
+-- ftd.row: 
+align-content: left
+spacing.fixed.px: 12
+
+-- ftd.image:
+src: $latest-videos.author-avatar
+width.fixed.px: 32
+height.fixed.px: 32
+border-radius.percent: 100
+fit: contain
+background.solid: $ds.colors.background.base
+
+-- ds.copy-small: $latest-videos.author-name
+color: $ds.colors.info.text
+
+-- end: ftd.row
+
+-- end: ds.column
+
+-- end: ds.row
+
+-- end: latest-videos
+
+
+
+
+
+
+
+
+
+-- component month-update:
+caption title:
+optional body body:
+dd.months list months-list:
+
+-- ds.section-column:
+margin: $ds.spaces.vertical-gap.zero
+align-content: top-left
+
+-- ds.heading-large: $month-update.title
+color: $ds.colors.shadow
+
+-- ds.copy-regular: $month-update.body
+if: { month-update.body != NULL }
+
+-- ds.column:
+align-content: left
+spacing: $ds.spaces.vertical-gap.large
+
+-- months-info: $obj.title
+for: $obj in $month-update.months-list
+date: $obj.date
+body: $obj.body
+
+-- end: ds.column
+
+-- end: ds.section-column
+
+-- end: month-update
+
+
+
+-- component months-info:
+caption title:
+optional body body:
+dd.all-date list date:
+
+-- ds.column:
+align-content: left
+
+-- ds.copy-large: $months-info.title
+color: $ds.colors.text-strong
+
+-- ds.copy-regular: $months-info.body
+if: { months-info.body != NULL }
+
+-- ds.column:
+align-content: left
+
+-- date-content: $obj.title
+for: $obj in $months-info.date
+link: $obj.link
+
+-- end: ds.column
+
+-- end: ds.column
+
+-- end: months-info
+
+
+
+
+
+-- component date-content:
+caption title:
+string link:
+
+-- ds.copy-regular: $date-content.title
+link: $date-content.link
+
+-- end: date-content
