@@ -106,7 +106,7 @@ margin: $ds.spaces.vertical-gap.zero
 				height: fill-container
 				
 					-- ds.secondary-button: Re-validate domain
-					if: { show-site-domain.domain.status == "pending" }
+					if: { show-site-domain.domain.status == "pending" || show-site-domain.domain.status == "failed" }
 					variant: outline
 					radius: curved
 					$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
@@ -129,7 +129,7 @@ margin: $ds.spaces.vertical-gap.zero
 				width.fixed.percent: 40
 				
 					-- ds.secondary-button: Re-validate domain
-					if: { $show-site-domain.domain.status == "pending" }
+					if: { show-site-domain.domain.status == "pending" || show-site-domain.domain.status == "failed" }
 					variant: outline
 					radius: curved
 					$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
@@ -244,7 +244,7 @@ margin: $ds.spaces.vertical-gap.zero
 			height: fill-container
 			
 				-- ds.secondary-button: Re-validate domain
-				if: { show-site-domain.domain.status == "pending" }
+                if: { show-site-domain.domain.status == "pending" || show-site-domain.domain.status == "failed" }
 				variant: outline
 				radius: curved
 				$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
@@ -264,7 +264,7 @@ margin: $ds.spaces.vertical-gap.zero
 			   spacing: $ds.spaces.vertical-gap.medium
 			
 				-- ds.secondary-button: Re-validate domain
-				if: { $show-site-domain.domain.status == "pending" }
+                if: { show-site-domain.domain.status == "pending" || show-site-domain.domain.status == "failed" }
 				variant: outline
 				radius: curved
 				$on-click$: $show-site-domain.re-check-domain.submit(site_slug=$show-site-domain.site.site-slug, domain=$show-site-domain.domain.domain)
