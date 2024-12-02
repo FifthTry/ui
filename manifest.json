@@ -1352,8 +1352,8 @@
     },
     "components/sites/site-domain-info.ftd": {
       "name": "components/sites/site-domain-info.ftd",
-      "checksum": "969A28D22D3601314A23A9772FC00960F4CBC444ECF82375F746CC668A16CA14",
-      "size": 13919
+      "checksum": "64E643764005D49533C2A64A54D51BC95ACDD1273BF215E31337F4D48920C063",
+      "size": 14125
     },
     "components/sites/token-info.ftd": {
       "name": "components/sites/token-info.ftd",
@@ -1967,5 +1967,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "C0814E71B7F718F0C81206EDF18CA746AFD9C5EFA79817DA5AB4A73B74EAE4AA"
+  "checksum": "B0F1E1CD8C116E00DC11DF3DDB9EFD25CF55692C65BBB52ADDAD3331E63E7A22"
 }
