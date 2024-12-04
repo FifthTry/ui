@@ -31,6 +31,12 @@ preview-img: $assets.files.assets.templates.simple-blog-temp.png
 slug: simple-blog-template
 
 -- site-records.template: 
+title: Breeze Blog Template
+preview-url: https://breeze.fifthtry.site/
+preview-img: $assets.files.assets.templates.breeze.png
+slug: breeze
+
+-- site-records.template: 
 title: Resume Template
 preview-url: https://resume.fifthtry.site/
 preview-img: $assets.files.assets.templates.resume.png
