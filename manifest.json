@@ -1015,6 +1015,11 @@
       "checksum": "DEF930DA74861252D1D94E4567FC591CC75A9A222F975981208DC04B01A53BD9",
       "size": 904666
     },
+    "assets/templates/classic.png": {
+      "name": "assets/templates/classic.png",
+      "checksum": "20A7F4124D87FEA48A11AB3705BA00133F7FB29010788CB6AF96E299FC15B8F2",
+      "size": 502587
+    },
     "assets/templates/link.svg": {
       "name": "assets/templates/link.svg",
       "checksum": "C29D6A72ABC6B87F4192B7DC1E8754BD93465E71749BC64D45D630725B927E2B",
@@ -1477,8 +1482,8 @@
     },
     "pages/featured/index.ftd": {
       "name": "pages/featured/index.ftd",
-      "checksum": "E5E5F3BFBB06EC4F658ED44B6D9DAD214AC11932E8541B338B7F0877DEC97487",
-      "size": 2160
+      "checksum": "1B9630CE0A8D97339635439583610251B350691F7E38FCC8F03108095E2DFAA8",
+      "size": 2340
     },
     "pages/featured/template.ftd": {
       "name": "pages/featured/template.ftd",
@@ -1972,5 +1977,5 @@
     }
   },
   "zip_url": "https://codeload.github.com/fifthtry/ui/zip/refs/heads/main",
-  "checksum": "5C9D685969A148E5A9DD7460CA3C02F51C2C0166426343C6448E59E0791F8BE2"
+  "checksum": "3C323AB611CC29E6C83940BCECE976809D0E0AB2E568414C8BA0658706EE0515"
 }
